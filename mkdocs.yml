@@ -1,0 +1,9 @@
+site_name: Brainlife
+theme:
+  name: 'material'
+  palette:
+    primary: 'teal'
+
+pages:
+  - Home: index.md
+  - About: about.md
