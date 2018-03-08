@@ -4,6 +4,11 @@ theme:
   palette:
     primary: 'teal'
 
+extra:
+  disqus: 'brainlife-documentation'
+
 pages:
   - Home: index.md
   - About: about.md
+
+
