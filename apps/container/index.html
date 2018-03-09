@@ -1,0 +1,979 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+    
+    
+      
+        <title>Containerizing App - Brainlife Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.78aab2dc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#compile-matlab" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Brainlife Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Brainlife Documentation
+              </span>
+              <span class="md-header-nav__topic">
+                Containerizing App
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Brainlife Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      End Users
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        End Users
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../users/project/" title="Project" class="md-nav__link">
+      Project
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      App Developers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        App Developers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../helloworld/" title="Hello World" class="md-nav__link">
+      Hello World
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../register/" title="Register App" class="md-nav__link">
+      Register App
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Containerizing App
+      </label>
+    
+    <a href="./" title="Containerizing App" class="md-nav__link md-nav__link--active">
+      Containerizing App
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compile-matlab" title="Compile Matlab" class="md-nav__link">
+    Compile Matlab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-an-encode-fe-structure-from-an-mcc-application" title="Loading an ENCODE fe structure from an mcc application" class="md-nav__link">
+    Loading an ENCODE fe structure from an mcc application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-bash-script-to-run-your-app" title="Create a bash script to run your app" class="md-nav__link">
+    Create a bash script to run your app
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-dockerfile-matlab" title="Create Dockerfile (MatLab)" class="md-nav__link">
+    Create Dockerfile (MatLab)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-dockerfile-python" title="Create DockerFile (Python)" class="md-nav__link">
+    Create DockerFile (Python)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-and-running-your-container" title="Building and running your container" class="md-nav__link">
+    Building and running your container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#readme" title="README" class="md-nav__link">
+    README
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" title="Examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../versioning/" title="Versioning Tips" class="md-nav__link">
+      Versioning Tips
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../customhooks/" title="Custom Hooks" class="md-nav__link">
+      Custom Hooks
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Resource Provider
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Resource Provider
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/register/" title="Registering Resource" class="md-nav__link">
+      Registering Resource
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Data Publisher
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Data Publisher
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../todo/" title="Todo" class="md-nav__link">
+      Todo
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Learners
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Learners
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../todo/" title="Todo" class="md-nav__link">
+      Todo
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compile-matlab" title="Compile Matlab" class="md-nav__link">
+    Compile Matlab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-an-encode-fe-structure-from-an-mcc-application" title="Loading an ENCODE fe structure from an mcc application" class="md-nav__link">
+    Loading an ENCODE fe structure from an mcc application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-bash-script-to-run-your-app" title="Create a bash script to run your app" class="md-nav__link">
+    Create a bash script to run your app
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-dockerfile-matlab" title="Create Dockerfile (MatLab)" class="md-nav__link">
+    Create Dockerfile (MatLab)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-dockerfile-python" title="Create DockerFile (Python)" class="md-nav__link">
+    Create DockerFile (Python)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-and-running-your-container" title="Building and running your container" class="md-nav__link">
+    Building and running your container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#readme" title="README" class="md-nav__link">
+    README
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" title="Examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Containerizing App</h1>
+                
+                <p>Docker is a software containerization tool that allow you to package your app and its dependencies into a portable "container". Once built, you can run it on any machine as long as it supports singularity regardless of the type of host OS, or host software installed.</p>
+<p>Although you can create a fully functional standalone docker container for your app, normally we only need to containerize the application <em>dependendencies</em>. For Brainlife, we recommend not to include the main part of your app (your python or bash scripts that drives your application) on your container. Once you create container for you application <em>environment</em>, with singularity, your can use it to execute the most ideosyncratic parts of your app through it. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you do share your <em>environment</em> container, be sure to specify which version(tag) of the container you are using in your app. Like..
+<code>singularity exec -e docker://brainlife/mrtrix_on_mcr:1.0 ./ensembletracking.sh</code></p>
+</div>
+<p>To build a docker container, you need to <a href="https://docs.docker.com/machine/install-machine/">install Docker engine on your laptop</a> or find a server that has docker engine installed that you can use. (Contact <a href="../hayashis@iu.edu">Soichi</a> if you need a help.)</p>
+<p>We assume you already have your Brainlife app hosted on Github, and you are making changes inside a cloned git repo on a machine with Docker engine.</p>
+<h2 id="compile-matlab">Compile Matlab<a class="headerlink" href="#compile-matlab" title="Permanent link">&para;</a></h2>
+<p>To run your application through a container, all Matlab scripts need to be compiled to a binary format using the <a href="https://www.mathworks.com/help/compiler/mcc.html"><code>mcc</code> MatLab command</a>. You can create a script that runs something like following.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+module load matlab/2017a
+
+mkdir -p compiled
+
+cat &gt; build.m <span class="s">&lt;&lt;END</span>
+<span class="s">addpath(genpath(&#39;/N/u/brlife/git/vistasoft&#39;))</span>
+<span class="s">addpath(genpath(&#39;/N/u/brlife/git/jsonlab&#39;))</span>
+<span class="s">addpath(genpath(&#39;/N/soft/mason/SPM/spm8&#39;))</span>
+<span class="s">mcc -m -R -nodisplay -d compiled myapp</span>
+<span class="s">%# function sptensor</span>
+<span class="s">exit</span>
+<span class="s">END</span>
+matlab -nodisplay -nosplash -r build
+</pre></div>
+</td></tr></table>
+
+<p>This script generates a Matlab script called <code>build.m</code> and immediately executes it. <code>build.m</code> will setup the path and run Matlab command called <code>mcc</code> which does the actual compilation of your Matlab code and generates a binary that can be run without Matlab license. The generated binary still requires a few Matlab proprietary libraries called MCR. You can freely download MCR library from Matlab website, or use MCR container such as brainlife/mcr to execute your binary with.</p>
+<p>You will need to adjust addpath() to include all of your dependencies that your application requires. "myapp" is the name of the matlab script that you use to execute your application. mcc commad will create a binary with the same name "myapp" inside the ./compiled directory.</p>
+<ul>
+<li><code>-m ...</code> tells the name of the main entry function (in this case it's <code>main</code>) of your application (it reads your config.json and runs the whole application)</li>
+<li><code>-R -nodisplay</code> sets the command line options you'd normally pass when you run MatLab on the command line.</li>
+<li>-d ...` tells where to output the generated binary. You should avoid writing it out to the application root directory; just to keep things organized.</li>
+</ul>
+<p>If your app uses any MEX files (.c code) you will need to add an extra option (-a) to specify where those MEX files are stored. For example..</p>
+<div class="codehilite"><pre><span></span>mcc -m -R -nodisplay -a /N/u/hayashis/BigRed2/git/encode/mexfiles -d compiled myapp
+</pre></div>
+
+
+<ul>
+<li>You can use OpenMP to parallelize your application by using a container that has libgomp1 installed.</li>
+<li>mcc compiled application can't run certain Matlab statements; like addpath(). You might need to create a stripped down version of the main function that does not include those statements (or wrap them inside <code>if not isdeployed</code> statement that gets executed only when you run it directly on Matlab) . </li>
+</ul>
+<p>If you don't have MatLab installed on your local machine, then you can do the compliation on the machine that has Matlab installed, the build the docker container on your own machine.</p>
+<blockquote>
+<p>NOTE. If you are loading any custom paths via startup.m, those paths may influence how your binary is compiled. At the moment, I don't know a good way to prevent it from loaded when you run build.m. The only workaround might be temporarly edit your startup.m to not include any addpath (or rename startup.m to startup.m.disabled) then run your compile script. </p>
+</blockquote>
+<h2 id="loading-an-encode-fe-structure-from-an-mcc-application">Loading an ENCODE fe structure from an mcc application<a class="headerlink" href="#loading-an-encode-fe-structure-from-an-mcc-application" title="Permanent link">&para;</a></h2>
+<p>If you are writing a function that will load a fe structure containing a sparse tensor array created by ENCODE, you need to add the following decorator above the load function:</p>
+<p><code>%# function sptensor</code></p>
+<p>This lets the compiler know it should include the sptensor class, which <code>load()</code> does not use by default. If you do not include this, a warning will occur when you run the function stating the sptensor class was not found and it will load as an empty field. </p>
+<h2 id="create-a-bash-script-to-run-your-app">Create a bash script to run your app<a class="headerlink" href="#create-a-bash-script-to-run-your-app" title="Permanent link">&para;</a></h2>
+<p>Unless your application sorely consists of matlab, you may want to create another bash script which will do any pre(/post)processing of the data. For example:</p>
+<p>[docker.sh]</p>
+<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+./preprocess.sh <span class="c1">#run some things (need to parse config.json using command line tool like jq)</span>
+./mca/main <span class="c1">#then execute matlab binary</span>
+</pre></div>
+
+
+<h2 id="create-dockerfile-matlab">Create Dockerfile (MatLab)<a class="headerlink" href="#create-dockerfile-matlab" title="Permanent link">&para;</a></h2>
+<p>Before you start working on Dockerfile, make sure you are already familiar with the basic concepts of Docker and <a href="https://docs.docker.com/engine/reference/builder/">how to build docker container</a>. </p>
+<p>All Docker containers have a base-container. This base is used to derive all other containers. If your application uses Matlab, then I recommend using<a href="https://hub.docker.com/r/brainlife/mcr/">the Brain-Life Docker Container</a>. Alternatively, you could also use a more general OS container such as a Ubuntu, CentOS. The <a href="https://store.docker.com/images/63dbd2e1-f29e-498b-8b16-1477770ae733?tab=description">neurodebian container</a> is a good alternative.</p>
+<p>On this example, I am going to use <a href="https://github.com/brain-life/app-life/blob/master/Dockerfile">the LiFE Docker Container</a> as a template (this was compiled using MCR:2016a on Ubuntu Linux compatible with NeuroDebian), but we are going to <a href="https://github.com/brain-life/app-dtiinit">app-dtiinit</a> as an example to build a Docker container. To start:</p>
+<ol>
+<li>cd into your local app-dtiinit folder (this folder should have the main file). </li>
+<li>copy the Dockerfile from <a href="https://github.com/brain-life/app-life/blob/master/Dockerfile">online</a> into the current directory.</li>
+<li>Open the <code>Dockerfile</code> and add the following lines, which will add a series of Docker commands: </li>
+<li>Set the Docker base image and maintainer.
+   <code>FROM brainlife/mcr:R2016a
+   MAINTAINER Your Name &lt;youremail@iu.edu&gt;</code></li>
+<li>Add dependencies. 
+   This app requires the external, package FSL  to add this dependency we will the following lines to the Dockerfile.</li>
+</ol>
+<p><code>RUN sudo apt-get install fsl-complete</code>
+   3. Add the app-dtiinit to the Docker. 
+   We want to put the entire content of you git repository (in our example because we have some MatLab code, the repository has been previously made into a standalone executable and compiled and the compiled version is under app-dtiinit/msa) on to this container somewhere. I am going to put it under /app.
+   <code>ADD . /app</code></p>
+<ol>
+<li>
+<p>Lastly, need to specify the output directory to use
+   <code>RUN mkdir /output
+   WORKDIR /output</code></p>
+</li>
+<li>
+<p>Then set the entry point of your application
+   <code>ENTRYPOINT ["/app/docker.sh"]</code></p>
+</li>
+</ol>
+<p>3b. Prepare for your container to be run under singularity. Singularity allows users to run your container where they don't have root access (or docker engine access). One issue with running Docker container under singularity is that, often dynamically linked libraries creates symlinks under /usr/lib64 directory when they are first executed. (TODO - explain why this fails under singularity). To setup all necessary symlinks before singularity executes the container, run ldconfig at the end of your Dockerfile</p>
+<p><code>RUN ldconfig</code></p>
+<p>For more information about singularity, please see http://singularity.lbl.gov/docs-docker#best-practices</p>
+<ol>
+<li>Now, create a sample config.json on your current directory to be used..</li>
+</ol>
+<p>[config.json]</p>
+<div class="codehilite"><pre><span></span>{
+   &quot;some&quot;: &quot;param&quot;,
+   &quot;another&quot;: 123,
+   &quot;input&quot;: &quot;/input/somefile.nii.gz&quot;
+}
+</pre></div>
+
+
+<ol>
+<li>Build the container (make sure to name it something like <code>-t brainlife/someapp</code>), </li>
+</ol>
+<div class="codehilite"><pre><span></span>docker build -t brainlife/check.
+</pre></div>
+
+
+<ol>
+<li>Then run it to test it</li>
+</ol>
+<div class="codehilite"><pre><span></span>docker run --rm -it \
+        -v /host/input:/input \
+        -v `pwd`:/output \
+        brainlife/yourapp
+</pre></div>
+
+
+<p>7 (optional). You can also save the above two commands into separate .sh files for ease of access. </p>
+<div class="codehilite"><pre><span></span>vim run_docker.sh
+(copy and paste into run_docker.sh
+docker run --rm -it \
+        -v /host/input:/input \
+        -v `pwd`:/output \
+        brainlife/yourapp)
+./run_docker.sh
+</pre></div>
+
+
+<p>Do something similar for building the container into its own build.sh file.</p>
+<h2 id="create-dockerfile-python">Create DockerFile (Python)<a class="headerlink" href="#create-dockerfile-python" title="Permanent link">&para;</a></h2>
+<p>There are a few differences between the Matlab and Python versions of DockerFile. Namely the version and dependencies. While the Matlab one will show how to create one from an existing DockerFile, this part will show how to create a DockerFile from scratch. Please remember to install Docker before continuing.</p>
+<ol>
+<li>In the folder of your Brain-Life application. Create a file called DockerFile.</li>
+</ol>
+<div class="codehilite"><pre><span></span>vim Dockerfile
+</pre></div>
+
+
+<ol>
+<li>In the DockerFile, set the OS and version of Python you would like to use.</li>
+</ol>
+<div class="codehilite"><pre><span></span>FROM ubuntu:16.04 (or whatever OS fits your fancy)
+FROM python:2
+</pre></div>
+
+
+<ol>
+<li>Now install the dependencies your application requires.</li>
+</ol>
+<p>To install pip and git, which you would most likely want to do, add the following to your DockerFile.</p>
+<div class="codehilite"><pre><span></span>RUN apt-get update &amp;&amp; apt-get install -y python-pip git
+</pre></div>
+
+
+<p>To pip install your dependencies add the following command:</p>
+<div class="codehilite"><pre><span></span>RUN pip install numpy Cython your-other-dependencies
+</pre></div>
+
+
+<p>To git clone a repository and install from there add the following</p>
+<div class="codehilite"><pre><span></span>RUN git clone the git url of the repository /rep-name
+RUN cd /rep-name &amp;&amp; python setup.py build_ext --inplace
+</pre></div>
+
+
+<ol>
+<li>Now we need to make a folder for adding our main python files. The DockerFile will run your applications from here.</li>
+</ol>
+<div class="codehilite"><pre><span></span>RUN mkdir /app
+COPY main.py /app
+COPY another necessary .py file /app
+</pre></div>
+
+
+<p>Copy all necessary python files into the app folder.</p>
+<ol>
+<li>We will now create a folder for the output of your application.</li>
+</ol>
+<div class="codehilite"><pre><span></span>RUN mkdir /output
+WORKDIR /output
+</pre></div>
+
+
+<p>If you want to test your application locally, make sure you have your <strong>local</strong> config.json file in the output folder.</p>
+<ol>
+<li>If you did any git clones and install from the setup.py in there make sure you also set the PYTHONPATH like so</li>
+</ol>
+<p>If you installed everything from pip, you may skip this step.</p>
+<div class="codehilite"><pre><span></span>ENV PYTHONPATH /my-git-repo:$PYTHONPATH
+</pre></div>
+
+
+<ol>
+<li>Finally, we add the last line to finish up our DockerFile.</li>
+</ol>
+<div class="codehilite"><pre><span></span>CMD /app/main.py
+</pre></div>
+
+
+<p>Congratulations! You wrote the DockerFile! You can see a full example here: "add example here Aman"</p>
+<h2 id="building-and-running-your-container">Building and running your container<a class="headerlink" href="#building-and-running-your-container" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Build the container (make sure to name it something like <code>-t brainlife/someapp</code>), </li>
+</ol>
+<div class="codehilite"><pre><span></span>docker build -t brainlife/check .
+</pre></div>
+
+
+<ol>
+<li>Then run it to test it</li>
+</ol>
+<div class="codehilite"><pre><span></span>docker run --rm -it \
+        -v /host/input:/input \
+        -v `pwd`:/output \
+        brainlife/yourapp
+</pre></div>
+
+
+<p>3 (optional). You can also save the above two commands into separate .sh files for ease of access. </p>
+<p>run_docker.sh</p>
+<div class="codehilite"><pre><span></span>docker run --rm -it \
+        -v /host/input:/input \
+        -v `pwd`:/output \
+        brainlife/yourapp
+</pre></div>
+
+
+<p>Do something similar for building the container into its own build.sh file.</p>
+<div class="codehilite"><pre><span></span>vim run_docker.sh
+(copy and paste into build.sh)
+docker build -t brainlife/check.
+./build.sh (to run)
+</pre></div>
+
+
+<p>You only need to run the build once, unless you change something in your DockerFile. Otherwise you can directly run with the command or with run_docker.sh.</p>
+<p>You will also probably need to give your run_docker.sh and build.sh permissions.</p>
+<div class="codehilite"><pre><span></span>chmod +x build.sh run_docker.sh
+</pre></div>
+
+
+<h2 id="readme">README<a class="headerlink" href="#readme" title="Permanent link">&para;</a></h2>
+<p>Once you know that your container works, you should push your container to docker hub and update the README of your git repo to include instructions on how to run your container.</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<p>Matlab App Exmple </p>
+<ul>
+<li><a href="https://github.com/brain-life/app-life">github brain-life/app-life</a></li>
+<li><a href="https://hub.docker.com/r/brainlife/life/">dockerhub brainlife/life</a> (Dockerhub Autobuild)</li>
+</ul>
+<p>Dipy (python) App Example</p>
+<ul>
+<li><a href="https://github.com/brain-life/app-dipy-workflows">github brain-life/app-dipy-workflows</a></li>
+</ul>
+                
+                  
+                
+              
+              
+                
+                  
+
+
+  <h2 id="__comments">Comments</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "None";
+      this.page.identifier =
+        "None";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//brainlife-documentation.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../register/" title="Register App" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Register App
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../versioning/" title="Versioning Tips" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Versioning Tips
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.8eb9be28.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
