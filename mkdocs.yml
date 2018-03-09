@@ -1,14 +1,32 @@
-site_name: Brainlife
+site_name: Brainlife Documentation
 theme:
   name: 'material'
+  favicon: 'img/favicon.ico'
   palette:
     primary: 'teal'
+
+pages:
+  - Home: index.md
+  - End Users: 
+    - Project: users/project.md
+  - App Developers: 
+    - Introduction: apps/introduction.md
+    - Hello World: apps/helloworld.md
+    - Register App: apps/register.md
+    - Containerizing App: apps/container.md
+    - Versioning Tips: apps/versioning.md
+    - Custom Hooks: apps/customhooks.md
+  - Resource Provider: 
+    - Registering Resource: resources/register.md
+  - Data Publisher: 
+    - Todo: todo.md
+  - Learners: 
+    - Todo: todo.md
 
 extra:
   disqus: 'brainlife-documentation'
 
-pages:
-  - Home: index.md
-  - About: about.md
-
-
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc(permalink=true)

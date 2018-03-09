@@ -8,7 +8,7 @@
   },
   "scripts": {
     "deploy": "mkdocs gh-deploy",
-    "serve": "mkdocs serve"
+    "dev": "mkdocs serve"
   },
   "author": "",
   "license": "ISC"
