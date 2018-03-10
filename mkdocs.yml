@@ -24,7 +24,7 @@ pages:
     - Todo: todo.md
 
 extra:
-  disqus: 'brainlife-documentation'
+  disqus: 'brain-life'
 
 markdown_extensions:
   - admonition
