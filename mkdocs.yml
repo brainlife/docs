@@ -22,6 +22,8 @@ pages:
     - Todo: todo.md
   - Learners: 
     - Todo: todo.md
+  - Technical:
+    - Introduction: technical/index.md
 
 extra:
   disqus: 'brain-life'

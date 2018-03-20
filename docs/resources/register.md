@@ -95,6 +95,14 @@ export SINGULARITY_CACHEDIR=/N/dc2/scratch/<username>/singularity-cachedir
 
 > Please replace <username> with your username, and make sure specified directories exists.
 
+### Other ENV parameters
+
+Depending on the app you are trying to run, some app may require additional ENV parameters. For example, brain-life/app-freesurfer requires you to provide your freesurfer license via `FREESURFER_LICENSE`.
+
+```
+export FREESURFER_LICENSE="hayashis@iu.edu 29511 *CPmh9xvKQKHE FSg0ijTusqaQc"
+```
+
 ## Enabling Apps
 
 Once you have registered and tested your resource, you can now enable apps to run on your resource.
