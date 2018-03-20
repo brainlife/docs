@@ -23,7 +23,7 @@ pages:
   - Learners: 
     - Todo: todo.md
   - Technical:
-    - Introduction: technical/index.md
+    - APIs: technical/api.md
 
 extra:
   disqus: 'brain-life'
