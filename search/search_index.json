@@ -256,42 +256,42 @@
             "title": "Todo"
         }, 
         {
-            "location": "/technical/", 
-            "text": "Brainlife platform consists of various microservices which enables various functionalities available to our end-users through our web UI. This document describes some of these services in case you might be interested in knowing how Brainlife works or directly interfacing with these services through its APIs.\n\n\nWarehouse\n\n\nWarehouse\n is the main application responsible for bulk of Brainlife platform UI.\n\n\nWarehouse API Doc\n\n\nWarehouse Github\n\n\nCLI\n\n\nYou can use Brainlife CLI to import / export datasets, among other things. At the moment, we have a very limited CLI support. CLI is simply a wrapper around Brainlife APIs for various services listed in this page. You can use other APIs to perform necessary action if necessary.\n\n\nCLI Github\n\n\nAmaretti\n\n\nAmaretti\n is responsible for submitting, monitoring, and interfacing with apps running on various resources that you have access to. Please see Amaretti technical doc for more information.\n\n\nAmaretti Technical Doc\n\n\nAMaretti Github\n\n\nAmaretti API Doc\n\n\nOther APIs\n\n\nAuthentication Service\n\n\nAuth Github\n\n\nAuth API Doc\n\n\nEvent Service\n\n\nEvent Github\n\n\nEvent API Doc\n\n\nProfile Service\n\n\nProfile Github\n\n\nProfile API Doc", 
-            "title": "Introduction"
+            "location": "/technical/api/", 
+            "text": "Brainlife platform consists of various microservices which enables various functionalities available to our end-users through our web UI. This document describes some of these services in case you might be interested in knowing how Brainlife works or directly interfacing with these services through its APIs.\n\n\nWarehouse\n\n\nWarehouse is the main application responsible for bulk of Brainlife platform UI.\n\n\nWarehouse API Doc\n\n\nWarehouse Github\n\n\nCLI\n\n\nYou can use Brainlife CLI to import / export datasets, among other things. At the moment, we have a very limited CLI support. CLI is simply a wrapper around Brainlife APIs for various services listed in this page. You can use other APIs to perform necessary action if necessary.\n\n\nCLI Github\n\n\nAmaretti\n\n\nAmaretti\n is responsible for submitting, monitoring, and interfacing with apps running on various resources that you have access to. Please see Amaretti technical doc for more information.\n\n\nAmaretti Technical Doc\n\n\nAMaretti Github\n\n\nAmaretti API Doc\n\n\nOther APIs\n\n\nAuthentication Service\n\n\nAuth Github\n\n\nAuth API Doc\n\n\nEvent Service\n\n\nEvent Github\n\n\nEvent API Doc\n\n\nProfile Service\n\n\nProfile Github\n\n\nProfile API Doc", 
+            "title": "APIs"
         }, 
         {
-            "location": "/technical/#warehouse", 
-            "text": "Warehouse  is the main application responsible for bulk of Brainlife platform UI.  Warehouse API Doc  Warehouse Github", 
+            "location": "/technical/api/#warehouse", 
+            "text": "Warehouse is the main application responsible for bulk of Brainlife platform UI.  Warehouse API Doc  Warehouse Github", 
             "title": "Warehouse"
         }, 
         {
-            "location": "/technical/#cli", 
+            "location": "/technical/api/#cli", 
             "text": "You can use Brainlife CLI to import / export datasets, among other things. At the moment, we have a very limited CLI support. CLI is simply a wrapper around Brainlife APIs for various services listed in this page. You can use other APIs to perform necessary action if necessary.  CLI Github", 
             "title": "CLI"
         }, 
         {
-            "location": "/technical/#amaretti", 
+            "location": "/technical/api/#amaretti", 
             "text": "Amaretti  is responsible for submitting, monitoring, and interfacing with apps running on various resources that you have access to. Please see Amaretti technical doc for more information.  Amaretti Technical Doc  AMaretti Github  Amaretti API Doc", 
             "title": "Amaretti"
         }, 
         {
-            "location": "/technical/#other-apis", 
+            "location": "/technical/api/#other-apis", 
             "text": "", 
             "title": "Other APIs"
         }, 
         {
-            "location": "/technical/#authentication-service", 
+            "location": "/technical/api/#authentication-service", 
             "text": "Auth Github  Auth API Doc", 
             "title": "Authentication Service"
         }, 
         {
-            "location": "/technical/#event-service", 
+            "location": "/technical/api/#event-service", 
             "text": "Event Github  Event API Doc", 
             "title": "Event Service"
         }, 
         {
-            "location": "/technical/#profile-service", 
+            "location": "/technical/api/#profile-service", 
             "text": "Profile Github  Profile API Doc", 
             "title": "Profile Service"
         }
