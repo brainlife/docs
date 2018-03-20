@@ -421,6 +421,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#other-env-parameters" title="Other ENV parameters" class="md-nav__link">
+    Other ENV parameters
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -527,6 +534,42 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Technical
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Technical
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../technical/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -604,6 +647,13 @@
           <li class="md-nav__item">
   <a href="#common-binaries" title="Common Binaries" class="md-nav__link">
     Common Binaries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-env-parameters" title="Other ENV parameters" class="md-nav__link">
+    Other ENV parameters
   </a>
   
 </li>
@@ -725,6 +775,12 @@ git clone https://github.com/brain-life/abcd-spec
 <blockquote>
 <p>Please replace <username> with your username, and make sure specified directories exists.</p>
 </blockquote>
+<h3 id="other-env-parameters">Other ENV parameters<a class="headerlink" href="#other-env-parameters" title="Permanent link">&para;</a></h3>
+<p>Depending on the app you are trying to run, some app may require additional ENV parameters. For example, brain-life/app-freesurfer requires you to provide your freesurfer license via <code>FREESURFER_LICENSE</code>.</p>
+<div class="codehilite"><pre><span></span>export FREESURFER_LICENSE=&quot;hayashis@iu.edu 29511 *CPmh9xvKQKHE FSg0ijTusqaQc&quot;
+</pre></div>
+
+
 <h2 id="enabling-apps">Enabling Apps<a class="headerlink" href="#enabling-apps" title="Permanent link">&para;</a></h2>
 <p>Once you have registered and tested your resource, you can now enable apps to run on your resource.</p>
 <p>Go back to the Brainlife's <a href="https://brainlife.io/amaretti/#!/resources">resource settings page</a>, and click the resource you have created. Under the services section, enter the git org/repo name (such as like <code>brain-life/app-life</code>) for the app that you'd like to enable, and the score for each service. The higher the score is, the more likely the resource will be chosen to run your app (if there are multiple resources available). Brainlife gives higher score for resources that you own (not shared ones), you should leave it the default of 10 unless it's competing with other resource that you have access to. Click OK.</p>
