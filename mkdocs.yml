@@ -51,3 +51,4 @@ markdown_extensions:
   - admonition
   - codehilite
   - toc(permalink=true)
+  - fontawesome_markdown
