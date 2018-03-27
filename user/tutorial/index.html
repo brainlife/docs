@@ -332,6 +332,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#visualize-dataset" title="Visualize Dataset" class="md-nav__link">
+    Visualize Dataset
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloading-bids" title="Downloading BIDS" class="md-nav__link">
+    Downloading BIDS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process" title="Process" class="md-nav__link">
+    Process
+  </a>
+  
+</li>
+      
       
       
       
@@ -695,6 +716,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#visualize-dataset" title="Visualize Dataset" class="md-nav__link">
+    Visualize Dataset
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloading-bids" title="Downloading BIDS" class="md-nav__link">
+    Downloading BIDS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process" title="Process" class="md-nav__link">
+    Process
+  </a>
+  
+</li>
+      
       
       
       
@@ -753,14 +795,49 @@
 <p>Brainlife has 2 kinds of data storages. </p>
 <ul>
 <li>
-<p>Datasets Archive</p>
-<p>The datasets tab you are seeing now shows the current content of your datasets archive. Datasets stored under this tab will be stored in our object storage permanently (and some are even backed up to our tape archives).</p>
+<p><strong>Datasets Archive</strong></p>
+<p>The datasets tab you are seeing now shows the current content of your dataset archive. Datasets under this tab are stored in our object storage permanently (and some are backed up to our tape archives also).</p>
 </li>
 <li>
-<p>Process Scratch Disk</p>
-<p>You can not directly use archived datasets to run apps. To run apps, datasets will be automatically staged out of your archive and transferred to Brainlife's scratch volumes and on compute resources where apps are actually submitted. </p>
+<p><strong>Process Scratch Space</strong></p>
+<p>You can not directly use archived datasets to run apps. To run apps, datasets will be automatically staged out of your archive and transferred to Brainlife's scratch space and on various compute resources where apps are executed.</p>
+<p>Datasets on process scratch space will be automatically removed within 25 (or sonner). If you have any output datasets that you'd like to keep them permanently, you will need to archive it back to the Dataset Archive. </p>
 </li>
 </ul>
+<p>Now, click <code>plus button</code> at the bottom of the screen to open the dataset upload dialog.</p>
+<p><img alt="upload form" src="../../img/upload.form.png" /></p>
+<p>Select Datatype that you'd like to upload (currently limited to t1/t2 and dwi) and upload your dataset. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don't have any data to upload, you can skip this step and you can use pre-uploaded datasets from various public projects.</p>
+</div>
+<p>Upload form will run server side validation / data normalization service. You can check the result from this step. If everything looks good, click <code>Archive</code>.</p>
+<p><img alt="update validate" src="../../img/upload.validate.png" /></p>
+<p>Once uploaded, you should see a new dialog showing details about your new datasets. All archived datasets are immutable (readonly), but you can make changes to the metadata if necessary (desc, tags, etc..) </p>
+<p><img alt="dataset" src="../../img/dataset.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>Stored in</code> field shows where your dataset is archived. For larger dataset, it might take a while for it to be archived. Please give a few minutes.</p>
+</div>
+<h2 id="visualize-dataset">Visualize Dataset<a class="headerlink" href="#visualize-dataset" title="Permanent link">&para;</a></h2>
+<p>Any datasets stored in Brainlife can be visualized using Web-based and Native(Docker) visualization apps registered for specific datatypes. To launch a visualizer, click on visualizer icon(<i class="fa fa-eye"></i>) at the top of dataset dialog.</p>
+<p>For example, <code>neuro/anat/t1</code> datasets can be visualized by following set of Visualization apps.</p>
+<p><img alt="dataset" src="../../img/viewers.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Similar to <code>Apps</code>, developers can develop and contribute new visualization apps to run on Brainlife. If you are developing visualization apps, or have apps that you'd like us to add, please contact us at <a href="mailto:brlife@iu.edu">brlife@iu.edu</a>.</p>
+</div>
+<p>Click any of the visualization app that you'd like to launch to visualize your data. </p>
+<h2 id="downloading-bids">Downloading BIDS<a class="headerlink" href="#downloading-bids" title="Permanent link">&para;</a></h2>
+<p>You can search / select and bulk download datasets. On the dataset table, select datasets you'd like to download by clicking on the check box, then click <code>Download (BIDS)</code> button.</p>
+<p><img alt="dataset" src="../../img/download.png" /></p>
+<p>Brainlife will stage selected datasets, and organize them into BIDS structure. Once the package is ready, you can click on <code>Download</code> button to download the tar ball containing all datasets you have selected.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At the moment, all datasets will simply be stored under <code>/derivatives</code> directory - due to limitation on BIDS specification.</p>
+</div>
+<h2 id="process">Process<a class="headerlink" href="#process" title="Permanent link">&para;</a></h2>
+<p>A key feature of Brainlife is to be able to register </p>
                 
                   
                 
