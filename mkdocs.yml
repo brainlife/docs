@@ -1,14 +1,29 @@
 site_name: Brainlife Documentation
+site_author: 'Soichi Hayashi'
+site_url: 'https://brain-life.github.io/docs/'
+
+# Repository
+repo_name: 'brain-life/docs'
+repo_url: 'https://github.com/brain-life/docs'
+
+copyright: 'Copyright &copy; 2017 - 2018 Brainlife.io'
+
 theme:
   name: 'material'
-  favicon: 'img/favicon.ico'
+  favicon: '/img/favicon.ico'
   palette:
-    primary: 'teal'
+    primary: 'light blue'
 
 pages:
   - Home: index.md
-  - End Users: 
-    - Project: users/project.md
+  - About: about.md
+  - Brainlife UI:
+    - Tutorial: user/tutorial.md
+    - Projects: user/project.md
+    - Datasets: user/dataset.md
+    - Processes: user/process.md
+    - Pipeline: user/pipeline.md
+    - Publication: user/publication.md
   - App Developers: 
     - Introduction: apps/introduction.md
     - Hello World: apps/helloworld.md
@@ -27,7 +42,11 @@ pages:
 
 extra:
   disqus: 'brain-life'
-
+  social:
+    - type: 'github'
+      link: 'https://github.com/brain-life'
+    - type: 'twitter'
+      link: 'https://twitter.com/BrainLifeio'
 markdown_extensions:
   - admonition
   - codehilite

@@ -1,3 +1,8 @@
+
+<!--
+![logo](/img/brainlife.logo.png)
+-->
+
 # Brainlife Documentation
 
 Welcome to Brainlife documentation! This site contains up-to-date information about the Brainlife platform. The information is organized based on
