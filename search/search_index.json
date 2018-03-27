@@ -16,19 +16,59 @@
             "title": "Contact"
         }, 
         {
-            "location": "/users/project/", 
-            "text": "Projects\n\n\nProject contains your datasets, executed processes, publication records, and pipeline rules.\n\n\nEach project can be set to use either \npublic\n or \nprivate\n access policy, and you can define a group of users to be either \nadmins\n, \nmembers\n or both.  Only the project \nadministrators\n are allowed to update the project access policy, and edit \nadmins\n and \nmembers\n of the project.\n\n\nPrivate\n project allows only the project members to download, or use the datasets to process data. Only the admins and project members can find the project metadata.\n\n\nPublic\n project allows anyone registered on Brainlife to download and use the datasets to process data. \n\n\nFollowing table show who can perform which action under Public and Private project.\n\n\n\n\n\n\n\n\nAction\n\n\nPublic Project\n\n\nPrivate Project\n\n\n\n\n\n\n\n\n\n\nUpdate project detail\n\n\nAdmin\n\n\nAdmin\n\n\n\n\n\n\nSee project detail\n\n\nAdmin / Members\n\n\nAdmin / Members\n\n\n\n\n\n\nList datasets\n\n\nAdmin / Members\n\n\nAdmin / Members\n\n\n\n\n\n\nDownload datasets\n\n\nAdmin / Members\n\n\nAdmin / Members\n\n\n\n\n\n\nUpdate dataset detail\n\n\nAdmin / Members\n\n\nAdmin / Members\n\n\n\n\n\n\nCreate publication record\n\n\nAdmin / Members\n\n\nAdmin / Members\n\n\n\n\n\n\nUpdate publication record\n\n\nAdmin / Members\n\n\nAdmin / Members\n\n\n\n\n\n\nUpload datasets\n\n\nAdmin / Members\n\n\nAdmin / Members\n\n\n\n\n\n\nList processes\n\n\nAdmin / Members\n\n\nAdmin / Members\n\n\n\n\n\n\nSubmit new process\n\n\nAdmin / Members\n\n\nAdmin / Members\n\n\n\n\n\n\nAccess process output\n\n\nAdmin / Members\n\n\nAdmin / Members\n\n\n\n\n\n\nList published datasets\n\n\nAdmin / Members / Guest\n\n\nAdmin / Members / Guest\n\n\n\n\n\n\nList publication records\n\n\nAdmin / Members / Guest\n\n\nAdmin / Members / Guest\n\n\n\n\n\n\nDownload published datasets\n\n\nAdmin / Members / Guest\n\n\nAdmin / Members / Guest\n\n\n\n\n\n\n\n\nDataset Archive\n\n\nOnce you store your dataset on project dataset page, they will be stored in Brainlife \narchive\n and be stored until you remove them. Once you store your dataset, the content of the data (the raw files) can not be modified, although you can still update the description, metadata, and tags. When you submit a process, the datasets from the archive will be automatically staged out of the archive to the remote computing resources that you have access to.\n\n\n\n\nNote\n\n\nWhen you create a publications record, datasets that are part of the publication will be copied to a secure tape archive (IU SDA/HPSS system)\nfor added data security.", 
-            "title": "Project"
+            "location": "/about/", 
+            "text": "Here is about", 
+            "title": "About"
         }, 
         {
-            "location": "/users/project/#projects", 
-            "text": "Project contains your datasets, executed processes, publication records, and pipeline rules.  Each project can be set to use either  public  or  private  access policy, and you can define a group of users to be either  admins ,  members  or both.  Only the project  administrators  are allowed to update the project access policy, and edit  admins  and  members  of the project.  Private  project allows only the project members to download, or use the datasets to process data. Only the admins and project members can find the project metadata.  Public  project allows anyone registered on Brainlife to download and use the datasets to process data.   Following table show who can perform which action under Public and Private project.     Action  Public Project  Private Project      Update project detail  Admin  Admin    See project detail  Admin / Members  Admin / Members    List datasets  Admin / Members  Admin / Members    Download datasets  Admin / Members  Admin / Members    Update dataset detail  Admin / Members  Admin / Members    Create publication record  Admin / Members  Admin / Members    Update publication record  Admin / Members  Admin / Members    Upload datasets  Admin / Members  Admin / Members    List processes  Admin / Members  Admin / Members    Submit new process  Admin / Members  Admin / Members    Access process output  Admin / Members  Admin / Members    List published datasets  Admin / Members / Guest  Admin / Members / Guest    List publication records  Admin / Members / Guest  Admin / Members / Guest    Download published datasets  Admin / Members / Guest  Admin / Members / Guest", 
+            "location": "/user/tutorial/", 
+            "text": "Tutorial\n\n\nThis tutorial will guides you through some main functionalities of Brainlife.io. For more high-level overview of Brainlife, see \nAbout Page\n.\n\n\nSign Up\n\n\nIf you have not registered to Brainlife.io yet, please do so by visiting The \nAuthentication Page\n and clicking on a preferred 3rd party authentication method; Google, ORCID, Github, or through your institution.\n\n\n\n\nWarning\n\n\nIf you register through the 3rd party authenticator, please use the same authenticator each time you login, or you will end up creating multiple Brainlife accounts. \n\n\n\n\nIf you'd like to setup a dedicated user/pass for Brainlife, please click \"Sign Up\" link to enter a new user name / password. You will be asked to confirm your email address once you register.\n\n\n\n\nNote\n\n\nYou can associate multiple authenticator to your account once you register, by going to Settings / Account, Connected Accounts, and click \"Connect\" next to various 3rd party authenticators. \n\n\n\n\nCreate Project\n\n\nOnce you login, you should land on Brainlife Apps page. \n\n\nBefore we can start using Brainlife, we need to create a new project. \n\n\nClick on \nProject\n button on the left hand side menu, then click a plus side button at the bottom of the project list.\n\n\n\n\n\n\nNote\n\n\nProject\n is where you can organize your dataset, do data processing, and share them with your project members. For more information about project, please read \nproject page\n\n\n\n\nEnter any \nname\n, and \ndescription\n, and leave everything else default. Click \nSubmit\n. \n\n\nCongratulations! You just created your first private project!\n\n\nUpload Dataset\n\n\nNow, let's upload some test datasets. Open the \nDatasets\n tab.\n\n\n\n\nNote\n\n\nIn Brainlife, datasets are set of files / directories for specific modality or data derivatives, for a specific subject. All data processing is done at the subject level. Datasets are immutable;you can only modify the metadata, but not the data files once you create them.\n\n\n\n\nBrainlife has 2 kinds of data storages. \n\n\n\n\n\n\nDatasets Archive\n\n\nThe datasets tab you are seeing now shows the current content of your datasets archive. Datasets stored under this tab will be stored in our object storage permanently (and some are even backed up to our tape archives).\n\n\n\n\n\n\nProcess Scratch Disk\n\n\nYou can not directly use archived datasets to run apps. To run apps, datasets will be automatically staged out of your archive and transferred to Brainlife's scratch volumes and on compute resources where apps are actually submitted.", 
+            "title": "Tutorial"
+        }, 
+        {
+            "location": "/user/tutorial/#tutorial", 
+            "text": "This tutorial will guides you through some main functionalities of Brainlife.io. For more high-level overview of Brainlife, see  About Page .", 
+            "title": "Tutorial"
+        }, 
+        {
+            "location": "/user/tutorial/#sign-up", 
+            "text": "If you have not registered to Brainlife.io yet, please do so by visiting The  Authentication Page  and clicking on a preferred 3rd party authentication method; Google, ORCID, Github, or through your institution.   Warning  If you register through the 3rd party authenticator, please use the same authenticator each time you login, or you will end up creating multiple Brainlife accounts.    If you'd like to setup a dedicated user/pass for Brainlife, please click \"Sign Up\" link to enter a new user name / password. You will be asked to confirm your email address once you register.   Note  You can associate multiple authenticator to your account once you register, by going to Settings / Account, Connected Accounts, and click \"Connect\" next to various 3rd party authenticators.", 
+            "title": "Sign Up"
+        }, 
+        {
+            "location": "/user/tutorial/#create-project", 
+            "text": "Once you login, you should land on Brainlife Apps page.   Before we can start using Brainlife, we need to create a new project.   Click on  Project  button on the left hand side menu, then click a plus side button at the bottom of the project list.    Note  Project  is where you can organize your dataset, do data processing, and share them with your project members. For more information about project, please read  project page   Enter any  name , and  description , and leave everything else default. Click  Submit .   Congratulations! You just created your first private project!", 
+            "title": "Create Project"
+        }, 
+        {
+            "location": "/user/tutorial/#upload-dataset", 
+            "text": "Now, let's upload some test datasets. Open the  Datasets  tab.   Note  In Brainlife, datasets are set of files / directories for specific modality or data derivatives, for a specific subject. All data processing is done at the subject level. Datasets are immutable;you can only modify the metadata, but not the data files once you create them.   Brainlife has 2 kinds of data storages.     Datasets Archive  The datasets tab you are seeing now shows the current content of your datasets archive. Datasets stored under this tab will be stored in our object storage permanently (and some are even backed up to our tape archives).    Process Scratch Disk  You can not directly use archived datasets to run apps. To run apps, datasets will be automatically staged out of your archive and transferred to Brainlife's scratch volumes and on compute resources where apps are actually submitted.", 
+            "title": "Upload Dataset"
+        }, 
+        {
+            "location": "/user/project/", 
+            "text": "", 
             "title": "Projects"
         }, 
         {
-            "location": "/users/project/#dataset-archive", 
-            "text": "Once you store your dataset on project dataset page, they will be stored in Brainlife  archive  and be stored until you remove them. Once you store your dataset, the content of the data (the raw files) can not be modified, although you can still update the description, metadata, and tags. When you submit a process, the datasets from the archive will be automatically staged out of the archive to the remote computing resources that you have access to.   Note  When you create a publications record, datasets that are part of the publication will be copied to a secure tape archive (IU SDA/HPSS system)\nfor added data security.", 
-            "title": "Dataset Archive"
+            "location": "/user/dataset/", 
+            "text": "", 
+            "title": "Datasets"
+        }, 
+        {
+            "location": "/user/process/", 
+            "text": "", 
+            "title": "Processes"
+        }, 
+        {
+            "location": "/user/pipeline/", 
+            "text": "", 
+            "title": "Pipeline"
+        }, 
+        {
+            "location": "/user/publication/", 
+            "text": "", 
+            "title": "Publication"
         }, 
         {
             "location": "/apps/introduction/", 
