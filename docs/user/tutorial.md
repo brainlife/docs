@@ -90,11 +90,18 @@ You can search / select and bulk download datasets. On the dataset table, select
 
 ![dataset](/img/download.png)
 
-Brainlife will stage selected datasets, and organize them into BIDS structure. Once the package is ready, you can click on `Download` button to download the tar ball containing all datasets you have selected.
+Brainlife will stage selected datasets, organize them into a BIDS structure, and let you download the whole structure as a single tar ball. Once it's ready, click `Download`.
 
 !!! note 
     At the moment, all datasets will simply be stored under `/derivatives` directory - due to limitation on BIDS specification.
 
-## Process
+## Apps
 
-A key feature of Brainlife is to be able to register 
+Before we proceed to `Process` tab, let's take a detour and visit the `Apps` page.  
+
+![dataset](/img/apps.png)
+
+This page shows all Brainlife apps that are publicly available that you can execute on resources and datasets that you have access to. Please take a look and see what type of apps are available. You can click on each tiles to see more details.
+
+On Brainlife, **apps* are usually small programs that perform specific set of data processing. Although we have a few apps that behaves more like a *pipeline* or *workflow*, most Brainlife apps only does one thing, and one thing well. By joining these small apps together to form a *workflow*, it gives you greater flexibility, increased code reuse, and allow developers to focus on the task that they want to implement, rather than pre/post processing normally required to make the app functional.
+
