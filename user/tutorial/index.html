@@ -409,8 +409,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../dataset/" title="Datasets" class="md-nav__link">
-      Datasets
+    <a href="../datatypes/" title="Datatypes" class="md-nav__link">
+      Datatypes
     </a>
   </li>
 
@@ -902,11 +902,11 @@
 <p><img alt="dataset" src="../../img/apps.png" /></p>
 <p>The <code>Apps</code> page shows all Brainlife apps that are publicly available that you can execute on resources and datasets that you have access to. Please take a look and see what type of apps are currently available. You can click on each tiles to see more details.</p>
 <p>On Brainlife, <em><em>apps</em> are normally small programs that perform specific set of data processing. Although we have a few apps that behaves more like a typical </em>pipeline<em> or </em>workflow* (including pre/post processing, data analysis, reporting, etc..), most Brainlife apps should only do one thing, and one thing well. Please see (about)[/about] for more details.</p>
-<p>Brainlife apps interoperate through <code>datatypes</code>. Each developer can define set of files / directory structure in order to exchange input/output data between 2 apps. </p>
+<p>Brainlife apps interoperate through <code>datatypes</code>. Developers exchanging input/output dataset should discuss and agree on set of files / directory structure between the apps and register new datatype by submitting an issue ticket on <a href="https://github.com/brain-life/datatypes">datatypes github repo</a></p>
 <p><img alt="dataset" src="../../img/datatype.png" /></p>
 <p>Various colored boxes shows the input and output datatypes. For example, above image shows that this app will take <code>dwi</code> input dataset, and generates another <code>dwi</code> dataset with datatype tag of "masked", and also output another dataset of a datatype <code>mask</code>. </p>
-<!--If you are familiar with an electronic prototyping product called *littleBits*, it is very similar in the concept.-->
-
+<p>For more information on datatype, please visit <a href="../../user/datatypes">datatypes page</a>
+<!--If you are familiar with an electronic prototyping product called *littleBits*, it is very similar in the concept.--></p>
 <h2 id="data-processing">Data Processing<a class="headerlink" href="#data-processing" title="Permanent link">&para;</a></h2>
 <p>Now that we know what <code>Apps</code> are, let's go back to your private project, then open <code>Processes</code> tab. You should see an empty page as you don't have any processes yet. On Brainlife, <code>Process</code> where you can submit a group of tasks/apps that can share input / output datasets. </p>
 <p>Let's create a new process by clicking the plus button at the right bottom corner of the page. Enter any name you'd like for your process. You should see a screen that looks like this now.</p>
