@@ -616,7 +616,7 @@
                 
                   <h1>Hello World</h1>
                 
-                <p>Let's begin by creating a brand <a href="https://help.github.com/articles/creating-a-new-repository/">new github repository</a>. Please be sure to make the repository public so that Brain-Life can download your app.</p>
+                <p>Let's begin by creating a brand new <a href="https://help.github.com/articles/creating-a-new-repository/">github repository</a>. Please be sure to make the repository public so that Brain-Life can download your app.</p>
 <p>Git clone your new repository to where you will be developing and running your app to test.</p>
 <div class="codehilite"><pre><span></span>git clone git@github.com:soichih/app-test.git
 </pre></div>
@@ -647,15 +647,19 @@
 
 
 <blockquote>
-<p><a href="https://stedolan.github.io/jq/"><code>jq</code></a> is a common command line tool used to parse a small JSON file and pull values out of it. You can install it by <code>apt-get install jq</code>.</p>
+<p><a href="https://stedolan.github.io/jq/"><code>jq</code></a> is a common command line tool used to parse a small JSON file and pull values out of it. You can install it by <code>apt-get install jq</code>. </p>
 </blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All Brainlife resource should at least have <code>jq</code> and <code>singularity</code> command installed. </p>
+</div>
 <p>Following part in <code>main</code> instructs PBS (or slurm job manager) to request certain number of nodes / process-per-node. It's not necessary if you are not planning to run your app via PBS scheduler.</p>
 <div class="codehilite"><pre><span></span>#PBS -l nodes=1:ppn=1
 #PBS -l walltime=00:05:00
 </pre></div>
 
 
-<p>You can receive input parameters from Brain-Life through a JSON file called <code>config.json</code> which is created by Brain-Life when the app is executed through Brain-Life. </p>
+<p>You can receive input parameters from Brainlife through a JSON file called <code>config.json</code> which is created by Brainlife when the app is executed. See <a href="https://github.com/brain-life/app-dtiinit/blob/master/config.json.sample">Example config.json</a>.</p>
 <p>Following lines parses the <code>config.json</code> using <code>jq</code> and pass it to the main part of the application <code>main.py</code>.</p>
 <div class="codehilite"><pre><span></span>#parse config.json for input parameters
 t1=$(jq -r .t1 config.json)
@@ -671,10 +675,12 @@ t1=$(jq -r .t1 config.json)
 
 
 <p>You should add this file to .gitignore since it is only used locally on your machine to test your app.</p>
-<blockquote>
-<p>Instead of using <code>jq</code> command to parse <code>config.json</code> in <code>main</code>, you can use python's json parsing library inside <code>main.py</code> if you prefer.</p>
-</blockquote>
-<p>Finally, the <code>main</code> runs a python script called <code>main.py</code>. Let's create it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Instead of using <code>jq</code> command to parse <code>config.json</code> in <code>main</code>, you can use python's json parsing library (<code>import json</code>) inside <code>main.py</code> if you prefer.</p>
+<p>Or..  for Matlab, you could use <a href="https://github.com/fangq/jsonlab.git">jsonlab</a> module to parse the json.</p>
+</div>
+<p>Our <code>main</code> script runs a python script called <code>main.py</code>. Let's create it.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -686,36 +692,45 @@ t1=$(jq -r .t1 config.json)
  9
 10
 11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">dipy.tracking</span> <span class="kn">as</span> <span class="nn">dipytracking</span>
 <span class="n">dipytracking</span><span class="o">.</span><span class="n">bench</span><span class="p">()</span>
 
 <span class="n">t1</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
 
+<span class="c1">#do something interesting with t1...</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
 <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;output.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </td></tr></table>
 
-<p>Any output files from your app should be written to the current directory, so that Brain-Life can pick them up. Please be sure to add any output files from your app to .gitignore so that it won't be part of your git repo.</p>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p>Please contribute to make this a bit more interesting hello world example!</p>
+</div>
+<p>Any output files from your app should be written to the current directory so that Brainlife can pick them up after your job is completed. For now, we are not going to worry about the output datatype (we are going to use <code>raw</code>)</p>
+<p>Please be sure to add any output files from your app to .gitignore so that it won't be part of your git repo after you </p>
 <p><code>.gitignore</code></p>
-<div class="codehilite"><pre><span></span>output.txt
+<div class="codehilite"><pre><span></span>config.json
+output.txt
 </pre></div>
 
 
-<p>Now, you can test run your app simply by executing <code>main</code></p>
+<p>Now, you should be able to test run your app simply by executing <code>main</code></p>
 <div class="codehilite"><pre><span></span>./main
-...
 </pre></div>
 
 
-<blockquote>
-<p>If you are testing on HPC clusters, be sure to enter the interactive shell session before running your <code>main</code> by executing something like <code>qsub -I</code></p>
-</blockquote>
+<!--
+!!! hint
+    If you are testing on HPC clusters, be sure to enter the interactive shell session before running your `main` by executing something like `qsub -I`
+-->
+
 <p>If your app outputs correct output file on the local directgory, your application is ready to be pushed to the github. </p>
 <div class="codehilite"><pre><span></span>git add .
 git commit -m&quot;initial import&quot;
@@ -723,17 +738,21 @@ git push
 </pre></div>
 
 
-<p>Now you are ready to register your application on the Brian-Life so that your user can start submitting your app!</p>
-<p>To summarize, Brain-Life app has following characteristics.</p>
+<p>Now you are ready to register your app on the Brianlife to run it through Brainlife!</p>
+<p>To summarize, we've done following to create Brainlife app.</p>
 <ul>
-<li>Published in Github.</li>
-<li>It has <code>main</code> which starts the app.</li>
-<li>It reads input parameters from <code>config.json</code> created by Brain-Life on the current directory.</li>
-<li>It writes output files on the current directory.</li>
+<li>Created a new repo on Github.</li>
+<li>Created <code>main</code> which runs the app.</li>
+<li>App reads input parameters from <code>config.json</code> created by Brainlife at runtime (we created a test <code>config.json</code>  to test our app).</li>
+<li>App writes output files to the current directory (and an expected format for each datatype - we will work on this later)</li>
 </ul>
-<blockquote>
-<p>For more examples on Brain-Life apps, please see <a href="https://github.com/search?q=org%3Abrain-life+app-">Brain-Life hosted apps</a>.</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You can see more concrete examples of Brainlife apps at <a href="https://github.com/search?q=org%3Abrain-life+app-">Brainlife hosted apps</a>.</p>
+</div>
+<!--
+All input parameters are assumed to be text (char). You need to write your functions that are going to be MATLAB compiled with all the arguments as text. Arguments passing a number need to be given as text and within the function converted to integers values (str2num(), etc.). 
+-->
                 
                   
                 

@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#basic-info" tabindex="1" class="md-skip">
+      <a href="#registering-app" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -410,6 +410,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         Register App
@@ -423,21 +425,43 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basic-info" title="Basic Info" class="md-nav__link">
-    Basic Info
+  <a href="#detail" title="Detail" class="md-nav__link">
+    Detail
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avatar" title="Avatar" class="md-nav__link">
+    Avatar
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#project" title="Project" class="md-nav__link">
+    Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#branch" title="Branch" class="md-nav__link">
     Branch
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -698,21 +722,43 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basic-info" title="Basic Info" class="md-nav__link">
-    Basic Info
+  <a href="#detail" title="Detail" class="md-nav__link">
+    Detail
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avatar" title="Avatar" class="md-nav__link">
+    Avatar
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#project" title="Project" class="md-nav__link">
+    Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#branch" title="Branch" class="md-nav__link">
     Branch
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -782,23 +828,23 @@
                   <a href="https://github.com/brain-life/docs/edit/master/docs/apps/register.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Register App</h1>
-                
-                <p>Once you have developed your app, you can register it on Brain-Life so that other users can discover and execute your app. </p>
-<p>First, head to <a href="https://brainlife.io/warehouse/#/apps">Brain-Life's Apps page</a>. Click on the <code>Plus Button</code> on the bottom right corner of the page. 
-![plus]({{ "/assets/s/plus.png" | absolute_url }}) </p>
-<h2 id="basic-info">Basic Info<a class="headerlink" href="#basic-info" title="Permanent link">&para;</a></h2>
-<p>On "New App" form, fill out name / description, and classification tags. Classification tag is used to organize apps into various groups to help user discover your app more easily.</p>
-<p>You can leave <code>avatar</code> URL empty and Brain-Life will auto-generate an avatar for you.</p>
-<p><code>Project</code> field is optional, but if your app is written specifically for a particular project, you can select it here. If the select private project, your app will only be visible to the member of the project.</p>
-<p><code>Source Code</code> is where you enter the Github repository name. Please enter only the organization / repository name (like <code>brain-life/app-life</code>) not the full github repo URL.</p>
-<p>You should leave the <code>Max Retry</code> field empty.</p>
-<h2 id="branch">Branch<a class="headerlink" href="#branch" title="Permanent link">&para;</a></h2>
-<p>If you don't specify the github repo's branch name, it uses <code>master</code> branch by default. As with any other project, you will most likely making changes to your <code>master</code> branch after you register your app, which means user won't be able to reproduce the output with exactly the same version of the code. Once you finish developing your app, you should consider creating a release branch (like <code>release_1.0</code>) and freeze the code which will be executed by the Brain-Life by specifying the branch name.</p>
-<blockquote>
-<p>Once you create a new branch, any bug fixes you are making on <code>master</code> branch should be back-ported to other branches. You should, however, not make any changes to branches unless absolutely necessary as it would break the data reproducibility. </p>
-<p>If you make a backward incompatible changes and/or any changes that requires different set of configuration parameters / inputs, you should register entirely new app on Brain-Life with that new version.</p>
-</blockquote>
+                <h1 id="registering-app">Registering App<a class="headerlink" href="#registering-app" title="Permanent link">&para;</a></h1>
+<p>Once you have developed your app (on github), you can now register it on Brainlife so that you can run it through Brainlife UI and let other users discover your app.</p>
+<p>First, go to Brainlife's <a href="https://brainlife.io/apps">App page</a>, then click the big <code>Plus Button</code> at the bottom right corner of the page. You should be seeing a form like this.</p>
+<p><img alt="app form" src="../../img/app.form.png" /></p>
+<h2 id="detail">Detail<a class="headerlink" href="#detail" title="Permanent link">&para;</a></h2>
+<p>Enter <code>name</code> and <code>Git Repository Name</code> field. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>On <code>Git Repository Name</code>, please enter only the organization / repository name (like <code>brain-life/app-life</code>) not the full github repo URL.</p>
+</div>
+<p>All other fields in this section are optional.</p>
+<h3 id="avatar">Avatar<a class="headerlink" href="#avatar" title="Permanent link">&para;</a></h3>
+<p>You can enter <code>avatar</code> URL if you have URL for an avatar that you'd like to use for your app. Please choose a square image with <code>https://</code> URL (not http://). Avatar may sounds superflusou, but please keep in mind that, there are a lot of app registered in Brainlife and this might be the only visual queue that user could identify and look for among many names / descriptions for other apps.</p>
+<h3 id="project">Project<a class="headerlink" href="#project" title="Permanent link">&para;</a></h3>
+<p>By default, all app are <em>public</em>; anyone can find it and execute your app (if they have resource to run them). If you'd like to make your app only available within specific project, you can enter the <code>project name</code> and only the member of that project will be able to find and launch your app. This might be useful if you are still developing your app and wants to keep it hidden until you make a formal <em>release</em>. </p>
+<h3 id="branch">Branch<a class="headerlink" href="#branch" title="Permanent link">&para;</a></h3>
+<p>If you don't specify the github repo's branch name, it uses <code>master</code> branch by default. As with any other project, you will most likely making changes to your <code>master</code> branch after you register your app, which means user won't be able to reproduce the output with exactly the same version of the code used to generate original output. Once you finish developing your app, you should consider creating a release branch (like <code>release_1.0</code>) and freeze the code which will be executed by the Brain-Life by specifying the branch name. Please see <a href="../../apps/versioning">Versioning Tip</a> for more info.</p>
 <h2 id="configuration-parameters">Configuration Parameters<a class="headerlink" href="#configuration-parameters" title="Permanent link">&para;</a></h2>
 <p>Configuration parameters allows users to enter any number, boolean(true/false) or string parameters. You can also define enum parameter which lets users select one of from multiple string labels. </p>
 <ul>

@@ -853,7 +853,7 @@ matlab -nodisplay -nosplash -r build
 <p>This lets the compiler know it should include the sptensor class, which <code>load()</code> does not use by default. If you do not include this, a warning will occur when you run the function stating the sptensor class was not found and it will load as an empty field. </p>
 <h2 id="create-a-bash-script-to-run-your-app">Create a bash script to run your app<a class="headerlink" href="#create-a-bash-script-to-run-your-app" title="Permanent link">&para;</a></h2>
 <p>Unless your application sorely consists of matlab, you may want to create another bash script which will do any pre(/post)processing of the data. For example:</p>
-<p>[docker.sh]</p>
+<p><code>docker.sh</code></p>
 <div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
 ./preprocess.sh <span class="c1">#run some things (need to parse config.json using command line tool like jq)</span>
 ./mca/main <span class="c1">#then execute matlab binary</span>
@@ -895,7 +895,7 @@ matlab -nodisplay -nosplash -r build
 <ol>
 <li>Now, create a sample config.json on your current directory to be used..</li>
 </ol>
-<p>[config.json]</p>
+<p><code>config.json</code></p>
 <div class="codehilite"><pre><span></span>{
    &quot;some&quot;: &quot;param&quot;,
    &quot;another&quot;: 123,

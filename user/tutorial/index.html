@@ -353,6 +353,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#data-processing" title="Data Processing" class="md-nav__link">
+    Data Processing
+  </a>
+  
+</li>
+      
       
       
       
@@ -737,6 +744,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#data-processing" title="Data Processing" class="md-nav__link">
+    Data Processing
+  </a>
+  
+</li>
+      
       
       
       
@@ -763,7 +777,14 @@
                 
                 
                 <h1 id="tutorial">Tutorial<a class="headerlink" href="#tutorial" title="Permanent link">&para;</a></h1>
-<p>This tutorial will guides you through some main functionalities of Brainlife.io. For more high-level overview of Brainlife, see <a href="../../about">About Page</a>.</p>
+<p>This tutorial will guides you through following functionalities of Brainlife. </p>
+<ul>
+<li>Signing up</li>
+<li>Create new project and uplaod data</li>
+<li>Launch visualizer to visualize your data</li>
+<li>Run process on datasets and archive results.</li>
+</ul>
+<p>For more high-level overview of Brainlife, see <a href="../../about">About Page</a>.</p>
 <h2 id="sign-up">Sign Up<a class="headerlink" href="#sign-up" title="Permanent link">&para;</a></h2>
 <p>If you have not registered to Brainlife.io yet, please do so by visiting The <a href="https://brainlife.io/auth/">Authentication Page</a> and clicking on a preferred 3rd party authentication method; Google, ORCID, Github, or through your institution.</p>
 <div class="admonition warning">
@@ -839,8 +860,15 @@
 <h2 id="apps">Apps<a class="headerlink" href="#apps" title="Permanent link">&para;</a></h2>
 <p>Before we proceed to <code>Process</code> tab, let's take a detour and visit the <code>Apps</code> page.  </p>
 <p><img alt="dataset" src="../../img/apps.png" /></p>
-<p>This page shows all Brainlife apps that are publicly available that you can execute on resources and datasets that you have access to. Please take a look and see what type of apps are available. You can click on each tiles to see more details.</p>
-<p>On Brainlife, <em><em>apps</em> are usually small programs that perform specific set of data processing. Although we have a few apps that behaves more like a </em>pipeline<em> or </em>workflow<em>, most Brainlife apps only does one thing, and one thing well. By joining these small apps together to form a </em>workflow*, it gives you greater flexibility, increased code reuse, and allow developers to focus on the task that they want to implement, rather than pre/post processing normally required to make the app functional.</p>
+<p>This page shows all Brainlife apps that are publicly available that you can execute on resources and datasets that you have access to. Please take a look and see what type of apps are currently available. You can click on each tiles to see more details.</p>
+<p>On Brainlife, <em><em>apps</em> are normally small programs that perform specific set of data processing. Although we have a few apps that behaves more like a typical </em>pipeline<em> or </em>workflow<em> (including pre/post processing, data analysis, reporting, etc..), most Brainlife apps should only do one thing, and one thing well. By joining these small apps together, user can create a </em>workflow* with a greater flexibility, configurability, and reproducibility. Please see (about)[/about] for more details.</p>
+<p>Brainlife apps interoperate through <code>datatypes</code>. Each developer can define set of files / directory structure in order to exchange input/output data between 2 apps. </p>
+<p><img alt="dataset" src="../../img/datatype.png" /></p>
+<p>Various colored boxes shows the input and output datatypes. For example, above image shows that this app will take <code>dwi</code> input dataset, and generates another <code>dwi</code> dataset with datatype tag of "masked", and also output another dataset of a datatype <code>mask</code>. </p>
+<!--If you are familiar with an electronic prototyping product called *littleBits*, it is very similar in the concept.-->
+
+<h2 id="data-processing">Data Processing<a class="headerlink" href="#data-processing" title="Permanent link">&para;</a></h2>
+<p>TODO.. show various ways to launch apps and view / archive output</p>
                 
                   
                 

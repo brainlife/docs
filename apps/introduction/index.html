@@ -410,20 +410,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#todo" title="TODO" class="md-nav__link">
-    TODO
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configjson" title="config.json" class="md-nav__link">
-    config.json
-  </a>
-  
-</li>
-      
       
       
       
@@ -675,20 +661,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#todo" title="TODO" class="md-nav__link">
-    TODO
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configjson" title="config.json" class="md-nav__link">
-    config.json
-  </a>
-  
-</li>
-      
       
       
       
@@ -717,50 +689,33 @@
                   <h1>Introduction</h1>
                 
                 <h2 id="what-is-app">What is App?<a class="headerlink" href="#what-is-app" title="Permanent link">&para;</a></h2>
-<p>Brainlife <em>Apps</em> are any code published on github that conforms to <a href="https://github.com/brain-life/abcd-spec">ABCD specification</a> and registered on Brain-Life.org. <em>App</em> receives sets of input datasets where the format and structure of datatype conforms to registered datatypes on Brain-Life.org. </p>
-<p>At minimum, it should meet following requirements..</p>
+<p>Brainlife <em>Apps</em> are any code published on github that conforms to <a href="https://github.com/brain-life/abcd-spec">ABCD specification</a>. </p>
+<p>In a nutshell.. apps should..</p>
 <ul>
-<li>Hosted on a public github repo.</li>
-<li>Provides an executable with a name <code>main</code> at the root of the repo which runs the rest of the app.</li>
-<li>App should receive all input parameters and paths to input files through <code>config.json</code></li>
-<li>App should write all output files under the current directory set by Brainlife. You don't have to know where exactly the current directory be, as it will be different everytime your application is run.</li>
+<li>Provides an executable with a filename of <code>main</code> at the root of the git repo which execute the rest of the app (<code>main</code> could be a shell script, python script, etc..) On a batch system, Brainlife runs <code>qsub main</code> or <code>sbatch main</code> to submit the app depending on which local batch system is runs on.</li>
+<li>Receive all input parameters and paths to input files through <code>config.json</code> created by Brainlifes at runtime on the current working directory of the app. At runtime, Brainlife creates an empty directory somewhere on a compute resource, git clone the app, and places <code>config.json</code> along with other files stored in the git repo.</li>
+<li>Writes all output files in the current directory, in a structure expected by various <code>datatype</code> (more later).</li>
 </ul>
-<p>Brain-Life's workflow service looks for a executable file called <code>main</code> which can be a PBS submit script, or any script written in bash, python, etc. The <em>App</em> then loads all input parameters (including paths to various input files) from <code>config.json</code> created by Brain-Life on the current directory. <em>App</em> then runs the algorithm and create any output files inside the current directory. <em>Apps</em> should exit with return code of 0 if successfully completed. Any non-0 exit code will be regarded as task being failed.</p>
-<p><em>App</em> should follow the principle of <a href="https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well">Do One Thing and Do It Well</a> where a complex workflow should be split into several apps (but no more than necessary nor practical to do so). </p>
-<p><em>App</em> interfaces through Brain-Life <em>datatypes</em> which are pre-defined datatypes commonly used by various apps such as..</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Brainlife app should follow the principle of <a href="https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well">Do One Thing and Do It Well</a> where a complex workflow should be split into several apps (but no more than necessary nor practical). </p>
+</div>
+<p>Brainlife apps interface with other apps through Brainlife <em>datatypes</em> which are developer defined file / directory structure to hold specific data.</p>
+<p>For example, we have following datatypes currently registered on Brainlife.</p>
 <ul>
-<li>anat/t1 (t1.nii.gz)</li>
-<li>anat/t2 </li>
-<li>dwi (diffusion data and bvecs/bvals)</li>
-<li>freesurfer (entire freesurfer output)</li>
-<li>tract (.tck file containing track data)</li>
+<li>neuro/anat/t1w (t1.nii.gz)</li>
+<li>neuro/anat/t2w (t2.nii.gz) </li>
+<li>neuro/dwi (diffusion data and bvecs/bvals)</li>
+<li>neuro/freesurfer (entire freesurfer output)</li>
+<li>neuro/tract (tract.tck containing track data in tck format)</li>
+<li>neuro/dtiinit (dtiinit output)</li>
 </ul>
-<p>etc..</p>
-<p>Your app should read from one or more of these common datatypes, and write to another set of common datatypes. This may mean you have to do an extra importing / exporting of your data, but it allows other apps to interoperate with your app and increases the chance of code-reuse. </p>
-<p>Before writing your apps, please browse <a href="https://brainlife.io/warehouse/#/apps">already registered apps</a> and datatypes under Brain-Life.org to make sure that you are not reinventing parts of your application. If you find an app that is similar but does not exactly do what you need, please conctact the developer of the app and discuss if the feature you need can be added to the already existing app. </p>
-<h2 id="todo">TODO<a class="headerlink" href="#todo" title="Permanent link">&para;</a></h2>
-<h2 id="configjson">config.json<a class="headerlink" href="#configjson" title="Permanent link">&para;</a></h2>
-<p>Your app should read configuration from config.json in a local (working) directory. Here is an example of a sample config.json (https://github.com/brain-life/app-dipy-tracking/blob/master/config.json.template)</p>
-<p>In Matlab, you can do something like following to read json</p>
-<div class="codehilite"><pre><span></span>addpath(genpath(&#39;/N/u/hayashis/BigRed2/git/jsonlab&#39;))
-config = loadjson(&#39;config.json&#39;);
-disp(config.some.param);
-</pre></div>
-
-
-<p>In Python, you can do..</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;config.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">config_json</span><span class="p">:</span>
-    <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">config_json</span><span class="p">)</span>
-
-<span class="c1"># Load the data</span>
-<span class="k">print</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;data_file&#39;</span><span class="p">])</span>
-</pre></div>
-
-
-<p>jsonlab comes from <code>https://github.com/fangq/jsonlab.git</code></p>
-<p>Input parameter should include paths to various input files, or command line parameters passed to various sub-processes. By using config.json, it makes it easier to run it via Docker. (It also prepares your application to be more <a href="https://github.com/soichih/abcd-spec">ABCD Specification</a> compatible.)</p>
-<p>All input parameters are assumed to be text (char). You need to write your functions that are going to be MATLAB compiled with all the arguments as text. Arguments passing a number need to be given as text and within the function converted to integers values (str2num(), etc.). </p>
+<p>So on..</p>
+<p>Your app should read from one or more of these datatypes, and write output data in a format specified by these datatypes. This may mean you have to do some extra importing of input data and exporting/reformatting of the output data. We maintain our list of <code>datatypes</code> in our <a href="https://github.com/brain-life/datatypes/tree/master/datatypes/neuro">brain-life/datatypes</a> repo. To create a new datatype, please open an issue, or send us PR with a new datatype definition file (.json). We do not modify datatypes once it's published. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before writing your apps, please browse <a href="https://brainlife.io/warehouse/#/apps">already registered apps</a> and datatypes under Brain-Life.org to make sure that you are not reinventing parts of your application. If you find an app that is similar but does not exactly do what you need, please contact the developer of the app and discuss if the feature you need can be added to the already existing app. </p>
+</div>
                 
                   
                 

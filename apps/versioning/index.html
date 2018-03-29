@@ -762,10 +762,10 @@
 <p>Once you create a branch, you should update the BL app to point users to use that new branch.</p>
 <p>You could use tags instead of branches, but tags does not allow you make modifications like you can with branches. Tags are great to point to any particular commit point, but you can do that with just a plain commit ID also.</p>
 <h2 id="4-bug-fix-on-master-then-on-branch">4. Bug fix on master, then on branch.<a class="headerlink" href="#4-bug-fix-on-master-then-on-branch" title="Permanent link">&para;</a></h2>
-<p>If you find a bug after you create a branch, you first need to fix the bug on the master, test it, then apply the same fix on all branches that are affected. I like using command like <a href="https://git-scm.com/docs/git-cherry-pick">cherry-pick</a> to apply specific changes on other branches. Again, we should not add any new features on branches - only bug fixes.</p>
+<p>If you find a bug after you create a branch, you first need to fix the bug on the master, test it, then apply the same fix on all branches that are affected. I recommend using command like <a href="https://git-scm.com/docs/git-cherry-pick">cherry-pick</a> to apply specific changes on other branches. Again, we should not add any new features on branches (only bug fixes) for reproducibility. </p>
 <h2 id="5-semvar">5. Semvar<a class="headerlink" href="#5-semvar" title="Permanent link">&para;</a></h2>
 <p>If you don't know what semantic versioning is, please read <a href="https://semver.org/">https://semver.org/</a>.</p>
-<p>For branch names, we should use major and minor version (like "2.3"), but don't include the patch number, as patch numbers are incremeneted for each bug fixes and you don't need to create a new branch for each bug fixes. If you make non-backward compatible changes, you should consider registering a brand new BL app with different major version number so that user can continue to submit your app with previous versions. </p>
+<p>For branch names, we should use major and minor version (like "2.3"), but don't include the patch number, as patch numbers are incremeneted for each bug fixes and you don't need to create a new branch for each bug fixes. If you make non-backward compatible changes, you should consider registering a brand new Brainlife app with different major version number so that user can continue to submit your app with previous versions.</p>
                 
                   
                 
