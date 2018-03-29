@@ -466,16 +466,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-parameters" title="Configuration Parameters" class="md-nav__link">
-    Configuration Parameters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#input-datasets" title="Input Datasets" class="md-nav__link">
     Input Datasets
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datatype-tags" title="Datatype Tags" class="md-nav__link">
+    Datatype Tags
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -496,6 +502,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-parameters" title="Configuration Parameters" class="md-nav__link">
+    Configuration Parameters
+  </a>
   
 </li>
       
@@ -708,6 +721,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../releases/" title="Releases" class="md-nav__link">
+      Releases
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -763,16 +788,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-parameters" title="Configuration Parameters" class="md-nav__link">
-    Configuration Parameters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#input-datasets" title="Input Datasets" class="md-nav__link">
     Input Datasets
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datatype-tags" title="Datatype Tags" class="md-nav__link">
+    Datatype Tags
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -793,6 +824,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-parameters" title="Configuration Parameters" class="md-nav__link">
+    Configuration Parameters
+  </a>
   
 </li>
       
@@ -830,7 +868,7 @@
                 
                 <h1 id="registering-app">Registering App<a class="headerlink" href="#registering-app" title="Permanent link">&para;</a></h1>
 <p>Once you have developed your app (on github), you can now register it on Brainlife so that you can run it through Brainlife UI and let other users discover your app.</p>
-<p>First, go to Brainlife's <a href="https://brainlife.io/apps">App page</a>, then click the big <code>Plus Button</code> at the bottom right corner of the page. You should be seeing a form like this.</p>
+<p>Under <a href="https://brainlife.io/apps">App page</a>, click <code>Plus Button</code> at the bottom right corner of the page. You should see a form like this.</p>
 <p><img alt="app form" src="../../img/app.form.png" /></p>
 <h2 id="detail">Detail<a class="headerlink" href="#detail" title="Permanent link">&para;</a></h2>
 <p>Enter <code>name</code> and <code>Git Repository Name</code> field. </p>
@@ -838,15 +876,32 @@
 <p class="admonition-title">Warning</p>
 <p>On <code>Git Repository Name</code>, please enter only the organization / repository name (like <code>brain-life/app-life</code>) not the full github repo URL.</p>
 </div>
-<p>All other fields in this section are optional.</p>
+<p>All other fields in this section are optional, but you can populate following fields.</p>
 <h3 id="avatar">Avatar<a class="headerlink" href="#avatar" title="Permanent link">&para;</a></h3>
 <p>You can enter <code>avatar</code> URL if you have URL for an avatar that you'd like to use for your app. Please choose a square image with <code>https://</code> URL (not http://). Avatar may sounds superflusou, but please keep in mind that, there are a lot of app registered in Brainlife and this might be the only visual queue that user could identify and look for among many names / descriptions for other apps.</p>
 <h3 id="project">Project<a class="headerlink" href="#project" title="Permanent link">&para;</a></h3>
 <p>By default, all app are <em>public</em>; anyone can find it and execute your app (if they have resource to run them). If you'd like to make your app only available within specific project, you can enter the <code>project name</code> and only the member of that project will be able to find and launch your app. This might be useful if you are still developing your app and wants to keep it hidden until you make a formal <em>release</em>. </p>
 <h3 id="branch">Branch<a class="headerlink" href="#branch" title="Permanent link">&para;</a></h3>
 <p>If you don't specify the github repo's branch name, it uses <code>master</code> branch by default. As with any other project, you will most likely making changes to your <code>master</code> branch after you register your app, which means user won't be able to reproduce the output with exactly the same version of the code used to generate original output. Once you finish developing your app, you should consider creating a release branch (like <code>release_1.0</code>) and freeze the code which will be executed by the Brain-Life by specifying the branch name. Please see <a href="../../apps/versioning">Versioning Tip</a> for more info.</p>
+<h2 id="input-datasets">Input Datasets<a class="headerlink" href="#input-datasets" title="Permanent link">&para;</a></h2>
+<p>Here you can define input datasets with specific datatypes that your app is expecting.</p>
+<p><img alt="dataset" src="../../img/input.datatype.form.png" /></p>
+<h3 id="datatype-tags">Datatype Tags<a class="headerlink" href="#datatype-tags" title="Permanent link">&para;</a></h3>
+<p>Sometimes you want to be specific about the type of dataset within a particular datatype that your app can handle. For example, anat/t1w could be ACPC aligned, or not, dwi could be single-shell, or not, etc. Brainlife adds specificity to each datatype through <em>datatype tags</em>. Please enter any datatype tags that your app would require under <code>Datatype Tags</code> field. Brainlife will only allow user to select datasets with the datatype that meets specified datatype tags if specified. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please don't get confused <em>Datatype tags</em> with <em>Dataset tags</em> that user can edit under dataset dialog. Dataset tags simply allows user to make it easier to search or bulk process subset of the datasets that they have access to. Datatype tags, on the other hand is part of datatype itself and can not be modified once dataset is created. </p>
+</div>
+<p>Once you select the datatype / tags, you also need to map the <em>key</em> used in <code>config.json</code> to particular file / directory inside the datatype. You can do this by adding <em>File Mapping</em>.</p>
+<p>![datasets]({{ "/assets/s/input_datasets.png" | absolute_url }})</p>
+<p>Above configuration allows user to select anat/t1w datatype and your app will receive the path to the t1.nii.gz via a <code>config.json</code> key of <code>t1</code></p>
+<h2 id="ouput-datasets">Ouput Datasets<a class="headerlink" href="#ouput-datasets" title="Permanent link">&para;</a></h2>
+<p>Most app produces output datasets which are then fed to another app as their input datasets. You can specify the datatypes of your output datasets here. It's up to your app to produce output in the correct file structure / file names to be compatible with specified datatype. Please consult with Brain-Life staff if you are not sure. </p>
+<h3 id="raw-datatype"><em>raw</em> datatype<a class="headerlink" href="#raw-datatype" title="Permanent link">&para;</a></h3>
+<p>Many app creates datatypes that are not meant to be used by any other app ("terminal apps"). If you want your output to be archived to the Brain-Life warehouse, you can define the output datatype as <code>raw</code> with a good datatype tags to distinguish with other raw datatypes. </p>
+<p>Finally, click submit. Visit the apps page to make sure everything looks OK.</p>
 <h2 id="configuration-parameters">Configuration Parameters<a class="headerlink" href="#configuration-parameters" title="Permanent link">&para;</a></h2>
-<p>Configuration parameters allows users to enter any number, boolean(true/false) or string parameters. You can also define enum parameter which lets users select one of from multiple string labels. </p>
+<p>Configuration parameters allows users to enter any number (integer/float), boolean(true/false) or string parameters. You can also define enum parameter which lets users select option from multiple selections.</p>
 <ul>
 <li><em>Placeholder</em> For each input parameter, you can set a placeholder; a string displayed inside the form element if no value is specified. You can use placeholder to let user know the behavior of the app if you don't specify any value for that parameter. </li>
 <li><em>Description</em> Some parameter types let you specify a description which will be displayed next to the input parameter to show some detailed explanation about the input parameter.</li>
@@ -862,17 +917,6 @@
 </pre></div>
 
 
-<h2 id="input-datasets">Input Datasets<a class="headerlink" href="#input-datasets" title="Permanent link">&para;</a></h2>
-<p>Most app requires one or more input datasets to operate on. Similarly to configuration parameters, you can define input datasets with specific datatypes where users will be required to select when they submit your app.</p>
-<p>Sometimes, you want to be more specific about the type of data within a particular datatype. For example, anat/t1w could be ACPC aligned, or not, dwi could be single-shell-ed, or not, etc.. Brain-Life adds context to each datatype through <em>datatype tags</em>. "ACPC Aligned" anat/t1w can have a datatype tag of "acpc_aligned". If you know a specific datatype tags to limit the type of datasets that user should be selecting, you can specify those tags under the <em>Datatype Tags</em> section.</p>
-<p>Once you select the datatype / tags, you also need to map the <em>key</em> used in <code>config.json</code> to particular file / directory inside the datatype. You can do this by adding <em>File Mapping</em>.</p>
-<p>![datasets]({{ "/assets/s/input_datasets.png" | absolute_url }})</p>
-<p>Above configuration allows user to select anat/t1w datatype and your app will receive the path to the t1.nii.gz via a <code>config.json</code> key of <code>t1</code></p>
-<h2 id="ouput-datasets">Ouput Datasets<a class="headerlink" href="#ouput-datasets" title="Permanent link">&para;</a></h2>
-<p>Most app produces output datasets which are then fed to another app as their input datasets. You can specify the datatypes of your output datasets here. It's up to your app to produce output in the correct file structure / file names to be compatible with specified datatype. Please consult with Brain-Life staff if you are not sure. </p>
-<h3 id="raw-datatype"><em>raw</em> datatype<a class="headerlink" href="#raw-datatype" title="Permanent link">&para;</a></h3>
-<p>Many app creates datatypes that are not meant to be used by any other app ("terminal apps"). If you want your output to be archived to the Brain-Life warehouse, you can define the output datatype as <code>raw</code> with a good datatype tags to distinguish with other raw datatypes. </p>
-<p>Finally, click submit. Visit the apps page to make sure everything looks OK.</p>
 <h2 id="enabling-app-on-resource">Enabling app on resource<a class="headerlink" href="#enabling-app-on-resource" title="Permanent link">&para;</a></h2>
 <p>Once you registered your app on Brain-Life, you then need to have resources where you can run your app through Brain-Life. Resource could be any VM, HPC clusters, or public / private cloud resources. Only the resource owners can enable your app to run on their resource. Please contact the resource administrator for the resource where you'd like to submit your app . </p>
 <p>For all Brain-Life's shared resources, please contact <a href="mailto:hayashis@iu.edu">Soichi Hayashi</a>.</p>
