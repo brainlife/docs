@@ -1,4 +1,4 @@
-Brainlife platform consists of various microservices which enables various functionalities available to our end-users mainly through our web UI. This document describes some of these services in case you might be interested in directly interfacing with these services through their APIs.
+Brainlife platform consists of various microservices which enables various functionalities available to our end-users mainly through our web UI. This document describes some of these services in case you might be interested in directly interfacing with these services through our APIs.
 
 ![diagram](https://docs.google.com/drawings/d/e/2PACX-1vSbxpvxhckYT5rUJReexZdbaL4xZpMDiebDP-yQAxrcy1VwKCAHYQQTWE8mMQ4lBgQg9qpcZcZmaEr1/pub?w=960&amp;h=551)
 

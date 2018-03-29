@@ -39,6 +39,7 @@ pages:
     - Todo: todo.md
   - Technical:
     - APIs: technical/api.md
+  - Releases: releases.md
 
 extra:
   disqus: 'brain-life'

@@ -2,10 +2,9 @@
 
 Once you have developed your app (on github), you can now register it on Brainlife so that you can run it through Brainlife UI and let other users discover your app.
 
-First, go to Brainlife's [App page](https://brainlife.io/apps), then click the big `Plus Button` at the bottom right corner of the page. You should be seeing a form like this.
+Under [App page](https://brainlife.io/apps), click `Plus Button` at the bottom right corner of the page. You should see a form like this.
 
 ![app form](/img/app.form.png)
-
 
 ## Detail
 
@@ -14,7 +13,7 @@ Enter `name` and `Git Repository Name` field.
 !!! warning
     On `Git Repository Name`, please enter only the organization / repository name (like `brain-life/app-life`) not the full github repo URL.
 
-All other fields in this section are optional.
+All other fields in this section are optional, but you can populate following fields.
 
 ### Avatar 
 
@@ -28,10 +27,38 @@ By default, all app are *public*; anyone can find it and execute your app (if th
 
 If you don't specify the github repo's branch name, it uses `master` branch by default. As with any other project, you will most likely making changes to your `master` branch after you register your app, which means user won't be able to reproduce the output with exactly the same version of the code used to generate original output. Once you finish developing your app, you should consider creating a release branch (like `release_1.0`) and freeze the code which will be executed by the Brain-Life by specifying the branch name. Please see [Versioning Tip](/apps/versioning) for more info.
 
+## Input Datasets
+
+Here you can define input datasets with specific datatypes that your app is expecting.
+
+![dataset](/img/input.datatype.form.png)
+
+### Datatype Tags
+
+Sometimes you want to be specific about the type of dataset within a particular datatype that your app can handle. For example, anat/t1w could be ACPC aligned, or not, dwi could be single-shell, or not, etc. Brainlife adds specificity to each datatype through *datatype tags*. Please enter any datatype tags that your app would require under `Datatype Tags` field. Brainlife will only allow user to select datasets with the datatype that meets specified datatype tags if specified. 
+
+!!! warning
+    Please don't get confused *Datatype tags* with *Dataset tags* that user can edit under dataset dialog. Dataset tags simply allows user to make it easier to search or bulk process subset of the datasets that they have access to. Datatype tags, on the other hand is part of datatype itself and can not be modified once dataset is created. 
+
+Once you select the datatype / tags, you also need to map the *key* used in `config.json` to particular file / directory inside the datatype. You can do this by adding *File Mapping*.
+
+![datasets]({{ "/assets/s/input_datasets.png" | absolute_url }})
+
+Above configuration allows user to select anat/t1w datatype and your app will receive the path to the t1.nii.gz via a `config.json` key of `t1`
+
+## Ouput Datasets
+
+Most app produces output datasets which are then fed to another app as their input datasets. You can specify the datatypes of your output datasets here. It's up to your app to produce output in the correct file structure / file names to be compatible with specified datatype. Please consult with Brain-Life staff if you are not sure. 
+
+### *raw* datatype
+
+Many app creates datatypes that are not meant to be used by any other app ("terminal apps"). If you want your output to be archived to the Brain-Life warehouse, you can define the output datatype as `raw` with a good datatype tags to distinguish with other raw datatypes. 
+
+Finally, click submit. Visit the apps page to make sure everything looks OK.
+
 ## Configuration Parameters
 
-Configuration parameters allows users to enter any number, boolean(true/false) or string parameters. You can also define enum parameter which lets users select one of from multiple string labels. 
-
+Configuration parameters allows users to enter any number (integer/float), boolean(true/false) or string parameters. You can also define enum parameter which lets users select option from multiple selections.
 
 * *Placeholder* For each input parameter, you can set a placeholder; a string displayed inside the form element if no value is specified. You can use placeholder to let user know the behavior of the app if you don't specify any value for that parameter. 
 * *Description* Some parameter types let you specify a description which will be displayed next to the input parameter to show some detailed explanation about the input parameter.
@@ -50,27 +77,6 @@ Your app will receive something like following in `config.json` generated on the
 }
 ```
 
-## Input Datasets
-
-Most app requires one or more input datasets to operate on. Similarly to configuration parameters, you can define input datasets with specific datatypes where users will be required to select when they submit your app.
- 
-Sometimes, you want to be more specific about the type of data within a particular datatype. For example, anat/t1w could be ACPC aligned, or not, dwi could be single-shell-ed, or not, etc.. Brain-Life adds context to each datatype through *datatype tags*. "ACPC Aligned" anat/t1w can have a datatype tag of "acpc_aligned". If you know a specific datatype tags to limit the type of datasets that user should be selecting, you can specify those tags under the *Datatype Tags* section.
-
-Once you select the datatype / tags, you also need to map the *key* used in `config.json` to particular file / directory inside the datatype. You can do this by adding *File Mapping*.
-
-![datasets]({{ "/assets/s/input_datasets.png" | absolute_url }})
-
-Above configuration allows user to select anat/t1w datatype and your app will receive the path to the t1.nii.gz via a `config.json` key of `t1`
-
-## Ouput Datasets
-
-Most app produces output datasets which are then fed to another app as their input datasets. You can specify the datatypes of your output datasets here. It's up to your app to produce output in the correct file structure / file names to be compatible with specified datatype. Please consult with Brain-Life staff if you are not sure. 
-
-### *raw* datatype
-
-Many app creates datatypes that are not meant to be used by any other app ("terminal apps"). If you want your output to be archived to the Brain-Life warehouse, you can define the output datatype as `raw` with a good datatype tags to distinguish with other raw datatypes. 
-
-Finally, click submit. Visit the apps page to make sure everything looks OK.
 
 ## Enabling app on resource
 
