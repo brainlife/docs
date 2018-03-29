@@ -20,7 +20,7 @@ pages:
   - Brainlife UI:
     - Tutorial: user/tutorial.md
     - Projects: user/project.md
-    - Datasets: user/dataset.md
+    - Datatypes: user/datatypes.md
     - Processes: user/process.md
     - Pipeline: user/pipeline.md
     - Publication: user/publication.md

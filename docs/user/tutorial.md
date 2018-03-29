@@ -112,12 +112,13 @@ The `Apps` page shows all Brainlife apps that are publicly available that you ca
 
 On Brainlife, **apps* are normally small programs that perform specific set of data processing. Although we have a few apps that behaves more like a typical *pipeline* or *workflow* (including pre/post processing, data analysis, reporting, etc..), most Brainlife apps should only do one thing, and one thing well. Please see (about)[/about] for more details.
 
-Brainlife apps interoperate through `datatypes`. Each developer can define set of files / directory structure in order to exchange input/output data between 2 apps. 
+Brainlife apps interoperate through `datatypes`. Developers exchanging input/output dataset should discuss and agree on set of files / directory structure between the apps and register new datatype by submitting an issue ticket on [datatypes github repo](https://github.com/brain-life/datatypes)
 
 ![dataset](/img/datatype.png)
 
 Various colored boxes shows the input and output datatypes. For example, above image shows that this app will take `dwi` input dataset, and generates another `dwi` dataset with datatype tag of "masked", and also output another dataset of a datatype `mask`. 
 
+For more information on datatype, please visit [datatypes page](/user/datatypes)
 <!--If you are familiar with an electronic prototyping product called *littleBits*, it is very similar in the concept.-->
 
 ## Data Processing
