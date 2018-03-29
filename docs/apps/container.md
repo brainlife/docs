@@ -69,7 +69,7 @@ This lets the compiler know it should include the sptensor class, which `load()`
 
 Unless your application sorely consists of matlab, you may want to create another bash script which will do any pre(/post)processing of the data. For example:
 
-[docker.sh]
+`docker.sh`
 ```bash
 #!/bin/bash
 ./preprocess.sh #run some things (need to parse config.json using command line tool like jq)
@@ -125,7 +125,7 @@ On this example, I am going to use [the LiFE Docker Container](https://github.co
 
 4. Now, create a sample config.json on your current directory to be used..
 
-[config.json]
+`config.json`
 ```
 {
    "some": "param",

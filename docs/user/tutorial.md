@@ -1,7 +1,14 @@
 
 # Tutorial
 
-This tutorial will guides you through some main functionalities of Brainlife.io. For more high-level overview of Brainlife, see [About Page](/about).
+This tutorial will guides you through following functionalities of Brainlife. 
+
+* Signing up
+* Create new project and uplaod data
+* Launch visualizer to visualize your data
+* Run process on datasets and archive results.
+
+For more high-level overview of Brainlife, see [About Page](/about).
 
 ## Sign Up
 
@@ -101,7 +108,18 @@ Before we proceed to `Process` tab, let's take a detour and visit the `Apps` pag
 
 ![dataset](/img/apps.png)
 
-This page shows all Brainlife apps that are publicly available that you can execute on resources and datasets that you have access to. Please take a look and see what type of apps are available. You can click on each tiles to see more details.
+This page shows all Brainlife apps that are publicly available that you can execute on resources and datasets that you have access to. Please take a look and see what type of apps are currently available. You can click on each tiles to see more details.
 
-On Brainlife, **apps* are usually small programs that perform specific set of data processing. Although we have a few apps that behaves more like a *pipeline* or *workflow*, most Brainlife apps only does one thing, and one thing well. By joining these small apps together to form a *workflow*, it gives you greater flexibility, increased code reuse, and allow developers to focus on the task that they want to implement, rather than pre/post processing normally required to make the app functional.
+On Brainlife, **apps* are normally small programs that perform specific set of data processing. Although we have a few apps that behaves more like a typical *pipeline* or *workflow* (including pre/post processing, data analysis, reporting, etc..), most Brainlife apps should only do one thing, and one thing well. Please see (about)[/about] for more details.
 
+Brainlife apps interoperate through `datatypes`. Each developer can define set of files / directory structure in order to exchange input/output data between 2 apps. 
+
+![dataset](/img/datatype.png)
+
+Various colored boxes shows the input and output datatypes. For example, above image shows that this app will take `dwi` input dataset, and generates another `dwi` dataset with datatype tag of "masked", and also output another dataset of a datatype `mask`. 
+
+<!--If you are familiar with an electronic prototyping product called *littleBits*, it is very similar in the concept.-->
+
+## Data Processing
+
+TODO.. show various ways to launch apps and view / archive output

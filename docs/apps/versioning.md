@@ -27,12 +27,10 @@ You could use tags instead of branches, but tags does not allow you make modific
 
 ## 4. Bug fix on master, then on branch.
 
-If you find a bug after you create a branch, you first need to fix the bug on the master, test it, then apply the same fix on all branches that are affected. I like using command like [cherry-pick](https://git-scm.com/docs/git-cherry-pick) to apply specific changes on other branches. Again, we should not add any new features on branches - only bug fixes.
+If you find a bug after you create a branch, you first need to fix the bug on the master, test it, then apply the same fix on all branches that are affected. I recommend using command like [cherry-pick](https://git-scm.com/docs/git-cherry-pick) to apply specific changes on other branches. Again, we should not add any new features on branches (only bug fixes) for reproducibility. 
 
 ## 5. Semvar
 
 If you don't know what semantic versioning is, please read [https://semver.org/](https://semver.org/).
 
-For branch names, we should use major and minor version (like "2.3"), but don't include the patch number, as patch numbers are incremeneted for each bug fixes and you don't need to create a new branch for each bug fixes. If you make non-backward compatible changes, you should consider registering a brand new BL app with different major version number so that user can continue to submit your app with previous versions. 
-
-
+For branch names, we should use major and minor version (like "2.3"), but don't include the patch number, as patch numbers are incremeneted for each bug fixes and you don't need to create a new branch for each bug fixes. If you make non-backward compatible changes, you should consider registering a brand new Brainlife app with different major version number so that user can continue to submit your app with previous versions.

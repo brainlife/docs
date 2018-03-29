@@ -1,28 +1,32 @@
+# Registering App
 
-Once you have developed your app, you can register it on Brain-Life so that other users can discover and execute your app. 
+Once you have developed your app (on github), you can now register it on Brainlife so that you can run it through Brainlife UI and let other users discover your app.
 
-First, head to [Brain-Life's Apps page](https://brainlife.io/warehouse/#/apps). Click on the `Plus Button` on the bottom right corner of the page. 
-![plus]({{ "/assets/s/plus.png" | absolute_url }}) 
+First, go to Brainlife's [App page](https://brainlife.io/apps), then click the big `Plus Button` at the bottom right corner of the page. You should be seeing a form like this.
 
-## Basic Info
+![app form](/img/app.form.png)
 
-On "New App" form, fill out name / description, and classification tags. Classification tag is used to organize apps into various groups to help user discover your app more easily.
 
-You can leave `avatar` URL empty and Brain-Life will auto-generate an avatar for you.
+## Detail
 
-`Project` field is optional, but if your app is written specifically for a particular project, you can select it here. If the select private project, your app will only be visible to the member of the project.
+Enter `name` and `Git Repository Name` field. 
 
-`Source Code` is where you enter the Github repository name. Please enter only the organization / repository name (like `brain-life/app-life`) not the full github repo URL.
+!!! warning
+    On `Git Repository Name`, please enter only the organization / repository name (like `brain-life/app-life`) not the full github repo URL.
 
-You should leave the `Max Retry` field empty.
+All other fields in this section are optional.
 
-## Branch
+### Avatar 
 
-If you don't specify the github repo's branch name, it uses `master` branch by default. As with any other project, you will most likely making changes to your `master` branch after you register your app, which means user won't be able to reproduce the output with exactly the same version of the code. Once you finish developing your app, you should consider creating a release branch (like `release_1.0`) and freeze the code which will be executed by the Brain-Life by specifying the branch name.
+You can enter `avatar` URL if you have URL for an avatar that you'd like to use for your app. Please choose a square image with `https://` URL (not http://). Avatar may sounds superflusou, but please keep in mind that, there are a lot of app registered in Brainlife and this might be the only visual queue that user could identify and look for among many names / descriptions for other apps.
 
-> Once you create a new branch, any bug fixes you are making on `master` branch should be back-ported to other branches. You should, however, not make any changes to branches unless absolutely necessary as it would break the data reproducibility. 
+### Project
 
-> If you make a backward incompatible changes and/or any changes that requires different set of configuration parameters / inputs, you should register entirely new app on Brain-Life with that new version.
+By default, all app are *public*; anyone can find it and execute your app (if they have resource to run them). If you'd like to make your app only available within specific project, you can enter the `project name` and only the member of that project will be able to find and launch your app. This might be useful if you are still developing your app and wants to keep it hidden until you make a formal *release*. 
+
+### Branch
+
+If you don't specify the github repo's branch name, it uses `master` branch by default. As with any other project, you will most likely making changes to your `master` branch after you register your app, which means user won't be able to reproduce the output with exactly the same version of the code used to generate original output. Once you finish developing your app, you should consider creating a release branch (like `release_1.0`) and freeze the code which will be executed by the Brain-Life by specifying the branch name. Please see [Versioning Tip](/apps/versioning) for more info.
 
 ## Configuration Parameters
 
