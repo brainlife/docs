@@ -1,5 +1,5 @@
 
-# What is Brainlife?
+# What is Brain Life?
 
 A modern platform based that uses cloud and high-performance computing systems to support reproducible analyses, data visualization, data management. Brain Life also provide a unique mechanism to publish all research assets associated with a scientific project (data and analyses) embedded in a cloud computing environment and referenced by a single digital-object-identifier (DOI). The platform is unique because of its focus on supporting scientific reproducibility beyond open code and open data, by providing fundamental smart mechanisms for what we refer to as “Open Services.” 
 
@@ -7,7 +7,7 @@ A modern platform based that uses cloud and high-performance computing systems t
 
 ![dataset](/img/apps.png)
 
-Brainlife uses Apps to analyze data. **Apps* are small programs, small modules or compute units, that can b made part of a larger series of steps in a full data analysis workflow for a publication. Brainlife Apps are meant to do a small but meaningful step in a longer analysis pipeline. Apps are modules and the platform allows users to devlop, use, combine, and reuse Apps to simply build complex pipelines for customized brain data analyses. Most Apps indeed do only one thing, they process data in a specific way and are meant to perform a small set of operations and handle small sets of data; they do one thing, they do it well.
+Brainlife uses Apps to analyze data. **Apps** are small programs, small modules or compute units, that can b made part of a larger series of steps in a full data analysis workflow for a publication. Brainlife Apps are meant to do a small but meaningful step in a longer analysis pipeline. Apps are modules and the platform allows users to devlop, use, combine, and reuse Apps to simply build complex pipelines for customized brain data analyses. Most Apps indeed do only one thing, they process data in a specific way and are meant to perform a small set of operations and handle small sets of data; they do one thing, they do it well.
 
 Apps can be developed and published on the Brain Life Platform by anyone. App developers can be computational neuroscientists, cognitive neuroscientists, but also computer scientists or engineers. Apps are snippets of code implementing algorithms or analyses. By follow a few easy steps code to publish the code on the Brain Life platform as an App. Publishing code as an App allows scientists to use the data and computational resources available through Brain Life. 
 
