@@ -1,7 +1,7 @@
 
 # What is Brainlife?
 
-A modern platform based that uses cloud and high-performance computing systems to support reproducible analyses, data visualization, data management. BrainLife also provide a unique mechanism to publish all research assets associated with a scientific project (data and analyses) embeeded in a cloud computing environment and rferencd by a single digital-object-identifier (DOI). The platform is unique because of its focus on supporting scientific reproducibility beyond open code and open data, by providing fundamental smart mechanisms for what we rfer to as “Open Services.” 
+A modern platform based that uses cloud and high-performance computing systems to support reproducible analyses, data visualization, data management. Brain Life also provide a unique mechanism to publish all research assets associated with a scientific project (data and analyses) embedded in a cloud computing environment and referenced by a single digital-object-identifier (DOI). The platform is unique because of its focus on supporting scientific reproducibility beyond open code and open data, by providing fundamental smart mechanisms for what we refer to as “Open Services.” 
 
 # Apps
 
