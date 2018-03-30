@@ -501,15 +501,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#raw-datatype" title="raw datatype" class="md-nav__link">
-    raw datatype
+  <a href="#datatype-file-mapping" title="Datatype File Mapping" class="md-nav__link">
+    Datatype File Mapping
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#datatype-file-mapping" title="Datatype File Mapping" class="md-nav__link">
-    Datatype File Mapping
+  <a href="#raw-datatype" title="raw datatype" class="md-nav__link">
+    raw datatype
   </a>
   
 </li>
@@ -522,6 +522,13 @@
         <li class="md-nav__item">
   <a href="#configuration-parameters" title="Configuration Parameters" class="md-nav__link">
     Configuration Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#readme-description-topics" title="README / Description / Topics" class="md-nav__link">
+    README / Description / Topics
   </a>
   
 </li>
@@ -837,15 +844,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#raw-datatype" title="raw datatype" class="md-nav__link">
-    raw datatype
+  <a href="#datatype-file-mapping" title="Datatype File Mapping" class="md-nav__link">
+    Datatype File Mapping
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#datatype-file-mapping" title="Datatype File Mapping" class="md-nav__link">
-    Datatype File Mapping
+  <a href="#raw-datatype" title="raw datatype" class="md-nav__link">
+    raw datatype
   </a>
   
 </li>
@@ -858,6 +865,13 @@
         <li class="md-nav__item">
   <a href="#configuration-parameters" title="Configuration Parameters" class="md-nav__link">
     Configuration Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#readme-description-topics" title="README / Description / Topics" class="md-nav__link">
+    README / Description / Topics
   </a>
   
 </li>
@@ -912,44 +926,76 @@
 <p>Here you can define input datasets with specific datatypes that your app is expecting.</p>
 <p><img alt="dataset" src="../../img/input.datatype.form.png" /></p>
 <h3 id="datatype-tags">Datatype Tags<a class="headerlink" href="#datatype-tags" title="Permanent link">&para;</a></h3>
-<p>Sometimes you want to be specific about the type of dataset within a particular datatype that your app can handle. For example, anat/t1w could be ACPC aligned, or not, dwi could be single-shell, or not, etc. Brainlife adds specificity to each datatype through <em>datatype tags</em>. Please enter any datatype tags that your app would require under <code>Datatype Tags</code> field. Brainlife will only allow user to select datasets with the datatype that meets specified datatype tags if specified. </p>
+<p>Sometimes you want to be specific about the type of dataset within a particular datatype that your app can handle. For example, <code>neuro/anat/t1w</code> could be ACPC aligned, or not, <code>neuro/dwi</code> could be single-shell, or not, etc. Brainlife adds specificity to each datatype through <em>datatype tags</em>. Please enter any datatype tags that your app would require under <code>Datatype Tags</code> field. Brainlife will only allow users to select datasets for your app that meets specified datatype tags. </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Please don't get confuse <em>Datatype tags</em> with <em>Dataset tags</em> that user can edit under dataset dialog. Dataset tags simply allows user to make it easier to search or bulk process subset of the datasets. Datatype tags, on the other hand is part of datatype and can not be modified once dataset is created. </p>
 </div>
 <h3 id="file-mapping">File Mapping<a class="headerlink" href="#file-mapping" title="Permanent link">&para;</a></h3>
-<p>Once you select the datatype / tags of your input data, you need to configure how you want it to be presented in side your <code>config.json</code> by mapping the json key in <code>config.json</code> to a particular file / directory inside the datatype.</p>
-<p>For example, if you use <code>anat/t1w</code> as an input dataset, you can specify <code>config.json key</code> field with any key (such as "t1") and selecting which file/dir within the datatype you want to reference.</p>
-<p>You might be wondering what that ID field at the top of the form set to "t1" is for. This ID is used to uniquely identify the input dataset to be selected by the user. A one input selection could be mapped to multiple fields in <code>config.json</code>, for example.</p>
+<p>Once you select the datatype / tags of your input data, you need to configure how you want it to be presented in the <code>config.json</code> by mapping the json key in <code>config.json</code> to a particular file / directory inside the datatype.</p>
+<div class="codehilite"><pre><span></span>{
+    &quot;t1&quot;: &quot;../path/to/t1.nii.gz&quot;
+}
+</pre></div>
+
+
+<p>For example, if you use <code>anat/t1w</code> as an input dataset, you can specify <code>config.json key</code> field with any json key (such as "t1") and selecting which file/dir within the datatype you want to reference (like.. "../path/to/t1.nii.gz").</p>
+<p>You might be wondering why there is ID field at the top of the input form as well as the json key ID. The input ID at the top is mainly used internally by Brainlife UI for allowing user to select an input dataset. As an app developer, you really don't need to worry about the input ID.. as long as they are unique across all inputs. An input selection could be mapped to multiple fields in <code>config.json</code> which is what you probably most care about.</p>
 <h2 id="output-datasets">Output Datasets<a class="headerlink" href="#output-datasets" title="Permanent link">&para;</a></h2>
-<p>Most app produces output datasets which are then fed to another app as input datasets. You can specify the datatypes of your output datasets here. It's up to your app to produce output in the correct file structure / file names to be compatible with specified datatype. Please read <a href="../../user/datatypes">datatypes page</a> for more info.</p>
-<h3 id="raw-datatype"><em>raw</em> datatype<a class="headerlink" href="#raw-datatype" title="Permanent link">&para;</a></h3>
-<p>Many app creates datatypes that are not meant to be used by any other app ("terminal apps"). You can use <code>raw</code> datatypes to output and archive such output. You should not use <code>raw</code> input datatype as an input. If this is the case, please contact the developer of the app generating the <code>raw</code> output dataset and define a dedicated datatype.</p>
+<p>Similar to the input dataset, you can specify the datatypes of your output datasets here. It's up to your app to produce output in the correct file structure / file names to be compatible with specified datatype. (Please read <a href="../../user/datatypes">datatypes page</a> for more info.) </p>
 <h3 id="datatype-file-mapping">Datatype File Mapping<a class="headerlink" href="#datatype-file-mapping" title="Permanent link">&para;</a></h3>
-<p>By default, Brainlife expects you to generate all files pertaining to a specific datatype on the current working directory. However, if you have more than 1 output datasets, or have multiple datasets with the same datatype, file name collision will happen. To avoid this, you will need to output each datasets under a different filename, or under sub-directories for each datasets. </p>
+<p>By default, Brainlife expects you to generate all files pertaining to a specific datatype on the current working directory. However, if you have more than 1 output datasets, or have multiple datasets with the same datatype, file name collision could occur. To avoid this, you will need to output each datasets under a different filename, or use sub-directories to store files for each datasets. </p>
 <p>For example, following example show that the app is outputing a file named <code>output.DT_STREAM.tck</code> which is treated as a <code>track</code> file output for <code>neuro/track</code> datatype.</p>
 <p><img alt="resources" src="../../img/app.output.png" /></p>
-<p>Or, if you'd like to store the output files under specific sub directory for <code>raw</code> datatype, you can specify the directory by doing following.</p>
+<p>Or, if you'd like to store the output files under a sub directory, you can specify the directory by doing following.</p>
 <p><img alt="resources" src="../../img/app.output2.png" /></p>
+<h3 id="raw-datatype"><em>raw</em> datatype<a class="headerlink" href="#raw-datatype" title="Permanent link">&para;</a></h3>
+<p>Many app creates datatypes that are not meant to be used by any other app. You can use <code>raw</code> datatypes to output and archive such outputs. You should avoid using <code>raw</code> input datatype as an input to another app. If you need to use do this, please contact the developer of the upstream app generating the <code>raw</code> output dataset and ask them to define a new datatype.</p>
 <h2 id="configuration-parameters">Configuration Parameters<a class="headerlink" href="#configuration-parameters" title="Permanent link">&para;</a></h2>
-<p>Configuration parameters allows users to enter any number (integer/float), boolean(true/false) or string parameters. You can also define enum parameter which lets users select option from multiple selections.</p>
+<p>Configuration parameters allows users to enter any number (integer/float), boolean(true/false) or string parameters as configuration to your app. You can also define enum parameter which lets users select option from multiple selections.</p>
+<p><img alt="resources" src="../../img/app.config.png" /></p>
 <ul>
 <li>
 <p><strong>Placeholder</strong> </p>
-<p>For each input parameter, you can set a placeholder; a string displayed inside the form element if no value is specified. You can use placeholder to let user know the behavior of the app if you don't specify any value for that parameter. </p>
+<p>For each input parameter, you can set a placeholder; a string displayed inside the form element if no value is specified. For example, you could use placeholder to let user know the behavior of the app if user doesn't specify any value for that parameter. </p>
 </li>
 <li>
 <p><strong>Description</strong> </p>
-<p>Some parameter types let you specify a description which will be displayed next to the input parameter to show some detailed explanation about the input parameter.</p>
+<p>Some parameter types let you specify a description which will be displayed next to the input parameter to show detailed explanation about the input parameter. Please provide enough details for both novice and experienced users of your app.</p>
 </li>
 </ul>
 <p>Finally, click <code>Submit</code>. Visit the apps page to make sure everything looks OK.</p>
+<h2 id="readme-description-topics">README / Description / Topics<a class="headerlink" href="#readme-description-topics" title="Permanent link">&para;</a></h2>
+<p>Brainlife uses as much information as possible from your github repo to pull information such as ..</p>
+<ul>
+<li>
+<p>App Description / Topics</p>
+<p>Github's description is used to display Brainlife app description. Please be sure to enter description that shows what the app does, and what user can do with the output. Github topics are also used as Brainlife's app <code>categories</code>. Please look through the existing categories already registered in Brainlife, and use one or more of those categories to help users find your app more easily. </p>
+<p><img alt="resources" src="../../img/app.freesurfer.png" /></p>
+</li>
+<li>
+<p>README.md</p>
+<p>Brainlife displays the copy of README.md content from your github repo. You can use any images, katex equations, and any other standard markdown content. </p>
+<p>You could include information such as following in your README.md</p>
+<ul>
+<li>What the app does, and how it's implemented (tools, libraries used)</li>
+<li>What the app produces</li>
+<li>Any diagrams / sample output images, etc.</li>
+<li>What user can do with the output data.</li>
+<li>Details on how the algorithm works.</li>
+<li>Computational cost / resources required to run the app (how long does it take to run, minimum required memory / cpu cores, etc..)</li>
+<li>How can other user contribute (are you accepting PR?)</li>
+<li>References to other published papers, or list of contributors.</li>
+</ul>
+<p>Brainlife's target audiences are both novice and experienced neuroscience researchers. Please be sure to cater both audiences.</p>
+</li>
+</ul>
 <h2 id="enabling-app-on-resource">Enabling app on resource<a class="headerlink" href="#enabling-app-on-resource" title="Permanent link">&para;</a></h2>
-<p>Once you registered your app on Brain-Life, you then need to have a resource where you can run your app through Brainlife. Resource could be any VM, HPC clusters, or public / private cloud resources. Only the resource owners can enable your app to run on their resource. Please contact the resource administrator for the resource where you'd like to submit your app.</p>
-<p>You can register your own resource and run your apps there also. Please read <a href="../../resources/register/">registering resource page</a> for more detail. But please keep it in mind that, however, only the owner of the resource can run the apps on your personal resources. To allow other users to run your app, you will need to enable the app on Brainlife's shared resources.</p>
+<p>Once you registered your app on Brain-Life, you then need to have a resource where you can run your app. Resource could be any VM, HPC clusters, or public / private cloud resources. Only the resource owners can enable your app to run on their resource. Please contact the resource administrator for the resource where you'd like to submit your app.</p>
+<p>If you have access to your own computing resources, you can register and run your apps there also. Please read <a href="../../resources/register/">registering resource page</a> for more detail. Please keep in mind that, only the owner of the resource can run the apps on personal (un-shared) resources. To allow other users to run your app, you will need to enable the app on Brainlife's shared resources.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For all Brainlife default resources, please contact <a href="mailto:hayashis@iu.edu">Soichi Hayashi</a> and request to add your app enabled on those resources.</p>
+<p>For all Brainlife default resources, please contact <a href="mailto:hayashis@iu.edu">Soichi Hayashi</a> and request to enable your app on those resources.</p>
 </div>
 <p>Once your app is enabled on a resource, you should see a table of resources where the app can run under the app detail page.</p>
 <p><img alt="resources" src="../../img/app.resources.png" /></p>
