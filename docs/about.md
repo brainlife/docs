@@ -1,10 +1,9 @@
-<!--- Brainlife Style and Conventions ---->
-<!---     ---->
-<!--- Brainlife is a platform. ---->
-<!--- Brainlife Apps are simply Apps. ---->
-<!--- Brainlife Datatypes are simply Datatypes ---->
-<!--- Brainlife Data sets are Datasets ---->
-<!--- Brainlife Apps and Datasets together are Research Assets or simply Assets ---->
+<!--- Brainlife Style and Conventions
+* Brainlife is a platform.
+* Brainlife Apps are simply Apps.
+* Brainlife Datatypes are simply Datatypes.
+* Brainlife Data sets are Datasets
+* Brainlife Apps and Datasets together are Research Assets or simply Assets ---->
 
 # What is Brainlife?
 
