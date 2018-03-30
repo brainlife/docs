@@ -16,13 +16,17 @@ our target audiences. We classify our users into following groups.
 
 ## Contact
 
-For General Inquery > [brlife@iu.edu](mailto:brlife@iu.edu).
+### Email
 
-Slack (online chat support) > [brainlife.slack.com](https://brainlife.slack.com) 
+* General Inquery [Brarinlife &lt;brlife@iu.edu&gt;](mailto:brlife@iu.edu)
+* Contact PI [Franco Pestilli &lt;frakkopesto@gmail.com&gt;](mailto:frakkopesto@gmail.com)
 
-!!! warning
-	Slack auto-inviter not ready yet.. please [send us an email](mailto:brlife@iu.edu) to invite you in!
+### Slack (brainlife.slack.com) ![logo](https://brainlife-inviter.herokuapp.com/badge.svg)
 
-Contact PI > [Franco Pestilli](mailto:frakkopesto@gmail.com)
+* [Join brainlife.slack.com](https://brainlife-inviter.herokuapp.com/) 
 
-Bug report / feature request > [Github Issues](https://github.com/brain-life/warehouse/issues)
+
+### Bug Report / Feature Request
+
+* [Brainlife UI Issues](https://github.com/brain-life/warehouse/issues)
+* For application specific issue, please contact the developer of the application directly.
