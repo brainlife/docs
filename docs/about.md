@@ -1,17 +1,19 @@
 
 # What is Brainlife?
 
-TODO.. Describe mission, what it does not, where we want to go, etc..
+A modern platform based that uses cloud and high-performance computing systems to support reproducible analyses, data visualization, data management. BrainLife also provide a unique mechanism to publish all research assets associated with a scientific project (data and analyses) embeeded in a cloud computing environment and rferencd by a single digital-object-identifier (DOI). The platform is unique because of its focus on supporting scientific reproducibility beyond open code and open data, by providing fundamental smart mechanisms for what we rfer to as “Open Services.” 
 
 # Apps
 
 ![dataset](/img/apps.png)
 
-On Brainlife, **apps* are normally small programs that perform specific set of data processing. Although we have a few apps that behaves more like a typical *pipeline* or *workflow* (including pre/post processing, data analysis, reporting, etc..), most Brainlife apps should only do one thing, and one thing well. By joining these small apps together, user can create a *workflow* with a greater flexibility, configurability, and reproducibility. 
+Brainlife uses Apps to analyze data. **Apps* are small programs, small modules or compute units, that can b made part of a larger series of steps in a full data analysis workflow for a publication. Brainlife Apps are meant to do a small but meaningful step in a longer analysis pipeline. Apps are modules and the platform allows users to devlop, use, combine, and reuse Apps to simply build complex pipelines for customized brain data analyses. Most Apps indeed do only one thing, they process data in a specific way and are meant to perform a small set of operations and handle small sets of data; they do one thing, they do it well.
 
-From app developer's point of view, this approach allows them to focus on the most idiosyncratic aspect of the algorithm that they are trying to publish. They do not need to worry about how to preprocess the data, or how the generated data is processed afterward. Each app can be written in language or with libraries that developers are most familiar with, by interfacing with other apps through the use of Brainlife `datatypes`.
+Apps can be developed and published on the Brain Life Platform by anyone. App developers can be computational neuroscientists, cognitive neuroscientists, but also computer scientists or engineers. Apps are snippets of code implementing algorithms or analyses. By follow a few easy steps code to publish the code on the Brain Life platform as an App. Publishing code as an App allows scientists to use the data and computational resources available through Brain Life. 
 
-From computational point of view, each app can be easily parallelized, run on resources that are available at runtime, or on resources that the particular app is most efficient to run on. With a traditional approach of running an entire workflow on a small set of resources, some part of the workflow might not be optimal to run on a given resource. 
+Brian Life Apps communicate via Brain Life “Data Types.” Once published on Brain Life Apps can interface with other Apps through the use of Brain Life Data Types. Data Types are abstract objects that organize the combination of inputs and outputs files and folders necessary for Apps into a system that allows App communication and interfacing. Data Types are suggested and by App developers and published as part of the App publishing process. The Brain Life platform can use these Data Types to allow Apps to be organized into workflows and pipelines.
+
+Apps published on Brain life can be used privately or shared publicly with the platform users community. From computational point of view, each app can be easily parallelized, run on resources that are available at runtime, or on resources that the particular app is most efficient to run on. With a traditional approach of running an entire workflow on a small set of resources, some part of the workflow might not be optimal to run on a given resource. 
  
 # Dataset Archive
 
