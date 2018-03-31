@@ -12,7 +12,7 @@ Brainlife Style and Conventions
 
 # What is Brainlife?
 
-A modern platform that uses cloud and high-performance computing systems to support reproducible analyses, data management and visualization. Brainlife also provide unique mechanisms to publish all research assets associated with a scientific project (data and analyses) embedded in a cloud computing environment and referenced by a single digital-object-identifier (DOI). The platform is unique because of its focus on supporting scientific reproducibility beyond open code and open data, by providing fundamental smart mechanisms for what we refer to as “Open Services.” 
+A modern platform that uses both cloud and high-performance computing systems to support reproducible analyses, data management and visualization. Brainlife also provide unique mechanisms to publish all research assets associated with a scientific project (data and analyses) embedded in a cloud computing environment and referenced by a single digital-object-identifier (DOI). The platform is unique because of its focus on supporting scientific reproducibility beyond open code and open data, by providing fundamental smart mechanisms for what we refer to as “Open Services.” 
 
 # Brainlife Apps
 
@@ -29,6 +29,8 @@ Brainlife Apps communicate via Brainlife “Datatypes.” A Datatype defines exp
 Brainlife allows orchestration of data and computing across mix systems of Clouds and high-performance computing clusters (HPC). We refer to both HCP and Clouds as Brainlife Clouds, technically not precise terminology, but simple. Less is more. Brainlife orchestration allows users and compute resource providers to register a compute resource to make it available publicly to the full Brainlife users community or privately to a subset of users. Brainlife has smart mechanisms that allow Apps to run on different resources, privately or publicly. With a traditional approach of running an entire workflow on a small set of resources, some part of the workflow might not be optimal to run on a given resource, Brainlife allows App Developers to identify resources that best fit their Apps and score the compute resources available on the Brainlife platform depending on how well they work with the App they develop.
 
 # Brainlife Viz (Cloud Visualization)
+
+Brainlife has mechanisms to run brain data visualization on Brainlife Clouds. Data visualization is meant to provide users with an agile way to get feedback on the quality of the results generatd by Apps and pipelines. Visualization is impleelemnted with smart cloud-side methods, so that data are not moved from the Clould to the users computer. THis increases seecurity and improves management. Brainlife Viz allows running major software for data visualization familiar to the neuroscience community (e.g., FreeView, FSLview, MRview), and running GPU rendered visualizations. Visualization Apps can be openly contributed by developers tot hee Brainlife platform. 
 
 
 
