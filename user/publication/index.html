@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../..//img/favicon.ico">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.1">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
     
     
       
@@ -93,8 +93,8 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
       <a href="#publications" tabindex="1" class="md-skip">
@@ -353,9 +353,44 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Publication
+      </label>
+    
     <a href="./" title="Publication" class="md-nav__link md-nav__link--active">
       Publication
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-publication" title="Creating publication" class="md-nav__link">
+    Creating publication
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -586,6 +621,28 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-publication" title="Creating publication" class="md-nav__link">
+    Creating publication
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -600,15 +657,42 @@
                 
                 
                 <h1 id="publications">Publications<a class="headerlink" href="#publications" title="Permanent link">&para;</a></h1>
+<p>Once you have finished processing your datasets and produced all data derivatives, you can create a current snapshots of your archived datasets and create a publication page.</p>
+<p><img alt="publication.page" src="../../img/publication.page.png" /></p>
+<p>Publication pages can be accessed by anyone on the internet without having to login to Brainlife. Anyone can also download published datasets.</p>
+<p>Each publication record includes following information.</p>
+<ul>
+<li>A dedicated permanent-URL for the publication detail page.</li>
+<li>Unique DOI that redirects to the permanent-URL.</li>
+<li>Publication details such as authors, description, funders, data access license, etc that you can edit.</li>
+<li>Citation template that users can use to cite your publication.</li>
+<li>List of datasets that you'd like to make it part of your publication. Once you publish, you can not change the list of dataset published (for data reproducibility) Please be careful with which datasets to publish!</li>
+<li>For each dataset listed, user can view dataset detail including provenance, App used to generate the dataset and a link to download the actual dataset.</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Once you publish your datasets, those datasets will become "world-readable" even thought the project might be listed as private.</p>
+</div>
+<h2 id="creating-publication">Creating publication<a class="headerlink" href="#creating-publication" title="Permanent link">&para;</a></h2>
+<p>To create a new publication, go to the project that stores your data and go to the Publication tab. Click the <code>Plus</code> button at the right bottom corner of the screen. You should see a list of datatypes and their sizes like below.</p>
+<p><img alt="publication.page" src="../../img/publication.select.png" /></p>
+<p>Select datatypes that you'd like to include in your publication. Click <code>Next</code>.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Brainlife currently does not allow you to make modification to the list of datasets included in your publication once published. Please examine carefully as you will not be able to change/un-publish datasets once they are made public.</p>
+</div>
+<p>Next page allows you to enter title, description and various other metadata. Unlike datasets list, you can edit this information after you publish. When you are done, click <code>Submit</code>. The creation of publication records might take a minute depending on number of datasets. Brainlife will issue a new DOI from Datacite at this point.</p>
+<p>Once you've successfully published your new publication, you should see it listed under the Publications tab as well as the main <code>Publication</code> page which lists all currently registered publications from all projects.</p>
                 
                   
                 
               
               
                 
+                  
 
 
-  <h2 id="__comments">broken</h2>
+  <h2 id="__comments">Comments</h2>
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
@@ -624,6 +708,7 @@
     })();
   </script>
 
+                
               
             </article>
           </div>

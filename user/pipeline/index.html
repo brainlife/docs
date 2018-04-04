@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../..//img/favicon.ico">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.1">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
     
     
       
@@ -93,8 +93,8 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
       <a href="#pipelines" tabindex="1" class="md-skip">
@@ -366,6 +366,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#monitoring-pipeline-rules" title="Monitoring Pipeline Rules" class="md-nav__link">
+    Monitoring Pipeline Rules
+  </a>
+  
+</li>
+      
       
       
       
@@ -631,6 +638,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#monitoring-pipeline-rules" title="Monitoring Pipeline Rules" class="md-nav__link">
+    Monitoring Pipeline Rules
+  </a>
+  
+</li>
+      
       
       
       
@@ -679,15 +693,24 @@
 <p class="admonition-title">Hint</p>
 <p>There are number of regular expression tutorials available online. Also, please feel free to send us your question via Brainlife slack team.</p>
 </div>
+<h2 id="monitoring-pipeline-rules">Monitoring Pipeline Rules<a class="headerlink" href="#monitoring-pipeline-rules" title="Permanent link">&para;</a></h2>
+<p>Once you submit your pipeline, it might take 10 - 20 minutes before you start seeing new processes submitted by Brainlife's pipeline handler.</p>
+<p><img alt="pipeline.processes" src="../../img/pipeline.processes.png" /></p>
+<p>You can treat these processes as you would normally do with any other processes; examine outputs, stop, restart, etc.. The output datasets will be automatically archived once each task have completed successfully. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you remove a process or task, however, Brainlife will resubmit another process to handle that subject if the subject can be processed (has all input datasets) and has not produce the output from the requested app yet. </p>
+</div>
                 
                   
                 
               
               
                 
+                  
 
 
-  <h2 id="__comments">broken</h2>
+  <h2 id="__comments">Comments</h2>
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
@@ -703,6 +726,7 @@
     })();
   </script>
 
+                
               
             </article>
           </div>
