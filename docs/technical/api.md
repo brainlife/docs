@@ -1,32 +1,24 @@
-Brainlife platform consists of various microservices which enables various functionalities available to our end-users mainly through our web UI. This document describes some of these services in case you might be interested in directly interfacing with these services through our APIs.
+# Brainlife API
 
-![diagram](https://docs.google.com/drawings/d/e/2PACX-1vSbxpvxhckYT5rUJReexZdbaL4xZpMDiebDP-yQAxrcy1VwKCAHYQQTWE8mMQ4lBgQg9qpcZcZmaEr1/pub?w=960&amp;h=551)
+This document describes some of Brainlife's microservices in case you might be interested in directly interfacing with them through APIs.
 
-# Warehouse
+## Warehouse
 
 Warehouse is the main application responsible for bulk of Brainlife platform UI.
 
 * [Warehouse Github](https://github.com/brain-life/warehouse)
 * [Warehouse API Doc](https://brain-life.github.io/warehouse/apidoc)
 
-# CLI
+!!! note
+    Brainlife CLI interacts with Warehouse API to import / export datasets, query task status, and among other things. At the moment, we have a very limited CLI support, but please try using our CLI tool if you just want to interface with Brainlife Warehouse via commandline [CLI Github](https://github.com/brain-life/cli)
 
-You can use Brainlife CLI to import / export datasets, among other things. At the moment, we have a very limited CLI support. CLI is simply a wrapper around Brainlife APIs for various services listed in this page. You can use other APIs to perform necessary action if necessary.
-
-* [CLI Github](https://github.com/brain-life/cli)
-
-# Amaretti
+## Amaretti
 
 `Amaretti` is responsible for submitting, monitoring, and interfacing with apps running on various resources that you have access to. Please see Amaretti technical doc for more information.
 
 * [Amaretti Doc](https://brain-life.github.io/amaretti/)
 * [AMaretti Github](https://github.com/brain-life/amaretti)
 * [Amaretti API Doc](https://brain-life.github.io/amaretti/apidoc)
-
-# Other APIs
-
-Brainlife also uses the following other services. 
-
 
 ## Authentication Service
 

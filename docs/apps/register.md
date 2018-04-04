@@ -69,9 +69,9 @@ Or, if you'd like to store the output files under a sub directory, you can speci
 
 ![resources](/img/app.output2.png)
 
-### *raw* datatype
+### **raw** datatype
 
-Many app creates datatypes that are not meant to be used by any other app. You can use `raw` datatypes to output and archive such outputs. You should avoid using `raw` input datatype as an input to another app. If you need to use do this, please contact the developer of the upstream app generating the `raw` output dataset and ask them to define a new datatype.
+Many app creates datatypes that are not meant to be used by any other app. You can use `raw` datatypes to output and archive such outputs. You should avoid using `raw` input datatype as an input to another app. If you need to use do this, please contact the developer of the upstream app generating the `raw` output dataset and ask them to define a new datatype and use it instead of `raw` datatype.
 
 ## Configuration Parameters
 

@@ -22,23 +22,21 @@ pages:
     - Projects: user/project.md
     - Datatypes: user/datatypes.md
     - Processes: user/process.md
-    - Pipeline: user/pipeline.md
+    - Pipelines: user/pipeline.md
     - Publication: user/publication.md
   - App Developers: 
     - Introduction: apps/introduction.md
     - Hello World: apps/helloworld.md
-    - Register App: apps/register.md
+    - Registering App: apps/register.md
     - Containerizing App: apps/container.md
     - Versioning Tips: apps/versioning.md
     - Custom Hooks: apps/customhooks.md
   - Resource Provider: 
     - Registering Resource: resources/register.md
-  - Data Publisher: 
-    - Todo: todo.md
-  - Learners: 
-    - Todo: todo.md
   - Technical:
+    - Architecture: technical/arthitecture.md
     - APIs: technical/api.md
+  - Contact: contact.md
   - Releases: releases.md
 
 extra:
