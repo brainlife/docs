@@ -38,3 +38,17 @@ Above example will make this rule to only submit for subjects that starts with 1
 
 !!! hint
     There are number of regular expression tutorials available online. Also, please feel free to send us your question via Brainlife slack team.
+
+## Monitoring Pipeline Rules
+
+Once you submit your pipeline, it might take 10 - 20 minutes before you start seeing new processes submitted by Brainlife's pipeline handler.
+
+![pipeline.processes](/img/pipeline.processes.png)
+
+You can treat these processes as you would normally do with any other processes; examine outputs, stop, restart, etc.. The output datasets will be automatically archived once each task have completed successfully. 
+
+!!! note
+    If you remove a process or task, however, Brainlife will resubmit another process to handle that subject if the subject can be processed (has all input datasets) and has not produce the output from the requested app yet. 
+
+
+

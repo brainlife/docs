@@ -85,7 +85,12 @@ Configuration parameters allows users to enter any number (integer/float), boole
 
 * **Description** 
 
-    Some parameter types let you specify a description which will be displayed next to the input parameter to show detailed explanation about the input parameter. Please provide enough details for both novice and experienced users of your app.
+    Some parameter types let you specify a description which will be displayed next to the input parameter to show detailed explanation about the input parameter. Please provide enough details for both novice and experienced users of your app. 
+
+    !!! note
+        Brainlife App should not be just a simple wrapper for whatever the underlying algorithm you are executing. User should not be expected to know and provide all possible parameters for your algorithm. If your App will not work without a proper selection of parameters, then you should explain enough description for those fields so that user can figure out how to find the best values to use.
+        
+        Ideally, you should make all parameters optional or with workable default values. If user does not provide any value for required field, you should auto-compute the most optimal value at runtime if user does not provide specific values. You should allow an expert users to choose all parameters, but do all you can to make it work with default parameters for novice users.
 
 Finally, click `Submit`. Visit the apps page to make sure everything looks OK.
 
