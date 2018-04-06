@@ -10,6 +10,8 @@ You might also want to share the same *environment* container across multiple ap
 	singularity exec -e docker://brainlife/mrtrix_on_mcr:1.0 ./ensembletracking.sh
 	```
 
+	Without `1.0`, you won't know which version of the container you are executing which defeats the reproducibility of your app.
+
 To build a docker container, you need to [install Docker engine on your laptop](https://docs.docker.com/machine/install-machine/) or find a server that has docker engine installed that you can use. (Contact [Soichi](hayashis@iu.edu) if you need a help.)
 
 We assume you already have your Brainlife app hosted on Github, and you are making changes inside a cloned git repo on a machine with Docker engine.
