@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#what-is-app" tabindex="1" class="md-skip">
+      <a href="#introduction" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -386,6 +386,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         Introduction
@@ -399,6 +401,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -406,6 +410,13 @@
         <li class="md-nav__item">
   <a href="#what-is-app" title="What is App?" class="md-nav__link">
     What is App?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app-development-timeline" title="App Development Timeline" class="md-nav__link">
+    App Development Timeline
   </a>
   
 </li>
@@ -614,6 +625,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -621,6 +634,13 @@
         <li class="md-nav__item">
   <a href="#what-is-app" title="What is App?" class="md-nav__link">
     What is App?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app-development-timeline" title="App Development Timeline" class="md-nav__link">
+    App Development Timeline
   </a>
   
 </li>
@@ -650,35 +670,68 @@
                   <a href="https://github.com/brain-life/docs/edit/master/docs/apps/introduction.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Introduction</h1>
-                
-                <h2 id="what-is-app">What is App?<a class="headerlink" href="#what-is-app" title="Permanent link">&para;</a></h2>
-<p>Brainlife <em>Apps</em> are any code published on github that conforms to <a href="https://github.com/brain-life/abcd-spec">ABCD specification</a>. </p>
-<p>In a nutshell.. apps should..</p>
-<ul>
-<li>Provides an executable with a filename of <code>main</code> at the root of the git repo which execute the rest of the app (<code>main</code> could be a shell script, python script, etc..) On a batch system, Brainlife runs <code>qsub main</code> or <code>sbatch main</code> to submit the app depending on which local batch system is runs on.</li>
-<li>Receive all input parameters and paths to input files through <code>config.json</code> created by Brainlifes at runtime on the current working directory of the app. At runtime, Brainlife creates an empty directory somewhere on a compute resource, git clone the app, and places <code>config.json</code> along with other files stored in the git repo.</li>
-<li>Writes all output files in the current directory, in a structure expected by various <code>datatype</code> (more later).</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Brainlife app should follow the principle of <a href="https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well">Do One Thing and Do It Well</a> where a complex workflow should be split into several apps (but no more than necessary nor practical). </p>
+                <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<h2 id="what-is-app">What is <em>App</em>?<a class="headerlink" href="#what-is-app" title="Permanent link">&para;</a></h2>
+<p>Brainlife Apps are ..</p>
+<ol>
+<li>Hosted on a public github repo.</li>
+<li>Have an executable file with a filename of <code>main</code> at the root of the git repo which. It should normally be a bash script that runs your algorithms. It could be written in any language, or compiled binaries, but you should package your app as a Docker container so you can execute it with <code>singularity exec</code>) </li>
+<li>Receive all input parameters and paths for input files through <code>config.json</code> which is created by Brainlife at runtime on the current working directory of the compute resource that your App will run on. </li>
+<li>Write all output files in the current directory in a structure expected by various Brainlife <code>datatype</code> (more later).</li>
+</ol>
+<p>For more technical specification, please read <a href="https://github.com/brain-life/abcd-spec">ABCD specification</a></p>
+<h2 id="app-development-timeline">App Development Timeline<a class="headerlink" href="#app-development-timeline" title="Permanent link">&para;</a></h2>
+<p>You would normally follow following steps to develop and register your App on Brainlife.</p>
+<ol>
+<li>Develop an algorithm that runs on your laptop or local cluster with your test datasets.</li>
+<li>Create a sample <code>config.json</code> but add it to <code>.gitignore</code> so that it won't be part of your repo. (You can include <code>config.json.sample</code> and symlink it to config.json)</li>
+<li>Create <code>main</code> that parses <code>config.json</code> and pass it to your algorithm.</li>
+<li>Publish it as public github repo.</li>
+<li>Register your App on Brainlife. During this step, you can define what parameters and input file should be made available to your App via <code>config.json</code>.</li>
+<li>Contact resource administrators and ask them to enable your App (more below). </li>
+</ol>
+<h1 id="enabling-app-on-a-compute-resource">Enabling App on a compute resource<a class="headerlink" href="#enabling-app-on-a-compute-resource" title="Permanent link">&para;</a></h1>
+<p>App needs to be enabled on each compute resources to run. Each user will have a different set of resources that they have access to, but Brainlife provides default <strong>shared</strong> resources for all users. If you want anyone in the Brainlife to be able to run your App, you can <a href="../brlife@iu.edu">contact the resource administrators</a> of these default resources to enable your Apps.</p>
+<p>You will need to discuss with resource administrators on how to handle any dependencies/libraries that your App might require. To make things easier and reproducible, you should consider Dockerizing you App's <strong>dependencies</strong> (but not the App itself) so that you can run your App through your container using <a href="https://singularity.lbl.gov/">singularity</a> from your <code>main</code>. </p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Most compute resources now provide singularity which increases the number of resource where you might be able to run your Apps.</p>
 </div>
-<p>Brainlife apps interface with other apps through Brainlife <em>datatypes</em> which are developer defined file / directory structure to hold specific data.</p>
-<p>For example, we have following datatypes currently registered on Brainlife.</p>
+<h2 id="app-launch-sequence">App Launch Sequence<a class="headerlink" href="#app-launch-sequence" title="Permanent link">&para;</a></h2>
+<p>Brainlife executes an App in following steps.</p>
+<ol>
+<li>A user requests to run your App through Brainlife.</li>
+<li>Brainlife queries a list of compute resources that user has access to and currently available to run your App. Brainlife then determines the best compute resource to run your App.</li>
+<li>Brainlife stages input datasets out of Brainlife's datasets archive, or transfer any dependent task's work directory that are required to run your App.</li>
+<li>Brainlife creates a new working directory by git cloning your App on (normally) a resource's scratch disk space, and place <code>config.json</code> containing user specified configuration parameters and various paths the input files.</li>
+<li>Brainlife then runs <code>start</code> hook installed on each compute resources as part of <code>abcd specification</code> (App developer should have to worry about this under the most circumstances).</li>
+<li>On a PBS cluster, <code>start</code> hook then <strong>qsub</strong>s your <code>main</code> script and place it on the local batch scheduler queue.</li>
+<li>Local job scheduler runs your <code>main</code> on a compute node and your App will execute your algorithm, and generate output on the working directory.</li>
+<li>Brainlife periodically monitors your job and relay information back to the user.</li>
+<li>Once job is completed, user archives an output dataset if the result is valid.</li>
+</ol>
+<h2 id="datatype">Datatype<a class="headerlink" href="#datatype" title="Permanent link">&para;</a></h2>
+<p>Different Brainlife Apps can exchange input/output datasets through Brainlife <em>datatypes</em> which are developer defined file/directory structure that holds specific set of data.</p>
+<p>Here are some example of currently registered datatypes.</p>
 <ul>
 <li>neuro/anat/t1w (t1.nii.gz)</li>
 <li>neuro/anat/t2w (t2.nii.gz) </li>
 <li>neuro/dwi (diffusion data and bvecs/bvals)</li>
 <li>neuro/freesurfer (entire freesurfer output)</li>
-<li>neuro/tract (tract.tck containing track data in tck format)</li>
-<li>neuro/dtiinit (dtiinit output)</li>
+<li>neuro/tract (tract.tck containing fiber track data)</li>
+<li>neuro/dtiinit (dtiinit output - dti output directory)</li>
+<li>generic/images (a list of images)</li>
+<li>raw (unstructured data often used during development)</li>
 </ul>
-<p>So on..</p>
-<p>Your app should read from one or more of these datatypes, and write output data in a format specified by these datatypes. This may mean you have to do some extra importing of input data and exporting/reformatting of the output data. We maintain our list of <code>datatypes</code> in our <a href="https://github.com/brain-life/datatypes/tree/master/datatypes/neuro">brain-life/datatypes</a> repo. To create a new datatype, please open an issue, or send us PR with a new datatype definition file (.json). We do not modify datatypes once it's published. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Before writing your apps, please browse <a href="https://brainlife.io/warehouse/#/apps">already registered apps</a> and datatypes under Brain-Life.org to make sure that you are not reinventing parts of your application. If you find an app that is similar but does not exactly do what you need, please contact the developer of the app and discuss if the feature you need can be added to the already existing app. </p>
+<p>Your App should read from one or more of these datatypes and write output data in a format specified by another datatype. By identifying existing datatypes that you can interoperate you can interface with datasets generated by other Apps and your output can be used by other Apps as their input.</p>
+<p>We maintain a list of <code>datatypes</code> in our <a href="https://github.com/brain-life/datatypes/tree/master/datatypes/neuro">brain-life/datatypes</a> repo. To create a new datatype, please open an issue, or submit a PR with a new datatype definition file (.json). We do not modify datatypes once it's published to preserve backward compatibility, but you can re-register new datatype under a different version.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Brainlife app should follow the <a href="https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well">Do One Thing and Do It Well</a> principle where a complex workflow should be split into several smaller Apps (but no more than necessary nor practical) to promote code-reuse and help parallelize your workflow and run each App on the most appropriate compute resource available.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Before writing your apps, please browse <a href="https://brainlife.io/warehouse/#/apps">currently registered Brainlife Apps</a> and datatypes under Brainlife.io to make sure you are not reinventing Apps. If you find an App that is similar to what you need, please contact the developer of the App and discuss if the feature you need can be added to the App.</p>
 </div>
                 
                   

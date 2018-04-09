@@ -756,6 +756,7 @@
 <p class="admonition-title">Warning</p>
 <p>If you do share your <em>environment</em> container, be sure to specify which version(tag) of the container you are using in your app. Like..
 <code>singularity exec -e docker://brainlife/mrtrix_on_mcr:1.0 ./ensembletracking.sh</code></p>
+<p>Without <code>1.0</code>, you won't know which version of the container you are executing which defeats the reproducibility of your app.</p>
 </div>
 <p>To build a docker container, you need to <a href="https://docs.docker.com/machine/install-machine/">install Docker engine on your laptop</a> or find a server that has docker engine installed that you can use. (Contact <a href="../hayashis@iu.edu">Soichi</a> if you need a help.)</p>
 <p>We assume you already have your Brainlife app hosted on Github, and you are making changes inside a cloned git repo on a machine with Docker engine.</p>
