@@ -1,8 +1,8 @@
 > Please read [App Developers / Introduction](/apps/introduction.md) first. 
 
-# Hello World
+# HelloWorld
 
-Let's create a "HelloWorld" Brainlife App. 
+Here, we will create a "HelloWorld" Brainlife App. 
 
 Let's begin by creating a brand new [github repository](https://help.github.com/articles/creating-a-new-repository/). Please be sure to make the repo public so that Brainlife can access it. You can name it whatever you like (like "app-helloworld").
 
@@ -156,7 +156,7 @@ git commit -m"created my first BL App!"
 git push
 ```
 
-Congratulations! We have just created our first Brainlife App! To summarize, we've done following.
+Congratulations! We have just created our first Brainlife App. To summarize, we've done following.
 
 * Created a new public Github repo.
 * Created `main` which parses `config.json` and runs our App.
@@ -167,7 +167,13 @@ Congratulations! We have just created our first Brainlife App! To summarize, we'
 !!! info
     You can see more concrete examples of Brainlife apps at [Brainlife hosted apps](https://github.com/search?q=org%3Abrain-life+app-).
 
-Now you are ready to register your App on the Brianlife!
+To run your App through Brainlife, you will need to do following.
+
+1. [Register your App on Brainlife.](/apps/register/)
+
+2. Enable your App on at least one Brainlife compute resource. 
+
+    For now, please email [mailto:brlife@iu.edu](brlife@iu.edu) to enable your App on our shared test resource.
 
 <!--
 All input parameters are assumed to be text (char). You need to write your functions that are going to be MATLAB compiled with all the arguments as text. Arguments passing a number need to be given as text and within the function converted to integers values (str2num(), etc.). 
