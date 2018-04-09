@@ -1,14 +1,15 @@
+#Introduction
 
 ## What is *App*?
 
-Brainlife *App* is any code published on github that conforms to [ABCD specification](https://github.com/brain-life/abcd-spec).
-
-In a nutshell, your App should..
+Brainlife Apps are ..
 
 1. Hosted on a public github repo.
 2. Have an executable file with a filename of `main` at the root of the git repo which. It should normally be a bash script that runs your algorithms. It could be written in any language, or compiled binaries, but you should package your app as a Docker container so you can execute it with `singularity exec`) 
 3. Receive all input parameters and paths for input files through `config.json` which is created by Brainlife at runtime on the current working directory of the compute resource that your App will run on. 
 4. Write all output files in the current directory in a structure expected by various Brainlife `datatype` (more later).
+
+For more technical specification, please read [ABCD specification](https://github.com/brain-life/abcd-spec)
 
 ## App Development Timeline
 
