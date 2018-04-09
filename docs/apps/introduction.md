@@ -1,31 +1,70 @@
 
-## What is App?
+## What is *App*?
 
-Brainlife *Apps* are any code published on github that conforms to [ABCD specification](https://github.com/brain-life/abcd-spec). 
+Brainlife *App* is any code published on github that conforms to [ABCD specification](https://github.com/brain-life/abcd-spec).
 
-In a nutshell.. apps should..
+In a nutshell, your App should..
 
-* Provides an executable with a filename of `main` at the root of the git repo which execute the rest of the app (`main` could be a shell script, python script, etc..) On a batch system, Brainlife runs `qsub main` or `sbatch main` to submit the app depending on which local batch system is runs on.
-* Receive all input parameters and paths to input files through `config.json` created by Brainlifes at runtime on the current working directory of the app. At runtime, Brainlife creates an empty directory somewhere on a compute resource, git clone the app, and places `config.json` along with other files stored in the git repo.
-* Writes all output files in the current directory, in a structure expected by various `datatype` (more later).
+1. Hosted on a public github repo.
+2. Have an executable file with a filename of `main` at the root of the git repo which. It should normally be a bash script that runs your algorithms. It could be written in any language, or compiled binaries, but you should package your app as a Docker container so you can execute it with `singularity exec`) 
+3. Receive all input parameters and paths for input files through `config.json` which is created by Brainlife at runtime on the current working directory of the compute resource that your App will run on. 
+4. Write all output files in the current directory in a structure expected by various Brainlife `datatype` (more later).
 
-!!! note 
-    Brainlife app should follow the principle of [Do One Thing and Do It Well](https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well) where a complex workflow should be split into several apps (but no more than necessary nor practical). 
+## App Development Timeline
 
-Brainlife apps interface with other apps through Brainlife *datatypes* which are developer defined file / directory structure to hold specific data.
+You would normally follow following steps to develop and register your App on Brainlife.
 
-For example, we have following datatypes currently registered on Brainlife.
+1. Develop an algorithm that runs on your laptop or local cluster with your test datasets.
+2. Create a sample `config.json` but add it to `.gitignore` so that it won't be part of your repo. (You can include `config.json.sample` and symlink it to config.json)
+3. Create `main` that parses `config.json` and pass it to your algorithm.
+4. Publish it as public github repo.
+5. Register your App on Brainlife. During this step, you can define what parameters and input file should be made available to your App via `config.json`.
+6. Contact resource administrators and ask them to enable your App (more below). 
+
+# Enabling App on a compute resource
+
+App needs to be enabled on each compute resources to run. Each user will have a different set of resources that they have access to, but Brainlife provides default **shared** resources for all users. If you want anyone in the Brainlife to be able to run your App, you can [contact the resource administrators](brlife@iu.edu) of these default resources to enable your Apps.
+
+You will need to discuss with resource administrators on how to handle any dependencies/libraries that your App might require. To make things easier and reproducible, you should consider Dockerizing you App's **dependencies** (but not the App itself) so that you can run your App through your container using [singularity](https://singularity.lbl.gov/) from your `main`. 
+
+!!! hint
+    Most compute resources now provide singularity which increases the number of resource where you might be able to run your Apps.
+
+## App Launch Sequence
+
+Brainlife executes an App in following steps.
+
+1. A user requests to run your App through Brainlife.
+2. Brainlife queries a list of compute resources that user has access to and currently available to run your App. Brainlife then determines the best compute resource to run your App.
+3. Brainlife stages input datasets out of Brainlife's datasets archive, or transfer any dependent task's work directory that are required to run your App.
+4. Brainlife creates a new working directory by git cloning your App on (normally) a resource's scratch disk space, and place `config.json` containing user specified configuration parameters and various paths the input files.
+5. Brainlife then runs `start` hook installed on each compute resources as part of `abcd specification` (App developer should have to worry about this under the most circumstances).
+6. On a PBS cluster, `start` hook then **qsub**s your `main` script and place it on the local batch scheduler queue.
+7. Local job scheduler runs your `main` on a compute node and your App will execute your algorithm, and generate output on the working directory.
+8. Brainlife periodically monitors your job and relay information back to the user.
+9. Once job is completed, user archives an output dataset if the result is valid.
+
+## Datatype
+
+Different Brainlife Apps can exchange input/output datasets through Brainlife *datatypes* which are developer defined file/directory structure that holds specific set of data.
+
+Here are some example of currently registered datatypes.
 
 * neuro/anat/t1w (t1.nii.gz)
 * neuro/anat/t2w (t2.nii.gz) 
 * neuro/dwi (diffusion data and bvecs/bvals)
 * neuro/freesurfer (entire freesurfer output)
-* neuro/tract (tract.tck containing track data in tck format)
-* neuro/dtiinit (dtiinit output)
+* neuro/tract (tract.tck containing fiber track data)
+* neuro/dtiinit (dtiinit output - dti output directory)
+* generic/images (a list of images)
+* raw (unstructured data often used during development)
 
-So on..
+Your App should read from one or more of these datatypes and write output data in a format specified by another datatype. By identifying existing datatypes that you can interoperate you can interface with datasets generated by other Apps and your output can be used by other Apps as their input.
 
-Your app should read from one or more of these datatypes, and write output data in a format specified by these datatypes. This may mean you have to do some extra importing of input data and exporting/reformatting of the output data. We maintain our list of `datatypes` in our [brain-life/datatypes](https://github.com/brain-life/datatypes/tree/master/datatypes/neuro) repo. To create a new datatype, please open an issue, or send us PR with a new datatype definition file (.json). We do not modify datatypes once it's published. 
+We maintain a list of `datatypes` in our [brain-life/datatypes](https://github.com/brain-life/datatypes/tree/master/datatypes/neuro) repo. To create a new datatype, please open an issue, or submit a PR with a new datatype definition file (.json). We do not modify datatypes once it's published to preserve backward compatibility, but you can re-register new datatype under a different version.
 
-!!! note
-    Before writing your apps, please browse [already registered apps](https://brainlife.io/warehouse/#/apps) and datatypes under Brain-Life.org to make sure that you are not reinventing parts of your application. If you find an app that is similar but does not exactly do what you need, please contact the developer of the app and discuss if the feature you need can be added to the already existing app. 
+!!! hint
+    Brainlife app should follow the [Do One Thing and Do It Well](https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well) principle where a complex workflow should be split into several smaller Apps (but no more than necessary nor practical) to promote code-reuse and help parallelize your workflow and run each App on the most appropriate compute resource available.
+
+!!! hint
+    Before writing your apps, please browse [currently registered Brainlife Apps](https://brainlife.io/warehouse/#/apps) and datatypes under Brainlife.io to make sure you are not reinventing Apps. If you find an App that is similar to what you need, please contact the developer of the App and discuss if the feature you need can be added to the App.

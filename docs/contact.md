@@ -6,11 +6,13 @@ General > [Brarinlife &lt;brlife@iu.edu&gt;](mailto:brlife@iu.edu)
 
 Contact PI > [Franco Pestilli &lt;frakkopesto@gmail.com&gt;](mailto:frakkopesto@gmail.com)
 
+## Newsletter Subscription
+
+[Brainlife User](http://eepurl.com/dqw5_T)
+
 ## Slack (brainlife.slack.com) 
 
-[Join brainlife.slack.com](https://brainlife-inviter.herokuapp.com/) 
-
-![logo](https://brainlife-inviter.herokuapp.com/badge.svg)
+[Join brainlife.slack.com](https://brainlife-inviter.herokuapp.com/) ![logo](https://brainlife-inviter.herokuapp.com/badge.svg)
 
 ## Bug Report / Feature Request
 
