@@ -167,7 +167,7 @@ Congratulations! We have just created our first Brainlife App. To summarize, we'
 !!! info
     You can see more concrete examples of Brainlife apps at [Brainlife hosted apps](https://github.com/search?q=org%3Abrain-life+app-).
 
-To run your App through Brainlife, you will need to do following.
+To run your App on Brainlife, you will need to do following.
 
 1. [Register your App on Brainlife.](/apps/register/)
 
