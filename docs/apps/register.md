@@ -163,7 +163,7 @@ Brainlife re-uses information stored in github repo.
 Once you registered your App on Brainlife, you then need to enable your App on resources where you can run it. A resource could be any VM, HPC cluster, or public / private cloud resource. Only the resource owners/administrators can enable your App to run on their resources. Please contact the resource administrator for the resource where you'd like to submit your App.
 
 !!! note
-    If you are not sure who the resource administrator is, please contact [mailto:brlife@iu.edu](Brainlife Support).
+    If you are not sure who the resource administrator is, please contact [Brainlife](mailto:brlife@iu.edu).
 
 If you have access to your own computing resources, you can register personal resources and run your App there to test. Please read [registering resource page](/resources/register.md) for more detail. Please keep in mind that, on personal resources, only you can run enabled Apps on those resources. To allow other users to run your App, you will need to enable it on Brainlife's shared resources.
 
