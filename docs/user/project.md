@@ -1,8 +1,8 @@
 # Project
 
-*Project* is where you can organize your dataset, do data processing, and share them with your project members.
+*Project* is where you can organize your datasets, do data processing, and share them with your project members.
 
-Each project can have specific set of users for `admins`, `members`, or `guests` groups. `Admin` can update the project access policy, and edit `admins` and `members` of the project. `Members` has read/write access to the content of the project, such as datasets, and projects, but can not make changes to the group members. `Guests` will have read access to the datasets and processes. 
+Each project can have a specific set of users for `admins`, `members`, or `guests` groups. `Admin` can update the project access policy and edit various groups for the project. `Members` have read/write access to the datasets but cannot make changes to the group members. `Guests` have read access to datasets and processes, but cannot modify them.
 
 Brainlife currently supports the following project access policies.
 
@@ -12,18 +12,18 @@ Brainlife currently supports the following project access policies.
 
 * **Private**
 
-    Private project allows only the project members to download, or use archived datasets to process data. Only the admins and project members can find the project under project list.
+    Private project allows only the project members to download or use archived datasets to run Apps. Only the admins and project members can find the project under project list.
 
-* **Protected**
+    `List project summary for all users` 
 
-    Same as Private projects except all users can see basic project details. You can use this to keep your project private but solicit other users to join the project or become a guest users to have read access to the datasets.
+    If you'd like to keep your project private while allowing other users to know its existance through the project menu, please check this check box. You can solicit other users to join the project and/or become guest users to have read access to its datasets.
 
-The following table shows who can perform which actions under project.
+The following table shows who can perform which actions under a project.
 
 | Action | Public Project | Private Project |
 | ------------- | ------------- | ----- |
 | Update project detail | Admin | Admin |
-| See project detail | Admin / Members | Admin / Members |
+| See project info | Admin / Members | Admin / Members (If *listed*, all users) |
 | List datasets | Admin / Members | Admin / Members |
 | Download datasets | Admin / Members | Admin / Members |
 | Update dataset detail | Admin / Members | Admin / Members |

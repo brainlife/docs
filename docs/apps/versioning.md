@@ -29,7 +29,7 @@ You could use tags instead of branches, but tags does not allow you make modific
 
 If you find a bug after you create a branch, you first need to fix the bug on the master, test it, then apply the same fix on all branches that are affected. I recommend using command like [cherry-pick](https://git-scm.com/docs/git-cherry-pick) to apply specific changes on other branches. Again, we should not add any new features on branches (only bug fixes) for reproducibility. 
 
-## 5. Semvar
+## 5. Semver
 
 If you don't know what semantic versioning is, please read [https://semver.org/](https://semver.org/).
 

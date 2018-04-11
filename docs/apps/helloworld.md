@@ -1,49 +1,53 @@
-Let's begin by creating a brand new [github repository](https://help.github.com/articles/creating-a-new-repository/). Please be sure to make the repository public so that Brain-Life can download your app.
+> Please read [App Developers / Introduction](/apps/introduction.md) first. 
 
-Git clone your new repository to where you will be developing and running your app to test.
+# HelloWorld
+
+Here, we will create a "HelloWorld" Brainlife App. 
+
+Let's begin by creating a brand new [github repository](https://help.github.com/articles/creating-a-new-repository/). Please be sure to make the repo public so that Brainlife can access it. You can name it whatever you like (like "app-helloworld").
+
+Git clone your new repository to wherever you will be developing/editing and testing your App.
 
 ```
-git clone git@github.com:soichih/app-test.git
+git clone git@github.com:username/app-helloworld.git
 ```
 
-Now, create a file named `main` which is used to run your app by Brain-Life. You can also run this file to test your application locally.
+Now, create a file called `main`.
 
-```
+#### main
+
+```bash
 #!/bin/bash
 
 #PBS -l nodes=1:ppn=1
 #PBS -l walltime=00:05:00
 
-#parse config.json for input parameters
+#parse config.json for input parameters (here, we are pulling "t1")
 t1=$(jq -r .t1 config.json)
 ./main.py $t1
-
 ```
 
 Please be sure to set the executable bit.
 
-```
+```bash
 chmod +x main
 ```
 
-> [`jq`](https://stedolan.github.io/jq/) is a common command line tool used to parse a small JSON file and pull values out of it. You can install it by `apt-get install jq`. 
+!!! hint
+    [`jq`](https://stedolan.github.io/jq/) is a command line tool used to parse a small JSON file and pull values out of it. You can install it on your machine by running something like `apt-get install jq` or `yum install jq` depending on your OS/distribution. All Brainlife resources should have common binaries installed including `bash`, `jq`, and `singularity`.
 
+The first few lines in our `main` instructs PBS or Slurm batch systems to request a certain number of nodes/processes to our App. 
 
-!!! note
-    All Brainlife resource should at least have `jq` and `singularity` command installed. 
-
-Following part in `main` instructs PBS (or slurm job manager) to request certain number of nodes / process-per-node. It's not necessary if you are not planning to run your app via PBS scheduler.
-
-```
+```bash
 #PBS -l nodes=1:ppn=1
 #PBS -l walltime=00:05:00
 ```
 
-You can receive input parameters from Brainlife through a JSON file called `config.json` which is created by Brainlife when the app is executed. See [Example config.json](https://github.com/brain-life/app-dtiinit/blob/master/config.json.sample).
+You will receive all input parameters from Brainlife through a JSON file named `config.json` which is created by Brainlife when your App is executed. See [Example config.json](https://github.com/brain-life/app-dtiinit/blob/master/config.json.sample. As an App developer, you will define what parameters needs to be entered by the user and input datasets later when you register your App on Brainlife.
 
-Following lines parses the `config.json` using `jq` and pass it to the main part of the application `main.py`.
+Following lines parses the `config.json` using `jq` and the value of `t1` to the main part of the application which we will create later.
 
-```
+```bash
 #parse config.json for input parameters
 t1=$(jq -r .t1 config.json)
 ./main.py $t1
@@ -51,52 +55,62 @@ t1=$(jq -r .t1 config.json)
 
 To be able to test your application, let's create a test `config.json`.
 
-```
+#### config.json
+
+```json
 {
    "t1": "/somewhere/t1.nii.gz"
 }
 ```
 
-You should add this file to .gitignore since it is only used locally on your machine to test your app.
+Please update the path to wherever you have your test `anat/t1w` input file. If you don't have any, you can download one from [Brainlife/O3D](https://brainlife.io/pub/5a0f0fad2c214c9ba8624376) publication page. Just click the Datasets tab, and select any `anat/t1w` data to download.
+
+You should add `config.json` to .gitignore as `config.json` is created at runtime by Brainlife, and we just need this now to test your app. 
+
+!!! hint
+    A good pattern might be to create a file called `config.json.sample` used to test your App, and create a symlink `ln -s config.json config.json.sample` so that you can run your app using `config.json.sample` without including the actual `config.json` as part of your repo. This allows other users to construct their own `config.json` if they want to run your app via command line.
 
 !!! note
-    Instead of using `jq` command to parse `config.json` in `main`, you can use python's json parsing library (`import json`) inside `main.py` if you prefer.
+    Instead of parsing `config.json` inside `main`, you could use other parsing library as part of your algorithm itself, like Python's `import json`, or Matlab's [jsonlab](https://github.com/fangq/jsonlab.git) module inside the actual program that `main` will be executing.
 
-    Or..  for Matlab, you could use [jsonlab](https://github.com/fangq/jsonlab.git) module to parse the json.
+Our `main` script runs a python script called `main.py` so let's create it.
 
-Our `main` script runs a python script called `main.py`. Let's create it.
+#### main.py
 
 ```
 #!/usr/bin/env python
 
 import sys
-import dipy.tracking as dipytracking
-dipytracking.bench()
+import nibabel as nib
 
-t1=sys.argv[1]
-
-#do something interesting with t1...
-print(t1)
-f = open("output.txt", "w")
-f.write("hello world")
+#just dump input image header to output.txt
+img=nib.load(sys.argv[1])
+f=open("output.txt", "w")
+f.write(str(img.header))
 f.close()
+
 ```
 
-!!! todo
-    Please contribute to make this a bit more interesting hello world example!
+Again, be sure to set the executable bit.
 
-Any output files from your app should be written to the current directory so that Brainlife can pick them up after your job is completed. For now, we are not going to worry about the output datatype (we are going to use `raw`)
+```
+chmomd +x main.py
+```
 
-Please be sure to add any output files from your app to .gitignore so that it won't be part of your git repo after you 
+Any output files from your app should be written to the current working directory and in a file structure that complies with whichever the datatype of your dataset is. For now, we are not going to worry about the output datatype (assuming we will use `raw`)
 
-`.gitignore`
+Please be sure to add any output files from your app to .gitignore so that it won't be part of your git repo. 
+
+#### .gitignore
 
 ```
 config.json
 output.txt
 ```
 
-Now, you should be able to test run your app simply by executing `main`
+## Testing
+
+Now, you should be able to test run your app locally by executing `main`
 
 ```
 ./main
@@ -107,25 +121,59 @@ Now, you should be able to test run your app simply by executing `main`
     If you are testing on HPC clusters, be sure to enter the interactive shell session before running your `main` by executing something like `qsub -I`
 -->
 
-If your app outputs correct output file on the local directgory, your application is ready to be pushed to the github. 
+Now, it should generate an output file called `output.txt` containing the dump of all nifti headers.
 
 ```
+<class 'nibabel.nifti1.Nifti1Header'> object, endian='<'
+sizeof_hdr      : 348
+data_type       : 
+db_name         : 
+extents         : 0
+session_error   : 0
+regular         : r
+dim_info        : 0
+dim             : [  3 260 311 260   1   1   1   1]
+...
+...
+...
+qoffset_x       : 90.0
+qoffset_y       : -126.0
+qoffset_z       : -72.0
+srow_x          : [ -0.69999999   0.           0.          90.        ]
+srow_y          : [   0.            0.69999999    0.         -126.        ]
+srow_z          : [  0.           0.           0.69999999 -72.        ]
+intent_name     : 
+magic           : n+1
+```
+
+## Pushing to Github
+
+If everything looks good, push our files to the Github.
+
+```bash
 git add .
-git commit -m"initial import"
+git commit -m"created my first BL App!"
 git push
 ```
 
-Now you are ready to register your app on the Brianlife to run it through Brainlife!
+Congratulations! We have just created our first Brainlife App. To summarize, we've done following.
 
-To summarize, we've done following to create Brainlife app.
-
-* Created a new repo on Github.
-* Created `main` which runs the app.
-* App reads input parameters from `config.json` created by Brainlife at runtime (we created a test `config.json`  to test our app).
-* App writes output files to the current directory (and an expected format for each datatype - we will work on this later)
+* Created a new public Github repo.
+* Created `main` which parses `config.json` and runs our App.
+* Created a test `config.json`.
+* Created `main.py` which runs our algorithm and generate output files.
+* Tested the App, and pushed all files to Github.
 
 !!! info
     You can see more concrete examples of Brainlife apps at [Brainlife hosted apps](https://github.com/search?q=org%3Abrain-life+app-).
+
+To run your App on Brainlife, you will need to do following.
+
+1. [Register your App on Brainlife.](/apps/register/)
+
+2. Enable your App on at least one Brainlife compute resource. 
+
+    For now, please email [mailto:brlife@iu.edu](brlife@iu.edu) to enable your App on our shared test resource.
 
 <!--
 All input parameters are assumed to be text (char). You need to write your functions that are going to be MATLAB compiled with all the arguments as text. Arguments passing a number need to be given as text and within the function converted to integers values (str2num(), etc.). 

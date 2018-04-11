@@ -26,7 +26,7 @@ pages:
     - Publications: user/publication.md
   - App Developers: 
     - Introduction: apps/introduction.md
-    - Hello World: apps/helloworld.md
+    - HelloWorld: apps/helloworld.md
     - Registering App: apps/register.md
     - Containerizing App: apps/container.md
     - Versioning Tips: apps/versioning.md
@@ -37,6 +37,7 @@ pages:
     - Architecture: technical/arthitecture.md
     - APIs: technical/api.md
   - Contact: contact.md
+  - Terms of Use: terms.md
   - Releases: releases.md
 
 extra:

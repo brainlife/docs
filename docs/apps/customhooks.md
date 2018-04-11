@@ -101,8 +101,8 @@ C)
     fi
     ;;
 *)
-    echo "unknown job status $jobstate"
-    exit 2
+    echo "unknown job status $jobstate .. will check later"
+    exit 3
     ;;
 
 esac
