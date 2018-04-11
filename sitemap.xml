@@ -133,6 +133,14 @@
 
     
     <url>
+     <loc>https://brain-life.github.io/docs//terms/</loc>
+     <lastmod>2018-04-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
      <loc>https://brain-life.github.io/docs//releases/</loc>
      <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>

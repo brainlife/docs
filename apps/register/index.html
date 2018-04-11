@@ -393,8 +393,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../helloworld/" title="Hello World" class="md-nav__link">
-      Hello World
+    <a href="../helloworld/" title="HelloWorld" class="md-nav__link">
+      HelloWorld
     </a>
   </li>
 
@@ -474,8 +474,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#datatype-tags" title="Datatype Tags" class="md-nav__link">
-    Datatype Tags
+  <a href="#id" title="ID" class="md-nav__link">
+    ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datatypetags" title="Datatype/Tags" class="md-nav__link">
+    Datatype/Tags
   </a>
   
 </li>
@@ -534,8 +541,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enabling-app-on-resource" title="Enabling app on resource" class="md-nav__link">
-    Enabling app on resource
+  <a href="#enabling-app-on-resource" title="Enabling App on resource" class="md-nav__link">
+    Enabling App on resource
   </a>
   
 </li>
@@ -700,6 +707,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../terms/" title="Terms of Use" class="md-nav__link">
+      Terms of Use
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../../releases/" title="Releases" class="md-nav__link">
       Releases
     </a>
@@ -769,8 +788,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#datatype-tags" title="Datatype Tags" class="md-nav__link">
-    Datatype Tags
+  <a href="#id" title="ID" class="md-nav__link">
+    ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datatypetags" title="Datatype/Tags" class="md-nav__link">
+    Datatype/Tags
   </a>
   
 </li>
@@ -829,8 +855,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enabling-app-on-resource" title="Enabling app on resource" class="md-nav__link">
-    Enabling app on resource
+  <a href="#enabling-app-on-resource" title="Enabling App on resource" class="md-nav__link">
+    Enabling App on resource
   </a>
   
 </li>
@@ -861,95 +887,128 @@
                 
                 
                 <h1 id="registering-app">Registering App<a class="headerlink" href="#registering-app" title="Permanent link">&para;</a></h1>
-<p>Once you have developed your app (on github), you can now register it on Brainlife so that you can run it through Brainlife UI and let other users discover your app.</p>
-<p>Under <a href="https://brainlife.io/apps">App page</a>, click <code>Plus Button</code> at the bottom right corner of the page. App registration form should open.</p>
+<p>Once your App is published on github, you can now register it on Brainlife and let you and other users discover your App and execute on Brainlife.</p>
+<p>First, go to the <a href="https://brainlife.io/apps">Apps page</a> on Brainlife, click <code>Plus Button</code> at the bottom right corner of the page. App registration form should appear.</p>
 <p>Let's go through each sections.</p>
 <h2 id="detail">Detail<a class="headerlink" href="#detail" title="Permanent link">&para;</a></h2>
 <p><img alt="dataset" src="../../img/app.detail.png" /></p>
-<p>Enter <code>name</code> and <code>Git Repository Name</code> field. On <code>Git Repository Name</code>, please enter only the organization / repository name (like <code>brain-life/app-life</code>) not the full github repo URL.</p>
+<p>Enter any <code>name</code> for your App and <code>Git Repository Name</code> field which is the the organization / repository name (like <code>yourname/app-name</code>) of your github repo. Please do not enter the full github URL.</p>
 <p>All other fields in this section are optional, but you could populate following fields.</p>
 <h3 id="avatar">Avatar<a class="headerlink" href="#avatar" title="Permanent link">&para;</a></h3>
-<p>You can enter <code>avatar</code> URL if you have URL for an avatar that you'd like to use for your app. Please choose a square image with <code>https://</code> URL (not http://). Avatar may sounds superflusou, but please keep in mind that, there are a lot of app registered in Brainlife and this might be the only visual queue that user could identify and look for among many names / descriptions for other apps.</p>
+<p>You can enter <code>avatar</code> URL if you have URL for an avatar that you'd like to use for your App. Please choose a square image with <code>https://</code> URL (not <code>http://</code>). Avatar may sounds superfluous, but please keep in mind that there are many other Apps registered on Brainlife and this might be the only visual queue for users to identify and search for your App. If you don't specify Avatar URL, Brainlife will use a randomly generated (robots) Avatar. </p>
 <h3 id="project">Project<a class="headerlink" href="#project" title="Permanent link">&para;</a></h3>
-<p>By default, all app are <em>public</em>; anyone can find it and execute your app (if they have resource to run them). If you'd like to make your app only available within specific project, you can enter the <code>project name</code> and only the member of that project will be able to find and launch your app. This might be useful if you are still developing your app and wants to keep it hidden until you make a formal <em>release</em>. </p>
+<p>By default, all Apps are <em>public</em> meaning any user can find your App and execute your App. If you'd like to make your App only available on a specific project (and their group members), you can enter project names under <code>Project</code> field and only the member of that project will be able to access your App. This might be useful if you are still developing your App and wants to keep it hidden until you make a formal <em>release</em>, or if your App would only function on datasets stored under a specific project.</p>
 <h3 id="branch">Branch<a class="headerlink" href="#branch" title="Permanent link">&para;</a></h3>
-<p>If you don't specify the github repo's branch name, it uses <code>master</code> branch by default. As with any other project, you will most likely making changes to your <code>master</code> branch after you register your app, which means user won't be able to reproduce the output with exactly the same version of the code used to generate original output. Once you finish developing your app, you should consider creating a release branch (like <code>release_1.0</code>) and freeze the code which will be executed by the Brain-Life by specifying the branch name. Please see <a href="../../apps/versioning">Versioning Tip</a> for more info.</p>
+<p>If you don't specify the github repo's branch name, it uses <code>master</code> branch by default. Most developer makes the latest code changes on <code>master</code> branch. If you leave the <code>Branch</code> field empty and let it use the <code>master</code> branch by default, a user won't be able to reproduce the output with exactly the same version of your code if you make any changes to it.</p>
+<p>Once you finish developing your App, you should consider creating a release branch (like <code>1.0</code>) and specifying that branch name for your App so that Brainlife will always run the specific version of your App. Brainlife stores the branch name used to execute each task, so this allows users to reproduce the output using the same version of the code.</p>
+<p>Please see <a href="../../apps/versioning">Versioning Tip</a> for more info.</p>
 <h2 id="input-datasets">Input Datasets<a class="headerlink" href="#input-datasets" title="Permanent link">&para;</a></h2>
-<p>Here you can define input datasets with specific datatypes that your app is expecting.</p>
+<p>Here you can define a list of input datasets that your App is expecting.</p>
 <p><img alt="dataset" src="../../img/input.datatype.form.png" /></p>
-<h3 id="datatype-tags">Datatype Tags<a class="headerlink" href="#datatype-tags" title="Permanent link">&para;</a></h3>
-<p>Sometimes you want to be specific about the type of dataset within a particular datatype that your app can handle. For example, <code>neuro/anat/t1w</code> could be ACPC aligned, or not, <code>neuro/dwi</code> could be single-shell, or not, etc. Brainlife adds specificity to each datatype through <em>datatype tags</em>. Please enter any datatype tags that your app would require under <code>Datatype Tags</code> field. Brainlife will only allow users to select datasets for your app that meets specified datatype tags. </p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Please don't get confuse <em>Datatype tags</em> with <em>Dataset tags</em> that user can edit under dataset dialog. Dataset tags simply allows user to make it easier to search or bulk process subset of the datasets. Datatype tags, on the other hand is part of datatype and can not be modified once dataset is created. </p>
+<h3 id="id">ID<a class="headerlink" href="#id" title="Permanent link">&para;</a></h3>
+<p>This is just an ID to uniquely identify this input dataset. Please enter any ID you'd like to use. It just has to be unique among all other input datasets.</p>
+<h3 id="datatypetags">Datatype/Tags<a class="headerlink" href="#datatypetags" title="Permanent link">&para;</a></h3>
+<p>The datatype/tags of this input dataset. Please enter any datatype tags that your App would require under <code>Datatype Tags</code> field. Brainlife will only allow users to select dataset that meets specified datatype tags.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If you don't know which datatype to use, please consult the #datatype slack channel on Brainlife slack team.</p>
 </div>
+<p>Please read <a href="../../user/datatypes">datatypes</a> for more information. </p>
 <h3 id="file-mapping">File Mapping<a class="headerlink" href="#file-mapping" title="Permanent link">&para;</a></h3>
-<p>Once you select the datatype / tags of your input data, you need to configure how you want it to be presented in the <code>config.json</code> by mapping the json key in <code>config.json</code> to a particular file / directory inside the datatype.</p>
-<div class="codehilite"><pre><span></span>{
-    &quot;t1&quot;: &quot;../path/to/t1.nii.gz&quot;
-}
+<p>Once you select the datatype/tags for your input dataset, you then need to configure how you want the selected dataset to be represented in the <code>config.json</code>. Each datatype consists of various files and directories. Here, you can map the object key in <code>config.json</code> to a particular file / directory within the datatype.</p>
+<p>For example, <code>neuro/dwi</code> datatype consists of dwi, bvecs, and bvals files. If your App somehow only uses the dwi file, and if you'd like to receive the path to the dwi as <code>dwi</code> inside the <code>config.json</code>, you can configure it as following.</p>
+<p><img alt="filemapping" src="../../img/filemapping.png" /></p>
+<p>When a user submits your App, it will generate <code>config.json</code> that looks like this</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;dwi&quot;</span><span class="p">:</span> <span class="s2">&quot;../path/to/dwi.nii.gz&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
-<p>For example, if you use <code>anat/t1w</code> as an input dataset, you can specify <code>config.json key</code> field with any json key (such as "t1") and selecting which file/dir within the datatype you want to reference (like.. "../path/to/t1.nii.gz").</p>
-<p>You might be wondering why there is ID field at the top of the input form as well as the json key ID. The input ID at the top is mainly used internally by Brainlife UI for allowing user to select an input dataset. As an app developer, you really don't need to worry about the input ID.. as long as they are unique across all inputs. An input selection could be mapped to multiple fields in <code>config.json</code> which is what you probably most care about.</p>
+<p>Your App can parse <code>config.json</code> and use the value for <code>dwi</code> as the file path pointing to the input dwi image.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to use all 3 files from <code>neuro/dwi</code> datatype, you have to create 3 file mappings for each files; dwi, bvecs, and bvals.</p>
+</div>
 <h2 id="output-datasets">Output Datasets<a class="headerlink" href="#output-datasets" title="Permanent link">&para;</a></h2>
-<p>Similar to the input dataset, you can specify the datatypes of your output datasets here. It's up to your app to produce output in the correct file structure / file names to be compatible with specified datatype. (Please read <a href="../../user/datatypes">datatypes page</a> for more info.) </p>
+<p>Similar to the input datasets, you can specify the datatypes of your output datasets here. It's up to developer to decide which datatype to use, and produce output files in the correct file structure / file names according to the specification of the datatype. </p>
+<p>Please read <a href="../../user/datatypes">datatypes page</a> for more info.</p>
 <h3 id="datatype-file-mapping">Datatype File Mapping<a class="headerlink" href="#datatype-file-mapping" title="Permanent link">&para;</a></h3>
-<p>By default, Brainlife expects you to generate all files pertaining to a specific datatype on the current working directory. However, if you have more than 1 output datasets, or have multiple datasets with the same datatype, file name collision could occur. To avoid this, you will need to output each datasets under a different filename, or use sub-directories to store files for each datasets. </p>
-<p>For example, following example show that the app is outputing a file named <code>output.DT_STREAM.tck</code> which is treated as a <code>track</code> file output for <code>neuro/track</code> datatype.</p>
+<p>By default, Brainlife expects you to generate all output files in a file structure expected by each datatype on the root of the current working directory. However, if you have more than one output datasets with the same datatype, or have multiple datasets with colliding file/directory names as specified by each datatype, you will not be able to output them all under the root of the current directory. </p>
+<p>To solve this issue, you can output each dataset under a different filename or in a sub-directory, and configure the <code>Datatype File Mapping</code> field to override which file/dir should corresponds to which file/dir within each datatype.</p>
+<p>For example, following example show that the App is producing a file called <code>output.DT_STREAM.tck</code> which should treated as a <code>track.tck</code> file output for <code>neuro/track</code> datatype. ("track" is the file ID for "track.tck" as defined by <code>neuro/track</code> datatype).</p>
 <p><img alt="resources" src="../../img/app.output.png" /></p>
-<p>Or, if you'd like to store the output files under a sub directory, you can specify the directory by doing following.</p>
+<p>Or, if you'd like to store the entire raw output files in a sub directory called "output", you can specify the directory by..</p>
 <p><img alt="resources" src="../../img/app.output2.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The JSON <code>key</code> for each file mapping needs to be the file/dir ID defined for each datatype. You will need to find the datatype definition to know which file/dir ID to use. Please consult Brainlife slack team if you need a help.</p>
+</div>
 <h3 id="raw-datatype"><strong>raw</strong> datatype<a class="headerlink" href="#raw-datatype" title="Permanent link">&para;</a></h3>
-<p>Many app creates datatypes that are not meant to be used by any other app. You can use <code>raw</code> datatypes to output and archive such outputs. You should avoid using <code>raw</code> input datatype as an input to another app. If you need to use do this, please contact the developer of the upstream app generating the <code>raw</code> output dataset and ask them to define a new datatype and use it instead of <code>raw</code> datatype.</p>
+<p>Your App may generate output data that is not meant to be used by any other Apps, at least initially. You can use <code>raw</code> datatype to output and archive such output data. You should avoid using <code>raw</code> datatype as an input datatype, however. If you are trying to use other App's <code>raw</code> data as your input dataset, it is probably a good indication that the upstream App developer and you should discuss and define a new datatype so that both Apps can interoperate through a well defined datatype. </p>
+<p>Please contact the other developer and discuss how the data should be structured, and submit a new issue on <a href="https://github.com/brain-life/datatypes/issues">brain-life/datatypes</a> and/or a pull request containing the list of files/directories to be registered on Brainlife.</p>
 <h2 id="configuration-parameters">Configuration Parameters<a class="headerlink" href="#configuration-parameters" title="Permanent link">&para;</a></h2>
-<p>Configuration parameters allows users to enter any number (integer/float), boolean(true/false) or string parameters as configuration to your app. You can also define enum parameter which lets users select option from multiple selections.</p>
+<p>Configuration parameters allow users to enter any <code>number</code> (integer/float), <code>boolean</code>(true/false) or <code>string</code> parameters as configuration parameters for your App. You can also define a <code>enum</code> parameter which lets users select from multiple options.</p>
 <p><img alt="resources" src="../../img/app.config.png" /></p>
 <ul>
 <li>
 <p><strong>Placeholder</strong> </p>
-<p>For each input parameter, you can set a placeholder; a string displayed inside the form element if no value is specified. For example, you could use placeholder to let user know the behavior of the app if user doesn't specify any value for that parameter. </p>
+<p>For each input parameter, you can set a <em>placeholder</em> (a string displayed inside the form element if no value is entered yet). For example, you could use placeholder to let user know the format of the values, or some samples.</p>
 </li>
 <li>
 <p><strong>Description</strong> </p>
-<p>Some parameter types let you specify a description which will be displayed next to the input parameter to show detailed explanation about the input parameter. Please provide enough details for both novice and experienced users of your app.</p>
+<p>Some configuration parameters let you specify a description which will be displayed next to the input parameter to show detailed explanation for the input parameter. Please provide enough details for both novice and experienced users of your App. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong> For Novice Users </strong></p>
+<p>Brainlife is a platform for both novice and experienced users. For novice user, please add enough details for each configuration parameter and instruction about how to find a correct values to set for each parameters (a link to other webpage, point to README, etcs) </p>
+<p>Please make as many parameters optional as possible, and auto-detect the optimal values at runtime if user does not provide/override the default option.</p>
+<p><strong> For Experienced Users </strong></p>
+<p>At the same time, your App should not become a blackbox for experienced users. You should allow them to choose/override any parameters and allow them to be fully in control of how the algorithm works. </p>
+</div>
 </li>
 </ul>
-<p>Finally, click <code>Submit</code>. Visit the apps page to make sure everything looks OK.</p>
+<p>Finally, click <code>Submit</code>. Visit the Apps page to make sure everything looks OK.</p>
 <h2 id="readme-description-topics">README / Description / Topics<a class="headerlink" href="#readme-description-topics" title="Permanent link">&para;</a></h2>
-<p>Brainlife uses as much information as possible from your github repo to pull information such as ..</p>
+<p>Brainlife re-uses information stored in github repo.</p>
 <ul>
 <li>
 <p>App Description / Topics</p>
-<p>Github's description is used to display Brainlife app description. Please be sure to enter description that shows what the app does, and what user can do with the output. Github topics are also used as Brainlife's app <code>categories</code>. Please look through the existing categories already registered in Brainlife, and use one or more of those categories to help users find your app more easily. </p>
+<p>Your Github repo description is used to display Brainlife App description. Please be sure to enter description that shows what the App does, and what user can do with the output. </p>
+<p>Github topics are also used to organize Brainlife's App by placing them under various <code>categories</code>. Please look through the existing categories already registered in Brainlife, and reuse one or more of those categories to help users find your App more easily. </p>
 <p><img alt="resources" src="../../img/app.freesurfer.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please avoid using too many <code>topics</code>. Also please avoid using <code>topics</code> that are not yet used by any other Apps (it will create a category with a single App)</p>
+</div>
 </li>
 <li>
 <p>README.md</p>
-<p>Brainlife displays the copy of README.md content from your github repo. You can use any images, katex equations, and any other standard markdown content. </p>
-<p>You could include information such as following in your README.md</p>
+<p>Brainlife displays README.md content from your github repo. You can include any images, katex equations, or any other standard <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown syntax</a>. </p>
+<p>You should include information such as..</p>
 <ul>
-<li>What the app does, and how it's implemented (tools, libraries used)</li>
-<li>What the app produces</li>
-<li>Any diagrams / sample output images, etc.</li>
-<li>What user can do with the output data.</li>
-<li>Details on how the algorithm works.</li>
-<li>Computational cost / resources required to run the app (how long does it take to run, minimum required memory / cpu cores, etc..)</li>
-<li>How can other user contribute (are you accepting PR?)</li>
+<li>What your App does, and how it's implemented (tools, libraries used)</li>
+<li>What you App produces and what user can do with it</li>
+<li>Any diagrams / sample output images</li>
+<li>Details on how the algorithm works</li>
+<li>Computational cost / resources required to run your App (how long does it take to run, minimum required memory / cpu cores, etc..)</li>
+<li>How can other users contribute (Are you accepting any PR?)</li>
 <li>References to other published papers, or list of contributors.</li>
 </ul>
-<p>Brainlife's target audiences are both novice and experienced neuroscience researchers. Please be sure to cater both audiences.</p>
-</li>
-</ul>
-<h2 id="enabling-app-on-resource">Enabling app on resource<a class="headerlink" href="#enabling-app-on-resource" title="Permanent link">&para;</a></h2>
-<p>Once you registered your app on Brain-Life, you then need to have a resource where you can run your app. Resource could be any VM, HPC clusters, or public / private cloud resources. Only the resource owners can enable your app to run on their resource. Please contact the resource administrator for the resource where you'd like to submit your app.</p>
-<p>If you have access to your own computing resources, you can register and run your apps there also. Please read <a href="../../resources/register/">registering resource page</a> for more detail. Please keep in mind that, only the owner of the resource can run the apps on personal (un-shared) resources. To allow other users to run your app, you will need to enable the app on Brainlife's shared resources.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For all Brainlife default resources, please contact <a href="mailto:hayashis@iu.edu">Soichi Hayashi</a> and request to enable your app on those resources.</p>
+<p>Brainlife is for both novice and experienced neuroscience researchers. Please try to cater for both groups of users.</p>
 </div>
-<p>Once your app is enabled on a resource, you should see a table of resources where the app can run under the app detail page.</p>
+</li>
+</ul>
+<h2 id="enabling-app-on-resource">Enabling App on resource<a class="headerlink" href="#enabling-app-on-resource" title="Permanent link">&para;</a></h2>
+<p>Once you registered your App on Brainlife, you then need to enable your App on resources where you can run it. A resource could be any VM, HPC cluster, or public / private cloud resource. Only the resource owners/administrators can enable your App to run on their resources. Please contact the resource administrator for the resource where you'd like to submit your App.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are not sure who the resource administrator is, please contact <a href="mailto:brlife@iu.edu">Brainlife</a>.</p>
+</div>
+<p>If you have access to your own computing resources, you can register personal resources and run your App there to test. Please read <a href="../../resources/register/">registering resource page</a> for more detail. Please keep in mind that, on personal resources, only you can run enabled Apps on those resources. To allow other users to run your App, you will need to enable it on Brainlife's shared resources.</p>
+<p>Once your App is enabled on various resources, you should see them listed under resource table inside the App details page.</p>
 <p><img alt="resources" src="../../img/app.resources.png" /></p>
                 
                   
@@ -987,7 +1046,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../helloworld/" title="Hello World" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../helloworld/" title="HelloWorld" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -996,7 +1055,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Hello World
+                HelloWorld
               </span>
             </div>
           </a>
