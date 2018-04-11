@@ -23,7 +23,7 @@ pages:
     - Datatypes: user/datatypes.md
     - Processes: user/process.md
     - Pipelines: user/pipeline.md
-    - Publication: user/publication.md
+    - Publications: user/publication.md
   - App Developers: 
     - Introduction: apps/introduction.md
     - Hello World: apps/helloworld.md
