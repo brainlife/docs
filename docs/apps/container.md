@@ -40,7 +40,8 @@ cat > build.m <<END
 addpath(genpath('/N/u/brlife/git/vistasoft'))
 addpath(genpath('/N/u/brlife/git/jsonlab'))
 addpath(genpath('/N/soft/mason/SPM/spm8'))
-mcc -m -R -nodisplay -d compiled myapp
+mcc -m -R -nodisplay -a /N/u/brlife/git/vistasoft/mrDiffusion/templates -d compiled myapp
+
 %# function sptensor
 exit
 END
@@ -60,10 +61,7 @@ A few other mcc options to note.
 * `-m ...` tells the name of the main entry function (in this case it's `main`) of your application (it reads your config.json and runs the whole application)
 * `-R -nodisplay` sets the command line options you'd normally pass when you run MatLab on the command line.
 * -d ...` tells where to output the generated binary. You should avoid writing it out to the application root directory; just to keep things organized.
-* If your app or your Matlab libraries access any non-Matlab script (any mexfiles, datafiles, models, templates, etc..) you will also need to include them by specifying its parent directory with `-a`. mcc will then include specified files/directories as part of your compiled binary and make it available to the compiled code as if it is loading from the host file system (similar to how Docker containerizes things). For example...
-        ```
-        mcc -m -R -nodisplay -a /N/u/hayashis/BigRed2/git/encode/mexfiles -d compiled myapp
-        ```
+* If your app or your Matlab libraries access any non-Matlab files (mexfiles, datafiles, models, templates, etc..) you will need to include them by specifying paths with `-a`. mcc will include specified files/directories as part of your compiled binary and make it available to the compiled code as if it is available through local filesystem (similar to how Docker containerizes things).
 
 * If you are using OpenMP, you will need to include libgomp1 library installed in your MCR container.
 * mcc compiled application can't run certain Matlab statements; like addpath. You will need to wrap some code with `if ~isdeployed` type statement to prevent it from getting executed.
