@@ -1,7 +1,7 @@
 
 # Tutorial
 
-This tutorial will guide you through the following functionalities of Brainlife. 
+This tutorial will guide you through the following functionality of Brainlife. 
 
 * Signing up
 * Creating new projects and uploading datasets
@@ -12,21 +12,21 @@ For a more high-level overview of Brainlife, see [About Page](/about).
 
 ## Sign Up
 
-If you have not registered on Brainlife.io yet, please do so by visiting The [Authentication Page](https://brainlife.io/auth/) and clicking on a preferred 3rd party authentication method: Google, ORCID, Github, or through your institution.
+If you have not registered on Brainlife.io yet, please do so by visiting The [Authentication Page](https://brainlife.io/auth/) and clicking on a preferred authentication method: Google, ORCID, Github, or through your institution.
 
 !!! warning
-    If you register through the 3rd party authenticator, please use the same authenticator each time you login, or you will end up creating multiple Brainlife accounts. 
+    If you register through a 3rd party authenticator, please use the same authenticator each time you login, or you will end up creating multiple Brainlife accounts. 
 
-If you'd like to setup a dedicated username/password for Brainlife, please click the "Sign Up" link. You will be asked to confirm your email address once you register.
+If you would like to setup a dedicated username/password for Brainlife, please click the "Sign Up" link. You will be asked to confirm your email address once you register.
 
 !!! note
     You can associate multiple authenticators to your account once you register by going to Settings / Account, Connected Accounts, and click "Connect" next to various 3rd party authenticators. 
 
 ## Create Project
 
-Once you login, you should land on Brainlife Apps page. 
+Once you login, you will land on the Brainlife Apps page. 
 
-Before we can start using Brainlife, we need to create a new project. 
+Before we can start using Brainlife, you will need to create a new project. 
 
 Click on `Project` button on the left hand side menu, then click a plus side button at the bottom of the project list.
 
@@ -67,11 +67,11 @@ Select Datatype that you'd like to upload (currently limited to t1/t2 and dwi) a
 !!! note
     If you don't have any data to upload, you can skip this step and you can use pre-uploaded datasets from various public projects.
 
-Upload form will run the server side validation/data normalization service. You can check the results from this step. If everything looks good, click `Archive`.
+The Upload form will run a server side validation and data normalization service. You can check the results from this step. If everything looks good, click `Archive`.
 
 ![update validate](/img/upload.validate.png)
 
-Once uploaded, you should see a new dialog showing details about your new datasets. All archived datasets are immutable (read-only), but you can make changes to the metadata if necessary (description, tags, etc..).
+Once uploaded, you should see a new dialog showing details about your new datasets. All archived datasets are immutable (read-only), but you can copy them between projects or make changes to the metadata if necessary (description, tags, etc..).
 
 ![dataset](/img/dataset.png)
 
@@ -80,7 +80,7 @@ Once uploaded, you should see a new dialog showing details about your new datase
 
 ## Visualize Dataset
 
-Any datasets stored in Brainlife can be visualized using Web-based and Native (via Web-VNC) visualization Apps registered for specific datatypes. To launch a visualizer, click on the visualizer icon (:fa-eye:) at the top of dataset dialog.
+All visualization on Brainlife is donee Cloud side. THis means that data seets do not have to be moved from their storage location to the user browser. Any datasets stored in Brainlife can be visualized using Web-based and Native (via [Web-VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing)) visualization Apps registered for specific datatypes. To launch a visualization program, click on the visualizer icon (:fa-eye:) at the top of dataset dialog.
 
 For example, `neuro/anat/t1` datasets can be visualized by the following set of Visualization Apps.
 
@@ -97,7 +97,7 @@ You can search/select and bulk download datasets. On the dataset table, select t
 
 ![dataset](/img/download.png)
 
-Brainlife will stage selected datasets, organize them into a BIDS structure, and let you download the whole structure as a single tar ball. Once it's ready, click `Download`.
+Brainlife will stage selected datasets, organize them into a [BIDS structure](http://bids.neuroimaging.io), and let you download the whole structure as a single tar ball. Once it's ready, click `Download`.
 
 !!! note
     At the moment, all Brainlife datasets will simply be stored under `/derivatives` directory regardless of the datatype.
@@ -121,23 +121,23 @@ Brainlife Apps exchange data through `datatypes`. Developers involved with inter
 Various colored boxes show the input and output datatypes. For example, the above image shows that this app will take `dwi` input dataset, and generate another `dwi` dataset with a datatype tag of "masked", and also output another dataset of a datatype `mask`. 
 
 For more information on datatype, please visit [datatypes page](/user/datatypes)
-<!--If you are familiar with an electronic prototyping product called *littleBits*, it is very similar in the concept.-->
+<!--If you are familiar with an electronic prototyping product called [*littleBits*](https://littlebits.com/tag/prototyping), it is very similar in the concept.-->
 
 ## Data Processing
 
-Now that we know what `Apps` are, let's go back to your private project, then open `Processes` tab. You should see an empty page as you don't have any processes yet. On Brainlife, `Process` is where you can submit a group of tasks/Apps that can share input/output datasets. 
+Now that we know what `Apps` are, we can go back to your private project, to practice data processing. Open the `Processes` tab. You should see an empty page as you do not have any processes yet. On Brainlife, `Process` is where you can submit a group of tasks/Apps that can share input/output datasets. 
 
-Let's create a new process by clicking the plus button at the right bottom corner of the page. Enter any name you'd like for your process. You should see a screen that looks like this now.
+We will create a new process by clicking the `+` button at the right bottom corner of the page. Enter any name you would like for your process. You should see a screen that looks like this now.
 
 ![dataset](/img/empty.process.png)
 
-To process data, you first need to stage any dataset from our archive to your process. Each process can only process data that is either staged or generated by other Apps. Click `Stage New Dataset` button. On the Select Datasets dialog, let's select `NKI (Rockland Sample)` project, and select any `anat/t1w` dataset.
+To process data, you first need to stage any dataset from our archive to your process. Each process can only process data that is either staged or generated by other Apps. Click `Stage New Dataset` button. On the Select Datasets dialog, please select `NKI (Rockland Sample)` project, and select any `anat/t1w` dataset.
 
 ![dataset](/img/select.datasets.png)
 
-Click `OK` to stage. You should see a box showing "Staging Datasets" with selected datasets. While it's staging your data, let's submit our first App. Click `Submit New App` button. A dialog should show up with a list of Apps that you can submit using your `anat/t1w` dataset. Brainlife allows you to select only the Apps where you have all required input datasets.
+Click `OK` to stage. You should see a box showing "Staging Datasets" with selected datasets. While it is staging your data, please submit your first App. Click `Submit New App` button. A dialog should show up with a list of Apps that you can submit using your `anat/t1w` dataset. Brainlife allows you to select only the Apps where you have all required input datasets.
 
-Let's run `ACPC alignment with ART` App on your data. `ACPC alignment` is a common alignment tool used to re-orient/re-position the Brain image in common orientation suited for further image analysis. 
+Please run the `ACPC alignment with ART` App on your data. `ACPC alignment` is a common alignment tool used to re-orient/re-position the Brain image in common orientation suited for further image analysis. 
 
 Find and click the App, then make sure that Brainlife has automatically selected your staged data as input. Leave other options default. Click `Submit`. Brainlife should now find the most appropriate resource to run this App, and transfer data to the resource and submit it to the local batch scheduler.
 
@@ -160,7 +160,7 @@ Now that you have finished running ACPC alignment, you will be able to submit a 
 
 So far, you have staged datasets, submitted an App that generated data derivatives, and visualized them.
 
-Now, it's important to note that all processes are meant to be temporary and Brainlife will remove processes within 25 days of data generation. If you'd like to permanently keep the output datasets you just generated, you will need to `archive` them by clicking on :fa-archive: button next to the Output section. You can edit any metadata and description, and click the `Archive` button to archive it.
+Now, it is important to note that all processes are meant to be temporary and Brainlife will remove processes within 25 days of data generation. If you would like to permanently keep the output datasets you just generated, you will need to `archive` them by clicking on :fa-archive: button next to the Output section. You can edit any metadata and description, and click the `Archive` button to archive it.
 
 After you archive your data, open the `Datasets` tab and make sure that your dataset is listed there. You can click on the dataset record to see more details.
 
