@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../..//img/favicon.ico">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.1">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
     
     
       
@@ -93,8 +93,8 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
       <a href="#tutorial" tabindex="1" class="md-skip">
@@ -821,7 +821,7 @@
                 
                 
                 <h1 id="tutorial">Tutorial<a class="headerlink" href="#tutorial" title="Permanent link">&para;</a></h1>
-<p>This tutorial will guide you through the following functionalities of Brainlife. </p>
+<p>This tutorial will guide you through the following functionality of Brainlife. </p>
 <ul>
 <li>Signing up</li>
 <li>Creating new projects and uploading datasets</li>
@@ -830,19 +830,19 @@
 </ul>
 <p>For a more high-level overview of Brainlife, see <a href="../../about">About Page</a>.</p>
 <h2 id="sign-up">Sign Up<a class="headerlink" href="#sign-up" title="Permanent link">&para;</a></h2>
-<p>If you have not registered on Brainlife.io yet, please do so by visiting The <a href="https://brainlife.io/auth/">Authentication Page</a> and clicking on a preferred 3rd party authentication method: Google, ORCID, Github, or through your institution.</p>
+<p>If you have not registered on Brainlife.io yet, please do so by visiting The <a href="https://brainlife.io/auth/">Authentication Page</a> and clicking on a preferred authentication method: Google, ORCID, Github, or through your institution.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you register through the 3rd party authenticator, please use the same authenticator each time you login, or you will end up creating multiple Brainlife accounts. </p>
+<p>If you register through a 3rd party authenticator, please use the same authenticator each time you login, or you will end up creating multiple Brainlife accounts. </p>
 </div>
-<p>If you'd like to setup a dedicated username/password for Brainlife, please click the "Sign Up" link. You will be asked to confirm your email address once you register.</p>
+<p>If you would like to setup a dedicated username/password for Brainlife, please click the "Sign Up" link. You will be asked to confirm your email address once you register.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can associate multiple authenticators to your account once you register by going to Settings / Account, Connected Accounts, and click "Connect" next to various 3rd party authenticators. </p>
 </div>
 <h2 id="create-project">Create Project<a class="headerlink" href="#create-project" title="Permanent link">&para;</a></h2>
-<p>Once you login, you should land on Brainlife Apps page. </p>
-<p>Before we can start using Brainlife, we need to create a new project. </p>
+<p>Once you login, you will land on the Brainlife Apps page. </p>
+<p>Before we can start using Brainlife, you will need to create a new project. </p>
 <p>Click on <code>Project</code> button on the left hand side menu, then click a plus side button at the bottom of the project list.</p>
 <p><img alt="project new button" src="../../img/project_new_button.png" /></p>
 <div class="admonition note">
@@ -876,16 +876,16 @@
 <p class="admonition-title">Note</p>
 <p>If you don't have any data to upload, you can skip this step and you can use pre-uploaded datasets from various public projects.</p>
 </div>
-<p>Upload form will run the server side validation/data normalization service. You can check the results from this step. If everything looks good, click <code>Archive</code>.</p>
+<p>The Upload form will run a server side validation and data normalization service. You can check the results from this step. If everything looks good, click <code>Archive</code>.</p>
 <p><img alt="update validate" src="../../img/upload.validate.png" /></p>
-<p>Once uploaded, you should see a new dialog showing details about your new datasets. All archived datasets are immutable (read-only), but you can make changes to the metadata if necessary (description, tags, etc..).</p>
+<p>Once uploaded, you should see a new dialog showing details about your new datasets. All archived datasets are immutable (read-only), but you can copy them between projects or make changes to the metadata if necessary (description, tags, etc..).</p>
 <p><img alt="dataset" src="../../img/dataset.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code>Stored in</code> field shows where your dataset is archived. For a large dataset, it might take a while for it to be archived. Please give it a few minutes.</p>
 </div>
 <h2 id="visualize-dataset">Visualize Dataset<a class="headerlink" href="#visualize-dataset" title="Permanent link">&para;</a></h2>
-<p>Any datasets stored in Brainlife can be visualized using Web-based and Native (via Web-VNC) visualization Apps registered for specific datatypes. To launch a visualizer, click on the visualizer icon (<i class="fa fa-eye"></i>) at the top of dataset dialog.</p>
+<p>All visualization on Brainlife is donee Cloud side. THis means that data seets do not have to be moved from their storage location to the user browser. Any datasets stored in Brainlife can be visualized using Web-based and Native (via <a href="https://en.wikipedia.org/wiki/Virtual_Network_Computing">Web-VNC</a>) visualization Apps registered for specific datatypes. To launch a visualization program, click on the visualizer icon (<i class="fa fa-eye"></i>) at the top of dataset dialog.</p>
 <p>For example, <code>neuro/anat/t1</code> datasets can be visualized by the following set of Visualization Apps.</p>
 <p><img alt="dataset" src="../../img/viewers.png" /></p>
 <div class="admonition note">
@@ -896,7 +896,7 @@
 <h2 id="downloading-bids">Downloading BIDS<a class="headerlink" href="#downloading-bids" title="Permanent link">&para;</a></h2>
 <p>You can search/select and bulk download datasets. On the dataset table, select the datasets you'd like to download by clicking on the check box, then click <code>Download (BIDS)</code> button.</p>
 <p><img alt="dataset" src="../../img/download.png" /></p>
-<p>Brainlife will stage selected datasets, organize them into a BIDS structure, and let you download the whole structure as a single tar ball. Once it's ready, click <code>Download</code>.</p>
+<p>Brainlife will stage selected datasets, organize them into a <a href="http://bids.neuroimaging.io">BIDS structure</a>, and let you download the whole structure as a single tar ball. Once it's ready, click <code>Download</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>At the moment, all Brainlife datasets will simply be stored under <code>/derivatives</code> directory regardless of the datatype.</p>
@@ -911,15 +911,15 @@
 <p><img alt="dataset" src="../../img/datatype.png" /></p>
 <p>Various colored boxes show the input and output datatypes. For example, the above image shows that this app will take <code>dwi</code> input dataset, and generate another <code>dwi</code> dataset with a datatype tag of "masked", and also output another dataset of a datatype <code>mask</code>. </p>
 <p>For more information on datatype, please visit <a href="../../user/datatypes">datatypes page</a>
-<!--If you are familiar with an electronic prototyping product called *littleBits*, it is very similar in the concept.--></p>
+<!--If you are familiar with an electronic prototyping product called <a href="https://littlebits.com/tag/prototyping">klzzwxh:0035</a>, it is very similar in the concept.--></p>
 <h2 id="data-processing">Data Processing<a class="headerlink" href="#data-processing" title="Permanent link">&para;</a></h2>
-<p>Now that we know what <code>Apps</code> are, let's go back to your private project, then open <code>Processes</code> tab. You should see an empty page as you don't have any processes yet. On Brainlife, <code>Process</code> is where you can submit a group of tasks/Apps that can share input/output datasets. </p>
-<p>Let's create a new process by clicking the plus button at the right bottom corner of the page. Enter any name you'd like for your process. You should see a screen that looks like this now.</p>
+<p>Now that we know what <code>Apps</code> are, we can go back to your private project, to practice data processing. Open the <code>Processes</code> tab. You should see an empty page as you do not have any processes yet. On Brainlife, <code>Process</code> is where you can submit a group of tasks/Apps that can share input/output datasets. </p>
+<p>We will create a new process by clicking the <code>+</code> button at the right bottom corner of the page. Enter any name you would like for your process. You should see a screen that looks like this now.</p>
 <p><img alt="dataset" src="../../img/empty.process.png" /></p>
-<p>To process data, you first need to stage any dataset from our archive to your process. Each process can only process data that is either staged or generated by other Apps. Click <code>Stage New Dataset</code> button. On the Select Datasets dialog, let's select <code>NKI (Rockland Sample)</code> project, and select any <code>anat/t1w</code> dataset.</p>
+<p>To process data, you first need to stage any dataset from our archive to your process. Each process can only process data that is either staged or generated by other Apps. Click <code>Stage New Dataset</code> button. On the Select Datasets dialog, please select <code>NKI (Rockland Sample)</code> project, and select any <code>anat/t1w</code> dataset.</p>
 <p><img alt="dataset" src="../../img/select.datasets.png" /></p>
-<p>Click <code>OK</code> to stage. You should see a box showing "Staging Datasets" with selected datasets. While it's staging your data, let's submit our first App. Click <code>Submit New App</code> button. A dialog should show up with a list of Apps that you can submit using your <code>anat/t1w</code> dataset. Brainlife allows you to select only the Apps where you have all required input datasets.</p>
-<p>Let's run <code>ACPC alignment with ART</code> App on your data. <code>ACPC alignment</code> is a common alignment tool used to re-orient/re-position the Brain image in common orientation suited for further image analysis. </p>
+<p>Click <code>OK</code> to stage. You should see a box showing "Staging Datasets" with selected datasets. While it is staging your data, please submit your first App. Click <code>Submit New App</code> button. A dialog should show up with a list of Apps that you can submit using your <code>anat/t1w</code> dataset. Brainlife allows you to select only the Apps where you have all required input datasets.</p>
+<p>Please run the <code>ACPC alignment with ART</code> App on your data. <code>ACPC alignment</code> is a common alignment tool used to re-orient/re-position the Brain image in common orientation suited for further image analysis. </p>
 <p>Find and click the App, then make sure that Brainlife has automatically selected your staged data as input. Leave other options default. Click <code>Submit</code>. Brainlife should now find the most appropriate resource to run this App, and transfer data to the resource and submit it to the local batch scheduler.</p>
 <p>Once started, a task should take a few minutes to run. Once completed, you should see a screen that looks like this.</p>
 <p><img alt="dataset" src="../../img/task.success.png" /></p>
@@ -933,7 +933,7 @@
 </div>
 <h2 id="archiving">Archiving<a class="headerlink" href="#archiving" title="Permanent link">&para;</a></h2>
 <p>So far, you have staged datasets, submitted an App that generated data derivatives, and visualized them.</p>
-<p>Now, it's important to note that all processes are meant to be temporary and Brainlife will remove processes within 25 days of data generation. If you'd like to permanently keep the output datasets you just generated, you will need to <code>archive</code> them by clicking on <i class="fa fa-archive"></i> button next to the Output section. You can edit any metadata and description, and click the <code>Archive</code> button to archive it.</p>
+<p>Now, it is important to note that all processes are meant to be temporary and Brainlife will remove processes within 25 days of data generation. If you would like to permanently keep the output datasets you just generated, you will need to <code>archive</code> them by clicking on <i class="fa fa-archive"></i> button next to the Output section. You can edit any metadata and description, and click the <code>Archive</code> button to archive it.</p>
 <p>After you archive your data, open the <code>Datasets</code> tab and make sure that your dataset is listed there. You can click on the dataset record to see more details.</p>
 <h2 id="datasets">Datasets<a class="headerlink" href="#datasets" title="Permanent link">&para;</a></h2>
 <p>As you submit more Apps and generate datasets from them, it becomes harder to keep up with how a given dataset was generated. Brainlife keeps track of a record of how a given dataset was generated all the way from the original input dataset (called <code>data provenance</code>).</p>
@@ -949,9 +949,10 @@
               
               
                 
+                  
 
 
-  <h2 id="__comments">broken</h2>
+  <h2 id="__comments">Comments</h2>
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
@@ -967,6 +968,7 @@
     })();
   </script>
 
+                
               
             </article>
           </div>

@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../..//img/favicon.ico">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.1">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
     
     
       
@@ -93,8 +93,8 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
       <a href="#project" tabindex="1" class="md-skip">
@@ -623,101 +623,43 @@
 <li>
 <p><strong>Private</strong></p>
 <p>Private project allows only the project members to download or use archived datasets to run Apps. Only the admins and project members can find the project under project list.</p>
-<p><code>List project summary for all users</code> </p>
-<p>If you'd like to keep your project private while allowing other users to know its existance through the project menu, please check this check box. You can solicit other users to join the project and/or become guest users to have read access to its datasets.</p>
 </li>
 </ul>
-<p>The following table shows who can perform which actions under a project.</p>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Public Project</th>
-<th>Private Project</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Update project detail</td>
-<td>Admin</td>
-<td>Admin</td>
-</tr>
-<tr>
-<td>See project info</td>
-<td>Admin / Members</td>
-<td>Admin / Members (If <em>listed</em>, all users)</td>
-</tr>
-<tr>
-<td>List datasets</td>
-<td>Admin / Members</td>
-<td>Admin / Members</td>
-</tr>
-<tr>
-<td>Download datasets</td>
-<td>Admin / Members</td>
-<td>Admin / Members</td>
-</tr>
-<tr>
-<td>Update dataset detail</td>
-<td>Admin / Members</td>
-<td>Admin / Members</td>
-</tr>
-<tr>
-<td>Create publication record</td>
-<td>Admin / Members</td>
-<td>Admin / Members</td>
-</tr>
-<tr>
-<td>Update publication record</td>
-<td>Admin / Members</td>
-<td>Admin / Members</td>
-</tr>
-<tr>
-<td>Upload datasets</td>
-<td>Admin / Members</td>
-<td>Admin / Members</td>
-</tr>
-<tr>
-<td>List processes</td>
-<td>Admin / Members</td>
-<td>Admin / Members</td>
-</tr>
-<tr>
-<td>Submit new process</td>
-<td>Admin / Members</td>
-<td>Admin / Members</td>
-</tr>
-<tr>
-<td>Access process output</td>
-<td>Admin / Members</td>
-<td>Admin / Members</td>
-</tr>
-<tr>
-<td>List published datasets</td>
-<td>Admin / Members / Guest</td>
-<td>Admin / Members / Guest</td>
-</tr>
-<tr>
-<td>List publication records</td>
-<td>Admin / Members / Guest</td>
-<td>Admin / Members / Guest</td>
-</tr>
-<tr>
-<td>Download published datasets</td>
-<td>Admin / Members / Guest</td>
-<td>Admin / Members / Guest</td>
-</tr>
-</tbody>
-</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>List project summary for all users</code> </p>
+<p>If you'd like to keep your project private while allowing other users to know its existance through the project list, please check this check box. You can solicit other users to join the project for full access or become guest users to have read access to the datasets.</p>
+</div>
+<!--
+The following table shows who can perform which actions under a project.
+
+| Action | Public Project | Private Project |
+| ------------- | ------------- | ----- |
+| Update project detail | Admin | Admin |
+| See project info | Admin / Members | Admin / Members (If *listed*, all users) |
+| List datasets | Admin / Members | Admin / Members |
+| Download datasets | Admin / Members | Admin / Members |
+| Update dataset detail | Admin / Members | Admin / Members |
+| Create publication record | Admin / Members | Admin / Members |
+| Update publication record | Admin / Members | Admin / Members |
+| Upload datasets | Admin / Members | Admin / Members |
+| List processes | Admin / Members | Admin / Members |
+| Submit new process | Admin / Members | Admin / Members |
+| Access process output | Admin / Members | Admin / Members |
+| List published datasets | Admin / Members / Guest | Admin / Members / Guest |
+| List publication records | Admin / Members / Guest | Admin / Members / Guest |
+| Download published datasets | Admin / Members / Guest | Admin / Members / Guest |
+-->
                 
                   
                 
               
               
                 
+                  
 
 
-  <h2 id="__comments">broken</h2>
+  <h2 id="__comments">Comments</h2>
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
@@ -733,6 +675,7 @@
     })();
   </script>
 
+                
               
             </article>
           </div>

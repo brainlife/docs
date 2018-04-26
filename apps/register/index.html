@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../..//img/favicon.ico">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.1">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
     
     
       
@@ -93,8 +93,8 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
       <a href="#registering-app" tabindex="1" class="md-skip">
@@ -494,6 +494,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#optional" title="Optional" class="md-nav__link">
+    Optional
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi" title="Multi" class="md-nav__link">
+    Multi
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -506,6 +520,20 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datatype-tags" title="Datatype Tags" class="md-nav__link">
+    Datatype Tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-passthrough" title="Tag Passthrough" class="md-nav__link">
+    Tag Passthrough
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#datatype-file-mapping" title="Datatype File Mapping" class="md-nav__link">
@@ -808,6 +836,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#optional" title="Optional" class="md-nav__link">
+    Optional
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi" title="Multi" class="md-nav__link">
+    Multi
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -820,6 +862,20 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datatype-tags" title="Datatype Tags" class="md-nav__link">
+    Datatype Tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-passthrough" title="Tag Passthrough" class="md-nav__link">
+    Tag Passthrough
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#datatype-file-mapping" title="Datatype File Mapping" class="md-nav__link">
@@ -930,9 +986,30 @@
 <p class="admonition-title">Note</p>
 <p>If you want to use all 3 files from <code>neuro/dwi</code> datatype, you have to create 3 file mappings for each files; dwi, bvecs, and bvals.</p>
 </div>
+<h3 id="optional">Optional<a class="headerlink" href="#optional" title="Permanent link">&para;</a></h3>
+<p>Click this to make this input dataset optional. Leave it unchecked if it's a required field. If you make it optional and user doesn't provide the input, Brainlife will generate <code>config.json</code> without any keys defined in the File Mapping section.</p>
+<h3 id="multi">Multi<a class="headerlink" href="#multi" title="Permanent link">&para;</a></h3>
+<p>Click this if you'd like to allow users to select multiple input datasets. Selected datasests will be placed inside a json array. If user select only 1 dataset, it will still be placed inside a json array. For example, above <code>config.json</code> will be generated as the following.</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;dwi&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;../path/to/dwi.nii.gz&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The index of the datasets listed in the array will be preserved across all File Mappings if there are more than 1 file mapping for this input.</p>
+</div>
 <h2 id="output-datasets">Output Datasets<a class="headerlink" href="#output-datasets" title="Permanent link">&para;</a></h2>
 <p>Similar to the input datasets, you can specify the datatypes of your output datasets here. It's up to developer to decide which datatype to use, and produce output files in the correct file structure / file names according to the specification of the datatype. </p>
-<p>Please read <a href="../../user/datatypes">datatypes page</a> for more info.</p>
+<p><img alt="resources" src="../../img/app.output1.png" /></p>
+<h3 id="datatype-tags">Datatype Tags<a class="headerlink" href="#datatype-tags" title="Permanent link">&para;</a></h3>
+<p>You can add specificities / context to the selected datatype. For example, above screenshot shows this App outputs <code>anat/t1w</code> datatype with a tag <code>acpc_aligned</code>. If there is an App that only works with ACPC aligned <code>anat/t1w</code> as an input dataset, it can specify the same tag as a required input datatype tag to be more specific about its input dataset. </p>
+<p>Please read <a href="../../user/datatypes">datatypes page</a> for more information on datatypes.</p>
+<h3 id="tag-passthrough">Tag Passthrough<a class="headerlink" href="#tag-passthrough" title="Permanent link">&para;</a></h3>
+<p>Some App behaves as a <em>filter</em>; it receives an input dataset and produces another dataset with the same datetype. In this circumstance, the App often needs to <em>add</em> new datatype tags rather than completely replacing them. To accomplish this, you can set this field to the ID of the input dataset that you'd like to copy all datatype tags from. For example, if the input dataset contains <code>defaced</code> datatype tag,  the output dataset will have both <code>acpc_aligned</code> and <code>defaced</code> as the output datatype tags.</p>
 <h3 id="datatype-file-mapping">Datatype File Mapping<a class="headerlink" href="#datatype-file-mapping" title="Permanent link">&para;</a></h3>
 <p>By default, Brainlife expects you to generate all output files in a file structure expected by each datatype on the root of the current working directory. However, if you have more than one output datasets with the same datatype, or have multiple datasets with colliding file/directory names as specified by each datatype, you will not be able to output them all under the root of the current directory. </p>
 <p>To solve this issue, you can output each dataset under a different filename or in a sub-directory, and configure the <code>Datatype File Mapping</code> field to override which file/dir should corresponds to which file/dir within each datatype.</p>
@@ -1008,7 +1085,7 @@
 <p>If you are not sure who the resource administrator is, please contact <a href="mailto:brlife@iu.edu">Brainlife</a>.</p>
 </div>
 <p>If you have access to your own computing resources, you can register personal resources and run your App there to test. Please read <a href="../../resources/register/">registering resource page</a> for more detail. Please keep in mind that, on personal resources, only you can run enabled Apps on those resources. To allow other users to run your App, you will need to enable it on Brainlife's shared resources.</p>
-<p>Once your App is enabled on various resources, you should see them listed under resource table inside the App details page.</p>
+<p>Once your App is enabled on various resources, you should be able to see them listed under computing resources section in the App details page.</p>
 <p><img alt="resources" src="../../img/app.resources.png" /></p>
                 
                   
@@ -1016,9 +1093,10 @@
               
               
                 
+                  
 
 
-  <h2 id="__comments">broken</h2>
+  <h2 id="__comments">Comments</h2>
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
@@ -1034,6 +1112,7 @@
     })();
   </script>
 
+                
               
             </article>
           </div>

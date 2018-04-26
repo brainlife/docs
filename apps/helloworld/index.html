@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../..//img/favicon.ico">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.1">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
     
     
       
@@ -93,8 +93,8 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
       <a href="#helloworld" tabindex="1" class="md-skip">
@@ -743,7 +743,7 @@
 </blockquote>
 <h1 id="helloworld">HelloWorld<a class="headerlink" href="#helloworld" title="Permanent link">&para;</a></h1>
 <p>Here, we will create a "HelloWorld" Brainlife App. </p>
-<p>Let's begin by creating a brand new <a href="https://help.github.com/articles/creating-a-new-repository/">github repository</a>. Please be sure to make the repo public so that Brainlife can access it. You can name it whatever you like (like "app-helloworld").</p>
+<p>Let's begin by creating a brand new <a href="https://help.github.com/articles/creating-a-new-repository/">github repository</a>. Please be sure to make the repo public so that Brainlife can access it. You can name it whatever you like (such as.. "app-helloworld").</p>
 <p>Git clone your new repository to wherever you will be developing/editing and testing your App.</p>
 <div class="codehilite"><pre><span></span>git clone git@github.com:username/app-helloworld.git
 </pre></div>
@@ -777,7 +777,7 @@
 </pre></div>
 
 
-<p>You will receive all input parameters from Brainlife through a JSON file named <code>config.json</code> which is created by Brainlife when your App is executed. See [Example config.json](https://github.com/brain-life/app-dtiinit/blob/master/config.json.sample. As an App developer, you will define what parameters needs to be entered by the user and input datasets later when you register your App on Brainlife.</p>
+<p>You will receive all input parameters from Brainlife through a JSON file named <code>config.json</code> which is created by Brainlife when your App is executed. See <a href="https://github.com/brain-life/app-dtiinit/blob/master/config.json.sample">Example config.json</a>. As an App developer, you will define what parameters needs to be entered by the user and input datasets later when you register your App on Brainlife.</p>
 <p>Following lines parses the <code>config.json</code> using <code>jq</code> and the value of <code>t1</code> to the main part of the application which we will create later.</p>
 <div class="codehilite"><pre><span></span><span class="c1">#parse config.json for input parameters</span>
 <span class="nv">t1</span><span class="o">=</span><span class="k">$(</span>jq -r .t1 config.json<span class="k">)</span>
@@ -914,9 +914,10 @@ All input parameters are assumed to be text (char). You need to write your funct
               
               
                 
+                  
 
 
-  <h2 id="__comments">broken</h2>
+  <h2 id="__comments">Comments</h2>
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
@@ -932,6 +933,7 @@ All input parameters are assumed to be text (char). You need to write your funct
     })();
   </script>
 
+                
               
             </article>
           </div>
