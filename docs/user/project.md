@@ -14,10 +14,12 @@ Brainlife currently supports the following project access policies.
 
     Private project allows only the project members to download or use archived datasets to run Apps. Only the admins and project members can find the project under project list.
 
+!!!note
     `List project summary for all users` 
 
-    If you'd like to keep your project private while allowing other users to know its existance through the project menu, please check this check box. You can solicit other users to join the project and/or become guest users to have read access to its datasets.
+    If you'd like to keep your project private while allowing other users to know its existance through the project list, please check this check box. You can solicit other users to join the project for full access or become guest users to have read access to the datasets.
 
+<!--
 The following table shows who can perform which actions under a project.
 
 | Action | Public Project | Private Project |
@@ -36,3 +38,4 @@ The following table shows who can perform which actions under a project.
 | List published datasets | Admin / Members / Guest | Admin / Members / Guest |
 | List publication records | Admin / Members / Guest | Admin / Members / Guest |
 | Download published datasets | Admin / Members / Guest | Admin / Members / Guest |
+-->

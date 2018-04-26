@@ -40,6 +40,7 @@ Here you can define a list of input datasets that your App is expecting.
 
 This is just an ID to uniquely identify this input dataset. Please enter any ID you'd like to use. It just has to be unique among all other input datasets.
 
+
 ### Datatype/Tags
 
 The datatype/tags of this input dataset. Please enter any datatype tags that your App would require under `Datatype Tags` field. Brainlife will only allow users to select dataset that meets specified datatype tags.
@@ -70,11 +71,40 @@ Your App can parse `config.json` and use the value for `dwi` as the file path po
 !!! note
     If you want to use all 3 files from `neuro/dwi` datatype, you have to create 3 file mappings for each files; dwi, bvecs, and bvals.
 
+### Optional
+
+Click this to make this input dataset optional. Leave it unchecked if it's a required field. If you make it optional and user doesn't provide the input, Brainlife will generate `config.json` without any keys defined in the File Mapping section.
+
+### Multi
+
+Click this if you'd like to allow users to select multiple input datasets. Selected datasests will be placed inside a json array. If user select only 1 dataset, it will still be placed inside a json array. For example, above `config.json` will be generated as the following.
+
+```json
+{
+    "dwi": [
+	"../path/to/dwi.nii.gz"
+    ]
+}
+```
+
+!!! note
+    The index of the datasets listed in the array will be preserved across all File Mappings if there are more than 1 file mapping for this input.
+
 ## Output Datasets
 
 Similar to the input datasets, you can specify the datatypes of your output datasets here. It's up to developer to decide which datatype to use, and produce output files in the correct file structure / file names according to the specification of the datatype. 
 
-Please read [datatypes page](/user/datatypes) for more info.
+![resources](/img/app.output1.png)
+
+### Datatype Tags
+
+You can add specificities / context to the selected datatype. For example, above screenshot shows this App outputs `anat/t1w` datatype with a tag `acpc_aligned`. If there is an App that only works with ACPC aligned `anat/t1w` as an input dataset, it can specify the same tag as a required input datatype tag to be more specific about its input dataset. 
+
+Please read [datatypes page](/user/datatypes) for more information on datatypes.
+
+### Tag Passthrough
+
+Some App behaves as a *filter*; it receives an input dataset and produces another dataset with the same datetype. In this circumstance, the App often needs to *add* new datatype tags rather than completely replacing them. To accomplish this, you can set this field to the ID of the input dataset that you'd like to copy all datatype tags from. For example, if the input dataset contains `defaced` datatype tag,  the output dataset will have both `acpc_aligned` and `defaced` as the output datatype tags.
 
 ### Datatype File Mapping
 
@@ -167,6 +197,8 @@ Once you registered your App on Brainlife, you then need to enable your App on r
 
 If you have access to your own computing resources, you can register personal resources and run your App there to test. Please read [registering resource page](/resources/register.md) for more detail. Please keep in mind that, on personal resources, only you can run enabled Apps on those resources. To allow other users to run your App, you will need to enable it on Brainlife's shared resources.
 
-Once your App is enabled on various resources, you should see them listed under resource table inside the App details page.
+Once your App is enabled on various resources, you should be able to see them listed under computing resources section in the App details page.
 
 ![resources](/img/app.resources.png)
+
+
