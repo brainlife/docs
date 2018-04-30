@@ -4,15 +4,15 @@
 
 Here, we will create a "HelloWorld" Brainlife App. 
 
-Let's begin by creating a brand new [github repository](https://help.github.com/articles/creating-a-new-repository/). Please be sure to make the repo public so that Brainlife can access it. You can name it whatever you like (such as.. "app-helloworld").
+We will show how to create a brand new [github repository](https://help.github.com/articles/creating-a-new-repository/) containing a Brainlife App. Please be sure to make the repo public so that the [brainlife.io](https://brainlife.io/) platform will be able to access it. You can name the repository as you prefer, the Brainlife Team has beeen naming apps starting with the prefix `app-`, for example take a look at [these Apps](https://github.com/search?q=org%3Abrain-life+app-).
 
-Git clone your new repository to wherever you will be developing/editing and testing your App.
+As a start we will create a HelloWorld App, i.e., `app-helloworld`, [here is an example](https://github.com/francopestilli/app-helloworld). [Git clone](https://help.github.com/articles/cloning-a-repository/) your new repository on your local machine - where you will be developing/editing and testing your App.
 
 ```
-git clone git@github.com:username/app-helloworld.git
+git clone git@github.com:francopestilli/app-helloworld.git
 ```
 
-Now, create a file called `main`.
+Now, create a file called `main`. This file contains some information about the UNIX environment ([bash-related collands](https://en.wikipedia.org/wiki/Bash_(Unix_shell))), the procedure to submit jobs in a cluster environment ([PBS-related commands](https://kb.iu.edu/d/avmy)), parsing inputs from the config.json file using `jq` (see [here](https://stedolan.github.io/jq/) for more information about `jq`). 
 
 #### main
 
@@ -27,14 +27,14 @@ t1=$(jq -r .t1 config.json)
 ./main.py $t1
 ```
 
-Please be sure to set the executable bit.
+Please be sure to set the file `main' is executable. You can do that by running thee following command in a terminal, before pushing to the github repository.
 
 ```bash
 chmod +x main
 ```
 
 !!! hint
-    [`jq`](https://stedolan.github.io/jq/) is a command line tool used to parse a small JSON file and pull values out of it. You can install it on your machine by running something like `apt-get install jq` or `yum install jq` depending on your OS/distribution. All Brainlife resources should have common binaries installed including `bash`, `jq`, and `singularity`.
+    [`jq`](https://stedolan.github.io/jq/) is a command line tool used to parse a small JSON file and pull values out of it. You can install it on your machine by running something like `apt-get install jq` or `yum install jq` depending on your Opeerative System (OS) or OS distribution. All Brainlife computational resources will need to have common binaries installed including `bash`, `jq`, and `singularity`.
 
 The first few lines in our `main` instructs PBS or Slurm batch systems to request a certain number of nodes/processes to our App. 
 
