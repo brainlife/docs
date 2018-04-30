@@ -2,14 +2,16 @@
 
 ## What is *App*?
 
-Brainlife Apps are ..
+Brainlife Apps are snippets of code comprising a (short) series of processing steps within a larger data analysis workflow. Apps are meant to be reusable by other users and not just by the App developer. Apps usage is value added to the work of the App Developer. So, the code in each App should use general tools and clarity in code writing so to make the App undeerstandable by other users. 
 
-1. Hosted on a public github repo.
-2. Have an executable file with a filename of `main` at the root of the git repo which. It should normally be a bash script that runs your algorithms. It could be written in any language, or compiled binaries, but you should package your app as a Docker container so you can execute it with `singularity exec`) 
-3. Receive all input parameters and paths for input files through `config.json` which is created by Brainlife at runtime on the current working directory of the compute resource that your App will run on. 
+1. Apps are hosted on public [GitHub.com](https://github.com/search?q=org%3Abrain-life+app-) repositories. Apps can comprise any combination of MatLab, Python or other types code.
+2. Apps must have a single executable file named `main` in the root directory of the git repository. In the most common case, `main` is a UNIX bash script that calls other code in the repository to run the algorithms for data analysis. The code for data analysis can be written in any language, or can be compiled binary code. 
+3. Apps must read all input parameters and data files from a `config.json` file. `config.json` is created by Brainlife.io at runtime on the current working directory (`.`, [relative path](https://en.wikipedia.org/wiki/Path_(computing))) of the compute resource that your App will run on. But you do not have to think about this actually, just write a [relative path](https://en.wikipedia.org/wiki/Path_(computing)) in your code when loading files from the `config.json` file, no need for [absolute paths](https://en.wikipedia.org/wiki/Path_(computing)). 
 4. Write all output files in the current directory in a structure expected by various Brainlife `datatype` (more later).
 
-For more technical specification, please read [ABCD specification](https://github.com/brain-life/abcd-spec)
+Ideally, Apps should be packaged into [Docker containers](https://www.docker.com/what-container). But that is not a requirement. Dockerizing Apps will allow a broader App usage, because Apps can run on multiple systems and will most likely increase the impact of the code you write with higher likelyhood of increasing the impact of your work as a Brainlife App developer.
+
+Brainlife Apps follow a technical specification called Application for Big Computational Data analysis or [ABCD](https://github.com/brain-life/abcd-spec)
 
 ## App Development Timeline
 
