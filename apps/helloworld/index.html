@@ -777,24 +777,28 @@
 </pre></div>
 
 
-<p>Finally, <code>add</code> the file to the git repository and <code>commit</code> to github.com by running thee following:
-  <code>git add main</code>
-  <code>git commit -am "Added main file"</code>
-  <code>git push</code></p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
+<p>Finally, <code>add</code> the file to the git repository and <code>commit</code> to github.com by running thee following:</p>
+<p><code>git add main</code></p>
+<p><code>git commit -am "Added main file"</code></p>
+<p><code>git push</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p><a href="https://stedolan.github.io/jq/"><code>jq</code></a> is a command line tool used to parse a small JSON file and pull values out of it. You can install it on your machine by running something like <code>apt-get install jq</code> or <code>yum install jq</code> or <code>brew install jq</code> depending on your Operative System (OS) or OS distribution. Also note that thee Brainlife computational resources (Cloud) wheere that App will need to run, will need to have common binaries installed including <code>bash</code>, <code>jq</code>, and <code>singularity</code>. </p>
 </div>
-<p>!!! Mac Users
-    You will need to have <a href="https://developer.apple.com/xcode/">the XCODE, Apple Development Tools</a> and <a href="https://brew.sh/">homebrew</a> to install <code>jq</code>. Once Xcode is installed run this command <code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code> and then this command <code>brew install jq</code> in a terminal.</p>
+<div class="admonition info">
+<p class="admonition-title">For Mac Users</p>
+<p>You will need to have <a href="https://developer.apple.com/xcode/">the XCODE, Apple Development Tools</a> and <a href="https://brew.sh/">homebrew</a> to install <code>jq</code>. Once Xcode is installed run this command <code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code> and then this command <code>brew install jq</code> in a terminal.</p>
+</div>
 <p>The first few lines in our <code>main</code> instructs PBS or Slurm batch systems to request a certain number of nodes/processes to our App. </p>
 <div class="codehilite"><pre><span></span><span class="c1">#PBS -l nodes=1:ppn=1</span>
 <span class="c1">#PBS -l walltime=00:05:00</span>
 </pre></div>
 
 
-<p>!!! More information
-    You will receive all input parameters from Brainlife through a JSON file named <code>config.json</code> which is created by Brainlife when your App is executed. See <a href="https://github.com/brain-life/app-dtiinit/blob/master/config.json.sample">Example config.json</a>. As an App developer, you will define what parameters needs to be entered by the user and input datasets later when you register your App on Brainlife.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will receive all input parameters from Brainlife through a JSON file named <code>config.json</code> which is created by Brainlife when your App is executed. See <a href="https://github.com/francopestilli/app-helloworld/blob/master/config.json">Example config.json</a>. As an App developer, you will define what parameters needs to be entered by the user and input datasets later when you register your App on Brainlife.</p>
+</div>
 <p>Following lines parses the <code>config.json</code> using <code>jq</code> and the value of <code>t1</code> to the main part of the application which we will create later.</p>
 <div class="codehilite"><pre><span></span><span class="c1">#parse config.json for input parameters</span>
 <span class="nv">t1</span><span class="o">=</span><span class="k">$(</span>jq -r .t1 config.json<span class="k">)</span>
@@ -805,13 +809,17 @@
 <p>To be able to test your application, let's create a test <code>config.json</code>.</p>
 <h4 id="configjson">config.json<a class="headerlink" href="#configjson" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;t1&quot;</span><span class="p">:</span> <span class="s2">&quot;/somewhere/t1.nii.gz&quot;</span>
+   <span class="nt">&quot;t1&quot;</span><span class="p">:</span> <span class="s2">&quot;~/data/t1.nii.gz&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
 
-<p>Please update the path to wherever you have your test <code>anat/t1w</code> input file. If you don't have any, you can download one from <a href="https://brainlife.io/pub/5a0f0fad2c214c9ba8624376">Brainlife/O3D</a> publication page. Just click the Datasets tab, and select any <code>anat/t1w</code> data to download.</p>
-<p>You should add <code>config.json</code> to .gitignore as <code>config.json</code> is created at runtime by Brainlife, and we just need this now to test your app. </p>
+<p>Please update the path to wherever you have your test <code>anat/t1w</code> input file. If you don't have any, you can download one from an the <a href="https://brainlife.io/pub/5a0f0fad2c214c9ba8624376">Open Diffusion Data Derivatives</a> publication page. Just click the Datasets tab, and select any <code>anat/t1w</code> data to download. Then create a directory in your home directory and move the t1w.nii.gz file in there and unpack it: </p>
+<p><code>cd ~</code></p>
+<p><code>mkdir data</code></p>
+<p><code>cp -v /path/to/your/downloaded/5a050966eec2b300611abff2.tar ~/data/</code></p>
+<p><code>tar -xvf ~/data/5a050966eec2b300611abff2.tar</code></p>
+<p>At this point, <code>~/data/</code> should contain a file named t1w.nii.gz. Next, you should add <code>config.json</code> to <a href="https://help.github.com/articles/ignoring-files/">.gitignore</a> as <code>config.json</code> is created at runtime by Brainlife, and we just need this now to test your app. </p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>A good pattern might be to create a file called <code>config.json.sample</code> used to test your App, and create a symlink <code>ln -s config.json config.json.sample</code> so that you can run your app using <code>config.json.sample</code> without including the actual <code>config.json</code> as part of your repo. This allows other users to construct their own <code>config.json</code> if they want to run your app via command line.</p>
@@ -820,7 +828,9 @@
 <p class="admonition-title">Note</p>
 <p>Instead of parsing <code>config.json</code> inside <code>main</code>, you could use other parsing library as part of your algorithm itself, like Python's <code>import json</code>, or Matlab's <a href="https://github.com/fangq/jsonlab.git">jsonlab</a> module inside the actual program that <code>main</code> will be executing.</p>
 </div>
-<p>Our <code>main</code> script runs a python script called <code>main.py</code> so let's create it.</p>
+<p>Our <code>main</code> script runs a python script called <code>main.py</code> so let's create it and edit it by compying its content as reported below.</p>
+<p><code>cd ~/git/app-helloworld</code></p>
+<p><code>touch main.py</code></p>
 <h4 id="mainpy">main.py<a class="headerlink" href="#mainpy" title="Permanent link">&para;</a></h4>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -844,11 +854,15 @@
 </pre></div>
 </td></tr></table>
 
-<p>Again, be sure to set the executable bit.</p>
+<p>Again, be sure to make <code>main.py</code> also executable.</p>
 <div class="codehilite"><pre><span></span>chmomd +x main.py
 </pre></div>
 
 
+<p>Finally, <code>add</code> the file to the git repository and <code>commit</code> to github.com by running thee following:</p>
+<p><code>git add main</code></p>
+<p><code>git commit -am "Added main.py file"</code></p>
+<p><code>git push</code></p>
 <p>Any output files from your app should be written to the current working directory and in a file structure that complies with whichever the datatype of your dataset is. For now, we are not going to worry about the output datatype (assuming we will use <code>raw</code>)</p>
 <p>Please be sure to add any output files from your app to .gitignore so that it won't be part of your git repo. </p>
 <h4 id="gitignore">.gitignore<a class="headerlink" href="#gitignore" title="Permanent link">&para;</a></h4>
