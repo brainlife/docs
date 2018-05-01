@@ -22,7 +22,7 @@ touch main
 ```
 
 #### main
-After creating the file `main` inside your local folder for the github repository app-helloworld, we will edit the content of the file and make it executable. Use your preferred editor and edit the file. In Mac `Open main` Copy the teext below insde the file, and saved it to disk.
+After creating the file `main` inside your local folder for the github repository app-helloworld, we will edit the content of the file and make it executable. Use your preferred editor and edit the file. Copy the text below insde the edited `main` file, and save it back to disk.
 
 ```bash
 #!/bin/bash
@@ -41,8 +41,8 @@ Please be sure to set the file `main' is executable. You can do that by running 
 chmod +x main
 ```
 
-!!! hint
-    [`jq`](https://stedolan.github.io/jq/) is a command line tool used to parse a small JSON file and pull values out of it. You can install it on your machine by running something like `apt-get install jq` or `yum install jq` depending on your Opeerative System (OS) or OS distribution. All Brainlife computational resources will need to have common binaries installed including `bash`, `jq`, and `singularity`. 
+!!! Hint
+    [`jq`](https://stedolan.github.io/jq/) is a command line tool used to parse a small JSON file and pull values out of it. You can install it on your machine by running something like `apt-get install jq` or `yum install jq` or `brew install jq` depending on your Operative System (OS) or OS distribution. Also note that thee Brainlife computational resources (Cloud) wheere that App will need to run, will need to have common binaries installed including `bash`, `jq`, and `singularity`. 
 
 !!! Mac Users
     You will need to have [the XCODE, Apple Development Tools](https://developer.apple.com/xcode/) and [homebrew](https://brew.sh/) to install `jq`. Once Xcode is installed run this command `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` and then this command `brew install jq` in a terminal.
