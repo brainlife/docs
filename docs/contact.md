@@ -8,7 +8,9 @@
 
 ## Newsletter Subscription
 
-[Brainlife User](http://eepurl.com/dqw5_T)
+[Brainlife Users Newsletter](http://eepurl.com/dqw5_T)
+
+[Brainlife App Developers Newsletter](http://eepurl.com/dsybmb)
 
 ## Slack
 

@@ -37,7 +37,7 @@ pages:
     - Architecture: technical/arthitecture.md
     - APIs: technical/api.md
   - Contact: contact.md
-  - Terms of Use: terms.md
+  - Privacy Policy: privacy.md
   - Releases: releases.md
 
 extra:
