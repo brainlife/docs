@@ -11,6 +11,10 @@ As a start we will create a HelloWorld App, i.e., `app-helloworld`, [here is an 
 ```
 git clone git@github.com:francopestilli/app-helloworld.git
 ```
+or (depending on your www.github.com settings):
+```
+git clone https://github.com/francopestilli/app-helloworld.git
+```
 
 Now, create a file called `main`. This file contains some information about the UNIX environment ([bash-related collands](https://en.wikipedia.org/wiki/Bash_(Unix_shell))), the procedure to submit jobs in a cluster environment ([PBS-related commands](https://kb.iu.edu/d/avmy)), parsing inputs from the config.json file using `jq` (see [here](https://stedolan.github.io/jq/) for more information about `jq`). 
 
