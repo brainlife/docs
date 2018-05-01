@@ -43,7 +43,9 @@ chmod +x main
 
 Finally, `add` the file to the git repository and `commit` to github.com by running thee following:
   `git add main`
+  
   `git commit -am "Added main file"`
+  
   `git push`
 
 !!! Hint
