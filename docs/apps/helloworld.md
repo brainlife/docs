@@ -43,11 +43,9 @@ chmod +x main
 
 Finally, `add` the file to the git repository and `commit` to github.com by running thee following:
 
-  `git add main`
-  
-  `git commit -am "Added main file"`
-  
-  `git push`
+  |`git add main`|
+  |`git commit -am "Added main file"`|
+  |`git push`|
 
 !!! Hint
     [`jq`](https://stedolan.github.io/jq/) is a command line tool used to parse a small JSON file and pull values out of it. You can install it on your machine by running something like `apt-get install jq` or `yum install jq` or `brew install jq` depending on your Operative System (OS) or OS distribution. Also note that thee Brainlife computational resources (Cloud) wheere that App will need to run, will need to have common binaries installed including `bash`, `jq`, and `singularity`. 
@@ -63,7 +61,7 @@ The first few lines in our `main` instructs PBS or Slurm batch systems to reques
 ```
 
 !!! More information
-    You will receive all input parameters from Brainlife through a JSON file named `config.json` which is created by Brainlife when your App is executed. See [Example config.json](https://github.com/brain-life/app-dtiinit/blob/master/config.json.sample). As an App developer, you will define what parameters needs to be entered by the user and input datasets later when you register your App on Brainlife.
+    You will receive all input parameters from Brainlife through a JSON file named `config.json` which is created by Brainlife when your App is executed. See [Example config.json](https://github.com/francopestilli/app-helloworld/blob/master/config.json). As an App developer, you will define what parameters needs to be entered by the user and input datasets later when you register your App on Brainlife.
 
 Following lines parses the `config.json` using `jq` and the value of `t1` to the main part of the application which we will create later.
 
@@ -79,13 +77,16 @@ To be able to test your application, let's create a test `config.json`.
 
 ```json
 {
-   "t1": "/somewhere/t1.nii.gz"
+   "t1": "~/data/t1.nii.gz"
 }
 ```
 
-Please update the path to wherever you have your test `anat/t1w` input file. If you don't have any, you can download one from [Brainlife/O3D](https://brainlife.io/pub/5a0f0fad2c214c9ba8624376) publication page. Just click the Datasets tab, and select any `anat/t1w` data to download.
+Please update the path to wherever you have your test `anat/t1w` input file. If you don't have any, you can download one from an the [Open Diffusion Data Derivatives](https://brainlife.io/pub/5a0f0fad2c214c9ba8624376) publication page. Just click the Datasets tab, and select any `anat/t1w` data to download. Then create a directory in your home directory and move the t1w.nii.gz file in there: 
+| `cd ~`|
+|`mkdir data`|
+|`cp -v /path/to/your/downloaded/t1w.nii.gz` |
 
-You should add `config.json` to .gitignore as `config.json` is created at runtime by Brainlife, and we just need this now to test your app. 
+You should add `config.json` to [.gitignore](https://help.github.com/articles/ignoring-files/) as `config.json` is created at runtime by Brainlife, and we just need this now to test your app. 
 
 !!! hint
     A good pattern might be to create a file called `config.json.sample` used to test your App, and create a symlink `ln -s config.json config.json.sample` so that you can run your app using `config.json.sample` without including the actual `config.json` as part of your repo. This allows other users to construct their own `config.json` if they want to run your app via command line.
@@ -93,7 +94,9 @@ You should add `config.json` to .gitignore as `config.json` is created at runtim
 !!! note
     Instead of parsing `config.json` inside `main`, you could use other parsing library as part of your algorithm itself, like Python's `import json`, or Matlab's [jsonlab](https://github.com/fangq/jsonlab.git) module inside the actual program that `main` will be executing.
 
-Our `main` script runs a python script called `main.py` so let's create it.
+Our `main` script runs a python script called `main.py` so let's create it and edit it by compying its content as reported below.
+|`cd ~/git/app-helloworld`|
+|`touch main.py`|
 
 #### main.py
 
