@@ -49,10 +49,10 @@ Finally, `add` the file to the git repository and `commit` to github.com by runn
   
   `git push`
 
-!!! Hint
+!!! note
     [`jq`](https://stedolan.github.io/jq/) is a command line tool used to parse a small JSON file and pull values out of it. You can install it on your machine by running something like `apt-get install jq` or `yum install jq` or `brew install jq` depending on your Operative System (OS) or OS distribution. Also note that thee Brainlife computational resources (Cloud) wheere that App will need to run, will need to have common binaries installed including `bash`, `jq`, and `singularity`. 
 
-!!! Mac Users
+!!! info "For Mac Users"
     You will need to have [the XCODE, Apple Development Tools](https://developer.apple.com/xcode/) and [homebrew](https://brew.sh/) to install `jq`. Once Xcode is installed run this command `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` and then this command `brew install jq` in a terminal.
 
 The first few lines in our `main` instructs PBS or Slurm batch systems to request a certain number of nodes/processes to our App. 
@@ -62,7 +62,7 @@ The first few lines in our `main` instructs PBS or Slurm batch systems to reques
 #PBS -l walltime=00:05:00
 ```
 
-!!! More information
+!!! note 
     You will receive all input parameters from Brainlife through a JSON file named `config.json` which is created by Brainlife when your App is executed. See [Example config.json](https://github.com/francopestilli/app-helloworld/blob/master/config.json). As an App developer, you will define what parameters needs to be entered by the user and input datasets later when you register your App on Brainlife.
 
 
