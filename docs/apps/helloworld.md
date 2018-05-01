@@ -45,7 +45,7 @@ chmod +x main
     [`jq`](https://stedolan.github.io/jq/) is a command line tool used to parse a small JSON file and pull values out of it. You can install it on your machine by running something like `apt-get install jq` or `yum install jq` depending on your Opeerative System (OS) or OS distribution. All Brainlife computational resources will need to have common binaries installed including `bash`, `jq`, and `singularity`. 
 
 !!! Mac Users
-    Youwill need to have [the Apple Development Tools](https://developer.apple.com/xcode/) and [homebrew](https://brew.sh/) to install `jq`.
+    You will need to have [the XCODE, Apple Development Tools](https://developer.apple.com/xcode/) and [homebrew](https://brew.sh/) to install `jq`. Once Xcode is installed run this command `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` and then this command `brew install jq` in a terminal.
 
 The first few lines in our `main` instructs PBS or Slurm batch systems to request a certain number of nodes/processes to our App. 
 
