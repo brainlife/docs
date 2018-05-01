@@ -633,8 +633,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../terms/" title="Terms of Use" class="md-nav__link">
-      Terms of Use
+    <a href="../../privacy/" title="Privacy Policy" class="md-nav__link">
+      Privacy Policy
     </a>
   </li>
 
@@ -743,14 +743,24 @@
 </blockquote>
 <h1 id="helloworld">HelloWorld<a class="headerlink" href="#helloworld" title="Permanent link">&para;</a></h1>
 <p>Here, we will create a "HelloWorld" Brainlife App. </p>
-<p>Let's begin by creating a brand new <a href="https://help.github.com/articles/creating-a-new-repository/">github repository</a>. Please be sure to make the repo public so that Brainlife can access it. You can name it whatever you like (such as.. "app-helloworld").</p>
-<p>Git clone your new repository to wherever you will be developing/editing and testing your App.</p>
-<div class="codehilite"><pre><span></span>git clone git@github.com:username/app-helloworld.git
+<p>We will show how to create a brand new <a href="https://help.github.com/articles/creating-a-new-repository/">github repository</a> containing a Brainlife App. Please be sure to make the repo public so that the <a href="https://brainlife.io/">brainlife.io</a> platform will be able to access it. You can name the repository as you prefer, the Brainlife Team has beeen naming apps starting with the prefix <code>app-</code>, for example take a look at <a href="https://github.com/search?q=org%3Abrain-life+app-">these Apps</a>.</p>
+<p>As a start we will create a HelloWorld App, i.e., <code>app-helloworld</code>, <a href="https://github.com/francopestilli/app-helloworld">here is an example</a>. <a href="https://help.github.com/articles/cloning-a-repository/">Git clone</a> your new repository on your local machine - where you will be developing/editing and testing your App.</p>
+<div class="codehilite"><pre><span></span>git clone git@github.com:francopestilli/app-helloworld.git
 </pre></div>
 
 
-<p>Now, create a file called <code>main</code>.</p>
+<p>or (depending on your www.github.com settings):</p>
+<div class="codehilite"><pre><span></span>git clone https://github.com/francopestilli/app-helloworld.git
+</pre></div>
+
+
+<p>Now, cd inside the local directory of the repository and create a file called <code>main</code>. This file contains some information about the UNIX environment (<a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash-related collands</a>), the procedure to submit jobs in a cluster environment (<a href="https://kb.iu.edu/d/avmy">PBS-related commands</a>), parsing inputs from the config.json file using <code>jq</code> (see <a href="https://stedolan.github.io/jq/">here</a> for more information about <code>jq</code>). For example:</p>
+<div class="codehilite"><pre><span></span>touch main
+</pre></div>
+
+
 <h4 id="main">main<a class="headerlink" href="#main" title="Permanent link">&para;</a></h4>
+<p>After creating the file <code>main</code> inside your local folder for the github repository app-helloworld, we will edit the content of the file and make it executable. Use your preferred editor and edit the file. Copy the text below insde the edited <code>main</code> file, and save it back to disk.</p>
 <div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
 
 <span class="c1">#PBS -l nodes=1:ppn=1</span>
@@ -762,22 +772,29 @@
 </pre></div>
 
 
-<p>Please be sure to set the executable bit.</p>
+<p>Please be sure to set the file <code>main</code> is executable. You can do that by running thee following command in a terminal, before pushing to the github repository.</p>
 <div class="codehilite"><pre><span></span>chmod +x main
 </pre></div>
 
 
+<p>Finally, <code>add</code> the file to the git repository and <code>commit</code> to github.com by running thee following:
+  <code>git add main</code>
+  <code>git commit -am "Added main file"</code>
+  <code>git push</code></p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p><a href="https://stedolan.github.io/jq/"><code>jq</code></a> is a command line tool used to parse a small JSON file and pull values out of it. You can install it on your machine by running something like <code>apt-get install jq</code> or <code>yum install jq</code> depending on your OS/distribution. All Brainlife resources should have common binaries installed including <code>bash</code>, <code>jq</code>, and <code>singularity</code>.</p>
+<p><a href="https://stedolan.github.io/jq/"><code>jq</code></a> is a command line tool used to parse a small JSON file and pull values out of it. You can install it on your machine by running something like <code>apt-get install jq</code> or <code>yum install jq</code> or <code>brew install jq</code> depending on your Operative System (OS) or OS distribution. Also note that thee Brainlife computational resources (Cloud) wheere that App will need to run, will need to have common binaries installed including <code>bash</code>, <code>jq</code>, and <code>singularity</code>. </p>
 </div>
+<p>!!! Mac Users
+    You will need to have <a href="https://developer.apple.com/xcode/">the XCODE, Apple Development Tools</a> and <a href="https://brew.sh/">homebrew</a> to install <code>jq</code>. Once Xcode is installed run this command <code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code> and then this command <code>brew install jq</code> in a terminal.</p>
 <p>The first few lines in our <code>main</code> instructs PBS or Slurm batch systems to request a certain number of nodes/processes to our App. </p>
 <div class="codehilite"><pre><span></span><span class="c1">#PBS -l nodes=1:ppn=1</span>
 <span class="c1">#PBS -l walltime=00:05:00</span>
 </pre></div>
 
 
-<p>You will receive all input parameters from Brainlife through a JSON file named <code>config.json</code> which is created by Brainlife when your App is executed. See <a href="https://github.com/brain-life/app-dtiinit/blob/master/config.json.sample">Example config.json</a>. As an App developer, you will define what parameters needs to be entered by the user and input datasets later when you register your App on Brainlife.</p>
+<p>!!! More information
+    You will receive all input parameters from Brainlife through a JSON file named <code>config.json</code> which is created by Brainlife when your App is executed. See <a href="https://github.com/brain-life/app-dtiinit/blob/master/config.json.sample">Example config.json</a>. As an App developer, you will define what parameters needs to be entered by the user and input datasets later when you register your App on Brainlife.</p>
 <p>Following lines parses the <code>config.json</code> using <code>jq</code> and the value of <code>t1</code> to the main part of the application which we will create later.</p>
 <div class="codehilite"><pre><span></span><span class="c1">#parse config.json for input parameters</span>
 <span class="nv">t1</span><span class="o">=</span><span class="k">$(</span>jq -r .t1 config.json<span class="k">)</span>

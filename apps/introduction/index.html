@@ -605,8 +605,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../terms/" title="Terms of Use" class="md-nav__link">
-      Terms of Use
+    <a href="../../privacy/" title="Privacy Policy" class="md-nav__link">
+      Privacy Policy
     </a>
   </li>
 
@@ -684,14 +684,15 @@
                 
                 <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
 <h2 id="what-is-app">What is <em>App</em>?<a class="headerlink" href="#what-is-app" title="Permanent link">&para;</a></h2>
-<p>Brainlife Apps are ..</p>
+<p>Brainlife Apps are snippets of code comprising a (short) series of processing steps within a larger data analysis workflow. Apps are meant to be reusable by other users and not just by the App developer. Apps usage is value added to the work of the App Developer. So, the code in each App should use general tools and clarity in code writing so to make the App undeerstandable by other users. </p>
 <ol>
-<li>Hosted on a public github repo.</li>
-<li>Have an executable file with a filename of <code>main</code> at the root of the git repo which. It should normally be a bash script that runs your algorithms. It could be written in any language, or compiled binaries, but you should package your app as a Docker container so you can execute it with <code>singularity exec</code>) </li>
-<li>Receive all input parameters and paths for input files through <code>config.json</code> which is created by Brainlife at runtime on the current working directory of the compute resource that your App will run on. </li>
-<li>Write all output files in the current directory in a structure expected by various Brainlife <code>datatype</code> (more later).</li>
+<li>Apps are hosted on public <a href="https://github.com/search?q=org%3Abrain-life+app-">GitHub.com</a> repositories. Apps can comprise any combination of MatLab, Python or other types code.</li>
+<li>Apps must have a single executable file named <code>main</code> in the root directory of the git repository. In the most common case, <code>main</code> is a UNIX bash script that calls other code in the repository to run the algorithms for data analysis. The code for data analysis can be written in any language, or can be compiled binary code. </li>
+<li>Apps must read all input parameters and data files from a <code>config.json</code> file. <code>config.json</code> is created by Brainlife.io at runtime on the current working directory (<code>./</code>, <a href="https://en.wikipedia.org/wiki/Path_(computing)">relative path</a>) of the compute resource that your App will run on. But you do not have to think about this actually, just write a <a href="https://en.wikipedia.org/wiki/Path_(computing)">relative path</a> in your code when loading files from the <code>config.json</code> file, no need for <a href="https://en.wikipedia.org/wiki/Path_(computing)">absolute paths</a>. </li>
+<li>Write all output files in the current directory (<code>./</code>), in a structure defined in a Brainlife <a href="https://github.com/brain-life/datatypes"><code>datatype</code></a>. More information about <a href="https://github.com/brain-life/datatypes">Brainlife datatypes</a> later.</li>
 </ol>
-<p>For more technical specification, please read <a href="https://github.com/brain-life/abcd-spec">ABCD specification</a></p>
+<p>Ideally, Apps should be packaged into <a href="https://www.docker.com/what-container">Docker containers</a>. But that is not a requirement. Apps Dockerizing will allow a broader App usage, because Apps can run on multiple compute systems and will most likely increase the impact of the code you write, with higher likelyhood of increasing the impact of your work as a Brainlife App developer. More information abotu <a href="https://brain-life.github.io/docs/apps/container/">Apps Dockerization can be found here</a>.</p>
+<p>Brainlife Apps follow a technical specification called Application for Big Computational Data analysis or <a href="https://github.com/brain-life/abcd-spec">ABCD</a></p>
 <h2 id="app-development-timeline">App Development Timeline<a class="headerlink" href="#app-development-timeline" title="Permanent link">&para;</a></h2>
 <p>You would normally follow following steps to develop and register your App on Brainlife.</p>
 <ol>
