@@ -16,9 +16,13 @@ or (depending on your www.github.com settings):
 git clone https://github.com/francopestilli/app-helloworld.git
 ```
 
-Now, create a file called `main`. This file contains some information about the UNIX environment ([bash-related collands](https://en.wikipedia.org/wiki/Bash_(Unix_shell))), the procedure to submit jobs in a cluster environment ([PBS-related commands](https://kb.iu.edu/d/avmy)), parsing inputs from the config.json file using `jq` (see [here](https://stedolan.github.io/jq/) for more information about `jq`). 
+Now, cd inside the local directory of the repository and create a file called `main`. This file contains some information about the UNIX environment ([bash-related collands](https://en.wikipedia.org/wiki/Bash_(Unix_shell))), the procedure to submit jobs in a cluster environment ([PBS-related commands](https://kb.iu.edu/d/avmy)), parsing inputs from the config.json file using `jq` (see [here](https://stedolan.github.io/jq/) for more information about `jq`). For example:
+```
+touch main
+```
 
 #### main
+After creating the file `main` inside your local folder for the github repository app-helloworld, we will edit the content of the file and make it executable. Use your preferred editor and edit the file. In Mac `Open main` Copy the teext below insde the file, and saved it to disk.
 
 ```bash
 #!/bin/bash
