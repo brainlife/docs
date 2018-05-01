@@ -11,10 +11,18 @@ As a start we will create a HelloWorld App, i.e., `app-helloworld`, [here is an 
 ```
 git clone git@github.com:francopestilli/app-helloworld.git
 ```
+or (depending on your www.github.com settings):
+```
+git clone https://github.com/francopestilli/app-helloworld.git
+```
 
-Now, create a file called `main`. This file contains some information about the UNIX environment ([bash-related collands](https://en.wikipedia.org/wiki/Bash_(Unix_shell))), the procedure to submit jobs in a cluster environment ([PBS-related commands](https://kb.iu.edu/d/avmy)), parsing inputs from the config.json file using `jq` (see [here](https://stedolan.github.io/jq/) for more information about `jq`). 
+Now, cd inside the local directory of the repository and create a file called `main`. This file contains some information about the UNIX environment ([bash-related collands](https://en.wikipedia.org/wiki/Bash_(Unix_shell))), the procedure to submit jobs in a cluster environment ([PBS-related commands](https://kb.iu.edu/d/avmy)), parsing inputs from the config.json file using `jq` (see [here](https://stedolan.github.io/jq/) for more information about `jq`). For example:
+```
+touch main
+```
 
 #### main
+After creating the file `main` inside your local folder for the github repository app-helloworld, we will edit the content of the file and make it executable. Use your preferred editor and edit the file. Copy the text below insde the edited `main` file, and save it back to disk.
 
 ```bash
 #!/bin/bash
@@ -27,14 +35,22 @@ t1=$(jq -r .t1 config.json)
 ./main.py $t1
 ```
 
-Please be sure to set the file `main' is executable. You can do that by running thee following command in a terminal, before pushing to the github repository.
+Please be sure to set the file `main` is executable. You can do that by running thee following command in a terminal, before pushing to the github repository.
 
 ```bash
 chmod +x main
 ```
 
-!!! hint
-    [`jq`](https://stedolan.github.io/jq/) is a command line tool used to parse a small JSON file and pull values out of it. You can install it on your machine by running something like `apt-get install jq` or `yum install jq` depending on your Opeerative System (OS) or OS distribution. All Brainlife computational resources will need to have common binaries installed including `bash`, `jq`, and `singularity`.
+Finally, `add` the file to the git repository and `commit` to github.com by running thee following:
+  `git add main`
+  `git commit -am "Added main file"`
+  `git push`
+
+!!! Hint
+    [`jq`](https://stedolan.github.io/jq/) is a command line tool used to parse a small JSON file and pull values out of it. You can install it on your machine by running something like `apt-get install jq` or `yum install jq` or `brew install jq` depending on your Operative System (OS) or OS distribution. Also note that thee Brainlife computational resources (Cloud) wheere that App will need to run, will need to have common binaries installed including `bash`, `jq`, and `singularity`. 
+
+!!! Mac Users
+    You will need to have [the XCODE, Apple Development Tools](https://developer.apple.com/xcode/) and [homebrew](https://brew.sh/) to install `jq`. Once Xcode is installed run this command `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` and then this command `brew install jq` in a terminal.
 
 The first few lines in our `main` instructs PBS or Slurm batch systems to request a certain number of nodes/processes to our App. 
 
@@ -43,7 +59,8 @@ The first few lines in our `main` instructs PBS or Slurm batch systems to reques
 #PBS -l walltime=00:05:00
 ```
 
-You will receive all input parameters from Brainlife through a JSON file named `config.json` which is created by Brainlife when your App is executed. See [Example config.json](https://github.com/brain-life/app-dtiinit/blob/master/config.json.sample). As an App developer, you will define what parameters needs to be entered by the user and input datasets later when you register your App on Brainlife.
+!!! More information
+    You will receive all input parameters from Brainlife through a JSON file named `config.json` which is created by Brainlife when your App is executed. See [Example config.json](https://github.com/brain-life/app-dtiinit/blob/master/config.json.sample). As an App developer, you will define what parameters needs to be entered by the user and input datasets later when you register your App on Brainlife.
 
 Following lines parses the `config.json` using `jq` and the value of `t1` to the main part of the application which we will create later.
 
