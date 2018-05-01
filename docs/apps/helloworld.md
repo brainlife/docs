@@ -35,11 +35,16 @@ t1=$(jq -r .t1 config.json)
 ./main.py $t1
 ```
 
-Please be sure to set the file `main' is executable. You can do that by running thee following command in a terminal, before pushing to the github repository.
+Please be sure to set the file `main` is executable. You can do that by running thee following command in a terminal, before pushing to the github repository.
 
 ```bash
 chmod +x main
 ```
+
+Finally, `add` the file to the git repository and `commit` to github.com by running thee following:
+  `git add main`
+  `git commit -am "Added main file"`
+  `git push`
 
 !!! Hint
     [`jq`](https://stedolan.github.io/jq/) is a command line tool used to parse a small JSON file and pull values out of it. You can install it on your machine by running something like `apt-get install jq` or `yum install jq` or `brew install jq` depending on your Operative System (OS) or OS distribution. Also note that thee Brainlife computational resources (Cloud) wheere that App will need to run, will need to have common binaries installed including `bash`, `jq`, and `singularity`. 
