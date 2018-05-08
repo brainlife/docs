@@ -434,8 +434,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mainpy" title="main.py" class="md-nav__link">
-    main.py
+  <a href="#apppy" title="app.py" class="md-nav__link">
+    app.py
   </a>
   
 </li>
@@ -686,8 +686,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mainpy" title="main.py" class="md-nav__link">
-    main.py
+  <a href="#apppy" title="app.py" class="md-nav__link">
+    app.py
   </a>
   
 </li>
@@ -738,9 +738,11 @@
                   <a href="https://github.com/brain-life/docs/edit/master/docs/apps/helloworld.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <blockquote>
+                <div class="admonition note">
+<p class="admonition-title">Prerequisites</p>
 <p>Please read <a href="../introduction/">App Developers / Introduction</a> first. </p>
-</blockquote>
+<p>Before you begin, please install a text editor such as <a href="https://code.visualstudio.com">VSCode</a> and <a href="https://git-scm.com/downloads">git client</a> on your laptop. You will also need to install <a href="https://stedolan.github.io/jq/download/">jq</a> which will be explained later.</p>
+</div>
 <h1 id="helloworld">HelloWorld<a class="headerlink" href="#helloworld" title="Permanent link">&para;</a></h1>
 <p>Here, we will create a "HelloWorld" Brainlife App. </p>
 <p>We will show how to create a brand new <a href="https://help.github.com/articles/creating-a-new-repository/">github repository</a> containing a Brainlife App. Please be sure to make the repo public so that the <a href="https://brainlife.io/">brainlife.io</a> platform will be able to access it. You can name the repository as you prefer, the Brainlife Team has beeen naming apps starting with the prefix <code>app-</code>, for example take a look at <a href="https://github.com/search?q=org%3Abrain-life+app-">these Apps</a>.</p>
@@ -768,7 +770,7 @@
 
 <span class="c1">#parse config.json for input parameters (here, we are pulling &quot;t1&quot;)</span>
 <span class="nv">t1</span><span class="o">=</span><span class="k">$(</span>jq -r .t1 config.json<span class="k">)</span>
-./main.py <span class="nv">$t1</span>
+./app.py <span class="nv">$t1</span>
 </pre></div>
 
 
@@ -802,7 +804,7 @@
 <p>Following lines parses the <code>config.json</code> using <code>jq</code> and the value of <code>t1</code> to the main part of the application which we will create later.</p>
 <div class="codehilite"><pre><span></span><span class="c1">#parse config.json for input parameters</span>
 <span class="nv">t1</span><span class="o">=</span><span class="k">$(</span>jq -r .t1 config.json<span class="k">)</span>
-./main.py <span class="nv">$t1</span>
+./app.py <span class="nv">$t1</span>
 </pre></div>
 
 
@@ -826,12 +828,12 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Instead of parsing <code>config.json</code> inside <code>main</code>, you could use other parsing library as part of your algorithm itself, like Python's <code>import json</code>, or Matlab's <a href="https://github.com/fangq/jsonlab.git">jsonlab</a> module inside the actual program that <code>main</code> will be executing.</p>
+<p>Instead of parsing <code>config.json</code> inside <code>main</code>, you are free to use other parsing library as part of your App itself, such as Python's <code>json</code> module, or Matlab's <a href="https://github.com/fangq/jsonlab.git">jsonlab</a> module.</p>
 </div>
-<p>Our <code>main</code> script runs a python script called <code>main.py</code> so let's create it and edit it by compying its content as reported below.</p>
+<p>Our <code>main</code> script runs a python script called <code>app.py</code> so let's create it and edit it by compying its content as reported below.</p>
 <p><code>cd ~/git/app-helloworld</code></p>
-<p><code>touch main.py</code></p>
-<h4 id="mainpy">main.py<a class="headerlink" href="#mainpy" title="Permanent link">&para;</a></h4>
+<p><code>touch app.py</code></p>
+<h4 id="apppy">app.py<a class="headerlink" href="#apppy" title="Permanent link">&para;</a></h4>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -854,14 +856,14 @@
 </pre></div>
 </td></tr></table>
 
-<p>Again, be sure to make <code>main.py</code> also executable.</p>
-<div class="codehilite"><pre><span></span>chmomd +x main.py
+<p>Again, be sure to make <code>app.py</code> also executable.</p>
+<div class="codehilite"><pre><span></span>chmomd +x app.py
 </pre></div>
 
 
 <p>Finally, <code>add</code> the file to the git repository and <code>commit</code> to github.com by running thee following:</p>
 <p><code>git add main</code></p>
-<p><code>git commit -am "Added main.py file"</code></p>
+<p><code>git commit -am "Added app.py file"</code></p>
 <p><code>git push</code></p>
 <p>Any output files from your app should be written to the current working directory and in a file structure that complies with whichever the datatype of your dataset is. For now, we are not going to worry about the output datatype (assuming we will use <code>raw</code>)</p>
 <p>Please be sure to add any output files from your app to .gitignore so that it won't be part of your git repo. </p>
@@ -871,6 +873,10 @@ output.txt
 </pre></div>
 
 
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>.gitignore is a text file that instructs git to not track certain files inside your work directory. Please see <a href="https://help.github.com/articles/ignoring-files/">ignoring files</a></p>
+</div>
 <h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
 <p>Now, you should be able to test run your app locally by executing <code>main</code></p>
 <div class="codehilite"><pre><span></span>./main
@@ -919,7 +925,7 @@ git push
 <li>Created a new public Github repo.</li>
 <li>Created <code>main</code> which parses <code>config.json</code> and runs our App.</li>
 <li>Created a test <code>config.json</code>.</li>
-<li>Created <code>main.py</code> which runs our algorithm and generate output files.</li>
+<li>Created <code>app.py</code> which runs our algorithm and generate output files.</li>
 <li>Tested the App, and pushed all files to Github.</li>
 </ul>
 <div class="admonition info">
