@@ -32,7 +32,7 @@ After creating the file `main` inside your local folder for the github repositor
 
 #parse config.json for input parameters (here, we are pulling "t1")
 t1=$(jq -r .t1 config.json)
-./main.py $t1
+./app.py $t1
 ```
 
 Please be sure to set the file `main` is executable. You can do that by running thee following command in a terminal, before pushing to the github repository.
@@ -71,7 +71,7 @@ Following lines parses the `config.json` using `jq` and the value of `t1` to the
 ```bash
 #parse config.json for input parameters
 t1=$(jq -r .t1 config.json)
-./main.py $t1
+./app.py $t1
 ```
 
 To be able to test your application, let's create a test `config.json`.
@@ -101,16 +101,16 @@ At this point, `~/data/` should contain a file named t1w.nii.gz. Next, you shoul
     A good pattern might be to create a file called `config.json.sample` used to test your App, and create a symlink `ln -s config.json config.json.sample` so that you can run your app using `config.json.sample` without including the actual `config.json` as part of your repo. This allows other users to construct their own `config.json` if they want to run your app via command line.
 
 !!! note
-    Instead of parsing `config.json` inside `main`, you could use other parsing library as part of your algorithm itself, like Python's `import json`, or Matlab's [jsonlab](https://github.com/fangq/jsonlab.git) module inside the actual program that `main` will be executing.
+    Instead of parsing `config.json` inside `main`, you are free to use other parsing library as part of your App itself, such as Python's `json` module, or Matlab's [jsonlab](https://github.com/fangq/jsonlab.git) module.
 
 
-Our `main` script runs a python script called `main.py` so let's create it and edit it by compying its content as reported below.
+Our `main` script runs a python script called `app.py` so let's create it and edit it by compying its content as reported below.
 
 `cd ~/git/app-helloworld`
 
-`touch main.py`
+`touch app.py`
 
-#### main.py
+#### app.py
 
 ```
 #!/usr/bin/env python
@@ -126,17 +126,17 @@ f.close()
 
 ```
 
-Again, be sure to make `main.py` also executable.
+Again, be sure to make `app.py` also executable.
 
 ```
-chmomd +x main.py
+chmomd +x app.py
 ```
 
 Finally, `add` the file to the git repository and `commit` to github.com by running thee following:
 
   `git add main`
   
-  `git commit -am "Added main.py file"`
+  `git commit -am "Added app.py file"`
   
   `git push`
   
@@ -150,6 +150,9 @@ Please be sure to add any output files from your app to .gitignore so that it wo
 config.json
 output.txt
 ```
+
+!!! note
+    .gitignore is a text file that instructs git to not track certain files inside your work directory. Please see [ignoring files](https://help.github.com/articles/ignoring-files/)
 
 ## Testing
 
@@ -204,7 +207,7 @@ Congratulations! We have just created our first Brainlife App. To summarize, we'
 * Created a new public Github repo.
 * Created `main` which parses `config.json` and runs our App.
 * Created a test `config.json`.
-* Created `main.py` which runs our algorithm and generate output files.
+* Created `app.py` which runs our algorithm and generate output files.
 * Tested the App, and pushed all files to Github.
 
 !!! info

@@ -18,11 +18,11 @@ Brainlife Apps follow a technical specification called Application for Big Compu
 You would normally follow following steps to develop and register your App on Brainlife.
 
 1. Develop an algorithm that runs on your laptop or local cluster with your test datasets.
-2. Create a sample `config.json` but add it to `.gitignore` so that it won't be part of your repo. (You can include `config.json.sample` and symlink it to config.json)
-3. Create `main` that parses `config.json` and pass it to your algorithm.
-4. Publish it as public github repo.
-5. Register your App on Brainlife. During this step, you can define what parameters and input file should be made available to your App via `config.json`.
-6. Contact resource administrators and ask them to enable your App (more below). 
+2. Create a sample `config.json`. 
+5. Create `main` that parses `config.json` and pass it to your algorithm.
+6. Publish it as public github repo.
+7. Register your App on Brainlife. During this step, you can define what parameters and input file should be made available to your App via `config.json`.
+8. Contact resource administrators and ask them to enable your App (more below). 
 
 # Enabling App on a compute resource
 
