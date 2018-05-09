@@ -31,6 +31,7 @@ pages:
     - Containerizing App: apps/container.md
     - Versioning Tips: apps/versioning.md
     - Custom Hooks: apps/customhooks.md
+    - Product: apps/product.md
   - Resource Provider: 
     - Registering Resource: resources/register.md
   - Technical:
