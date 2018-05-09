@@ -18,6 +18,7 @@ For developer who doesn't want to code in Javascript, we could provide more stan
 Deverloper can also use Brainlife API to query for datasets and its product.json and run it via command line. Such App can live completely outside Brainlife UI.
 
 
+<!--
 
 ### Images
 
@@ -32,6 +33,7 @@ Deverloper can also use Brainlife API to query for datasets and its product.json
     ]
 }
 ```
+-->
 
 ### plotly graphs
 
