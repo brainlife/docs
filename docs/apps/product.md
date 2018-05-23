@@ -1,22 +1,18 @@
-# product.json standard
+# `product.json`
 
-Your app can generate a file named `product.json` to send information back to Brainlife UI. You can think of it as the opposite of `config.json`. `product.json` will be picked up by Brainlife once your App finishes successfully and loaded on to Brainlife's internal database (mongodb).
+Your app can optionally generate a file named `product.json` to send information back to Brainlife. You can think of it as the opposite end of `config.json`. While `config.json` is used to send your App inputs and configuration from the user, `product.json` will be picked up by Brainlife and can be used to send information back to Brainlife. The entire content of the `product.json` will simply be loaded by Brainlife and stored in the internal mongodb. 
 
-`product.json` can be used to do the following.
+!!! warning
+    You should not store more than a few kilobytes of information on `product.json`.
+
+You can use `product.json` for the following purposes.
 
 1. Display messages, statuses, graphs(plotly) on Brainlife UI.
-2. Store small amount of data that you can later be used to aggregate across multiple output datasets without having to stage all output datasets.
+2. Store small amount of unstructured data that you can later use to quickly aggregate across multiple output datasets.
 
-product.json should be very small (like a few kilobytes). Larger data should be stored as a regular output data, and product.json can contain reference (paths) to that datafile. Any data referenced needs to be staged out of archive for user to actually access them. Having data on product.json allows quick (~10msec) access it is stored in mongoDB. To aggregate data from more than dozen dataset, the data should be pre-aggregated and stored in product.json (raw data can be stored as regular output dataset).
+We will explain each use cases below.
 
-## Aggregation Visualizer / App 
-
-When a App runs, it currently stages all input tasks which could be giga-bytes each. This is not sustainable for Apps that simply wants to aggregate basic information from multiple datasets. By storing all necessary information in product.json, a developer can create a Javascript based visualizer that can simply query and consume information to visualize. User can then dynamically update query and play around with the data.   
-
-For developer who doesn't want to code in Javascript, we could provide more standard "App" way of accomplishing the same thing by staging product.json from each input dataset (rather than the actual dataset) and let it do the aggregation and generate some static images / graphs (or product.json / visjs!) 
-
-Deverloper can also use Brainlife API to query for datasets and its product.json and run it via command line. Such App can live completely outside Brainlife UI.
-
+## For Displaying messages, graphs on Brainlife UI
 
 <!--
 
@@ -35,13 +31,49 @@ Deverloper can also use Brainlife API to query for datasets and its product.json
 ```
 -->
 
-### plotly graphs
+Although `product.json` can store any data, we've defined a special key(`"brainlife"`) that you could use to render graphical information back to Brainlife UI.
+
+### Messages (error / warnings)
+
+You can display error / warning message on Brainlife process UI by storing them in following format.
+
+```json
+{
+	"brainlife": [
+		{"type": "error", "msg": "Some tracts have less than 20 streamlines. Check quality of data!"},
+       ]
+}
+```
+
+Above message will be displayed under the Output section of the process UI as well as dataset detail page, like the following.
+
+![messages](/img/product.messages.png)
+
+You can also display following message types.
+
+```json
+{
+	"brainlife": [
+		{"type": "error", "msg": "here is my error message"},
+		{"type": "danger", "msg": "here is my error message"},
+		{"type": "info", "msg": "here is my info message"},
+		{"type": "warning", "msg": "here is my warning message"},
+		{"type": "success", "msg": "here is my warning message"},
+       ]
+}
+```
+
+### Graphs (plotly)
+
+You can also display plotly graph.
+
 
 ```json
 {
 	"brainlife": [
         {
 		"type": "plotly",
+		"name": "my plotly test",
 		"data": [ 
 			{"x": '2014-06-11', "y": 10}, 
 			{"x": '2014-06-12', "y": 25}, 
@@ -56,23 +88,11 @@ Deverloper can also use Brainlife API to query for datasets and its product.json
 }
 ```
 
-### Messages (error / warnings)
+## For storing unstructured data
 
-```json
-{
-	"brainlife": [
-		{"type": "error", "msg": "here is my error message"},
-		{"type": "danger", "msg": "here is my error message"},
-		{"type": "info", "msg": "here is my info message"},
-		{"type": "warning", "msg": "here is my warning message"},
-		{"type": "success", "msg": "here is my warning message"},
-       ]
-}
-```
+Any unstructured data can be just stored anywhere inside the `product.json`. 
 
-### Others
-
-Any unstructured data can be just stored anywhere inside the product.json as usual.
+Like..
 
 ```json
 {
@@ -80,4 +100,13 @@ Any unstructured data can be just stored anywhere inside the product.json as usu
 }
 ```
 
+You might have App that could produce multi-gigabytes of output datasets. If you need to run aggregation process across many subjects using such outputs, you might end up needing to stage hundreds of gigabytes of output datasets which may or may not be possible, or desirable to do so. Instead, you could produce pre-aggregated data and store it inside `product.json`. You can then query all datasets and download `product.json` contents from each dataset without having to download the actual output datasets. Please take a look at [Brainlife CLI](https://github.com/brain-life/cli) for more information on querying datasets.
+
+<!--
+By storing all pre-aggregated information in `product.json`, you can create a Javascript based visualizer that can simply query and consume information to visualize. User can then dynamically update query and play around with the data.   
+
+For developer who doesn't want to code in Javascript, we could provide more standard "App" way of accomplishing the same thing by staging product.json from each input dataset (rather than the actual dataset) and let it do the aggregation and generate some static images / graphs (or product.json / visjs!) 
+
+Deverloper can also use Brainlife API to query for datasets and its product.json and run it via command line. Such App can live completely outside Brainlife UI.
+-->
 
