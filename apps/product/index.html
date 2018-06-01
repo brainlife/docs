@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#productjson-standard" tabindex="1" class="md-skip">
+      <a href="#productjson" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -480,19 +480,12 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#aggregation-visualizer-app" title="Aggregation Visualizer / App" class="md-nav__link">
-    Aggregation Visualizer / App
+  <a href="#for-displaying-messages-graphs-on-brainlife-ui" title="For Displaying messages, graphs on Brainlife UI" class="md-nav__link">
+    For Displaying messages, graphs on Brainlife UI
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#plotly-graphs" title="plotly graphs" class="md-nav__link">
-    plotly graphs
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#messages-error-warnings" title="Messages (error / warnings)" class="md-nav__link">
@@ -502,14 +495,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#others" title="Others" class="md-nav__link">
-    Others
+  <a href="#graphs-plotly" title="Graphs (plotly)" class="md-nav__link">
+    Graphs (plotly)
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-storing-unstructured-data" title="For storing unstructured data" class="md-nav__link">
+    For storing unstructured data
+  </a>
   
 </li>
       
@@ -676,19 +676,12 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#aggregation-visualizer-app" title="Aggregation Visualizer / App" class="md-nav__link">
-    Aggregation Visualizer / App
+  <a href="#for-displaying-messages-graphs-on-brainlife-ui" title="For Displaying messages, graphs on Brainlife UI" class="md-nav__link">
+    For Displaying messages, graphs on Brainlife UI
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#plotly-graphs" title="plotly graphs" class="md-nav__link">
-    plotly graphs
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#messages-error-warnings" title="Messages (error / warnings)" class="md-nav__link">
@@ -698,14 +691,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#others" title="Others" class="md-nav__link">
-    Others
+  <a href="#graphs-plotly" title="Graphs (plotly)" class="md-nav__link">
+    Graphs (plotly)
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-storing-unstructured-data" title="For storing unstructured data" class="md-nav__link">
+    For storing unstructured data
+  </a>
   
 </li>
       
@@ -734,18 +734,19 @@
                   <a href="https://github.com/brain-life/docs/edit/master/docs/apps/product.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="productjson-standard">product.json standard<a class="headerlink" href="#productjson-standard" title="Permanent link">&para;</a></h1>
-<p>Your app can generate a file named <code>product.json</code> to send information back to Brainlife UI. You can think of it as the opposite of <code>config.json</code>. <code>product.json</code> will be picked up by Brainlife once your App finishes successfully and loaded on to Brainlife's internal database (mongodb).</p>
-<p><code>product.json</code> can be used to do the following.</p>
+                <h1 id="productjson"><code>product.json</code><a class="headerlink" href="#productjson" title="Permanent link">&para;</a></h1>
+<p>Your app can optionally generate a file named <code>product.json</code> to send information back to Brainlife. You can think of it as the opposite end of <code>config.json</code>. While <code>config.json</code> is used to send your App inputs and configuration from the user, <code>product.json</code> will be picked up by Brainlife and can be used to send information back to Brainlife. The entire content of the <code>product.json</code> will simply be loaded by Brainlife and stored in the internal mongodb. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You should not store more than a few kilobytes of information on <code>product.json</code>.</p>
+</div>
+<p>You can use <code>product.json</code> for the following purposes.</p>
 <ol>
 <li>Display messages, statuses, graphs(plotly) on Brainlife UI.</li>
-<li>Store small amount of data that you can later be used to aggregate across multiple output datasets without having to stage all output datasets.</li>
+<li>Store small amount of unstructured data that you can later use to quickly aggregate across multiple output datasets.</li>
 </ol>
-<p>product.json should be very small (like a few kilobytes). Larger data should be stored as a regular output data, and product.json can contain reference (paths) to that datafile. Any data referenced needs to be staged out of archive for user to actually access them. Having data on product.json allows quick (~10msec) access it is stored in mongoDB. To aggregate data from more than dozen dataset, the data should be pre-aggregated and stored in product.json (raw data can be stored as regular output dataset).</p>
-<h2 id="aggregation-visualizer-app">Aggregation Visualizer / App<a class="headerlink" href="#aggregation-visualizer-app" title="Permanent link">&para;</a></h2>
-<p>When a App runs, it currently stages all input tasks which could be giga-bytes each. This is not sustainable for Apps that simply wants to aggregate basic information from multiple datasets. By storing all necessary information in product.json, a developer can create a Javascript based visualizer that can simply query and consume information to visualize. User can then dynamically update query and play around with the data.   </p>
-<p>For developer who doesn't want to code in Javascript, we could provide more standard "App" way of accomplishing the same thing by staging product.json from each input dataset (rather than the actual dataset) and let it do the aggregation and generate some static images / graphs (or product.json / visjs!) </p>
-<p>Deverloper can also use Brainlife API to query for datasets and its product.json and run it via command line. Such App can live completely outside Brainlife UI.</p>
+<p>We will explain each use cases below.</p>
+<h2 id="for-displaying-messages-graphs-on-brainlife-ui">For Displaying messages, graphs on Brainlife UI<a class="headerlink" href="#for-displaying-messages-graphs-on-brainlife-ui" title="Permanent link">&para;</a></h2>
 <!--
 
 ### Images
@@ -755,11 +756,39 @@
 
 -->
 
-<h3 id="plotly-graphs">plotly graphs<a class="headerlink" href="#plotly-graphs" title="Permanent link">&para;</a></h3>
+<p>Although <code>product.json</code> can store any data, we've defined a special key(<code>"brainlife"</code>) that you could use to render graphical information back to Brainlife UI.</p>
+<h3 id="messages-error-warnings">Messages (error / warnings)<a class="headerlink" href="#messages-error-warnings" title="Permanent link">&para;</a></h3>
+<p>You can display error / warning message on Brainlife process UI by storing them in following format.</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;brainlife&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;Some tracts have less than 20 streamlines. Check quality of data!&quot;</span><span class="p">},</span>
+       <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Above message will be displayed under the Output section of the process UI as well as dataset detail page, like the following.</p>
+<p><img alt="messages" src="../../img/product.messages.png" /></p>
+<p>You can also display following message types.</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;brainlife&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;here is my error message&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;danger&quot;</span><span class="p">,</span> <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;here is my error message&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;info&quot;</span><span class="p">,</span> <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;here is my info message&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;warning&quot;</span><span class="p">,</span> <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;here is my warning message&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span> <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;here is my warning message&quot;</span><span class="p">},</span>
+       <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="graphs-plotly">Graphs (plotly)<a class="headerlink" href="#graphs-plotly" title="Permanent link">&para;</a></h3>
+<p>You can also display plotly graph.</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;brainlife&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;plotly&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my plotly test&quot;</span><span class="p">,</span>
         <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span> 
             <span class="p">{</span><span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="err">&#39;</span><span class="mi">2014-06-11</span><span class="err">&#39;</span><span class="p">,</span> <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span> 
             <span class="p">{</span><span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="err">&#39;</span><span class="mi">2014-06-12</span><span class="err">&#39;</span><span class="p">,</span> <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">},</span> 
@@ -775,25 +804,23 @@
 </pre></div>
 
 
-<h3 id="messages-error-warnings">Messages (error / warnings)<a class="headerlink" href="#messages-error-warnings" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;brainlife&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;here is my error message&quot;</span><span class="p">},</span>
-        <span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;danger&quot;</span><span class="p">,</span> <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;here is my error message&quot;</span><span class="p">},</span>
-        <span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;info&quot;</span><span class="p">,</span> <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;here is my info message&quot;</span><span class="p">},</span>
-        <span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;warning&quot;</span><span class="p">,</span> <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;here is my warning message&quot;</span><span class="p">},</span>
-        <span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span> <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;here is my warning message&quot;</span><span class="p">},</span>
-       <span class="p">]</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<h3 id="others">Others<a class="headerlink" href="#others" title="Permanent link">&para;</a></h3>
-<p>Any unstructured data can be just stored anywhere inside the product.json as usual.</p>
+<h2 id="for-storing-unstructured-data">For storing unstructured data<a class="headerlink" href="#for-storing-unstructured-data" title="Permanent link">&para;</a></h2>
+<p>Any unstructured data can be just stored anywhere inside the <code>product.json</code>. </p>
+<p>Like..</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;rmse&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
+
+
+<p>You might have App that could produce multi-gigabytes of output datasets. If you need to run aggregation process across many subjects using such outputs, you might end up needing to stage hundreds of gigabytes of output datasets which may or may not be possible, or desirable to do so. Instead, you could produce pre-aggregated data and store it inside <code>product.json</code>. You can then query all datasets and download <code>product.json</code> contents from each dataset without having to download the actual output datasets. Please take a look at <a href="https://github.com/brain-life/cli">Brainlife CLI</a> for more information on querying datasets.</p>
+<!--
+By storing all pre-aggregated information in `product.json`, you can create a Javascript based visualizer that can simply query and consume information to visualize. User can then dynamically update query and play around with the data.
+
+For developer who doesn't want to code in Javascript, we could provide more standard "App" way of accomplishing the same thing by staging product.json from each input dataset (rather than the actual dataset) and let it do the aggregation and generate some static images / graphs (or product.json / visjs!) 
+
+Deverloper can also use Brainlife API to query for datasets and its product.json and run it via command line. Such App can live completely outside Brainlife UI.
+-->
                 
                   
                 

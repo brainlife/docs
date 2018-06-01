@@ -740,15 +740,18 @@
 
 
 <p>You should git pull as often as you can to reduce possible merge issues down the road. When you are done testing your changes, git push to origin master.</p>
-<ul>
-<li>By the way, see <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">git rebase</a> if you are not familiar with rebasing. It helps our commit log to be clean.</li>
-</ul>
+<div class="admonition hint">
+<p class="admonition-title">git rebase</p>
+<p>See <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">git rebase</a> if you are not familiar with rebasing. It could help with keeping our commit log clean.</p>
+</div>
 <h2 id="2-always-work-on-master-branch">2. Always work on master branch<a class="headerlink" href="#2-always-work-on-master-branch" title="Permanent link">&para;</a></h2>
 <p>When you are working on your app, you should always make changes on master. You can create as many local branches as you'd like (for each features you are working on) but when you are done, merge it to your own local master, then push the local master to the origin master. Pull from origin master, and push to origin master. Use local branches for you to organize what you are working on. Don't push local branches to origin.</p>
 <h2 id="3-create-branch-for-new-versions">3. Create branch for new versions<a class="headerlink" href="#3-create-branch-for-new-versions" title="Permanent link">&para;</a></h2>
-<p>When we are done with making all changes, tested it, and ready to release it, we should create a new branch from master. The easiest way to create a new branch is to do this on github UI. Just click on where it says "Branch: master" and enter new version number to create a new branch. The branch name should be a version number .. like "1.0", "1.1", "1.2", etc.., it should not be a branch names like the local branches you create on your local repo.</p>
+<p>When we are done with making all changes, tested it, and ready to release it, we should create a new branch from master. You can easily create a new branch using github UI. </p>
+<p><img alt="branch" src="../../img/versioning.branch.gif" /></p>
 <p>Once you create a branch, you should update the BL app to point users to use that new branch.</p>
-<p>You could use tags instead of branches, but tags does not allow you make modifications like you can with branches. Tags are great to point to any particular commit point, but you can do that with just a plain commit ID also.</p>
+<p><img alt="branch" src="../../img/versioning.app.gif" /></p>
+<p>You could use tags instead of branches, but tags does not allow you make modifications like you can with branches. Tags are great to point to any particular commit point, but you can do that with just a plain commit ID also. We recommend creating new branches for each release.</p>
 <h2 id="4-bug-fix-on-master-then-on-branch">4. Bug fix on master, then on branch.<a class="headerlink" href="#4-bug-fix-on-master-then-on-branch" title="Permanent link">&para;</a></h2>
 <p>If you find a bug after you create a branch, you first need to fix the bug on the master, test it, then apply the same fix on all branches that are affected. I recommend using command like <a href="https://git-scm.com/docs/git-cherry-pick">cherry-pick</a> to apply specific changes on other branches. Again, we should not add any new features on branches (only bug fixes) for reproducibility. </p>
 <h2 id="5-semver">5. Semver<a class="headerlink" href="#5-semver" title="Permanent link">&para;</a></h2>
