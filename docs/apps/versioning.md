@@ -19,11 +19,15 @@ When you are working on your app, you should always make changes on master. You 
 
 ## 3. Create branch for new versions
 
-When we are done with making all changes, tested it, and ready to release it, we should create a new branch from master. The easiest way to create a new branch is to do this on github UI. Just click on where it says "Branch: master" and enter new version number to create a new branch. The branch name should be a version number .. like "1.0", "1.1", "1.2", etc.., it should not be a branch names like the local branches you create on your local repo.
+When we are done with making all changes, tested it, and ready to release it, we should create a new branch from master. You can easily create a new branch using github UI. 
+
+![branch](/img/versioning.branch.gif)
 
 Once you create a branch, you should update the BL app to point users to use that new branch.
 
-You could use tags instead of branches, but tags does not allow you make modifications like you can with branches. Tags are great to point to any particular commit point, but you can do that with just a plain commit ID also.
+![branch](/img/versioning.app.gif)
+
+You could use tags instead of branches, but tags does not allow you make modifications like you can with branches. Tags are great to point to any particular commit point, but you can do that with just a plain commit ID also. We recommend creating new branches for each release.
 
 ## 4. Bug fix on master, then on branch.
 
