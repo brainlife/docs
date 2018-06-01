@@ -1,6 +1,6 @@
 # `product.json`
 
-Your app can optionally generate a file named `product.json` to send information back to Brainlife. You can think of it as the opposite end of `config.json`. While `config.json` is used to send your App inputs and configuration from the user, `product.json` will be picked up by Brainlife and can be used to send information back to Brainlife. The entire content of the `product.json` will simply be loaded by Brainlife and stored in the internal mongodb. 
+Your app can optionally generate a file named `product.json` to send information back to Brainlife. You can think of it as the opposite end of `config.json`. While `config.json` is used to send inputs and configuration from the user to your App, `product.json` will be loaded by Brainlife upon successful completion of your App to be stored in the internal databaase and can be used to relay information back to the submitter, or used to perform data aggregation across multiple datasets.
 
 !!! warning
     You should not store more than a few kilobytes of information on `product.json`.
