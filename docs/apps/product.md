@@ -1,6 +1,6 @@
 # `product.json`
 
-Your app can optionally generate a file named `product.json` to send information back to Brainlife. You can think of it as the opposite end of `config.json`. While `config.json` is used to send inputs and configuration from the user to your App, `product.json` will be loaded by Brainlife upon successful completion of your App to be stored in the internal databaase and can be used to relay information back to the submitter, or used to perform data aggregation across multiple datasets.
+Your App can optionally generate a file named `product.json` to send information back to Brainlife. You can think of it as the opposite end of `config.json`. While `config.json` is used to send inputs and configuration from the user to your App, `product.json` will be loaded by Brainlife upon successful completion of your App and information will be stored in the Brainlife's internal database. You can use `product.json` to relay information back to the App submitter, or used to perform data aggregation quickly across multiple subjects.
 
 !!! warning
     You should not store more than a few kilobytes of information on `product.json`.
@@ -9,10 +9,11 @@ You can use `product.json` for the following purposes.
 
 1. Display messages, statuses, graphs(plotly) on Brainlife UI.
 2. Store small amount of unstructured data that you can later use to quickly aggregate across multiple output datasets.
+3. Specify user tags (or datatype_tags) to be added to the output dataset.
 
 We will explain each use cases below.
 
-## For Displaying messages, graphs on Brainlife UI
+## 1. Displaying messages, graphs on Brainlife UI
 
 <!--
 
@@ -88,7 +89,7 @@ You can also display plotly graph.
 }
 ```
 
-## For storing unstructured data
+## 2. Storing unstructured data
 
 Any unstructured data can be just stored anywhere inside the `product.json`. 
 
@@ -109,4 +110,18 @@ For developer who doesn't want to code in Javascript, we could provide more stan
 
 Deverloper can also use Brainlife API to query for datasets and its product.json and run it via command line. Such App can live completely outside Brainlife UI.
 -->
+
+
+## 3. Specifying dataset (user) tags
+
+Your App can set "tags" field to specify dataset tags that you'd like to add to the dataset output. 
+
+```json
+{
+    "tags": [ "tags_from_app" ]
+}
+```
+
+You can use this feature to set important information about the processing done to the dataset and pass it down the pipeline. 
+
 

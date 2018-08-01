@@ -16,15 +16,15 @@ theme:
 
 pages:
   - Home: index.md
-  - About: about.md
-  - Brainlife UI:
+  - About Brainlife: about.md
+  - Web UI:
     - Tutorial: user/tutorial.md
     - Projects: user/project.md
     - Datatypes: user/datatypes.md
     - Processes: user/process.md
     - Pipelines: user/pipeline.md
     - Publications: user/publication.md
-  - App Developers: 
+  - Developing Apps: 
     - Introduction: apps/introduction.md
     - HelloWorld: apps/helloworld.md
     - Registering App: apps/register.md
@@ -32,7 +32,7 @@ pages:
     - Versioning Tips: apps/versioning.md
     - Custom Hooks: apps/customhooks.md
     - product.json: apps/product.md
-  - Resource Provider: 
+  - Compute Resources: 
     - Registering Resource: resources/register.md
   - Technical:
     - Architecture: technical/arthitecture.md
