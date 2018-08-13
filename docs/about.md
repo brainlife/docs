@@ -22,7 +22,7 @@ Apps can be developed and published on the Brainlife platform by anyone. App dev
 
 # Brainlife Datatypes
 
-Brainlife Apps communicate via Brainlife “Datatypes.” A Datatype defines expected list of file names / directory structure that Apps that uses that datatype to generate as output data. It can also be used as input dataset by other App that expects the same datatype. Datatypes allow multiple apps developed by independent developers to be joined together to form a *workflows*. The Brainlife Datatypes are similar to BIDS in concept, except they are maintained by individual developers participating in a specific datatype, and they mainly concerns *data derivatives*. Brainlife allows user to download datasets in BIDS structure.
+Brainlife Apps communicate via Brainlife “Datatypes.” A Datatype defines the expected list of filenames or the directory structure that an Apps can use as input or generate as output. The same Datatype is ideally used by multiple Apps, this allows Apps to communicate by their input and output data sets and reuse the data to generate more data derivatives, useful for other Apps. Datatypes, in addition to allowing the various Apps developed by independent developers to communicate on the brainlife.io platform, also allow Apps to be joined together to form a pipeline or workflows. The Brainlife Datatypes are maintained by individual developers participating in a specific Datatype, and discussed and maintained at https://github.com/brain-life/datatypes, conveniently using the full versioning and management features of github.com.
 
 # Brainlife Clouds (Compute Resource)
 
