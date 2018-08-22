@@ -865,8 +865,6 @@ cat &gt; build.m <span class="s">&lt;&lt;END</span>
 <span class="s">addpath(genpath(&#39;/N/u/brlife/git/jsonlab&#39;))</span>
 <span class="s">addpath(genpath(&#39;/N/soft/mason/SPM/spm8&#39;))</span>
 <span class="s">mcc -m -R -nodisplay -a /N/u/brlife/git/vistasoft/mrDiffusion/templates -d compiled myapp</span>
-
-<span class="s">%# function sptensor</span>
 <span class="s">exit</span>
 <span class="s">END</span>
 matlab -nodisplay -nosplash -r build
@@ -897,9 +895,9 @@ matlab -nodisplay -nosplash -r build
 </p>
 </div>
 <h3 id="loading-custom-matlab-data-structure">Loading custom Matlab data structure<a class="headerlink" href="#loading-custom-matlab-data-structure" title="Permanent link">&para;</a></h3>
-<p>If your Matlab code is loading any data structure that contains custom Matlab data structures (like sparse tensor array in encode's fe structure), addpath() is not enough to include those data structures. You will need to explicitly tell Matlab compiler that you are using those data structures, like..</p>
+<p>If your Matlab code is loading (by doing something like <code>load('data.mat')</code>) any custom data structures (like sparse tensor array in encode's fe structure), addpath() is not enough to include them into the compiled binary. You will need to explicitly tell Matlab compiler that you are using those data structures by including a special comment like the following.</p>
 <p><code>%# function sptensor</code></p>
-<p>This odd looking <em>comment</em> lets the Matlab compiler know that it should include the sptensor class to the compiled binary.</p>
+<p>This tells the Matlab compiler to include the sptensor class to the compiled binary.</p>
 <!--
 ## Create Dockerfile (MatLab)
 
