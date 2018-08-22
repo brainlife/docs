@@ -14,7 +14,7 @@ theme:
   palette:
     primary: 'light blue'
 
-pages:
+nav:
   - Home: index.md
   - About Brainlife: about.md
   - Web UI:
