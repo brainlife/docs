@@ -222,7 +222,7 @@ To run your App on Brainlife, you will need to do following.
 
 2. Enable your App on at least one Brainlife compute resource. 
 
-    For now, please email [mailto:brlife@iu.edu](brlife@iu.edu) to enable your App on our shared test resource.
+    For now, please email [brlife@iu.edu](mailto:brlife@iu.edu) to enable your App on our shared test resource.
 
 <!--
 All input parameters are assumed to be text (char). You need to write your functions that are going to be MATLAB compiled with all the arguments as text. Arguments passing a number need to be given as text and within the function converted to integers values (str2num(), etc.). 
