@@ -8,8 +8,6 @@ This tutorial will guide you through the following functionality of Brainlife.
 * Launching visualizers to visualize your data
 * Running processes on datasets and archiving results.
 
-For a more high-level overview of Brainlife, see [About Page](/about).
-
 ## Sign Up
 
 If you have not registered on Brainlife.io yet, please do so by visiting The [Authentication Page](https://brainlife.io/auth/) and clicking on a preferred authentication method: Google, ORCID, Github, or through your institution.
@@ -33,7 +31,7 @@ Click on `Project` button on the left hand side menu, then click a plus side but
 ![project new button](/img/project_new_button.png)
 
 !!! note
-    Project is where you can organize your datasets, do data processing, and share datasets with your project members. For more information about project, please read [project page](/user/project)
+    Project is where you can organize your datasets, do data processing, and share datasets with your project members. For more information about project, please read [project page](/docs/user/project)
 
 Enter any `name` and `description`, and leave everything else default. Click `Submit`. 
 
@@ -110,7 +108,7 @@ Before we proceed to `Process` tab, let's take a quick detour and visit the `App
 
 The `Apps` page shows all Brainlife Apps that are publicly available that you can execute on resources and datasets that you have access to. Please take a look and see what type of Apps are currently available. You can click on each tile to see more details.
 
-On Brainlife, Apps are normally small programs that perform a specific data processing. Although we have a few Apps that behave more like a typical *pipeline* or *workflow* (including pre/post processing, data analysis, reporting, etc..), most Brainlife Apps should only do one thing, and one thing well. Please see [about](/about) for more details.
+On Brainlife, Apps are normally small programs that perform a specific data processing. Although we have a few Apps that behave more like a typical *pipeline* or *workflow* (including pre/post processing, data analysis, reporting, etc..), most Brainlife Apps should only do one thing, and one thing well. 
 
 ### Datatypes
 
@@ -120,7 +118,7 @@ Brainlife Apps exchange data through `datatypes`. Developers involved with inter
 
 Various colored boxes show the input and output datatypes. For example, the above image shows that this app will take `dwi` input dataset, and generate another `dwi` dataset with a datatype tag of "masked", and also output another dataset of a datatype `mask`. 
 
-For more information on datatype, please visit [datatypes page](/user/datatypes)
+For more information on datatype, please visit [datatypes page](/docs/user/datatypes)
 <!--If you are familiar with an electronic prototyping product called [*littleBits*](https://littlebits.com/tag/prototyping), it is very similar in the concept.-->
 
 ## Data Processing
@@ -176,6 +174,6 @@ The green boxes are the input datasets (uploaded to Brainlife from outside) and 
 
 ## What's Next
 
-You should now be familiar with basic functionalities of Brainlife. Please take a look at other pages for more information. For example, if you'd like to write your app and register on Brainlife, please take a look at [App Developer Guide](/apps/introduction). If you'd like to learn how to bulk process multiple subjects, please take a look at [Pipeline](/user/pipeline).
+You should now be familiar with basic functionalities of Brainlife. Please take a look at other pages for more information. For example, if you'd like to write your app and register on Brainlife, please take a look at [App Developer Guide](/docs/apps/introduction). If you'd like to learn how to bulk process multiple subjects, please take a look at [Pipeline](/docs/user/pipeline).
 
 Please let us know how we can improve this tutorial, or send us pull requests with your edits.

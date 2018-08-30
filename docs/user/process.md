@@ -1,6 +1,6 @@
 # Processes
 
-> Please read [Tutorial / Data Processing](/user/tutorial/#data-processing) first.
+> Please read [Tutorial / Data Processing](/docs/user/tutorial/#data-processing) first.
 
 Under Project page, Processes tab is where you can perform data analysis on Brainlife.
 

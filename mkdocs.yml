@@ -15,8 +15,7 @@ theme:
     primary: 'light blue'
 
 nav:
-  - Home: index.md
-  - About Brainlife: about.md
+  - About: index.md
   - Web UI:
     - Tutorial: user/tutorial.md
     - Projects: user/project.md
