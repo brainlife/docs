@@ -1,6 +1,6 @@
 site_name: Brainlife Documentation
 site_author: 'Soichi Hayashi'
-site_url: 'https://brain-life.github.io/docs/'
+site_url: https://brain-life.github.io/docs/
 
 # Repository
 repo_name: 'brain-life/docs'
