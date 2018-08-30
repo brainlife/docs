@@ -245,20 +245,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../about/" title="About Brainlife" class="md-nav__link">
-      About Brainlife
+    <a href="../.." title="About" class="md-nav__link">
+      About
     </a>
   </li>
 
@@ -270,13 +258,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
-    <label class="md-nav__link" for="nav-3">
+    <label class="md-nav__link" for="nav-2">
       Web UI
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-2">
         Web UI
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -368,13 +356,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-3">
       Developing Apps
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-3">
         Developing Apps
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -657,13 +645,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-4">
       Compute Resources
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-4">
         Compute Resources
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -693,13 +681,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-5">
       Technical
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-5">
         Technical
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -974,7 +962,7 @@
 <h3 id="branch">Branch<a class="headerlink" href="#branch" title="Permanent link">&para;</a></h3>
 <p>If you don't specify the github repo's branch name, it uses <code>master</code> branch by default. Most developer makes the latest code changes on <code>master</code> branch. If you leave the <code>Branch</code> field empty and let it use the <code>master</code> branch by default, a user won't be able to reproduce the output with exactly the same version of your code if you make any changes to it.</p>
 <p>Once you finish developing your App, you should consider creating a release branch (like <code>1.0</code>) and specifying that branch name for your App so that Brainlife will always run the specific version of your App. Brainlife stores the branch name used to execute each task, so this allows users to reproduce the output using the same version of the code.</p>
-<p>Please see <a href="/apps/versioning">Versioning Tip</a> for more info.</p>
+<p>Please see <a href="/docs/apps/versioning">Versioning Tip</a> for more info!</p>
 <h2 id="input-datasets">Input Datasets<a class="headerlink" href="#input-datasets" title="Permanent link">&para;</a></h2>
 <p>Here you can define a list of input datasets that your App is expecting.</p>
 <p><img alt="dataset" src="../../img/input.datatype.form.png" /></p>
@@ -986,7 +974,7 @@
 <p class="admonition-title">Hint</p>
 <p>If you don't know which datatype to use, please consult the #datatype slack channel on Brainlife slack team.</p>
 </div>
-<p>Please read <a href="/user/datatypes">datatypes</a> for more information. </p>
+<p>Please read <a href="/docs/user/datatypes">datatypes</a> for more information. </p>
 <h3 id="file-mapping">File Mapping<a class="headerlink" href="#file-mapping" title="Permanent link">&para;</a></h3>
 <p>Once you select the datatype/tags for your input dataset, you then need to configure how you want the selected dataset to be represented in the <code>config.json</code>. Each datatype consists of various files and directories. Here, you can map the object key in <code>config.json</code> to a particular file / directory within the datatype.</p>
 <p>For example, <code>neuro/dwi</code> datatype consists of dwi, bvecs, and bvals files. If your App somehow only uses the dwi file, and if you'd like to receive the path to the dwi as <code>dwi</code> inside the <code>config.json</code>, you can configure it as following.</p>
@@ -1024,7 +1012,7 @@
 <p><img alt="resources" src="../../img/app.output1.png" /></p>
 <h3 id="datatype-tags">Datatype Tags<a class="headerlink" href="#datatype-tags" title="Permanent link">&para;</a></h3>
 <p>You can add specificities / context to the selected datatype. For example, above screenshot shows this App outputs <code>anat/t1w</code> datatype with a tag <code>acpc_aligned</code>. If there is an App that only works with ACPC aligned <code>anat/t1w</code> as an input dataset, it can specify the same tag as a required input datatype tag to be more specific about its input dataset. </p>
-<p>Please read <a href="/user/datatypes">datatypes page</a> for more information on datatypes.</p>
+<p>Please read <a href="/docs/user/datatypes">datatypes page</a> for more information on datatypes.</p>
 <h3 id="tag-passthrough">Tag Passthrough<a class="headerlink" href="#tag-passthrough" title="Permanent link">&para;</a></h3>
 <p>Some App behaves as a <em>filter</em>; it receives an input dataset and produces another dataset with the same datetype. In this circumstance, the App often needs to <em>add</em> new datatype tags rather than completely replacing them. To accomplish this, you can set this field to the ID of the input dataset that you'd like to copy all datatype tags from. For example, if the input dataset contains <code>defaced</code> datatype tag,  the output dataset will have both <code>acpc_aligned</code> and <code>defaced</code> as the output datatype tags.</p>
 <h3 id="datatype-file-mapping">Datatype File Mapping<a class="headerlink" href="#datatype-file-mapping" title="Permanent link">&para;</a></h3>
@@ -1101,7 +1089,7 @@
 <p class="admonition-title">Note</p>
 <p>If you are not sure who the resource administrator is, please contact <a href="mailto:brlife@iu.edu">Brainlife</a>.</p>
 </div>
-<p>If you have access to your own computing resources, you can register personal resources and run your App there to test. Please read <a href="../../resources/register/">registering resource page</a> for more detail. Please keep in mind that, on personal resources, only you can run enabled Apps on those resources. To allow other users to run your App, you will need to enable it on Brainlife's shared resources.</p>
+<p>If you have access to your own computing resources, you can register personal resources and run your App there to test. Please read <a href="/docs/resources/register.md">registering resource page</a> for more detail. Please keep in mind that, on personal resources, only you can run enabled Apps on those resources. To allow other users to run your App, you will need to enable it on Brainlife's shared resources.</p>
 <p>Once your App is enabled on various resources, you should be able to see them listed under computing resources section in the App details page.</p>
 <p><img alt="resources" src="../../img/app.resources.png" /></p>
                 
