@@ -78,7 +78,7 @@ Once uploaded, you should see a new dialog showing details about your new datase
 
 ## Visualize Dataset
 
-All visualization on Brainlife is donee Cloud side. THis means that data seets do not have to be moved from their storage location to the user browser. Any datasets stored in Brainlife can be visualized using Web-based and Native (via [Web-VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing)) visualization Apps registered for specific datatypes. To launch a visualization program, click on the visualizer icon (:fa-eye:) at the top of dataset dialog.
+All visualization on Brainlife is donee Cloud side. THis means that data sheets do not have to be moved from their storage location to the user browser. Any datasets stored in Brainlife can be visualized using Web-based and Native (via [Web-VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing)) visualization Apps registered for specific datatypes. To launch a visualization program, click on the visualizer icon (:fa-eye:) at the top of dataset dialog.
 
 For example, `neuro/anat/t1` datasets can be visualized by the following set of Visualization Apps.
 
