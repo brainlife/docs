@@ -16,7 +16,6 @@ theme:
 
 pages:
   - Home: index.md
-  - About Brainlife: about.md
   - Web UI:
     - Tutorial: user/tutorial.md
     - Projects: user/project.md
