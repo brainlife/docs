@@ -1,5 +1,5 @@
 !!! note "Prerequisites"
-    Please read [App Developers / Introduction](/apps/introduction.md) first. 
+    Please read [App Developers / Introduction](/docs/apps/introduction.md) first. 
     
     Before you begin, please install a text editor such as [VSCode](https://code.visualstudio.com) and [git client](https://git-scm.com/downloads) on your laptop. You will also need to install [jq](https://stedolan.github.io/jq/download/) which will be explained later.
 
@@ -218,11 +218,11 @@ Congratulations! We have just created our first Brainlife App. To summarize, we'
 
 To run your App on Brainlife, you will need to do following.
 
-1. [Register your App on Brainlife.](/apps/register/)
+1. [Register your App on Brainlife.](/docs/apps/register/)
 
 2. Enable your App on at least one Brainlife compute resource. 
 
-    For now, please email [mailto:brlife@iu.edu](brlife@iu.edu) to enable your App on our shared test resource.
+    For now, please email [brlife@iu.edu](mailto:brlife@iu.edu) to enable your App on our shared test resource.
 
 <!--
 All input parameters are assumed to be text (char). You need to write your functions that are going to be MATLAB compiled with all the arguments as text. Arguments passing a number need to be given as text and within the function converted to integers values (str2num(), etc.). 

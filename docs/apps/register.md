@@ -28,7 +28,7 @@ If you don't specify the github repo's branch name, it uses `master` branch by d
 
 Once you finish developing your App, you should consider creating a release branch (like `1.0`) and specifying that branch name for your App so that Brainlife will always run the specific version of your App. Brainlife stores the branch name used to execute each task, so this allows users to reproduce the output using the same version of the code.
 
-Please see [Versioning Tip](/apps/versioning) for more info.
+Please see [Versioning Tip](/docs/apps/versioning) for more info!
 
 ## Input Datasets
 
@@ -48,7 +48,7 @@ The datatype/tags of this input dataset. Please enter any datatype tags that you
 !!! hint
     If you don't know which datatype to use, please consult the #datatype slack channel on Brainlife slack team.
 
-Please read [datatypes](/user/datatypes) for more information. 
+Please read [datatypes](/docs/user/datatypes) for more information. 
 
 ### File Mapping
 
@@ -100,7 +100,7 @@ Similar to the input datasets, you can specify the datatypes of your output data
 
 You can add specificities / context to the selected datatype. For example, above screenshot shows this App outputs `anat/t1w` datatype with a tag `acpc_aligned`. If there is an App that only works with ACPC aligned `anat/t1w` as an input dataset, it can specify the same tag as a required input datatype tag to be more specific about its input dataset. 
 
-Please read [datatypes page](/user/datatypes) for more information on datatypes.
+Please read [datatypes page](/docs/user/datatypes) for more information on datatypes.
 
 ### Tag Passthrough
 
@@ -195,7 +195,7 @@ Once you registered your App on Brainlife, you then need to enable your App on r
 !!! note
     If you are not sure who the resource administrator is, please contact [Brainlife](mailto:brlife@iu.edu).
 
-If you have access to your own computing resources, you can register personal resources and run your App there to test. Please read [registering resource page](/resources/register.md) for more detail. Please keep in mind that, on personal resources, only you can run enabled Apps on those resources. To allow other users to run your App, you will need to enable it on Brainlife's shared resources.
+If you have access to your own computing resources, you can register personal resources and run your App there to test. Please read [registering resource page](/docs/resources/register.md) for more detail. Please keep in mind that, on personal resources, only you can run enabled Apps on those resources. To allow other users to run your App, you will need to enable it on Brainlife's shared resources.
 
 Once your App is enabled on various resources, you should be able to see them listed under computing resources section in the App details page.
 

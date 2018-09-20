@@ -26,7 +26,7 @@ You would normally follow following steps to develop and register your App on Br
 
 # Enabling App on a compute resource
 
-App needs to be enabled on each compute resources to run. Each user will have a different set of resources that they have access to, but Brainlife provides default **shared** resources for all users. If you want anyone in the Brainlife to be able to run your App, you can [contact the resource administrators](brlife@iu.edu) of these default resources to enable your Apps.
+App needs to be enabled on each compute resources to run. Each user will have a different set of resources that they have access to, but Brainlife provides default **shared** resources for all users. If you want anyone in the Brainlife to be able to run your App, you can [contact the resource administrators](mailto:brlife@iu.edu) of these default resources to enable your Apps.
 
 You will need to discuss with resource administrators on how to handle any dependencies/libraries that your App might require. To make things easier and reproducible, you should consider Dockerizing you App's **dependencies** (but not the App itself) so that you can run your App through your container using [singularity](https://singularity.lbl.gov/) from your `main`. 
 

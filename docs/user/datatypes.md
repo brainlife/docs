@@ -1,6 +1,6 @@
 # Datatypes
 
-> Please read [Tutorial / Datatypes](/user/tutorial/#datatypes) first.
+> Please read [Tutorial / Datatypes](/docs/user/tutorial/#datatypes) first.
 
 Brainlife Apps exchange data through `datatypes`.
 
@@ -36,7 +36,7 @@ For example, the following is a datatype definition for `neuro/life` datatype.
 }
 ```
 
-For this example datatype, `brain-life/app-life` App generates a dataset with this datatype, and other Apps that want to use `neuro/life` output can request to have those files made available to their Apps by registering them on Brainlife App registration form. (Please read [Registering App](/apps/register/) page for more info). The actual content/semantics of each file are up to developers exchanging the dataset to decide, and it should be well documented as part of the datatype registration process.
+For this example datatype, `brain-life/app-life` App generates a dataset with this datatype, and other Apps that want to use `neuro/life` output can request to have those files made available to their Apps by registering them on Brainlife App registration form. (Please read [Registering App](/docs/apps/register/) page for more info). The actual content/semantics of each file are up to developers exchanging the dataset to decide, and it should be well documented as part of the datatype registration process.
 
 Please see other datatypes defined in [brain-life/datatypes](https://github.com/brain-life/datatypes/tree/master/datatypes).
 

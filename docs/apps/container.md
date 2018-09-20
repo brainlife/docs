@@ -16,7 +16,7 @@ You can even share the same Docker container across multiple Apps that you and y
 
 ## Docker Engine
 
-To build a docker container, you need to [install Docker engine on your laptop](https://docs.docker.com/machine/install-machine/) or find a server that has docker engine installed that you can use. (Contact [Soichi](hayashis@iu.edu) if you need a help.)
+To build a docker container, you need to [install Docker engine on your laptop](https://docs.docker.com/machine/install-machine/) or find a server that has docker engine installed that you can use. (Contact [Soichi](mailto:hayashis@iu.edu) if you need a help.)
 
 We assume you already have your Brainlife app hosted on Github, and you are making changes inside a cloned git repo on a machine with Docker engine.
 
@@ -41,8 +41,6 @@ addpath(genpath('/N/u/brlife/git/vistasoft'))
 addpath(genpath('/N/u/brlife/git/jsonlab'))
 addpath(genpath('/N/soft/mason/SPM/spm8'))
 mcc -m -R -nodisplay -a /N/u/brlife/git/vistasoft/mrDiffusion/templates -d compiled myapp
-
-%# function sptensor
 exit
 END
 matlab -nodisplay -nosplash -r build
@@ -71,11 +69,11 @@ A few other mcc options to note.
 
 ### Loading custom Matlab data structure
 
-If your Matlab code is loading any data structure that contains custom Matlab data structures (like sparse tensor array in encode's fe structure), addpath() is not enough to include those data structures. You will need to explicitly tell Matlab compiler that you are using those data structures, like..
+If your Matlab code is loading (by doing something like `load('data.mat')`) any custom data structures (like sparse tensor array in encode's fe structure), addpath() is not enough to include them into the compiled binary. You will need to explicitly tell Matlab compiler that you are using those data structures by including a special comment like the following.
 
 `%# function sptensor`
 
-This odd looking *comment* lets the Matlab compiler know that it should include the sptensor class to the compiled binary.
+This tells the Matlab compiler to include the sptensor class to the compiled binary.
 
 <!--
 ## Create Dockerfile (MatLab)

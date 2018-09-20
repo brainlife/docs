@@ -45,15 +45,26 @@ Above example will make this rule to only submit for subjects with names that st
 
 ## Monitoring Pipeline Rules
 
-Once you submit your pipeline rule, it might take 10 - 20 minutes before you start seeing new processes submitted by Brainlife's pipeline handler. 
-
-!!! node
-    Brainlife also limit number of running processes at around 50 processes for each rule so that any given rule won't consume all available computing resources.
+Once you submit your pipeline rule, it should start submitting processes and you can monitor them under the processes tab.
 
 ![pipeline.processes](/img/pipeline.processes.png)
 
-You can treat these processes as you normally do with any other processes; examine outputs, stop, restart, etc.. The output datasets will be automatically archived once each task have completed successfully.
+<!--
+!!! node
+    Brainlife also limit number of running processes at around 50 processes for each rule so that any given rule won't consume all available computing resources.
+-->
+
+You can treat these processes as you normally do with any processes that you normally submit manually; examine outputs, stop, restart, etc.. The output datasets will be automatically archived once each task have completed successfully.
 
 !!! note
-    If you remove a process or task, Brainlife will resubmit another process to handle that subject if the subject has all required input datasets and has not produce the output from the requested app yet.
+    If you remove a process or task, Brainlife will resubmit another process to handle that subject if the subject has all required input datasets and has not produce the output from the requested app yet. If you don't want them to be resubmitted, please remove or deactivate your rule.
+
+### Troubleshooting Pipeline Rules
+
+Once you submit your pipeline rule, you can monitor the status of the pipeline under the `Log` section
+
+![pipeline.processes](/img/pipeline.log.png)
+
+Information here should help you troubleshoot what Brainlife is doing with your rule, and most importantly, why it's not submitting proceses.
+
 
