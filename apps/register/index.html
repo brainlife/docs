@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
@@ -58,8 +58,8 @@
       <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
@@ -245,8 +245,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="About" class="md-nav__link">
-      About
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
     </a>
   </li>
 
@@ -952,7 +952,7 @@
 <p>First, go to the <a href="https://brainlife.io/apps">Apps page</a> on Brainlife, click <code>Plus Button</code> at the bottom right corner of the page. App registration form should appear.</p>
 <p>Let's go through each sections.</p>
 <h2 id="detail">Detail<a class="headerlink" href="#detail" title="Permanent link">&para;</a></h2>
-<p><img alt="dataset" src="../../img/app.detail.png" /></p>
+<p><img alt="dataset" src="/img/app.detail.png" /></p>
 <p>Enter any <code>name</code> for your App and <code>Git Repository Name</code> field which is the the organization / repository name (like <code>yourname/app-name</code>) of your github repo. Please do not enter the full github URL.</p>
 <p>All other fields in this section are optional, but you could populate following fields.</p>
 <h3 id="avatar">Avatar<a class="headerlink" href="#avatar" title="Permanent link">&para;</a></h3>
@@ -965,7 +965,7 @@
 <p>Please see <a href="/docs/apps/versioning">Versioning Tip</a> for more info!</p>
 <h2 id="input-datasets">Input Datasets<a class="headerlink" href="#input-datasets" title="Permanent link">&para;</a></h2>
 <p>Here you can define a list of input datasets that your App is expecting.</p>
-<p><img alt="dataset" src="../../img/input.datatype.form.png" /></p>
+<p><img alt="dataset" src="/img/input.datatype.form.png" /></p>
 <h3 id="id">ID<a class="headerlink" href="#id" title="Permanent link">&para;</a></h3>
 <p>This is just an ID to uniquely identify this input dataset. Please enter any ID you'd like to use. It just has to be unique among all other input datasets.</p>
 <h3 id="datatypetags">Datatype/Tags<a class="headerlink" href="#datatypetags" title="Permanent link">&para;</a></h3>
@@ -978,7 +978,7 @@
 <h3 id="file-mapping">File Mapping<a class="headerlink" href="#file-mapping" title="Permanent link">&para;</a></h3>
 <p>Once you select the datatype/tags for your input dataset, you then need to configure how you want the selected dataset to be represented in the <code>config.json</code>. Each datatype consists of various files and directories. Here, you can map the object key in <code>config.json</code> to a particular file / directory within the datatype.</p>
 <p>For example, <code>neuro/dwi</code> datatype consists of dwi, bvecs, and bvals files. If your App somehow only uses the dwi file, and if you'd like to receive the path to the dwi as <code>dwi</code> inside the <code>config.json</code>, you can configure it as following.</p>
-<p><img alt="filemapping" src="../../img/filemapping.png" /></p>
+<p><img alt="filemapping" src="/img/filemapping.png" /></p>
 <p>When a user submits your App, it will generate <code>config.json</code> that looks like this</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;dwi&quot;</span><span class="p">:</span> <span class="s2">&quot;../path/to/dwi.nii.gz&quot;</span>
@@ -1009,7 +1009,7 @@
 </div>
 <h2 id="output-datasets">Output Datasets<a class="headerlink" href="#output-datasets" title="Permanent link">&para;</a></h2>
 <p>Similar to the input datasets, you can specify the datatypes of your output datasets here. It's up to developer to decide which datatype to use, and produce output files in the correct file structure / file names according to the specification of the datatype. </p>
-<p><img alt="resources" src="../../img/app.output1.png" /></p>
+<p><img alt="resources" src="/img/app.output1.png" /></p>
 <h3 id="datatype-tags">Datatype Tags<a class="headerlink" href="#datatype-tags" title="Permanent link">&para;</a></h3>
 <p>You can add specificities / context to the selected datatype. For example, above screenshot shows this App outputs <code>anat/t1w</code> datatype with a tag <code>acpc_aligned</code>. If there is an App that only works with ACPC aligned <code>anat/t1w</code> as an input dataset, it can specify the same tag as a required input datatype tag to be more specific about its input dataset. </p>
 <p>Please read <a href="/docs/user/datatypes">datatypes page</a> for more information on datatypes.</p>
@@ -1019,9 +1019,9 @@
 <p>By default, Brainlife expects you to generate all output files in a file structure expected by each datatype on the root of the current working directory. However, if you have more than one output datasets with the same datatype, or have multiple datasets with colliding file/directory names as specified by each datatype, you will not be able to output them all under the root of the current directory. </p>
 <p>To solve this issue, you can output each dataset under a different filename or in a sub-directory, and configure the <code>Datatype File Mapping</code> field to override which file/dir should corresponds to which file/dir within each datatype.</p>
 <p>For example, following example show that the App is producing a file called <code>output.DT_STREAM.tck</code> which should treated as a <code>track.tck</code> file output for <code>neuro/track</code> datatype. ("track" is the file ID for "track.tck" as defined by <code>neuro/track</code> datatype).</p>
-<p><img alt="resources" src="../../img/app.output.png" /></p>
+<p><img alt="resources" src="/img/app.output.png" /></p>
 <p>Or, if you'd like to store the entire raw output files in a sub directory called "output", you can specify the directory by..</p>
-<p><img alt="resources" src="../../img/app.output2.png" /></p>
+<p><img alt="resources" src="/img/app.output2.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The JSON <code>key</code> for each file mapping needs to be the file/dir ID defined for each datatype. You will need to find the datatype definition to know which file/dir ID to use. Please consult Brainlife slack team if you need a help.</p>
@@ -1031,7 +1031,7 @@
 <p>Please contact the other developer and discuss how the data should be structured, and submit a new issue on <a href="https://github.com/brain-life/datatypes/issues">brain-life/datatypes</a> and/or a pull request containing the list of files/directories to be registered on Brainlife.</p>
 <h2 id="configuration-parameters">Configuration Parameters<a class="headerlink" href="#configuration-parameters" title="Permanent link">&para;</a></h2>
 <p>Configuration parameters allow users to enter any <code>number</code> (integer/float), <code>boolean</code>(true/false) or <code>string</code> parameters as configuration parameters for your App. You can also define a <code>enum</code> parameter which lets users select from multiple options.</p>
-<p><img alt="resources" src="../../img/app.config.png" /></p>
+<p><img alt="resources" src="/img/app.config.png" /></p>
 <ul>
 <li>
 <p><strong>Placeholder</strong> </p>
@@ -1058,7 +1058,7 @@
 <p>App Description / Topics</p>
 <p>Your Github repo description is used to display Brainlife App description. Please be sure to enter description that shows what the App does, and what user can do with the output. </p>
 <p>Github topics are also used to organize Brainlife's App by placing them under various <code>categories</code>. Please look through the existing categories already registered in Brainlife, and reuse one or more of those categories to help users find your App more easily. </p>
-<p><img alt="resources" src="../../img/app.freesurfer.png" /></p>
+<p><img alt="resources" src="/img/app.freesurfer.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Please avoid using too many <code>topics</code>. Also please avoid using <code>topics</code> that are not yet used by any other Apps (it will create a category with a single App)</p>
@@ -1091,7 +1091,7 @@
 </div>
 <p>If you have access to your own computing resources, you can register personal resources and run your App there to test. Please read <a href="/docs/resources/register.md">registering resource page</a> for more detail. Please keep in mind that, on personal resources, only you can run enabled Apps on those resources. To allow other users to run your App, you will need to enable it on Brainlife's shared resources.</p>
 <p>Once your App is enabled on various resources, you should be able to see them listed under computing resources section in the App details page.</p>
-<p><img alt="resources" src="../../img/app.resources.png" /></p>
+<p><img alt="resources" src="/img/app.resources.png" /></p>
                 
                   
                 
@@ -1194,7 +1194,7 @@
     
       <script src="../../assets/javascripts/application.583bbe55.js"></script>
       
-      <script>app.initialize({version:"1.0.3",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
     
