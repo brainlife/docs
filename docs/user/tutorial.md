@@ -37,12 +37,19 @@ Enter any `name` and `description`, and leave everything else default. Click `Su
 
 Congratulations! You just created your first private project!
 
+### What is Dataset?
+
+!!! note
+
+    **Dataset** (noun) 
+    
+    *a collection of related sets of information that is composed of separate elements but can be manipulated as a unit by a computer.*
+
+`dataset` is a set of files/directories for a specific subject and modaility. It is the smallest set of data that you can interact with in Brainlife. For example, `neuro/dwi` dataset is a `dwi.nii.gz`, `dwi.bvecs`, and `dwi.bvals`. Or freesurfer output for a subject is considered to be a single "dataset" containing many directories and files. Brainlife processes data at each subject level, and for each dataset. Brainlife Datasets are immutable; you cannot modify the content of the dataset once you create it, although you can modify its metadata (description, tags, sidecard).
+
 ## Upload Dataset
 
 Now, let's upload some test datasets. Open the `Datasets` tab.
-
-!!! note
-    In Brainlife, datasets are sets of files/directories for specific modality or data derivatives for a specific subject. All data processing is done at the subject level. Datasets are immutable; you can only modify the metadata, but not the data files once you create them.
 
 Brainlife has 2 kinds of data storage. 
 
