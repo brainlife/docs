@@ -66,7 +66,7 @@ The first few lines in our `main` instructs PBS or Slurm batch systems to reques
 ```
 
 !!! note 
-    You will receive all input parameters from Brainlife through a JSON file named `config.json` which is created by Brainlife when your App is executed. See [Example config.json](https://github.com/francopestilli/app-helloworld/blob/master/config.json). As an App developer, you will define what parameters needs to be entered by the user and input datasets later when you register your App on Brainlife.
+    You will receive all input parameters from Brainlife through a JSON file named `config.json` which is created by Brainlife when your App is executed. As an App developer, you will define what parameters needs to be entered by the user and input datasets later when you register your App on Brainlife.
 
 
 Following lines parses the `config.json` using `jq` and the value of `t1` to the main part of the application which we will create later.

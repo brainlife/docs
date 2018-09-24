@@ -1,6 +1,6 @@
 # What is Brainlife?
 
-Brainlife supports reproducible analyses, data management and visualization. We do this by providing an online platform that integragrate various HPC and cloud computing resources.
+Brainlife promotes engagement and education in reproducible neuroscience. We do this by providing an online platform where users can publish code (Apps), Data, and make it "alive" by integragrate various HPC and cloud computing resources to run those Apps. 
 
 Brainlife also provide mechanisms to publish all research assets associated with a scientific project (data and analyses) embedded in a cloud computing environment and referenced by a single digital-object-identifier (DOI). The platform is unique because of its focus on supporting scientific reproducibility beyond open code and open data, by providing fundamental smart mechanisms for what we refer to as “Open Services.” 
 
