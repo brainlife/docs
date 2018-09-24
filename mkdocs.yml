@@ -1,10 +1,10 @@
 site_name: Brainlife Documentation
 site_author: 'Soichi Hayashi'
-site_url: https://brain-life.github.io/docs/
+site_url: https://brainlife.github.io/docs/
 
 # Repository
-repo_name: 'brain-life/docs'
-repo_url: 'https://github.com/brain-life/docs'
+repo_name: 'brainlife/docs'
+repo_url: 'https://github.com/brainlife/docs'
 
 copyright: 'Copyright &copy; 2017 - 2018 Brainlife.io'
 
@@ -14,7 +14,7 @@ theme:
   palette:
     primary: 'light blue'
 
-pages:
+nav:
   - Home: index.md
   - Web UI:
     - Tutorial: user/tutorial.md
@@ -44,7 +44,7 @@ extra:
   disqus: 'brain-life'
   social:
     - type: 'github'
-      link: 'https://github.com/brain-life'
+      link: 'https://github.com/brainlife'
     - type: 'twitter'
       link: 'https://twitter.com/BrainLifeio'
 markdown_extensions:
