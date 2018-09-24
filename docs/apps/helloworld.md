@@ -1,5 +1,5 @@
 !!! note "Prerequisites"
-    Please read [App Developers / Introduction](/docs/apps/introduction.md) first. 
+    Please read [App Developers / Introduction](/docs/apps/introduction) first. 
     
     Before you begin, please install a text editor such as [VSCode](https://code.visualstudio.com) and [git client](https://git-scm.com/downloads) on your laptop. You will also need to install [jq](https://stedolan.github.io/jq/download/) which will be explained later.
 
