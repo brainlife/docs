@@ -2,7 +2,7 @@
 
 Once you finish processing your datasets and produced all data derivatives, you can publish them by creating a current snapshots of your datasets and create a new publication page.
 
-![publication.page](/img/publication.page.png)
+![publication.page](/docs/img/publication.page.png)
 
 A publication page can be accessed and datasets to be downloaded by anyone on the internet without having to login to Brainlife.
 
@@ -21,7 +21,7 @@ Each publication page may include following information.
 
 To create a new publication page, go to a project where you want to publish your datasets, then open to the `Publication` tab. Click the `Plus` button at the bottom right corner of the screen. You should see a list of datatypes and the total files sizes like below.
 
-![publication.page](/img/publication.select.png)
+![publication.page](/docs/img/publication.select.png)
 
 Select datatypes that you'd like to include in your publication. Click `Next`.
 

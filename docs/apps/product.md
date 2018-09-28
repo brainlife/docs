@@ -48,7 +48,7 @@ You can display error / warning message on Brainlife process UI by storing them 
 
 Above message will be displayed under the Output section of the process UI as well as dataset detail page, like the following.
 
-![messages](/img/product.messages.png)
+![messages](/docs/img/product.messages.png)
 
 You can also display following message types.
 

@@ -4,7 +4,7 @@
 
 Under Project page, Processes tab is where you can perform data analysis on Brainlife.
 
-![processes](/img/processes.png)
+![processes](/docs/img/processes.png)
 
 Each process is a logical grouping of various data analysis/processing tasks that share input and output datasets. Each task you submit will be assigned to various computing resources that you have access to and are currently available. Brainlife's task orchestration engine ([Amaretti](https://github.com/brain-life/amaretti)) takes care of data transfer and monitoring of your tasks.
 
@@ -14,11 +14,11 @@ To begin processing of your data, first you need to stage the initial datasets. 
 
 Brainlife monitors task status on remote resources and relays the most recent log entries back to the UI.
 
-![status](/img/task.status.png)
+![status](/docs/img/task.status.png)
 
 You can also see the entire content of the log by opening the `Raw Output` section of the task and selecting any log files you'd like to examine.
 
-![rawoutput](/img/task.rawoutput.png)
+![rawoutput](/docs/img/task.rawoutput.png)
 
 !!! note
     `Raw Output` section will not be available for tasks that are not yet assigned to any resource.
@@ -54,7 +54,7 @@ Brainlife task can have one of the following task statuses.
 
         If you archive your output, you will see a list of datasets archived from this output.
 
-        ![status](/img/task.archived.png)
+        ![status](/docs/img/task.archived.png)
 
 
 ## Submitting Apps
@@ -63,11 +63,11 @@ You can submit Apps in a couple of different ways.
 
 One way is to use the `Submit New App` button under each process, as you have done already. Brainlife selects Apps that you can currently submit based on available datasets within the process and required input datasets for each App.
 
-![newapp](/img/task.newapp.png)
+![newapp](/docs/img/task.newapp.png)
 
 The more datasets you stage or generate, the more Apps you can submit. If you don't find an App that you are looking for, please head over to the App page and find the app you are trying to submit. You can either go back to the Process page and generate or stage required datasets, or you can execute the App directly from the App page by selecting the `Execute` tab under the App, which is our second way to submit an App.
 
-![app.execute](/img/app.execute.png)
+![app.execute](/docs/img/app.execute.png)
 
 When you submit App via the Execute tab, Brainlife will create a new process under the selected project and stage all input files you have selected and submit your app in a single step. 
 

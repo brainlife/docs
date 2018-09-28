@@ -4,7 +4,7 @@
 
 Brainlife Apps exchange data through `datatypes`.
 
-![resources](/img/datatypes.png)
+![resources](/docs/img/datatypes.png)
 
 Each datatype consists of `name`, `description`, and a list of files (or directories) that define the overall structure of the datatype. 
 
