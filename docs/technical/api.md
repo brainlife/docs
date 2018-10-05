@@ -17,7 +17,7 @@ Warehouse is the main application responsible for bulk of Brainlife platform UI.
 `Amaretti` is responsible for submitting, monitoring, and interfacing with apps running on various resources that you have access to. Please see Amaretti technical doc for more information.
 
 * [Amaretti Doc](https://brain-life.github.io/amaretti/)
-* [AMaretti Github](https://github.com/brain-life/amaretti)
+* [Amaretti Github](https://github.com/brain-life/amaretti)
 * [Amaretti API Doc](https://brain-life.github.io/amaretti/apidoc)
 
 ## Authentication Service
