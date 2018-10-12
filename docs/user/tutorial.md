@@ -175,7 +175,7 @@ After you archive your data, open the `Datasets` tab and make sure that your dat
 
 As you submit more Apps and generate datasets from them, it becomes harder to keep up with how a given dataset was generated. Brainlife keeps track of a record of how a given dataset was generated all the way from the original input dataset (called `data provenance`).
 
-Under `Datasets` tab, select any dataset you have generated and look under `Provenance` tab.
+Under `Datasets` tab, select any dataset you have just archived. Click `Provenance` tab.
 
 ![dataset](/docs/img/provenance.png)
 
