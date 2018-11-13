@@ -16,7 +16,7 @@ theme:
 
 nav:
   - Home: index.md
-  - Web UI:
+  - Using Brainlife:
     - Tutorial: user/tutorial.md
     - Projects: user/project.md
     - Datatypes: user/datatypes.md
