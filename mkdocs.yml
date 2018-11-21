@@ -1,6 +1,6 @@
 site_name: Brainlife Documentation
 site_author: 'Soichi Hayashi'
-site_url: https://brainlife.github.io/docs/
+site_url: https://brainlife.io/docs
 
 # Repository
 repo_name: 'brainlife/docs'
@@ -47,8 +47,12 @@ extra:
       link: 'https://github.com/brainlife'
     - type: 'twitter'
       link: 'https://twitter.com/BrainLifeio'
+
 markdown_extensions:
   - admonition
   - codehilite
-  - toc(permalink=true)
+  - toc:
+        permalink: True
   - fontawesome_markdown
+
+

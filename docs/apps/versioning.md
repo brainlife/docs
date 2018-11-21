@@ -22,7 +22,7 @@ When you are updating your app, you should push the latest changes to the master
 
 ## Test before pushing to master
 
-Brainlife App can be tested on your laptop by executing `main`, or submitting it to HPC system by using `start` script if you have the [ABCD Hook](https://brain-life.github.io/docs/resources/register/#abcd-default-hooks) installed on your PATH. You shold not commit / push your changes to github just to test the change you just made on Brainlife. 
+Brainlife App can be tested on your laptop by executing `main`, or submitting it to HPC system by using `start` script if you have the [ABCD Hook](https://brainlife.io/docs/resources/register/#abcd-default-hooks) installed on your PATH. You shold not commit / push your changes to github just to test the change you just made on Brainlife. 
 
 ## Create branch for new versions
 
