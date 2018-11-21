@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
       
@@ -55,7 +55,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
     
     
       
@@ -65,6 +65,7 @@
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
     
     
   </head>
@@ -102,7 +103,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#1-git-pull-often" tabindex="1" class="md-skip">
+      <a href="#work-on-master-branch" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -261,11 +262,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      Web UI
+      Using Brainlife
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        Web UI
+        Using Brainlife
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -445,36 +446,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-git-pull-often" title="1. git pull often" class="md-nav__link">
-    1. git pull often
+  <a href="#work-on-master-branch" title="Work on master branch" class="md-nav__link">
+    Work on master branch
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-always-work-on-master-branch" title="2. Always work on master branch" class="md-nav__link">
-    2. Always work on master branch
+  <a href="#test-before-pushing-to-master" title="Test before pushing to master" class="md-nav__link">
+    Test before pushing to master
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-create-branch-for-new-versions" title="3. Create branch for new versions" class="md-nav__link">
-    3. Create branch for new versions
+  <a href="#create-branch-for-new-versions" title="Create branch for new versions" class="md-nav__link">
+    Create branch for new versions
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-bug-fix-on-master-then-on-branch" title="4. Bug fix on master, then on branch." class="md-nav__link">
-    4. Bug fix on master, then on branch.
+  <a href="#bug-fix-on-release-branch" title="Bug fix on release branch" class="md-nav__link">
+    Bug fix on release branch
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-semver" title="5. Semver" class="md-nav__link">
-    5. Semver
+  <a href="#learn-semver" title="Learn Semver" class="md-nav__link">
+    Learn Semver
   </a>
   
 </li>
@@ -664,36 +665,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-git-pull-often" title="1. git pull often" class="md-nav__link">
-    1. git pull often
+  <a href="#work-on-master-branch" title="Work on master branch" class="md-nav__link">
+    Work on master branch
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-always-work-on-master-branch" title="2. Always work on master branch" class="md-nav__link">
-    2. Always work on master branch
+  <a href="#test-before-pushing-to-master" title="Test before pushing to master" class="md-nav__link">
+    Test before pushing to master
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-create-branch-for-new-versions" title="3. Create branch for new versions" class="md-nav__link">
-    3. Create branch for new versions
+  <a href="#create-branch-for-new-versions" title="Create branch for new versions" class="md-nav__link">
+    Create branch for new versions
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-bug-fix-on-master-then-on-branch" title="4. Bug fix on master, then on branch." class="md-nav__link">
-    4. Bug fix on master, then on branch.
+  <a href="#bug-fix-on-release-branch" title="Bug fix on release branch" class="md-nav__link">
+    Bug fix on release branch
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-semver" title="5. Semver" class="md-nav__link">
-    5. Semver
+  <a href="#learn-semver" title="Learn Semver" class="md-nav__link">
+    Learn Semver
   </a>
   
 </li>
@@ -726,28 +727,34 @@
                   <h1>Versioning Tips</h1>
                 
                 <p>Although Brainlife does not require you to use any specific git branching schema and you should observe any standrad practice from your own group, here are some guidelines that we suggest.</p>
-<h2 id="1-git-pull-often">1. git pull often<a class="headerlink" href="#1-git-pull-often" title="Permanent link">&para;</a></h2>
-<p>Before you start editing your app on your local machine each day, be sure to pull from origin. </p>
-<div class="codehilite"><pre><span></span>git pull
-</pre></div>
+<!--
+## 1. git pull often
+
+Before you start editing your app on your local machine each day, be sure to pull from origin. 
 
 
-<p>You should git pull as often as you can to reduce possible merge issues down the road. When you are done testing your changes, git push to origin master.</p>
-<div class="admonition hint">
-<p class="admonition-title">git rebase</p>
-<p>See <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">git rebase</a> if you are not familiar with rebasing. It could help with keeping our commit log clean.</p>
-</div>
-<h2 id="2-always-work-on-master-branch">2. Always work on master branch<a class="headerlink" href="#2-always-work-on-master-branch" title="Permanent link">&para;</a></h2>
-<p>When you are working on your app, you should always make changes on master. You can create as many local branches as you'd like (for each features you are working on) but when you are done, merge it to your own local master, then push the local master to the origin master. Pull from origin master, and push to origin master. Use local branches for you to organize what you are working on. Don't push local branches to origin.</p>
-<h2 id="3-create-branch-for-new-versions">3. Create branch for new versions<a class="headerlink" href="#3-create-branch-for-new-versions" title="Permanent link">&para;</a></h2>
-<p>When we are done with making all changes, tested it, and ready to release it, we should create a new branch from master. You can easily create a new branch using github UI. </p>
+wzxhzdk:0
+
+
+You should git pull as often as you can to reduce possible merge issues down the road. When you are done testing your changes, git push to origin master.
+
+!!! hint "git rebase"
+    See [git rebase](https://www.atlassian.com/git/tutorials/merging-vs-rebasing) if you are not familiar with rebasing. It could help with keeping our commit log clean.
+-->
+
+<h2 id="work-on-master-branch">Work on master branch<a class="headerlink" href="#work-on-master-branch" title="Permanent link">&para;</a></h2>
+<p>When you are updating your app, you should push the latest changes to the master while pulling from the remote master often to reduce merge conflict. You can/should use your local branches for each features you are working on, but don't push them to the remote. When you are done testing the new feature / bug fixes on your local branch, merge them to your local master, then push that to the origin master as frequently as possible.</p>
+<h2 id="test-before-pushing-to-master">Test before pushing to master<a class="headerlink" href="#test-before-pushing-to-master" title="Permanent link">&para;</a></h2>
+<p>Brainlife App can be tested on your laptop by executing <code>main</code>, or submitting it to HPC system by using <code>start</code> script if you have the <a href="https://brain-life.github.io/docs/resources/register/#abcd-default-hooks">ABCD Hook</a> installed on your PATH. You shold not commit / push your changes to github just to test the change you just made on Brainlife. </p>
+<h2 id="create-branch-for-new-versions">Create branch for new versions<a class="headerlink" href="#create-branch-for-new-versions" title="Permanent link">&para;</a></h2>
+<p>When we are done with making all changes, and tested the master branch on Brainlife, you should create a new git branch from the master branch. You can easily create a new branch using github UI. </p>
 <p><img alt="branch" src="/docs/img/versioning.branch.gif" /></p>
-<p>Once you create a branch, you should update the BL app to point users to use that new branch.</p>
+<p>Once you create a new release branch, you should update the BL app to point users to use that new branch.</p>
 <p><img alt="branch" src="/docs/img/versioning.app.gif" /></p>
-<p>You could use tags instead of branches, but tags does not allow you make modifications like you can with branches. Tags are great to point to any particular commit point, but you can do that with just a plain commit ID also. We recommend creating new branches for each release.</p>
-<h2 id="4-bug-fix-on-master-then-on-branch">4. Bug fix on master, then on branch.<a class="headerlink" href="#4-bug-fix-on-master-then-on-branch" title="Permanent link">&para;</a></h2>
-<p>If you find a bug after you create a branch, you first need to fix the bug on the master, test it, then apply the same fix on all branches that are affected. I recommend using command like <a href="https://git-scm.com/docs/git-cherry-pick">cherry-pick</a> to apply specific changes on other branches. Again, we should not add any new features on branches (only bug fixes) for reproducibility. </p>
-<h2 id="5-semver">5. Semver<a class="headerlink" href="#5-semver" title="Permanent link">&para;</a></h2>
+<p>You could use tags instead of branches, but tags does not allow you make modifications if you need to make a quick bug fixes. Tags are great to point to any particular commit point, but you can do that with just a plain commit ID. We recommend creating new branches for each release.</p>
+<h2 id="bug-fix-on-release-branch">Bug fix on release branch<a class="headerlink" href="#bug-fix-on-release-branch" title="Permanent link">&para;</a></h2>
+<p>If you find a critical bug after you create a branch, fix the bug on the master first, test it (both locally and on Brainlife), then apply the same fix on all branches that are affected by the bug. I recommend using command like <a href="https://git-scm.com/docs/git-cherry-pick">cherry-pick</a> to apply specific changes on other branches as you probably don't want to merge all other changes made to the master since the branch was created. We should not update branches other than some critical bug fixes to ensure reproducibility of your App.</p>
+<h2 id="learn-semver">Learn Semver<a class="headerlink" href="#learn-semver" title="Permanent link">&para;</a></h2>
 <p>If you don't know what semantic versioning is, please read <a href="https://semver.org/">https://semver.org/</a>.</p>
 <p>For branch names, we should use major and minor version (like "2.3"), but don't include the patch number, as patch numbers are incremeneted for each bug fixes and you don't need to create a new branch for each bug fixes. If you make non-backward compatible changes, you should consider registering a brand new Brainlife app with different major version number so that user can continue to submit your app with previous versions.</p>
                 
@@ -850,7 +857,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
