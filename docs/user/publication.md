@@ -1,6 +1,8 @@
 # Publications
 
-Once you finish processing your datasets and produced all data derivatives, you can publish them by creating a current snapshots of your datasets and create a new publication page.
+Once you finish processing your datasets and produced all data derivatives, you can publish them by creating a current snapshots of your datasets and create a new publication page. 
+
+Publication records at brainlife.io/pubs are preserved for at least ten years since latest use using the [Scholarly Data Archive](https://kb.iu.edu/d/aiyi), and comply with the [schema.org](https://schema.org) metadata specification to promote maximum discoverability and respect of the [FAIR principles](https://www.go-fair.org/fair-principles/).
 
 ![publication.page](/docs/img/publication.page.png)
 
