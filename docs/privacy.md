@@ -1,7 +1,7 @@
 <p>Effective: 2018-05-01</p>
 
 <h2>Applicability</h2>
-<p>This privacy notice applies only to the brainlife.io (https://brainlife.io) and explains our practices concerning the collection, use, and disclosure of visitor information.  Visitor information collected by brainlife.io will be used only as outlined in this privacy notice.</p>
+<p>This privacy notice applies only to brainlife.io (https://brainlife.io) and explains our practices concerning the collection, use, and disclosure of visitor information.  Visitor information collected by brainlife.io will be used only as outlined in this privacy notice.</p>
 <p>Other units at the university may collect and use visitor information in different ways.  Therefore, visitors to other university websites should review the privacy notices for the particular sites they visit.  brainlife.io is not responsible for the content of other websites or for the privacy practices of websites outside the scope of this notice.</p>
 
 <h2>Changes</h2>
@@ -44,6 +44,4 @@
 <p>Indiana University is not responsible for the availability, content, or privacy practices of non-university sites. Non-university sites are not bound by this site privacy notice policy and may or may not have their own privacy policies.</p>
 <h2>Privacy Notice Changes</h2>
 <p>From time to time, we may use visitor information for new, unanticipated uses not previously disclosed in our privacy notice.</p><p>We will post the policy changes to our website to notify you of these changes and provide you with the ability to opt out of these new uses. If you are concerned about how your information is used, you should check back at our website periodically.</p><p>Visitors may prevent their information from being used for purposes other than those for which it was originally collected by:</p><ul><li>sending us an email at the listed address</li><li>brlife@iu.edu</li></ul>
-<h2>Supplemental Information</h2>
-<p>n/a</p>
 <h2>Contact Information</h2><p>If you have questions or concerns about this policy, please contact us.</p><blockquote>brainlife.io<br>ATTN: Franco Pestilli<br>1101 East 10th Street, Department of Psychological and Brain<br>Department of Psychological and Brain Sciences<br>Bloomington, Indiana 47405<br>brlife@iu.edu<br>8128569967</blockquote><p>If you feel as though this site’s privacy practices differ from the information stated, you may contact us at the listed address or phone number. <p>If you feel that this site is not following its stated policy and communicating with the owner of this site does not resolve the matter, or if you have general questions or concerns about privacy or information technology policy at Indiana University, please contact the chief privacy officer through the University Information Policy Office, 812-855-UIPO, <a href="mailto:privacy@iu.edu">privacy@iu.edu</a>.</p>
