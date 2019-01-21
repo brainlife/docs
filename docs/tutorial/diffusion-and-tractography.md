@@ -1,37 +1,13 @@
 ## Diffusion-weighted MRI, Tractography and Tractometry.
-### TractSeg Diffusion Processing
-This pipeline combines processing proposed by Wasserthal et al., Neuroimage (2018).
-
-1. Brain Parcellation (FreeSurfer).
-https://doi.org/10.25663/bl.app.0
-
-2. Segment major white matter tracts and volumes (TractSeg).
-https://doi.org/10.25663/bl.app.95
-
-3. Fit Diffusion Tensor model.
-https://doi.org/10.25663/brainlife.app.137
-https://doi.org/10.25663/bl.app.60
-
-4. Measure Tract Profiles (VISTASOFT).
-https://doi.org/10.25663/bl.app.43
-
-
-This pipeline assumes that your data are compliant with the Human Connectome Project pipeline and that your data is in LAS and the BVECS / BVALS are normalized. If your data does not comply with the above you can run the following steps before Step 1.
-
-0.1 Check BVECS and BVALS.
-https://doi.org/10.25663/bl.app.85
-
-0.2 Reorient BVECS and Normalize BVALS (if suggested by the previous step).
-https://doi.org/10.25663/bl.app.4
-
-0.3 Select a shell to run your tracking.
-https://doi.org/10.25663/bl.app.17
-
+This page highlights some of the most common processing pipelines to analyze diffusion-weighted MRI and white matter as used and developed by the brainlife.io team.
 
 ### Ensemble tractography Single-Shell Diffusion and Tractography Processing.
-This pipeline combines processing proposed by Caiafa and Pestilli, Scientific Reports (2017) and Takemura et al., PLoS Computational Biology (2016).
+This pipeline combines processing proposed by Caiafa and Pestilli, Scientific Reports (2017), Yeatman et al., PloS One (2012) and Takemura et al., PLoS Computational Biology (2016).
 
-1. Brain Parcellation (FreeSurfer).
+The pipeline is optimized for single-shell dMRI data. THis pipeline should not be used for multishell data.
+
+#### 1. Brain Parcellation (FreeSurfer).
+The first step is to launch 
 https://doi.org/10.25663/bl.app.0
 
 2. Diffusion MRI Preprocessing (VISTASOFT).
@@ -49,7 +25,7 @@ https://doi.org/10.25663/bl.app.13
 4. Measure Tract Profiles (VISTASOFT).
 https://doi.org/10.25663/bl.app.43
 
-This pipeline assumes that your data are compliant with the Human Connectome Project pipeline and that your data is in LAS and the BVECS / BVALS are normalized. If your data does not comply with the above you can run the following steps before Step 1.
+This pipeline assumes that your data are compliant with VISTASOFT or the Human Connectome Project pipeline and that your data is in LAS and the BVECS / BVALS are normalized. If your data does not comply with the above you can run the following steps before Step 1.
 
 0.1 Check BVECS and BVALS.
 https://doi.org/10.25663/bl.app.85
@@ -85,3 +61,31 @@ https://doi.org/10.25663/brainlife.app.117
 5.2 Advanced: Generate DKI model parameters.
 https://doi.org/10.25663/bl.app.9
 https://doi.org/10.25663/bl.app.70
+
+### TractSeg Diffusion Processing
+This pipeline combines processing proposed by Wasserthal et al., Neuroimage (2018) with processing proposed by Yeatman et al., PLoS One (2012).
+
+1. Brain Parcellation (FreeSurfer).
+https://doi.org/10.25663/bl.app.0
+
+2. Segment major white matter tracts and volumes (TractSeg).
+https://doi.org/10.25663/bl.app.95
+
+3. Fit Diffusion Tensor model.
+https://doi.org/10.25663/brainlife.app.137
+https://doi.org/10.25663/bl.app.60
+
+4. Measure Tract Profiles (VISTASOFT).
+https://doi.org/10.25663/bl.app.43
+
+
+This pipeline assumes that your data are compliant with the Human Connectome Project pipeline and that your data is in LAS and the BVECS / BVALS are normalized. If your data does not comply with the above you can run the following steps before Step 1.
+
+0.1 Check BVECS and BVALS.
+https://doi.org/10.25663/bl.app.85
+
+0.2 Reorient BVECS and Normalize BVALS (if suggested by the previous step).
+https://doi.org/10.25663/bl.app.4
+
+0.3 Select a shell to run your tracking.
+https://doi.org/10.25663/bl.app.17
