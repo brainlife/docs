@@ -1,7 +1,3 @@
-# BrainLife.io Tutorials
-
-This page introduces a series of commonly used steps for data processing. 
-
 ## Diffusion-weighted MRI, Tractography and Tractometry.
 ### TractSeg Diffusion Processing
 This pipeline combines processing proposed by Wasserthal et al., Neuroimage (2018).
