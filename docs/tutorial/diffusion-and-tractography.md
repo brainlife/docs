@@ -76,30 +76,33 @@ https://doi.org/10.25663/bl.app.9
 https://doi.org/10.25663/bl.app.70
 
 ### TractSeg Diffusion Processing, White matter Tracts and Tractography
-This pipeline combines processing proposed by Wasserthal et al., Neuroimage (2018) with processing proposed by Yeatman et al., PLoS One (2012).
+This pipeline combines processing proposed by Wasserthal et al., Neuroimage (2018) with processing proposed by Yeatman et al., PLoS One (2012). The pipeline as described below is optimized for single-shell dMRI data.
 
 ##### 1. Brain Parcellation (FreeSurfer).
 The first step is to launch FreeSurfer, this will perform anatomical preprocessing and parcellate the brain into different regions: https://doi.org/10.25663/bl.app.0
 
 ##### 2. Segment major white matter tracts and volumes (TractSeg).
-Wasserthal and colleaagues proposed a single method to generate 
+[Wasserthal and colleagues, Neuroimage (2018)](https://doi.org/10.1016/j.neuroimage.2018.07.070) proposed a single method to generate tract volumes from a pre-trained neural network trained on the Human Connectome Dataset. This Apps uses the pipeline their presented in their article to segment the tracts and perform tracking.
 https://doi.org/10.25663/bl.app.95
 
-3. Fit Diffusion Tensor model.
+##### 3. Fit Diffusion Tensor model.
+Once the tracts are segmented we can use FSL ([Jenkinson et al., Neuroimage (2012)](https://doi.org/10.1016/j.neuroimage.2011.09.015)) to fit the DTI model and use that model for measuring tract profiles.
 https://doi.org/10.25663/brainlife.app.137
-https://doi.org/10.25663/bl.app.60
 
-4. Measure Tract Profiles (VISTASOFT).
+The following is an alternative App to fit the DTI model compatible with the TractSeg pipeline: https://doi.org/10.25663/bl.app.60
+
+##### 4. Measure Tract Profiles (VISTASOFT).
+Tract profiles will allow measuring the properties of the brain tissue along the major white matter tracts generated in the previous step. These are ultimately the measurements the investigator will want to use to understand brain function by comparing the values across individuals.
 https://doi.org/10.25663/bl.app.43
 
-
+##### Note. 
 This pipeline assumes that your data are compliant with the Human Connectome Project pipeline and that your data is in LAS and the BVECS / BVALS are normalized. If your data does not comply with the above you can run the following steps before Step 1.
 
-0.1 Check BVECS and BVALS.
+###### 0.1 Check BVECS and BVALS.
 https://doi.org/10.25663/bl.app.85
 
-0.2 Reorient BVECS and Normalize BVALS (if suggested by the previous step).
+###### 0.2 Reorient BVECS and Normalize BVALS (if suggested by the previous step).
 https://doi.org/10.25663/bl.app.4
 
-0.3 Select a shell to run your tracking.
+##### 0.3 Select a shell to run your tracking.
 https://doi.org/10.25663/bl.app.17
