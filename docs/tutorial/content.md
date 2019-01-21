@@ -10,6 +10,23 @@ This pipeline combines processing proposed by Wasserthal et al., Neuroimage (201
 ### Ensemble tractography Single-Shell Diffusion and Tractography Processing
 This pipeline combines processing proposed by Caiafa and Pestilli, Scientific Reports (2017) and Takemura et al., PLoS Computational Biology (2016).
 
+1. Brain Parcellation (FreeSurfer).
+
+2. Diffusion MRI Preprocessing (VISTASOFT).
+https://doi.org/10.25663/bl.app.3
+
+3. Generate Diffusion Tensor Model data.
+https://doi.org/10.25663/bl.app.48 
+
+4. Tractography (Ensemble Tractography).
+https://doi.org/10.25663/bl.app.33
+
+3. Segment white matter Tracts (AFQ).
+https://doi.org/10.25663/bl.app.13
+
+4. Measure tract Profiles (VISTASOFT).
+https://doi.org/10.25663/bl.app.43
+
 
 ### Ensemble tractography Multishell Diffusion Processing using DESIGNER
 This pipeline combines processing proposed by Ades-Aron et al., Neuroimage (2018) and Takemura et al., PLoS Computational Biology (2016).
