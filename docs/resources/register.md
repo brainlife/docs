@@ -30,6 +30,9 @@ To register your resource, go to [Brainlife Settings](https://brainlife.io/amare
 
 You can leave the rest of the fields empty for now.
 
+!!! warning
+	IU HPC systems requires you to submit [ssh public key agreement form](https://hpceverywhere.iu.edu/agree) so that you can authenticate using your ssh public key.
+
 Click OK. Once you are finished with copying ssh key and make sure the workdir exists, click "Test" button to see if Brainlife can access your resource. You should see a green checkbox if everything is good.
 
 ## Configuring Resources
@@ -47,19 +50,19 @@ git clone https://github.com/brain-life/abcd-spec
 
 Then, add one of following to your ~/.bashrc
 
-#### For PBS cluster
+#### For PBS cluster (like.. IU Karst/Carbonate/Bigred2)
 
 ```
 export PATH=~/abcd-spec/hooks/pbs:$PATH
 ```
 
-#### For Slurm cluster
+#### For Slurm cluster (like.. PSC Bridges, Brainlife Jetstream Clusters)
 
 ```
 export PATH=~/abcd-spec/hooks/slurm:$PATH
 ```
 
-#### For direct execution - no batch submission manager
+#### For direct execution - no batch submission manager (like.. VMs)
 
 ```
 export PATH=~/abcd-spec/hooks/direct:$PATH
