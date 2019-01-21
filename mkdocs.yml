@@ -17,12 +17,14 @@ theme:
 nav:
   - Home: index.md
   - Using Brainlife:
-    - Tutorial: user/tutorial.md
+    - Getting Started: user/started.md
     - Projects: user/project.md
     - Datatypes: user/datatypes.md
     - Processes: user/process.md
     - Pipelines: user/pipeline.md
     - Publications: user/publication.md
+  - Tutorials: 
+    - Content: tutorial/content.md
   - Developing Apps: 
     - Introduction: apps/introduction.md
     - HelloWorld: apps/helloworld.md
