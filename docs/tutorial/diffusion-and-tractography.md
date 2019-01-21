@@ -89,10 +89,3 @@ https://doi.org/10.25663/brainlife.app.117
 5.2 Advanced: Generate DKI model parameters.
 https://doi.org/10.25663/bl.app.9
 https://doi.org/10.25663/bl.app.70
-
-
-## Network Neuroscience.
-### Structural networks
-
-
-### Functional networks.
