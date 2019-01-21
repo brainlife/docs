@@ -24,7 +24,10 @@ nav:
     - Pipelines: user/pipeline.md
     - Publications: user/publication.md
   - Tutorials: 
-    - Content: tutorial/content.md
+    - Tractometry: tutorial/diffusion-and-tractography.md
+    - Structural networks: tutorial/networkneuroscience-structural.md
+    - Functional networks: tutorial/networkneuroscience-functional.md
+    
   - Developing Apps: 
     - Introduction: apps/introduction.md
     - HelloWorld: apps/helloworld.md
