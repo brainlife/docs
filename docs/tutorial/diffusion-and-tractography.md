@@ -18,7 +18,7 @@ Once the dMRI data have been processed. We need to generate the parameters for t
 https://doi.org/10.25663/bl.app.48 
 
 ##### 4. Tractography (Ensemble Tractography).
-The ensemble tractography App will take as the output of the Diffusion MRi preprocessing App and perform tracking using a variety of parameters and combining Probabilistic as well as deterministic tracking. 
+The ensemble tractography App will take as the output of the Diffusion MRi preprocessing App and perform tracking using a variety of parameters and combining Probabilistic as well as deterministic tracking. The pipeline is a simplified version of the procedure described by Takemura et al., PLoS Computational Biology (2016). 
 https://doi.org/10.25663/bl.app.33
 
 ##### 3. Segment white matter Tracts (AFQ).
@@ -42,38 +42,47 @@ https://doi.org/10.25663/bl.app.4
 https://doi.org/10.25663/bl.app.17
 
 ### Ensemble tractography Multishell Diffusion Processing using DESIGNER
-This pipeline combines processing proposed by Ades-Aron et al., Neuroimage (2018) and Takemura et al., PLoS Computational Biology (2016).
+Nowadays some of the most common dMRI data are acquired with multiple shells. This allows fitting models to the diffusion signal with additional paramters to better capture the complexity of the signal in areas of fiber crossing. The pipeline describe below will exploit this modern dMRI data type and performs tractometry.  
 
-1. Brain Parcellation (FreeSurfer).
-https://doi.org/10.25663/bl.app.0
+##### 1. Brain Parcellation (FreeSurfer).
+The first step is to launch FreeSurfer, this will perform anatomical preprocessing and parcellate the brain into different regions: https://doi.org/10.25663/bl.app.0
 
-2. Diffusion MRI Preprocessing (DESIGNER).
+##### 2. Diffusion MRI Preprocessing (DESIGNER).
+This is a series of processing steps that will remove motion artifacts, denoise the data, and generate files ready for tractography. The pipeline is described in details by Ades-Aron et al., Neuroimage (2018).
 https://doi.org/10.25663/bl.app.68
 
-3. Tractography (Ensemble Tractography).
+##### 3. Tractography (Ensemble Tractography).
+The ensemble tractography App will take as the output of the Diffusion MRi preprocessing App and perform tracking using a variety of parameters and combining Probabilistic as well as deterministic tracking. The pipeline is a simplified version of the procedure described by Takemura et al., PLoS Computational Biology (2016). We note that the output of this step will also contain a diffusion tensr model fit (DTI).
 https://doi.org/10.25663/bl.app.101
-This also generates a DTI fit.
 
-3. Segment white matter Tracts (AFQ).
+##### 3. Segment white matter Tracts (AFQ).
+Once the dMRI and T1w data are preprocessed, tracking has been generated, we can now segment the tractogram (whole brain fiber group) into major white matter tracts such as the Arcuate Fasciculus, Corticospinal Tract, Etc.
 https://doi.org/10.25663/bl.app.13
 
-4. Measure Tract Profiles (VISTASOFT).
+##### 4. Measure Tract Profiles (VISTASOFT).
+Tract profiles will allow measuring the properties of the brain tissue along the major white matter tracts generated in the previous step. These are ultimately the measurements the investigator will want to use to understand brain function by comparing the values across individuals.
 https://doi.org/10.25663/bl.app.43
 
-5.1 Advanced: Generate NODDI model parameters.
+##### Advanced white matter microscopic tissue properties.
+A variety of methods and models for mapping white matter tissue microstructure are available as Apps on brainlife.io. Below we describe two additional Apps that allow fitting more advanced models to dMRI data measured with multiple shells. These models can be used in alternative to the DTI model and in combination with the [Tract profiles App](https://doi.org/10.25663/bl.app.43) can be used to measure white matter for each of the tract segmented.
+
+###### 5.1 Advanced: Generate NODDI model parameters.
+The Neurite Orientation Dispersion Diffusion model (NODDI) was originally proposed by [Zhang and colleagues Neuroimage (2012)](https://doi.org/10.1016/j.neuroimage.2012.03.072). The App below implements the model in a simplified (linearized) form as proposed by Daducci et al., Neuroimage (2015). NODDI provides additional mearuses of white matter tissue properties such as Neurite Dispersion, and intra-cellular volume fraction. 
 https://doi.org/10.25663/brainlife.app.117
 
-5.2 Advanced: Generate DKI model parameters.
+###### 5.2 Advanced: Generate DKI model parameters.
+The Diffusion Kurtosis Imaging (DKI; [Jensen et al., MRM 2005](https://doi.org/10.1002/mrm.20508)) model provides additional (high-order) parameters that describe component of the dMRI signal that cannot be accounted by the single-gaussian (simpler) DTI model. By running the two Apps below in the following sequence it is possible to generated DKI paramters to be used for generating advanced tract profiles.
 https://doi.org/10.25663/bl.app.9
 https://doi.org/10.25663/bl.app.70
 
-### TractSeg Diffusion Processing
+### TractSeg Diffusion Processing, White matter Tracts and Tractography
 This pipeline combines processing proposed by Wasserthal et al., Neuroimage (2018) with processing proposed by Yeatman et al., PLoS One (2012).
 
-1. Brain Parcellation (FreeSurfer).
-https://doi.org/10.25663/bl.app.0
+##### 1. Brain Parcellation (FreeSurfer).
+The first step is to launch FreeSurfer, this will perform anatomical preprocessing and parcellate the brain into different regions: https://doi.org/10.25663/bl.app.0
 
-2. Segment major white matter tracts and volumes (TractSeg).
+##### 2. Segment major white matter tracts and volumes (TractSeg).
+Wasserthal and colleaagues proposed a single method to generate 
 https://doi.org/10.25663/bl.app.95
 
 3. Fit Diffusion Tensor model.
