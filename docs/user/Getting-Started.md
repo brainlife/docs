@@ -1,5 +1,5 @@
 
-# Tutorial
+# Getting Started with brainlife.io
 
 This tutorial will guide you through the following functionality of Brainlife. 
 
