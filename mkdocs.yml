@@ -6,7 +6,7 @@ site_url: https://brainlife.io/docs
 repo_name: 'brainlife/docs'
 repo_url: 'https://github.com/brainlife/docs'
 
-copyright: 'Copyright &copy; 2017 - 2018 Brainlife.io'
+copyright: 'Copyright &copy; 2017 - 2019 Brainlife.io'
 
 theme:
   name: 'material'
@@ -17,12 +17,17 @@ theme:
 nav:
   - Home: index.md
   - Using Brainlife:
-    - Tutorial: user/tutorial.md
+    - Getting Started: user/started.md
     - Projects: user/project.md
     - Datatypes: user/datatypes.md
     - Processes: user/process.md
     - Pipelines: user/pipeline.md
     - Publications: user/publication.md
+  - Tutorials: 
+    - Tractometry: tutorial/diffusion-and-tractography.md
+    - Structural networks: tutorial/networkneuroscience-structural.md
+    - Functional networks: tutorial/networkneuroscience-functional.md
+    
   - Developing Apps: 
     - Introduction: apps/introduction.md
     - HelloWorld: apps/helloworld.md
