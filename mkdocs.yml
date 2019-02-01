@@ -16,6 +16,7 @@ theme:
 
 nav:
   - Home: index.md
+
   - Using Brainlife:
     - Getting Started: user/started.md
     - Projects: user/project.md
@@ -23,6 +24,7 @@ nav:
     - Processes: user/process.md
     - Pipelines: user/pipeline.md
     - Publications: user/publication.md
+
   - Tutorials: 
     - Tractometry: tutorial/diffusion-and-tractography.md
     - Structural networks: tutorial/networkneuroscience-structural.md
@@ -36,11 +38,18 @@ nav:
     - Versioning Tips: apps/versioning.md
     - Custom Hooks: apps/customhooks.md
     - product.json: apps/product.md
+
+  - CLI:
+    - Installation: cli/install.md
+    - Downloading Datasets: cli/download.md
+
   - Compute Resources: 
     - Registering Resource: resources/register.md
+
   - Technical:
     - Architecture: technical/arthitecture.md
     - APIs: technical/api.md
+
   - Contact: contact.md
   - Privacy Policy: privacy.md
   - Releases: releases.md

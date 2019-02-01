@@ -91,7 +91,7 @@ Any datasets stored in Brainlife can be visualized using Web-based and/or Native
 
 For example, `neuro/anat/t1` datasets can be visualized by the following set of Visualization Apps.
 
-![dataset](/docs/img/viewers.png)
+![viewers](/docs/img/viewers.png)
 
 !!! note
     Similar to `Apps`, developers can develop and contribute new visualization Apps to run on Brainlife. If you are developing visualization Apps, or have Apps that you'd like us to add, please contact us at [brlife@iu.edu](mailto:brlife@iu.edu).
