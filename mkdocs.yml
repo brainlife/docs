@@ -41,6 +41,8 @@ nav:
 
   - CLI:
     - Installation: cli/install.md
+    - Uploading Dataset: cli/upload.md
+    - Running Apps: cli/app.md
     - Downloading Datasets: cli/download.md
 
   - Compute Resources: 
