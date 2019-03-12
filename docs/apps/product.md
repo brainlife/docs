@@ -98,6 +98,7 @@ Like..
 ```json
 {
     "rmse": 123,
+    "labels: ["apple", "orange"]
 }
 ```
 
@@ -125,3 +126,26 @@ Your App can set "tags" field to specify dataset tags that you'd like to add to 
 You can use this feature to set important information about the processing done to the dataset and pass it down the pipeline. 
 
 
+## 4. Multiple output datasets
+
+Most Apps output more than 1 datasets. By default, all information stored on `product.json` will be copied to all output datasets. If you'd like to store different information for each output dataset, you can do so by organizing your `product.json` with App's registerd output IDs as keys on the root of `product.json`
+
+For example, let's assume you have an App with 2 output datasets; t1, and mask, and you have used "t1" and "mask" as output IDs when you registered your App.
+
+You could then output something like the following `product.json`
+
+```
+{
+    "t1": {
+        "val1": 123,
+        "val2": 456
+    },
+    "mask": {
+        "val1": 567,
+        "val2": 890
+    }
+}
+
+```
+
+When this `product.json` is imported, brainlife will pick "t1" as the root of product.json for t1 output, and "mask" as mask output. You can still store items on the root of the `product.json` which will be merged on to output specific data. This is useful if you have information that is common across all outputs, but wants to be able to specify output specific information also.
