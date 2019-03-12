@@ -8,7 +8,7 @@
   },
   "scripts": {
     "deploy-old": "mkdocs gh-deploy",
-    "deploy-prod": "mkdocs build && rsync -av site/ root@brainlife.io:/root/docker/nginx/static/docs",
+    "deploy-prod": "mkdocs build && rsync -av site/ hayashis@brainlife.io:/usr/local/static/docs",
     "dev": "mkdocs serve",
     "install": "pip install mkdocs mkdocs-material fontawesome_markdown"
   },
