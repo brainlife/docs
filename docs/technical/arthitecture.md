@@ -10,23 +10,23 @@ These services are distributed across multiple docker hosts and various VMs on [
 
 ### Warehouse
 
-Warehouse provides a bulk of Brainlife specific functionalities. Brainlife web UI and CLI (command-line-interface) primarily interface with these services through the REST API. Warehouse provides functionalities such as organizing datasets under project, orchestrating pipeline rules, and requesting Amaretti to move datasets between various computing resources and the Warehouse archive. All new datasets are currently archived on XSEDE Wrangler and optionally copied to IU SDA tape archive system as a backup.
+[Warehouse](https://github.com/brain-life/warehouse) provides a bulk of Brainlife specific functionalities. Brainlife web UI and CLI (command-line-interface) primarily interface with these services through the REST API. Warehouse provides functionalities such as organizing datasets under project, orchestrating pipeline rules, and requesting Amaretti to move datasets between various computing resources and the Warehouse archive. All new datasets are currently archived on XSEDE Wrangler and optionally copied to IU SDA tape archive system as a backup.
 
 ### Amaretti
 
-Amaretti is another major service group that handles orchestration of tasks(jobs) and workflows on various computing resources. It is primary used by Warehouse to fulfill various user requests. Amaretti is what we call "meta" orchestration service, meaning it simply interfaces with local batch scheduling systems such as PBS, CondorHT, and slurm to actually handle job executions on the remove computing resources.
+[Amaretti](https://brain-life.github.io/amaretti/) is another major service group that handles orchestration of tasks(jobs) and workflows on various computing resources. It is primary used by Warehouse to fulfill various user requests. Amaretti is what we call "meta" orchestration service, meaning it simply interfaces with local batch scheduling systems such as PBS, CondorHT, and slurm to actually handle job executions on the remove computing resources.
 
 ### Authentication
 
-Our authentication service allows user to signup / signin and issue JWT token that can be [statelessly authenticated](https://www.jbspeakr.cc/purpose-jwt-stateless-authentication/) by other services.
+Our authentication service maintains user information and allows them to signup / signin and issue JWT token that can be [statelessly authenticated](https://www.jbspeakr.cc/purpose-jwt-stateless-authentication/) by other services.
 
-### Event / AMQP
+### AMQP / Event
 
-The event service allows web UI and CLI to subscribe to an event stream via websocket. Various services publish events such as task/instance status or dataset detail updates. Other services can then subscribe to these events with an appropriate access token to receive in realtime, or queue these events to be handled by various event handlers.
+[The event service](https://github.com/soichih/event) allows web UI and CLI to subscribe to an event stream via websocket. Various services publish events such as task/instance status or dataset detail updates. Other services can then subscribe to these events with an appropriate access token to receive in realtime, or queue these events to be handled by various event handlers.
 
-### Web UI
+### Brainlife Web UI
 
-Brainlife web UI is written using [VueJS](https://vuejs.org/); a popular Javascript frontend framework. Standard post-processing tools such as webpack and babel are used to compile our UI code before delivered to the user's browser. A small amount of server-side rendering is performed periodically to provide scheme.org descriptors for our public assets; such as Apps, Publications, Projects. This also promotes discoverability of those assets by various search engines.
+Warehouse provides a Brainlife web UI which is written using [VueJS](https://vuejs.org/); a popular Javascript frontend framework. Standard post-processing tools such as webpack and babel are used to compile our UI code before delivered to the user's browser. A small amount of server-side rendering is performed periodically to provide scheme.org descriptors for our public assets; such as Apps, Publications, Projects. This also promotes discoverability of those assets by various search engines.
 
 ### CLI
 
@@ -34,7 +34,7 @@ Brainlife web UI is written using [VueJS](https://vuejs.org/); a popular Javascr
 
 ### Visualization
 
-Brainlife provides 2 ways to visualize datasets stored. The first way is through web based UI tools such as [BrainBrowsers](https://brainbrowser.cbrain.mcgill.ca/) and [TractView](https://github.com/brain-life/ui-tractview). These UIs will run on user's web browser and download necessary dataset via Brainlife's web API. Some of these App requires GPUs on user's machines.
+Brainlife provides several ways to visualize stored datasets. The first way is through web based UI tools such as [BrainBrowsers](https://brainbrowser.cbrain.mcgill.ca/) and [TractView](https://github.com/brain-life/ui-tractview). These UIs will run on user's web browser and download necessary dataset via Brainlife's web API. Some of these App requires GPUs on user's machines.
 
 Another way is to launch native UIs such as Freeview, fsleyes, and fibernavigator on Brainlife's GPU-enabled visualization VMs and streamed to user's browser using web-based VNC client.  This approach allows our users to entertain familar UIs and visualize their dataset without having to install these UIs and downloading datasets to be visualized. The only component required by the user is a web browser. 
 
