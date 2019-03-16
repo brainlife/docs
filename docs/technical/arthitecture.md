@@ -8,25 +8,40 @@ Brainlife is constructed as a collection of independent [microservices](https://
 
 These services are distributed across multiple docker hosts and various VMs on [Jetstream-Cloud](https://jetstream-cloud.org/). They mainly communicate through REST APIs and/or AMQP message bus. All external web traffics are proxied through our API proxy (nginx). Our infrastructure also includes monitoring and operational services which are not included in the above diagram.
 
-### Warehouse
-
-[Warehouse](https://github.com/brain-life/warehouse) provides a bulk of Brainlife specific functionalities. Brainlife web UI and CLI (command-line-interface) primarily interface with these services through the REST API. Warehouse provides functionalities such as organizing datasets under project, orchestrating pipeline rules, and requesting Amaretti to move datasets between various computing resources and the Warehouse archive. All new datasets are currently archived on XSEDE Wrangler and optionally copied to IU SDA tape archive system as a backup.
-
 ### Amaretti
 
-[Amaretti](https://brain-life.github.io/amaretti/) is another major service group that handles orchestration of tasks(jobs) and workflows on various computing resources. It is primary used by Warehouse to fulfill various user requests. Amaretti is what we call "meta" orchestration service, meaning it simply interfaces with local batch scheduling systems such as PBS, CondorHT, and slurm to actually handle job executions on the remove computing resources.
+[Amaretti](https://brain-life.github.io/amaretti/) is another major service group that handles orchestration of tasks(jobs) and workflows on various computing resources. Amaretti is what we call "meta" orchestration service, meaning it sits on top of various local batch scheduling systems such as PBS, CondorHT, and slurm to handle the actual job executions on the remove computing resources. Amaretti simply orchestrates and monitors these heterogenesous computing resources and abstracts various common operations requested by our users.
 
 ### Authentication
 
-Our authentication service maintains user information and allows them to signup / signin and issue JWT token that can be [statelessly authenticated](https://www.jbspeakr.cc/purpose-jwt-stateless-authentication/) by other services.
+We have developed a simple authentication service which maintains user information and allows them to signup / signin and issue JWT token that can be [statelessly authenticated](https://www.jbspeakr.cc/purpose-jwt-stateless-authentication/) by other services.
 
 ### AMQP / Event
 
 [The event service](https://github.com/soichih/event) allows web UI and CLI to subscribe to an event stream via websocket. Various services publish events such as task/instance status or dataset detail updates. Other services can then subscribe to these events with an appropriate access token to receive in realtime, or queue these events to be handled by various event handlers.
 
-### Brainlife Web UI
+### Warehouse 
 
-Warehouse provides a Brainlife web UI which is written using [VueJS](https://vuejs.org/); a popular Javascript frontend framework. Standard post-processing tools such as webpack and babel are used to compile our UI code before delivered to the user's browser. A small amount of server-side rendering is performed periodically to provide scheme.org descriptors for our public assets; such as Apps, Publications, Projects. This also promotes discoverability of those assets by various search engines.
+[Warehouse](https://github.com/brain-life/warehouse) provides a bulk of Brainlife specific functionalities. Brainlife web UI and CLI (command-line-interface) primarily interface with warehouse APIs to fulfill most user requests. Warehouse provides functionalities such as organizing datasets under projects, orchestrating pipeline rules, and requesting Amaretti to submit jobs or move datasets between various computing resources as well as staging and archiving datasets to and from the Warehouse archive. All new datasets are currently archived on XSEDE Wrangler and optionally copied to IU SDA tape archive system as a backup for published datasets.
+
+Brainlife's web UI is written using [VueJS](https://vuejs.org/); a popular Javascript frontend framework. Standard post-processing tools such as webpack and babel are used to compile our UI code before delivered to the user's browser. A small amount of server-side rendering is performed periodically to provide scheme.org descriptors for our public assets; such as Apps, Publications, Projects. This also promotes discoverability of those assets by various search engines.
+
+#### Bulk Processing
+
+Brainlife Apps are designed to process one subject at a time. If a user wants to run an App across multiple subjects, the same App must be submitted as many times as there are subjects. For example, if a user wants to submit a workflow consiting of 10 individual Apps across 200 subjects, it will require 2000(10x200) indivisual jobs to be submitted and monitored. 
+
+To manage this, we have developed a mechanism which we call "pipelines". pipelines works similar to "stream processing" and it can be configured by creating a series of "rules" through a simple user interface on Brainlife. Each pipeline rule is responsible for submitting a specific App whenever it detects a new input dataset and corresponding output datasets that are yet to be generated. 
+
+Unlike other workflow management systems such as PegasusWMS, Nipype, condor DAGMan, where user would imperetively define the entire workflow on various programming langauges or in a proprietary syntax and execute (submit) the entire workflow, Brainlife's pipeline rules are evaulated continously (until they are deactivated) and can be setup one rule at a time while executing earlier rules. We believe that our method of handling large workflows through stream processing method has several adavantages over more conventional workflow management systems.
+
+* Easy to configure (no programming needed), and more intuitive sepecially for a novice users.
+* More error resilient, and allows users to handle / recover from issues that were not anticipated when the pipelines are first conveived. When a job fails, the failed job can be handled individually, or setup another set of rules to process subset of subjects to work around the problem while other rules are still active.
+* Whenever new datasets becomes available (either uploaded by users, generated by another process, or by other rules), existing rules will automatically detect those new datasets and submit new jobs if necessary. Pipeline rules can be configured once, and left alone for as long as necessary (nothing needs to be "resubmitted" to handle new datasets.)
+
+We have observed the following issues associated with our pipeline system.
+
+* When there are many rules involved, it could be difficult to understand the entire workflow. A better visualization might help.
+* TODO..
 
 ### CLI
 
