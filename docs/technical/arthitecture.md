@@ -26,22 +26,30 @@ We have developed a simple authentication service which maintains user informati
 
 Brainlife's web UI is written using [VueJS](https://vuejs.org/); a popular Javascript frontend framework. Standard post-processing tools such as webpack and babel are used to compile our UI code before delivered to the user's browser. A small amount of server-side rendering is performed periodically to provide scheme.org descriptors for our public assets; such as Apps, Publications, Projects. This also promotes discoverability of those assets by various search engines.
 
+#### Modular Processing
+
+Brainlife platform allows App developers to register [datatypes](https://brainlife.io/docs/user/datatypes/). Each App exchange data through registered datatypes and this allows App to be written in a modular fasion; each App is only responsible for specific data processing (alignment, tracking, statistical analysis, etc..) which increases the amount of code reuse, and App developer can focus on truly unique aspect of their App. For example, statistician writing a statistical method does not have to concern how the input data is preprocessed, or a developer writing fiber tracking App does not have to write code that analyzes generated fibers which is commonly handled by tract profile analysis Apps. From a user's point of view, module design allows them to more easily compose their workflow using interchangable Apps that fit their needs. User can also more easily experiment with newer version or different algorithms only on a part of their workflow.
+
+Allowing users to compose different App increases a chance of incompatibility between Apps. For example, although an App might take anat/t1w input, it might only work properly with *acpc aligned* anat/t1 input. To reduce the risk of imcompatibility between the Apps, Brainlife allows each datasets to be tagged by ["datatype tags"](https://brainlife.io/docs/user/datatypes/#datatype-tags). App developer can then specify certain datatype tags to be required by its input. This prevents users from submitting Apps with incompatible input dataset.
+
+Brainlife Apps are designed to process one subject at a time. If a user wants to run an App across multiple subjects, the same App must be submitted as many times as there are subjects. This allows Amaretti to submit Apps as an individual jobs on HPC / high-throughput-computing systems, and even across multiple resources if necessary and/or when those resources are available. Eventually, this approach would enable us to submit jobs on truely D-HTC systems for a large "big data" processing. Submitting invidual jobs for each subject also allows us to better handle error that occurs on certain subjects without impacting the overall workflows. As the number of processed subjects increases, it is more likely that some subjects will never complete successfully (such as due to data issue).
+
 #### Bulk Processing
 
-Brainlife Apps are designed to process one subject at a time. If a user wants to run an App across multiple subjects, the same App must be submitted as many times as there are subjects. For example, if a user wants to submit a workflow consiting of 10 individual Apps across 200 subjects, it will require 2000(10x200) indivisual jobs to be submitted and monitored. 
+As we modularized our data processing, it created issues for managing our data processings. For example, if a user wants to submit a workflow consiting of 10 individual Apps across 200 subjects, it will require 2000(10x200) indivisual jobs to be submitted and monitored. 
 
-To manage this, we have developed a mechanism which we call "pipelines". pipelines works similar to "stream processing" and it can be configured by creating a series of "rules" through a simple user interface on Brainlife. Each pipeline rule is responsible for submitting a specific App whenever it detects a new input dataset and corresponding output datasets that are yet to be generated. 
+To manage this, we have developed a mechanism which we call [pipeline](https://brainlife.io/docs/user/pipeline/). The pipeline allows ["stream processing"](https://medium.com/@gowthamy/big-data-battle-batch-processing-vs-stream-processing-5d94600d8103) of Brainlife archived datasets and it can be configured by creating a series of "rules" through a simple user interface. Each pipeline rule is responsible for submitting a specific App whenever it detects a new input dataset and corresponding output datasets that are yet to be generated. Brainlife's pipeline rules are evaulated continously (until they are deactivated) and can be setup one rule at a time while executing earlier rules. We believe that our method of handling large workflows through stream processing method has several adavantages over more conventional workflow management systems such as PegasusWMS, Nipype, condor DAGMan, where user would imperetively define the entire workflow on various programming langauges or in a proprietary syntax and execute (submit) the entire workflow.
 
-Unlike other workflow management systems such as PegasusWMS, Nipype, condor DAGMan, where user would imperetively define the entire workflow on various programming langauges or in a proprietary syntax and execute (submit) the entire workflow, Brainlife's pipeline rules are evaulated continously (until they are deactivated) and can be setup one rule at a time while executing earlier rules. We believe that our method of handling large workflows through stream processing method has several adavantages over more conventional workflow management systems.
+The advantages are ...
 
-* Easy to configure (no programming needed), and more intuitive sepecially for a novice users.
-* More error resilient, and allows users to handle / recover from issues that were not anticipated when the pipelines are first conveived. When a job fails, the failed job can be handled individually, or setup another set of rules to process subset of subjects to work around the problem while other rules are still active.
+* More error resilient, and allows users to handle / recover from issues that are not anticipated when the workflow is first conveived. When a job fails, the failed job can be handled individually, or setup another set of rules to process subset of subjects to work around the problem while other rules are still active.
 * Whenever new datasets becomes available (either uploaded by users, generated by another process, or by other rules), existing rules will automatically detect those new datasets and submit new jobs if necessary. Pipeline rules can be configured once, and left alone for as long as necessary (nothing needs to be "resubmitted" to handle new datasets.)
+* Can be configured through GUI (no programming / special syntax is needed). Easier for novice users as complexity can be *added* rather than having to think through everything before submitting the entire workflow.
 
-We have observed the following issues associated with our pipeline system.
+The disadvantages are ...
 
-* When there are many rules involved, it could be difficult to understand the entire workflow. A better visualization might help.
-* TODO..
+* When there are many rules involved, it is difficult to understand the entire workflow (a better visualization might help)
+* Each rule is applied to all *subjects*. It is difficult / impossible to define rules that operates on multiple subjects simultanously; like to aggregate outputs from all subjects (we have a different mechanism to accomplish this)
 
 ### CLI
 
