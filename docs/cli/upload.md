@@ -189,7 +189,7 @@ done
 If you have datasets organized in a BIDS format, you can upload the entire datasets with a single command.
 
 ```
-bl dataset bidsupload --tag test --project 5b031990251f5200274d9cc4 -d my_bids_dir
+bl bids upload --tag test --project 5b031990251f5200274d9cc4 -d my_bids_dir
 ```
 
 
