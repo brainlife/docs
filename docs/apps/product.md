@@ -1,6 +1,6 @@
 # `product.json`
 
-Your App can optionally generate a file named `product.json` to send information back to Brainlife. You can think of it as the opposite end of `config.json`. While `config.json` is used to send inputs and configuration from the user to your App, `product.json` will be loaded by Brainlife upon successful completion of your App and information will be stored in the Brainlife's internal database. You can use `product.json` to relay information back to the App submitter, or used to perform data aggregation quickly across multiple subjects.
+Your App can optionally generate a file named `product.json` to send information back to Brainlife. You can think of it as the counterpart for `config.json`. As `config.json` is used to pass configuration parameters from the user to an App, `product.json` can be used to send information from your App back to Brainlife upon successfully completion. The information stored in  `product.json` can be used relay information back to the App submitter, or used to perform data aggregation quickly across multiple subjects.
 
 !!! warning
     You should not store more than a few kilobytes of information on `product.json`.
@@ -115,7 +115,7 @@ Deverloper can also use Brainlife API to query for datasets and its product.json
 
 ## 3. Specifying dataset (user) tags
 
-Your App can set "tags" field to specify dataset tags that you'd like to add to the dataset output. 
+Your App can set "tags" key to specify dataset tags that you'd like to add to the dataset output. 
 
 ```json
 {
@@ -123,10 +123,34 @@ Your App can set "tags" field to specify dataset tags that you'd like to add to 
 }
 ```
 
-You can use this feature to set important information about the processing done to the dataset and pass it down the pipeline. 
+!!! note
+    If you have multiple output datasets, specified tags will be applied to all output datasets. If you'd like to specify different tags
+    for each output dataset, please read the section below ("Multiple output datsets")
 
+You can also set(/override) dataset metadata
 
-## 4. Multiple output datasets
+```json
+{
+    "meta": {
+        "subject": "12345",
+        "SliceTiming": [0, 1, 2, 3]
+    }
+}
+```
+
+Although not recommended, you can also override datatype tag of the output dataset.
+
+```json
+{
+    "datatype_tags": [ "acpc_aligned" ],
+}
+```
+
+!!! warning 
+    Brainlife UI relies on each App to have predetermined datatype and datatype tags. Overriding datatype tags could cause your workflow
+    to be inconsistent. You should also make sure that any datatype tags you are using is valid and [registered](https://brainlife.io/datatypes) for your output datatype.
+
+## Multiple output datasets
 
 Most Apps output more than 1 datasets. By default, all information stored on `product.json` will be copied to all output datasets. If you'd like to store different information for each output dataset, you can do so by organizing your `product.json` with App's registerd output IDs as keys on the root of `product.json`
 

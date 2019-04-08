@@ -50,6 +50,7 @@ The disadvantages are ...
 
 * When there are many rules involved, it is difficult to understand the entire workflow (a better visualization might help)
 * Each rule is applied to all *subjects*. It is difficult / impossible to define rules that operates on multiple subjects simultanously; like to aggregate outputs from all subjects (we have a different mechanism to accomplish this)
+* Could lead to infinite loop as our system is not *DAG* (hasn't happened yet)
 
 ### CLI
 
