@@ -2,7 +2,7 @@
 
 ## SVG
 
-![png_brainlife](/docs/img/media/brainlife.svg)
+![png_brainlife](/docs/img/media/brainlife.io.svg)
 
 ![svg](/docs/img/media/logo.svg)
 
