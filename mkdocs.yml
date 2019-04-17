@@ -1,4 +1,4 @@
-site_name: Brainlife Documentation
+site_name: brainlife Documentation
 site_author: 'Soichi Hayashi'
 site_url: https://brainlife.io/docs
 
@@ -6,7 +6,7 @@ site_url: https://brainlife.io/docs
 repo_name: 'brainlife/docs'
 repo_url: 'https://github.com/brainlife/docs'
 
-copyright: 'Copyright &copy; 2017 - 2019 Brainlife.io'
+copyright: 'Copyright &copy; 2017 - 2019 brainlife.io'
 
 theme:
   name: 'material'
@@ -17,7 +17,7 @@ theme:
 nav:
   - Home: index.md
 
-  - Using Brainlife:
+  - Using brainlife:
     - Getting Started: user/started.md
     - Projects: user/project.md
     - Datatypes: user/datatypes.md
@@ -54,7 +54,8 @@ nav:
 
   - Contact: contact.md
   - Privacy Policy: privacy.md
-  - Releases: releases.md
+  - Media / Branding: media.md
+#  - Releases: releases.md
 
 extra:
   disqus: 'brain-life'
