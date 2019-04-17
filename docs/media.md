@@ -1,4 +1,4 @@
-# Logos
+# Brainlife.io Logos
 
 ## SVG
 
