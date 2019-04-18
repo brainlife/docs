@@ -13,7 +13,7 @@ You are free to use the following logos / images in your scientific publications
 
 ## PNG
 
-Please don't use these for posters (use svg versions above)
+The following are bitmap version of the above logos. Please use SVG versions if possible.
 
 ### [logo.png](/docs/img/media/logo.png)
 
@@ -26,3 +26,9 @@ Please don't use these for posters (use svg versions above)
 ### [brainlife.png](/docs/img/media/brainlife.png)
 
 ![brainlife](/docs/img/media/brainlife.png)
+
+### [brainlife.io.png](/docs/img/media/brainlife.io.png)
+
+![brainlife.io](/docs/img/media/brainlife.io.png)
+
+
