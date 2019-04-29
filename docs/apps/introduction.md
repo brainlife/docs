@@ -66,8 +66,11 @@ Your App should read from one or more of these datatypes and write output data i
 
 We maintain a list of `datatypes` in our [brain-life/datatypes](https://github.com/brain-life/datatypes/tree/master/datatypes/neuro) repo. To create a new datatype, please open an issue, or submit a PR with a new datatype definition file (.json). We do not modify datatypes once it's published to preserve backward compatibility, but you can re-register new datatype under a different version.
 
-!!! hint
-    Brainlife app should follow the [Do One Thing and Do It Well](https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well) principle where a complex workflow should be split into several smaller Apps (but no more than necessary nor practical) to promote code-reuse and help parallelize your workflow and run each App on the most appropriate compute resource available.
+
+!!! quote
+    This is the Unix philosophy: Write programs that do one thing and do it well. Write programs to work together. - A Quarter Century of Unix by Doug McIlroy
+
+Brainlife app should follow the [Do One Thing and Do It Well](https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well) principle where a complex workflow should be split into several smaller Apps (but no more than necessary nor practical) to promote code-reuse and help parallelize your workflow and run each App on the most appropriate compute resource available.
 
 !!! hint
     Before writing your apps, please browse [currently registered Brainlife Apps](https://brainlife.io/warehouse/#/apps) and datatypes under Brainlife.io to make sure you are not reinventing Apps. If you find an App that is similar to what you need, please contact the developer of the App and discuss if the feature you need can be added to the App.

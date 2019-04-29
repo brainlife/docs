@@ -64,20 +64,33 @@ t1.nii.gz
 You can bulk download a certain datatype from a selected project with something like a following bash script.
 
 ```bash
-#!/bin/bash
+set -e
 
-bl dataset query -p 5a5506fc4f89380027a9a493 -d neuro/anat/t1w --json > list.json
-count=$(cat list.json | jq -r '.[].meta.subject' | wc -l)
-for ((i=0;i<$count;i++));
+project=5b0dad8041711001e958b519
+datatype="neuro/tractprofile"
+
+#cache the list of datasets that we could download
+if [ ! -f all.json ]; then
+    bl dataset query --limit 10000 --project $project --datatype $datatype --json > all.json
+fi
+
+#enumerate subjects
+for subject in $(jq -r '.[].meta.subject' all.json | sort -u)
 do
-        id=$(cat list.json | jq --argjson arg $i -r '.[$arg]._id')
-        subj=$(cat list.json | jq --argjson arg $i -r '.[$arg].meta.subject')
-        echo "downloading dataset $subj"
-        bl dataset download $id
-        mkdir -p $subj
-        mv $id/t1.nii.gz ${subj}
-        rm -rf $id
+    echo "downloading subject:$subject ---------------"
+    mkdir -p 2019_tractprofile/$subject/
+    ids=$(jq -r '.[] | select(.meta.subject == '\"$subject\"') | ._id' all.json)
+    for id in $ids
+    do
+        echo $id $tags
+        tags=$(jq -r '.[] | select(._id=='\"$id\"') | .tags | join(".")' all.json)
+        outdir=2019_tractprofile/$subject/$tags
+        if [ ! -d $outdir ]; then
+            bl dataset download $id --directory $outdir
+        fi
+    done
 done
+
 ```
 
 ## Download published datasets

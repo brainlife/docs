@@ -23,9 +23,11 @@ The following are bitmap version of the above logos. Please use SVG versions if 
 
 ![png_grayback](/docs/img/media/logo_grayback.png)
 
+<!--
 ### [brainlife.png](/docs/img/media/brainlife.png)
 
 ![brainlife](/docs/img/media/brainlife.png)
+-->
 
 ### [brainlife.io.png](/docs/img/media/brainlife.io.png)
 
