@@ -25,11 +25,11 @@ nav:
     - Pipelines: user/pipeline.md
     - Publications: user/publication.md
 
-  - Tutorials: 
-    - Tractometry: tutorial/diffusion-and-tractography.md
-    - Structural networks: tutorial/networkneuroscience-structural.md
-    - Functional networks: tutorial/networkneuroscience-functional.md
-    
+#  - Tutorials: 
+#    - Tractometry: tutorial/diffusion-and-tractography.md
+#    - Structural networks: tutorial/networkneuroscience-structural.md
+#    - Functional networks: tutorial/networkneuroscience-functional.md
+
   - Developing Apps: 
     - Introduction: apps/introduction.md
     - HelloWorld: apps/helloworld.md
@@ -44,6 +44,7 @@ nav:
     - Uploading Dataset: cli/upload.md
     - Running Apps: cli/app.md
     - Downloading Datasets: cli/download.md
+    - Group Analysis: cli/group.md
 
   - Compute Resources: 
     - Registering Resource: resources/register.md
