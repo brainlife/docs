@@ -104,17 +104,19 @@ All that is required to upload a dataset is a directory to upload, a project id,
 I will upload my dataset by using the following command, given the id of my project and datatype of my dataset:
 
 ```
-$ bl dataset upload --t1 t1/t1.nii.gz    \
+$ bl dataset upload \
     --project 5afc2c8de68fc50028e90820   \
     --datatype neuro/anat/t1w \
     --desc 'My t1 weighted image' \
-    --subject 12345                      \
-    --session 1                          \
-    --tag "t1"                           \
+    --subject 12345 \
+    --session 1 \
+    --t1 t1/t1.nii.gz \
+    --meta t1/t1.json \
+    --tag "t1" \
     --tag "image"
 ```
 
-Notice that I supplied `--tag` twice to add more than one search tag to my dataset. This works the same way with `datatype_tags`.
+Notice that I supplied `--tag` twice to add more than one search tag to my dataset. This works the same way with `datatype_tags`. --meta is optional but you should point to any "sidecar" json if you have one
 
 You can upload datasets by specifying a single directory containing all of the files for its associated datatype (using `--directory`). However, you can also specify the path for each individual file id, as is done above (`--t1 t1/t1.nii.gz`, where `--t1` is the file id and `t1/t1.nii.gz` is the file to upload).
 
@@ -183,6 +185,9 @@ for type in CTRL PTNT; do
     done
 done
 ```
+
+!!! note
+    You should add --meta if you have any sidecard to go with each dwi/t1
 
 ## BIDS Upload
 
