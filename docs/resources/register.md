@@ -18,26 +18,9 @@ Currently, only Brainlife admin can share personal resources with other members.
 	Although we do our best to limit access to your dataset on shared resources, we recommend registering your own resource for added security
 	especially if you are planning to process sensitive data. We currently do not allow any datasets with PHI (protected health information).
 
-## Registering Resources
-
-To register your resource, go to [Brainlife Settings](https://brainlife.io/amaretti/#!/resources) page, and Under "HPC Systems" click "Add New Account". A resource entry form should appear. Please populate the following fields.
-
-* *Name* Enter the name of rhe resource
-* *Hostname* The hostname of your compute resource (usually a login/submit host)
-* *Username* Username used to ssh to this resource
-* *Workdir* Directory used to stage and store generated datasets by apps. *You should not share the same directory with other resources*. Please make sure that the specified directory exits (mkdir if not).
-* SSH Public Key: Copy the content of this key to your resource's ~/.ssh/authorized_keys. Please read [authorized_keys](https://www.ssh.com/ssh/authorized_keys/) for more detail.
-
-You can leave the rest of the fields empty for now.
-
-!!! warning
-	IU HPC systems requires you to submit [ssh public key agreement form](https://hpceverywhere.iu.edu/agree) so that you can authenticate using your ssh public key.
-
-Click OK. Once you are finished with copying ssh key and make sure the workdir exists, click "Test" button to see if Brainlife can access your resource. You should see a green checkbox if everything is good.
-
 ## Configuring Resources
 
-Once you register your resource, you will need to perform a few things to prepare your resource so that Brainlife can successfully execute Brainlife apps.
+Before you can register your resource, you should make sure that your resource is ready to run brainlife Apps.
 
 ### ABCD Default Hooks
 
@@ -84,11 +67,7 @@ $ ~/.bashrc
 export PATH=$PATH:/N/u/brlife/Carbonate/bin
 ```
 
-For singularity, you can either install it on the system, or for most HPC systems you can simply add following in your `~/.modules` file.
-
-```
-module load singularity
-```
+For singularity, you can either install it on the system (`apt install singularity-container` with neurodebian, or `yum install epel-release singularity` for yum based systems), or for most HPC systems you can simply add `module load singularity` in your `~/.modules` file.
 
 By default, singularity uses user's home directory to cache docker images (and /tmp to create a merged container image to run). If you have limited amount of home directory space, you should override these directories by adding the following in your .bashrc
 
@@ -96,7 +75,11 @@ By default, singularity uses user's home directory to cache docker images (and /
 export SINGULARITY_CACHEDIR=/N/dc2/scratch/<username>/singularity-cachedir
 ```
 
-> Please replace <username> with your username, and make sure specified directories exists.
+* Please replace <username> with your username, and make sure specified directories exists.
+
+!!! note
+    singularity by default does not expose any mounted file systems inside the container. If you are mounting any extra drives, you will most likely need to update `/etc/singularity/singularity.conf` to have the `mount hostfs` option set to "yes" 
+    > mount hostfs = yes
 
 ### Other ENV parameters
 
@@ -105,6 +88,23 @@ Depending on the app you are trying to run, some app may require additional ENV 
 ```
 export FREESURFER_LICENSE="hayashis@iu.edu 29511 *xxxxxxxxxxx xxxxxxxxxxx"
 ```
+
+## Registering Resources
+
+To register your resource, go to [Brainlife Settings](https://brainlife.io/amaretti/#!/resources) page, and Under "HPC Systems" click "Add New Account". A resource entry form should appear. Please populate the following fields.
+
+* *Name* Enter the name of rhe resource
+* *Hostname* The hostname of your compute resource (usually a login/submit host)
+* *Username* Username used to ssh to this resource
+* *Workdir* Directory used to stage and store generated datasets by apps. *You should not share the same directory with other resources*. Please make sure that the specified directory exits (mkdir if not).
+* SSH Public Key: Copy the content of this key to your resource's ~/.ssh/authorized_keys. Please read [authorized_keys](https://www.ssh.com/ssh/authorized_keys/) for more detail.
+
+You can leave the rest of the fields empty for now.
+
+!!! warning
+	IU HPC systems requires you to submit [ssh public key agreement form](https://hpceverywhere.iu.edu/agree) so that you can authenticate using your ssh public key.
+
+Click OK. Once you are finished with copying ssh key and make sure the workdir exists, click "Test" button to see if Brainlife can access your resource. You should see a green checkbox if everything is good.
 
 ## Enabling Apps
 
