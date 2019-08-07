@@ -90,7 +90,7 @@ $ bl dataset upload --help
     --directory <directory>          directory where your dataset is located
     --project <projectid>            project id to upload dataset to
     --datatype <datatype>            datatype of uploaded dataset
-    --datatype_tags <datatype_tags>  datatype_tags of uploaded dataset
+    --datatype_tag <datatype_tags>   datatype_tag of uploaded dataset
     --desc <description>             description of uploaded dataset
     --subject <subject>              subject of uploaded dataset
     --session <session>              session of uploaded dataset
@@ -114,7 +114,7 @@ $ bl dataset upload --t1 t1/t1.nii.gz    \
     --tag "image"
 ```
 
-Notice that I supplied `--tag` twice to add more than one search tag to my dataset. This works the same way with `datatype_tags`.
+Notice that I supplied `--tag` twice to add more than one search tag to my dataset. This works the same way with `datatype_tag`.
 
 You can upload datasets by specifying a single directory containing all of the files for its associated datatype (using `--directory`). However, you can also specify the path for each individual file id, as is done above (`--t1 t1/t1.nii.gz`, where `--t1` is the file id and `t1/t1.nii.gz` is the file to upload).
 
