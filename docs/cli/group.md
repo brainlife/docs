@@ -65,10 +65,12 @@ Brainlife allows Apps to generate condensed (textual) version of output dataset 
 
 You can download the content of `product.json` with brainlife.io REST API. 
 
-## Matlab Example
-
 !!! note
     Please run `bl login` before running this example. You will also have to adjust the project / datatype IDs.
+
+## Matlab Example
+
+The following code downloads dataset records from brainlife so that you can then iterate through each record and examine meta data, or product contents.
 
 ```matlab
 
@@ -104,3 +106,77 @@ disp(data)
 
  
 ```
+
+## Python Example
+
+Similarly, you can query dataset records with python. 
+
+```python
+#!/usr/bin/python
+
+import requests
+import os
+import json
+
+#load the jwt token (run bl login to create this file)
+jwt_file = open(os.environ['HOME']+'/.config/brainlife.io/.jwt', mode='r')
+jwt = jwt_file.read()
+
+#query datasets records
+find = { 
+	'datatype': '58c33bcee13a50849b25879a', 
+	'project': '5cb8973c71a8630036207a6a',
+	'tags': 'acpc_aligned' }
+params = { 
+	'limit': 100, 
+	'select': 'product meta', #we just want product and meta
+	'find': json.JSONEncoder().encode(find) }
+res = requests.get('https://brainlife.io/api/warehouse/dataset/', params=params, headers={'Authorization': 'Bearer '+jwt})
+if res.status_code != 200:
+	raise Error("failed to download datasets list")
+
+```
+
+Once you obtain the dataset records (`res`) you can iterate through each datasets and do any group analysis, or you can visualize the content of product.json. 
+
+For example, the following code shows how to convert the base64 encoded acpc alignment QC images obtained above into a single HTML page.
+
+
+```python
+
+#convert list of product.json into html
+data = res.json()
+for dataset in data["datasets"]:
+	id = dataset["_id"]
+	subject = dataset["meta"]["subject"]
+	print('<div style="float: left; height: 250px; width: 250px;">');
+	print("<b>"+subject+"</b><br>")
+
+	#output image if it has one
+	base64 = None
+	product = dataset["product"]
+	if "brainlife" in product:
+		brainlife = product["brainlife"]
+		if len(brainlife) == 1:
+			brainlife0 = brainlife[0]
+			if "base64" in brainlife0:
+				#print(json.JSONEncoder().encode(brainlife0["base64"]))
+				base64 = brainlife0["base64"]
+	if base64:
+		print('<img src="data:image/png;base64,'+brainlife0["base64"]+'">\n')
+	else:
+		print('<p>no image</p>\n')
+	print('</div>')
+
+```
+
+You run the whole script which generates the output HTML
+
+```bash
+./script.py > output.html
+```
+
+You can then open this html file on your browser. 
+
+![group](/docs/img/group.png)
+

@@ -10,6 +10,7 @@ copyright: 'Copyright &copy; 2017 - 2019 brainlife.io'
 
 theme:
   name: 'material'
+  language: 'en'
   favicon: '/img/favicon.ico'
   palette:
     primary: 'light blue'
