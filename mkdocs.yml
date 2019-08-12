@@ -31,6 +31,13 @@ nav:
 #    - Structural networks: tutorial/networkneuroscience-structural.md
 #    - Functional networks: tutorial/networkneuroscience-functional.md
 
+  - Using CLI:
+    - Installation: cli/install.md
+    - Uploading Dataset: cli/upload.md
+    - Running Apps: cli/app.md
+    - Downloading Datasets: cli/download.md
+    - Group Analysis: cli/group.md
+
   - Developing Apps: 
     - Introduction: apps/introduction.md
     - HelloWorld: apps/helloworld.md
@@ -40,19 +47,14 @@ nav:
     - Custom Hooks: apps/customhooks.md
     - product.json: apps/product.md
 
-  - CLI:
-    - Installation: cli/install.md
-    - Uploading Dataset: cli/upload.md
-    - Running Apps: cli/app.md
-    - Downloading Datasets: cli/download.md
-    - Group Analysis: cli/group.md
-
   - Compute Resources: 
     - Registering Resource: resources/register.md
 
   - Technical:
     - Architecture: technical/arthitecture.md
     - APIs: technical/api.md
+
+  - Careers: careers/jobs.md
 
   - Contact: contact.md
   - Privacy Policy: privacy.md

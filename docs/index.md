@@ -1,3 +1,5 @@
+<style> #disqus_thread, #__comments { display: none } </style>
+
 # What is Brainlife?
 
 Brainlife promotes engagement and education in reproducible neuroscience. We do this by providing an online platform where users can publish code (Apps), Data, and make it "alive" by integragrate various HPC and cloud computing resources to run those Apps. 

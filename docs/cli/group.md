@@ -109,7 +109,7 @@ disp(data)
 
 ## Python Example
 
-Similarly, you can query dataset records with python. 
+Similarly, you can query dataset records using python. 
 
 ```python
 #!/usr/bin/python
@@ -137,9 +137,9 @@ if res.status_code != 200:
 
 ```
 
-Once you obtain the dataset records (`res`) you can iterate through each datasets and do any group analysis, or you can visualize the content of product.json. 
+As you can see, you can construct your query and make a request to brainlife API with your access token issued by running `bl login`. Once you obtain the dataset records (`res`) you can iterate through each dataset and do any group analysis, or generate visualization using the content of meta and product objects.
 
-For example, the following code shows how to convert the base64 encoded acpc alignment QC images obtained above into a single HTML page.
+For example, the following code shows how to convert the QC images from ACPC Alignment App into a single HTML page.
 
 
 ```python
@@ -170,13 +170,12 @@ for dataset in data["datasets"]:
 
 ```
 
-You run the whole script which generates the output HTML
+You can run this script and capture the output to generate HTML file. You can then open it with your browser. 
 
 ```bash
 ./script.py > output.html
 ```
 
-You can then open this html file on your browser. 
 
 ![group](/docs/img/group.png)
 
