@@ -22,7 +22,13 @@
 
 * Please attach your resume
 
+## Github PR
+
+Please impress us by sending us a github PR to improve any of our [Apps](https://github.com/brainlife?utf8=%E2%9C%93&q=app-&type=&language=), [Visualization Tools](https://github.com/brainlife?utf8=%E2%9C%93&q=ui&type=&language=) and [More Vis Tools](https://github.com/brainlife?utf8=%E2%9C%93&q=ui&type=&language=]), [Documentation](https://github.com/brainlife/docs), or [Web UI](https://github.com/brain-life/warehouse).
+
 ## Additional Info
+
+Please include answers to *some* of the following questions.
 
 * What would be your immediately contributions to brainlife.io?
 * If we change the title of this position, what should it be and why?
