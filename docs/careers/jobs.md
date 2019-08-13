@@ -7,7 +7,7 @@
 
 ## Make an impact
 
-At brainlife.io, you can shape the future of scientific computing and accelerate discovery by building an online platform that are used by researchers and scientists around the world. We have job openings in varaiety of positions with diverse skill sets. Please join us to advance neuroscience and better understand how our brain works.
+At brainlife.io, you can shape the future of scientific computing and accelerate discovery by building an online platform that are used by researchers and scientists around the world. We have job openings in variety of positions with diverse skill sets. Please join us to advance neuroscience and better understand how our brain works.
 
 ## Location
 
