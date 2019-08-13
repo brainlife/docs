@@ -4,8 +4,7 @@
 
 ## Fullstack Developer
 
-You will be joining a team of software engineer developing brainlife.io platform. You will be tasked with maintaining and developing new features for brainlife.io and engineering new ways to 
-run scientific computations and machine learning algorithms across the world fastest research supercomputers. 
+You will be joining the team developing the brainlife.io platform. You will be tasked with maintaining and developing new features for brainlife.io and engineering new ways to run scientific computations and machine learning algorithms across the world fastest research supercomputers. 
 
 ### You are a solid fit for this position if...
 
