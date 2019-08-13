@@ -2,31 +2,37 @@
 
 # Careers
 
-## Software Engineer
+## Fullstack Developer
 
-TBD... describe this position
+You will be joining a team of software engineer developing brainlife.io platform. You will be tasked with maintaining and developing new features for brainlife.io and engineering new ways to 
+run scientific computations and machine learning algorithms across the world fastest research supercomputers. 
 
 ### You are a solid fit for this position if...
 
-* Bachelor’s degree in Computer Science, Computer Engineering or related technical discipline
-* 4+ years of professional (full-stack) software engineering experience.
-* Experience with both SQL (mysql) and NOSQL (mongoDB) database systems.
-* Eager to learn new technologies and open to receive feedback from other team members.
-* 2+ years of professional experience with vuejs or other web UI frameworks.
-* Nginx and familiarity with network engineering.
-* Experience in rabbitmq or any other messaging systems. 
-* Portofolio of previously designed user interfaces.
-* strong presence on github.
-* ansible, experience using monitoring systems (sensu, munin, etc..)
-* Apache Spark and other big data processing frameworks is a plus.
-* Experience with 24x7 operations.
+* You have 5+ years in a fullstack software engineering experience.
+* You have 3+ years of experience with Vue or another major JavaScript framework or library (Angular, React) and related build processes (Webpack, Grunt, Gulp)
+* Has a strong portofolio of previously designed user interfaces (your work)
+* You have experience with nodejs/express.
+* You have experience with both SQL (mysql) and NOSQL (mongoDB) database systems.
+* You have strong python and bash scripting experiences.
+* You are familiar with microservice architecture.
+* Experience maintaining docker containers.
+* You have demonstrable ability to write clean, simple, and maintainable code.
+* You can work without a lot of supervisions, but can keep the team member informed of your progress.
 
 ### Our idea of a perfect candidate is someone who..
 
-* Expert in Javascript (nodejs)
-* Strong python and bash experiences.
-* Experience in microservice and docker.
-* Demonstrable ability to write clean, concise, and maintainable code.
+* Bachelor’s degree in Computer Science, Computer Engineering, Information Technology, or a related technical field or foreign equivalent
+* Eager to learn new technologies and open to receive feedback from other team members.
+* Nginx and familiarity with network engineering.
+* Experience in rabbitmq or any other messaging systems. 
+* Proficient understanding of git, and strong presence on github.
+* ansible, experience using monitoring systems (sensu, munin, etc..)
+* Apache Spark and other big data processing frameworks is a plus.
+* Experience with 24x7 operations.
+* Experience working with APIs and REST-ful services
+* Can make meaningful contributions to code reviews
+* Can troubleshoot complex issues independently and seek input from the team when stuck
 
 ### This role will be responsible for...
 

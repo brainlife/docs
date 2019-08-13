@@ -20,18 +20,19 @@
 
 ## Resume (PDF preferred)
 
-* Please attach your resume
+* Please attach your resume with your email.
 
 ## Github PR
 
-Please impress us by sending us a github PR to improve any of our [Apps](https://github.com/brainlife?utf8=%E2%9C%93&q=app-&type=&language=), [Visualization Tools](https://github.com/brainlife?utf8=%E2%9C%93&q=ui&type=&language=) and [More Vis Tools](https://github.com/brainlife?utf8=%E2%9C%93&q=ui&type=&language=]), [Documentation](https://github.com/brainlife/docs), or [Web UI](https://github.com/brain-life/warehouse).
+To help us understand how much technical background you currently have, you can optionally send us a github PR to improve any of our [Brainlife Apps](https://github.com/brainlife?utf8=%E2%9C%93&q=app-&type=&language=) or our [Visualization Tools](https://github.com/brainlife?utf8=%E2%9C%93&q=ui&type=&language=) and [More Vis Tools](https://github.com/brainlife?utf8=%E2%9C%93&q=ui&type=&language=]). And please don't worry, we aren't going to merge your PRs without your permission. 
 
 ## Additional Info
 
-Please include answers to *some* of the following questions.
+You can include answers to questions like the following to help us understand more about you.
 
-* What would be your immediately contributions to brainlife.io?
-* If we change the title of this position, what should it be and why?
+* What type of contributions do you think you can make on brainlife.io?
 * What would all of your current coworkers say about you?
+* What do we need to accomplish in order to call our project successful? How do you define success / failurer?
+* To be conformtable with being told that you did a great job under this role, what must you accomplish?
 
 
