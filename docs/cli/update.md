@@ -3,9 +3,7 @@
 
 # Updating Datasets
 
-Brainlife dataset are immutable. Although you can not modify the content of the data itself, you can update its metadata, tags, and description using `bl dataset update` CLI.
-
-To update the dataset, you will need to know the dataset ID. Please see previous tutorials for querying project, dataset. Once you know the ID, you can then run the CLI like so.
+Brainlife datasets are immutable. Although you can not modify the content of the data, you can still update the metadata, tags, and description using `bl dataset update` CLI.
 
 ```bash
 
@@ -16,20 +14,26 @@ bl dataset update --id <datasetid> --run run-reset1
 
 ```
 
-You can add/remove tags 
+To update the dataset, you will need to know the dataset ID. Please see the previous tutorials for querying project ID, dataset ID, etc.
+
+You can easly add/remove tags like so.
 
 ```bash
 bl dataset update --id <datasetid> --remove_tag oldtag
 bl dataset update --id <datasetid> --add_tag newtag
 ```
 
-You can combine various parameters to update various items at once.
+You can combine various parameters.
 
 ```bash
 bl dataest update --id <datasetid> --desc "Updating things" --add_tag newtag --subject sub-123
 ```
 
-By combining with other CLIs and a bit of bash scripting, you can bulk update tags on multiple datasets. For example, let's say you have a file with a list of subject names to update
+## Bulk Update Tags
+
+By combining with other CLIs and a bit of bash scripting, you can bulk update tags on multiple datasets. 
+
+Let's say you have a file with a list of subject names to update.
 
 [S500.txt]
 
@@ -47,13 +51,12 @@ By combining with other CLIs and a bit of bash scripting, you can bulk update ta
 ..
 ```
 
-The following script will then iterate each subjects and set "S500" tag on all datasets with matching subjects.
+The following script will then iterate through this list and set "S500" tag on all datasets with matching subjects.
 
 ```bash
 #!/bin/bash
 for subject in $(cat S500.txt)
 do
-    #querying all datasets with $subject (you can add other query to be more specific)
     echo "finding subject:$subject"
     bl dataset query --project 59a09bbab47c0c0027ad7046 --subject $subject --json > list.json
     jq -r ".[]._id" list.json > ids.txt
@@ -69,5 +72,7 @@ do
 done
 
 ```
+
+If you want to udpate tags on more specific dataset (datatype, existing tags, etc..) you can update the `bl dataset query` parameters.
 
 
