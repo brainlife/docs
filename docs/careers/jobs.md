@@ -15,6 +15,7 @@ We are physically located at [Indiana University Bloomington](https://www.indian
 * [Community Developer / Outreach Coordinator](devrel.md)
 * [DevOps / Software Engineers](devop.md)
 * [Cloud and Cluster Administrator](sysad.md)
+* [Postdoctoral Research Scientists](postdoc.md)
 
 > Not seeing the position you were hoping for? [Tell us why](mailto:brlife@iu.edu) we would be crazy to not hire you!
 
