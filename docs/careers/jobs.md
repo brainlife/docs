@@ -1,13 +1,8 @@
 <style> #disqus_thread, #__comments { display: none } </style>
 
-# Careers
-
-!!! warning
-    This is a draft. 
-
 ## Make an impact
 
-At brainlife.io, you can shape the future of scientific computing and accelerate discovery by building an online platform that are used by researchers and scientists around the world. We have job openings in varaiety of positions with diverse skill sets. Please join us to advance neuroscience and better understand how our brain works.
+At brainlife.io, you can shape the future of scientific computing and accelerate discovery by building an online platform that are used by researchers and scientists around the world. We have job openings in variety of positions with diverse skill sets. Please join us to advance neuroscience and better understand how our brain works.
 
 ## Location
 
@@ -20,6 +15,7 @@ We are physically located at [Indiana University Bloomington](https://www.indian
 * [Community Developer / Outreach Coordinator](devrel.md)
 * [DevOps / Software Engineers](devop.md)
 * [Cloud and Cluster Administrator](sysad.md)
+* [Postdoctoral Research Scientists](postdoc.md)
 
 > Not seeing the position you were hoping for? [Tell us why](mailto:brlife@iu.edu) we would be crazy to not hire you!
 

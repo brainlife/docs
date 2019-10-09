@@ -37,6 +37,7 @@ nav:
     - Running Apps: cli/app.md
     - Downloading Datasets: cli/download.md
     - Group Analysis: cli/group.md
+    - Update Dataset: cli/update.md
 
   - Developing Apps: 
     - Introduction: apps/introduction.md
