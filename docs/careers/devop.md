@@ -42,5 +42,6 @@ run scientific computations and machine learning algorithms across the world fas
 * Continuously refactor and simplify existing code bases. 
 * Identify security issues and engineer ways to solve those issues.
 * Research new technologies and scientific computing methods
+* Identify/anticipate service bottlenecks and engineer solutions.
 
 <center><h2>[**Apply Now**](apply.md)</h2></center>
