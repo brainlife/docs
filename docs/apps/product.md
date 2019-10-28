@@ -89,6 +89,21 @@ You can also display plotly graph.
 }
 ```
 
+You can embed images by first base64 encoding the image and storing it on product.json
+
+
+```json
+{
+    "brainlife": [
+        { 
+            "type": "image/png", 
+            "name": "My image title",
+            "base64": "............base64 encoded png............"
+        }
+    ]
+}
+```
+
 ## 2. Storing unstructured data
 
 Any unstructured data can be just stored anywhere inside the `product.json`. 
