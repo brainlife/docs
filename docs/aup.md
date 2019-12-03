@@ -26,4 +26,4 @@ The user agrees not to, and not to allow third parties to, use our platforms
 
 * To generate, distribute, publish or facilitate unsolicited mass email, promotions, advertisings or other solicitations (“spam”).
 
-### The brainlife.io team
+##### The brainlife.io team
