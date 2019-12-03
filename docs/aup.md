@@ -1,4 +1,4 @@
-## Acceptable Use Policy
+# Acceptable Use Policy
 
 !!! Disclaimer
 
