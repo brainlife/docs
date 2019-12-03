@@ -12,7 +12,7 @@ Use of brainlife.io platform is subject to this Acceptable Use Policy.
 
 User agrees not to, and not to allow third parties to use our platforms
 
-* to violate, or encourage the violation of, the legal rights of others (for example, this may include allowing other users to infringe or misappropriate the intellectual property rights of others in violation of the Digital Millennium Copyright Act);
+* to violate, or encourage the violation of, the legal rights of others (for example, this may include allowing other users to infringe or misappropriate the intellectual property rights of others in violation of the [Digital Millennium Copyright Act](https://www.copyright.gov/legislation/dmca.pdf));
 
 * to disable, interfere with or circumvent any aspect of the platform.
 
