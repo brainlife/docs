@@ -4,9 +4,9 @@
 This tutorial will guide you through the following functionality of Brainlife. 
 
 * Signing up
-* Creating new projects and uploading datasets
+* Creating new projects and uploading data
 * Launching visualizers to visualize your data
-* Running processes on datasets and archiving results.
+* Running processes on data and archiving results.
 
 ## Sign Up
 
@@ -31,65 +31,59 @@ Click on `Project` button on the left hand side menu, then click a plus side but
 ![project new button](/docs/img/project_new_button.png)
 
 !!! note
-    Project is where you can organize your datasets, do data processing, and share datasets with your project members. For more information about project, please read [project page](/docs/user/project)
+    Project is where you can organize, process and share data with your project members. For more information about project, please read [project page](/docs/user/project)
 
 Enter any `name` and `description`, and leave everything else default. Click `Submit`. 
 
 Congratulations! You just created your first private project!
 
-### What is Dataset?
+### What is Data-object?
 
-!!! note
+`data-object` is a set of files/directories for a specific subject and modaility. It is the smallest set of data that you can interact with in Brainlife. For example, `neuro/dwi` data-object consists of files such as `dwi.nii.gz` (a file containing the actual 4D diffusion brain image data), `dwi.bvecs`, and `dwi.bvals` (which describe how the image was acquired by the MRI scanner). Or freesurfer output for a subject is considered to be a single "data-object" containing many directories and files. Brainlife processes data at each subject level, and for each data-object. Brainlife Data-objects are immutable; you cannot modify the content of the data-object once you create it, although you can modify its metadata (description, tags, sidecard).
 
-    **Dataset** (noun) 
-    
-    *a collection of related sets of information that is composed of separate elements but can be manipulated as a unit by a computer.*
+## Upload Data
 
-`dataset` is a set of files/directories for a specific subject and modaility. It is the smallest set of data that you can interact with in Brainlife. For example, `neuro/dwi` dataset consists of files such as `dwi.nii.gz` (a file containing the actual 4D diffusion brain image data), `dwi.bvecs`, and `dwi.bvals` (which describe how the image was acquired by the MRI scanner). Or freesurfer output for a subject is considered to be a single "dataset" containing many directories and files. Brainlife processes data at each subject level, and for each dataset. Brainlife Datasets are immutable; you cannot modify the content of the dataset once you create it, although you can modify its metadata (description, tags, sidecard).
-
-## Upload Dataset
-
-Now, let's upload some test datasets. Open the `Datasets` tab.
+Now, let's upload some test data. Open the `Archive` tab.
 
 Brainlife has 2 kinds of data storage. 
 
-* **Datasets Archive**
+* **Data Archive**
 
-    The datasets tab you are seeing now shows the current content of your dataset archive. Datasets under this tab are stored in our object storage permanently (and some are backed up to our tape archives also).
+    The Archive tab you are seeing now shows the current content of your data archive. Data-objects under this tab are stored in our archival storage permanently (but not backed-up until you publish them)
 
 * **Process Scratch Space**
 
-    You cannot directly use archived datasets to run Apps. To run Apps, datasets will be automatically staged out of your archive and transferred to Brainlife's scratch space and on various compute resources where Apps are executed.
+    You cannot directly run Apps on archived data. To run Apps, data-objects will be automatically staged out of your archive and transferred to various compute resources' scratch space where the Apps will be executed.
 
-    Datasets on process scratch space will be automatically removed within 25 days or sooner. If you have any output datasets that you'd like to keep permanently, you will need to archive them back to the Datasets Archive. 
+    Data geneated in process page will be automatically removed within 25 days or sooner. If you have any output data that you'd like to keep permanently, you will need to archive them back to the Data Archive. 
 
-Now, click `plus button` at the bottom of the screen to open the dataset upload dialog.
+Now, click `plus button` at the bottom of the screen to open the data upload dialog.
 
 ![upload form](/docs/img/upload.form.png)
 
-Select Datatype that you'd like to upload (currently limited to t1/t2 and dwi) and upload your dataset. 
+Select Datatype that you'd like to upload (currently limited to t1/t2 and dwi) and upload your data. 
 
 !!! note
-    If you don't have any data to upload, you can use datasets from Brainlife's various public projects. Please open any public project on Brainlife and go to "Visualize Dataset" section below.
+    If you don't have any data to upload, you can use data from other public projects, or import from datasets page.
 
 The Upload form will run a server side validation and data normalization service. You can check the results from this step. If everything looks good, click `Archive`.
 
 ![update validate](/docs/img/upload.validate.png)
 
-Once uploaded, you should see a new dialog showing details about your new datasets. All archived datasets are immutable (read-only), but you can copy them between projects or make changes to the metadata if necessary (description, tags, etc..).
+Once uploaded, you should see a new dialog showing details about your new data. All archived data is immutable (read-only), but you can copy them between projects or make changes to the metadata if necessary (description, tags, etc..).
 
-![dataset](/docs/img/dataset.png)
+![data-object](/docs/img/dataset.png)
 
 !!! note
-    `Stored in` field shows where your dataset is archived. For a large dataset, it might take a while for it to be archived. Please give it a few minutes.
+    `Stored in` field shows where your data is archived. For a large data-object, it might take a while for it to be archived. Please give it a few minutes.
 
-## Visualize Dataset
+## Visualize Data-objects
 
-To launch a visualization program, click a dataset record (not the check box which "selects" dataset), which opens a dataset detail modal. Then click on the visualizer icon (:fa-eye:) at the top of dataset modal.
+To launch a visualization program, click a data-object record (not the checkbox), which opens the data-object detail dialog box. Then click on the visualizer icon (:fa-eye:) at the top of data-object dialog box.
 
-Any datasets stored in Brainlife can be visualized using Web-based and/or Native (via [Web-VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing)) visualization Apps registered for each datatype. 
+Any data-objects stored in Brainlife can be visualized using Web-based and/or Native (via [Web-VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing)) visualization Apps registered for each datatype. 
 
-For example, `neuro/anat/t1` datasets can be visualized by the following set of Visualization Apps.
+For example, `neuro/anat/t1` data-object can be visualized by the following set of Visualization Apps.
 
 ![viewers](/docs/img/viewers.png)
 
@@ -100,49 +94,49 @@ Click any of the visualization Apps that you'd like to launch to visualize your 
 
 ## Downloading BIDS
 
-You can search/select and bulk download datasets. On the dataset table, select the datasets you'd like to download by clicking on the check box, then click `Download (BIDS)` button.
+You can search/select and bulk download data. In the archive page, select the data-object you'd like to download by clicking on the check box, then click `Download (BIDS)` button.
 
-![dataset](/docs/img/download.png)
+![download](/docs/img/download.png)
 
-Brainlife will stage selected datasets, organize them into a [BIDS structure](http://bids.neuroimaging.io), and let you download the whole structure as a single tar ball. Once it's ready, click `Download`.
+Brainlife will stage selected data-objects, organize them into a [BIDS structure](http://bids.neuroimaging.io), and let you download the whole structure as a single tar ball. Once it's ready, click `Download`.
 
 !!! note
-    At the moment, all Brainlife datasets will simply be stored under `/derivatives` directory regardless of the datatype.
+    At the moment, all Brainlife data-objects will be stored under `/derivatives` directory regardless of the datatype.
 
 ## Apps
 
 Before we proceed to `Process` tab, let's take a quick detour and visit the `Apps` page.
 
-![dataset](/docs/img/apps.png)
+![apps](/docs/img/apps.png)
 
-The `Apps` page shows all Brainlife Apps that are publicly available that you can execute on resources and datasets that you have access to. Please take a look and see what type of Apps are currently available. You can click on each tile to see more details.
+The `Apps` page shows all Brainlife Apps that are publicly available. Please take a look and see what types of Apps are currently available. 
 
 On Brainlife, Apps are normally small programs that perform a specific data processing. Although we have a few Apps that behave more like a typical *pipeline* or *workflow* (including pre/post processing, data analysis, reporting, etc..), most Brainlife Apps should only do one thing, and one thing well. 
 
 ### Datatypes
 
-Brainlife Apps exchange data through `datatypes`. Developers involved with interoperating input/output datasets should discuss and agree on the set of files/directory structure and their semantics, and register a new datatype by submitting an issue on [datatypes github repo](https://github.com/brain-life/datatypes).
+Brainlife Apps exchange data through `datatypes`. Developers involved with interoperating input/output data should discuss and agree on the set of files/directory structure and their semantics, and register a new datatype by submitting an issue on [datatypes github repo](https://github.com/brain-life/datatypes).
 
-![dataset](/docs/img/datatype.png)
+![datatype](/docs/img/datatype.png)
 
-Various colored boxes show the input and output datatypes. For example, the above image shows that this app will take `dwi` input dataset, and generate another `dwi` dataset with a datatype tag of "masked", and also output another dataset of a datatype `mask`. 
+Various colored boxes show the input and output datatypes. For example, the above image shows that this app will take `dwi` input data-object, and generate another `dwi` data-object with a datatype tag of "masked", and also output another data-object of a datatype `mask`. 
 
 For more information on datatype, please visit [datatypes page](/docs/user/datatypes)
 <!--If you are familiar with an electronic prototyping product called [*littleBits*](https://littlebits.com/tag/prototyping), it is very similar in the concept.-->
 
 ## Data Processing
 
-Now that we know what `Apps` are, we can go back to your private project, to practice data processing. Open the `Processes` tab. You should see an empty page as you do not have any processes yet. On Brainlife, `Process` is where you can submit a group of tasks/Apps that can share input/output datasets. 
+Now that we know what `Apps` are, we can go back to your private project, to practice data processing. Open the `Processes` tab. You should see an empty page as you do not have any processes yet. On Brainlife, `Process` is where you can submit a group of tasks/Apps that can share input/output data-objects. 
 
 We will create a new process by clicking the `+` button at the right bottom corner of the page. Enter any name you would like for your process. You should see a screen that looks like this now.
 
-![dataset](/docs/img/empty.process.png)
+![empty process](/docs/img/empty.process.png)
 
-To process data, you first need to stage any dataset from our archive to your process. Each process can only process data that is either staged or generated by other Apps. Click `Stage New Dataset` button. On the Select Datasets dialog, please select `NKI (Rockland Sample)` project, and select any `anat/t1w` dataset.
+To process data, you first need to stage data from our archive to your process. Each process can only process data that is either staged or generated by other Apps. Click `Stage New Data` button to open a dialog, please select `NKI (Rockland Sample)` project, and select any `anat/t1w` data-object.
 
-![dataset](/docs/img/select.datasets.png)
+![select data](/docs/img/select.datasets.png)
 
-Click `OK` to stage. You should see a box showing "Staging Datasets" with selected datasets. While it is staging your data, please submit your first App. Click `Submit New App` button. A dialog should show up with a list of Apps that you can submit using your `anat/t1w` dataset. Brainlife allows you to select only the Apps where you have all required input datasets.
+Click `OK` to stage. You should see a box showing "Staging Data-object" with selected data. While it is staging your data, please submit your first App. Click `Submit New App` button. A dialog should show up with a list of Apps that you can submit using your `anat/t1w` data-object. Brainlife allows you to select only the Apps where you have all required input data.
 
 Please run the `ACPC alignment with ART` App on your data. `ACPC alignment` is a common alignment tool used to re-orient/re-position the Brain image in common orientation suited for further image analysis. 
 
@@ -150,36 +144,36 @@ Find and click the App, then make sure that Brainlife has automatically selected
 
 Once started, a task should take a few minutes to run. Once completed, you should see a screen that looks like this.
 
-![dataset](/docs/img/task.success.png)
+![task success](/docs/img/task.success.png)
 
 You can browse/download any output files as they are generated under `Raw Output` section. Once completed successfully, you can launch various visualization tools by clicking the :fa-eye: button next to the Output section. Open `Volume Viewer` on both the original input data and the ACPC alignment output data and see how this algorithm has re-oriented your data. 
 
 Below is the before/after view. Can you see that bottom one is better aligned/re-positioned at ACPC line? For more info on ACPC alignment see [here](https://github.com/vistalab/vistasoft/wiki/ACPC-alignment)
 
-![dataset](/docs/img/acpc.orient.png)
+![acpc orient](/docs/img/acpc.orient.png)
 
-Now that you have finished running ACPC alignment, you will be able to submit a few new Apps under `Submit New App` dialog that you couldn't submit before. Please feel free to submit other Apps or stage more datasets. 
+Now that you have finished running ACPC alignment, you will be able to submit a few new Apps under `Submit New App` dialog that you couldn't submit before. Please feel free to submit other Apps or stage more data. 
 
 !!! hint
-    If you are not sure which datasets to stage, please see [Apps](https://brainlife.io/apps) page and find which datatype each App requires to run.
+    If you are not sure which data to stage, please see [Apps](https://brainlife.io/apps) page and find which datatype each App requires to run.
 
 ## Archiving
 
-So far, you have staged datasets, submitted an App that generated data derivatives, and visualized them.
+So far, you have staged data, submitted an App that generated data derivatives, and visualized them.
 
-Now, it is important to note that all processes are meant to be temporary and Brainlife will remove processes within 25 days of data generation. If you would like to permanently keep the output datasets you just generated, you will need to `archive` them by clicking on :fa-archive: button next to the Output section. You can edit any metadata and description, and click the `Archive` button to archive it.
+Now, please note that all processes are meant to be temporary and Brainlife will remove processes within 25 days of data generation. (Some resources have even shorter data purging policy). If you would like to permanently keep the output data you just generated, you will need to `archive` them by clicking on :fa-archive: button next to the Output section. You can edit any metadata and description, and click the `Archive` button to archive it.
 
-After you archive your data, open the `Datasets` tab and make sure that your dataset is listed there. You can click on the dataset record to see more details.
+After you archive your data, open the `Archive` tab and make sure that your data is listed there. You can click on the data-object record to see more details.
 
-## Datasets
+## Data-Objects
 
-As you submit more Apps and generate datasets from them, it becomes harder to keep up with how a given dataset was generated. Brainlife keeps track of a record of how a given dataset was generated all the way from the original input dataset (called `data provenance`).
+As you submit more Apps and generate data from them, it becomes harder to keep up with how each data is generated. Brainlife keeps track of a record of how each data-objects were generated (called `data provenance`).
 
-Under `Datasets` tab, select any dataset you have just archived. Click `Provenance` tab.
+Under `Archive` tab, select any data-object you have just archived. Click `Provenance` tab.
 
-![dataset](/docs/img/provenance.png)
+![provenance](/docs/img/provenance.png)
 
-The green boxes are the input datasets (uploaded to Brainlife from outside) and the white boxes are the Apps run to generate the data derivatives. You can pan/zoom the diagram, or re-layout some items by dragging/dropping.
+The green boxes are the original input data-objects (uploaded to Brainlife from outside) and the white boxes are the Apps run to generate the data derivatives. You can pan/zoom the diagram, or re-layout some items by dragging/dropping.
 
 ## What's Next
 

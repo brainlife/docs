@@ -15,6 +15,12 @@ Because Internet technologies continue to evolve rapidly, brainlife.io may make 
 
 ## Collection and Use
 
+### Data-objects Metadata
+
+Brainlife.io allows you to upload your neuroimaging data and store them on public and private project. All data stored in public projects can be accessed by brainlife.io users, and data stored in private projects can be accessed by the project members and brainlife administrators. The ownership of all data uploaded, stored on brainlife.io remains with the original owner of the data along with all copyright and license attributes. The data generated within brainlife.io would belong to the project members. 
+
+brainlife.io retains access to all metadata and reserves rights to analyze and aggregate all raw and generated metadata through various machine learning algorithms to improve platform and functionalities of our Apps.
+
 ### Passive/Automatic Collection
 
 When you view pages on our site, the web server automatically collects certain technical information from your computer and about your connection including:
@@ -32,16 +38,14 @@ When you view pages on our site, the web server automatically collects certain t
 
 Continued use of our website indicates consent to the collection, use, and disclosure of this information as described in this notice.
 
-This technical information is retained in detail for up to 180 days days.
+This technical information is retained in detail for up to 180 days.
 
 ### Active/Manual/Voluntary Collection
 
 Other than automatically collected technical information about your visit (described above, or cookies, described below), we may ask you to provide information voluntarily, such as through forms or other manual input—in order to make products and services available to you, to maintain and manage our relationship with you, including providing associated services or to better understand and serve your needs. This information is generally retained as long as you continue to maintain a relationship with us. Your providing this information is wholly voluntary. However, not providing the requested information (or subsequently asking that the data be removed) may affect our ability to deliver the products or service for which the information is needed. Providing the requested information indicates your consent to the collection, use, and disclosure of this information as described in this notice. Information we may actively collect could include:
 
-* the email addresses of those who post messages to our bulletin board
 * the email addresses of those who communicate with us via email
-* the email addresses of those who make postings to our chat areas
-* name
+* institution, name, biography and other public user profile information.
 * information volunteered by the visitor, such as preferences, survey information and/or site registrations
 
 ## Information Usage
