@@ -28,4 +28,7 @@ Brainlife provides mechanisms to perform data visualization on the Cloud side �
 
 [Download Poster (pdf)](/docs/img/ohbm_poster_brainlife.150dpi.100cm_by_185cm.pdf)
 
+# Reference
+
+This research was supported by NSF OAC-1916518, NSF IIS-1912270, NSF, IIS-1636893, NSF BCS-1734853, NIH 1R01EB029272-01, Google Cloud, a Microsoft Research Award, A Microsoft Investigator Fellowship, the Indiana University Areas of Emergent Research initiative “Learning: Brains, Machines, Children.” 
 
