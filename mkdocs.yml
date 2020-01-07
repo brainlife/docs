@@ -26,10 +26,11 @@ nav:
     - Pipelines: user/pipeline.md
     - Publications: user/publication.md
 
-#  - Tutorials: 
-#    - Tractometry: tutorial/diffusion-and-tractography.md
-#    - Structural networks: tutorial/networkneuroscience-structural.md
-#    - Functional networks: tutorial/networkneuroscience-functional.md
+  - Tutorials: 
+    - Tractometry: tutorial/diffusion-and-tractography.md
+    - Anatomy: tutorial/t1w-preprocessing.md
+    - Structural networks: tutorial/networkneuroscience-structural.md
+    - Functional networks: tutorial/networkneuroscience-functional.md
 
   - Using CLI:
     - Installation: cli/install.md

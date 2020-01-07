@@ -5,7 +5,7 @@
 
 This page highlights the most common processing pipelines to preprocess anatomical (T1w) images as used and developed by the brainlife.io team. The goal of this pipeline is to process anatomical (T1w) data for volumetric analyses and future diffusion MRI (dMRI) pipelines. This pipelines combines functions from FSL, Automatic Registration Toolbox (ART), and Freesurfer.
 
-[!embed](https://www.youtube.com/watch?v=hC0Ms3KWD8o)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hC0Ms3KWD8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ##### 1. Crop & reorientation of T1w (FSL).
 
