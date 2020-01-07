@@ -2,7 +2,7 @@
     This is a draft
 
 ## Anatomical (T1w) preprocessing
-This page highlights the most common processing pipelines to preprocess anatomical (T1w) images as used and developed by the brainlife.io team. The goal of this pipeline is to process anatomical (T1w) data for volumetric analyses and future diffusion MRI (dMRI) pipelines. This pipelines combines functions from FSL, Freesurfer, and mrtrix3.
+This page highlights the most common processing pipelines to preprocess anatomical (T1w) images as used and developed by the brainlife.io team. The goal of this pipeline is to process anatomical (T1w) data for volumetric analyses and future diffusion MRI (dMRI) pipelines. This pipelines combines functions from FSL, Automatic Registration Toolbox (ART), and Freesurfer.
 
 ##### 1. Crop & reorientation of T1w (FSL).
 The first step is to make sure the anatomical (T1w) has been cropped to remove the neck and reoriented to the neurological orientation, which is FSL's and many other software's orientation of choice. This step does not need to be performed if the neck has already been removed and the image is in the proper orientation. If not sure if it's in the proper orientation, see https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Orientation%20Explained for help.
