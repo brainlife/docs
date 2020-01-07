@@ -8,6 +8,8 @@ This tutorial will guide you through the following functionality of Brainlife.
 * Launching visualizers to visualize your data
 * Running processes on data and archiving results.
 
+[!embed](https://www.youtube.com/watch?v=vq2jYFZVMDA)
+
 ## Sign Up
 
 If you have not registered on Brainlife.io yet, please do so by visiting The [Authentication Page](https://brainlife.io/auth/) and clicking on a preferred authentication method: Google, ORCID, Github, or through your institution.
