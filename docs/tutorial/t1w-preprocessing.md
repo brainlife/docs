@@ -6,6 +6,7 @@
 This page highlights the most common steps used to preprocess anatomical magentic resonance imaging data (T1-weighted or T1w) on brainlife.io The goal of this pipeline is to process anatomical data for successive analyses – volumetric analyses from T1w meausres, combination of T1w and diffusion-weighted MRI (dMRI) or functional neuroimaging data (fMRI). pipelines. This pipelines combines functions from FSL, Automatic Registration Toolbox (ART), and Freesurfer.
 
 | <iframe width="560" height="315" src="https://www.youtube.com/embed/hC0Ms3KWD8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> |
+|------------------------------------|
 
 ### 1. Set the orientation of the brain.
 
