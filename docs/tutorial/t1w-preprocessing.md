@@ -41,7 +41,7 @@ The next step is to align the anatomical image to the point where two white matt
 
 The next step is perform anatomical preprocessing and divide (i.e. parcellate) the brain into different regions and tissue types (i.e. white matter, gray matter) using Freesurfer. These regions represent different gray matter (i.e. cortical) landmarks such as the motor and somatosensory cortices, and are typically derived from histological properties of these regions. Sometimes, they are derived from functional activation (i.e. fMRI) patterns. Freesurfer will divide the anatomical image into different tissue types (i.e. white matter, gray matter), parcellate the gray matter into known anatomical landmarks, and output statistics regarding the volume and thickness of the different tissue types and anatomical landmarks. These regions are then used for a large number of downstream steps, including white matter tract segmentation. Information regarding the volume and thickness of each region can also be used for group analyses.
 
-[brainlife.io](https://brainlife.io) provides apps that can be run on ACPC-aligned T1w to segment and parcellate the image automatically: 
+[brainlife.io](https://brainlife.io) provides an app that can be run on ACPC-aligned T1w to segment and parcellate the image automatically: 
 
 | ![freesurfer](/docs/img/app.freesurfer.bl.header.png)|
 |------------------------------------|
@@ -51,7 +51,7 @@ The next step is perform anatomical preprocessing and divide (i.e. parcellate) t
 
 The final step in the anatomical preprocessing (T1w) pipeline is to fit different parcellations to the Freesufer-generated parcellation. This is useful as new parcellations come out relatively frequently, each generated based on different histological or functional properties. We recommend mapping the Glasser-derived 180 node parcellation, as it was derived from both histological and functional properties (Glasser MF, Coalson TS, Robinson EC, et al. A multi-modal parcellation of human cerebral cortex. Nature. 2016;536(7615):171–178. doi:10.1038/nature18933).
 
-[brainlife.io](https://brainlife.io) provides apps that can be run on ACPC-aligned T1w to segment and parcellate the image automatically: 
+[brainlife.io](https://brainlife.io) provides an app that can be run on freesurfer outputs to map atlases automatically: 
 
 | ![matt](/docs/img/app.matt.bl.header.png)|
 |------------------------------------|
