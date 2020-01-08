@@ -43,6 +43,12 @@ The next step is perform anatomical preprocessing and divide (i.e. parcellate) t
 https://doi.org/10.25663/bl.app.0
 ![freesurfer](/docs/img/app.freesurfer.bl.header.png)
 
+[brainlife.io](https://brainlife.io) provides apps that can be run on ACPC-aligned T1w to segment and parcellate the image automatically: 
+
+| ![freesurfer](/docs/img/app.freesurfer.bl.header.png)|
+|------------------------------------|
+| https://doi.org/10.25663/bl.app.0 |
+
 #### 4. Atlas transfer (Freesufer).
 
 The final step in the anatomical preprocessing (T1w) pipeline is to fit different parcellations to the Freesufer-generated parcellation. This is useful as new parcellations come out relatively frequently, each generated based on different histological or functional properties. We recommend mapping the Glasser-derived 180 node parcellation, as it was derived from both histological and functional properties (Glasser MF, Coalson TS, Robinson EC, et al. A multi-modal parcellation of human cerebral cortex. Nature. 2016;536(7615):171–178. doi:10.1038/nature18933).
