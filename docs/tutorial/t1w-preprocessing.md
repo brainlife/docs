@@ -28,6 +28,16 @@ The next step is to align the anatomical image to the point where two white matt
 ART: https://doi.org/10.25663/bl.app.16
 HCP: https://doi.org/10.25663/bl.app.99
 
+| ![art](/docs/img/app.art.bl.header.png)|
+|------------------------------------|
+| https://doi.org/10.25663/bl.app.16 |
+
+
+| ![hcp-acpc](/docs/img/app.hcp-acpc.bl.header.png)|
+|------------------------------------|
+| https://doi.org/10.25663/bl.app.99 |
+
+
 ![art](/docs/img/app.art.bl.header.png)
 ![hcp-acpc](/docs/img/app.hcp-acpc.bl.header.png)
 
