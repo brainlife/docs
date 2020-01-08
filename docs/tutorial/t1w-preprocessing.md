@@ -17,7 +17,7 @@ Useful information about MRI image orientation can be found at:
   
 [brainlife.io](https://brainlife.io) provides a service (App) that can be run on raw T1w to rop and orient the image automatically: 
 
-| App Name |![crop-reorient](/docs/img/app.crop-reorient.bl.header.png)|
+| ![crop-reorient](/docs/img/app.crop-reorient.bl.header.png)|
 |--------|------------------------------------|
 | Weblink | https://doi.org/10.25663/bl.app.15 |
 
