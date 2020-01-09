@@ -25,9 +25,9 @@ To perform crop & reorientation of the raw anatomical (T1w) image, follow the fo
 1) Stage raw neuro/anat/t1w datatype to a new process in the project by selecting the checkbox next to the datatype and clicking 'Stage to process'
 2) In the processes tab, click 'Submit App', search for 'Crop and Reorient T1', and then click the app card
 3) Select inputs and configuration parameters
-    *a. For input, select the raw anatomical (T1w) iamge that was staged to the process
-    *b. Select the 'reorient the T1' and 'crop the T1' boxes
-    *c. Select the 'Archive all output datasets when finished' box
+    * For input, select the raw anatomical (T1w) iamge that was staged to the process
+    * Select the 'reorient the T1' and 'crop the T1' boxes
+    * Select the 'Archive all output datasets when finished' box
 4) Click submit
 5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'fsleyes' as the viewer
 
