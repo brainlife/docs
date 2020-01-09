@@ -19,10 +19,10 @@ To perform topup and eddy on the raw dMRI images, follow the following steps:
 1) Stage both dMRI datasets (for each phase encoding) to a new process in the project by selecting the checkbox next to the datatypes and clicking 'Stage to process'
 2) In the processes tab, click 'Submit App', search for ''FSL Top-up & Eddy', and then click the app card
 3) Select inputs and configuration parameters
-	a. For the first dMRI input, select the raw dMRI image corresponding to the 'PA' phase encoding direction that was staged to the process. For the second dMRI input, select the raw dMRI image corresponding to the 'AP phase encoding direction that was staged to the process.
-	b. For 'param', input the dwell time for the acquisition. For more information about this field, please see https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/Faq#How_do_I_know_what_to_put_into_my_--acqp_file or ask your MR physicist
-	c. For 'encode', select 'posterior-->anterior/anterior-->posterior' from the dropdown menu
-	d. Select the 'Archive all output datasets when finished' box 
+	* For the first dMRI input, select the raw dMRI image corresponding to the 'PA' phase encoding direction that was staged to the process. For the second dMRI input, select the raw dMRI image corresponding to the 'AP phase encoding direction that was staged to the process.
+	* For 'param', input the dwell time for the acquisition. For more information about this field, please see https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/Faq#How_do_I_know_what_to_put_into_my_--acqp_file or ask your MR physicist
+	* For 'encode', select 'posterior-->anterior/anterior-->posterior' from the dropdown menu
+	* Select the 'Archive all output datasets when finished' box 
 4) Click submit
 5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'fsleyes' as the viewer
 
@@ -41,12 +41,12 @@ To perform the more advanced dMRI preprocessing pipeline (i.e. DESIGNER) on the 
 1) Stage both dMRI datasets (for each phase encoding) to a new process in the project by selecting the checkbox next to the datatypes and clicking 'Stage to process'
 2) In the processes tab, click 'Submit App', search for 'mrtrix3 preprocess', and then click the app card
 3) Select inputs and configuration parameters
-	a. Perform ACPC alignment on the raw anatomical (T1w) image (see t1w-prerocessing tutorial for more information) and select that in the 'anat/t1w' field
-	b. For the first dMRI input (i.e. not preprocessed), select the raw dMRI image corresponding to the 'PA' phase encoding direction that was staged to the process. For the second dMRI input, select the raw dMRI image corresponding to the 'AP phase encoding direction that was staged to the process.
-	c. For 'rpe', select 'merged forward and reversed sequence (all)
-	d. For 'acqd', select 'posterior -> anterior (+y) (PA)' from the dropdown menu
-	e. Leave all the other parameters as defaults
-	f. Select the 'Archive all output datasets when finished' box 
+	* Perform ACPC alignment on the raw anatomical (T1w) image (see t1w-prerocessing tutorial for more information) and select that in the 'anat/t1w' field
+	* For the first dMRI input (i.e. not preprocessed), select the raw dMRI image corresponding to the 'PA' phase encoding direction that was staged to the process. For the second dMRI input, select the raw dMRI image corresponding to the 'AP phase encoding direction that was staged to the process.
+	* For 'rpe', select 'merged forward and reversed sequence (all)
+	* For 'acqd', select 'posterior -> anterior (+y) (PA)' from the dropdown menu
+	* Leave all the other parameters as defaults
+	* Select the 'Archive all output datasets when finished' box 
 4) Click submit
 5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'fsleyes' as the viewer
 
@@ -63,9 +63,9 @@ To fit the DTI model, follow the following steps:
 1) Perform mrtrix3 preprocessing on the DWI data. 
 2) In the processes tab, click 'Submit App', search for 'FSL DTIFIT', and then click the app card
 3) Select inputs and configuration parameters
-	a. For the 'dwi' input, select the preprocessed dMRI iamge from step 1
-	b. Leave the 'mask' field empty.
-	c. Select the 'Archive all output datasets when finished' box 
+	* For the 'dwi' input, select the preprocessed dMRI iamge from step 1
+	* Leave the 'mask' field empty.
+	* Select the 'Archive all output datasets when finished' box 
 4) Click submit
 5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'fsleyes' as the viewer
 
@@ -82,10 +82,10 @@ To fit the DKI model, follow the following steps:
 1) Perform mrtrix3 preprocessing on the DWI data. 
 2) In the processes tab, click 'Submit App', search for 'Fit DKI', and then click the app card
 3) Select inputs and configuration parameters
-	a. For the 'dwi' input, select the preprocessed dMRI iamge from step 1
-	b. Leave the 'mask' field empty.
-	c. Leave all the other parameters as is.
-	d. Select the 'Archive all output datasets when finished' box 
+	* For the 'dwi' input, select the preprocessed dMRI iamge from step 1
+	* Leave the 'mask' field empty.
+	* Leave all the other parameters as is.
+	* Select the 'Archive all output datasets when finished' box 
 4) Click submit
 5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'fsleyes' as the viewer
 
@@ -102,9 +102,9 @@ To fit the CSD model, follow the following steps:
 1) Perform mrtrix3 preprocessing on the DWI data. 
 2) In the processes tab, click 'Submit App', search for 'mrtrix3 csd', and then click the app card
 3) Select inputs and configuration parameters
-	a. For the 'dwi' input, select the preprocessed dMRI iamge from step 1
-	b. Leave the 'mask' and 'mask: 5tt_masks' fields empty.
-	c. Select the 'Archive all output datasets when finished' box 
+	* For the 'dwi' input, select the preprocessed dMRI iamge from step 1
+	* Leave the 'mask' and 'mask: 5tt_masks' fields empty.
+	* Select the 'Archive all output datasets when finished' box 
 4) Click submit
 
 ##### 5. Fitting neurite orientation dispersion density imaging (NODDI) model (AMICO).
@@ -120,9 +120,9 @@ To fit the NODDI model, follow the following steps:
 1) Perform mrtrix3 preprocessing on the DWI data. 
 2) In the processes tab, click 'Submit App', search for 'Noddi Amico', and then click the app card
 3) Select inputs and configuration parameters
-	a. For the 'dwi' input, select the preprocessed dMRI iamge from step 1
-	b. Leave the 'mask' field empty.
-	c. Leave all the other parameters as is.
-	d. Select the 'Archive all output datasets when finished' box 
+	* For the 'dwi' input, select the preprocessed dMRI iamge from step 1
+	* Leave the 'mask' field empty.
+	* Leave all the other parameters as is.
+	* Select the 'Archive all output datasets when finished' box 
 4) Click submit
 5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'fsleyes' as the viewer
