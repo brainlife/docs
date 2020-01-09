@@ -49,13 +49,13 @@ To perform ACPC alignment of the cropped and reoriented anatomical (T1w) image, 
 1) If 'Crop and reorient T1' was performed, you do not need to stage the dataset. If not, stage raw neuro/anat/t1w datatype to a new process in the project by selecting the checkbox next to the datatype and clicking 'Stage to process'
 2) In the processes tab, click 'Submit App', search for 'HCP ACPC Alignment (T1)', and then click the app card
 3) Select inputs and configuration parameters
-    a. For input, select the staged anatomical (T1w) iamge
-    b. For template, select the MNI152_1MM (MNI152_1MM) template
-    c. If reorienting of the T1 was always performed, deselect the 'reorient image to FSL standard' box. If not, select the box.
-    d. Select the 'Archive all output datasets when finished' box
+    * For input, select the staged anatomical (T1w) iamge
+    * For template, select the MNI152_1MM (MNI152_1MM) template
+    * If reorienting of the T1 was always performed, deselect the 'reorient image to FSL standard' box. If not, select the box.
+    * Select the 'Archive all output datasets when finished' box
 4) Click submit
 5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'fsleyes' as the viewer
-    a. In the viewer, uncheck all the data in the lower left hand corner except for the data called 'out'
+    * In the viewer, uncheck all the data in the lower left hand corner except for the data called 'out'
 
 ### 3. Brain Parcellation (FreeSurfer).
 
@@ -71,9 +71,9 @@ To perform Freesurfer brain parcellation, follow the following steps:
 1) Perform ACPC alignment
 2) In the processes tab, click 'Submit App', search for 'Freesurfer', and then click the app card
 3) Select inputs and configuration parameters
-    a. For input, select the staged ACPC aligned anatomical (T1w) iamge
-    b. Select the boxes for 'hippocampal' and 'hires'
-    c. Select the 'Archive all output datasets when finished' box
+    * For input, select the staged ACPC aligned anatomical (T1w) iamge
+    * Select the boxes for 'hippocampal' and 'hires'
+    * Select the 'Archive all output datasets when finished' box
 4) Click submit
 5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'freeview' as the viewer
 
@@ -91,7 +91,7 @@ To perform atlas transfer, follow the following steps:
 1) Perform ACPC alignment and Freesurfer brain parcellation
 2) In the processes tab, click 'Submit App', search for 'Multi-Atlas Transfer Tool', and then click the app card
 3) Select inputs and configuration parameters
-    a. For input, select the freesurfer datatype
-    b. For atlas, choose the 'hcp-mmp-b' atlas from the dropdown menu for the 180 node Glasser atlas
-    c. Select the 'Archive all output datasets when finished' box
+    * For input, select the freesurfer datatype
+    * For atlas, choose the 'hcp-mmp-b' atlas from the dropdown menu for the 180 node Glasser atlas
+    * Select the 'Archive all output datasets when finished' box
 4) Click submit
