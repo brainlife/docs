@@ -21,6 +21,15 @@ Useful information about MRI image orientation can be found at:
 |------------------------------------|
 | https://doi.org/10.25663/bl.app.15 |
 
+To perform crop & reorientation of the raw anatomical (T1w) image, follow the following steps:
+1) Stage raw neuro/anat/t1w datatype to a new process in the project by selecting the checkbox next to the datatype and clicking 'Stage to process'
+2) In the processes tab, click 'Submit App', search for 'Crop and Reorient T1', and then click the app card
+3) Select inputs and configuration parameters
+	a. For input, select the raw anatomical (T1w) iamge that was staged to the process
+	b. Select the 'reorient the T1' and 'crop the T1' boxes
+	c. Select the 'Archive all output datasets when finished' box
+4) Click submit
+5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'fsleyes' as the viewer
 
 ### 2. Anterior Commissure - Posterior Comissure (ACPC) alignment (Art,FSL).
 
@@ -36,6 +45,17 @@ The next step is to align the anatomical image to the point where two white matt
 |------------------------------------|
 | https://doi.org/10.25663/bl.app.99 |
 
+To perform ACPC alignment of the cropped and reoriented anatomical (T1w) image, follow the following steps:
+1) If 'Crop and reorient T1' was performed, you do not need to stage the dataset. If not, stage raw neuro/anat/t1w datatype to a new process in the project by selecting the checkbox next to the datatype and clicking 'Stage to process'
+2) In the processes tab, click 'Submit App', search for 'HCP ACPC Alignment (T1)', and then click the app card
+3) Select inputs and configuration parameters
+	a. For input, select the staged anatomical (T1w) iamge
+	b. For template, select the MNI152_1MM (MNI152_1MM) template
+	c. If reorienting of the T1 was always performed, deselect the 'reorient image to FSL standard' box. If not, select the box.
+	d. Select the 'Archive all output datasets when finished' box
+4) Click submit
+5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'fsleyes' as the viewer
+	a. In the viewer, uncheck all the data in the lower left hand corner except for the data called 'out'
 
 ### 3. Brain Parcellation (FreeSurfer).
 
@@ -47,6 +67,16 @@ The next step is perform anatomical preprocessing and divide (i.e. parcellate) t
 |------------------------------------|
 | https://doi.org/10.25663/bl.app.0 |
 
+To perform Freesurfer brain parcellation, follow the following steps:
+1) Perform ACPC alignment
+2) In the processes tab, click 'Submit App', search for 'Freesurfer', and then click the app card
+3) Select inputs and configuration parameters
+	a. For input, select the staged ACPC aligned anatomical (T1w) iamge
+	b. Select the boxes for 'hippocampal' and 'hires'
+	d. Select the 'Archive all output datasets when finished' box
+4) Click submit
+5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'freeview' as the viewer
+
 ### 4. Atlas transfer (Freesufer).
 
 The final step in the anatomical preprocessing (T1w) pipeline is to fit different parcellations to the Freesufer-generated parcellation. This is useful as new parcellations come out relatively frequently, each generated based on different histological or functional properties. We recommend mapping the Glasser-derived 180 node parcellation, as it was derived from both histological and functional properties (Glasser MF, Coalson TS, Robinson EC, et al. A multi-modal parcellation of human cerebral cortex. Nature. 2016;536(7615):171–178. doi:10.1038/nature18933).
@@ -56,3 +86,12 @@ The final step in the anatomical preprocessing (T1w) pipeline is to fit differen
 | ![matt](/docs/img/app.matt.bl.header.png)|
 |------------------------------------|
 | https://doi.org/10.25663/bl.app.23 |
+
+To perform atlas transfer, follow the following steps:
+1) Perform ACPC alignment and Freesurfer brain parcellation
+2) In the processes tab, click 'Submit App', search for 'Multi-Atlas Transfer Tool', and then click the app card
+3) Select inputs and configuration parameters
+	a. For input, select the freesurfer datatype
+	b. For atlas, choose the 'hcp-mmp-b' atlas from the dropdown menu for the 180 node Glasser atlas
+	d. Select the 'Archive all output datasets when finished' box
+4) Click submit
