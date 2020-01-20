@@ -7,9 +7,9 @@ This page highlights the most important first steps to using brainlife.io, inclu
 
 ![crop-reorient](/docs/img/brainlife-landing-page.png)
 
-### A. Create an account and project.
+### A. Create an account.
 
-The first step to processing data using brainlife is to go to brainlife.io and create an account and project.
+The first step to processing data using brainlife is to go to brainlife.io and create an account.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/86CbNUrkd8s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -25,25 +25,33 @@ To do make an account and project, follow the following steps:
         * biography
         * position (undergraduate student)
     * Read the usage policy and select the 'Agree to our Acceptable Use Policy' box and hit submit
-3) Once signed up and logged in, select the 'home' button on the home page
-4) Click the 'Projects' tab on the left side of the screen (shield icon)
-5) Click the '+' button at the bottom right corner of the screen.
+
+### B. Create a Project.
+
+Next we will start managing some data on the platform by crating a Project.
+
+1) (Go to the brainlife.io home page)[brainlife.io] and click on 'home.' This will bring you inside the platform.
+2) Click the 'Projects' tab on the left side of the screen (shield icon).
+3) Click the '+' button at the bottom right corner of the screen.
     * Enter the following information on the My Project page:
         * name
         * description
         * Public access policy
-        * In 'administrators', add the following accounts:
+        * In 'administrators', add the following accounts (if you start typing a name the systemw ill autocomplete for you):
             * Brad Caron
             * Soichi Hayashi
             * Franco Pestilli
     * Click submit.
-6) Return to the projects page and select your newly created project.
+4) Return to the projects page and select your newly created project.
 
-You're now ready to upload/archive/stage data!
+You are now ready to upload/copy/archive/stage data!
 
-### B. Upload and archive data to project.
+### C. Upload or archive data to project.
 
-The next step to using brainlife.io is to archive data to your project. This can be done in two ways: 1) upload your own data or 2) use existing data from an open project.
+The next step to using brainlife.io is to archive data to your project. This can be done in at least a couple of ways: 
+ 
+1) Upload your own data from the web browser (or Command Line Interface) or 
+2) Use data already existing on the platform by copying from one of open projects.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hC0Ms3KWD8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -72,7 +80,7 @@ To upload your own data, follow the following steps:
 
 The data is now uploaded and archived to your project!
 
-### C. Launch a process, application (app), and visualize the results.
+### D. Launch a process, application (app), and visualize the results.
 
 The next step is to stage data and launch a process in order to process the data.
 
@@ -89,7 +97,7 @@ To launch a process, follow the following steps:
 7) To view the data, select the eye icon next to the output dataset of interest and choose a viewer. For most datasets, 'fsleyes' will be the best viewer to use.
     * If you're not satisfied with the results, you can always delete the archived data and launch the same app with different input parameters.
 
-### D. Launch pipelines to efficiently and accurately process entire datasets.
+### E. Launch pipelines to efficiently and accurately process entire datasets.
 
 The best way to ensure that all data in your project is processed in exactly the same fashion without having to manually launch processes (which is prone to errors) is to use pipelines. Pipelines will launch a process for each participant in your dataset that meets certain criteria (i.e. subject number, datatype) with just a few clicks!
 
@@ -104,7 +112,7 @@ To create and launch a pipeline, follow the following steps:
 
 You've now submitted a pipeline! Add additional pipelines for all the apps you want to run and process your entire dataset in just a few clicks!
 
-### E. Create a publication for your data.
+### F. Create a publication for your data.
 
 Once your data has been processed, the analyses have been ran, and you're ready to publish your data for open use, brainlife.io allows you to create a 'publication' of your data. With this publication comes a doi link that you can include in your eventual manuscript in order to direct fellow researchers to your dataset.
 
