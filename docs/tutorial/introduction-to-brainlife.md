@@ -46,30 +46,30 @@ Next we will start managing some data on the platform by crating a Project.
 
 You are now ready to upload/copy/archive/stage data!
 
-### C. Upload or archive data to project.
+### C. Copy data from another project.
 
-The next step to using brainlife.io is to archive data to your project. This can be done in at least a couple of ways: 
+The next step will be to copy data into your project. For that, we will use open data from another proejct. 
  
-1) Upload your own data from the web browser (or Command Line Interface) or 
-2) Use data already existing on the platform by copying from one of open projects.
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hC0Ms3KWD8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-If you do not have your own data, archive data in your project from the class demo project, follow the following steps:
-1) Select your project from the projects page.
-2) Select the 'processes' tab at the top of the screen.
-3) On the processes page, click the '+' button at the bottom of the screen. Name the process 'my demos' in the projects description tab.
-4) Select the newly created process and hit the 'Stage Data' button at the bottom right corner of the screen.
+To copy data from an open project follow the steps below.
+1) Go to the main page of your project.
+2) Click on the 'Processes' tab.
+3) Once inside the Processes tab, click the '+' button at the right-hand bottom of the screen. 
+   Add a new project and name it 'temp copy data' in the projects description tab.
+   ![Processes Page](https://github.com/brainlife/docs/blob/master/docs/img/projects.process.new.png)
+   
+4) Select the newly created process and hit the 'Stage Data' button at the bottom right corner of the screen.  
     * For from, select the 'IU LAB IN COGNITIVE AND COMPUTATIONAL NEUROSCIENCE - Demo Data' project to pull data from.
-    * For subject, enter BC (Brad Caron's initials. This is his brain)
-    * For datatype, you'll select the following datatypes one at a time. You'll have to do this process three times:
-        * DWI (x2): PA and AP
-        * T1
-    * For data-objects, select the data object that pops up. For DWI, you'll need to select the PA and AP images separately.
+    * For subject, enter BC (Brad Caron's initials. This is his brain.)
+    * For datatype, you will select a single anatomical file this is a T1-weighted MRI (T1w). The brianlife.io Datatypes is called: neuro/anat/T1w
     * Hit OK.
+![Import Data From Other Project](https://github.com/brainlife/docs/blob/master/docs/img/projects.processes.stagedata.selecteddata.png)
+ 
 
 The data is now staged and ready for processing!
 
+<!---
 To upload your own data, follow the following steps:
 1) Select your project from the projects page.
 2) Select the 'archive' tab at the top of the screen.
@@ -77,8 +77,8 @@ To upload your own data, follow the following steps:
 4) For datatype, choose the specific datatype for each image type (T1, T2, DWI, fMRI):
     * For each datatype, you'll need to choose the appropriate data files and a subject name (i.e. your randomly assigned ID). You can leave the rest of the fields empty.
     * Once you fill this information, hit next and then archive.
-
 The data is now uploaded and archived to your project!
+--->
 
 ### D. Launch a process, application (app), and visualize the results.
 
