@@ -11,7 +11,7 @@ This page highlights the most important first steps to using brainlife.io, inclu
 
 The first step to processing data using brainlife is to go to brainlife.io and create an account.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/86CbNUrkd8s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/swtuIEzKj-M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 To do make an account and project, follow the following steps:
 1) Enter brainlife.io enter your browser web address. 
