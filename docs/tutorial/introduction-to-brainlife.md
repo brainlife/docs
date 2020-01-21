@@ -57,10 +57,10 @@ To copy data from an open project follow the steps below.
 2) Click on the 'Processes' tab.
 3) Once inside the Processes tab, click the '+' button at the right-hand bottom of the screen. 
    Add a new project and name it 'temp copy data' in the projects description tab.
-   ![Processes Page](/docs/blob/master/docs/img/projects.process.new.png)
+   ![Processes Page](https://github.com/brainlife/docs/blob/master/docs/img/projects.process.new.png)
    
 4) Select the newly created process and hit the 'Stage Data' button at the bottom right corner of the screen.
-   ![Import Data From Other Proejct](/docs/blob/master/docs/img/projects.processes.stagedata.png)
+   ![Import Data From Other Proejct](https://github.com/brainlife/docs/blob/master/docs/img/projects.processes.stagedata.png)
    
     * For from, select the 'IU LAB IN COGNITIVE AND COMPUTATIONAL NEUROSCIENCE - Demo Data' project to pull data from.
     * For subject, enter BC (Brad Caron's initials. This is his brain)
