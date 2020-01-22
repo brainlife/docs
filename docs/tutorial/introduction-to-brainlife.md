@@ -141,13 +141,13 @@ Once your data has been processed, the analyses have been ran, and you're ready 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hC0Ms3KWD8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 To create a publication, follow the following steps:
-1) From the projects page, select your project and select the 'publications' tab at the top of the projects page.
-2) In the publications page, click the '+' at the bottom right of the screen.
-3) Give your project a title and description, and add your funding sources and contributors.
-4) Select the 'Add new release' button at the bottom of the page to add the data to your publication.
+1. From the projects page, select your project and select the 'publications' tab at the top of the projects page.
+2. In the publications page, click the '+' at the bottom right of the screen.
+3. Give your project a title and description, and add your funding sources and contributors.
+4. Select the 'Add new release' button at the bottom of the page to add the data to your publication.
     * Give your release a name and date, as you can make multiple releases if, for example, you run new processing apps following your original publication.
     * Click the 'Add datasets' button in the 'Releases' area and select the datasets you'd like to release. Hit OK.
-5) Once you're happy with the information you've inputted and the data, hit 'Submit'. You will now be able to view your dataset as 'publication' and send the doi link to anyone you'd like!
+5. Once you're happy with the information you've inputted and the data, hit 'Submit'. You will now be able to view your dataset as 'publication' and send the doi link to anyone you'd like!
 
 You're done! You've now created a project, uploaded, staged, and archived data, launched proceses and visualized results, and create pipelines and publications. You're now a brainlife.io pro!!!
 --->
