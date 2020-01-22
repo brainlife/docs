@@ -14,8 +14,8 @@ The first step to processing data using brainlife is to go to brainlife.io and c
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sV55YSCJd-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 To do make an account and project, follow the following steps:
-1) Enter brainlife.io enter your browser web address. 
-2) Once on the homepage, click the 'signup' button in the top left corner.
+  1) Enter brainlife.io enter your browser web address. 
+  2) Once on the homepage, click the 'signup' button in the top left corner.
     * Enter the following information on the signup page:
         * username
         * email
@@ -30,9 +30,9 @@ To do make an account and project, follow the following steps:
 
 Next we will start managing some data on the platform by creating a Project.
 
-1) (Go to the brainlife.io home page)[brainlife.io] and click on 'home.' This will bring you inside the platform.
-2) Click the 'Projects' tab on the left side of the screen (shield icon).
-3) Click the '+' button at the bottom right corner of the screen.
+  1) (Go to the brainlife.io home page)[brainlife.io] and click on 'home.' This will bring you inside the platform.
+  2) Click the 'Projects' tab on the left side of the screen (shield icon).
+  3) Click the '+' button at the bottom right corner of the screen.
     * Enter the following information on the My Project page:
         * name
         * description
@@ -42,31 +42,29 @@ Next we will start managing some data on the platform by creating a Project.
             * Soichi Hayashi
             * Franco Pestilli
     * Click submit.
-4) Return to the projects page and select your newly created project.
+  4) Return to the projects page and select your newly created project.
 
 You are now ready to copy data from another project!
 
 ### C. Copy data from another project.
 
-The next step will be to copy data into your project. For that, we will use open data from another proejct. 
- 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hC0Ms3KWD8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+The next step will be to copy data into your project. For that, we will use open data from another project.
 
 To copy data from an open project follow the steps below.
-1) Go to the main page of your project.
-2) Click on the 'Processes' tab.
-3) Once inside the Processes tab, click the '+' button at the right-hand bottom of the screen. 
+  1) Go to the main page of your project.
+  2) Click on the 'Processes' tab.
+  3) Once inside the Processes tab, click the '+' button at the right-hand bottom of the screen. 
    Add a new project and name it 'temp copy data' in the projects description tab.
    ![Processes Page](https://github.com/brainlife/docs/blob/master/docs/img/projects.process.new.png)
    
-4) Select the newly created process and hit the 'Stage Data' button at the bottom right corner of the screen.  
+  4) Select the newly created process and hit the 'Stage Data' button at the bottom right corner of the screen.  
     * For from, select the 'IU LAB IN COGNITIVE AND COMPUTATIONAL NEUROSCIENCE - Demo Data' project to pull data from.
     * For subject, enter BC (Brad Caron's initials. This is his brain.)
     * For datatype, you will select a single anatomical file this is a T1-weighted MRI (T1w). The brianlife.io Datatypes is called: neuro/anat/T1w
     * Hit OK.
+
 ![Import Data From Other Project](https://github.com/brainlife/docs/blob/master/docs/img/projects.processes.stagedata.selecteddata.png)
  
-
 The data is now staged and ready for processing!
 
 <!---
@@ -87,12 +85,12 @@ The next step is to launch an application (app) in order to process the data. Fo
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u9Qlh0-iaAk?start=13" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 First we will need to To launch a process, follow the following steps:
-1) On the 'Processes' tab, make sure the process generated in part C. is selected.
-2) Click on the 'Submit App' button at the bottom right of the screen. This will launch a page with the many applications (apps) that can be used on your staged data. 
-3) In the searchbar, type 'Freesurfer' and click on the app card. This will open a page with options for choosing which project to save the results and specific input parameters that may affect the outputs of the app.
-4) For now, leave all the inputs and parameters as is. We will discuss what these options do in later tutorials.
-5) Click the box next to the option 'Archive all output datasets when finished'. This will save (i.e. archive) the data immediately following completion of processing.
-6) Hit OK.
+  1) On the 'Processes' tab, make sure the process generated in part C. is selected.
+  2) Click on the 'Submit App' button at the bottom right of the screen. This will launch a page with the many applications (apps) that can be used on your staged data. 
+  3) In the searchbar, type 'Freesurfer' and click on the app card. This will open a page with options for choosing which project to save the results and specific input parameters that may affect the outputs of the app.
+  4) For now, leave all the inputs and parameters as is. We will discuss what these options do in later tutorials.
+  5) Click the box next to the option 'Archive all output datasets when finished'. This will save (i.e. archive) the data immediately following completion of processing.
+  6) Hit OK.
 
 Once the app is launched, a card will appear on the 'Processes' tab with a blue header. This means the app is currently running, or waiting to run. 
 ![Blue-header](https://github.com/brainlife/docs/blob/master/docs/img/app-freesurfer-running-blue-header.png)
@@ -101,7 +99,7 @@ Once this turns green, that means the app is finished and you can view the resul
 ![Green-header](https://github.com/brainlife/docs/blob/master/docs/img/app-freesurfer-complete-green-header.png)
 
 To view the results:
-1) Click the eye icon next to the output and choose 'Freeview' as your viewer.
+  1) Click the eye icon next to the output and choose 'Freeview' as your viewer.
 
 This will automatically load important outputs generated by Freesurfer, including cortical and white matter surfaces and a standard parcellation of the cortical surface.
 
@@ -118,12 +116,12 @@ In this tutorial, we will create a pipeline to run Freesurfer on any T1 anatomic
 <iframe width="560" height="315" src="https://www.youtube.com/embed/p2k8mbaG1bY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 To create and launch a pipeline to run Freesurfer, follow the following steps:
-1) From the projects page, select your project and select the 'pipelines' tab at the top of the projects page.
-2) Once inside the pipelines page, click the '+' at the bottom right of the screen.
-3) Give the pipeline a name based on the app you're running (example: Freesurfer).
-5) Select the Freesurfer app, and leave all the parameters on the page as is.
-4) Hit the 'Submit' button. This will take you back to the pipelines page with an un-activated pipeline.
-5) To activate the pipeline, select the button next to 'Offline'. Processes will then start to launch and you can monitor the progress on the pipelines page itself!
+  1) From the projects page, select your project and select the 'pipelines' tab at the top of the projects page.
+  2) Once inside the pipelines page, click the '+' at the bottom right of the screen.
+  3) Give the pipeline a name based on the app you're running (example: Freesurfer).
+  4) Select the Freesurfer app, and leave all the parameters on the page as is.
+  5) Hit the 'Submit' button. This will take you back to the pipelines page with an un-activated pipeline.
+  6) To activate the pipeline, select the button next to 'Offline'. Processes will then start to launch and you can monitor the progress on the pipelines page itself!
 
 You've now submitted a pipeline! Add additional pipelines for all the apps you want to run and process your entire dataset in just a few clicks!
 
