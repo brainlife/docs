@@ -82,7 +82,7 @@ The data is now uploaded and archived to your project!
 
 ### D. Launch a process, application (app), and visualize the results.
 
-The next step is to stage data and launch a process in order to process the data. For this, we will process the T1w (anatomical) image staged in C. In this tutorial, we will divide (i.e. segment/parcellate) the T1 anatomical image using Freesurfer.
+The next step is to launch an application (app) in order to process the data. For this, we will process the T1w (anatomical) image staged in C. In this tutorial, we will divide (i.e. segment/parcellate) the T1 anatomical image using Freesurfer.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u9Qlh0-iaAk&t=16s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
