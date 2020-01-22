@@ -27,6 +27,7 @@ nav:
     - Publications: user/publication.md
 
   - Tutorials: 
+    - Introduction: tutorial/introduction-to-brainlife.md
     - Tractometry: tutorial/diffusion-and-tractography.md
     - Anatomy: tutorial/t1w-preprocessing.md
     - Structural networks: tutorial/networkneuroscience-structural.md
