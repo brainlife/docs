@@ -95,7 +95,7 @@ First we will need to To launch a process, follow the following steps:
 6) Hit OK.
 
 Once the app is launched, a card will appear on the 'Processes' tab with a blue header. This means the app is currently running, or waiting to run. 
-![Blue-header](https://github.com/brainlife/docs/blob/master/docs/img/app-running-blue-header.png)
+![Blue-header](https://github.com/brainlife/docs/blob/master/docs/img/app-freesurfer-running-blue-header.png)
 
 Once this turns green, that means the app is finished and you can view the results!
 ![Green-header](https://github.com/brainlife/docs/blob/master/docs/img/projects.processes.stagedata.selecteddata.png)
