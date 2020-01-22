@@ -16,7 +16,7 @@ The first step to processing data using brainlife is to go to brainlife.io and c
 To do make an account and project, follow the following steps:
   1) Enter brainlife.io enter your browser web address. 
   2) Once on the homepage, click the 'signup' button in the top left corner.
-    * Enter the following information on the signup page:
+      * Enter the following information on the signup page:
         * username
         * email
         * password
@@ -24,7 +24,7 @@ To do make an account and project, follow the following steps:
         * institution/university
         * biography
         * position (undergraduate student)
-    * Read the usage policy and select the 'Agree to our Acceptable Use Policy' box and hit submit
+      * Read the usage policy and select the 'Agree to our Acceptable Use Policy' box and hit submit
 
 ### B. Create a Project.
 
