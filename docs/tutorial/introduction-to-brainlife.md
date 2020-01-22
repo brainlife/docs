@@ -3,7 +3,7 @@
 
 ## Introduction to brainlife.
 
-This page highlights the most important first steps to using brainlife.io, including creating an account and project, interacting with datasets, datatypes, and applications, uploading data, launching processes, visualizing results, and creating pipelines and publications. If you have not read the documentation regarding these topics, please visit https://brainlife.io/docs/.
+This page highlights the most important first steps to using brainlife.io, including creating an account and project, interacting with datasets, launching processes, visualizing results, and creating pipelines. If you have not read the documentation regarding these topics, please visit https://brainlife.io/docs/.
 
 ![crop-reorient](/docs/img/brainlife-landing-page.png)
 
