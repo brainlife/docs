@@ -98,7 +98,7 @@ Once the app is launched, a card will appear on the 'Processes' tab with a blue 
 ![Blue-header](https://github.com/brainlife/docs/blob/master/docs/img/app-freesurfer-running-blue-header.png)
 
 Once this turns green, that means the app is finished and you can view the results!
-![Green-header](https://github.com/brainlife/docs/blob/master/docs/img/projects.processes.stagedata.selecteddata.png)
+![Green-header](https://github.com/brainlife/docs/blob/master/docs/img/app-freesurfer-complete-green-header.png.png)
 
 To view the results:
 1) Click the eye icon next to the output and choose 'Freeview' as your viewer.
