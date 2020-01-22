@@ -24,7 +24,7 @@ To do make an account and project, follow the following steps:
         * institution/university
         * biography
         * position (undergraduate student)
-      * Read the usage policy and select the 'Agree to our Acceptable Use Policy' box and hit submit
+  3) Read the usage policy and select the 'Agree to our Acceptable Use Policy' box and hit submit
 
 ### B. Create a Project.
 
