@@ -55,12 +55,12 @@ The next step will be to copy data into your project. For that, we will use open
 
 To copy data from an open project follow the steps below.
 1. Go to the main page of your project.
-2. Click on the 'Processes' tab.
-3. Once inside the Processes tab, click the '+' button at the right-hand bottom of the screen. 
+1. Click on the 'Processes' tab.
+1. Once inside the Processes tab, click the '+' button at the right-hand bottom of the screen. 
 Add a new project and name it 'temp copy data' in the projects description tab.
 ![Processes Page](/docs/img/projects.process.new.png)
 
-4. Select the newly created process and hit the 'Stage Data' button at the bottom right corner of the screen.  
+1. Select the newly created process and hit the 'Stage Data' button at the bottom right corner of the screen.  
     * For from, select the 'IU LAB IN COGNITIVE AND COMPUTATIONAL NEUROSCIENCE - Demo Data' project to pull data from.
     * For subject, enter BC (Brad Caron's initials. This is his brain.)
     * For datatype, you will select a single anatomical file this is a T1-weighted MRI (T1w). The brianlife.io Datatypes is called: neuro/anat/T1w
