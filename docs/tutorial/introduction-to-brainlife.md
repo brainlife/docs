@@ -84,7 +84,7 @@ The data is now uploaded and archived to your project!
 
 The next step is to launch an application (app) in order to process the data. For this, we will process the T1w (anatomical) image staged in C. In this tutorial, we will divide (i.e. segment/parcellate) the T1 anatomical image using Freesurfer.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u9Qlh0-iaAk?t=13s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u9Qlh0-iaAk&start=13s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 First we will need to To launch a process, follow the following steps:
 1) On the 'Processes' tab, make sure the process generated in part C. is selected.
