@@ -122,7 +122,7 @@ To archive the data after the app is completed and you've reviewed the results, 
 1. In the 'Output' section, selec the file drawer icon on the far right of the screen.
 1. Hit OK'.
 
-![Archive-output](/docs/img/app-freesurfer-archive-data.png)
+![Archive-output](/docs/img/archive-freesurfer-outputs.png)
 
 You've now successfully launched an application and processed your first MRI data!!!!
 
