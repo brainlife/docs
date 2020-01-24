@@ -124,7 +124,7 @@ To archive the data after the app is completed and you've reviewed the results, 
 
 ![Archive-output](/docs/img/archive-freesurfer-outputs.png)
 
-You've now successfully launched an application and processed your first MRI data!!!!
+### You've now successfully launched an application and processed your first MRI data!!!!
 
 <!---
 ### E. Launch pipelines to efficiently and accurately process entire datasets.
