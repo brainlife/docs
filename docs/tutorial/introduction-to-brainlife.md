@@ -62,7 +62,7 @@ Add a new process and name it 'temp copy data' in the projects description tab.
 
 1. Select the newly created process and hit the 'Stage Data' button at the bottom right corner of the screen.  
     * For from, select the 'IU LAB IN COGNITIVE AND COMPUTATIONAL NEUROSCIENCE - Demo Data' project to pull data from.
-    * For subject, enter BC (Brad Caron's initials. This is his brain.)
+    * For subject, enter BC
     * For datatype, you will select a single anatomical file this is a T1-weighted MRI (T1w). The brianlife.io Datatypes is called: neuro/anat/T1w
     * For data-object, click the drop down menu and select the appropriate data. Since there's only 1 T1, the correct dataset should auto-populate.
     * Hit OK.
