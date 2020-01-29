@@ -108,6 +108,7 @@ To perform Freesurfer parcellation of ACPC-aligned anatomical (T1w) image, follo
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'freeview' as your viewer
+    
 <!---
 If you're happy with the results, then you're ready to move onto the next step: Thalamic nuclei segmentation!
 
