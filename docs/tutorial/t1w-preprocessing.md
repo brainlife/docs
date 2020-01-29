@@ -108,7 +108,7 @@ To perform Freesurfer parcellation of ACPC-aligned anatomical (T1w) image, follo
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'freeview' as your viewer
-
+<!---
 If you're happy with the results, then you're ready to move onto the next step: Thalamic nuclei segmentation!
 
 ### 4. Thalamic nuclei segmentation.
@@ -142,7 +142,7 @@ To segment the thalamus from the Freesurfer parcellation, follow the following s
             * Click 'Load'
             * Click 'OK'
         * You won't be able to view each segmented nuclei, but you can click on the image and scroll over the white area. In the 'Cursor' bar at the bottom of the screen, you'll see a field titled 'ThalamicNuclei.v10.T1.FSvoxelSpace' with a number by it. Those numbers are representative of the different thalamic nuclei. We will update the viewer in the next few weeks to be able to view the different thalamic nuclei!
-<!---
+
 If you're happy with the results, then you're ready to move onto the next step: Atlas transfer!
 
 
