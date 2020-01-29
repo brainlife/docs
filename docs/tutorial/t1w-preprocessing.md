@@ -83,7 +83,7 @@ To perform ACPC alignment of the cropped and reoriented anatomical (T1w) image, 
 
 If you're happy with the results, then you're ready to move onto the next step: Freesurfer parcellation!
 
-### 3. Freesurfer Brain Parcellation.
+### 3. Freesurfer Brain Parcellation - Generation.
 
 The next step is perform anatomical preprocessing and divide (i.e. parcellate) the brain into different regions and tissue types (i.e. white matter, gray matter) using Freesurfer. These regions represent different gray matter (i.e. cortical) landmarks such as the motor and somatosensory cortices, and are typically derived from histological properties of these regions. Sometimes, they are derived from functional activation (i.e. fMRI) patterns. Freesurfer will divide the anatomical image into different tissue types (i.e. white matter, gray matter), parcellate the gray matter into known anatomical landmarks, and output statistics regarding the volume and thickness of the different tissue types and anatomical landmarks. These regions are then used for a large number of downstream steps, including white matter tract segmentation. Information regarding the volume and thickness of each region can also be used for group analyses.
 
@@ -109,4 +109,31 @@ To perform Freesurfer parcellation of ACPC-aligned anatomical (T1w) image, follo
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'freeview' as your viewer
 
-If you're happy with the results, then you've successfully processed the anatomical (T1w) datatype! You are now ready to move onto the next tutorial: Resting state (fMRI) processing!
+If you're happy with the results, then you've successfully processed the anatomical (T1w) datatype! You are now ready to collate statistics into a .csv file for group-level analysis!
+
+### 4. Freesurfer Brain Parcellation - Statistics.
+
+The next step is to take the parcellation generated in Step 3 and collate the important statistics into a .csv file for easy viewing and implementation of group analyses. Within each region of the parcellation (i.e. ROI), Freesurfer computes simple statistics regarding the number of vertices, surface area, volume, cortical thickness, mean and gaussian curvatures, and the fold and curvature indices. These statistics can be used to perform group-level analyses, including group differences within ROIs and correlation analyses with behavioral data.
+
+The best [brainlife.io](https://brainlife.io) app to perform this task is:
+
+| ![freesurfer](/docs/img/app.freesurfer-stats.bl.header.png)|
+|------------------------------------|
+| https://doi.org/10.25663/brainlife.app.272 |
+
+For this tutorial, we will use this application.
+
+To collate the statistics from the Freesurfer output generated in Step 3, follow the following steps:
+1. From the same process you used for Step 1 (crop and reorient), Step 2 (ACPC alignment) & Step 3 (Freesurfer brain parcellation - generation), click 'Submit App' to submit a new application.
+    * In the search bar, type 'Freesurfer Statistics'.
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For input, select the Freesurfer output generated in Step 3 by clicking the drop-down menu and finding the appropriate dataset (look for the datatag 'freesurfer'.
+    * For parcellation, please choose the parcellation of your choice. For this tutorial, we will use the 'aparc.a2009s'. To choose this, select the 'aparc.a2009s' option from the drop-down menu.
+    * Select the box for 'Archive all output datasets when finished
+        * For 'Dataset Tags', type and enter 'freesurfer-stats'
+    * Hit 'Submit'
+    
+To view the results, download the data by clicking the 'download' button next to the dataset. Then open the 'lh' and 'rh' csv files into your favorite spreadsheet of choice (i.e. excel) and you're ready to start your group analyses!
+
+You have now finished preprocessing your anatomical (T1w) image! You are now ready to move onto the next tutorial: Resting state (fMRI) processing!
