@@ -117,7 +117,7 @@ The next step is to take the parcellation generated in Step 3 and collate the im
 
 The best [brainlife.io](https://brainlife.io) app to perform this task is:
 
-| ![freesurfer](/docs/img/app.freesurfer-stats.bl.header.png)|
+| ![freesurfer](/docs/img/app-freesurfer-stats.bl.header.png)|
 |------------------------------------|
 | https://doi.org/10.25663/brainlife.app.272 |
 
