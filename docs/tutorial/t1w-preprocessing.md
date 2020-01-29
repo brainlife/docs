@@ -109,7 +109,6 @@ To perform Freesurfer parcellation of ACPC-aligned anatomical (T1w) image, follo
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'freeview' as your viewer
     
-<!---
 If you're happy with the results, then you're ready to move onto the next step: Thalamic nuclei segmentation!
 
 ### 4. Thalamic nuclei segmentation.
@@ -146,9 +145,6 @@ To segment the thalamus from the Freesurfer parcellation, follow the following s
 
 If you're happy with the results, then you're ready to move onto the next step: Atlas transfer!
 
---->
-
-<!---
 ### 5. Atlas transfer.
 
 The next step in the anatomical preprocessing (T1w) pipeline is to fit different parcellations to the Freesufer-generated parcellation. This is useful as new parcellations come out relatively frequently, each generated based on different histological or functional properties. We recommend mapping the Glasser-derived 180 node parcellation, as it was derived from both histological and functional properties (Glasser MF, Coalson TS, Robinson EC, et al. A multi-modal parcellation of human cerebral cortex. Nature. 2016;536(7615):171–178. doi:10.1038/nature18933).
@@ -174,9 +170,6 @@ Unfortunately, there's currently no viewer set up to review the results of this 
 
 You are now ready to move onto the final step: tissue-type mask segmentation!
 
---->
-
-<!---
 ### 6. Tissue-type mask segmentation.
 
 The next step is perform separate the anatomical image into multiple tissue-type (5tt) components. These tissue types include Gray Matter (GM; neuronal somas), White Matter (WM; myelinated axons), and Cerebro-spinal Fluid (CSF). Separating these tissue types is important as it will allow us to perform more anatomically-accurate tractography and allow us to analyze the properties of specific tissues.
@@ -200,6 +193,5 @@ To perform tissue-type segmentation of the ACPC-aligned anatomical (T1w) image, 
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'mrview' as your viewer
---->
 
 If you're happy with the results, then you've successfully processed the anatomical (T1w) datatype! You are now ready to move onto the next tutorial: Resting state (fMRI) processing!
