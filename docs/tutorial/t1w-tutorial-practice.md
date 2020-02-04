@@ -1,7 +1,7 @@
 !!! warning
     This is a draft
 
-## Anatomical (T1w) preprocessing - Practice & report generation.
+## Identify the effects of concussion on the volumes of brain tissue - Anatomical Preprocessing.
 
 As a structural neuroimager and neuroscientist, I am interested in how structural properties of the brain relate to behavior or disease. For example, I am interested in how concussions may affect the volume of the motor cortex, the primary visual cortex, the hippocampus, and prefrontal cortex and how that relates to behavior. I want to know: 1) how concussions affect the volume of these structures, 2) are different tissue types affected differentially from concussions, and 3) how these alterations relate to behavior. In order to answer these questions, I need to compare measures derived from concussed athletes with a healthy control population in order to identify any concussion-specific effects on brain tissue. These questions are important to understanding the effects of concussions and may be useful in identifying markers that can predict whether or not a person has a concussion.
 
