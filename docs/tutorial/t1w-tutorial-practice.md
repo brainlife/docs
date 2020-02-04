@@ -37,5 +37,5 @@ The final task in this practice is to report the statistics of the parcellation 
     * report coefficient and plot
 1. Identify the correlation (r) coefficient between the vertex numbers of the somatosensory cortex (S1) and the prefrontal cortex.
     * report coefficient and plot
-1. Identify the correlation (r) coefficient between the white matter and gray matter volumes of both the left and righ hemispheres.
+1. Identify the correlation (r) coefficient between the white matter and gray matter volumes of both the left and right hemispheres.
     * report coefficient and plot
