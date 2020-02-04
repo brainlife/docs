@@ -13,7 +13,7 @@ The first task in this practice is to create a project to perform your preproces
 
 ### 2. Copying data from at least *three* open projects.
 
-The next task in this practice is to copy the anatomical (neuro/anat/t1w) datatypes from at least *three* open projects on brainlife.io. You will need to archive the data and take a screenshot of the archives page with your archived data.
+The next task in this practice is to copy the anatomical (neuro/anat/t1w) datatypes from at least *three* open projects on brainlife.io. Copy over 10 subjects total. You will need to archive the data and take a screenshot of the archives page with your archived data.
 
 ### 3. Crop & reorient the anatomical data.
 
