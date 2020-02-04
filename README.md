@@ -1,7 +1,7 @@
 
 # Brainlife Documentation
 
-This repository contains the content of [Brainlife Doc](https://brainlife.io/docs)
+This repository contains the content of [Brainlife Doc](https://brainlife.io/docs). Test instance is available at https://test.brainlife.io/docs
 
 # Installation intructions
 
