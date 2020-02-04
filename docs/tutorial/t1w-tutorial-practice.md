@@ -5,7 +5,7 @@
 
 Now that you've walked through the Anatomical (T1w) preprocessing, it's time to test your skills!
 
-In this practice, you will be required to combine elements from the Anatomicaly (T1w) preprocessing tutorial and the 'Introduction to brainlife' tutorial. If you have not walked through those, please do that before continuing.
+In this practice, you will be required to combine elements from the 'Anatomical (T1w) preprocessing' tutorial and the 'Introduction to brainlife' tutorial. If you have not walked through those, please do that before continuing.
 
 ### 1. Create a project to perform your preprocessing.
 
