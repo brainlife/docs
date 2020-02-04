@@ -31,11 +31,11 @@ The next task in this practice is to parcellate the ACPC aligned anatomical imag
 
 The final task in this practice is to report the statistics of the parcellation from Freesurfer and perform some simple statistical analyses. This will require using the proper app to report the statistics in .csv files. Please report the following stastics:
 
- 1. All subject average and standard deviation for all the parcels (both left and right hemisphere) and measures reported from the app.
-  * report these values in a table or .csv
- 1. Identify the correlation (r) coefficient between the gray matter volumes of the primary visual area (V1) and the primary motor (M1) cortex.
-  * report coefficient and plot
- 1. Identify the correlation (r) coefficient between the surface area of the hippocampus and the prefrontal cortex.
-  * report coefficient and plot
- 1. Identify the correlation (r) coefficient between the white matter and gray matter volumes of both the left and righ hemispheres.
-  * report coefficient and plot
+1. All subject average and standard deviation for all the parcels (both left and right hemisphere) and measures reported from the app.
+    * report these values in a table or .csv
+1. All subject average and standard deviation for all the parcels (both left and right hemisphere) and measures reported from the app.
+    * report these values in a table or .csv
+1. Identify the correlation (r) coefficient between the surface area of the hippocampus and the prefrontal cortex.
+    * report coefficient and plot
+1. Identify the correlation (r) coefficient between the white matter and gray matter volumes of both the left and righ hemispheres.
+    * report coefficient and plot
