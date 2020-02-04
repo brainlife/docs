@@ -124,6 +124,7 @@ The best [brainlife.io](https://brainlife.io) app to perform this task is:
 For this tutorial, we will use this application.
 
 To collate the statistics from the Freesurfer output generated in Step 3, follow the following steps:
+
 1. From the same process you used for Step 1 (crop and reorient), Step 2 (ACPC alignment) & Step 3 (Freesurfer brain parcellation - generation), click 'Submit App' to submit a new application.
     * In the search bar, type 'Freesurfer Statistics'.
     * Click the app card.
