@@ -33,9 +33,9 @@ The final task in this practice is to report the statistics of the parcellation 
 
 1. All subject average and standard deviation for all the parcels (both left and right hemisphere) and measures reported from the app.
     * report these values in a table or .csv
-1. All subject average and standard deviation for all the parcels (both left and right hemisphere) and measures reported from the app.
-    * report these values in a table or .csv
-1. Identify the correlation (r) coefficient between the surface area of the hippocampus and the prefrontal cortex.
+1. Identify the correlation (r) coefficient between the gray matter volumes of the the primary visual area (V1) and the precentral gyrus (M1).
+    * report coefficient and plot
+1. Identify the correlation (r) coefficient between the vertex numbers of the somatosensory cortex (S1) and the prefrontal cortex.
     * report coefficient and plot
 1. Identify the correlation (r) coefficient between the white matter and gray matter volumes of both the left and righ hemispheres.
     * report coefficient and plot
