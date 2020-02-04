@@ -17,11 +17,11 @@ The next task in this practice is to copy the anatomical (neuro/anat/t1w) dataty
 
 ### 3. Crop & reorient the anatomical data.
 
-The next task in this practice is to crop and reorient the anatomical data in order to prepare it for ACPC alignment and Freesurfer parcellation. This will require staging the data, naming the process, and running the proper app on all of your subjects. Each tab should correspond to a single subject. Please report a screenshot of your processes tab with the staged data, at least *one* process running (i.e. blue header), a completed process (i.e. green header), and images of the pre and post cropping/reorientation from at least *three* subjects.
+The next task in this practice is to crop and reorient the anatomical data in order to prepare it for ACPC alignment and Freesurfer parcellation. This will require staging the data, naming the process, and running the proper app on all of your subjects. Each tab should correspond to a single subject. Please report screenshots of your processes tab with the staged data, at least *one* process running (i.e. blue header), a completed process (i.e. green header), and images of the pre and post cropping/reorientation from at least *three* subjects.
 
 ### 4. ACPC alignment
 
-The next task in this practice is to take the crop and reoriented anatomical data and align it to the ACPC plane. This will require using the output from the crop and reorient app as the input for this step. Please report a screenshot of the pre and post alignment anatomical images from at least *three* subjects.
+The next task in this practice is to take the crop and reoriented anatomical data and align it to the ACPC plane. This will require using the output from the crop and reorient app as the input for this step. Please report screenshots of the pre and post alignment anatomical images from at least *three* subjects.
 
 ### 5. Freesurfer parcellation - Generation.
 
