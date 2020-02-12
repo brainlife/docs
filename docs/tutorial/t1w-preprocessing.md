@@ -108,6 +108,16 @@ To perform Freesurfer parcellation of ACPC-aligned anatomical (T1w) image, follo
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'freeview' as your viewer
+        * This will load the following volumes and surfaces: aseg, brainmask, white matter mask, T1, left/right hemisphere pial (cortical) and white (white matter) surfaces.
+    * To view the aparc.a2009s segmentation on an inflated surface, do the following:
+        * Click File --> Load surface
+            * Choose the lh.inflated and rh.inflated surfaces
+            * Hit 'OK'
+        * Select inflated surface of choice (i.e. left or right hemisphere)
+        * Click the drop-down menu next to 'Annotation' and choose 'Load from file'
+            * Choose the appropriate hemisphere aparc.a2009s.annot file (i.e. lh.aparc.a2009s.annot)
+            * Hit 'OK'
+            * The aparc.a2009s parcellation should be overlayed on your inflated surface! Repeat the process on the other hemisphere!
 
 If you're happy with the results, then you've successfully processed the anatomical (T1w) datatype! You are now ready to collate statistics into a .csv file for group-level analysis!
 
