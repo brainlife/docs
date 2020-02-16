@@ -13,5 +13,8 @@
     "install": "pip install mkdocs mkdocs-material fontawesome_markdown"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "github-webhook-handler": "^1.0.0"
+  }
 }

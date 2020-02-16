@@ -3,9 +3,9 @@
 
 ## Anatomical (T1w) preprocessing.
 
-This page demonstrate common steps used to preprocess anatomical magnetic resonance imaging data (T1-weighted or T1w) on brainlife.io The goal of this turorial is to show how process anatomical data for successive analyses – volumetric analyses from T1w meausres, combination of T1w and diffusion-weighted MRI (dMRI) or functional neuroimaging data (fMRI). pipelines. This pipelines combines functions from FSL, Automatic Registration Toolbox (ART), and Freesurfer.
+This page demonstrate common steps used to preprocess anatomical magnetic resonance imaging data (T1-weighted or T1w) on brainlife.io The goal of this turorial is to show how process anatomical data for successive analyses – volumetric analyses from T1w meausres, combination of T1w and diffusion-weighted MRI (dMRI) or functional neuroimaging data (fMRI) pipelines.
 
-This tutorial will use a combination of skills developed in the introduction-to-brainlife tutorial (). If you have not read this, or you are not comfortable staging, processing, archiving and viewing data on brainlife.io, please go back and follow that tutorial before beginning this one.
+This tutorial will use a combination of skills developed in the introduction-to-brainlife tutorial (https://brainlife.io/docs/tutorial/introduction-to-brainlife/). If you have not read this, or you are not comfortable staging, processing, archiving and viewing data on brainlife.io, please go back and follow that tutorial before beginning this one.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hC0Ms3KWD8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -108,6 +108,16 @@ To perform Freesurfer parcellation of ACPC-aligned anatomical (T1w) image, follo
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'freeview' as your viewer
+        * This will load the following volumes and surfaces: aseg, brainmask, white matter mask, T1, left/right hemisphere pial (cortical) and white (white matter) surfaces.
+    * To view the aparc.a2009s segmentation on an inflated surface, do the following:
+        * Click File --> Load surface
+            * Choose the lh.inflated and rh.inflated surfaces
+            * Hit 'OK'
+        * Select inflated surface of choice (i.e. left or right hemisphere)
+        * Click the drop-down menu next to 'Annotation' and choose 'Load from file'
+            * Choose the appropriate hemisphere aparc.a2009s.annot file (i.e. lh.aparc.a2009s.annot)
+            * Hit 'OK'
+            * The aparc.a2009s parcellation should be overlayed on your inflated surface! Repeat the process on the other hemisphere!
 
 If you're happy with the results, then you've successfully processed the anatomical (T1w) datatype! You are now ready to collate statistics into a .csv file for group-level analysis!
 
