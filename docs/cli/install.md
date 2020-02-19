@@ -1,9 +1,6 @@
 
 # CLI Installation
 
-!!! warning
-    This is a draft
-
 With brainlife CLI, you can ..
 
 * Upload/download datasets from your computer.
@@ -12,6 +9,18 @@ With brainlife CLI, you can ..
 * Query projects, datasets, datatypes, etc.
 
 Brainlife CLI is distributed through [npm](https://www.npmjs.com/)(node package manager) which is a part of nodejs. You will need to have nodejs/npm installed on your machine before you can install brainlife CLI command. Most operation systems support nodejs through their software distribution systems. You can find the nodejs installation document [here](https://nodejs.org/en/download/package-manager/).
+
+```
+$ sudo apt install nodejs
+```
+
+!!! Info "For Windows Users"
+    In order to use brainlife CLI on Windows, you will first need to install [WSL (Windows Subsyste for Linux)](https://docs.microsoft.com/en-us/windows/wsl/install-win10) and run all commands inside the Ubuntu terminal.
+
+    Apart from WSL, we recommend the following software packages installed on Windows systems.
+
+    * [7-zip](https://www.7-zip.org/) for uncompressing downloaded data (.tar.gz)
+    * [MRIcron](https://www.nitrc.org/projects/mricron) for visualizing brainimaging data 
 
 !!! note
     On IU Karst / Carbonate / RED, brainlife CLI is already installed as part of nodejs module. Please run `module load nodejs` and skip this installation step.
@@ -26,7 +35,7 @@ You can then check the installation by
 
 ```
 $ bl --version
-1.2.36
+1.3.7
 
 $ bl -h
 Usage: bl [options] [command]
