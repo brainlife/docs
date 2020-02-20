@@ -63,9 +63,8 @@ This information is:
 
 ## Information Used For Contact
 
-If you supply us with your postal/mailing address:
-
-* You will only receive the information for which you provided us your address.
+The email address you provide during brainlife.io signup process will be used to identify you, and to send you
+newsletters and other information materials. The Brainlife team might contact you using that email address.
 
 ## Information Sharing
 
