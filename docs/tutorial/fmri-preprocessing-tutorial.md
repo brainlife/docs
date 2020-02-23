@@ -22,8 +22,7 @@ Useful information about the fmriPrep anatomical preprocessing can be found in t
   
 There are two versions of the [brainlife.io](https://brainlife.io) app to fmriPrep. One generates outputs mapped to the surfaces, and the other generates outputs mapped to the volumes:
 
-| ![fmriprep-volume](/docs/img/app-fmriprep-volume-header.png) |
-| ![fmriprep-surface](/docs/img/app-fmriprep-surface-header.png) |
+| ![fmriprep-volume](/docs/img/app-fmriprep-volume-header.png) ![fmriprep-surface](/docs/img/app-fmriprep-surface-header.png) |
 |------------------------------------|
 | https://doi.org/10.25663/brainlife.app.267 |
 | https://doi.org/10.25663/brainlife.app.160 |
