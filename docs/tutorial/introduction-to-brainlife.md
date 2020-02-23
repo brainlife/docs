@@ -54,6 +54,7 @@ You are now ready to copy data from another project!
 The next step will be to copy data into your project. For that, we will use open data from another project.
 
 To copy data from an open project follow the steps below.
+
 1. Go to the main page of your project.
 1. Click on the 'Processes' tab.
 1. Once inside the Processes tab, click the '+' button at the right-hand bottom of the screen. 
@@ -141,6 +142,7 @@ In this tutorial, we will create a pipeline to run Freesurfer on any T1 anatomic
 </center>
 
 To create and launch a pipeline to run Freesurfer, follow the following steps:
+
 1. From the projects page, select your project and select the 'pipelines' tab at the top of the projects page.
 1. Once inside the pipelines page, click the '+' at the bottom right of the screen.
 1. Give the pipeline a name based on the app you're running (example: Freesurfer).

@@ -13,7 +13,7 @@ This tutorial will use a combination of skills developed in the introduction-to-
 
 The first step of fmriPrep involves processing the anatomical images. These can include both T1w and T2w images. fmriPrep will correct for signal inhomogeneities (i.e. intensity banding), remove non-brain material, generate cortical and white matter surfaces using Freesurfer, and align images and surfaces to a standard template. 
 
-### 2. functional preprocessing.
+### 2. Functional preprocessing.
 
 The second step of fmriPrep involves processing the functional (fMRI) images. These can include both task-related (i.e. person performing a task in the scanner) or resting-state (i.e. person does no task in the scanner). fmriPrep will estimate and correct head motion across all of the fMRI volumes, perform slice-timing correction (i.e. reorder images based on when the slice was acquired), correct for field-related susceptibility distortions, register functional volumes to the anatomical image, and map the fMRI signal onto the surfaces generated in step 1.
 
