@@ -24,8 +24,8 @@ There are two versions of the [brainlife.io](https://brainlife.io) app to fmriPr
 
 | ![fmriprep-volume](/docs/img/app-fmriprep-volume-header.png) ![fmriprep-surface](/docs/img/app-fmriprep-surface-header.png) |
 |------------------------------------|
-| https://doi.org/10.25663/brainlife.app.267 |
 | https://doi.org/10.25663/brainlife.app.160 |
+| https://doi.org/10.25663/brainlife.app.267 |
 
 For this tutorial, we will use the surface-based version.
 
