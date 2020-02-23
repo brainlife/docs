@@ -11,11 +11,11 @@ This tutorial will use a combination of skills developed in the introduction-to-
 
 ### 1. Anatomical preprocessing.
 
-The first step of fmriPrep involves processing the anatomical images. These can include both T1w and T2w images. fmriPrep will correct for signal inhomogeneities (i.e. intensity banding), remove non-brain material, generate cortical and white matter surfaces using Freesurfer, and align images and surfaces to a standard template. 
+The first step of fmriPrep involves processing the anatomical images. There are a few common artifacts and issues with anatomical images straight from the scanner. One of the most noticeable, and detrimental to processing, is signal inhomogeneity. Signal inhomogeneity is when the signal from certain portions of the brain (usually central) are brighter than the other regions of the brain. This is due to how the scanner reconstructs the anatomical image. fMRIPrep will do correct for this signal inhomogeneity automatically for us! fMRIPrep will also remove non-brain material and align images and surfaces to a standard template (i.e. MNI). Before performing fMRIPrep, however, we must first generate cortical and white matter surfaces from the anatomical images using Freesurfer.
 
 ### 2. Functional preprocessing.
 
-The second step of fmriPrep involves processing the functional (fMRI) images. These can include both task-related (i.e. person performing a task in the scanner) or resting-state (i.e. person does no task in the scanner). fmriPrep will estimate and correct head motion across all of the fMRI volumes, perform slice-timing correction (i.e. reorder images based on when the slice was acquired), correct for field-related susceptibility distortions, register functional volumes to the anatomical image, and map the fMRI signal onto the surfaces generated in step 1.
+The second step of fmriPrep involves processing the functional (fMRI) images. These can include both task-related (i.e. person performing a task in the scanner) or resting-state (i.e. person does no task in the scanner). Like any image directly from the scanner, there are common artifacts and issues with fMRI data. One of the biggest is motion. For long scanning "runs", it is nearly impossible for a participant to lie completely motionless. When sublte movements do occur, this can alter the results in a specific region and make your data less accurate. fMRIPrep will estimate the motion that occurred across all of the fMRI volumes and correct for it. This will make all of the volumes perfectly aligned to one another and ensure motion is not altering the data. Another common artifact is susceptibility distortions. This is when regions of the brain look 'wavy' or fold inwards or outwards on itself. This is due to how the scanner sweeps across the entire brain. fMRIPrep will also automatically correct for this! The final issue with fMRI occurs due to the lagginess of the BOLD signal and the need to acquire data in non-contiguous slices. This is referred to as slice-timing (i.e. the order in which slices are acquired). Because of this, we need to order the data in the proper way, or your data with not have contiguous brain slices. fMRIPrep also corrects for this automatically! Finally, images from the scanner might not be perfectly aligned to images collected before it (i.e. the anatomical images). Thus, we need to egister the functional volumes to the anatomical image, and map the fMRI signal onto the surfaces generated in the anatomical preprocessing step. fMRIPrep does this registration automatically!
 
 Useful information about the fmriPrep anatomical preprocessing can be found in the original Nature paper: 
   - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/#S13title
@@ -32,7 +32,7 @@ There are two versions of the [brainlife.io](https://brainlife.io) app to fmriPr
 
 For this tutorial, we will use the surface-based version.
 
-To perform fmriPrep, follow the following steps:
+To generate surfaces using Freesurfer, follow the following steps:
 
 1. Go to the 'Archives' page of your project by clicking the 'Archives' tab on your Projects page.
 1. Select the anatomical (T1w & T2w) images, the functional data, and the fieldmap datatypes by clicking the box next to the datasets.
@@ -63,6 +63,11 @@ To perform fmriPrep, follow the following steps:
             * Choose the appropriate hemisphere aparc.a2009s.annot file (i.e. lh.aparc.a2009s.annot)
             * Hit 'OK'
             * The aparc.a2009s parcellation should be overlayed on your inflated surface! Repeat the process on the other hemisphere!
+            
+Once you're happy with the surfaces, you can now move onto running fMRIPrep!
+
+To preprocess your data with fMRIPrep, follow the following steps:
+
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'fmriPrep - Surface Output'.
     * Click the app card.
