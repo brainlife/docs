@@ -81,4 +81,4 @@ Once you're happy with the surfaces, you can now move onto running fMRIPrep!
     * Choose 'freeview' as your viewer
         * This will load the following volumes and surfaces: aseg, brainmask, white matter mask, T1, left/right hemisphere pial (cortical) and white (white matter) surfaces.
 
-If you're happy with the results, then you have now finished preprocessing your fMRI data with fMRIPrep! You are now ready to move onto the next tutorial: population receptive field mapping!
+If you're happy with the results, then you have now finished preprocessing your fMRI data with fMRIPrep! You are now ready to move onto the next tutorial: generating functional connectivity matrices!
