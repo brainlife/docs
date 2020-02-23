@@ -32,7 +32,7 @@ There are two versions of the [brainlife.io](https://brainlife.io) app to fmriPr
 
 For this tutorial, we will use the surface-based version.
 
-To generate surfaces using Freesurfer, follow the following steps:
+### To generate surfaces using Freesurfer, follow the following steps:
 
 1. Go to the 'Archives' page of your project by clicking the 'Archives' tab on your Projects page.
 1. Select the anatomical (T1w & T2w) images, the functional data, and the fieldmap datatypes by clicking the box next to the datasets.
@@ -66,7 +66,7 @@ To generate surfaces using Freesurfer, follow the following steps:
             
 Once you're happy with the surfaces, you can now move onto running fMRIPrep!
 
-To preprocess your data with fMRIPrep, follow the following steps:
+### To preprocess your data with fMRIPrep, follow the following steps:
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'fmriPrep - Surface Output'.
