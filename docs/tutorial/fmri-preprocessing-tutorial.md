@@ -20,7 +20,7 @@ The second step of fmriPrep involves processing the functional (fMRI) images. Th
 Useful information about the fmriPrep anatomical preprocessing can be found in the original Nature paper: 
   - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/#S13title
   
-There are two versions of the [brainlife.io](https://brainlife.io) app to fmriPrep. One generates outputs mapped to the surfaces, and the other generates outputs mapped to the volumes:
+There are two versions of the [brainlife.io](https://brainlife.io) app to fmriPrep. One generates outputs mapped to the volumes, and the other generates outputs mapped to the surfaces:
 
 | ![fmriprep-volume](/docs/img/app-fmriprep-volume-header.png) |
 |------------------------------------|
