@@ -1,6 +1,6 @@
 # Introduction
 
-## What is *App*?
+## What is an *App*?
 
 Brainlife Apps are snippets of code comprising a (short) series of processing steps within a larger data analysis workflow. Apps are meant to be reusable by other users and not just by the App developer. Apps usage is value added to the work of the App Developer. So, the code in each App should use general tools and clarity in code writing so to make the App understandable by other users. 
 
