@@ -89,13 +89,13 @@ Once you're happy with the surfaces, you can now move onto running fMRIPrep!
 
 If you're happy with the results, then you have now finished preprocessing your fMRI data with fMRIPrep! You are now ready to move onto the next step in this tutorial: mapping the Glasser 180-node atlas to the T1w image!
 
-### To map the Glasser 180-node atlas , follow the following steps:
+### To map the Glasser 180-node atlas, follow the following steps:
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'fmriPrep - Volume Output'.
+    * In the search bar, type 'Multi-Atlas Transfer Tool'.
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For input, select the staged raw anatomical (T1w & T2w) images, the freesurfer output, and the functional data by clicking the drop-down menu and finding the appropriate datasets.
+    * For input, select the staged Freesurfer output by clicking the drop-down menu and finding the appropriate dataset.
     * For 'space', select 'fsaverage6' from the drop-down menu.
     * Select the box for 'Archive all output datasets when finished
         * For 'Dataset Tags', type and enter 'fmriPrep'
