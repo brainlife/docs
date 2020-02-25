@@ -79,13 +79,14 @@ Once you're happy with the surfaces, you can now move onto running fMRIPrep!
     * Click the app card.
 1. On the 'Submit App' page, select the following:
     * For input, select the staged raw anatomical (T1w & T2w) images, the freesurfer output, and the functional data by clicking the drop-down menu and finding the appropriate datasets.
-    * For 'space', select 'fsaverage6' from the drop-down menu.
+    * For 'space', select 'MNI152NLin6Asym' from the drop-down menu.
+    * For 'resolution', select 'original' from the drop-down menu.
     * Select the box for 'Archive all output datasets when finished
         * For 'Dataset Tags', type and enter 'fmriPrep'
     * Hit 'Submit'
-1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
-    * Choose 'freeview' as your viewer
-        * This will load the following volumes and surfaces: aseg, brainmask, white matter mask, T1, left/right hemisphere pial (cortical) and white (white matter) surfaces.
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the func/task preprocessed dataset
+    * Choose 'FSLeyes' as your viewer
+        * This will show the fMRI volume data after preprocessing.
 
 If you're happy with the results, then you have now finished preprocessing your fMRI data with fMRIPrep! You are now ready to move onto the next step in this tutorial: mapping the Glasser 180-node atlas to the T1w image!
 
@@ -100,6 +101,18 @@ If you're happy with the results, then you have now finished preprocessing your 
     * Select the box for 'Archive all output datasets when finished
         * For 'Dataset Tags', type and enter 'fmriPrep'
     * Hit 'Submit'
-1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
-    * Choose 'freeview' as your viewer
-        * This will load the following volumes and surfaces: aseg, brainmask, white matter mask, T1, left/right hemisphere pial (cortical) and white (white matter) surfaces.
+
+Once the app is finished, you're ready to move onto the final step: network matrix generation!
+
+### To generate functional connectivity network matrices, follow the following steps:
+
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'fMRI to Connectivity Matrices'.
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For input, select the generated bold mask, preprocessed functional data, the Glasser parcellation-volume, and the preprocessed regressors by clicking the drop-down menu and finding the appropriate datasets.
+    * Select the box for 'Archive all output datasets when finished
+        * For 'Dataset Tags', type and enter 'connectivity_matrix'
+    * Hit 'Submit'
+    
+Once the app is finished, you're now ready to perform group analyses on your connectivity matrices!
