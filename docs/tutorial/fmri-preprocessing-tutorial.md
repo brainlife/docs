@@ -119,8 +119,7 @@ Once you're happy with the surfaces, you can move onto running fMRIPrep!
         * For 'Dataset Tags,' type and enter 'fmriPrep'
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the output.
-    * Choose 'FSLeyes' as your viewer
-        * This will show the fMRI volume data after preprocessing.
+    * VIEWER CURRENTLY IN DEVELOPMENT. WILL UPDATE ONCE COMPLETED
 
 If you're happy with the results, then you have successfully finished preprocessing your fMRI data with fMRIPrep! Congrats!
 
