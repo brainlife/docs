@@ -3,7 +3,7 @@
 
 ## Functional MRI (fMRI) preprocessing.
 
-This page demonstrates common steps used to preprocess functional magnetic resonance imaging (fMRI) data on brainlife.io The goal of this tutorial is to show you how to process functional data for successive analyses, including **functional region analysis** and **functional connectivity** (you'll learn more about both below). This tutorial will be using [fMRIPrep](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/) for all anatomical and fMRI processing. We'll be looking at [fMRIPrep - Surface Output](https://brainlife.io/app/5dfceebd32bff0640ce27bbd) and [fMRIPrep - Volume Output](https://brainlife.io/app/5c61c69f14027a01b14adcb3).
+This page demonstrates common steps used to preprocess functional magnetic resonance imaging (fMRI) data on brainlife.io The goal of this tutorial is to show you how to process functional data for successive analyses, including **functional region analysis** and **functional connectivity** (you'll learn more about both below). This tutorial will be using [fMRIPrep](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/) for all anatomical and fMRI processing. We'll be looking at [fMRIPrep - Volume Output](https://brainlife.io/app/5c61c69f14027a01b14adcb3).
 
 This tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/) you recently completed. If you haven't read our introduction to brainlife, or if you're not comfortable staging, processing, archiving, and viewing data on brainlife.io, please go back through that tutorial before beginning this one.
 
