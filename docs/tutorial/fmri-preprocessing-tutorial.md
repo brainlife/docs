@@ -122,7 +122,7 @@ Once you're happy with the surfaces, you can move onto running fMRIPrep!
     * Choose 'FSLeyes' as your viewer
         * This will show the fMRI volume data after preprocessing.
 
-If you're happy with the results, then you have successfully finished preprocessing your fMRI data with fMRIPrep! Congrats! Now it's time to 
+If you're happy with the results, then you have successfully finished preprocessing your fMRI data with fMRIPrep! Congrats!
 
 <!---
 ### Map the Glasser 180-node atlas:
@@ -152,5 +152,3 @@ Once the app is finished, you're ready to move onto the final step: network matr
     
 Nice work! You've completed this tutorial. Now that the app is finished, you're ready to perform group analyses on your connectivity matrices!
 -->
-
-Congrats! You've now completed the fMRI preprocessing tutorial!
