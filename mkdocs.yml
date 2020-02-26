@@ -32,6 +32,7 @@ nav:
     - Anatomy: tutorial/t1w-preprocessing.md
     - Structural networks: tutorial/networkneuroscience-structural.md
     - Functional networks: tutorial/networkneuroscience-functional.md
+    - FMRI Preprocessing: tutorial/fmri-preprocessing-tutorial.md
 
   - Using CLI:
     - Installation: cli/install.md
