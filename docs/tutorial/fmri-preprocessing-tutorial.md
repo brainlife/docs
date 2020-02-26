@@ -34,7 +34,7 @@ There are two versions of the [brainlife.io](https://brainlife.io) fMRIPrep app.
 | https://doi.org/10.25663/brainlife.app.267 |
 
 For this tutorial, we will use the volume-based version.
-
+<!---
 ### 3. Functional connectivity network matrices generation.
 
 Once the anatomical and fMRI data is preprocessed with fMRIPrep, we can now examine the functional network organization by generating **functional connectivity matrices**! This is done by examing the fMRI BOLD activity in multiple regions across the brain by correlating the regions' BOLD activity throughout the entire acquisition. The reason we do this is because regions that are active in similar ways at similar time points are more likely to be working with each other to perform a specific task. The way we typically represent the correlation coefficients, or weights, of each region (node) with every other region (node) in the brain is with a **network matrix** -- note that **nodes** represent the brain regions here. Each point in the network matrix represents the correlation of BOLD activity between one region and another. We can then use these network matrices to examine properties of the network that describe how interrelated specific regions in the brain are working during the fMRI acquisition in either task-related or resting-state fMRIs.
@@ -44,7 +44,7 @@ There is a [brainlife.io](https://brainlife.io) app for generating these matrice
 | ![conmat](/docs/img/app-fmri-to-conmat.bl.header.png) |
 |------------------------------------|
 | https://doi.org/10.25663/brainlife.app.167 |
-
+-->
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
 1. generate anatomical surfaces using Freesurfer, 
