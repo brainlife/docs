@@ -75,7 +75,7 @@ Your data should now be staged for processing and archived in your projects page
 ### Generate surfaces using Freesurfer:
 
 1. Go to the 'Archives' page of your project by clicking the 'Archives' tab.
-1. Select the anatomical (T1w & T2w) images, the functional data, and the fieldmap datatypes by clicking the box next to the datasets.
+1. Select the anatomical (T1w & T2w) images and the functional data datatypes by clicking the box next to the datasets.
 1. Click the 'Stage to process'
     * For Project, make sure your project is selected
     * For Process, select 'Create New Process'
