@@ -34,6 +34,7 @@ There are two versions of the [brainlife.io](https://brainlife.io) fMRIPrep app.
 | https://doi.org/10.25663/brainlife.app.267 |
 
 For this tutorial, we will use the volume-based version.
+
 <!---
 ### 3. Functional connectivity network matrices generation.
 
