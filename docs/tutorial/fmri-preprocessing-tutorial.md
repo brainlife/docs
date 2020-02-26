@@ -49,8 +49,11 @@ There is a [brainlife.io](https://brainlife.io) app for generating these matrice
 Now, let's get to work! The following steps of this tutorial will show you how to:
 1. generate anatomical surfaces using Freesurfer, 
 2. preprocess the anatomical (T1w & T2w) and fMRI data using fMRIPrep, 
-3. map the Glasser 180-node atlas to the anatomical (T1w) image, 
+
+<!---
+3. and, map the Glasser 180-node atlas to the anatomical (T1w) image
 4. and generate network matrices from the regions of the Glasser 180-node atlas.
+-->
 
 ### Copy appropriate data over from a single subject in the InterTVA project
 
@@ -120,6 +123,7 @@ Once you're happy with the surfaces, you can move onto running fMRIPrep!
 
 If you're happy with the results, then you have successfully finished preprocessing your fMRI data with fMRIPrep! You are now ready to move onto the next step in this tutorial: mapping the Glasser 180-node atlas to the T1w image.
 
+<!---
 ### Map the Glasser 180-node atlas:
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
@@ -146,3 +150,6 @@ Once the app is finished, you're ready to move onto the final step: network matr
     * Hit 'Submit'
     
 Nice work! You've completed this tutorial. Now that the app is finished, you're ready to perform group analyses on your connectivity matrices!
+-->
+
+Congrats! You've now completed the fMRI preprocessing tutorial!
