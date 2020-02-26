@@ -7,8 +7,6 @@ This page demonstrates common steps used to preprocess functional magnetic reson
 
 This tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/) you recently completed. If you haven't read our introduction to brainlife, or if you're not comfortable staging, processing, archiving, and viewing data on brainlife.io, please go back through that tutorial before beginning this one.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hC0Ms3KWD8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ### 1. Anatomical preprocessing.
 
 The first step of fMRIPrep involves processing the anatomical images. There are a few common issues and **artifacts**, or anomalies visible in the image but not actually present in the brain, that occur in anatomical images that come straight from the fMRI scanner. One of the most noticeable artifacts, which is detrimental to processing, is **signal inhomogeneity**. This is when the signal from certain portions of the brain, typically the central part, are brighter than the other regions of the brain. Signal inhomogeneity is caused by how the scanner reconstructs the anatomical image. The fMRIPrep app can automatically fix this signal inhomogeneity for us! fMRIPrep will also remove non-brain material from images and align images and surfaces to a standard template (i.e. MNI). Before we can begin using fMRIPrep, however, we must first generate cortical and white matter surfaces from the anatomical images using Freesurfer.
@@ -53,6 +51,22 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 2. preprocess the anatomical (T1w & T2w) and fMRI data using fMRIPrep, 
 3. map the Glasser 180-node atlas to the anatomical (T1w) image, 
 4. and generate network matrices from the regions of the Glasser 180-node atlas.
+
+### Copy appropriate data over from a single subject in the InterTVA project
+
+1. Click the following link to go to the project's page for the 'InterTVA' project: https://brainlife.io/project/5c8415aa34225c0031027372
+1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
+1. Select the following datatypes from one subject by clicking the boxes next to the data:
+    * func/task rest
+    * anat/t1w
+    * anat/t2w
+1. Click the 'Stage to process' button on the right side of the screen
+    * For 'Project', select your project from the drop-down menu.
+    * For 'Process', select 'Create New Process' and title it "fMRI Prep Tutorial". Hit 'Submit'.
+        * This will take you to the process on your Project's page
+1. Archive the data in your project by clickin the 'Archive' button next to each dataset.
+
+Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: generate Freesurfer surfaces!
 
 ### Generate surfaces using Freesurfer:
 
