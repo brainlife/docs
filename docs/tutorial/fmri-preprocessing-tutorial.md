@@ -118,11 +118,11 @@ Once you're happy with the surfaces, you can move onto running fMRIPrep!
     * Select the box for 'Archive all output datasets' when finished
         * For 'Dataset Tags,' type and enter 'fmriPrep'
     * Hit 'Submit'
-1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the func/task preprocessed dataset
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the output.
     * Choose 'FSLeyes' as your viewer
         * This will show the fMRI volume data after preprocessing.
 
-If you're happy with the results, then you have successfully finished preprocessing your fMRI data with fMRIPrep! You are now ready to move onto the next step in this tutorial: mapping the Glasser 180-node atlas to the T1w image.
+If you're happy with the results, then you have successfully finished preprocessing your fMRI data with fMRIPrep! Congrats! Now it's time to 
 
 <!---
 ### Map the Glasser 180-node atlas:
