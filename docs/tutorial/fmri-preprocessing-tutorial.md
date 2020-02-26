@@ -52,7 +52,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 3. map the Glasser 180-node atlas to the anatomical (T1w) image, 
 4. and generate network matrices from the regions of the Glasser 180-node atlas.
 
-### Copy appropriate data over from a single subject in the InterTVA project (https://brainlife.io/project/5c8415aa34225c0031027372)
+### Copy appropriate data over from a single subject in the InterTVA project
 
 1. Click the following link to go to the project's page for the 'InterTVA' project: https://brainlife.io/project/5c8415aa34225c0031027372
 1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
