@@ -1,7 +1,4 @@
-<style> 
-#disqus_thread, #__comments { display: none } 
-.md-footer { display: none } /*to better embed in signup page*/
-</style>
+<style> #disqus_thread, #__comments { display: none } </style>
 
 <!-- 
     generated using https://protect.iu.edu/online-safety/tools/privacy-notice/
@@ -22,15 +19,15 @@ Because Internet technologies continue to evolve rapidly, brainlife.io may make 
 
 ### Data-objects
 
-brainlife.io allows you to upload your neuroimaging data and store them on public and private project. All data stored in public projects can be accessed by brainlife.io users, and data stored in private projects can be accessed by the project members and brainlife administrators. The ownership of all data uploaded, stored on brainlife.io remains with the original owner of the data along with all copyright and license attributes. The data generated within brainlife.io would belong to the project members. 
+Brainlife.io allows you to upload your neuroimaging data and store them on public and private project. All data stored in public projects can be accessed by brainlife.io users, and data stored in private projects can be accessed by the project members and brainlife administrators. The ownership of all data uploaded, stored on brainlife.io remains with the original owner of the data along with all copyright and license attributes. The data generated within brainlife.io would belong to the project members. 
 
-brainlife.io allows administrators to access uploaded and generated data-objects stored in private projects when users request for troubleshooting or for investigating suspicious activities and other limited occasions. brainlife.io is hosted on XSEDE/Jetstream inifrastructures, and on various NFS funded storage systems. Administrators of those systems may have access to the raw data stored on those resources.
+Brainlife.io allows administrators to access uploaded and generated data-objects stored in private projects when users request for troubleshooting or for investigating suspicious activities and other limited occasions. Brainlife.io is hosted on XSEDE/Jetstream inifrastructures, and on various NFS funded storage systems. Administrators of those systems may have access to the raw data stored on those resources.
 
-brainlife.io will not use user's data-objects to conduct any research activities unless you explicitly give permission to do so.
+Brainlife.io will not use user's data-objects to conduct any research activities unless you explicitly give permission to do so.
 
-### Metadata
+### Data-objects Metadata
 
-brainlife.io retains the right to collect "metadata" from brainlife.io users, including platform usage, number of contributions to the platform, and research conducted using the platform, will be used in research about the value of brainlife.io in advancing reproducible neuroscience research. We may also share this metadata anonymously and securely with our partners and collaborators in order to improve the platform functionality and user experience. Data collected from users will be ongoing, as long as you are registered for or actively using the platform. While we do aggregate [personally identifiable information](#activemanualvoluntary-collection), no personally identifiable information will be shared with other entities, organizations, or within our research.
+brainlife.io retains the right to collect "metadata" from brainlife.io users, including platform usage, number of contributions to the platform, and research conducted using the platform. This data will be used in research about the value of brainlife.io in advancing reproducible neuroscience research. We may also share this metadata anonymously and securely with our partners and collaborators in order to improve the platform functionality and user experience. Data collected from users will be ongoing, as long as you are registered for or actively using the platform. While we do aggregate personally identifiable information (more info on that [can be found here](https://brainlife.io/docs/privacy/#activemanualvoluntary-collection)), no personally identifiable information will be shared with other entities, organizations, or within our research.
 
 ### Passive/Automatic Collection
 
@@ -161,3 +158,5 @@ brlife@iu.edu
 If you feel as though this site’s privacy practices differ from the information stated, you may contact us at the listed address or phone number.
 
 If you feel that this site is not following its stated policy and communicating with the owner of this site does not resolve the matter, or if you have general questions or concerns about privacy or information technology policy at Indiana University, please contact the chief privacy officer through the University Information Policy Office, 812-855-UIPO, privacy@iu.edu.
+
+
