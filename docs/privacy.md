@@ -59,13 +59,6 @@ Other than automatically collected technical information about your visit (descr
 * institution, name, biography and other public user profile information.
 * information volunteered by the visitor, such as preferences, survey information and/or site registrations
 
-## Information Usage
-
-This information is:
-
-* used to customize the content of our site
-* used to notify visitors about updates to our site
-
 ## Information Used For Contact
 
 The email address you provide during brainlife.io signup process will be used to identify you, and to send you
