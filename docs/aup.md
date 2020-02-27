@@ -1,3 +1,4 @@
+<style> #disqus_thread, #__comments { display: none } </style>
 # Acceptable Use Policy
 
 !!! Disclaimer

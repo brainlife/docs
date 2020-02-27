@@ -1,3 +1,5 @@
+<style> #disqus_thread, #__comments { display: none } </style>
+
 <!-- 
     generated using https://protect.iu.edu/online-safety/tools/privacy-notice/
     and manually modified
