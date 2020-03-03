@@ -1,3 +1,7 @@
+<style> 
+#disqus_thread, #__comments { display: none } 
+.md-footer { display: none } /*to better embed in signup page*/
+</style>
 # Acceptable Use Policy
 
 !!! Disclaimer
