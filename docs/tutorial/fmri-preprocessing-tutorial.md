@@ -49,7 +49,7 @@ There is a [brainlife.io](https://brainlife.io) app for generating these matrice
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
 1. generate anatomical surfaces using Freesurfer, 
-2. preprocess the anatomical (T1w & T2w) and fMRI data using fMRIPrep, 
+2. preprocess the anatomical (T1w & T2w) and fMRI data using fMRIPrep 
 
 <!---
 3. and, map the Glasser 180-node atlas to the anatomical (T1w) image
