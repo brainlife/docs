@@ -118,8 +118,8 @@ Once you're happy with the surfaces, you can move onto running fMRIPrep!
     * Select the box for 'Archive all output datasets' when finished
         * For 'Dataset Tags,' type and enter 'fmriPrep'
     * Hit 'Submit'
-1. Once the app is finished running, view the results by clicking the 'eye' icon to the output.
-    * VIEWER CURRENTLY IN DEVELOPMENT. WILL UPDATE ONCE COMPLETED
+1. Once the app is finished running, view the results by clicking the 'eye' icon next to the 'html' tagged output.
+    * Choose the 'html' viewer
 
 If you're happy with the results, then you have successfully finished preprocessing your fMRI data with fMRIPrep! Congrats!
 
