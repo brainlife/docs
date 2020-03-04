@@ -11,9 +11,9 @@ Functional MRI measures the BOLD signal - a measure associated with neuronal act
 
 From these matrices, scientists can then examine properties that describe the inter-relatedness of many regions. These properties can be used to identify **network-level** inter-individual differences in a large cohort.
 
-| ![connectivity-matrix](INSERT IMAGE URL) |
+| ![network-graph-1](INSERT IMAGE URL) ![network-graph-2](INSERT IMAGE URL) |
 |------------------------------------|
-| An example of a functional connectivity matrix. Each colored square represents the correlation coefficient between two regions in the brain. These matrices can be used to examine the network structure of the brain during specific tasks, including behavioral taks and rest! |
+| A few examples of network graphs derived from a matrix like the one above! These graphs can diagram how inter-related different regions are during specific tasks and can be used to examine both global and local properties of networks in the brain. The image on the left represents  |
 
 This page demonstrates how to generate functional connectivity matrices on brainlife.io. The goal of this tutorial is to show you how to generate functional connectivity matrices following fMRI preprocessing. This tutorial will be using [Multi-atlas Transfer Tool (MaTT)](https://doi.org/10.25663/bl.app.23) to map the Glasser 180-node cortical atlas to preprocessed Freesurfer surfaces and ![conmat](https://doi.org/10.25663/brainlife.app.167) to compute the correlation between each region in the atlas.
 
