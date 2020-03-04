@@ -9,7 +9,7 @@ From these matrices, scientists can then examine properties that describe the in
 
 This page demonstrates how to generate functional connectivity matrices on brainlife.io. The goal of this tutorial is to show you how to generate functional connectivity matrices following fMRI preprocessing. This tutorial will be using [matt](/docs/img/app-matt.bl.header.png) to map the Glasser 180-node cortical atlas to preprocessed Freesurfer surfaces and [conmat](/docs/img/app-fmri-to-conmat.bl.header.png) to compute the correlation between each region in the atlas.
 
-This tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/) and presumes that you have data processed using  [fMRIPREP](https://brainlife.io/app/5c61c69f14027a01b14adcb3). If you haven't read our introduction to brainlife, or if you don't have preprocessed fMRI and Freesurfer outputs on brainlife.io, please go back through that tutorial or the [Functional MRI Preprocessing](https://brainlife.io/docs/tutorial/fmri-preprocessing-tutorial) tutorial before beginning this one.
+This tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/) and presumes that you have data processed using [fMRIPREP](https://brainlife.io/app/5c61c69f14027a01b14adcb3). If you haven't read our introduction to brainlife, or if you don't have preprocessed fMRI and Freesurfer outputs on brainlife.io, please go back through that tutorial or the [Functional MRI Preprocessing](https://brainlife.io/docs/tutorial/fmri-preprocessing-tutorial) tutorial before beginning this one.
 
 ### 1. Functional connectivity network matrices generation.
 
