@@ -1,5 +1,5 @@
 !!! warning
-    This is a draft. Comments are welcomed!
+    This page has been deprecated. The information contained here would not work.
 
 Once you are able to generate large amount of data derivatives on brainlife.io, your next step might involve performing data aggregation for group or statistical analysis. You can download all data derivatives to your computer and conduct any post-processing on your own computer, however, downloading all derivatives might take a long time, and consume a lot of disk space. If you are wanting to quickly explore results of your analysis, this might not be ideal.
 
