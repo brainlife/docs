@@ -5,11 +5,11 @@
 
 This page demonstrates common steps used to preprocess diffusion magnetic resonance imaging (dMRI) data on brainlife.io. The goal of this tutorial is to show you how to process diffusion data for successive analyses, including **microstructural region analysis**, **diffusion tractography**, and **structural connectivity**. This tutorial will be mostly be using [mrtrix3-preproc](https://brainlife.io/app/5a813e52dc4031003b8b36f9) for diffusion preprocessing and [fsl-dtifit](https://brainlife.io/app/5c1d67383e9c170177733d3f) for microstructral modelling.
 
-This tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/) and the [Anatomical Preprocessing tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/) you recently completed. If you haven't read our introduction to brainlife, or if you're not comfortable staging, processing, archiving, and viewing data on brainlife.io, please go back through that tutorial before beginning this one.
+This tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/) and the [Anatomical Preprocessing tutorial](https://brainlife.io/docs/tutorial/t1w-preprocessing/) you recently completed. If you haven't read our introduction to brainlife, or if you're not comfortable staging, processing, archiving, and viewing data on brainlife.io, please go back through that tutorial before beginning this one.
 
 ### 1. Anatomical preprocessing.
 
-The first step of diffusion preprocessing often involves processing the anatomical images. In order to guarantee that any generalizations regarding location made from the preprocessed diffusion data is anatomically-informed, we must have both of our anatomical (T1w or T2w) images and our diffusion MRI images **aligned**. One way we can make this easier for [mrtrix3-preproc](https://brainlife.io/app/5a813e52dc4031003b8b36f9) is by aligning the anatomical images in such a way that center of the brain is centered in the image. We refer to this as **ACPC-aligned**, as we are aligning the data to the **anterior commissure-posterior comissure plane**. This is the first step in dMRI preprocessing, and is typically done with the [hcp-acpc-alignment](https://brainlife.io/app/5c61c69f14027a01b14adcb3) app. Once we've centered our anatomical image, we can move onto diffusion MRI preprocessing.
+The first step of diffusion preprocessing often involves processing the anatomical images. In order to guarantee that any generalizations regarding location made from the preprocessed diffusion data is anatomically-informed, we must have both of our anatomical (T1w or T2w) images and our diffusion MRI images **aligned**. One way we can make this easier for [mrtrix3-preproc](https://brainlife.io/app/5a813e52dc4031003b8b36f9) is by aligning the anatomical images in such a way that center of the brain is centered in the image. We refer to this as **ACPC-aligned**, as we are aligning the data to the **anterior commissure-posterior comissure plane**. This is the first step in dMRI preprocessing, and is typically done with the [HCP ACPC Alignment (T1w)](https://brainlife.io/app/5c61c69f14027a01b14adcb3) app. Once we've centered our anatomical image, we can move onto diffusion MRI preprocessing.
 
 ### 2. Diffusion preprocessing 
 
@@ -28,13 +28,14 @@ Useful information about preprocessing pipeline [mrtrix3-preproc](https://brainl
 Once the dMRI data has been cleaned and aligned to the anatomical (T1w) image, the next step is to start fitting diffusion-based models to the data. The first and most widely reported model is the Diffusion Tensor (DTI) model, which attempts to model how much and in what direction water moves in the brain using a tensor (i.e. cigar shaped elipsoid). Regions in which water is moving in the same direction (i.e. anisotropically) will have a tensor that is very cigar-shaped. Regions in which water is moving equally in all directions (i.e. isotropically) will have a spherical-shaped tensor. This model outputs four different measurements: axial diffusivity (i.e. how strong water movement is in the primary direction of movement), radial diffusivity (i.e. how strong water movement is in the non-primary directions of movement), mean diffusivity (i.e. how strong water movement is in any direction), and fractional anisotropy (i.e. how strong water movement is and how directional that movement is). Fractional anisotropy (FA) and mean diffusivity (MD) are the most widely reported measures. These measures can be used for group anaylses and in tractography/tractometry pipelines, along with cortical white matter mapping pipelines. For this tutorial, we will use [fsl-dtifit](https://brainlife.io/app/5c1d67383e9c170177733d3f) to fit the DTI model to our preprocessed data.
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
+
 1. ACPC align the anatomical (T1w) image, 
 2. preprocess the dMRI data using mrtrix3-preproc,
 3. fit the diffusion tensor (DTI) model to the preprocessed dMRI data.
 
-### Copy appropriate data over from a single subject in the  project
+### Copy appropriate data over from a single subject in the Bl class test data project
 
-1. Click the following link to go to the project's page for the 'InterTVA' project: https://brainlife.io/project/5c8415aa34225c0031027372
+1. Click the following link to go to the project's page for the 'Bl class test data' project: https://brainlife.io/project/5e6ea1a48a2089fc6d8e9fc7
 1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
 1. Select the following datatypes from one subject by clicking the boxes next to the data:
     * dwi
@@ -42,7 +43,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
     * anat/t1w
 1. Click the 'Stage to process' button on the right side of the screen
     * For 'Project', select your project from the drop-down menu.
-    * For 'Process', select 'Create New Process' and title it "fMRI Prep Tutorial". Hit 'Submit'.
+    * For 'Process', select 'Create New Process' and title it "dMRI Prep Tutorial". Hit 'Submit'.
         * This will take you to the process on your Project's page
 1. Archive the data in your project by clickin the 'Archive' button next to each dataset.
 
