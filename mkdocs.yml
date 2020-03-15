@@ -36,11 +36,10 @@ nav:
 
   - Using CLI:
     - Installation: cli/install.md
-    - Uploading Dataset: cli/upload.md
+    - Uploading Data: cli/upload.md
     - Running Apps: cli/app.md
-    - Downloading Datasets: cli/download.md
-    - Group Analysis: cli/group.md
-    - Update Dataset: cli/update.md
+    - Downloading Data: cli/download.md
+    - Update Metadata: cli/update.md
 
   - Developing Apps: 
     - Introduction: apps/introduction.md

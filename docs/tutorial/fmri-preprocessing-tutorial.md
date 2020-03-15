@@ -13,7 +13,7 @@ The first step of fMRIPrep involves processing the anatomical images. There are 
 
 ### 2. Functional preprocessing.
 
-The second step of fMRIPrep involves processing the functional (fMRI) images. These can include both task-related (a person performing a task in the scanner) or resting-state (a person does no task in the scanner) fMRIs. Like any image directly from the scanner, there are common artifacts and issues with fMRI data. One of the biggest problems is motion. Because some scans take a long time, it is nearly impossible for a participant to lie completely motionless. Even the most subtle movements can alter the results in a specific region and make your data less accurate. fMRIPrep will estimate the motion that occurred across all of the fMRI volumes and correct for it. This will align all of the volumes perfectly to ensure motion is not altering the data. 
+The second step of fMRIPrep involves processing the functional (fMRI) images. These can include both task-related (a person performing a task in the scanner) or resting-state (a person does no task in the scanner) fMRIs. Like any image directly from the scanner, there are common artifacts and issues with fMRI data. One of the biggest problems is **motion**. Because some scans take a long time, it is nearly impossible for a participant to lie completely motionless. Even the most subtle movements can alter the results in a specific region and make your data less accurate. fMRIPrep will estimate the motion that occurred across all of the fMRI volumes and correct for it. This will align all of the volumes perfectly to ensure motion is not altering the data. 
 
 Another common artifact in fMRI data is **susceptibility distortions**. This is when regions of the brain look "wavy" or fold inward or outward on itself in images. This is due to how the scanner sweeps across the entire brain during acquisition -- fMRIPrep will also automatically correct for this! 
 
@@ -49,7 +49,7 @@ There is a [brainlife.io](https://brainlife.io) app for generating these matrice
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
 1. generate anatomical surfaces using Freesurfer, 
-2. preprocess the anatomical (T1w & T2w) and fMRI data using fMRIPrep, 
+2. preprocess the anatomical (T1w & T2w) and fMRI data using fMRIPrep 
 
 <!---
 3. and, map the Glasser 180-node atlas to the anatomical (T1w) image
@@ -118,8 +118,8 @@ Once you're happy with the surfaces, you can move onto running fMRIPrep!
     * Select the box for 'Archive all output datasets' when finished
         * For 'Dataset Tags,' type and enter 'fmriPrep'
     * Hit 'Submit'
-1. Once the app is finished running, view the results by clicking the 'eye' icon to the output.
-    * VIEWER CURRENTLY IN DEVELOPMENT. WILL UPDATE ONCE COMPLETED
+1. Once the app is finished running, view the results by clicking the 'eye' icon next to the 'html' tagged output.
+    * Choose the 'html' viewer
 
 If you're happy with the results, then you have successfully finished preprocessing your fMRI data with fMRIPrep! Congrats!
 
