@@ -49,7 +49,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 
 Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: ACPC alignment of the anatomical (T1w) image!
 
-##### ACPC-align anatomical (T1w) image.
+### ACPC-align anatomical (T1w) image.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'HCP ACPC Alignment (T1w)'
@@ -67,7 +67,7 @@ Your data should now be staged for processing and archived in your projects page
 
 Once you're happy with the alignment, you can move onto running mrtrix3 preproc!
 
-##### Preprocess diffusion MRI data with mrtrix3 preproc.
+### Preprocess diffusion MRI data with mrtrix3 preproc.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'mrtrix3 preproc'
@@ -87,7 +87,7 @@ Once you're happy with the alignment, you can move onto running mrtrix3 preproc!
 
 Once you're happy with the results, you can move onto fitting the diffusion tensor (DTI) model!
 
-##### Fit the DTI model to the preprocessed dMRI data.
+### Fit the DTI model to the preprocessed dMRI data.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'FSL DTIFIT'
