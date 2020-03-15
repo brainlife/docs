@@ -34,7 +34,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 1. generate cortical and white matter surfaces and parcellations using Freesurfer,
 1. obtain common statistics from the Freesurfer parcellation.
 
-### Copy appropriate data over from a single subject in the HCP 3T Diffusion project
+##### Copy appropriate data over from a single subject in the HCP 3T Diffusion project
 
 1. Click the following link to go to the project's page for the 'HCP 3T Diffusion' project: https://brainlife.io/project/5941a225f876b000210c11e5/
 1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
