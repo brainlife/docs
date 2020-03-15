@@ -30,51 +30,50 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 2. preprocess the dMRI data using mrtrix3-preproc,
 3. fit the diffusion tensor (DTI) and neurite orientation dispersion density imaging (NODDI) models to the preprocessed dMRI data.
 
-### Copy appropriate data over from a single subject in the InterTVA project
+### Copy appropriate data over from a single subject in the  project
 
 1. Click the following link to go to the project's page for the 'InterTVA' project: https://brainlife.io/project/5c8415aa34225c0031027372
 1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
 1. Select the following datatypes from one subject by clicking the boxes next to the data:
-    * func/task rest
+    * dwi
+        * Both dwi files
     * anat/t1w
-    * anat/t2w
 1. Click the 'Stage to process' button on the right side of the screen
     * For 'Project', select your project from the drop-down menu.
     * For 'Process', select 'Create New Process' and title it "fMRI Prep Tutorial". Hit 'Submit'.
         * This will take you to the process on your Project's page
 1. Archive the data in your project by clickin the 'Archive' button next to each dataset.
 
-Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: generate Freesurfer surfaces!
+Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: ACPC alignment of the anatomical (T1w) image!
+
+##### ACPC-align anatomical (T1w) image.
+
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'HCP ACPC Alignment (T1w)'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For input, select the staged raw anatomical (T1w) image by clicking the drop-down menu and finding the appropriate dataset.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'acpc_aligned'
+    * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
+    * Choose 'fsleyes' as your viewer
+    * Only have the file titled 'out.nii.gz' selected in the viewer
+
+Once you're happy with the surfaces, you can move onto running mrtrix3 preproc!
+
+##### Preprocess diffusion MRI data with mrtrix3 preproc.
+
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'mrtrix3 preproc'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For input, select the staged ACPC-aligned anatomical (T1w) image by clicking the drop-down menu and finding the appropriate dataset.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'acpc_aligned'
+    * Hit 'Submit'
 
 
-## Diffusion-weighted MRI preprocessing.
-This page highlights the most advanced processing pipeline to preprocess diffusion MRI (dMRI) images as used and develed by the brainlife.io team. The goal of this pipeline is to process dMRI data and fit diffusion-based models (i.e. diffusion tensor (DTI), constrained spherical deconvolution (CSD), neurite orientation dispersion density imaging (NODDI), and diffusion kurtosis (DKI)) to preprocessed dMRI data. The derivatives generated from this pipeline can be used in group analyses, or can be used in tractography pipelines. This pipeline combines functions from FSL, mrtrix, AMICO, and dipy. This pipeline is designed for multi-shell dMRI data, but can be modified for single-shell dMRI data.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hC0Ms3KWD8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-##### 1b. DESIGNER (mrtrix3).
-Although topup and eddy are essential to dMRI preprocessing, they do not clean up all of the common issues with dMRI imaging. Some of these issues include gibbs ringing (i.e. XXX) and biasing of the signal (i.e. XXXX). Also, topup and eddy does not align the dMRI to the anatomical T1w image, which is a crucial step to ensure biologically-plausible results. Without this alignment, it is not possible to ensure that a volumated pixel (i.e. voxel) in the dMRI image corresponds to the correct location in the anatomical (T1w) image. Because of these issues, a more advanced processing pipeline (DESIGNER) has been proposed and implemented on brainlife.io. This app will remove the common issues with dMRI images and aligns the dMRI image to the anatomical (T1w) image. For this tutorial, we will use the DESIGNER pipeline and forgo the 1a. However, the two apps can be used interchangedly.
-
-[brainlife.io](https://brainlife.io) provides an app that can be run on raw dMRI images to correct for common artifacts and align the cleaned dMRI image to the anatomical (T1w) image automatically: 
-
-| ![designer](/docs/img/app.designer.bl.header.png)|
-|------------------------------------|
-| https://doi.org/10.25663/bl.app.68 |
-
-
-To perform the more advanced dMRI preprocessing pipeline (i.e. DESIGNER) on the raw dMRI images, follow the following steps:
-1) Stage both dMRI datasets (for each phase encoding) to a new process in the project by selecting the checkbox next to the datatypes and clicking 'Stage to process'
-2) In the processes tab, click 'Submit App', search for 'mrtrix3 preprocess', and then click the app card
-3) Select inputs and configuration parameters
-	* Perform ACPC alignment on the raw anatomical (T1w) image (see t1w-prerocessing tutorial for more information) and select that in the 'anat/t1w' field
-	* For the first dMRI input (i.e. not preprocessed), select the raw dMRI image corresponding to the 'PA' phase encoding direction that was staged to the process. For the second dMRI input, select the raw dMRI image corresponding to the 'AP phase encoding direction that was staged to the process.
-	* For 'rpe', select 'merged forward and reversed sequence (all)
-	* For 'acqd', select 'posterior -> anterior (+y) (PA)' from the dropdown menu
-	* Leave all the other parameters as defaults
-	* Select the 'Archive all output datasets when finished' box 
-4) Click submit
-5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'fsleyes' as the viewer
 
 ##### 2. Fitting diffusion tensor (DTI) model (FSL).
 Once the dMRI data has been cleaned and aligned to the anatomical (T1w) image, the next step is to start fitting diffusion-based models to the data. The first and most widely reported model is the Diffusion Tensor (DTI) model, which attempts to model how much and in what direction water moves in the brain using a tensor (i.e. cigar shaped elipsoid). Regions in which water is moving in the same direction (i.e. anisotropically) will have a tensor that is very cigar-shaped. Regions in which water is moving equally in all directions (i.e. isotropically) will have a spherical-shaped tensor. This model outputs four different measurements: axial diffusivity (i.e. how strong water movement is in the primary direction of movement), radial diffusivity (i.e. how strong water movement is in the non-primary directions of movement), mean diffusivity (i.e. how strong water movement is in any direction), and fractional anisotropy (i.e. how strong water movement is and how directional that movement is). Fractional anisotropy (FA) and mean diffusivity (MD) are the most widely reported measures. These measures can be used for group anaylses and in tractography/tractometry pipelines, along with cortical white matter mapping pipelines.
