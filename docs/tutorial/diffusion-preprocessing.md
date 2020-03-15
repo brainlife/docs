@@ -9,26 +9,28 @@ This tutorial will use a combination of skills developed in the [Introduction tu
 
 ### 1. Anatomical preprocessing.
 
-The first step of diffusion preprocessing often involves processing the anatomical images. In order to guarantee that any generalizations regarding location made from the preprocessed diffusion data is anatomically-informed, we must have both of our anatomical (T1w or T2w) images and our diffusion MRI images **aligned**. One way we can make this easier for [mrtrix3-preproc] is by aligning the anatomical images in such a way that center of the brain is centered in the image. We refer to this as **ACPC-aligned**, as we are aligning the data to the **anterior commissure-posterior comissure plane**. This is the first step in dMRI preprocessing, and is typically done with the [hcp-acpc-alignment](https://brainlife.io/app/5c61c69f14027a01b14adcb3) app. Once we've centered our anatomical image, we can move onto diffusion MRI preprocessing.
+The first step of diffusion preprocessing often involves processing the anatomical images. In order to guarantee that any generalizations regarding location made from the preprocessed diffusion data is anatomically-informed, we must have both of our anatomical (T1w or T2w) images and our diffusion MRI images **aligned**. One way we can make this easier for [mrtrix3-preproc](https://brainlife.io/app/5c61c69f14027a01b14adcb3) is by aligning the anatomical images in such a way that center of the brain is centered in the image. We refer to this as **ACPC-aligned**, as we are aligning the data to the **anterior commissure-posterior comissure plane**. This is the first step in dMRI preprocessing, and is typically done with the [hcp-acpc-alignment](https://brainlife.io/app/5c61c69f14027a01b14adcb3) app. Once we've centered our anatomical image, we can move onto diffusion MRI preprocessing.
 
 ### 2. Diffusion preprocessing 
 
-The next step in diffusion preprocessing is to actually preprocess the diffusion data. dMRI data, like any other MRI dataset, is quite noisy. Just like fMRI, dMRI data is sensitive to **susceptibility distortions**. This is when regions of the brain look "wavy" or fold inward or outward on itself in images. This is due to how the scanner sweeps across the entire brain during acquisition. Also, dMRI data is very susceptible to **motion**. Because some scans take a long time, it is nearly impossible for a participant to lie completely motionless. Even the most subtle movements can alter the results in a specific region and make your data less accurate. Finally, movement of the magnetic gradients can induce electromagnetic currents which can affect the measurement in any given location. This is called **eddy currents**, and is due to the fact that electricity and magnetism are part of the same field - i.e. the *electromagnetic field*. We can correct for all of these common artifacts using [mrtrix3-preproc].
+The next step in diffusion preprocessing is to actually preprocess the diffusion data. dMRI data, like any other MRI dataset, is quite noisy. Just like fMRI, dMRI data is sensitive to **susceptibility distortions**. This is when regions of the brain look "wavy" or fold inward or outward on itself in images. This is due to how the scanner sweeps across the entire brain during acquisition. Also, dMRI data is very susceptible to **motion**. Because some scans take a long time, it is nearly impossible for a participant to lie completely motionless. Even the most subtle movements can alter the results in a specific region and make your data less accurate. Finally, movement of the magnetic gradients can induce electromagnetic currents which can affect the measurement in any given location. This is called **eddy currents**, and is due to the fact that electricity and magnetism are part of the same field - i.e. the *electromagnetic field*. We can correct for all of these common artifacts using [mrtrix3-preproc](https://brainlife.io/app/5c61c69f14027a01b14adcb3).
 
-In addition to these artifacts, dMRI has very low signal-to-noise ratio (SNR), which directly impacts how well you can fit microstructural models and analyze diffusion data. This means that in any given location, the amount of diffusion signal is very low compared to the "noise" of the scanner. There are methods to lower the amount of noise across the brain, and thus increase the SNR. [mrtrix3-preproc] has the capability to identify and remove noise using principal components analysis (PCA) and Rician analysis.
+In addition to these artifacts, dMRI has very low signal-to-noise ratio (SNR), which directly impacts how well you can fit microstructural models and analyze diffusion data. This means that in any given location, the amount of diffusion signal is very low compared to the "noise" of the scanner. There are methods to lower the amount of noise across the brain, and thus increase the SNR. [mrtrix3-preproc](https://brainlife.io/app/5c61c69f14027a01b14adcb3) has the capability to identify and remove noise using principal components analysis (PCA) and Rician analysis.
 
-On top of these issues, dMRI data is sensitive to other artifacts and non-regularities, including **gibbs ringing and bias field inhomogeneities**, which can affect the quality of the data and how well measures can be derived from the data. [mrtrix3-preproc] can deal with all of these issues for us!
+On top of these issues, dMRI data is sensitive to other artifacts and non-regularities, including **gibbs ringing and bias field inhomogeneities**, which can affect the quality of the data and how well measures can be derived from the data. [mrtrix3-preproc](https://brainlife.io/app/5c61c69f14027a01b14adcb3) can deal with all of these issues for us!
 
-Finally, once the dMRI data is preprocessed and cleaned, [mrtrix3-preproc] will align the dMRI data to the anatomical data. This will ensure that any analyses we do with the dMRI data will be anatomically-informed and biologically-relevant.
+Finally, once the dMRI data is preprocessed and cleaned, [mrtrix3-preproc](https://brainlife.io/app/5c61c69f14027a01b14adcb3) will align the dMRI data to the anatomical data. This will ensure that any analyses we do with the dMRI data will be anatomically-informed and biologically-relevant.
 
-Finally, images from the fMRI scanner might not be perfectly aligned to images collected before it, such as the anatomical images. To fix this, we need to register the functional volumes to the anatomical image and map the fMRI signal onto the surfaces generated in the anatomical preprocessing step -- fMRIPrep does this registration automatically!
+Useful information about preprocessing pipeline [mrtrix3-preproc](https://brainlife.io/app/5c61c69f14027a01b14adcb3) is designed to run -- Diffusion Parameter EStimation with Gibbs and NoisE Removal (DESIGNER) -- can be found in this [original Neuroimage paper](https://pubmed.ncbi.nlm.nih.gov/30077743-evaluation-of-the-accuracy-and-precision-of-the-diffusion-parameter-estimation-with-gibbs-and-noise-removal-pipeline/).
 
-Useful information about preprocessing pipeline [mrtrix3-preproc] is designed to run -- Diffusion Parameter EStimation with Gibbs and NoisE Removal (DESIGNER) -- can be found in this [original Neuroimage paper](https://pubmed.ncbi.nlm.nih.gov/30077743-evaluation-of-the-accuracy-and-precision-of-the-diffusion-parameter-estimation-with-gibbs-and-noise-removal-pipeline/).
+## 3. Diffusion microstructural modelling
+
+Once the dMRI data has been cleaned and aligned to the anatomical (T1w) image, the next step is to start fitting diffusion-based models to the data. The first and most widely reported model is the Diffusion Tensor (DTI) model, which attempts to model how much and in what direction water moves in the brain using a tensor (i.e. cigar shaped elipsoid). Regions in which water is moving in the same direction (i.e. anisotropically) will have a tensor that is very cigar-shaped. Regions in which water is moving equally in all directions (i.e. isotropically) will have a spherical-shaped tensor. This model outputs four different measurements: axial diffusivity (i.e. how strong water movement is in the primary direction of movement), radial diffusivity (i.e. how strong water movement is in the non-primary directions of movement), mean diffusivity (i.e. how strong water movement is in any direction), and fractional anisotropy (i.e. how strong water movement is and how directional that movement is). Fractional anisotropy (FA) and mean diffusivity (MD) are the most widely reported measures. These measures can be used for group anaylses and in tractography/tractometry pipelines, along with cortical white matter mapping pipelines. For this tutorial, we will use [fsl-dtifit](https://brainlife.io/app/5c61c69f14027a01b14adcb3) to fit the DTI model to our preprocessed data.
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
 1. ACPC align the anatomical (T1w) image, 
 2. preprocess the dMRI data using mrtrix3-preproc,
-3. fit the diffusion tensor (DTI) and neurite orientation dispersion density imaging (NODDI) models to the preprocessed dMRI data.
+3. fit the diffusion tensor (DTI) model to the preprocessed dMRI data.
 
 ### Copy appropriate data over from a single subject in the  project
 
@@ -53,6 +55,8 @@ Your data should now be staged for processing and archived in your projects page
     * Click the app card.
 1. On the 'Submit App' page, select the following:
     * For input, select the staged raw anatomical (T1w) image by clicking the drop-down menu and finding the appropriate dataset.
+    * For template, choose 'MNI152_1mm' by clicking the drop-down menu and finding the appropriate file
+    * For reorient, make sure the box is checked.
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'acpc_aligned'
     * Hit 'Submit'
@@ -60,7 +64,7 @@ Your data should now be staged for processing and archived in your projects page
     * Choose 'fsleyes' as your viewer
     * Only have the file titled 'out.nii.gz' selected in the viewer
 
-Once you're happy with the surfaces, you can move onto running mrtrix3 preproc!
+Once you're happy with the alignment, you can move onto running mrtrix3 preproc!
 
 ##### Preprocess diffusion MRI data with mrtrix3 preproc.
 
@@ -68,96 +72,32 @@ Once you're happy with the surfaces, you can move onto running mrtrix3 preproc!
     * In the search bar, type 'mrtrix3 preproc'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For input, select the staged ACPC-aligned anatomical (T1w) image by clicking the drop-down menu and finding the appropriate dataset.
+    * For anat/t1w, select the staged ACPC-aligned anatomical (T1w) image by clicking the drop-down menu and finding the appropriate dataset.
+    * For dwi, select the dwi image with the tag "PA" by clicking the drop-down menu and finding the appropriate dataset.
+    * For dwi (reverse), select the dwi image with the tag "AP" by clicking the drop-down menu and finding the appropriate dataset.
+    * for acqd, choose 'posterior -> anterior (y) (PA) by clicking the drop-down menu and finding the appropriate choice.
+    * Leave all the other options as default
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'acpc_aligned'
     * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
+    * Choose 'fsleyes' as your viewer
+    * Only have the file titled 'dwi.nii.gz' selected in the viewer
 
+Once you're happy with the results, you can move onto fitting the diffusion tensor (DTI) model!
 
+##### Fit the DTI model to the preprocessed dMRI data.
 
-##### 2. Fitting diffusion tensor (DTI) model (FSL).
-Once the dMRI data has been cleaned and aligned to the anatomical (T1w) image, the next step is to start fitting diffusion-based models to the data. The first and most widely reported model is the Diffusion Tensor (DTI) model, which attempts to model how much and in what direction water moves in the brain using a tensor (i.e. cigar shaped elipsoid). Regions in which water is moving in the same direction (i.e. anisotropically) will have a tensor that is very cigar-shaped. Regions in which water is moving equally in all directions (i.e. isotropically) will have a spherical-shaped tensor. This model outputs four different measurements: axial diffusivity (i.e. how strong water movement is in the primary direction of movement), radial diffusivity (i.e. how strong water movement is in the non-primary directions of movement), mean diffusivity (i.e. how strong water movement is in any direction), and fractional anisotropy (i.e. how strong water movement is and how directional that movement is). Fractional anisotropy (FA) and mean diffusivity (MD) are the most widely reported measures. These measures can be used for group anaylses and in tractography/tractometry pipelines, along with cortical white matter mapping pipelines.
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'FSL DTIFIT'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For dwi, select the preprocessed dMRI image generated above by clicking the drop-down menu and finding the appropriate dataset.
+    For shell, type '1000' to fit the model on the b=1000 shell
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'acpc_aligned'
+    * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
+    * Choose 'fsleyes' as your viewer
 
-[brainlife.io](https://brainlife.io) provides an app that can be run on cleaned dMRI images to fit the DTI model automatically: 
-
-| ![dtifit](/docs/img/app.dtifit.bl.header.png)|
-|------------------------------------|
-| https://doi.org/10.25663/bl.app.137 |
-
-To fit the DTI model, follow the following steps:
-1) Perform mrtrix3 preprocessing on the DWI data. 
-2) In the processes tab, click 'Submit App', search for 'FSL DTIFIT', and then click the app card
-3) Select inputs and configuration parameters
-	* For the 'dwi' input, select the preprocessed dMRI iamge from step 1
-	* Leave the 'mask' field empty.
-	* Select the 'Archive all output datasets when finished' box 
-4) Click submit
-5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'fsleyes' as the viewer
-
-
-
-
-
-
-
-
-
-<!---
-##### 3. Fitting diffusion kurtosis (DKI) model (dipy)
-The DTI model assumes that the movement of water in the brain is gaussian (i.e. bell-shaped curve distribution). However, due to the presence of different cell and tissue types, including neurons, myelin, glial cells, neurites, cerebro-spinal fluid (CSF), and blood vessels. An extension of this model, the diffusion kurtosis (i.e. DKI) model, attempts to side-step this issue by calculating how far away the distribution of water movement is from gaussian (i.e. normal). By doing this, more precise and accurate measures of water movement and brain structure can be obtained. This model gives the same four measurements as the DTI model (i.e. AD, RD, MD, FA) along with measures of kurtosis. These measures can be used for group analyses and in tractography/tractometry pipelines.
-
-[brainlife.io](https://brainlife.io) provides an app that can be run on cleaned dMRI images to fit the DKI model automatically: 
-
-| ![dki](/docs/img/app.dki.bl.header.png)|
-|------------------------------------|
-| https://doi.org/10.25663/bl.app.9 |
-
-To fit the DKI model, follow the following steps:
-1) Perform mrtrix3 preprocessing on the DWI data. 
-2) In the processes tab, click 'Submit App', search for 'Fit DKI', and then click the app card
-3) Select inputs and configuration parameters
-	* For the 'dwi' input, select the preprocessed dMRI iamge from step 1
-	* Leave the 'mask' field empty.
-	* Leave all the other parameters as is.
-	* Select the 'Archive all output datasets when finished' box 
-4) Click submit
-5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'fsleyes' as the viewer
-
-##### 4. Fitting constrained spherical deconvolution (CSD) model (mrtrix).
-DTI/DKI are not the only diffusion-based models available, and actually are not the most accurate models of water movement. Specifically, the DTI model fails in regions where white matter fibers cross. Recent estimates find that about 90% of white matter contains crossing fibers suggesting that the DTI model fails to accurately model water movement in nearly all of the white matter. This failure is due to the fact that the DTI model can only fit a single tensor for every region in the brain. In regions where fibers cross, the tensor becomes more spherical (i.e. increases in MD) and does not accurately map water movement for each of the crossing fibers. Because of this, models have been proposed that can fit multiple distributions of water movement per location in the brain. The most common of these models is constrained spherical deconvolution (i.e. CSD). This model does not give measurements like the DTI model does, but is one of the primary inputs for tractography.
-
-[brainlife.io](https://brainlife.io) provides an app that can be run on cleaned dMRI images to fit the CSD model automatically: 
-
-| ![csd](/docs/img/app.csd.bl.header.png)|
-|------------------------------------|
-| https://doi.org/10.25663/brainlife.app.238 |
-
-To fit the CSD model, follow the following steps:
-1) Perform mrtrix3 preprocessing on the DWI data. 
-2) In the processes tab, click 'Submit App', search for 'mrtrix3 csd', and then click the app card
-3) Select inputs and configuration parameters
-	* For the 'dwi' input, select the preprocessed dMRI iamge from step 1
-	* Leave the 'mask' and 'mask: 5tt_masks' fields empty.
-	* Select the 'Archive all output datasets when finished' box 
-4) Click submit
-
-##### 5. Fitting neurite orientation dispersion density imaging (NODDI) model (AMICO).
-Both of the preceeding models attempt to characterize the movement of water using the full diffusion signal. However, this signal is comprised of multiple different cell and tissue types, including neurons, myelin, glial cells, neurites, cerebro-spinal fluid (CSF), and blood vessels. Each of these different cell types contributes differentially to the overall diffusion signal. Thus, the characterizations of water movements mapped by DTI and CSD are based on a "muddy" signal. This issue is known as partial-voluming. Because of this, more advanced models have been developed that separate the signal generated from axons and dendrites (i.e. neurites; anisotropic) from those generated from CSF, blood vessels, and glial cells (isotropic) and then map metrics of microstructural composition including the density of neurites in a given region (i.e. NDI) and the amount of "fanning" between neurites (i.e. ODI). Like the DTI model, these measures can be used in group analyses and in tractography/tractometry pipelines, along with cortical white matter mapping pipelines. This app requires multi-shell data for fitting the NDI measure accurately. However, ODI can be fit accurately using just a single-shell.
-
-[brainlife.io](https://brainlife.io) provides an app that can be run on cleaned dMRI data to fit the NODDI model automatically: 
-
-| ![noddi](/docs/img/app.noddi.bl.header.png)|
-|------------------------------------|
-| https://doi.org/10.25663/brainlife.app.117 |
-
-To fit the NODDI model, follow the following steps:
-1) Perform mrtrix3 preprocessing on the DWI data. 
-2) In the processes tab, click 'Submit App', search for 'Noddi Amico', and then click the app card
-3) Select inputs and configuration parameters
-	* For the 'dwi' input, select the preprocessed dMRI iamge from step 1
-	* Leave the 'mask' field empty.
-	* Leave all the other parameters as is.
-	* Select the 'Archive all output datasets when finished' box 
-4) Click submit
-5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'fsleyes' as the viewer
--->
+Once you're happy with the results, you're finished with this tutorial!
