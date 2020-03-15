@@ -34,7 +34,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 1. generate cortical and white matter surfaces and parcellations using Freesurfer,
 1. obtain common statistics from the Freesurfer parcellation.
 
-##### Copy appropriate data over from a single subject in the HCP 3T Diffusion project
+### Copy appropriate data over from a single subject in the HCP 3T Diffusion project
 
 1. Click the following link to go to the project's page for the 'HCP 3T Diffusion' project: https://brainlife.io/project/5941a225f876b000210c11e5/
 1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
@@ -48,7 +48,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 
 Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: crop and reorient the T1w image!
 
-##### Crop and reorient anatomical (T1w) image.
+### Crop and reorient anatomical (T1w) image.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'Crop & Reorient T1'
@@ -82,7 +82,7 @@ Once you're happy with the alignment, you can move onto ACPC aligning the croppe
 
 Once you're happy with the alignment, you can move onto Freesurfer parcellation generation!
 
-##### Freesurfer Brain Parcellation - Generation.
+### Freesurfer Brain Parcellation - Generation.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'Freesurfer.'
@@ -109,7 +109,7 @@ Once you're happy with the alignment, you can move onto Freesurfer parcellation 
             
 Once you're happy with the surfaces, you can move computing statistics!
 
-##### Freesurfer Brain Parcellation - Statistics.
+### Freesurfer Brain Parcellation - Statistics.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'Freesurfer.'
