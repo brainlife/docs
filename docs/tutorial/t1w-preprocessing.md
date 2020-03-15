@@ -64,7 +64,7 @@ Your data should now be staged for processing and archived in your projects page
     
 Once you're happy with the alignment, you can move onto ACPC aligning the cropped & reoriented anatomical data!
 
-##### ACPC-align anatomical (T1w) image.
+### ACPC-align anatomical (T1w) image.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'HCP ACPC Alignment (T1w)'
