@@ -1,7 +1,7 @@
 !!! warning
     This is a draft
 
-## Diffusion-weighted MRI preprocessing & microstructural modelling.
+## Diffusion-weighted MRI preprocessing.
 
 This page demonstrates common steps used to preprocess diffusion magnetic resonance imaging (dMRI) data on brainlife.io. The goal of this tutorial is to show you how to process diffusion data for successive analyses, including **microstructural region analysis**, **diffusion tractography**, and **structural connectivity**. This tutorial will be mostly be using [mrtrix3-preproc](https://brainlife.io/app/5c61c69f14027a01b14adcb3) for diffusion preprocessing and [mrtrix3-dtifit](https://brainlife.io/app/5c61c69f14027a01b14adcb3) for microstructral modelling.
 
@@ -103,8 +103,7 @@ To fit the DTI model, follow the following steps:
 
 
 
-
-!-->
+<!---
 ##### 3. Fitting diffusion kurtosis (DKI) model (dipy)
 The DTI model assumes that the movement of water in the brain is gaussian (i.e. bell-shaped curve distribution). However, due to the presence of different cell and tissue types, including neurons, myelin, glial cells, neurites, cerebro-spinal fluid (CSF), and blood vessels. An extension of this model, the diffusion kurtosis (i.e. DKI) model, attempts to side-step this issue by calculating how far away the distribution of water movement is from gaussian (i.e. normal). By doing this, more precise and accurate measures of water movement and brain structure can be obtained. This model gives the same four measurements as the DTI model (i.e. AD, RD, MD, FA) along with measures of kurtosis. These measures can be used for group analyses and in tractography/tractometry pipelines.
 
@@ -162,4 +161,4 @@ To fit the NODDI model, follow the following steps:
 	* Select the 'Archive all output datasets when finished' box 
 4) Click submit
 5) Once results finish, visualize the results by clicking the eye icon next to the output dataset and choose 'fsleyes' as the viewer
-<--
+-->
