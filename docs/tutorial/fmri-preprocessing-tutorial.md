@@ -25,13 +25,9 @@ Useful information about fMRIPrep anatomical preprocessing can be found in this 
   
 There are two versions of the [brainlife.io](https://brainlife.io) fMRIPrep app. One generates outputs mapped to the volumes and the other generates outputs mapped to the surfaces:
 
-| ![fmriprep-volume](/docs/img/app-fmriprep-volume-header.png) |
+| ![fmriprep-volume](https://doi.org/10.25663/brainlife.app.160) |
 |------------------------------------|
-| https://doi.org/10.25663/brainlife.app.160 |
-
-| ![fmriprep-surface](/docs/img/app-fmriprep-surface-header.png) |
-|------------------------------------|
-| https://doi.org/10.25663/brainlife.app.267 |
+| ![fmriprep-surface](https://doi.org/10.25663/brainlife.app.267) |
 
 For this tutorial, we will use the volume-based version.
 
