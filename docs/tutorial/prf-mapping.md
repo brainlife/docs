@@ -22,8 +22,8 @@ Useful information about pRF can be found in this [Neuroimage](https://pubmed.nc
 Now, let's get to work! The following steps of this tutorial will show you how to:
 
 1. generate anatomical surfaces using Freesurfer, 
-2a. map pRF data using an atlas,
-2b. map pRF data using fMRI pRF data
+1. map pRF data using an atlas,
+1. map pRF data using fMRI pRF data
 
 ### Copy appropriate data over from a single subject in the HCP 7T / Retinotopy (pRF) project
 
