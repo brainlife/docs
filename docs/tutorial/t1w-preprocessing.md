@@ -123,4 +123,4 @@ Once you're happy with the surfaces, you can move computing statistics!
     
 To view the results, download the data by clicking the 'download' button next to the dataset. Then open the 'lh' and 'rh' csv files into your favorite spreadsheet of choice (i.e. excel) and you're ready to start your group analyses!
 
-You have now finished preprocessing your anatomical (T1w) image! You are now ready to move onto the next tutorial: function MRI (fMRI) preprocessing!
+**You have now finished preprocessing your anatomical (T1w) image! You are now ready to move onto the next tutorial: function MRI (fMRI) preprocessing!**
