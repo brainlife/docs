@@ -125,7 +125,7 @@ Once the app is finished, you're ready to move onto the final step: network matr
 
 ### Generate functional connectivity network matrices:
 
-1. On the 'Process' tab, click 'Submit App' to submit a new application.
+1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
     * In the search bar, type 'fMRI to Connectivity Matrices'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
