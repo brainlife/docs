@@ -82,7 +82,7 @@ Once you're happy with the surfaces, you can move onto running the atlas-based p
     
 If you're happy with the results, then you're ready to move onto mapping the fMRI pRF data!
 
-### pRF Mapping - Atlas-based
+### pRF Mapping - fMRI-based
 
 1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
     * In the search bar, type 'pRFLife mrTools'
