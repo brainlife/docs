@@ -20,6 +20,7 @@ There are two ways in which one could map this visual function data to the corte
 Useful information about pRF can be found in this [Neuroimage](https://pubmed.ncbi.nlm.nih.gov/17977024-population-receptive-field-estimates-in-human-visual-cortex/) paper. More information about the atlas-based mapping can be found in this [PLOS Computational Biology](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003538) paper.
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
+
 1. generate anatomical surfaces using Freesurfer, 
 2a. map pRF data using an atlas,
 2b. map pRF data using fMRI pRF data
