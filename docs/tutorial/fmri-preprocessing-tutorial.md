@@ -9,7 +9,7 @@ This tutorial will use a combination of skills developed in the [Introduction tu
 
 ### 1. Anatomical preprocessing.
 
-The first step of fMRIPrep involves processing the anatomical images. There are a few common issues and **artifacts**, or anomalies visible in the image but not actually present in the brain, that occur in anatomical images that come straight from the fMRI scanner. One of the most noticeable artifacts, which is detrimental to processing, is **signal inhomogeneity**. This is when the signal from certain portions of the brain, typically the central part, are brighter than the other regions of the brain. Signal inhomogeneity is caused by how the scanner reconstructs the anatomical image. The fMRIPrep app can automatically fix this signal inhomogeneity for us! fMRIPrep will also remove non-brain material from images and align images and surfaces to a standard template (i.e. MNI). Before we can begin using fMRIPrep, however, we must first generate cortical and white matter surfaces from the anatomical images using Freesurfer.
+The first step of fMRIPrep involves processing the anatomical images. There are a few common issues and **artifacts**, or anomalies visible in the image but not actually present in the brain, that occur in anatomical images that come straight from the fMRI scanner. One of the most noticeable artifacts, which is detrimental to processing, is **signal inhomogeneity**. This is when the signal from certain portions of the brain, typically the central part, are brighter than the other regions of the brain. Signal inhomogeneity is caused by how the scanner reconstructs the anatomical image. The fMRIPrep app can automatically fix this signal inhomogeneity for us! fMRIPrep will also remove non-brain material from images and align images and surfaces to a standard template (i.e. MNI). Before we can begin using fMRIPrep, however, we must first generate cortical and white matter surfaces from the anatomical images using Freesurfer. These surfaces will be used by fMRIPrep to help correct artifacts and issues with fMRI data and to map functional data.
 
 ### 2. Functional preprocessing.
 
@@ -74,14 +74,7 @@ Your data should now be staged for processing and archived in your projects page
 
 ### Generate surfaces using Freesurfer:
 
-1. Go to the 'Archives' page of your project by clicking the 'Archives' tab.
-1. Select the anatomical (T1w & T2w) images and the functional data datatypes by clicking the box next to the datasets.
-1. Click the 'Stage to process'
-    * For Project, make sure your project is selected
-    * For Process, select 'Create New Process'
-    * For Description, name the process 'fmriPrep Preprocessing'
-    * Hit 'OK'
-1. On the 'Process' tab, click 'Submit App' to submit a new application.
+1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
     * In the search bar, type 'Freesurfer.'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
