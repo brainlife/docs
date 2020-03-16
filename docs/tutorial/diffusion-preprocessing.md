@@ -101,4 +101,4 @@ Once you're happy with the results, you can move onto fitting the diffusion tens
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'fsleyes' as your viewer
 
-Once you're happy with the results, you're finished with this tutorial!
+**If you're happy with the results, then you have successfully finished preprocessing your dMRI data! You're now ready to move onto the next tutorial: diffusion tractography!**
