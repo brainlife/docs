@@ -23,11 +23,7 @@ Finally, images from the fMRI scanner might not be perfectly aligned to images c
 
 Useful information about fMRIPrep anatomical preprocessing can be found in this [original Nature paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/#S13title).
   
-There are two versions of the [brainlife.io](https://brainlife.io) fMRIPrep app. One generates outputs mapped to the volumes and the other generates outputs mapped to the surfaces:
-
-| ![fmriprep-volume](https://doi.org/10.25663/brainlife.app.160) |
-|------------------------------------|
-| ![fmriprep-surface](https://doi.org/10.25663/brainlife.app.267) |
+There are two versions of the [brainlife.io](https://brainlife.io) fMRIPrep app. One generates outputs mapped to the volumes ([fMRIPrep-volume](https://brainlife.io/app/5c61c69f14027a01b14adcb3)) and the other generates outputs mapped to the surfaces ([fMRIPrep-surface](https://brainlife.io/app/5dfceebd32bff0640ce27bbd)).
 
 For this tutorial, we will use the volume-based version.
 
