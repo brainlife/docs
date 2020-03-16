@@ -106,7 +106,7 @@ Once you're happy with the surfaces, you can move onto running fMRIPrep!
 1. Once the app is finished running, view the results by clicking the 'eye' icon next to the 'html' tagged output.
     * Choose the 'html' viewer
 
-If you're happy with the results, then you have successfully finished preprocessing your fMRI data with fMRIPrep! Congrats!
+**If you're happy with the results, then you have successfully finished preprocessing your fMRI data with fMRIPrep! You're now ready to move onto the next tutorial: functional network connectivity!
 
 <!---
 ### Map the Glasser 180-node atlas:
