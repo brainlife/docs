@@ -1,19 +1,15 @@
 !!! warning
     This is a draft
 
-## Structural connectivity.
+## Diffusion-weighted MRI preprocessing.
 
-Diffusion MRI measures how **anistropic** the movement of water is, with the basic principle that myelinated tissue will create more **anistropic** water movement.. One particular type of analysis that describes the structural organization of the white matter using this data is **structural connectivity**. **Structural connectivity** characterizes connected different regions are by computing the number of **diffusion tractography streamlines** that terminate into a particular region. The rationale is that regions that have greater density of streamline terminations have greater connectivity with the regions where those streamlines also terminate. These density values are stored in what is known as a connectivity matrix. Each position in the matrix represents the the connectivity between two particular regions. 
+This page demonstrates common steps used to perform diffusion tractography analyses on brainlife.io. The goal of this tutorial is to show you how to process anatomical and diffusion data to generate **tractograms**, **segment major white matter tracts**, and **map microstructural measures** to the major white matter tracks.. This tutorial will use a variety of brainlife.io applications to [generate tractograms](https://brainlife.io/app/5aac2437f0b5260027e24ae1), [segment white matter tracts](https://brainlife.io/app/5cc73ef44ed9df00317f6288), and [map microstructural measures](https://brainlife.io/app/5cc210ce4ed9df00317f61cf) to these tracts.
 
-From these matrices, scientists can then examine properties that describe the inter-relatedness of many regions. These properties can be used to identify **network-level** inter-individual differences in a large cohort.
-
-This page demonstrates how to generate structural connectivity matrices on brainlife.io. The goal of this tutorial is to show you how to generate structural connectivity matrices following dMRI preprocessing and tractography. This tutorial will be using [Multi-atlas Transfer Tool (MaTT)](https://brainlife.io/app/5aeb34f2f446980028b15ef0) to map the Glasser 180-node cortical atlas to preprocessed Freesurfer surfaces and [fMRI Connectivity Matrix Generation](https://brainlife.io/app/5c720cf63e2f2c0030a23486), [anatomically-constrained tractography](https://brainlife.io/app/5aac2437f0b5260027e24ae1) to generate whole-brain tractograms, and [network matrices](https://brainlife.io/app/5bcdefeadc47f70026e8c6ac) to compute the connectivity between each region in the atlas.
-
-This tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/) and presumes that you have data processed using [dMRI Preprocessing](https://brainlife.io/docs/tutorial/diffusion-preprocessing/), and [diffusion tractography](https://brainlife.io/docs/tutorial/diffusion-tractography/. If you are not comfortable archiving, staging, and running apps on brainlife.io, please go back through that tutorial before beginning this one.
+This tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/), the [Anatomical Preprocessing tutorial](https://brainlife.io/docs/tutorial/t1w-preprocessing/), and the [Diffusion MRI Preprocessing tutorial](https://brainlife.io/docs/tutorial/diffusion-preprocessing/) you recently completed. If you haven't read our introduction to brainlife, or if you're not comfortable staging, processing, archiving, and viewing data on brainlife.io, please go back through that tutorial before beginning this one.
 
 ### 1. Anatomical preprocessing.
 
-The first step of structural network generation often involves processing the anatomical images. In order to guarantee that any generalizations regarding location made from the preprocessed diffusion data is anatomically-informed, we must have both of our anatomical (T1w or T2w) images and our diffusion MRI images **aligned**. One way we can make this easier for [MrTrix3 Preprocessing](https://brainlife.io/app/5a813e52dc4031003b8b36f9) is by aligning the anatomical images in such a way that center of the brain is centered in the image. We refer to this as **ACPC-aligned**, as we are aligning the data to the **anterior commissure-posterior comissure plane**. This is the first step in dMRI preprocessing, and is typically done with the [HCP ACPC Alignment (T1w)](https://brainlife.io/app/5c61c69f14027a01b14adcb3) app. In order to map the Glasser 180-node atlas using the [Multi-Atlas Transfer Tool](https://brainlife.io/app/5aeb34f2f446980028b15ef0) and compute the streamline density between each region, we first need to generate cortical and white matter surfaces, and brain region parcellations, using [Freesurfer](https://brainlife.io/app/58c56d92e13a50849b258801). Once our anatomical image is aligned, our surfaces are generated, and the Glasser 180-node cortical atlas is mapped, we can move onto diffusion preprocessing. 
+The first step of diffusion tractography often involves processing the anatomical images. In order to track in a biologically-informed manner and to extract major white matter tracts, we must have both of our anatomical (T1w or T2w) images and our diffusion MRI images **aligned**. One way we can make this easier for [MrTrix3 Preprocessing](https://brainlife.io/app/5a813e52dc4031003b8b36f9) is by aligning the anatomical images in such a way that center of the brain is centered in the image. We refer to this as **ACPC-aligned**, as we are aligning the data to the **anterior commissure-posterior comissure plane**. This is the first step in dMRI preprocessing, and is typically done with the [HCP ACPC Alignment (T1w)](https://brainlife.io/app/5c61c69f14027a01b14adcb3) app. We will then need to generate cortical and white matter surfaces, and brain region parcellations, using [Freesurfer](https://brainlife.io/app/58c56d92e13a50849b258801). These will be used for segmenting the major white matter tracts following tractography. Once we've processed our anatomical image, we can move onto diffusion MRI preprocessing.
 
 ### 2. Diffusion preprocessing 
 
@@ -39,18 +35,42 @@ On brainlife.io, we have combined **ensemble tractography** with **anatomically-
 
 More information on **ensemble tractography** can be found in this [PLOS Computational Biology](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004692) paper. More information on **ACT** can be found in this [Neuroimage](https://pubmed.ncbi.nlm.nih.gov/22705374-anatomically-constrained-tractography-improved-diffusion-mri-streamlines-tractography-through-effective-use-of-anatomical-information/) article.
 
-### 4. Generate structural connectivity matrices.
+### 4. Major white matter tract segmentation.
 
-Once the whole brain tractograms have been generated, we can now compute the streamline density between each region and generate our **structural connectivity matrices**. These matrices can then be used to derive **network-related** measures of the organization of the white matter of an individual, or common properties amongst groups. For this tutorial, we will use [network matrices](https://brainlife.io/app/5bcdefeadc47f70026e8c6ac) to generate our structural connectivity matrix.
+Once our anatomical brain parcellations and whole-brain tractograms are generated, the next step is to segment the tractogram into known **major white matter tracts**. To do this, information regarding the terminations of each streamline into the cortex and histologically-derived definitions for each **major white matter tract** is needed. From the histological definitions of **major white matter tracts**, we can group the streamlines in our tractograms into **major white matter tracts**. On brainlife.io, we have developed an automated [white matter segmentation](https://brainlife.io/app/5cc73ef44ed9df00317f6288) app that will segment our whole-brain tractograms into 70+ known **major white matter tracts**.
+
+More information on the segmentation algorithm can be found in this [Brain Structure and Function](https://pubmed.ncbi.nlm.nih.gov/31342157-associative-white-matter-connecting-the-dorsal-and-ventral-posterior-human-cortex/) paper.
+
+### 5. Microstructural mapping to major white matter tracts.
+
+Once we have segmented our tractograms into major white matter tracts and fit the DTI model to our dMRI data, we can now map the microstructural information to our major white matter tracts. This is done by computing the average microstructural measure at multiple locations along each major white matter tract. This process generates a plot known as a **tract profile** which provides microstructural information at different locations along a tract. These can be used to examine microstructural properties along different tracts that might help distinguish different groups, such as those with a neurodegenerative disease versus those without. We have developed an automated [microstructural mapping](https://brainlife.io/app/5cc210ce4ed9df00317f61cf) app on brainlife.io that will map multiple microstructural measure
+
+More information on **tract profiles** can be found in this [PLOS One](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049790) article.
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
 
-1. ACPC-align the anatomical (T1w) image,
-1. Generate Freesurfer surfaces and parcellations,
-1. Map Glasser 180-node cortical atlas to the surface,
-1. Preprocess dMRI data,
-1. Perform diffusion tractography,
-1. and generate network matrices from the regions of the Glasser 180-node atlas.
+1. ACPC align the anatomical (T1w) image,
+1. Generate Freesurfer Brain parcellation,
+1. preprocess the dMRI data using MrTrix3 Preprocessing,
+1. fit the CSD & DTI models, perform tractography using MrTrix3 ACT,
+1. segment major white matter tracts,
+1. map microstructural (DTI) measures along each tract
+
+### Copy appropriate data over from a single subject in the Bl class test data project
+
+1. Click the following link to go to the project's page for the 'Bl class test data' project: https://brainlife.io/project/5e6ea1a48a2089fc6d8e9fc7
+1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
+1. Select the following datatypes from one subject by clicking the boxes next to the data:
+    * dwi
+        * Both dwi files
+    * anat/t1w
+1. Click the 'Stage to process' button on the right side of the screen
+    * For 'Project', select your project from the drop-down menu.
+    * For 'Process', select 'Create New Process' and title it "dMRI Prep Tutorial". Hit 'Submit'.
+        * This will take you to the process on your Project's page
+1. Archive the data in your project by clickin the 'Archive' button next to each dataset.
+
+Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: ACPC alignment of the anatomical (T1w) image!
 
 ### ACPC-align anatomical (T1w) image.
 
@@ -58,7 +78,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
     * In the search bar, type 'HCP ACPC Alignment (T1w)'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For input, select the staged anatomical (T1w) image generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For input, select the staged raw anatomical (T1w) image by clicking the drop-down menu and finding the appropriate dataset.
     * For template, choose 'MNI152_1mm' by clicking the drop-down menu and finding the appropriate file
     * For reorient, make sure the box is checked.
     * Select the box for 'Archive all output datasets when finished'
@@ -68,15 +88,15 @@ Now, let's get to work! The following steps of this tutorial will show you how t
     * Choose 'fsleyes' as your viewer
     * Only have the file titled 'out.nii.gz' selected in the viewer
 
-Once you're happy with the alignment, you can move onto Freesurfer parcellation generation!
+Once you're happy with the alignment, you can move onto running mrtrix3 preproc!
 
-### Freesurfer Brain Parcellation - Generation.
+### Generate surfaces using Freesurfer:
 
-1. On the 'Process' tab, click 'Submit App' to submit a new application.
+1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
     * In the search bar, type 'Freesurfer.'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For input, select the ACPC aligned anatomical image generated above by clicking the drop-down menu and finding the appropriate datasets.
+    * For input, select the ACPC aligned anatomical (T1w) image generated above by clicking the drop-down menu and finding the appropriate dataset.
     * Select the boxes for 'hippocampal' and 'hires'
     * For 'version,' select '6.0.0' from the drop-down menu.
     * Select the box for 'Archive all output datasets when finished'
@@ -95,21 +115,7 @@ Once you're happy with the alignment, you can move onto Freesurfer parcellation 
             * Hit 'OK'
             * The aparc.a2009s parcellation should be overlayed on your inflated surface! Now, repeat the process on the other hemisphere.
             
-Once you're happy with the surfaces, you can move computing statistics!
-
-### Map the Glasser 180-node atlas:
-
-1. On the 'Process' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'Multi-Atlas Transfer Tool'
-    * Click the app card.
-1. On the 'Submit App' page, select the following:
-    * For input, select the staged Freesurfer output generated above by clicking the drop-down menu and finding the appropriate dataset.
-    * For 'space,' select 'hcp-mmp-b' from the drop-down menu.
-    * Select the box for 'Archive all output datasets' when finished
-        * For 'Dataset Tags,' type and enter 'Glasser'
-    * Hit 'Submit'
-
-Once the app is finished, you're ready to move onto the final step: network matrix generation!
+Once you're happy with the surfaces, you can move onto preprocessing your dMRI data!
 
 ### Preprocess diffusion MRI data with mrtrix3 preproc.
 
@@ -147,24 +153,40 @@ Once you're happy with the results, you can move onto fitting the CSD, DTI, and 
     * Choose 'mrview' as your viewer
         * This will overlay the tractogram on the generated fractional anistropy (FA) image
 
-If you're happy with the results, you're ready to move onto structural connectivity generation!
+If you're happy with the results, you're ready to move onto segmenting major white matter tracts!
 
-### Generate structural connectivity matrix.
+### Segment major white matter tracts.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'Network Matrices'
+    * In the search bar, type 'White Matter Anatomy Segmentation'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For parcellation/volume, select the Glasser volume generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For freesurfer, select the Freesurfer output generated above by clicking the drop-down menu and finding the appropriate dataset.
     * For track/tck, select the whole brain tractogram generated above by clicking the drop-down menu and finding the appropriate dataset.
-    * For tensor, select the DTI tensor output generated above by clicking the drop-down menu and finding the appropriate dataset.
-    * Leave mask empty
-    * For infl, leave as 2
-    * For microdat, select 'FA' from the drop-down menu
-    * Select true for compshare, compmicro, and comptprof by clicking the box next to each option
-    * Leave nnondes as 100
     * Select the box for 'Archive all output datasets when finished'
-        * For 'Dataset Tags,' type and enter 'structural_matrix'
+        * For 'Dataset Tags,' type and enter 'major_white_matter_tracts'
     * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
+    * Choose the 'WMC Tract View' viewer
+    
+If you're happy with the results, you're ready to move onto mapping microstructural measures to each tract!
 
-**Nice work! You've completed all of the tutorials for processing MRI data on brainlife.io!!!!**
+### Map microstructural measures along tracts.
+
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Tract Analysis Profiles'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For tensor, select the tensor output generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For wmc, select the major white matter semgentation output generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For track/tck, select the whole brain tractogram generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * Leave all other options as defaults
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'DTI_tract_profiles'
+    * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
+    * Choose the 'Image Tile' viewer
+    
+**Once you're happy with the results, you're finished with this tutorial! It's time to move onto the next tutorial: structural network generation!**
+
+

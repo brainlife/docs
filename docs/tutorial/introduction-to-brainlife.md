@@ -11,9 +11,11 @@ This page highlights the most important first steps to using brainlife.io, inclu
 
 The first step to processing data using brainlife is to go to brainlife.io and create an account.
 
+<!--
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sV55YSCJd-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
+-->
 
 To do make an account and project, follow the following steps:
 
@@ -87,9 +89,11 @@ The data is now uploaded and archived to your project!
 
 The next step is to launch an application (app) in order to process the data. For this, we will process the T1w (anatomical) image staged in C. In this tutorial, we will divide (i.e. segment/parcellate) the T1 anatomical image using Freesurfer.
 
+<!--
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u9Qlh0-iaAk?start=13" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
+-->
 
 First we will need to To launch a process, follow the following steps:
 
