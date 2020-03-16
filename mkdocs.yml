@@ -28,11 +28,13 @@ nav:
 
   - Tutorials: 
     - Introduction: tutorial/introduction-to-brainlife.md
-    - Tractometry: tutorial/diffusion-and-tractography.md
     - Anatomy: tutorial/t1w-preprocessing.md
-    - Structural networks: tutorial/networkneuroscience-structural.md
-    - Functional networks: tutorial/networkneuroscience-functional.md
     - FMRI Preprocessing: tutorial/fmri-preprocessing-tutorial.md
+    - PRF Mapping: tutorial/prf-mapping.md
+    - DWI Preprocessing : tutorial/diffusion-preprocessing.md
+    - DWI Tractometry: tutorial/diffusion-and-tractography.md
+    - FMRI networks: tutorial/networkneuroscience-functional.md
+    - DMRI networks: tutorial/networkneuroscience-structural.md
 
   - Using CLI:
     - Installation: cli/install.md
