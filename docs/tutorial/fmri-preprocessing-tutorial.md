@@ -93,7 +93,7 @@ Once you're happy with the surfaces, you can move onto running fMRIPrep!
 
 ### Preprocess your data with fMRIPrep:
 
-1. On the 'Process' tab, click 'Submit App' to submit a new application.
+1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
     * In the search bar, type 'fmriPrep - Volume Output'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
