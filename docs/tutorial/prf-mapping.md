@@ -17,27 +17,24 @@ The next step is to map **population receptive field (pRF)** data to the cortica
 
 There are two ways in which one could map this visual function data to the cortex: the first involves the [fitting of an atlas](https://brainlife.io/app/5cc4cd3f4ed9df00317f621d) to the occipital lobe, and the other involves [fitting fMRI pRF data](https://brainlife.io/app/5afc9831322997002773ed1c) to the occipital lobe. On brainlife.io, we have developed apps to perform both of these tasks. This tutorial will walk you through both methods.
 
-Useful information about pRF can be found in this [Neuroimage](https://pubmed.ncbi.nlm.nih.gov/17977024-population-receptive-field-estimates-in-human-visual-cortex/) paper. More information about the atlas-based mapping can be found in this [PLOS Computational Biology](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003538) paper. More information about the method we've implemented for mapping fMRI-based pRF data can be found in this [
-  
-There are two versions of the [brainlife.io](https://brainlife.io) fMRIPrep app. One generates outputs mapped to the volumes ([fMRIPrep-volume](https://brainlife.io/app/5c61c69f14027a01b14adcb3)) and the other generates outputs mapped to the surfaces ([fMRIPrep-surface](https://brainlife.io/app/5dfceebd32bff0640ce27bbd)).
-
-For this tutorial, we will use the volume-based version.
+Useful information about pRF can be found in this [Neuroimage](https://pubmed.ncbi.nlm.nih.gov/17977024-population-receptive-field-estimates-in-human-visual-cortex/) paper. More information about the atlas-based mapping can be found in this [PLOS Computational Biology](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003538) paper.
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
 1. generate anatomical surfaces using Freesurfer, 
-2. preprocess the anatomical (T1w & T2w) and fMRI data using fMRIPrep 
+2a. map pRF data using an atlas,
+2b. map pRF data using fMRI pRF data
 
-### Copy appropriate data over from a single subject in the InterTVA project
+### Copy appropriate data over from a single subject in the HCP 7T / Retinotopy (pRF) project
 
-1. Click the following link to go to the project's page for the 'InterTVA' project: https://brainlife.io/project/5c8415aa34225c0031027372
+1. Click the following link to go to the project's page for the 'HCP 7T / Retinotopy (pRF)' project: https://brainlife.io/project/5afc7d24322997002773ed19/
 1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
 1. Select the following datatypes from one subject by clicking the boxes next to the data:
-    * func/task rest
+    * func/task
+    * stimulus
     * anat/t1w
-    * anat/t2w
 1. Click the 'Stage to process' button on the right side of the screen
     * For 'Project', select your project from the drop-down menu.
-    * For 'Process', select 'Create New Process' and title it "fMRI Prep Tutorial". Hit 'Submit'.
+    * For 'Process', select 'Create New Process' and title it "pRF Tutorial". Hit 'Submit'.
         * This will take you to the process on your Project's page
 1. Archive the data in your project by clickin the 'Archive' button next to each dataset.
 
@@ -49,7 +46,7 @@ Your data should now be staged for processing and archived in your projects page
     * In the search bar, type 'Freesurfer.'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For input, select the staged raw anatomical (T1w & T2w) images by clicking the drop-down menu and finding the appropriate datasets.
+    * For input, select the staged raw anatomical (T1w) image by clicking the drop-down menu and finding the appropriate dataset.
     * Select the boxes for 'hippocampal' and 'hires'
     * For 'version,' select '6.0.0' from the drop-down menu.
     * Select the box for 'Archive all output datasets when finished'
@@ -68,50 +65,37 @@ Your data should now be staged for processing and archived in your projects page
             * Hit 'OK'
             * The aparc.a2009s parcellation should be overlayed on your inflated surface! Now, repeat the process on the other hemisphere.
             
-Once you're happy with the surfaces, you can move onto running fMRIPrep!
+Once you're happy with the surfaces, you can move onto running the atlas-based pRF mapping!
 
-### Preprocess your data with fMRIPrep:
-
-1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
-    * In the search bar, type 'fmriPrep - Volume Output'
-    * Click the app card.
-1. On the 'Submit App' page, select the following:
-    * For input, select the staged raw anatomical (T1w & T2w) images, the freesurfer output, and the functional data by clicking the drop-down menu and finding the appropriate datasets.
-    * For 'space,' select 'MNI152NLin6Asym' from the drop-down menu.
-    * For 'resolution,' select 'original' from the drop-down menu.
-    * Select the box for 'Archive all output datasets' when finished
-        * For 'Dataset Tags,' type and enter 'fmriPrep'
-    * Hit 'Submit'
-1. Once the app is finished running, view the results by clicking the 'eye' icon next to the 'html' tagged output.
-    * Choose the 'html' viewer
-
-**If you're happy with the results, then you have successfully finished preprocessing your fMRI data with fMRIPrep! You're now ready to move onto the next tutorial: functional network connectivity!**
-
-<!---
-### Map the Glasser 180-node atlas:
-
-1. On the 'Process' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'Multi-Atlas Transfer Tool'
-    * Click the app card.
-1. On the 'Submit App' page, select the following:
-    * For input, select the staged Freesurfer output by clicking the drop-down menu and finding the appropriate dataset.
-    * For 'space,' select 'fsaverage6' from the drop-down menu.
-    * Select the box for 'Archive all output datasets' when finished
-        * For 'Dataset Tags,' type and enter 'fmriPrep'
-    * Hit 'Submit'
-
-Once the app is finished, you're ready to move onto the final step: network matrix generation!
-
-### Generate functional connectivity network matrices:
+### pRF Mapping - Atlas-based
 
 1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
-    * In the search bar, type 'fMRI to Connectivity Matrices'
+    * In the search bar, type 'pRFs / Benson14-Retinotopy'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For input, select the generated bold mask, preprocessed functional data, the Glasser parcellation-volume, and the preprocessed regressors by clicking the drop-down menu and finding the appropriate datasets.
-    * Select the box for 'Archive all output datasets when finished'
-        * For 'Dataset Tags,' type and enter 'connectivity_matrix'
+    * For freesurfer, select the Freesurfer output generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * Select the box for 'Archive all output datasets' when finished
+        * For 'Dataset Tags,' type and enter 'atlas_based'
     * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon next to the 'prf' tagged output.
+    * Choose the 'PRF' viewer
     
-Nice work! You've completed this tutorial. Now that the app is finished, you're ready to perform group analyses on your connectivity matrices!
--->
+If you're happy with the results, then you're ready to move onto mapping the fMRI pRF data!
+
+### pRF Mapping - Atlas-based
+
+1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
+    * In the search bar, type 'pRFLife mrTools'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For func/task, select the staged func/task pRF data by clicking the drop-down menu and finding the appropriate dataset.
+    * For stimulus, select the staged stimulus pRF data by clicking the drop-down menu and finding the appropriate dataset.
+    * For freesurfer, select the Freesurfer output generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * Leave all other options as defaults.
+    * Select the box for 'Archive all output datasets' when finished
+        * For 'Dataset Tags,' type and enter 'fmri_based'
+    * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon next to the 'prf' tagged output.
+    * Choose the 'PRF' viewer
+
+**If you're happy with the results, then you have successfully finished mapping visual function data (pRF) using both an atlas-based mapping method and an fMRI-based mapping method! You're now ready to move onto the next tutorial: diffusion MRI preprocessing!**
