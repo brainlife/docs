@@ -9,7 +9,7 @@ This tutorial will use a combination of skills developed in the [Introduction tu
 
 ### 1. Anatomical preprocessing.
 
-The first step of diffusion tractography often involves processing the anatomical images. In order to track in a biologically-informed manner and to extract major white matter tracts, we must have both of our anatomical (T1w or T2w) images and our diffusion MRI images **aligned**. One way we can make this easier for [MrTrix3 Preprocessing](https://brainlife.io/app/5a813e52dc4031003b8b36f9) is by aligning the anatomical images in such a way that the center of the brain is centered in the image. We refer to this as **ACPC-aligned**, as we are aligning the data to the **anterior commissure-posterior comissure plane**. This is the first step in dMRI preprocessing, and it is typically done with the [HCP ACPC Alignment (T1w)](https://brainlife.io/app/5c61c69f14027a01b14adcb3) app. We will then need to generate cortical and white matter surfaces and brain region parcellations using [Freesurfer](https://brainlife.io/app/58c56d92e13a50849b258801). These will be used for segmenting the major white matter tracts following tractography. Once we've processed our anatomical image, we can move onto diffusion MRI preprocessing.
+The first step of diffusion tractography often involves processing the anatomical images. In order to track in a biologically-informed manner and to extract major white matter tracts, we must have both of our anatomical (T1w or T2w) images and our diffusion MRI images **aligned**. One way we can make this easier for [MrTrix3 Preprocessing](https://brainlife.io/app/5a813e52dc4031003b8b36f9) is by aligning the anatomical images in such a way that the center of the brain is centered in the image. We refer to this as **ACPC-aligned**, as we are aligning the data to the **anterior commissure-posterior comissure plane**. This is the first step in dMRI preprocessing, and it is typically done with the [HCP ACPC Alignment (T1w)](https://brainlife.io/app/5c61c69f14027a01b14adcb3) app. We will then need to generate cortical and white matter surfaces and brain region parcellations using [Freesurfer](https://brainlife.io/app/58c56d92e13a50849b258801). These will be used for segmenting the major white matter tracts following tractography. Once we've processed our anatomical image, we can move on to diffusion MRI preprocessing.
 
 ### 2. Diffusion preprocessing 
 
@@ -33,19 +33,19 @@ Once we know the direction of water movement using the CSD model, we can then pe
 
 On brainlife.io, we have combined **ensemble tractography** with **anatomically-constrained tractography (ACT)**, which restricts streamline representations to those that are biologically-plausible, in a single [Ensemble ACT Tractography](https://brainlife.io/app/5aac2437f0b5260027e24ae1) app! Within this app, the CSD model will be fit and tractography will be performed to generate **whole-brain tractograms**. That means a model of white matter microstructure -- diffusion tensor (DTI) -- will be fit and maps of fractional anisotropy (FA), mean diffusivity (MD), radial diffusivity (RD), and axial diffusivity (AD) will be generated.
 
-More information on ensemble tractography can be found in this [PLOS Computational Biology article](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004692) paper. More information on **ACT** can be found in this [Neuroimage](https://www.ncbi.nlm.nih.gov/pubmed/22705374).  _(<--- fixed link, make sure it's correct)
+More information on ensemble tractography can be found in this [PLOS Computational Biology article](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004692) paper. More information on **ACT** can be found in this [Neuroimage publication](https://www.ncbi.nlm.nih.gov/pubmed/22705374).  _(<--- fixed link, make sure it's correct)_
 
 ### 4. Major white matter tract segmentation.
 
-Once our anatomical brain parcellations and whole-brain tractograms are generated, the next step is to segment the tractogram into known **major white matter tracts**. To do this, information regarding the terminations of each streamline into the cortex and histologically-derived definitions for each **major white matter tract** is needed. From the histological definitions of **major white matter tracts**, we can group the streamlines in our tractograms into **major white matter tracts**. On brainlife.io, we have developed an automated [white matter segmentation](https://brainlife.io/app/5cc73ef44ed9df00317f6288) app that will segment our whole-brain tractograms into 70+ known **major white matter tracts**.
+Once our anatomical brain parcellations and whole-brain tractograms are generated, the next step is to segment the tractogram into known **major white matter tracts**. To do this, we need both information about the terminations of each streamline into the cortex and the histologically-derived definitions for each major white matter tract. The histological definitions of major white matter tracts allow us to group the streamlines in our tractograms into major white matter tracts. On brainlife.io, we have developed an automated [white matter segmentation](https://brainlife.io/app/5cc73ef44ed9df00317f6288) app that will segment our whole-brain tractograms into over 70 known major white matter tracts.
 
-More information on the segmentation algorithm can be found in this [Brain Structure and Function](https://pubmed.ncbi.nlm.nih.gov/31342157-associative-white-matter-connecting-the-dorsal-and-ventral-posterior-human-cortex/) paper.
+More information on the segmentation algorithm can be found in this [Brain Structure and Function paper](https://www.ncbi.nlm.nih.gov/pubmed/31342157).   _(<--- fixed link, make sure it's correct)_
 
 ### 5. Microstructural mapping to major white matter tracts.
 
-Once we have segmented our tractograms into major white matter tracts and fit the DTI model to our dMRI data, we can now map the microstructural information to our major white matter tracts. This is done by computing the average microstructural measure at multiple locations along each major white matter tract. This process generates a plot known as a **tract profile** which provides microstructural information at different locations along a tract. These can be used to examine microstructural properties along different tracts that might help distinguish different groups, such as those with a neurodegenerative disease versus those without. We have developed an automated [microstructural mapping](https://brainlife.io/app/5cc210ce4ed9df00317f61cf) app on brainlife.io that will map multiple microstructural measure
+Once we have segmented our tractograms into major white matter tracts and fit the DTI model to our dMRI data, we can now map the microstructural information to our major white matter tracts. This is done by computing the average microstructural measure at multiple locations along each major white matter tract. This process generates a plot known as a **tract profile**, which provides microstructural information at different locations along a tract. These profiles can be used to examine microstructural properties along different tracts that might help distinguish different groups, such as those with a neurodegenerative disease versus those without the disease. We have developed an automated [microstructural mapping](https://brainlife.io/app/5cc210ce4ed9df00317f61cf) app on brainlife.io that will map multiple microstructural measures.
 
-More information on **tract profiles** can be found in this [PLOS One](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049790) article.
+More information on **tract profiles** can be found in this [PLOS One article](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049790).
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
 
@@ -54,20 +54,20 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 1. preprocess the dMRI data using MrTrix3 Preprocessing,
 1. fit the CSD & DTI models, perform tractography using MrTrix3 ACT,
 1. segment major white matter tracts,
-1. map microstructural (DTI) measures along each tract
+1. and map microstructural (DTI) measures along each tract.
 
 ### Copy appropriate data over from a single subject in the Bl class test data project
 
-1. Click the following link to go to the project's page for the 'Bl class test data' project: https://brainlife.io/project/5e6ea1a48a2089fc6d8e9fc7
-1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
+1. Click the following link to go to the project's page for the 'Bl class test data' project: [https://brainlife.io/project/5e6ea1a48a2089fc6d8e9fc7](https://brainlife.io/project/5e6ea1a48a2089fc6d8e9fc7)
+1. Click the 'Archive' tab at the top of the screen to go to the Archives page.
 1. Select the following datatypes from one subject by clicking the boxes next to the data:
     * dwi
         * Both dwi files
     * anat/t1w
 1. Click the 'Stage to process' button on the right side of the screen
-    * For 'Project', select your project from the drop-down menu.
-    * For 'Process', select 'Create New Process' and title it "dMRI Prep Tutorial". Hit 'Submit'.
-        * This will take you to the process on your Project's page
+    * For 'Project,' select your project from the drop-down menu.
+    * For 'Process,' select 'Create New Process' and title it "dMRI Prep Tutorial." Hit 'Submit.'
+        * This will take you to the process on your Projects page
 1. Archive the data in your project by clickin the 'Archive' button next to each dataset.
 
 Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: ACPC alignment of the anatomical (T1w) image!
