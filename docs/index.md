@@ -2,33 +2,44 @@
 
 # What is Brainlife?
 
-Brainlife promotes engagement and education in reproducible neuroscience. We do this by providing an online platform where users can publish code (Apps), Data, and make it "alive" by integragrate various HPC and cloud computing resources to run those Apps. 
+brainlife.io promotes engagement and education in reproducible neuroscience by providing an online, community-based platform where users can publish code (Apps) and Data while integrating HPC and cloud-computing resources to run Apps. brainlife.io also allows users to publish all of the research assets associated with their projects that are embedded in our cloud-computing environment and referenced by a single digital-object identifier (DOI). Our platform is unique because of its focus on supporting scientific reproducibility beyond open code and open data -- brainlife.io also provides fundamental smart mechanisms for what we call “Open Services.”
 
-Brainlife also provide mechanisms to publish all research assets associated with a scientific project (data and analyses) embedded in a cloud computing environment and referenced by a single digital-object-identifier (DOI). The platform is unique because of its focus on supporting scientific reproducibility beyond open code and open data, by providing fundamental smart mechanisms for what we refer to as “Open Services.” 
+Below, you’ll learn about the main panel of tools you’ll encounter as soon as you log into brainlife.io. While these run-throughs are brief, you’ll learn much more about each feature as you review the rest of brainlife’s documentation.
+
+If you have any questions, don’t forget to reach out to us on the [brainlife.io slack channel](https://brainlife.io/docs/contact/)!
 
 # Brainlife Apps
 
-Brainlife uses Apps to analyze data. Apps are small programs, small modules or compute units, that can process data individually or be made part of a larger series of steps in a full data analysis workflow. Brainlife Apps are meant to do small but meaningful steps in a longer analysis pipeline. Apps are modules and the brainlife.io platform. The platform allows users to develop, use, combine, and reuse Apps to build complex pipelines for customized brain data analyses. Most Apps indeed do only one thing, they process data in a specific way and are meant to perform a small set of operations and handle small sets of data; they do one thing, they do it well.
+brainlife.io uses Apps to analyze data. Apps are small programs that can process data individually or be made part of a larger series of steps in a full data analysis workflow.
 
-Apps can be developed and published on the Brainlife platform by anyone. App developers can be computational neuroscientists, cognitive neuroscientists, but also computer scientists or engineers. Apps are snippets of code implementing algorithms or analyses. By following a few easy steps developers can publish their code for brain data analysis on the Brainlife platform as an App. Publishing code as Apps allows scientists to use the code in combination with the data and computational resources available through Brainlife. Apps published on Brainlife can be used privately or shared publicly with the platform users community.
+Anyone can develop, use, combine, and reuse Apps to build complex pipelines for customized brain data analyses on the platform. You can publish apps to be used privately or shared publicly with the brainlife.io community.
+
+# Brainlife Projects
+
+The best way to manage your data is with brainlife’s Projects feature. Here you can organize your datasets, perform data processing, and share results with your team by granting varying levels of access to members of your group. Projects can be public or private.
+
+# Brainlife Publications 
+
+Once you finish processing your datasets and producing your data derivatives, you can publish them. A new publication creates a snapshot of your datasets and is archived on brainlife.io for at least 10 years. Anyone can access your publication page and download your datasets without logging into brainlife.io.
 
 # Brainlife Datatypes
 
-Brainlife Apps communicate via Brainlife “Datatypes.” A Datatype defines the expected list of filenames or the directory structure that an Apps can use as input or generate as output. The same Datatype is ideally used by multiple Apps, this allows Apps to communicate by their input and output data sets and reuse the data to generate more data derivatives, useful for other Apps. Datatypes, in addition to allowing the various Apps developed by independent developers to communicate on the brainlife.io platform, also allow Apps to be joined together to form a pipeline or workflows. The Brainlife Datatypes are maintained by individual developers participating in a specific Datatype, and discussed and maintained at https://github.com/brain-life/datatypes, conveniently using the full versioning and management features of github.com.
+Think of brainlife Datatypes as the way brainlife Apps communicate. A Datatype defines the expected list of filenames or the directory structure that an App can use as input or generate as output. Typically, multiple Apps use the same Datatype to communicate through their input and output datasets and reuse data to generate more data derivatives. Datatypes help join Apps together to form a pipeline or workflows.
 
-# Brainlife Clouds (Compute Resource)
+brainlife Datatypes are maintained by individual developers and are updated at [https://github.com/brainlife/datatypes](https://github.com/brainlife/datatypes).
 
-The fundamental architecture of Brainlife allows orchestration of data and computing across mix systems of Clouds and high-performance computing clusters (HPC). We refer to both HCP and Clouds as Brainlife Clouds, this is not meant to be a technical definition but a simple way to communicate the fact that compute resources can be registered on the platform. Brainlife orchestration allows platform users and compute resource providers to register a compute resource and make it available publicly to the full Brainlife users community or privately to a subset of users. Brainlife has smart mechanisms that allow Apps to run on different resources, privately or publicly. Whereas with the more traditional approach of running an entire workflow on a single resource or on a small set of resources, does not allow optimization of the workflow (or parts of it) on every resources. Brainlife approach instead allows App Developers to identify the best resources available for the App the develop. This mechanisms is provided by scoring the compute resources available on the Brainlife platform depending on how well they work with the App being develop. Brainlife automatically keeps track of statistics, such as success rate a time to compute so that the users can quickly glance how often and efficiently each App has been processing data and make an informed choice when choosing among similar Apps to process a dataset.
+# Brainlife Datasets
 
-# Brainlife Viz (Cloud Visualization)
+Our Datasets feature offers more than 300 datasets that users can import. This feature was established as part of a project that brainlife.io is collaborating with DataLad on. brainlife.io’s Datasets feature allows you to select and import the DataLad datasets you need from our list.
 
-Brainlife provides mechanisms to perform data visualization on the Cloud side – without moving data to the web-browser of the users in location distal from the data. Data visualization is meant to provide users with an agile way to get feedback on the quality of the results generated by Apps and pipelines. Visualization is implemented with smart cloud-side methods, so that data are not moved from the Cloud to the users computer. This increases security and improves data management. Brainlife Viz allows running major software for data visualization familiar to the neuroscience community (e.g., FreeView, FSLview, MRview). We also developed an innovative method to run GPU rendered visualization on the cloud via Docker and VNC. Brainlife Viz as well as the Apps can be openly and conveniently contributed by developers to the Brainlife platform. 
+# Brainlife Resources
 
-![ohbm2019](/docs/img/ohbm_poster_brainlife.10dpi.png)
+We know it takes a lot of computing power to run workflows. That’s why brainlife allows users to work with data and computers across a mix of cloud systems and high-performance computing clusters (HPC). Both brainlife users and compute resource providers can register a compute resource that is publicly available to the entire brainlife community or privately available to certain users. 
 
-[Download Poster (pdf)](/docs/img/ohbm_poster_brainlife.150dpi.100cm_by_185cm.pdf)
+Our compute resources are unique because, instead of running an entire workflow on a single resource, App developers can identify the best resource for each individual App by scoring brainlife.io’s compute resources on how well they work with each App. brainlife.io automatically keeps track of success rate and time to compute so that users can easily see how efficiently each resource processes data for each App.
 
-# Reference
+# Brainlife Visualizations
 
-This research was supported by NSF OAC-1916518, NSF IIS-1912270, NSF, IIS-1636893, NSF BCS-1734853, NIH 1R01EB029272-01, Google Cloud, a Microsoft Research Award, A Microsoft Investigator Fellowship, the Indiana University Areas of Emergent Research initiative “Learning: Brains, Machines, Children.” 
+Users can perform data visualizations on brainlife.io in the cloud instead of on their own computer, which means better security and data management. Data visualization gives users feedback on the quality of the results generated by Apps and pipelines. The visualizations allow users to run popular software for data visualization like FreeView, FSLview,  or MRview. Users can additionally run GPU-rendered visualizations on the cloud through Docker and VNC. Similar to Apps, developers can contribute visualizations to the platform.
 
+Are you ready to start using brainlife.io? [Get started here!](https://brainlife.io/docs/user/started/)
