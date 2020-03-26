@@ -32,7 +32,7 @@ nav:
     - FMRI Preprocessing: tutorial/fmri-preprocessing-tutorial.md
     - PRF Mapping: tutorial/prf-mapping.md
     - DWI Preprocessing : tutorial/diffusion-preprocessing.md
-    - DWI Tractometry: tutorial/diffusion-and-tractography.md
+    - DWI Tractometry: tutorial/diffusion-tractography.md
     - FMRI networks: tutorial/networkneuroscience-functional.md
     - DMRI networks: tutorial/networkneuroscience-structural.md
 
