@@ -5,38 +5,40 @@
 
 This page demonstrates common steps used to map population receptive field (pRF) measures to the occipital cortex. This tutorial will walk through ways to [automatically map pRF data based on an atlas](https://brainlife.io/app/5cc4cd3f4ed9df00317f621d) and to [map fMRI pRF data](https://brainlife.io/app/5afc9831322997002773ed1c).
 
-This tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/) and the [Anatomical Preprocessing tutorial](https://brainlife.io/docs/tutorial/t1w-preprocessing/)) you recently completed. If you haven't read our introduction to brainlife, or if you're not comfortable staging, processing, archiving, and viewing data on brainlife.io, please go back through that tutorial before beginning this one.
+The tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/) and the [Anatomical Preprocessing tutorial](https://brainlife.io/docs/tutorial/t1w-preprocessing/) you recently completed. If you haven't read our introduction to brainlife, or if you're not comfortable staging, processing, archiving, and viewing data on brainlife.io, please go back through that tutorial before beginning this one.
 
 ### 1. Anatomical preprocessing.
 
-The first step of pRF mapping often involves processing the anatomical images. In order to automatically map pRF measures using an atlas, or to map functional MRI pRF data, we first need to generate cortical and white matter surfaces, and brain region parcellations, using [Freesurfer](https://brainlife.io/app/58c56d92e13a50849b258801). These will be used map pRF data to the occipital lobe surface.
+The first step of pRF mapping often involves processing the anatomical images. In order to automatically map pRF measures using an atlas, or to map functional MRI pRF data, we first need to generate cortical and white matter surfaces and brain region parcellations using [Freesurfer](https://brainlife.io/app/58c56d92e13a50849b258801). These surfaces and parcellations will be used to map pRF data to the occipital lobe surface.
 
 ### 2. pRF Mapping.
 
-The next step is to map **population receptive field (pRF)** data to the cortical occipital surface. **pRF** is a method for mapping visual function in the occipital lobe -- i.e. the visual center of the brain -- using fMRI. Specifically, visual stimuli including rotating wedges and scanning bars are used to map functional activitation of the occipital lobe based on location of the stimuli in the visual field and the orientation of the stimuli. This works due the specific preference for specific orientations and the preservation of visual field locations in the visual cortex (i.e. **retinotopy**). Every location in the visual field has a corresponding retinal and occipital cortex location and a prefered orientation of stimuli. Because of this, we can map visual field stimuli and the reaction of the occipital lobe to these different stimuli.
+The next step is to map **population receptive field (pRF)** data to the cortical occipital surface. **pRF** is a method that uses fMRI to map visual function in the **occipital lobe**, which is the visual processing center of the brain. Specifically, stimuli designed to cover different properties of the visual field are used to map functional activitation of the occipital lobe. These specific properties include location in space (eccentricity) and orientation of the stimuli (polar angle). This works due to the unique preservation of every location in our visual field onto the retina all the way to the cortex, a property called **retinotopy**, discovered by Drs. David Hubel and Torsten Wiesel in 1959. 
 
-There are two ways in which one could map this visual function data to the cortex: the first involves the [fitting of an atlas](https://brainlife.io/app/5cc4cd3f4ed9df00317f621d) to the occipital lobe, and the other involves [fitting fMRI pRF data](https://brainlife.io/app/5afc9831322997002773ed1c) to the occipital lobe. On brainlife.io, we have developed apps to perform both of these tasks. This tutorial will walk you through both methods.
+In their fundamental work, Hubel and Wiesel demonstrated this property in cats. Specifically, they recorded from visual cortex neurons in cats and showed visual light bars of different orientations and locations in the visual field to the cats. They found that specific locations of the visual cortex responded preferentially to specific angles and locations in the visual field. From this work, vision scientists and neuroscientists have been able to map the organization of the visual cortex using similar methodologies to those used by Hubel and Wiesel through neuroimaging!
 
-Useful information about pRF can be found in this [Neuroimage](https://pubmed.ncbi.nlm.nih.gov/17977024-population-receptive-field-estimates-in-human-visual-cortex/) paper. More information about the atlas-based mapping can be found in this [PLOS Computational Biology](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003538) paper.
+There are two ways you can map this visual function data to the cortex: the first involves the [fitting of an atlas](https://brainlife.io/app/5cc4cd3f4ed9df00317f621d) to the occipital lobe and the other involves [fitting fMRI pRF data](https://brainlife.io/app/5afc9831322997002773ed1c) to the occipital lobe. On brainlife.io, we developed apps to perform both of these tasks! This tutorial will walk you through both methods.
+
+Useful information about pRF can be found in this [Neuroimage paper](https://pubmed.ncbi.nlm.nih.gov/17977024/). More information about the atlas-based mapping can be found in this [PLOS Computational Biology paper](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003538). 
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
 
 1. generate anatomical surfaces using Freesurfer, 
 1. map pRF data using an atlas,
-1. map pRF data using fMRI pRF data
+1. and map pRF data using fMRI pRF data
 
 ### Copy appropriate data over from a single subject in the HCP 7T / Retinotopy (pRF) project
 
-1. Click the following link to go to the project's page for the 'HCP 7T / Retinotopy (pRF)' project: https://brainlife.io/project/5afc7d24322997002773ed19/
-1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
+1. Click the following link to go to the project's page for the 'HCP 7T / Retinotopy (pRF)' project: [https://brainlife.io/project/5afc7d24322997002773ed19/](https://brainlife.io/project/5afc7d24322997002773ed19/)
+1. Click the 'Archive' tab at the top of the screen to go to the Archive page.
 1. Select the following datatypes from one subject by clicking the boxes next to the data:
     * func/task
     * stimulus
     * anat/t1w
 1. Click the 'Stage to process' button on the right side of the screen
-    * For 'Project', select your project from the drop-down menu.
-    * For 'Process', select 'Create New Process' and title it "pRF Tutorial". Hit 'Submit'.
-        * This will take you to the process on your Project's page
+    * For 'Project,' select your project from the drop-down menu.
+    * For 'Process,' select 'Create New Process' and title it "pRF Tutorial." Hit 'Submit.'
+        * This will take you to the process on your Projects page
 1. Archive the data in your project by clickin the 'Archive' button next to each dataset.
 
 Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: generate Freesurfer surfaces!

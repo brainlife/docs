@@ -12,7 +12,6 @@ We are physically located at [Indiana University Bloomington](https://www.indian
 
 * [Research Software Engineer / Application Support Engineer](rse_app.md)
 * [Research Software Engineer / UI Engineer](rse_ui.md)
-* [Community Developer / Outreach Coordinator](devrel.md)
 * [DevOps / Software Engineers](devop.md)
 * [Cloud and Cluster Administrator](sysad.md)
 * [Postdoctoral Research Scientists](postdoc.md)

@@ -8,7 +8,7 @@ With brainlife CLI, you can ..
 * Submit Apps, and monitor (you can fully script data processing through Brainlife)
 * Query projects, datasets, datatypes, etc.
 
-Brainlife CLI is distributed through [npm](https://www.npmjs.com/)(node package manager) which is a part of nodejs. You will need to have nodejs/npm installed on your machine before you can install brainlife CLI command. Most operation systems support nodejs through their software distribution systems. You can find the nodejs installation document [here](https://nodejs.org/en/download/package-manager/).
+Brainlife CLI is distributed through [npm](https://www.npmjs.com/) (node package manager) which is a part of nodejs. You will need to have nodejs/npm installed on your machine before you can install brainlife CLI command. Most operation systems support nodejs through their software distribution systems. You can find the nodejs installation document [here](https://nodejs.org/en/download/package-manager/).
 
 ```
 $ sudo apt install nodejs

@@ -91,6 +91,8 @@ Depending on the app you are trying to run, some app may require additional ENV 
 export FREESURFER_LICENSE="hayashis@iu.edu 29511 *xxxxxxxxxxx xxxxxxxxxxx"
 ```
 
+You can request your freesurfer license [here](https://surfer.nmr.mgh.harvard.edu/registration.html) 
+
 ## Registering Resources
 
 To register your resource, go to [Brainlife Settings](https://brainlife.io/amaretti/#!/resources) page, and Under "HPC Systems" click "Add New Account". A resource entry form should appear. Please populate the following fields.
