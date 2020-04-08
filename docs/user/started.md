@@ -1,72 +1,66 @@
 
 # Getting Started with brainlife.io
 
-This tutorial will guide you through the following functionality of Brainlife. 
+Now, let’s learn how to use brainlife.io! This “Getting Started” tutorial will give you a quick overview for how to:
+* Sign up 
+* Create new projects
+* Upload data 
+* Launch visualizations
+* Run processes on data
+* Archive results 
 
-* Signing up
-* Creating new projects and uploading data
-* Launching visualizers to visualize your data
-* Running processes on data and archiving results.
+We will cover some of these topics more in-depth in other sections of the documentation.
  
 ## Sign Up
 
-If you have not registered on Brainlife.io yet, please do so by visiting The [Authentication Page](https://brainlife.io/auth/) and clicking on a preferred authentication method: Google, ORCID, Github, or through your institution.
+To begin using brainlife.io, you need first make sure you are registered on the site ([you can do that here](https://brainlife.io/auth/)).You can choose to sign up through Google, ORCID, Github, or through your institution. 
+
+If you want your own dedicated brainlife.io username and password, you can [sign up for brainlife.io] here(https://brainlife.io/auth/#!/signup) to register an account. You will be asked to confirm your email address once you register.
+
+You can associate multiple authenticators to your account once you register by going to Settings > Account > Account Settings. Scroll down to Connected Accounts and click "Connect" next to the authenticator you want to connect through. 
 
 !!! warning
-    If you register through a 3rd party authenticator, please use the same authenticator each time you login, or you will end up creating multiple Brainlife accounts. 
-
-If you would like to setup a dedicated username/password for Brainlife, please click the "Sign Up" link. You will be asked to confirm your email address once you register.
-
-!!! note
-    You can associate multiple authenticators to your account once you register by going to Settings / Account, Connected Accounts, and click "Connect" next to various 3rd party authenticators. 
+    If you register through a third party authenticator, please use the same authenticator each time you login, or you will end up creating multiple Brainlife accounts. 
 
 ## Create Project
 
-Once you login, you will land on the Brainlife Apps page. 
+Nice, you now have a brainlife.io account! To begin working with brainlife.io, you will need to first create a new project. 
 
-Before we can start using Brainlife, you will need to create a new project. 
+Projects is where you can organize your datasets, perform data processing, and share work with your team. You will learn more about Projects in the [Projects section](https://brainlife.io/docs/user/project/) of the documentation.
 
-Click on `Project` button on the left hand side menu, then click a plus side button at the bottom of the project list.
+You should automatically land on the Projects page when you enter brainlife.io. If not, click the `Project` button from the menu on the lefthand side. Then, press the `New Project` button in the righthand corner of the screen (it will look like a plus sign until you hover your mouse over it).
 
 ![project new button](/docs/img/project_new_button.png)
 
-!!! note
-    Project is where you can organize, process and share data with your project members. For more information about project, please read [project page](/docs/user/project)
+Enter any `Name` and `Description` -- be sure to leave everything else as the default option. Then click `Submit`. 
 
-Enter any `name` and `description`, and leave everything else default. Click `Submit`. 
-
-Congratulations! You just created your first private project!
-
-### What is Data-object?
-
-`data-object` is a set of files/directories for a specific subject and modaility. It is the smallest set of data that you can interact with in Brainlife. For example, `neuro/dwi` data-object consists of files such as `dwi.nii.gz` (a file containing the actual 4D diffusion brain image data), `dwi.bvecs`, and `dwi.bvals` (which describe how the image was acquired by the MRI scanner). Or freesurfer output for a subject is considered to be a single "data-object" containing many directories and files. Brainlife processes data at each subject level, and for each data-object. Brainlife Data-objects are immutable; you cannot modify the content of the data-object once you create it, although you can modify its metadata (description, tags, sidecard).
+Congratulations! You just created your first private project on brainlife.io. That was easy!
 
 ## Upload Data
 
-Now, let's upload some test data. Open the `Archive` tab.
+Now, let's upload some test data. Once you save your project, it will appear on the top of the Projects page in the `My Projects` section. Click on your project and then click the `Archive` tab.                                    
 
-Brainlife has 2 kinds of data storage. 
+<!-- There are two ways to store data on brainlife.io:
 
-* **Data Archive**
+<!-- * **Archive**
+The `Archive` tab you are currently on shows all the current content in your data archive. **Data-objects** under this tab are stored in our archival storage permanently (but not backed-up until you publish them).
 
-    The Archive tab you are seeing now shows the current content of your data archive. Data-objects under this tab are stored in our archival storage permanently (but not backed-up until you publish them)
+<!-- * **Processes**
 
-* **Process Scratch Space**
+    You cannot directly run Apps on archived data. To run Apps, data-objects will be automatically staged out of your archive and transferred to various compute resources, where the Apps will be executed.
 
-    You cannot directly run Apps on archived data. To run Apps, data-objects will be automatically staged out of your archive and transferred to various compute resources' scratch space where the Apps will be executed.
+    Data generated in the `Processes` page will be automatically removed within 25 days or sooner. If you have any output data that you'd like to keep permanently, you will need to archive them in the Archive page. 
 
-    Data geneated in process page will be automatically removed within 25 days or sooner. If you have any output data that you'd like to keep permanently, you will need to archive them back to the Data Archive. 
+<!-- !!! What is a data-object?
+    `data-object` is a set of files/directories for a specific subject and modality. It is the smallest set of data that you can interact with on the platform. For example, the `neuro/dwi` data-object consists of files such as `dwi.nii.gz` (a file containing the actual 4D diffusion brain image data), `dwi.bvecs`, and `dwi.bvals` (which describe how the image was acquired by the MRI scanner). Freesurfer output for a subject is considered to be a single "data-object" containing many directories and files. brainlife.io processes data at each subject level and for each data-object. brainlife.io data-objects are **immutable**, meaning you cannot modify the content of the data-object once you create it, although you can modify its metadata (description, tags, sidecard). -->
 
-Now, click `plus button` at the bottom of the screen to open the data upload dialog.
+Now, click the same button you clicked in the lower righthand corner of the screen to create your project. When you hover over the button this time, it will say `Upload Dataset`. Click it!
 
 ![upload form](/docs/img/upload.form.png)
 
-Select Datatype that you'd like to upload (currently limited to t1/t2 and dwi) and upload your data. 
+The form above will pop up. Select the Datatype that you want to upload, attach your file, and provide the subject name. If you do not have any data to upload, you can use data from other public projects or import data from the datasets page.
 
-!!! note
-    If you don't have any data to upload, you can use data from other public projects, or import from datasets page.
-
-The Upload form will run a server side validation and data normalization service. You can check the results from this step. If everything looks good, click `Archive`.
+A server-side validation and data normalization service will run. If everything looks good, click `Archive`.
 
 ![update validate](/docs/img/upload.validate.png)
 
