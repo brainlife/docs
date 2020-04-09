@@ -42,6 +42,7 @@ nav:
     - Running Apps: cli/app.md
     - Downloading Data: cli/download.md
     - Update Metadata: cli/update.md
+    - Group Analysis: cli/group.md
 
   - Developing Apps: 
     - Introduction: apps/introduction.md
@@ -65,7 +66,6 @@ nav:
   - Privacy Policy: privacy.md
   - AUP: aup.md
   - Media / Branding: media.md
-#  - Releases: releases.md
 
 extra:
   disqus: 'brain-life'
