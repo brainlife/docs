@@ -79,6 +79,7 @@ Once you're happy with the surfaces, you can move onto running the atlas-based p
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon next to the 'prf' tagged output.
     * Choose the 'PRF' viewer
+    * To view the eccentricity map, select the "r2 * eccentricity" selection from the 'Overlay' drop-down menu.
 
 If you're happy with the results, then you're ready to move onto computing some statistics!
 
