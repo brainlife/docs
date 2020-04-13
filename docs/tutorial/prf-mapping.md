@@ -15,7 +15,7 @@ The first step of pRF mapping often involves processing the anatomical images. I
 
 The next step is to map **population receptive field (pRF)** data to the cortical occipital surface. **pRF** is a method that uses fMRI to map visual function in the **occipital lobe**, which is the visual processing center of the brain. Specifically, stimuli designed to cover different properties of the visual field are used to map functional activitation of the occipital lobe. These specific properties include location in space (eccentricity) and orientation of the stimuli (polar angle). This works due to the unique preservation of every location in our visual field onto the retina all the way to the cortex, a property called **retinotopy**.
 
-There are two ways you can map this visual function data to the cortex: the first involves the [fitting of an atlas](https://brainlife.io/app/5cc4cd3f4ed9df00317f621d) to the occipital lobe and the other involves [fitting fMRI pRF data](https://brainlife.io/app/5afc9831322997002773ed1c) to the occipital lobe. On brainlife.io, we developed apps to perform both of these tasks! This tutorial will walk you through both methods.
+There are two ways you can map this visual function data to the cortex: the first involves the [fitting of an atlas](https://brainlife.io/app/5cc4cd3f4ed9df00317f621d) to the occipital lobe and the other involves [fitting fMRI pRF data](https://brainlife.io/app/5afc9831322997002773ed1c) to the occipital lobe. On brainlife.io, we developed apps to perform both of these tasks! This tutorial will walk you through the atlas-based method.
 
 Useful information about pRF can be found in this [Neuroimage paper](https://pubmed.ncbi.nlm.nih.gov/17977024/). More information about the atlas-based mapping can be found in this [PLOS Computational Biology paper](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003538). 
 
@@ -99,4 +99,4 @@ If you're happy with the results, then you're ready to move onto mapping the fMR
 1. Once the app is finished running, view the results by clicking the 'eye' icon next to the 'prf' tagged output.
     * Choose the 'PRF' viewer
 -->
-**If you're happy with the results, then you have successfully finished mapping visual function data (pRF) using both an atlas-based mapping method! You're now ready to move onto the next tutorial: diffusion MRI preprocessing!**
+**If you're happy with the results, then you have successfully finished mapping visual function data (pRF) using an atlas-based mapping method! You're now ready to move onto the next tutorial: diffusion MRI preprocessing!**
