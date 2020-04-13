@@ -23,7 +23,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 
 1. generate anatomical surfaces using Freesurfer, 
 1. map pRF data using an atlas,
-1. and map pRF data using fMRI pRF data
+#1. and map pRF data using fMRI pRF data
 
 ### Copy appropriate data over from a single subject in the HCP 7T / Retinotopy (pRF) project
 
@@ -80,7 +80,7 @@ Once you're happy with the surfaces, you can move onto running the atlas-based p
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon next to the 'prf' tagged output.
     * Choose the 'PRF' viewer
-    
+<!--   
 If you're happy with the results, then you're ready to move onto mapping the fMRI pRF data!
 
 ### pRF Mapping - fMRI-based
@@ -98,5 +98,5 @@ If you're happy with the results, then you're ready to move onto mapping the fMR
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon next to the 'prf' tagged output.
     * Choose the 'PRF' viewer
-
-**If you're happy with the results, then you have successfully finished mapping visual function data (pRF) using both an atlas-based mapping method and an fMRI-based mapping method! You're now ready to move onto the next tutorial: diffusion MRI preprocessing!**
+-->
+**If you're happy with the results, then you have successfully finished mapping visual function data (pRF) using both an atlas-based mapping method! You're now ready to move onto the next tutorial: diffusion MRI preprocessing!**
