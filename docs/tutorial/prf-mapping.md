@@ -23,6 +23,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 
 1. generate anatomical surfaces using Freesurfer, 
 1. map pRF data using an atlas,
+1. compute statistics of cortical thickness and volume across eccentricities
 #1. and map pRF data using fMRI pRF data
 
 ### Copy appropriate data over from a single subject in the HCP 7T / Retinotopy (pRF) project
@@ -80,9 +81,22 @@ Once you're happy with the surfaces, you can move onto running the atlas-based p
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon next to the 'prf' tagged output.
     * Choose the 'PRF' viewer
-<!--   
-If you're happy with the results, then you're ready to move onto mapping the fMRI pRF data!
 
+If you're happy with the results, then you're ready to move onto computing some statistics!
+
+### Compute statistics of volume and cortical thickness by eccentricity
+
+1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Bin cortical volume and thickness by eccentricity'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For freesurfer, select the Freesurfer output generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For prf, select the pRF output generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * Select the box for 'Archive all output datasets' when finished
+        * For 'Dataset Tags,' type and enter 'atlas_based'
+    * Hit 'Submit'
+
+<!--  
 ### pRF Mapping - fMRI-based
 
 1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
