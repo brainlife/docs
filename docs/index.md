@@ -20,7 +20,7 @@ The best way to manage your data is with brainlife.io’s Projects feature. Here
 
 # Brainlife Publications 
 
-Once you finish processing your datasets and producing your data derivatives, you can publish them. A new publication creates a snapshot of your datasets and is archived on brainlife.io for at least 10 years. Anyone can access your publication page and download your datasets without logging into brainlife.io.
+Once a Project is mature, the data is analyzed and all the derivatives generated, a portion of the Project can be made public via a brainlife.io publication. A brainlife.io publication creates a snapshot of your datasets and Apps archived on brainlife.io for at least 10 years. Anyone can access your publication page and download your datasets without logging or reuse the Apps and data on brainlife.io.
 
 # Brainlife Datatypes
 
