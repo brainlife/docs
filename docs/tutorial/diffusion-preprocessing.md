@@ -111,7 +111,7 @@ The final step in data processing is generate quality-assurance images of your r
     * In the search bar, type 'Generate images of T1'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * for anat, choose the ACPC-aligned anatomical (T1w) image generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For anat, choose the ACPC-aligned anatomical (T1w) image generated above by clicking the drop-down menu and finding the appropriate dataset.
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 't1 acpc'
     * Hit 'Submit'
@@ -125,7 +125,7 @@ The final step in data processing is generate quality-assurance images of your r
     * Click the app card.
 1. On the 'Submit App' page, select the following:
     * For dwi, select the preprocessed dMRI image generated above by clicking the drop-down menu and finding the appropriate dataset.
-    * for anat, choose the ACPC-aligned anatomical (T1w) image generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For anat, choose the ACPC-aligned anatomical (T1w) image generated above by clicking the drop-down menu and finding the appropriate dataset.
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'dwi acpc'
     * Hit 'Submit'
