@@ -34,7 +34,7 @@ Our Datasets feature offers more than 300 datasets that users can import. This f
 
 # Brainlife Resources
 
-We know it takes a lot of computing power to run workflows. That’s why brainlife allows users to work with data and computers across a mix of cloud systems and high-performance computing clusters (HPC). Both brainlife users and compute resource providers can register a compute resource that is publicly available to the entire brainlife community or privately available to certain users. 
+We know it takes a lot of computing power to run workflows. That is why brainlife.io allows users to work with data and computers across a mix of cloud systems and high-performance computing clusters (HPC). Both brainlife.io users and compute resource providers can register a compute resource that is publicly available to the entire brainlife.io community or privately available to certain users. 
 
 Our compute resources are unique because, instead of running an entire workflow on a single resource, App developers can identify the best resource for each individual App by scoring brainlife.io’s compute resources on how well they work with each App. brainlife.io automatically keeps track of success rate and time to compute so that users can easily see how efficiently each resource processes data for each App.
 
