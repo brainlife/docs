@@ -16,7 +16,7 @@ Anyone can develop, use, combine, and reuse Apps to build complex pipelines for 
 
 # Brainlife Projects
 
-The best way to manage your data is with brainlife’s Projects feature. Here you can organize your datasets, perform data processing, and share results with your team by granting varying levels of access to members of your group. Projects can be public or private.
+The best way to manage your data is with brainlife.io’s Projects feature. Here you can organize your datasets, perform data processing, and share results with your team by granting varying levels of access to members of your group. Projects can be public or private.
 
 # Brainlife Publications 
 
