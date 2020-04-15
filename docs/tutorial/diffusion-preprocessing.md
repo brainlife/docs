@@ -105,6 +105,19 @@ Once you're happy with the results, you can move onto fitting the diffusion tens
 
 The final step in data processing is generate quality-assurance images of your results, to make sure everything looks the way it should! There are multiple apps that can do this for you automatically on brainlife!
 
+**To make quality-assurance images of your anatomical (T1w) ACPC alignment, do the following:**
+   
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Generate images of T1'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * for anat, choose the ACPC-aligned anatomical (T1w) image generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 't1 acpc'
+    * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
+    * Choose 'File Viewer' and select the 'out.png' file
+
 **To make quality-assurance images of your DWI-T1 alignment, do the following:**
    
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
