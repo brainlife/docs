@@ -12,7 +12,7 @@ If you have any questions, do not forget to reach out to us on the [brainlife.io
 
 brainlife.io uses Apps to analyze data. Apps are small programs that can process data individually or be made part of a larger series of steps in a full data analysis workflow.
 
-Anyone can develop, use, combine, and reuse Apps to build complex pipelines for customized brain data analyses on the platform. You can publish apps to be used privately or shared publicly with the brainlife.io community.
+Anyone can develop, use, combine, and reuse Apps to build complex pipelines for customized brain data analyses on the platform. You can publish apps to be used privately or shared publicly with the brainlife.io community. Combining multiple Apps allows for high-throughput data processing and aggregation across thousands of datasets.
 
 # Brainlife Projects
 
