@@ -13,7 +13,7 @@ We will cover some of these topics more in-depth in other sections of the docume
  
 ## Sign Up
 
-To begin using brainlife.io, you need first make sure you are registered on the site ([you can do that here](https://brainlife.io/auth/)).You can choose to sign up through Google, ORCID, Github, or through your institution. 
+To begin using brainlife.io, you need first make sure you are registered on the site ([you can do that here](https://brainlife.io/auth/)). You can choose to sign up through Google, ORCID, Github, or through your institution. 
 
 If you want your own dedicated brainlife.io username and password, you can [sign up for brainlife.io] here(https://brainlife.io/auth/#!/signup) to register an account. You will be asked to confirm your email address once you register.
 
@@ -36,63 +36,63 @@ Enter any `Name` and `Description` -- be sure to leave everything else as the de
 
 Congratulations! You just created your first private project on brainlife.io. That was easy!
 
+### What is a Data-Object?
+
+Before we dive into the next section, we should cover a term that you will become very familiar with on brainlife.io called a **data-object.** We descrive data-objects as a set of files for a specific subject and modality. A data-object is the smallest set of data that you can interact with on brainlife.io. For example, `neuro/dwi` data-object consists of files such as `dwi.nii.gz` (a file containing the actual 4D diffusion brain image data), `dwi.bvecs`, and `dwi.bvals` (which describe how the image was acquired by the MRI scanner). Freesurfer output for a subject is considered to be a single "data-object" containing many directories and files. brainlife.io processes data at each subject level and for each data-object. You cannot change the content of a data-object once you create it, but you can modify its metadata.
+
+
 ## Upload Data
 
 Now, let's upload some test data. Once you save your project, it will appear on the top of the Projects page in the `My Projects` section. Click on your project and then click the `Archive` tab.                                    
 
-<!-- There are two ways to store data on brainlife.io:
+There are two ways to store data on brainlife.io:
 
-<!-- * **Archive**
-The `Archive` tab you are currently on shows all the current content in your data archive. **Data-objects** under this tab are stored in our archival storage permanently (but not backed-up until you publish them).
+* **Archive**
+    The `Archive` tab you are currently on shows all the current content in your data archive. Data-objects under this tab are stored in our archival storage permanently (but not backed-up until you publish them).
+    
+* **Processes**
 
-<!-- * **Processes**
-
-    You cannot directly run Apps on archived data. To run Apps, data-objects will be automatically staged out of your archive and transferred to various compute resources, where the Apps will be executed.
-
-    Data generated in the `Processes` page will be automatically removed within 25 days or sooner. If you have any output data that you'd like to keep permanently, you will need to archive them in the Archive page. 
-
-<!-- !!! What is a data-object?
-    `data-object` is a set of files/directories for a specific subject and modality. It is the smallest set of data that you can interact with on the platform. For example, the `neuro/dwi` data-object consists of files such as `dwi.nii.gz` (a file containing the actual 4D diffusion brain image data), `dwi.bvecs`, and `dwi.bvals` (which describe how the image was acquired by the MRI scanner). Freesurfer output for a subject is considered to be a single "data-object" containing many directories and files. brainlife.io processes data at each subject level and for each data-object. brainlife.io data-objects are **immutable**, meaning you cannot modify the content of the data-object once you create it, although you can modify its metadata (description, tags, sidecard). -->
+    You cannot directly run Apps on archived data. To run Apps, data-objects will be automatically staged out of your archive and transferred to various compute resources, where the Apps will be executed. Data generated in the `Processes` page will be automatically removed within 25 days or sooner. If you have any output data that you'd like to keep permanently, you will need to archive them in the Archive page. 
 
 Now, click the same button you clicked in the lower righthand corner of the screen to create your project. When you hover over the button this time, it will say `Upload Dataset`. Click it!
 
 ![upload form](/docs/img/upload.form.png)
 
-The form above will pop up. Select the Datatype that you want to upload, attach your file, and provide the subject name. If you do not have any data to upload, you can use data from other public projects or import data from the datasets page.
+The form above will pop up. Select the Datatype that you want to upload, attach your file, and provide the subject name. If you do not have any data to upload, you can upload data from other [public projects](https://brainlife.io/projects) or import data from the [datasets page](https://brainlife.io/datasets#%7B%22query%22%3A%22%22%2C%22datatypes%22%3A%5B%5D%7D).
 
-A server-side validation and data normalization service will run. If everything looks good, click `Archive`.
+!!! How do I use brainlife.io data for my project?
+    If you download data from brainlife.io to add to your project, you will need to change the file type. Make sure you have 7-Zip or a similar software on your computer. Once you download the data you want, right-click on the file and hover over "7-Zip" and then click "Extract." Click "OK." That will extact the data in a GZ file, which you can then upload into your brainlife.io project!
+    
+You will see a confirmation that your data has been uploaded to brainlife.io. If everything looks good, click `Archive`.
 
 ![update validate](/docs/img/upload.validate.png)
 
-Once uploaded, you should see a new dialog showing details about your new data. All archived data is immutable (read-only), but you can copy them between projects or make changes to the metadata if necessary (description, tags, etc..).
+Now you can see the details of your data in your Archives tab. The `Archived in` field shows where your data is archived (it may take a large data-object longer to be archived, so please give it a few minutes). You will be able to make small edits to this profile, such as adding details about the data and tags or editing the metadata. 
 
 ![data-object](/docs/img/dataset.png)
 
-!!! note
-    `Stored in` field shows where your data is archived. For a large data-object, it might take a while for it to be archived. Please give it a few minutes.
-
 ## Visualize Data-objects
 
-To launch a visualization program, click a data-object record (not the checkbox), which opens the data-object detail dialog box. Then click on the visualizer icon (:fa-eye:) at the top of data-object dialog box.
+To launch a visualization program, click your data-object record (not the checkbox) to open the details box. Then click on the visualizer icon (:fa-eye:) in the upper righthand corer of the box.
 
-Any data-objects stored in Brainlife can be visualized using Web-based and/or Native (via [Web-VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing)) visualization Apps registered for each datatype. 
+Any data-objects stored in brainlife.io can be visualized using web-based apps or using Apps registered for each datatype. 
 
-For example, `neuro/anat/t1` data-object can be visualized by the following set of Visualization Apps.
+Once you click the visualizer icon, you will see all of the apps your data-object can be visualized with, which you can see in the example below. Web-based apps have a black bar and brainlife.io registered Apps have a green bar (you can also read which is which in the descriptions). 
 
 ![viewers](/docs/img/viewers.png)
 
 !!! note
-    Similar to `Apps`, developers can develop and contribute new visualization Apps to run on Brainlife. If you are developing visualization Apps, or have Apps that you'd like us to add, please contact us at [brlife@iu.edu](mailto:brlife@iu.edu).
+    If you are wondering how you can develop and contribute new visualization Apps to run on brainlife.io, email us at [brlife@iu.edu](mailto:brlife@iu.edu). You can also let us know if there is a particular app you would like us to add!
 
-Click any of the visualization Apps that you'd like to launch to visualize your data. 
+To visualize your data -- simply select the App you want to launch! 
 
 ## Downloading BIDS
 
-You can search/select and bulk download data. In the archive page, select the data-object you'd like to download by clicking on the check box, then click `Download (BIDS)` button.
+You can search, select, and bulk-download data using BIDS. In the Archive tab, select the data-object you'd like to download by checking the box next to it. A box will appear on the right, where you can select `Download (BIDS)` button.
 
 ![download](/docs/img/download.png)
 
-Brainlife will stage selected data-objects, organize them into a [BIDS structure](http://bids.neuroimaging.io), and let you download the whole structure as a single tar ball. Once it's ready, click `Download`.
+brainlife.io will stage selected data-objects, organize them into a [BIDS structure](http://bids.neuroimaging.io), and let you download the whole structure as a single tar ball. Once it's ready, click `Download`.
 
 !!! note
     At the moment, all Brainlife data-objects will be stored under `/derivatives` directory regardless of the datatype.
