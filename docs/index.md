@@ -6,7 +6,7 @@ brainlife.io promotes engagement and education in reproducible neuroscience by p
 
 Below, you’ll learn about the main panel of tools you’ll encounter as soon as you log into brainlife.io. While these run-throughs are brief, you’ll learn much more about each feature as you review the rest of brainlife’s documentation.
 
-If you have any questions, don’t forget to reach out to us on the [brainlife.io slack channel](https://brainlife.io/docs/contact/)!
+If you have any questions, do not forget to reach out to us on the [brainlife.io slack channel](https://brainlife.io/docs/contact/)!
 
 # Brainlife Apps
 
