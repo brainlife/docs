@@ -101,4 +101,35 @@ Once you're happy with the results, you can move onto fitting the diffusion tens
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'fsleyes' as your viewer
 
+## Generate quality-assurance images of your results!
+
+The final step in data processing is generate quality-assurance images of your results, to make sure everything looks the way it should! There are multiple apps that can do this for you automatically on brainlife!
+
+To make quality-assurance images of your DWI-T1 alignment, do the following:
+   
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Generate images of DWI overlaid on T1'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For dwi, select the preprocessed dMRI image generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * for anat, choose the ACPC-aligned anatomical (T1w) image generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'dwi acpc'
+    * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
+    * Choose 'File Viewer' and select the 'out.png' file
+    
+To make quality-assurance images of your DTI output, do the following:
+   
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Generate images of DWI overlaid on T1'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For tensor, select the DTI maps generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'dti'
+    * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
+    * Choose 'File Viewer' and select the 'fa.png' file to view the FA map
+
 **If you're happy with the results, then you have successfully finished preprocessing your dMRI data! You're now ready to move onto the next tutorial: diffusion tractography!**
