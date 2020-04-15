@@ -42,7 +42,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
         * Both dwi files
     * anat/t1w
 1. Click the 'Stage to process' button on the right side of the screen
-    * For 'Project,', select your project from the drop-down menu.
+    * For 'Project', select your project from the drop-down menu.
     * For 'Process,' select 'Create New Process' and title it "dMRI Prep Tutorial." Hit 'Submit.'
         * This will take you to the process on your Projects page
 1. Archive the data in your project by clickin the 'Archive' button next to each dataset.
