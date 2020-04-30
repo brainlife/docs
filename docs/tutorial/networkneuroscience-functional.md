@@ -17,20 +17,64 @@ Once the anatomical and fMRI data is preprocessed with fMRIPrep, we can now exam
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
 
-1. Map the Glasser 180-node atlas to the Freesurfer output,
+1. ACPC-align the anatomical (T1w) image,
+1. Generate Freesurfer surfaces and parcellations,
+1. Map Glasser 180-node cortical atlas to the surface,
+1. Preprocess fMRI data,
 1. and generate network matrices from the regions of the Glasser 180-node atlas.
+
+### ACPC-align anatomical (T1w) image.
+
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'HCP ACPC Alignment (T1w)'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For input, select the staged anatomical (T1w) image generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For template, choose 'MNI152_1mm' by clicking the drop-down menu and finding the appropriate file
+    * For reorient, make sure the box is checked.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'acpc_aligned'
+    * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
+    * Choose 'fsleyes' as your viewer
+    * Only have the file titled 'out.nii.gz' selected in the viewer
+
+Once you're happy with the alignment, you can move onto Freesurfer parcellation generation!
+
+### Freesurfer Brain Parcellation - Generation.
+
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Freesurfer.'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For input, select the ACPC aligned anatomical image generated above by clicking the drop-down menu and finding the appropriate datasets.
+    * Select the boxes for 'hippocampal' and 'hires'
+    * For 'version,' select '6.0.0' from the drop-down menu.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'freesurfer'
+    * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
+    * Choose 'freeview' as your viewer
+        * This will load the following volumes and surfaces: aseg, brainmask, white matter mask, T1, left/right hemisphere pial (cortical), and white (white matter) surfaces.
+    * To view the aparc.a2009s segmentation on an inflated surface, do the following:
+        * Click File --> Load surface
+            * Choose the lh.inflated and rh.inflated surfaces
+            * Hit 'OK'
+        * Select inflated surface of choice (i.e. left or right hemisphere)
+        * Click the drop-down menu next to 'Annotation' and choose 'Load from file'
+            * Choose the appropriate hemisphere aparc.a2009s.annot file (lh.aparc.a2009s.annot)
+            * Hit 'OK'
+            * The aparc.a2009s parcellation should be overlayed on your inflated surface! Now, repeat the process on the other hemisphere.
+            
+Once you're happy with the surfaces, you can move computing statistics!
 
 ### Map the Glasser 180-node atlas:
 
-1. On the 'Archive' tab of your project, stage your fMRIPrep outputs and Freesurfer outputs to a new process in your project by clicking the box next to the appropriate outputs and clicking 'Stage to process'.
-    * For 'Project', select your project
-    * Select 'Create new process'
-        * In the description field, enter 'Functional Connectivity Network Matrix Generation'
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'Multi-Atlas Transfer Tool'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For input, select the staged Freesurfer output by clicking the drop-down menu and finding the appropriate dataset.
+    * For input, select the staged Freesurfer output generated above by clicking the drop-down menu and finding the appropriate dataset.
     * For 'space,' select 'hcp-mmp-b' from the drop-down menu.
     * Select the box for 'Archive all output datasets' when finished
         * For 'Dataset Tags,' type and enter 'Glasser'
