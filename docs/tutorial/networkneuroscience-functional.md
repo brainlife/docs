@@ -80,6 +80,23 @@ Once you're happy with the surfaces, you can move computing statistics!
         * For 'Dataset Tags,' type and enter 'Glasser'
     * Hit 'Submit'
 
+Once the app is finished, you're ready to move onto the next step: preprocess the fMRI data!
+
+### Preprocess your data with fMRIPrep:
+
+1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
+    * In the search bar, type 'fmriPrep - Volume Output'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For input, select the staged ACPC-aligned anatomical (T1w) images, the freesurfer output, and the functional data by clicking the drop-down menu and finding the appropriate datasets.
+    * For 'space,' select 'MNI152NLin6Asym' from the drop-down menu.
+    * For 'resolution,' select 'original' from the drop-down menu.
+    * Select the box for 'Archive all output datasets' when finished
+        * For 'Dataset Tags,' type and enter 'fmriPrep'
+    * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon next to the 'html' tagged output.
+    * Choose the 'html' viewer
+
 Once the app is finished, you're ready to move onto the final step: network matrix generation!
 
 ### Generate functional connectivity network matrices:
