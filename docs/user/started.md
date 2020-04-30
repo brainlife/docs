@@ -14,7 +14,7 @@ We will cover some of these topics more in-depth in other sections of the docume
 
 To begin using brainlife.io, you need first make sure you are registered on the site ([you can do that here](https://brainlife.io/auth/)). You can choose to sign up through Google, ORCID, Github, or through your institution. 
 
-If you want your own dedicated brainlife.io username and password, you can [sign up for brainlife.io here](https://brainlife.io/auth/#!/signup) to register an account. You will be asked to confirm your email address once you register.
+To register a personal brainlife.io account, [sign up for brainlife.io here](https://brainlife.io/auth/#!/signup). You will be asked to confirm your email address.
 
 You can associate multiple authenticators with your account once you register by going to Settings > Account > Account Settings. Scroll down to Connected Accounts and click `Connect` next to the authenticator you want to connect through. 
 
@@ -22,7 +22,7 @@ You can associate multiple authenticators with your account once you register by
     If you register through a third-party authenticator, please use the same authenticator each time you log in, or you will end up creating multiple brainlife.io accounts.
     
 ## brainlife.io terms to know
-Nice, you now have a brainlife.io account! Before we jump into the rest of the tutorial, it will be good to familiarize yourself with a couple of commonly used terms on brainlife.io that come up a lot in this documentation.
+Nice, you now have a brainlife.io account! Before we jump into the rest of the tutorial, it will be good to familiarize yourself with a couple of commonly used terms on brainlife.io.
 
 * **Data-Object**
 
@@ -32,7 +32,7 @@ Nice, you now have a brainlife.io account! Before we jump into the rest of the t
     
 * **Datatypes**
 
-    brainlife.io Apps exchange data through **datatypes**. The App below gives an example of how to determine the input-output datatypes. The colored boxes indicate that the App will take a `dwi` input data-object and generate another `dwi` data-object with a datatype tag of `masked`, and output another data-object of a `mask` datatype.
+    brainlife.io Apps exchange data through **datatypes**. The App below gives an example of how to determine the input-output of  datatypes. The colored boxes indicate that the App will take a `dwi` input data-object and generate another `dwi` data-object with a datatype tag of `masked`, and output another data-object of a `mask` datatype.
 
     ![datatype](/docs/img/datatype.png)
 
@@ -73,11 +73,9 @@ Got it? Now, go to the same button you clicked to create your project. When you 
 Once you see this form, select the Datatype you want to upload, attach your file, and provide the subject name. If you do not have any data to upload, you can upload data from other [public projects](https://brainlife.io/projects) or import data from the [datasets page](https://brainlife.io/datasets) (one of the many benefits of brainlife.io!).
 
 !!! How do I use brainlife.io data for my project?
-    If you download data from brainlife.io to add to your project, you will need to change the file type. Make sure you have 7-Zip or a similar software on your computer. Once you download the data you want, right-click on the file and hover over `7-Zip` and then click `Extract.` Click `OK.` That will extact the data in a GZ file, which you can then upload into your brainlife.io project!
+    If you download data from brainlife.io to add to your project, you will need to change the file type. Make sure you have 7-Zip or a similar software on your computer. Once you download the data you want, right-click on the file and hover over `7-Zip` and then click `Extract.` Click `OK.` That will extract the data in a GZ file, which you can then upload into your brainlife.io project!
     
 If everything looks good on your data upload, click `Archive`.
-
-![update validate](/docs/img/upload.validate.png)
 
 Now you can see the details of your data in your Archives tab. The `Archived in` field shows where your data is archived (it may take a large data-object a bit longer to be archived). You can make small edits to this profile, such as adding details about the data and tags or editing the metadata. 
 
@@ -85,7 +83,7 @@ Now you can see the details of your data in your Archives tab. The `Archived in`
 
 ## Visualize Data-objects
 
-Now for the fun stuff. To launch a visualization program, click your data-object record (not the checkbox). Then click on the visualizer icon (which is a fancy way of saying the eyeball (:fa-eye:)) in the upper righthand corer of the box.
+Now for the fun stuff. To launch a visualization program, click your data-object record (not the checkbox). Then click on the visualizer icon (which is a fancy way of saying the eyeball (:fa-eye:)) in the upper righthand corner of the box.
 
 Any data-objects stored in brainlife.io can be visualized using web-based apps or brainlife.io Apps registered for each datatype. 
 
@@ -100,7 +98,7 @@ To visualize your data -- simply select the App you want to launch!
 
 ## Downloading BIDS
 
-You can search, select, and bulk-download data using BIDS. In the Archive tab, select the data-object you'd like to download by checking the box next to it. A panel will appear on the right, where you can select `Download` button. 
+You can search, select, and bulk-download data using BIDS. In the Archive tab, select the data-object you'd like to download by checking the box next to it. A panel will appear on the right, where you can select the `Download` button. 
 
 ![download](/docs/img/download.png)
 
@@ -113,7 +111,7 @@ brainlife.io will stage selected data-objects, organize them into a [BIDS struct
 
 ## Apps
 
-Let's move onto `Apps`. Apps are small programs that perform a specific type of data processing. Although we have a few Apps that behave more like a typical *pipeline* or *workflow* (including pre- and post-processing, data analysis, and reporting work), most brainlife.io Apps only perform one specific task.
+Let's move on to `Apps`. Apps are small programs that perform a specific type of data processing. Although we have a few Apps that behave more like a typical *pipeline* or *workflow* (including pre- and post-processing, data analysis, and reporting work), most brainlife.io Apps only perform one specific task.
 
 You can find all of our pubicly available brainlife.io `Apps` on the main brainlife.io menu on the left. Don't worry, it is OK to feel both overwhelmed and excited by the amount of Apps you are currently looking at. Sort through them with the `Categories` panel on the right.
 
@@ -125,23 +123,27 @@ Now that we understand `Apps`, we can practice some data processing on your proj
 
 1. To start, open the `Processes` tab in your project -- this is where you will always submit Apps, which can share input-output data-objects. 
 
-2. Create a new process by clicking the `+` button you have now become so familiar with. This time, you will find it in the panel on the left-hand side of the `Processes` tab. Enter a fabulous name for your process and hit "OK." 
+2. Create a new process by clicking the `+` button you have now become so familiar with. This time, you will find it in the panel on the left-hand side of the `Processes` tab. Enter a name for your process and hit "OK." 
 
-![empty process](/docs/img/empty.process.png)
+![create process](/docs/img/empty.process.png)
 
-3. Nice! In order to process the data, you first need to stage data from your `Archive` to your process. Each process can only process data that is either staged or generated by other Apps. You can find the `Stage New Data` button on the buttom of the screen, click it. 
+3. Nice! In order to process the data, you first need to stage data from your `Archive` to your process. Each process can only process data that is either staged or generated by other Apps. You can find the `Stage New Data` button on the buttom of the screen, click it.
 
-4. Then select a project (we used `Brainlife demo` and you can too to practice with) and choose any `anat/t1w` data-object.
+![stage data](/docs/img/select.process.png)
+
+4. Then select a project (we used `Brainlife demo` and you can too) and choose any `anat/t1w` data-object.
 
 ![select data](/docs/img/select.datasets.png)
 
 5. Once you have staged your data-object, you can submit an App. Click the `Submit New App` button (it is to the left of the `Stage Data` button). 
 
+![submit app](/docs/img/select.apps.png)
+
 6. You will see a list of Apps that you can submit using your `anat/t1w` data-object. brainlife.io only allows you to select the Apps where you have all required input data, so do not worry if you are unsure. A good App to practice with is `ACPC alignment via ART`, so let's use that one!
 
 7. Find and click `ACPC alignment via ART`. Your staged data should automatically be selected as the input. All you need to do now is hit `Submit`. 
 
-![picture]
+![search app](/docs/img/task.apps.png)
 
 As you see above, brainlife.io automatically searches for and selects the best resource to run your App. brainlife.io will transfer data to the resource and submit it to the local batch scheduler. The task should not take too long to run. 
 
@@ -153,16 +155,17 @@ Once it is completed, your successful App submission will look like this:
 
 8. Open `Volume Viewer` to see it.
 
-9. And for fun -- click the:fa-eye: button next next to the `Output` section of staged data to compared this data, which has not yet been ACPC-aligned, to the one we ran with the `ACPC alignment via ART` App.
+9. And for fun -- click the:fa-eye: button next next to the `Output` section of staged data to compare data that has not yet been ACPC-aligned to the data we ran with the `ACPC alignment via ART` App.
 
-10. Check out the before and after images of the origninal outpt data and the output data with ACPC alignment. The bottom image is clearly better aligned and re-positioned at the ACPC line. That is because `ACPC alignment via ART` is a common alignment tool used to re-orient and re-position the brain image in common orientations better-suited for image analysis. For more info on ACPC alignment [go here](https://github.com/vistalab/vistasoft/wiki/ACPC-alignment).
+10. Check out the before and after images of the origninal outpt data vs. the output data with ACPC alignment. The bottom image is clearly better aligned and re-positioned at the ACPC line. That is because `ACPC alignment via ART` is a common alignment tool used to re-orient and re-position the brain image in common orientations better-suited for image analysis. For more info on ACPC alignment [go here](https://github.com/vistalab/vistasoft/wiki/ACPC-alignment).
 
+![original orient](/docs/img/acpc.orient.png)
 ![acpc orient](/docs/img/acpc.orient.png)
 
 **Bonus**: Now that you have finished running ACPC alignment, you will find that you can submit a few more Apps than you could before. Go have fun and try them out! 
 
 !!! hint
-    If you are not sure which data to stage, go to the [Apps page](https://brainlife.io/apps) and to see which datatype each App requires to run.
+    If you are not sure which data to stage, go to the [Apps page](https://brainlife.io/apps) to see which datatype each App requires to run.
 
 ## Archiving
 
@@ -170,7 +173,7 @@ So far, you have staged data, submitted an App that generated data derivatives, 
 
 We should now talk about how to archive these processes. All processes are meant to be temporary, and brainlife.io will remove processes within 25 days of data generation (some resources have a shorter data purging policy). 
 
-If you want to permanently keep the output data you generated, you will need to `Archive` the output by clicking on the :fa-archive: button in the Output section (it is in the same section as the eyeball). You can edit any metadata and the description, and then archive the data. Double-check your data is now listed under the `Archive` tab, where you can click on the data-object record to see more details.
+If you want to permanently keep the output data you generated, you will need to `Archive` the output by clicking on the :fa-archive: button in the Output section (it is in the same section as the eyeball). You can edit any metadata and the description, and then archive the data. Double-check that your data is now listed under the `Archive` tab, where you can click on the data-object record to see more details.
 
 * **Data Provenance**
 
