@@ -112,8 +112,8 @@ Once you're happy with the surfaces, you can move computing statistics!
 ### Freesurfer Brain Parcellation - Statistics.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'Freesurfer.'
-    * Click the app card.
+    * In the search bar, type 'Freesurfer'.
+    * Click the "Freesurfer Statistics" app card.
 1. On the 'Submit App' page, select the following:
     * For input, select the Freesurfer output generated in Step 3 by clicking the drop-down menu and finding the appropriate dataset (look for the datatag 'freesurfer'.
     * For parcellation, please choose the parcellation of your choice. For this tutorial, we will use the 'aparc.a2009s'. To choose this, select the 'aparc.a2009s' option from the drop-down menu.
