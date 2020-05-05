@@ -170,4 +170,4 @@ If you're happy with the results, you're ready to move onto structural connectiv
         * For 'Dataset Tags,' type and enter 'structural_matrix'
     * Hit 'Submit'
 
-**Nice work! You've completed all of the tutorials for processing MRI data on brainlife.io!!!!**
+**Nice work! You've completed the structural network matrix generation tutorial!!!!**
