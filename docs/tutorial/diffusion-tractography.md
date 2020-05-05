@@ -25,7 +25,7 @@ Useful information about the preprocessing pipeline that [MrTrix3 Preprocessing]
 
 ### 3. Diffusion modeling & anatomically-informed ensemble tractography.
 
-Once the dMRI data has been cleaned and aligned to the anatomical (T1w) image, the next step is to map the underlying white matter anatomy using diffusion tractography. Diffusion tractography works by modeling how water is moving throughout the brain based on the principle of **anisotropy** -- that water will move unequally in a particular direction given a physical constraint. In the case of diffusion MRI, this constraint comes from the myelin wrapping the many axons arranged into bundles known as **fasicles**. _( ---> question here, which are known based on their termination? There are common groupings of these fasicles, known as **white matter tracts**, based on their terminations into the cortex.)_ Diffusion tractography generates **streamlines** that act as evidence of underlying white matter organization. We can bundle these streamlines into common white matter tracts digitally, just as we can bundle fasciles into **tracts** using histological methods.
+Once the dMRI data has been cleaned and aligned to the anatomical (T1w) image, the next step is to map the underlying white matter anatomy using diffusion tractography. Diffusion tractography works by modeling how water is moving throughout the brain based on the principle of **anisotropy** -- that water will move unequally in a particular direction given a physical constraint. In the case of diffusion MRI, this constraint comes from the myelin wrapping the many axons arranged into bundles known as **fasicles**. Diffusion tractography generates **streamlines** that act as evidence of underlying white matter organization. We can bundle these streamlines into common white matter tracts digitally, just as we can bundle fasciles into **tracts** using histological methods.
 
 The first step is to fit models of diffusion at each location in the dMRI image that can be used as a guide for the tractography algorithms. The most popular model for this is known as **constrained spherical deconvolution**, or **CSD**. CSD allows for the possibility of multiple fasicles entering a single location that may have different trajectories, which is a major advantage of this model over other models of diffusion. The CSD model at each location can tell the tracking algorithm _how strongly_ and in _what direction_ water is diffusing in the brain, and thus where organized and myelinated white matter is likely to be.
 
@@ -70,6 +70,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
         * This will take you to the process on your Projects page
 1. Archive the data in your project by clickin the 'Archive' button next to each dataset.
 
+
 Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: ACPC alignment of the anatomical (T1w) image!
 
 ### ACPC-align anatomical (T1w) image.
@@ -87,6 +88,7 @@ Your data should now be staged for processing and archived in your projects page
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'fsleyes' as your viewer
     * Only have the file titled 'out.nii.gz' selected in the viewer
+1. You can also generate a QA image of the results by running the 'Generate images of T1' using the ACPC-aligned anatomical image generated above! Archive the results and save with the tag 'qa t1 acpc'.
 
 Once you're happy with the alignment, you can move onto running mrtrix3 preproc!
 
@@ -134,6 +136,7 @@ Once you're happy with the surfaces, you can move onto preprocessing your dMRI d
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'fsleyes' as your viewer
     * Only have the file titled 'dwi.nii.gz' selected in the viewer
+1. You can also generate a QA image of the DWI-T1 alignment by running the 'Generate images of DWI overlaid on T1' using the ACPC-aligned anatomical image and the preprocessed dMRI image generated above! Archive the results and save with the tag 'qa dmri-t1 overlay'.
 
 Once you're happy with the results, you can move onto fitting the CSD, DTI, and performing tractography!
 
@@ -152,6 +155,7 @@ Once you're happy with the results, you can move onto fitting the CSD, DTI, and 
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'mrview' as your viewer
         * This will overlay the tractogram on the generated fractional anistropy (FA) image
+1. You can also generate a QA image of the whole-brain tractograms by running the 'Generate figures of whole-brain tractogram (tck)' using the whole-brain tractogram (tck) generated above! Archive the results and save with the tag 'qa whole brain tractogram'.
 
 If you're happy with the results, you're ready to move onto segmenting major white matter tracts!
 

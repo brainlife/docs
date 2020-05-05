@@ -67,6 +67,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'fsleyes' as your viewer
     * Only have the file titled 'out.nii.gz' selected in the viewer
+1. You can also generate a QA image of the results by running the 'Generate images of T1' using the ACPC-aligned anatomical image generated above! Archive the results and save with the tag 'qa t1 acpc'.
 
 Once you're happy with the alignment, you can move on to Freesurfer parcellation generation!
 
@@ -128,6 +129,7 @@ Once the app is finished, you're ready to move on to the final step: network mat
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'fsleyes' as your viewer
     * Only have the file titled 'dwi.nii.gz' selected in the viewer
+1. You can also generate a QA image of the DWI-T1 alignment by running the 'Generate images of DWI overlaid on T1' using the ACPC-aligned anatomical image and the preprocessed dMRI image generated above! Archive the results and save with the tag 'qa dmri-t1 overlay'.
 
 Once you're happy with the results, you can move on to fitting the CSD, DTI, and performing tractography!
 
@@ -146,6 +148,7 @@ Once you're happy with the results, you can move on to fitting the CSD, DTI, and
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'mrview' as your viewer
         * This will overlay the tractogram on the generated fractional anistropy (FA) image
+1. You can also generate a QA image of the whole-brain tractograms by running the 'Generate figures of whole-brain tractogram (tck)' using the whole-brain tractogram (tck) generated above! Archive the results and save with the tag 'qa whole brain tractogram'.
 
 If you're happy with the results, you're ready to move on to structural connectivity generation!
 
@@ -167,4 +170,4 @@ If you're happy with the results, you're ready to move on to structural connecti
         * For 'Dataset Tags,' type and enter 'structural_matrix'
     * Hit 'Submit'
 
-**Nice work! You've completed all of the tutorials for processing MRI data on brainlife.io!!!!**
+**Nice work! Now that the app is finished, you're ready to perform group analyses on your connectivity matrices and examine the network structure of your data!!!!**
