@@ -35,6 +35,7 @@ nav:
     - DWI Tractometry: tutorial/diffusion-tractography.md
     - FMRI networks: tutorial/networkneuroscience-functional.md
     - DMRI networks: tutorial/networkneuroscience-structural.md
+    - Network Neuroscience: tutorial/networkneuroscience-structural.md
 
   - Using CLI:
     - Installation: cli/install.md
