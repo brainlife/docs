@@ -231,7 +231,7 @@ If you're happy with the results, you're ready to move onto structural connectiv
     * Select true for compshare, compmicro, and comptprof by clicking the box next to each option
     * Leave nnondes as 100
     * Select the box for 'Archive all output datasets when finished'
-        * For 'Dataset Tags,' type and enter 'structural_matrix'
+        * For 'Dataset Tags,' type and enter 'structural matrix'
     * Hit 'Submit'
     
 Once complete, you're now ready to convert the matrices to the proper data format!
@@ -246,7 +246,7 @@ Once complete, you're now ready to convert the matrices to the proper data forma
     * For raw (networkmatrices), select the network matrices output generated above by clicking the drop-down menu and finding the appropriate dataset.
     * For measure, select 'density' by clicking the drop-down menu and finding the appropriate measure.
     * Select the box for 'Archive all output datasets when finished'
-        * For 'Dataset Tags,' type and enter 'structural_matrix density'
+        * For 'Dataset Tags,' type and enter 'structural matrix density'
     * Hit 'Submit'
     
 Once complete, you're now ready to visualize the networks generated above!
@@ -257,7 +257,7 @@ Once complete, you're now ready to visualize the networks generated above!
     * In the search bar, type 'Network Visualization'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For conmat (preprocessed), select either the conmat (structural_matrix density) output to generate the structural network and the conmat (connectivity_matrix) for the functional network generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For conmat (preprocessed), select either the conmat (structural matrix density) output to generate the structural network and the conmat (functional connectivity matrix) for the functional network generated above by clicking the drop-down menu and finding the appropriate dataset.
     * Leave all other options as defaults
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'matrix visualization'
