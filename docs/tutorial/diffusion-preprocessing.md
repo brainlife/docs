@@ -64,6 +64,7 @@ Your data should now be staged for processing and archived in your projects page
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'fsleyes' as your viewer
     * Only have the file titled 'out.nii.gz' selected in the viewer
+1. You can also generate a QA image of the results by running the 'Generate images of T1' using the ACPC-aligned anatomical image generated above! Archive the results and save with the tag 'qa t1 acpc'.
 
 Once you're happy with the alignment, you can move onto running mrtrix3 preproc!
 
@@ -84,6 +85,7 @@ Once you're happy with the alignment, you can move onto running mrtrix3 preproc!
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'fsleyes' as your viewer
     * Only have the file titled 'dwi.nii.gz' selected in the viewer
+1. You can also generate a QA image of the DWI-T1 alignment by running the 'Generate images of DWI overlaid on T1' using the ACPC-aligned anatomical image and the preprocessed dMRI image generated above! Archive the results and save with the tag 'qa dmri-t1 overlay'.
 
 Once you're happy with the results, you can move onto fitting the diffusion tensor (DTI) model!
 
@@ -100,5 +102,6 @@ Once you're happy with the results, you can move onto fitting the diffusion tens
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'fsleyes' as your viewer
+1. You can also generate a QA image of the tensors by running the 'Generate images of tensor' using the DTI images generated above! Archive the results and save with the tag 'qa DTI'.
 
 **If you're happy with the results, then you have successfully finished preprocessing your dMRI data! You're now ready to move onto the next tutorial: diffusion tractography!**
