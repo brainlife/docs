@@ -170,4 +170,4 @@ If you're happy with the results, you're ready to move onto structural connectiv
         * For 'Dataset Tags,' type and enter 'structural_matrix'
     * Hit 'Submit'
 
-**Nice work! You've completed the structural network matrix generation tutorial!!!!**
+**Nice work! Now that the app is finished, you're ready to perform group analyses on your connectivity matrices and examine the network structure of your data!!!!**
