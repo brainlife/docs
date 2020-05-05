@@ -38,6 +38,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'fsleyes' as your viewer
     * Only have the file titled 'out.nii.gz' selected in the viewer
+1. You can also generate a QA image of the results by running the 'Generate images of T1' using the ACPC-aligned anatomical image generated above! Archive the results and save with the tag 'qa t1 acpc'.
 
 Once you're happy with the alignment, you can move onto Freesurfer parcellation generation!
 
@@ -108,6 +109,20 @@ Once the app is finished, you're ready to move onto the final step: network matr
     * For input, select the generated bold mask, preprocessed functional data, the Glasser parcellation-volume, and the preprocessed regressors by clicking the drop-down menu and finding the appropriate datasets.
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'functional connectivity matrix'
+    * Hit 'Submit'
+    
+Once complete, you can now visualize the network!
+    
+### Visualize functional  networks.
+
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Network Visualization'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For conmat (preprocessed), select the conmat (functional connectivity matrix) for the functional network generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * Leave all other options as defaults
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'functional visualization'
     * Hit 'Submit'
     
 **Nice work! You've completed this tutorial. Now that the app is finished, you're ready to perform group analyses on your connectivity matrices and examine the network structure of your data!**
