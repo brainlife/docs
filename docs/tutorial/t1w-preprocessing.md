@@ -61,6 +61,7 @@ Your data should now be staged for processing and archived in your projects page
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'fsleyes' as your viewer
+1. You can also generate a QA image of the results by running the 'Generate images of T1' using the cropped and reoriented anatomical image generated above! Archive the results and save with the tag 'qa t1 crop reorient'.
     
 Once you're happy with the alignment, you can move onto ACPC aligning the cropped & reoriented anatomical data!
 
@@ -79,6 +80,7 @@ Once you're happy with the alignment, you can move onto ACPC aligning the croppe
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'fsleyes' as your viewer
     * Only have the file titled 'out.nii.gz' selected in the viewer
+1. You can also generate a QA image of the results by running the 'Generate images of T1' using the ACPC-aligned anatomical image generated above! Archive the results and save with the tag 'qa t1 acpc'.
 
 Once you're happy with the alignment, you can move onto Freesurfer parcellation generation!
 
