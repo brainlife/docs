@@ -204,7 +204,7 @@ Once you're happy with the results, you can move onto fitting the CSD, DTI, and 
     * Click the app card.
 1. On the 'Submit App' page, select the following:
     * For dwi, select the preprocessed dMRI image generated above by clicking the drop-down menu and finding the appropriate dataset.
-    * For tensor_fit, type '1000' to fit the model on the b=1000 shell
+    * For tensor_fit, type '999' to fit the model on the b=1000 shell
     * Leave all other options as defaults
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'whole_brain_tractography'
