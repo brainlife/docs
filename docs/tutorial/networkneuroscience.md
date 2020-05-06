@@ -156,7 +156,7 @@ Once the app is finished, you're ready to move onto the next step: fMRI Preproce
     * In the search bar, type 'fmriPrep - Volume Output'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For input, select the staged raw anatomical (T1w) image, the freesurfer output, and the functional data by clicking the drop-down menu and finding the appropriate datasets.
+    * For input, select the ACPC-aligned anatomical (T1w) image, the freesurfer output, and the functional data by clicking the drop-down menu and finding the appropriate datasets.
     * For 'space,' select 'MNI152NLin6Asym' from the drop-down menu.
     * For 'resolution,' select 'original' from the drop-down menu.
     * Select the box for 'Archive all output datasets' when finished
