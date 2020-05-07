@@ -257,7 +257,7 @@ Once complete, you're now ready to visualize the networks generated above!
     * In the search bar, type 'Network Visualization'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For conmat (preprocessed), select either the conmat (structural matrix density) output to generate the structural network and the conmat (functional connectivity matrix) for the functional network generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For conmat (preprocessed), select either the conmat (structural matrix density) output to generate the structural network or the conmat (functional connectivity matrix) for the functional network generated above by clicking the drop-down menu and finding the appropriate dataset.
     * Leave all other options as defaults
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'matrix visualization'
