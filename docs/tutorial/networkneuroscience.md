@@ -228,7 +228,7 @@ If you're happy with the results, you're ready to move onto structural connectiv
     * Leave mask empty
     * For infl, leave as 2
     * For microdat, select 'FA' from the drop-down menu
-    * Select true for compshare, compmicro, and comptprof by clicking the box next to each option
+    * Select true for compshape, compmicro, and comptprof by clicking the box next to each option
     * Leave nnondes as 100
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'structural matrix'
