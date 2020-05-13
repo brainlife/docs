@@ -1,11 +1,17 @@
 # Getting Started with brainlife.io
 
 Now, let’s learn how to use brainlife.io! This “Getting Started” tutorial will give you a quick overview of how to:
+
 * Sign up for brainlife.io
+
 * Create new projects
+
 * Upload data 
+
 * Launch visualizations
+
 * Run processes on data
+
 * Archive results 
 
 We will cover some of these topics more in-depth in other sections of the documentation.
@@ -72,7 +78,8 @@ Got it? Now, go to the same button you clicked to create your project. When you 
 
 Once you see this form, select the Datatype you want to upload, attach your file, and provide the subject name. If you do not have any data to upload, you can upload data from other [public projects](https://brainlife.io/projects) or import data from the [datasets page](https://brainlife.io/datasets) (one of the many benefits of brainlife.io!).
 
-!!! How do I use brainlife.io data for my project?
+* **How do I use brainlife.io data for my project?**
+
     If you download data from brainlife.io to add to your project, you will need to change the file type. Make sure you have 7-Zip or a similar software on your computer. Once you download the data you want, right-click on the file and hover over `7-Zip` and then click `Extract.` Click `OK.` That will extract the data in a GZ file, which you can then upload into your brainlife.io project!
     
 If everything looks good on your data upload, click `Archive`.
