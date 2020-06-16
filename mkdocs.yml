@@ -6,7 +6,7 @@ site_url: https://brainlife.io/docs
 repo_name: 'brainlife/docs'
 repo_url: 'https://github.com/brainlife/docs'
 
-copyright: 'Copyright &copy; 2017 - 2019 brainlife.io'
+copyright: 'Copyright &copy; 2017 - 2020 brainlife.io'
 
 theme:
   name: 'material'
