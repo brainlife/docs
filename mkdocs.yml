@@ -36,6 +36,7 @@ nav:
     - FMRI networks: tutorial/networkneuroscience-functional.md
     - DMRI networks: tutorial/networkneuroscience-structural.md
     - Network Neuroscience: tutorial/networkneuroscience.md
+    - Cortex Tissue Mapping: tutorial/cortex-tissue-mapping.md
 
   - Using CLI:
     - Installation: cli/install.md

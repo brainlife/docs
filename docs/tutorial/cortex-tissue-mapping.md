@@ -7,7 +7,7 @@ This page demonstrates a recommended pipeline for mapping diffusion measures (DT
 
 This tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/), the [Anatomical Preprocessing tutorial](https://brainlife.io/docs/tutorial/t1w-preprocessing/), and the [Diffusion MRI Preprocessing tutorial](https://brainlife.io/docs/tutorial/diffusion-preprocessing/) you recently completed. If you haven't read our introduction to brainlife, or if you're not comfortable staging, processing, archiving, and viewing data on brainlife.io, please go back through those tutorials before beginning this one.
 
-![glasser_ndi](https://github.com/brainlife/app-cortex-tissue-mapping/blob/v1.1/glasser_ndi.png)
+![glasserndi](https://github.com/brainlife/app-cortex-tissue-mapping/blob/v1.1/cropped_glasser_ndi.png?raw=true)
 
 ### 1. Anatomical preprocessing.
 
