@@ -21,7 +21,7 @@ On top of these issues, dMRI data is sensitive to other artifacts and non-regula
 
 Finally, once the dMRI data is preprocessed and cleaned, [MrTrix3 Preprocessing](https://brainlife.io/app/5a813e52dc4031003b8b36f9) will align the dMRI data to the anatomical data. This will ensure that any analyses we do with the dMRI data will be anatomically-informed and biologically-relevant.
 
-Useful information about the preprocessing pipeline that [MrTrix3 Preprocessing](https://brainlife.io/app/5a813e52dc4031003b8b36f9) is designed to run -- Diffusion Parameter EStimation with Gibbs and NoisE Removal (DESIGNER) -- can be found in this [original Neuroimage paper](https://www.ncbi.nlm.nih.gov/pubmed/30077743). **(<---- fixed link, double-check this is the correct pub)**
+Useful information about the preprocessing pipeline that [MrTrix3 Preprocessing](https://brainlife.io/app/5a813e52dc4031003b8b36f9) is designed to run -- Diffusion Parameter EStimation with Gibbs and NoisE Removal (DESIGNER) -- can be found in this [original Neuroimage paper](https://www.ncbi.nlm.nih.gov/pubmed/30077743).
 
 ### 3. Diffusion microstructural modelling
 
@@ -42,7 +42,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
         * Both dwi files
     * anat/t1w
 1. Click the 'Stage to process' button on the right side of the screen
-    * For 'Project,', select your project from the drop-down menu.
+    * For 'Project', select your project from the drop-down menu.
     * For 'Process,' select 'Create New Process' and title it "dMRI Prep Tutorial." Hit 'Submit.'
         * This will take you to the process on your Projects page
 1. Archive the data in your project by clickin the 'Archive' button next to each dataset.
@@ -103,5 +103,49 @@ Once you're happy with the results, you can move onto fitting the diffusion tens
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'fsleyes' as your viewer
 1. You can also generate a QA image of the tensors by running the 'Generate images of tensor' using the DTI images generated above! Archive the results and save with the tag 'qa DTI'.
+
+## Generate quality-assurance images of your results!
+
+The final step in data processing is generate quality-assurance images of your results, to make sure everything looks the way it should! There are multiple apps that can do this for you automatically on brainlife!
+
+**To make quality-assurance images of your anatomical (T1w) ACPC alignment, do the following:**
+   
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Generate images of T1'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For anat, choose the ACPC-aligned anatomical (T1w) image generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 't1 acpc'
+    * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
+    * Choose 'File Viewer' and select the 'out.png' file
+
+**To make quality-assurance images of your DWI-T1 alignment, do the following:**
+   
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Generate images of DWI overlaid on T1'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For dwi, select the preprocessed dMRI image generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For anat, choose the ACPC-aligned anatomical (T1w) image generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'dwi acpc'
+    * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
+    * Choose 'File Viewer' and select the 'out.png' file
+    
+**To make quality-assurance images of your DTI output, do the following:**
+   
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Generate images of DWI overlaid on T1'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For tensor, select the DTI maps generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'dti'
+    * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
+    * Choose 'File Viewer' and select the 'fa.png' file to view the FA map
 
 **If you're happy with the results, then you have successfully finished preprocessing your dMRI data! You're now ready to move onto the next tutorial: diffusion tractography!**

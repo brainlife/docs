@@ -156,7 +156,7 @@ Once the app is finished, you're ready to move onto the next step: fMRI Preproce
     * In the search bar, type 'fmriPrep - Volume Output'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For input, select the staged raw anatomical (T1w) image, the freesurfer output, and the functional data by clicking the drop-down menu and finding the appropriate datasets.
+    * For input, select the ACPC-aligned anatomical (T1w) image, the freesurfer output, and the functional data by clicking the drop-down menu and finding the appropriate datasets.
     * For 'space,' select 'MNI152NLin6Asym' from the drop-down menu.
     * For 'resolution,' select 'original' from the drop-down menu.
     * Select the box for 'Archive all output datasets' when finished
@@ -204,7 +204,7 @@ Once you're happy with the results, you can move onto fitting the CSD, DTI, and 
     * Click the app card.
 1. On the 'Submit App' page, select the following:
     * For dwi, select the preprocessed dMRI image generated above by clicking the drop-down menu and finding the appropriate dataset.
-    * For tensor_fit, type '1000' to fit the model on the b=1000 shell
+    * For tensor_fit, type '999' to fit the model on the b=1000 shell
     * Leave all other options as defaults
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'whole_brain_tractography'
@@ -228,7 +228,7 @@ If you're happy with the results, you're ready to move onto structural connectiv
     * Leave mask empty
     * For infl, leave as 2
     * For microdat, select 'FA' from the drop-down menu
-    * Select true for compshare, compmicro, and comptprof by clicking the box next to each option
+    * Select true for compshape, compmicro, and comptprof by clicking the box next to each option
     * Leave nnondes as 100
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'structural matrix'
@@ -257,7 +257,7 @@ Once complete, you're now ready to visualize the networks generated above!
     * In the search bar, type 'Network Visualization'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For conmat (preprocessed), select either the conmat (structural matrix density) output to generate the structural network and the conmat (functional connectivity matrix) for the functional network generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For conmat (preprocessed), select either the conmat (structural matrix density) output to generate the structural network or the conmat (functional connectivity matrix) for the functional network generated above by clicking the drop-down menu and finding the appropriate dataset.
     * Leave all other options as defaults
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'matrix visualization'

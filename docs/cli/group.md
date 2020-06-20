@@ -144,29 +144,34 @@ For example, the following code shows how to convert the QC images from ACPC Ali
 
 ```python
 
-#convert list of product.json into html
+#load product.json for each dataset
 data = res.json()
 for dataset in data["datasets"]:
-	id = dataset["_id"]
-	subject = dataset["meta"]["subject"]
-	print('<div style="float: left; height: 250px; width: 250px;">');
-	print("<b>"+subject+"</b><br>")
+    id = dataset["_id"]
+    subject = dataset["meta"]["subject"]
+    print('<div style="float: left; height: 250px; width: 250px;">');
+    print("<b>"+subject+"</b><br>")
 
-	#output image if it has one
-	base64 = None
-	product = dataset["product"]
-	if "brainlife" in product:
-		brainlife = product["brainlife"]
-		if len(brainlife) == 1:
-			brainlife0 = brainlife[0]
-			if "base64" in brainlife0:
-				#print(json.JSONEncoder().encode(brainlife0["base64"]))
-				base64 = brainlife0["base64"]
-	if base64:
-		print('<img src="data:image/png;base64,'+brainlife0["base64"]+'">\n')
-	else:
-		print('<p>no image</p>\n')
-	print('</div>')
+    res = requests.get('https://brainlife.io/api/warehouse/dataset/product/'+dataset["_id"], headers={'Authorization': 'Bearer '+jwt})
+    if res.status_code != 200:
+        raise Error("failed to download product.json")
+    data = res.json()
+    product = data["product"]
+
+    image64 = None
+
+    #output image if it has one
+    if "brainlife" in product:
+        brainlife = product["brainlife"]
+        if len(brainlife) == 1:
+            brainlife0 = brainlife[0]
+            if "base64" in brainlife0:
+                image64= brainlife0["base64"]
+    if image64:
+        print('<img src="data:image/png;base64,'+image64+'">\n')
+    else:
+        print('<p>no image</p>\n')
+    print('</div>')
 
 ```
 

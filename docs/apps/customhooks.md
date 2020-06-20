@@ -10,7 +10,7 @@ You can specify the paths to these hook scripts by creating a file named `packag
 
 ```json
 {
-  "brainlife": {
+  "abcd": {
     "start": "./start.sh",
     "stop": "./stop.sh",
     "status": "./status.sh"
