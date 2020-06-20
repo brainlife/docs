@@ -175,6 +175,7 @@ If you're happy with the results, you're ready to move onto mapping microstructu
     * For tensor, select the tensor output generated above by clicking the drop-down menu and finding the appropriate dataset.
     * For noddi, select the NODDI output generated above by clicking the drop-down menu and finding the appropriate dataset.
     * For warp, select the warp output generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * In the Advanced section, select the Freesurfer parcellation of choice by clicking the drop-down menu and finding the appropriate parcellation. For this tutorial, we will use the Destrieux Atlas (aparc.a2009s).
     * Leave all other options as defaults
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'noddi_dti_cortex'
@@ -183,7 +184,7 @@ If you're happy with the results, you're ready to move onto mapping microstructu
     * Choose the 'Connectome Workbench' viewer
         * This will load all the surfaces generated within the app and the microstructural measures.
 
-If you're happy with the results, you're ready to move onto computing summary statistics in each region of the Desikan-Killiney atlas (aparc.a2009s) from Freesurfer!
+If you're happy with the results, you're ready to move onto computing summary statistics in each region of the parcellation from Freesurfer!
 
 ### Compute summary statistics.
 
