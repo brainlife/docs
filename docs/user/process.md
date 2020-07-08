@@ -39,7 +39,7 @@ Brainlife task can have one of the following task statuses.
 
 * Finished
 
-    The task has completed successfully. You can visualize output datasets using Brainlife's built in visualization tool by clicking :fa-eye: buttons next to each output dataset. If you have requested to auto-archive the output datasets (at submit time), those datasets will be copied to the Project's datasets archive. Any dependent task will be placed in Requested status.
+    The task has completed successfully. You can visualize output datasets using Brainlife's built-in visualization tool by clicking :fa-eye: buttons next to each output dataset. If you have requested to auto-archive the output datasets (at submit time), those datasets will be copied to the Project's datasets archive. Any dependent task will be placed in Requested status.
 
 * Failed
 
@@ -50,7 +50,7 @@ Brainlife task can have one of the following task statuses.
     Most resources use what is called a **scratch space** to stage the task's work directory. Normally scratch space has a time limit on how long the data files can be left on those systems (typically 30-90 days). When Brainlife detects that the task directory no longer exists on remote systems, it will mark those tasks as `Removed`.
 
     !!! note
-        Brainlife will try to clean up old task directories in 25 days after the successful completion of the task to provide consistent behavior across various resources. This also reduces the disk space usage on various resources. If you have any output dataset that you'd like to keep, please archive ig or submit your task with the auto-archiving flag checked.
+        Brainlife will try to clean up old task directories in 25 days after the successful completion of the task to provide consistent behavior across various resources. This also reduces the disk space usage on various resources. If you have any output dataset that you'd like to keep, please archive it or submit your task with the auto-archiving flag checked.
 
         If you archive your output, you will see a list of datasets archived from this output.
 
@@ -73,4 +73,3 @@ When you submit App via the Execute tab, Brainlife will create a new process und
 
 !!! tip
     If you are looking for just any sample dataset, you can look at the [O3D project](https://doi.org/10.25663/bl.p.3) which contains a lot of common data derivatives.
-    
