@@ -36,7 +36,7 @@ The example below shows the datatype definition for the [neuro/life datatype](ht
 
 In this example, the [brainlife/app-life](https://brainlife.io/app/5baa44b1d0be8b002776b8f7) App generates a dataset with this datatype. Other Apps that want to use the `neuro/life` output can request to have the files made available to their Apps with the brainlife.io [App registration form](https://brainlife.io/docs/apps/register/).
 
-It is important to note that it is up to the developers exchanging the dataset to create well-documented file contents, and they should consider that thorough documentation benefits other brainlife.io users. App developers can discuss the structure of the datatype and what each file means in the `#datatype` channel of [brainlife.io's Slack workspace](https://brainlife-inviter.herokuapp.com/).
+It is important to note that it is up to the developers to exchange the dataset to create well-documented file contents, and they should consider that thorough documentation benefits other brainlife.io users. App developers can discuss the structure of the datatype and what each file means in the `#datatype` channel of [brainlife.io's Slack workspace](https://brainlife-inviter.herokuapp.com/).
 
 _Quick Note:_ While a datatype might sound similar to a [BIDS specification](https://bids-specification.readthedocs.io/en/stable/), brainlife.io datatypes differ in that they:
 
@@ -50,7 +50,7 @@ _Quick Note:_ While a datatype might sound similar to a [BIDS specification](htt
 
 Sometimes you want to be more specific about the type of dataset for a particular datatype. For example, [neuro/anat/t1w](https://brainlife.io/datatype/58c33bcee13a50849b25879a) could be ACPC aligned or not and [neuro/dwi](https://brainlife.io/datatype/58c33c5fe13a50849b25879b) could be single-shell or multi-shell. brainlife.io allows you to specify each datatype with **datatype tags**. 
 
-You should only use this tag to specify information on datasets, not generalize it. For example, we don't have "multi-shell" datatype tags because `neuro/dwi` is by default "multi-shell" data. While it is normal to have different b-values in a `dwi.bvals` file, "single-shell" is a special case for the `neuro/dwi` datatype where b-values happens to all be the same number -- so we added the "single-shell" tag to describe it.
+You should only use this tag to specify the information on datasets, not generalize it. For example, we don't have "multi-shell" datatype tags because `neuro/dwi` is by default "multi-shell" data. While it is normal to have different b-values in a `dwi.bvals` file, "single-shell" is a special case for the `neuro/dwi` datatype where b-values happens to all be the same number -- so we added the "single-shell" tag to describe it.
 
 Since datatype tags add specificity, brainlife.io can correctly identify which datasets can be used for which Apps by examining a dataset's datatype tags and an App's input dataset tags. But do not confuse a *datatype* tag with *dataset* tag!
 

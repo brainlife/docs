@@ -2,14 +2,14 @@
 
 ## What is an *App*?
 
-Brainlife Apps are snippets of code comprising a (short) series of processing steps within a larger data analysis workflow. Apps are meant to be reusable by other users and not just by the App developer. Apps usage is value added to the work of the App Developer. So, the code in each App should use general tools and clarity in code writing so to make the App understandable by other users. 
+Brainlife Apps are snippets of code comprising a (short) series of processing steps within a larger data analysis workflow. Apps are meant to be reusable by other users and not just by the App developer. Apps usage is a value-added to the work of the App Developer. So, the code in each App should use general tools and clarity in code writing so to make the App understandable by other users.
 
-1. Apps are hosted on public [GitHub.com](https://github.com/search?q=org%3Abrain-life+app-) repositories. Apps can comprise any combination of MatLab, Python or other types code.
-2. Apps must have a single executable file named `main` in the root directory of the git repository. In most common cases, `main` is a UNIX bash script that calls other code in the repository to run the algorithms for data analysis. The code for data analysis can be written in any language, or can be compiled binary code. 
-3. Apps must read all input parameters and data files from a `config.json` file. `config.json` is created by brainlife.io at runtime on the current working directory (`./`, [relative path](https://en.wikipedia.org/wiki/Path_(computing))) of the compute resource that your App will run on. But you do not have to think about this actually, just write a [relative path](https://en.wikipedia.org/wiki/Path_(computing)) in your code when loading files from the `config.json` file, no need for [absolute paths](https://en.wikipedia.org/wiki/Path_(computing)). 
+1. Apps are hosted on public [GitHub.com](https://github.com/search?q=org%3Abrain-life+app-) repositories. Apps can comprise any combination of MatLab, Python, or other types of code.
+2. Apps must have a single executable file named `main` in the root directory of the git repository. In most common cases, `main` is a UNIX bash script that calls other code in the repository to run the algorithms for data analysis. The code for data analysis can be written in any language, or can be compiled binary code.
+3. Apps must read all input parameters and data files from a `config.json` file. `config.json` is created by brainlife.io at runtime on the current working directory (`./`, [relative path](https://en.wikipedia.org/wiki/Path_(computing))) of the compute resource that your App will run on. But you do not have to think about this actually, just write a [relative path](https://en.wikipedia.org/wiki/Path_(computing)) in your code when loading files from the `config.json` file, no need for [absolute paths](https://en.wikipedia.org/wiki/Path_(computing)).
 4. Write all output files in the current directory (`./`), in a structure defined as a Brainlife [`datatype`](https://github.com/brain-life/datatypes). More information about [Brainlife datatypes](https://github.com/brain-life/datatypes) later.
 
-Ideally, Apps should be packaged into [Docker containers](https://www.docker.com/what-container). But that is not a requirement. App Dockerizing will allow broader App usage, because Apps can run on multiple compute systems and will most likely increase the impact of the code you write, with higher likelihood of increasing the impact of your work as a Brainlife App developer. More information about [Apps Dockerization can be found here](https://brainlife.io/docs/apps/container/).
+Ideally, Apps should be packaged into [Docker containers](https://www.docker.com/what-container). But that is not a requirement. App Dockerizing will allow broader App usage, because Apps can run on multiple compute systems and will most likely increase the impact of the code you write, with a higher likelihood of increasing the impact of your work as a Brainlife App developer. More information about [Apps Dockerization can be found here](https://brainlife.io/docs/apps/container/).
 
 Brainlife Apps follow a technical specification called Application for Big Computational Data analysis or [ABCD](https://github.com/brain-life/abcd-spec)
 
@@ -35,23 +35,23 @@ You will need to discuss how to handle any dependencies/libraries that your App 
 
 ## App Launch Sequence
 
-Brainlife executes an App in following steps.
+Brainlife executes an App following these steps.
 
 1. A user requests to run your App through Brainlife.
 2. Brainlife queries a list of compute resources that user has access to and currently available to run your App. Brainlife then determines the best compute resource to run your App.
 3. Brainlife stages input datasets out of Brainlife's datasets archive, or transfer any dependent task's work directory that are required to run your App.
-4. Brainlife creates a new working directory by git cloning your App on (normally) a resource's scratch disk space, and place `config.json` containing user specified configuration parameters and various paths the input files.
+4. Brainlife creates a new working directory by git cloning your App on (normally) a resource's scratch disk space, and place `config.json` containing user-specified configuration parameters and various paths the input files.
 5. Brainlife then runs `start` hook installed on each compute resources as part of `abcd specification` (App developer should have to worry about this under the most circumstances).
 6. On a PBS cluster, `start` hook then **qsub**s your `main` script and place it on the local batch scheduler queue.
 7. Local job scheduler runs your `main` on a compute node and your App will execute your algorithm, and generate output on the working directory.
 8. Brainlife periodically monitors your job and relay information back to the user.
-9. Once job is completed, user archives an output dataset if the result is valid.
+9. Once the job is completed, the user archives an output dataset if the result is valid.
 
 ## Datatype
 
-Different Brainlife Apps can exchange input/output datasets through Brainlife *datatypes* which are developer defined file/directory structure that holds specific set of data.
+Different Brainlife Apps can exchange input/output datasets through Brainlife *datatypes* which are developer-defined file/directory structure that holds a specific set of data.
 
-Here are some example of currently registered datatypes.
+Here are some examples of currently registered datatypes.
 
 * neuro/anat/t1w (t1.nii.gz)
 * neuro/anat/t2w (t2.nii.gz) 

@@ -6,7 +6,7 @@ The `Processes` tab allows you to submit tasks one at a time. This is great if y
 When you are processing a large number of subjects, it is often inevitable that some subject would require a different set of configuration, or simply not possible to process at all. This might be due to data quality issues, incorrect metadata, etc. With a common workflow orchestration system, you are often tasked to develop a workflow script or some sort, submit it, and keep up with witch subjects has failed on which part of the workflow so that you can repeatedly re-submit a partial workflow until all subjects are processed.
 -->
 
-Brainlife allows you to setup a series of submission rules called *pipeline rules*. Instead of describing the entire workflow that you submit **once** (or re-submit if something fails), you will define a set of individual rules which will be continuously evaluated until you deactivate them. It is similar to how a factory assembly line produces products. When a subject fails to produce an output dataset for a specific rule, you can examine and handle it manually. Once you are able to produce a valid output, the rest of the pipeline rules will pick it up as if it came from the original rule. 
+Brainlife allows you to setup a series of submission rules called *pipeline rules*. Instead of describing the entire workflow that you submit **once** (or re-submit if something fails), you will define a set of individual rules which will be continuously evaluated until you deactivate them. It is similar to how a factory assembly line produces products. When a subject fails to produce an output dataset for a specific rule, you can examine and handle it manually. Once you can produce a valid output, the rest of the pipeline rules will pick it up as if it came from the original rule.
 
 <!--
 We believe our rule-based submission system is easier to setup, and more error-tolerant that more conventional orchestration methods (it is also much easier to implement).
@@ -16,7 +16,7 @@ We believe our rule-based submission system is easier to setup, and more error-t
 
 To setup a new pipeline rule, go to Project > `Pipelines` tab and click a plus button at the bottom right corner of the page.
 
-Each rule will be responsible for submitting a specific App with a specific set of configuration. Enter `Name` field, and search for the App that you'd like to submit. Once you select an App, you will be able to set its configuration parameters.
+Each rule will be responsible for submitting a specific App with a specific set of configuration. Enter the `Name` field, and search for the App that you'd like to submit. Once you select an App, you will be able to set its configuration parameters.
 
 ![pipeline.app](/docs/img/pipeline.app.png)
 
@@ -34,11 +34,11 @@ Brainlife will only submit a new process if it hasn't submitted a new process fo
 
 You can leave this default if you know you there won't be any other App generating the same output datatype. We recommend to always set output dataset tags just in case.
 
-Lastly, you can set a `Subject Filtering` which limits the subjects that gets processed.
+Lastly, you can set a `Subject Filtering` which limits the subjects that get processed.
 
 ![pipeline.filter](/docs/img/pipeline.filter.png)
 
-The above example will make this rule to only submit for subjects with names that start with "100" or "200". When you are setting up your first rule, it's always good to limit the number of subjects to make sure your rule is setup correctly.
+The above example will make this rule to only submit for subjects with names that start with "100" or "200". When you are setting up your first rule, it's always good to limit the number of subjects to make sure your rule is set up correctly.
 
 !!! hint
     There are regular expression tutorials available online. Also, please feel free to send us your question via Brainlife slack team.
@@ -54,10 +54,10 @@ Once you submit your pipeline rule, it should start submitting processes and you
     Brainlife also limits the number of running processes at around 50 processes for each rule so that any given rule won't consume all available computing resources.
 -->
 
-You can treat these processes as you normally do with any processes that you normally submit manually; examine outputs, stop, restart, etc.. The output datasets will be automatically archived once each task have completed successfully.
+You can treat these processes as you normally do with any processes that you normally submit manually; examine outputs, stop, restart, etc. The output datasets will be automatically archived once each task has completed successfully.
 
 !!! note
-    If you remove a process or task, Brainlife will resubmit another process to handle that subject if the subject has all required input datasets and has not produce the output from the requested app yet. If you don't want them to be resubmitted, please remove or deactivate your rule.
+    If you remove a process or task, Brainlife will resubmit another process to handle that subject if the subject has all required input datasets and has not produced the output from the requested app yet. If you don't want them to be resubmitted, please remove or deactivate your rule.
 
 ### Troubleshooting Pipeline Rules
 
