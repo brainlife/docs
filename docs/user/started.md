@@ -45,7 +45,7 @@ Let's get to work. To begin using brainlife.io, you will first need to create a 
 
 Projects is where you can organize your datasets, perform data processing, and share work with your team. You will learn more about Projects in the [Projects section](https://brainlife.io/docs/user/project/) of the documentation.
 
-You should automatically land on the Projects page when you enter brainlife.io. If not, your computer is broken. Okay, just kidding. You can click the `Project` button from the menu that runs along the left side of your screen. Then press the `New Project` button in the righthand corner of the screen (it will look like a plus sign until you hover your mouse over it).
+You should automatically land on the Projects page when you enter brainlife.io. If not, your computer is broken. Okay, just kidding. You can click the `Project` button from the menu that runs along the left side of your screen. Then press the `New Project` button in the right-hand corner of the screen (it will look like a plus sign until you hover your mouse over it).
 
 ![project new button](/docs/img/project_new_button.png)
 
@@ -83,7 +83,7 @@ Now you can see the details of your data in your Archives tab. The `Archived in`
 
 ## Visualize Data-objects
 
-Now for the fun stuff. To launch a visualization program, click your data-object record (not the checkbox). Then click on the visualizer icon (which is a fancy way of saying the eyeball (:fa-eye:)) in the upper righthand corner of the box.
+Now for the fun stuff. To launch a visualization program, click your data-object record (not the checkbox). Then click on the visualizer icon (which is a fancy way of saying the eyeball (:fa-eye:)) in the upper right-hand corner of the box.
 
 Any data-objects stored in brainlife.io can be visualized using web-based apps or brainlife.io Apps registered for each datatype. 
 
@@ -104,7 +104,7 @@ You can search, select, and bulk-download data using BIDS. In the Archive tab, s
 
 There, you can copy and paste the command for the BIDS download into the terminal on your computer (be sure you have [Bash Shell](https://www.windowscentral.com/install-windows-subsystem-linux-windows-10) downloaded if you use Windows). Then simply type `Terminal` in your search bar and copy and paste the command in the app.
 
-brainlife.io will stage selected data-objects, organize them into a [BIDS structure](http://bids.neuroimaging.io), and let you download the entire structure as a single tar ball. Once it's ready, click `Download`.
+brainlife.io will stage selected data-objects, organize them into a [BIDS structure](http://bids.neuroimaging.io), and let you download the entire structure as a single tarball. Once it's ready, click `Download`.
 
 !!! note
     At the moment, all brainlife.io data-objects will be stored under `/derivatives` directory, regardless of the datatype.

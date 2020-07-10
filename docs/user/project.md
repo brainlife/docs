@@ -19,7 +19,7 @@ brainlife.io currently supports the following project access policies:
     
     You can keep your project private while allowing other users to find it by checking the `List project summary for all users` box in your project profile. 
     
-While we understand many researchers prefer to keep projects private, keep in mind that brainlife.io promotes open, reproducible neuroscience. Consider that a public project may help foster a stronger communinity of neuroimaging researchers on brainlife.io who can collaborate and communicate on research and advance neuorscience together.
+While we understand many researchers prefer to keep projects private, keep in mind that brainlife.io promotes open, reproducible neuroscience. Consider that a public project may help foster a stronger community of neuroimaging researchers on brainlife.io who can collaborate and communicate on research and advance neuroscience together.
 
 <!--
 The following table shows who can perform which actions under a project.
