@@ -2,44 +2,63 @@
 
 > Hey there! If you have not read the [data processing section](/docs/user/tutorial/#data-processing) of the introductory tutorial yet, please do that first.
 
-Now that we are `Projects` experts, we can cover `Processes`. In any Project you create, you will see a Processes tab (like in the image below). You perform all of your data analysis in the Processes section.
+Now that we are `Projects` experts, we can cover `Processes` in-depth. In any Project you create, you will have a `Processes` tab (like in the image below), where you will perform all of your data analysis. A Process is a logical grouping of data analysis and processing tasks that share input and output datasets.
 
 ![new processes](/docs/img/new.processes.png)
 
-Each Process is a logical grouping of data analysis and processing tasks that share input and output datasets. After you submit a task, brainlife.io will automatically assign your task to a computing resource you have access to. Our task orchestration service (called [Amaretti](https://github.com/brain-life/amaretti)) takes care of data transfer and monitoring of your tasks for you!
+## Staging Data 
 
-Processing data begins with staging your datset. You can stage a dataset from any project and subject you have read access to (but remember that it may be helpful to create a separate Process for each subject). If you are not sure how to stage data, simply follow our step-by-step [data processing tutorial](https://brainlife.io/docs/user/started/#data-processing). 
+Processing data begins with **staging your datset.** You can stage a dataset from any project and subject you have read access to (but remember that it may be helpful to create a separate Process for each subject). To stage data, simply click the `Stage Data` button and fill in the [data-object information](https://test.brainlife.io/docs/user/started/#brainlifeio-terms-to-know). 
 
-## Monitoring Tasks
+![stage data](/docs/img/stage data.png)
 
-Once you submit a task, you will notice that brainlife.io keeps you updated on the task is "Running" and when it is "Finished." You can also see the log content by opening the `Raw Output` section of the task and selecting any log files you want to take a closer look at.
+If you want a step-by-step guide for staging data, follow our [data processing tutorial](https://brainlife.io/docs/user/started/#data-processing).
 
-![rawoutput](/docs/img/task.raw.output.png)
+After you submit a task, brainlife.io will automatically assign your task to the next available computing resource (that you have access to). Our task orchestration service, called [Amaretti](https://github.com/brain-life/amaretti), takes care of data transfer. 
+
+Amaretti also monitors your task status for you. You can see this once you submit a task -- a blue bar pops up and says "Requested" once you submit and then "Running" while the task is processing. The bar turns green and says "Finished" when the task is done. You can see the log content by opening the `Raw Output` section of the task and selecting any log files you want to take a closer look at.
+
+![rawoutput](/docs/img/raw.output.png)
 
 !!! note
     The `Raw Output` section will not be available for tasks that are not yet assigned to a resource.
 
-If you want to download a file, you can simply click the (:fa-download:) icon to download individual files and entire directories.
+If you want to download a file, you simply click the (:fa-download:) icon to download individual files and entire directories.
 
+## Submitting Apps
+
+The Processing tab is not only where you stage data on brainlife.io but also where you submit Apps. To submit an App, simply click the `Submit App` button in your `Processes` tab. 
+
+![submit app](/docs/img/submit app.png)
+
+brainlife.io selects Apps that you can execute by comparing the datasets staged in your process with the required input datasets for each App. The more datasets you stage or create, the more Apps you can submit. If you do not find the App you are looking for, head over to the [Apps page](https://brainlife.io/apps). When you find the App you want, you can execute it directly from the App page by selecting the `Execute` button. Or you can go back to the Processes page and generate or stage the dataset required to run the App.
+
+![app.execute](/docs/img/app.execute.png)
+
+When you submit an App through the `Execute` button, brainlife.io will create a new process in your selected project, stage all of the input files you selected, and submit your App in a single step.
+
+!!! tip
+    If you are looking for a sample dataset, try the [O3D project](https://doi.org/10.25663/bl.p.3) which contains a lot of common data derivatives.
+    
 ## Task Status
 
-Let's quickly break down all of the task statuses you may encounter while processing data:
+Before we finish talking about Processes, let's do a quick breakdown of the task statuses you may encounter while processing data:
 
 * Requested
 
-    When you first submit your task, brainlife.io will place it under the `Requested` state as it waits to be assigend a resource to run on. If there are a lot tasks being processed on the platform at the same time, it may take a few minutes for your task to be picked up.
+    When you first submit your task, brainlife.io will confirm it has been `Requested` as the task waits to be assigend to a resource. If there are a lot of tasks being processed on the platform at the same time, it may take a few minutes for your task to be picked up.
 
 * Running
 
-    Once brainlife.io selects the appropraite resource, your task will be queued up and begin running shortly. You should note that most resources have their own local batch scheduling systems so brainlife.io's status might show the task is `Running` while it waits in the remote queue.
+    Once brainlife.io finds the right resource, your task will enter a queue for the resource and then start `Running`. Remember that most resources have their own local batch scheduling systems, so brainlife.io's status might show the task is `Running` while it is actually waiting in the remote queue.
 
 * Finished
 
-    Success! `Finished` obviously means the task was completed successfully. You can visualize output datasets by clicking :fa-eye: buttons next to each output dataset (Hint: This is covered in the [data processing tutorial](https://brainlife.io/docs/user/started/#data-processing) we keep talking about). If you requested to auto-archive the output datasets, datasets will be copied to the Project's `Archive`.
+    Success! `Finished` means the task was completed **successfully.** You can now visualize output datasets by clicking :fa-eye: buttons next to each output dataset (Hint: This is covered in the [data processing tutorial](https://brainlife.io/docs/user/started/#data-processing) we keep talking about). If you requested to auto-archive the output datasets, they will be copied to you project's `Archive`.
 
 * Failed
 
-    Boo, your task `Failed` -- it will terminate with a non-0 exit code. You can try to examine the output for the cause. If you are really stuck, you can always ask for help in the #general channel on brainlife.io's Slack. You can also contact the App developer or submit a Github issue.
+    Boo, your task `Failed` -- if this is the case, you will see the task terminate with a non-0 exit code. You can try to examine the output for the cause. If you are really stuck, you can always ask for help in the **#general** channel on [brainlife.io's Slack](https://test.brainlife.io/docs/contact/). You can also contact the App developer or submit a Github issue.
 
 * Removed
 
@@ -51,19 +70,3 @@ Let's quickly break down all of the task statuses you may encounter while proces
         If you archive your output, you will see a list of datasets archived from this output.
 
         ![status](/docs/img/task.archived.png)
-
-
-## Submitting Apps
-
-To submit an App, simply click the `Submit App` button in your `Processes` tab under the process. brainlife.io selects Apps that you can execute based on the available datasets within your process and required input datasets for each App.
-
-![submit app](/docs/img/submit app.png)
-
-The more datasets you stage or create, the more Apps you can submit. If you do not find the App you are looking for, head over to the `Apps` page. You can either go back to the `Processes` page and generate or stage the required dataset, or you can execute the App directly from the App page by selecting the `Execute` tab under the App.
-
-![app.execute](/docs/img/app.execute.png)
-
-When you submit an App through the Execute tab, brainlife.io will create a new process under the selected project, stage all of the input files you selected, and submit your App in a single step. 
-
-!!! tip
-    If you are looking for a sample dataset, try the [O3D project](https://doi.org/10.25663/bl.p.3) which contains a lot of common data derivatives.
