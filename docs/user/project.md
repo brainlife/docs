@@ -2,7 +2,8 @@
 
 The [Projects](https://brainlife.io/projects) page is where you can organize your datasets, perform data processing, and share it all with your project members. To learn how to create a project, visit our [Getting Started page](https://brainlife.io/docs/user/started/#create-project).
 
-You can assign the group roles `Admin`, `Member`, or `Guest` for each project. 
+You can assign the group roles `Admin`, `Member`, or `Guest` for each project.
+
 * `Admin` can update the project access policy and edit group members and roles for the project. 
 * `Members` have read/write access to the datasets but cannot make changes to the group members.
 * `Guests` have read access to datasets and processes but cannot modify them.
