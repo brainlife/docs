@@ -1,7 +1,9 @@
+
 site_name: brainlife Documentation
-site_author: 'Soichi Hayashi'
+site_author: 'The people of brainlife.io'
 site_url: https://brainlife.io/docs
 
+#
 # Repository
 repo_name: 'brainlife/docs'
 repo_url: 'https://github.com/brainlife/docs'

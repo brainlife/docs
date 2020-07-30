@@ -35,7 +35,7 @@ Nice, you now have a brainlife.io account! Before we jump into the rest of the t
 
     brainlife.io Apps exchange data through **datatypes**. The App below gives an example of how to determine the input-output of  datatypes. The colored boxes indicate that the App will take a `dwi` input data-object and generate another `dwi` data-object with a datatype tag of `masked`, and output another data-object of a `mask` datatype.
 
-    ![datatype](/docs/img/datatype.png)
+    ![datatype]({{base_url}}//img/datatype.png)
 
     Developers involved with interoperating input and output data should discuss and agree to the set of files and directory structures and their semantics. You can register a new datatype by submitting an issue on [datatypes github repo](https://github.com/brain-life/datatypes). We will cover datatypes more on the [datatypes page](/docs/user/datatypes).
 <!--If you are familiar with an electronic prototyping product called [*littleBits*](https://littlebits.com/tag/prototyping), it is very similar in the concept.-->

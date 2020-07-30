@@ -4,7 +4,7 @@ As you learned in [Getting Started](https://brainlife.io/docs/user/started/#brai
 
 The screenshot below shows you a datatype. Each datatype consists of a `name`, `description`, and a list of `files` that define the datatype's structure.
 
-![resources](/docs/img/datatypes.png)
+![datatype](../img/datatypes.png)
 
 The example below shows the datatype definition for the [neuro/life datatype](https://brainlife.io/datatype/58d15eaee13a50849b258844):
 
