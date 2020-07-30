@@ -8,7 +8,7 @@ Let's go through each section.
 
 ## Detail
 
-![dataset](/docs/img/app.detail.png)
+![dataset](../img/app.detail.png)
 
 Enter any `name` for your App and `Git Repository Name` field which is the organization / repository name (like `yourname/app-name`) of your github repo. Please do not enter the full github URL.
 
@@ -34,7 +34,7 @@ Please see [Versioning Tip](/docs/apps/versioning) for more info!
 
 Here you can define a list of input datasets that your App is expecting.
 
-![dataset](/docs/img/input.datatype.form.png)
+![dataset](../img/input.datatype.form.png)
 
 ### ID
 
@@ -56,7 +56,7 @@ Once you select the datatype/tags for your input dataset, you then need to confi
 
 For example, `neuro/dwi` datatype consists of dwi, bvecs, and bvals files. If your App somehow only uses the dwi file, and if you'd like to receive the path to the dwi as `dwi` inside the `config.json`, you can configure it as follows.
 
-![filemapping](/docs/img/filemapping.png)
+![filemapping](../img/filemapping.png)
 
 When a user submits your App, it will generate `config.json` that looks like this
 
@@ -94,7 +94,7 @@ Click this if you'd like to allow users to select multiple input datasets. Selec
 
 Similar to the input datasets, you can specify the datatypes of your output datasets here. It's up to the developer to decide which datatype to use, and produce output files in the correct file structure / file names according to the specification of the datatype.
 
-![resources](/docs/img/app.output1.png)
+![resources](../img/app.output1.png)
 
 ### Datatype Tags
 
@@ -114,11 +114,11 @@ To solve this issue, you can output each dataset under a different filename or i
 
 For example, the following example shows that the App is producing a file called `output.DT_STREAM.tck` which should be treated as a `track.tck` file output for `neuro/track` datatype. ("track" is the file ID for "track.tck" as defined by `neuro/track` datatype).
 
-![resources](/docs/img/app.output.png)
+![resources](../img/app.output.png)
 
 Or, if you'd like to store the entire raw output files in a subdirectory called "output", you can specify the directory by.
 
-![resources](/docs/img/app.output2.png)
+![resources](../img/app.output2.png)
 
 !!! note
     The JSON `key` for each file mapping needs to be the file/dir ID defined for each datatype. You will need to find the datatype definition to know which file/dir ID to use. Please consult Brainlife slack team if you need help.
@@ -133,7 +133,7 @@ Please contact the other developer and discuss how the data should be structured
 
 Configuration parameters allow users to enter any `number` (integer/float), `boolean`(true/false) or `string` parameters as configuration parameters for your App. You can also define an `enum` parameter which lets users select from multiple options.
 
-![resources](/docs/img/app.config.png)
+![resources](../img/app.config.png)
 
 * **Placeholder** 
 
@@ -166,7 +166,7 @@ Brainlife re-uses information stored in github repo.
     
     Github topics are also used to organize Brainlife's Apps by placing them under various `categories`. Please look through the existing categories already registered in Brainlife, and reuse one or more of those categories to help users find your App more easily.
 
-    ![resources](/docs/img/app.freesurfer.png)
+    ![resources](../img/app.freesurfer.png)
 
     !!! note
         Please avoid using too many `topics`. Also please avoid using `topics` that are not yet used by any other Apps (it will create a category with a single App)
@@ -199,4 +199,4 @@ If you have access to your own computing resources, you can register personal re
 
 Once your App is enabled on various resources, you should be able to see them listed under the computing resources section on the App details page.
 
-![resources](/docs/img/app.resources.png)
+![resources](../img/app.resources.png)

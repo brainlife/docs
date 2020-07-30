@@ -4,7 +4,7 @@ Once you finish processing your datasets and produced all data derivatives, you 
 
 Publication records at brainlife.io/pubs are preserved for at least ten years. The published data object will be backed on IU  [Scholarly Data Archive](https://kb.iu.edu/d/aiyi) tape archive, and brainlife.io will generate the [schema.org](https://schema.org) metadata to promote maximum discoverability and respect of the [FAIR principles](https://www.go-fair.org/fair-principles/).
 
-![publication.page](/docs/img/publication.page.png)
+![publication.page](../img/publication.page.png)
 
 A publication page can be accessed and datasets to be downloaded by anyone on the internet without having to login to Brainlife, except for data that belongs to a project that requires user agreements. For such projects the user must be registered to brainlife and agreed to the list of data access agreements that you specify; published data can not be downloaded without the user credential.
 
@@ -23,7 +23,7 @@ Each publication page may include the following information.
 
 To create a new publication page, go to a project where you want to publish your data, then open to the `Publication` tab. Click the `Plus` button at the bottom right corner of the screen. You should see a list of datatypes and the total file sizes like below.
 
-![publication.page](/docs/img/publication.select.png)
+![publication.page](../img/publication.select.png)
 
 Select datatypes that you'd like to include in your publication. Click `Next`.
 

@@ -182,5 +182,5 @@ You can run this script and capture the output to generate HTML file. You can th
 ```
 
 
-![group](/docs/img/group.png)
+![group](../img/group.png)
 

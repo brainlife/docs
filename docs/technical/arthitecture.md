@@ -62,4 +62,4 @@ Brainlife provides several ways to visualize stored data-objects. The first way 
 
 Another way is to launch native UIs such as Freeview, fsleyes, and fibernavigator on Brainlife's GPU-enabled visualization VMs and streamed to user's browser using web-based VNC client.  This approach allows our users to entertain familar UIs and visualize their data-objects without having to install these UIs and downloading data-objects to be visualized. The only component required by the user is a web browser. 
 
-![viewers](/docs/img/viewers.png)
+![viewers](../img/viewers.png)

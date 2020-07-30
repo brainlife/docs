@@ -28,11 +28,11 @@ Brainlife App can be tested on your laptop by executing `main`, or submitting it
 
 When we are done with making all changes, and tested the master branch on Brainlife, you should create a new git branch from the master branch. You can easily create a new branch using github UI. 
 
-![branch](/docs/img/versioning.branch.gif)
+![branch](../img/versioning.branch.gif)
 
 Once you create a new release branch, you should update the BL app to point users to use that new branch.
 
-![branch](/docs/img/versioning.app.gif)
+![branch](../img/versioning.app.gif)
 
 You could use tags instead of branches, but tags do not allow you to make modifications if you need to make quick bug fixes. Tags are great to point to any particular commit point, but you can do that with just a plain commit ID. We recommend creating new branches for each release.
 

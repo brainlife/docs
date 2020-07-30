@@ -7,7 +7,7 @@ The next step is segment the multiple regions (i.e. nuclei) of the thalamus, eac
 
 The best [brainlife.io](https://brainlife.io) app to perform this task is:
 
-| ![freesurfer](/docs/img/app.thalamic-nuclei.bl.header.png)|
+| ![freesurfer](../img/app.thalamic-nuclei.bl.header.png)|
 |------------------------------------|
 | https://doi.org/10.25663/brainlife.app.222 |
 
@@ -41,7 +41,7 @@ The next step in the anatomical preprocessing (T1w) pipeline is to fit different
 
 The best [brainlife.io](https://brainlife.io) app to perform this task is:
 
-| ![matt](/docs/img/app.matt.bl.header.png)|
+| ![matt](../img/app.matt.bl.header.png)|
 |------------------------------------|
 | https://doi.org/10.25663/bl.app.23 |
 
@@ -66,7 +66,7 @@ The next step is perform separate the anatomical image into multiple tissue-type
 
 The best [brainlife.io](https://brainlife.io) app to perform this task is:
 
-| ![freesurfer](/docs/img/app.5ttgen.bl.header.png)|
+| ![freesurfer](../img/app.5ttgen.bl.header.png)|
 |------------------------------------|
 | https://doi.org/10.25663/brainlife.app.239 |
 
