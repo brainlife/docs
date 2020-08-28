@@ -111,6 +111,19 @@ Once the app is finished, you're ready to move onto the final step: network matr
         * For 'Dataset Tags,' type and enter 'functional connectivity matrix'
     * Hit 'Submit'
     
+Once complete, you can now convert the conmat datatype to a network dataytpe!
+
+### Convert network matrices (contmat) to network datatype:
+
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Conmat 2 Network'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For input, select the conmat datatype generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'functional connectivity networks'
+    * Hit 'Submit'
+    
 Once complete, you can now visualize the network!
     
 ### Visualize functional  networks.
@@ -119,7 +132,7 @@ Once complete, you can now visualize the network!
     * In the search bar, type 'Network Visualization'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For conmat (preprocessed), select the conmat (functional connectivity matrix) for the functional network generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For conmat (preprocessed), select the network datatype for the functional network generated above by clicking the drop-down menu and finding the appropriate dataset.
     * Leave all other options as defaults
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'functional visualization'
