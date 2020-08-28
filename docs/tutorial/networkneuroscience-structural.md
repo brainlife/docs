@@ -138,11 +138,11 @@ Once you're happy with the results, you can move on to fitting the CSD, DTI, and
 ### Fit the CSD & DTI models, perform diffusion tractography.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'mrtrix3 Anatomically Constrained Tractography (ACT)'
+    * In the search bar, type 'mrtrix3 - WMC Anatomically Constrained Tractography (ACT)'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
     * For dwi, select the preprocessed dMRI image generated above by clicking the drop-down menu and finding the appropriate dataset.
-    * For tensor_fit, type '1000' to fit the model on the b=1000 shell
+    * For anat, select the ACPC-aligned T1w image generated above by clicking the drop-down menu and finding the appropriate dataset.
     * Leave all other options as defaults
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'whole_brain_tractography'
