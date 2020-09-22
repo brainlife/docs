@@ -3,7 +3,7 @@
 
 ## Structural connectivity.
 
-Let's start by learning a little bit about **structural connectivity.** Diffusion MRI measures how **anisotropic** the movement of water is, with the basic principle that myelinated tissue will create more anisotropic water movement. **Structural connectivity** is one type of analysis that describes the structural organization of the white matter using diffusion MRI _(--> or anisotropic ??)_ data. This type of analysis characterizes how connected different regions are by computing the number of **diffusion tractography streamlines** that terminate into a particular region. The rationale is that regions that have greater density of streamline terminations have greater connectivity with the regions where those streamlines also terminate. These density values are stored in what is known as a connectivity matrix. Each position in the matrix represents the connectivity between two particular regions. 
+Let's start by learning a little bit about **structural connectivity.** Diffusion MRI measures how **anisotropic** the movement of water is, with the basic principle that myelinated tissue will create more anisotropic water movement. **Structural connectivity** is one type of analysis that describes the structural organization of the white matter using diffusion MRI data. This type of analysis characterizes how connected different regions are by computing the number of **diffusion tractography streamlines** that terminate into a particular region. The rationale is that regions that have greater density of streamline terminations have greater connectivity with the regions where those streamlines also terminate. These density values are stored in what is known as a connectivity matrix. Each position in the matrix represents the connectivity between two particular regions. 
 
 From these matrices, scientists can then examine properties that describe the inter-relatedness of many regions. These properties can be used to identify **network-level**, inter-individual differences in a large cohort.
 
@@ -29,7 +29,7 @@ Useful information about the preprocessing pipeline that [MrTrix3 Preprocessing]
 
 ### 3. Diffusion modeling & anatomically-informed ensemble tractography.
 
-Once the dMRI data has been cleaned and aligned to the anatomical (T1w) image, the next step is to map the underlying white matter anatomy using diffusion tractography. Diffusion tractography works by modeling how water is moving throughout the brain based on the principle of **anisotropy** -- that water will move unequally in a particular direction given a physical constraint. In the case of diffusion MRI, this constraint comes from the myelin wrapping the many axons arranged into bundles known as **fasicles**. _( ---> question here, which are known based on their termination? There are common groupings of these fasicles, known as **white matter tracts**, based on their terminations into the cortex.)_ Diffusion tractography generates **streamlines** that act as evidence of underlying white matter organization. We can bundle these streamlines into common white matter tracts digitally, just as we can bundle fasciles into **tracts** using histological methods.
+Once the dMRI data has been cleaned and aligned to the anatomical (T1w) image, the next step is to map the underlying white matter anatomy using diffusion tractography. Diffusion tractography works by modeling how water is moving throughout the brain based on the principle of **anisotropy** -- that water will move unequally in a particular direction given a physical constraint. In the case of diffusion MRI, this constraint comes from the myelin wrapping the many axons arranged into bundles known as **fasicles**. Diffusion tractography generates **streamlines** that act as evidence of underlying white matter organization. We can bundle these streamlines into common white matter tracts digitally, just as we can bundle fasciles into **tracts** using histological methods.
 
 The first step is to fit models of diffusion at each location in the dMRI image that can be used as a guide for the tractography algorithms. The most popular model for this is known as **constrained spherical deconvolution**, or **CSD**. CSD allows for the possibility of multiple fasicles entering a single location that may have different trajectories, which is a major advantage of this model over other models of diffusion. The CSD model at each location can tell the tracking algorithm _how strongly_ and in _what direction_ water is diffusing in the brain, and thus where organized and myelinated white matter is likely to be.
 
@@ -51,6 +51,8 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 1. Preprocess dMRI data,
 1. Perform diffusion tractography,
 1. and generate network matrices from the regions of the Glasser 180-node atlas.
+1. convert to conmat datatype
+1. convert to network datatype
 
 ### ACPC-align anatomical (T1w) image.
 
@@ -136,11 +138,11 @@ Once you're happy with the results, you can move on to fitting the CSD, DTI, and
 ### Fit the CSD & DTI models, perform diffusion tractography.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'mrtrix3 Anatomically Constrained Tractography (ACT)'
+    * In the search bar, type 'mrtrix3 - WMC Anatomically Constrained Tractography (ACT)'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
     * For dwi, select the preprocessed dMRI image generated above by clicking the drop-down menu and finding the appropriate dataset.
-    * For tensor_fit, type '1000' to fit the model on the b=1000 shell
+    * For anat, select the ACPC-aligned T1w image generated above by clicking the drop-down menu and finding the appropriate dataset.
     * Leave all other options as defaults
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'whole_brain_tractography'
@@ -168,6 +170,46 @@ If you're happy with the results, you're ready to move on to structural connecti
     * Leave nnondes as 100
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'structural_matrix'
+    * Hit 'Submit'
+
+Once the app is finished, you can now move on to converting the matrices to the appropriate datatypes!
+
+### Convert raw datatype to conmat datatype:
+
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Convert network neuro matrix to conmat'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For parc, select the Glasser parcellation/volume datatype generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For raw:networkmatrices, select the raw:networkmatrices datatype generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For measure, choose 'density' by clicking the drop-down menu and selecting 'density'.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'structural conmat'
+    * Hit 'Submit'
+
+### Convert network matrices (contmat) to network datatype:
+
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Conmat 2 Network'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For input, select the conmat datatype generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'structural connectivity networks'
+    * Hit 'Submit'
+    
+Once complete, you can now visualize the network!
+
+### Visualize structural  networks.
+
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Network Visualization'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For conmat (preprocessed), select the network datatype for the functional network generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * Leave all other options as defaults
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'structural visualization'
     * Hit 'Submit'
 
 **Nice work! Now that the app is finished, you're ready to perform group analyses on your connectivity matrices and examine the network structure of your data!!!!**

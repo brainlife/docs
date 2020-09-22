@@ -21,7 +21,7 @@ On top of these issues, dMRI data is sensitive to other artifacts and non-regula
 
 Finally, once the dMRI data is preprocessed and cleaned, [MrTrix3 Preprocessing](https://brainlife.io/app/5a813e52dc4031003b8b36f9) will align the dMRI data to the anatomical data. This will ensure that any analyses we do with the dMRI data will be anatomically-informed and biologically-relevant.
 
-Useful information about the preprocessing pipeline that [MrTrix3 Preprocessing](https://brainlife.io/app/5a813e52dc4031003b8b36f9) is designed to run -- Diffusion Parameter EStimation with Gibbs and NoisE Removal (DESIGNER) -- can be found in this [original Neuroimage paper](https://www.ncbi.nlm.nih.gov/pubmed/30077743). **(<---- fixed link, double-check this is the correct pub)**
+Useful information about the preprocessing pipeline that [MrTrix3 Preprocessing](https://brainlife.io/app/5a813e52dc4031003b8b36f9) is designed to run -- Diffusion Parameter EStimation with Gibbs and NoisE Removal (DESIGNER) -- can be found in this [original Neuroimage paper](https://www.ncbi.nlm.nih.gov/pubmed/30077743).
 
 ### 3. Diffusion modeling & anatomically-informed ensemble tractography.
 
@@ -33,13 +33,13 @@ Once we know the direction of water movement using the CSD model, we can then pe
 
 On brainlife.io, we have combined **ensemble tractography** with **anatomically-constrained tractography (ACT)**, which restricts streamline representations to those that are biologically-plausible, in a single [Ensemble ACT Tractography](https://brainlife.io/app/5aac2437f0b5260027e24ae1) app! Within this app, the CSD model will be fit and tractography will be performed to generate **whole-brain tractograms**. That means a model of white matter microstructure -- diffusion tensor (DTI) -- will be fit and maps of fractional anisotropy (FA), mean diffusivity (MD), radial diffusivity (RD), and axial diffusivity (AD) will be generated.
 
-More information on ensemble tractography can be found in this [PLOS Computational Biology article](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004692) paper. More information on **ACT** can be found in this [Neuroimage publication](https://www.ncbi.nlm.nih.gov/pubmed/22705374).  _(<--- fixed link, make sure it's correct)_
+More information on ensemble tractography can be found in this [PLOS Computational Biology article](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004692) paper. More information on **ACT** can be found in this [Neuroimage publication](https://www.ncbi.nlm.nih.gov/pubmed/22705374).
 
 ### 4. Major white matter tract segmentation.
 
 Once our anatomical brain parcellations and whole-brain tractograms are generated, the next step is to segment the tractogram into known **major white matter tracts**. To do this, we need both information about the terminations of each streamline into the cortex and histologically-derived definitions for each major white matter tract. The histological definitions of major white matter tracts allow us to group the streamlines in our tractograms into major white matter tracts. On brainlife.io, we have developed an automated [white matter segmentation](https://brainlife.io/app/5cc73ef44ed9df00317f6288) app that will segment our whole-brain tractograms into over 70 known major white matter tracts.
 
-More information on the segmentation algorithm can be found in this [Brain Structure and Function paper](https://www.ncbi.nlm.nih.gov/pubmed/31342157).   _(<--- fixed link, make sure it's correct)_
+More information on the segmentation algorithm can be found in this [Brain Structure and Function paper](https://www.ncbi.nlm.nih.gov/pubmed/31342157).
 
 ### 5. Microstructural mapping to major white matter tracts.
 
@@ -143,11 +143,11 @@ Once you're happy with the results, you can move onto fitting the CSD, DTI, and 
 ### Fit the CSD & DTI models, perform diffusion tractography.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'mrtrix3 Anatomically Constrained Tractography (ACT)'
+    * In the search bar, type 'mrtrix3 - WMC Anatomically Constrained Tractography (ACT)'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
     * For dwi, select the preprocessed dMRI image generated above by clicking the drop-down menu and finding the appropriate dataset.
-    * For tensor_fit, type '1000' to fit the model on the b=1000 shell
+    * For anat, select the ACPC-aligned T1w image generated above by clicking the drop-down menu and finding the appropriate dataset.
     * Leave all other options as defaults
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'whole_brain_tractography'
