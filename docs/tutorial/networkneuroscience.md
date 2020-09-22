@@ -10,7 +10,7 @@ From these matrices, scientists can then examine properties that describe the in
 
 # Structural network connectivity
 
-Diffusion MRI measures how **anistropic** the movement of water is, with the basic principle that myelinated tissue will create more **anistropic** water movement.. One particular type of analysis that describes the structural organization of the white matter using this data is **structural connectivity**. **Structural connectivity** characterizes connected different regions are by computing the number of **diffusion tractography streamlines** that terminate into a particular region. The rationale is that regions that have greater density of streamline terminations have greater connectivity with the regions where those streamlines also terminate. These density values are stored in what is known as a connectivity matrix. Each position in the matrix represents the the connectivity between two particular regions. 
+Diffusion MRI measures how **anistropic** the movement of water is, with the basic principle that myelinated tissue will create more **anistropic** water movement.. One particular type of analysis that describes the structural organization of the white matter using this data is **structural connectivity**. **Structural connectivity** characterizes connected different regions are by computing the number of **diffusion tractography streamlines** that terminate into a particular region. The rationale is that regions that have greater density of streamline terminations have greater connectivity with the regions where those streamlines also terminate. These density values are stored in what is known as a connectivity matrix. Each position in the matrix represents the connectivity between two particular regions. 
 
 From these matrices, scientists can then examine properties that describe the inter-relatedness of many regions. These properties can be used to identify **structural network-level** inter-individual differences in a large cohort.
 
@@ -34,7 +34,7 @@ Finally, images from the fMRI scanner might not be perfectly aligned to images c
 
 ### 3. Functional connectivity network matrices generation.
 
-Once the anatomical and fMRI data is preprocessed with fMRIPrep, we can now examine the functional network organization by generating **functional connectivity matrices**! This is done by examing the fMRI BOLD activity in multiple regions across the brain by correlating the regions' BOLD activity throughout the entire acquisition. The reason we do this is because regions that are active in similar ways at similar time points are more likely to be working with each other to perform a specific task. The way we typically represent the correlation coefficients, or weights, of each region (node) with every other region (node) in the brain is with a **network matrix** -- note that **nodes** represent the brain regions here. Each point in the network matrix represents the correlation of BOLD activity between one region and another. We can then use these network matrices to examine properties of the network that describe how interrelated specific regions in the brain are working during the fMRI acquisition in either task-related or resting-state fMRIs.
+Once the anatomical and fMRI data is preprocessed with fMRIPrep, we can now examine the functional network organization by generating **functional connectivity matrices**! This is done by examining the fMRI BOLD activity in multiple regions across the brain by correlating the regions' BOLD activity throughout the entire acquisition. The reason we do this is because regions that are active in similar ways at similar time points are more likely to be working with each other to perform a specific task. The way we typically represent the correlation coefficients, or weights, of each region (node) with every other region (node) in the brain is with a **network matrix** -- note that **nodes** represent the brain regions here. Each point in the network matrix represents the correlation of BOLD activity between one region and another. We can then use these network matrices to examine properties of the network that describe how interrelated specific regions in the brain are working during the fMRI acquisition in either task-related or resting-state fMRIs.
 
 ### 4. Diffusion preprocessing 
 
@@ -86,7 +86,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
     * For 'Project', select your project from the drop-down menu.
     * For 'Process', select 'Create New Process' and title it "Networks tutorial". Hit 'Submit'.
         * This will take you to the process on your Project's page
-1. Archive the data in your project by clickin the 'Archive' button next to each dataset.
+1. Archive the data in your project by clicking the 'Archive' button next to each dataset.
 
 Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: align the anatomical image to the ACPC plane!
 
@@ -264,9 +264,5 @@ Once complete, you're now ready to visualize the networks generated above!
     * Hit 'Submit'
     
 Nice work! You've completed this tutorial. Now you've preprocessed a subject all the way through functional and structural networks! You're now ready to take on your entire study!
-
-
-
-
 
 
