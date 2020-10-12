@@ -1,4 +1,4 @@
-# Containerizing App
+# Run App via a Singularity
 
 Docker is a software containerization tool that allows you to package your App and its dependencies into a portable *container* that you can run on any machine that supports Docker engine, or singularity.
 
