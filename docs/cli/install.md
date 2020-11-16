@@ -3,10 +3,10 @@
 
 With brainlife CLI, you can ..
 
-* Upload/download datasets from your computer.
-* Upload datasets stored in BIDS format.
+* Upload/download data from your computer.
+* Upload data stored in BIDS format.
 * Submit Apps, and monitor (you can fully script data processing through Brainlife)
-* Query projects, datasets, datatypes, etc.
+* Query projects, data, datatypes, etc.
 
 Brainlife CLI is distributed through [npm](https://www.npmjs.com/) (node package manager) which is a part of nodejs. You will need to have nodejs/npm installed on your machine before you can install brainlife CLI command. Most operation systems support nodejs through their software distribution systems. You can find the nodejs installation document [here](https://nodejs.org/en/download/package-manager/).
 
@@ -52,7 +52,7 @@ Commands:
   resource       query the available list of resources
   datatype       query the available list of datatypes
   project        create and view brainlife projects
-  dataset        view and utilize stored datasets
+  data           view and utilize stored data
   app            query and run brainlife apps
   help [cmd]     display help for [cmd]
 
@@ -103,3 +103,14 @@ To run it using docker itself, you can
 ```
 $ docker run -it brainlife/cli login 
 ```
+
+If you don't want to keep typing `singularity run docker://brainlife/cli` everytime you run brainlife CLI, you can add this to your `~/.bashrc`
+
+```
+function bl() {
+    singularity run docker://brainlife/cli $@
+}
+```
+
+
+

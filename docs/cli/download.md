@@ -42,7 +42,7 @@ Storage: wrangler
 Status: stored
 Tags: dt_stream, pre_life, run1
 
-2708 total datasets, showing first 100. To view the next 100, run 'bl data query --skip 100'
+2708 total data objects, showing first 100. To view the next 100, run 'bl data query --skip 100'
 ```
 
 ### Downloading a single data-object
