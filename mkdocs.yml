@@ -74,10 +74,10 @@ nav:
 extra:
   disqus: 'brain-life'
   social:
-    - type: 'github'
-      link: 'https://github.com/brainlife'
-    - type: 'twitter'
+    - icon: fontawesome/brands/twitter
       link: 'https://twitter.com/BrainLifeio'
+    - icon: fontawesome/brands/github
+      link: 'https://github.com/brainlife'
 
 markdown_extensions:
   - admonition
