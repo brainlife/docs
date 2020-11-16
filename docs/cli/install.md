@@ -107,10 +107,13 @@ $ docker run -it brainlife/cli login
 If you don't want to keep typing `singularity run docker://brainlife/cli` everytime you run brainlife CLI, you can add this to your `~/.bashrc`
 
 ```
-function bl() {
+function bl {
     singularity run docker://brainlife/cli $@
 }
 ```
+
+!!! note
+    depending on how your environment is configured, you might need to add this on each bash script you are executing (or do `source ~/.bashrc` in your script)
 
 
 
