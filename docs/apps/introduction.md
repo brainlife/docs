@@ -26,7 +26,7 @@ You would normally follow these steps to develop and register your App on Brainl
 
 !!! hint
     Creating an App for brainlife.io requires you to be familiar with wide range of techincal knowledges in areas including programming, unix/shell, git, HPC. 
-    Please see https://learn-neuroimaging.github.io/tutorials-and-resources/11-programming/ for some pointers. 
+    Please refer to https://learn-neuroimaging.github.io/tutorials-and-resources/11-programming/ for community suggested list of online tutorials.
 
 # Enabling an App on a compute resource
 
