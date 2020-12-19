@@ -24,7 +24,7 @@ You would normally follow these steps to develop and register your App on Brainl
 7. Register your App on Brainlife. During this step, you can define what parameters and input file(s) should be made available to your App via `config.json`.
 8. Contact resource administrators and ask them to enable your App (more below). 
 
-!!!hint
+!!! hint
     Creating an App for brainlife.io requires you to be familiar with wide range of techincal knowledges in areas including programming, unix/shell, git, HPC. 
     Please see https://learn-neuroimaging.github.io/tutorials-and-resources/11-programming/ for some pointers. 
 
