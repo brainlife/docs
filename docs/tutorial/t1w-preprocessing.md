@@ -5,15 +5,15 @@
 
 This page demonstrate common steps used to preprocess anatomical magnetic resonance imaging data (T1-weighted or T1w) on brainlife.io The goal of this turorial is to show how process anatomical data for successive analyses – volumetric analyses from T1w meausres, combination of T1w and diffusion-weighted MRI (dMRI) or functional neuroimaging data (fMRI) pipelines.
 
-This tutorial will use a combination of skills developed in the introduction-to-brainlife tutorial (https://brainlife.io/docs/tutorial/introduction-to-brainlife/). If you have not read this, or you are not comfortable staging, processing, archiving and viewing data on brainlife.io, please go back and follow that tutorial before beginning this one.
+This tutorial will use a combination of skills developed in the [introduction-to-brainlife tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/). If you have not read this, or you are not comfortable staging, processing, archiving and viewing data on brainlife.io, please go back and follow that tutorial before beginning this one.
 
 ### 1. Set the orientation of the brain.
 
 The first step is to make sure the anatomy of the brain 'looks right.' This means that the coordinate system for the T1w image is stored rotated such that the brain appears up-right and centered when opened in the major visualization toolboxes that the scientific community uses (i.e., generally we look at images where the nose faces towards right-hand side in the sagittal plane, and forward in the axial and coronal planes). This rotation involves changing information in the T1w data files and headers. Beside agreeing to the standard convetions, this orientation is important because it assures that the data inside the T1w iamges will be "indexed,"  or read, appropirately allowing different software libraries for neuroimaging data analysis to  read the data, interpret the position and dimensions of individual three-dimensional pixels (i.e., voxels). During this process oftentimes the neck is removed from the original MRI data, so to fit the image within an adequate volume. This can be done on brainlife.io using the [Crop & Reorient T1](https://brainlife.io/app/5a0f38bf31769f1e4d46cc58) app.
 
 Useful information about MRI image orientation can be found at: 
-  - https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Orientation%20Explained 
-  - http://gru.stanford.edu/doku.php/mrTools/coordinateTransforms
+- FSL, Orientation Explained: <https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Orientation%20Explained>
+- Gardner Lab, Coordinate Transforms: <http://gru.stanford.edu/doku.php/mrTools/coordinateTransforms>
 
 ### 2. Anterior Commissure - Posterior Comissure (ACPC) alignment.
 
@@ -36,7 +36,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 
 ### Copy appropriate data over from a single subject in the HCP 3T Diffusion project
 
-1. Click the following link to go to the project's page for the 'HCP 3T Diffusion' project: https://brainlife.io/project/5941a225f876b000210c11e5/
+1. Click the following link to go to the project's page for the 'HCP 3T Diffusion' project: <https://brainlife.io/project/5941a225f876b000210c11e5/>
 1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
 1. Select the following datatypes from one subject by clicking the boxes next to the data:
     * anat/t1w
