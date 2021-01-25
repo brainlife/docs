@@ -116,4 +116,33 @@ function bl {
     depending on how your environment is configured, you might need to add this on each bash script you are executing (or do `source ~/.bashrc` in your script)
 
 
+### Google Colab 
+
+You can install brainlife CLI on Google Colab by running `!npm install brainlife -g`. However, the `bl login` command will not work as it requires commandling TTY to prompt for the password. For now, please copy and paste the following python snippet to perform the login operation and issue JWT token used by other `bl` CLI.
+
+```python
+import getpass
+import requests
+import json
+import os
+
+username = str(input("Enter brainlife username: "))
+password = getpass.getpass("Enter brainlife password: ")
+
+#issue jwt
+res = requests.post('https://brainlife.io/api/auth/local/auth', data={'username': username, 'password': password})
+body = json.loads(res.content)
+print(body["message"])
+
+#store jwt
+if res.status_code == "200":
+  if not os.path.exists('.config/brainlife.io'):
+    os.mkdir(".config/brainlife.io")
+  with open(".config/brainlife.io/.jwt", "w") as f:
+    f.write(res["jwt"])
+```
+
+!!! note
+    The issued token will be stored on `.config/brainlife.io/.jwt` under the home directory of your colab notebook. This directory is no persisted, so each user will need to run the code above to login, or each time the VM used to host your notebook is initialized.
+
 
