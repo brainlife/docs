@@ -5,7 +5,7 @@ With brainlife CLI, you can ..
 
 * Upload/download data from your computer.
 * Upload data stored in BIDS format.
-* Submit Apps, and monitor (you can fully script data processing through Brainlife)
+* Submit Apps, and monitor (you can fully script data processing through brainlife)
 * Query projects, data, datatypes, etc.
 
 Brainlife CLI is distributed through [npm](https://www.npmjs.com/) (node package manager) which is a part of nodejs. You will need to have nodejs/npm installed on your machine before you can install brainlife CLI command. Most operation systems support nodejs through their software distribution systems. You can find the nodejs installation document [here](https://nodejs.org/en/download/package-manager/).
@@ -68,7 +68,7 @@ $ sudo npm update -g brainlife
 
 ## Login
 
-Before you can start using bl tool, you should login to Brainlife by running the following command.
+Before you can start using bl tool, you should login to brainlife by running the following command.
 
 !!! note
     If you don't have a brainlife account, please [Sign Up](https://brainlife.io/auth/#!/signup) before proceeding.
@@ -80,7 +80,7 @@ password:
 Successfully logged in for 6 days, 23 hours, 59 minutes, 59 seconds
 ```
 
-The `--ttl 7` will request Brainlife to keep you logged in for 7 days. Please adjust this number if necessary.
+The `--ttl 7` will request brainlife to keep you logged in for 7 days. Please adjust this number if necessary.
 
 ### Signout
 
@@ -90,10 +90,10 @@ The `--ttl 7` will request Brainlife to keep you logged in for 7 days. Please ad
 ~/.config/brainlife.io/.jwt
 ```
 
-brainlife CLI itself does not provide a capability to signout natively, but you can remove this file if you wish to signout before your token expires. 
+brainlife CLI itself does not provide a capability to sign out natively, but you can remove this file if you wish to sign out before your token expires. 
 
 ### Docker container
-In order to ease the use of the Brainlife CLI for those who are experienced with Docker and Singularity, we have created a Docker container of the CLI and it's dependencies that is designed to be used with Singularity (https://hub.docker.com/repository/docker/brainlife/cli). You can use the cli through our Docker container via Singularity by running the following command.
+In order to ease the use of the brainlife CLI for those who are experienced with Docker and Singularity, we have created a Docker container of the CLI and it's dependencies that is designed to be used with Singularity (https://hub.docker.com/repository/docker/brainlife/cli). You can use the cli through our Docker container via Singularity by running the following command.
 ```
 $ singularity run docker://brainlife/cli login
 ```
@@ -104,7 +104,7 @@ To run it using docker itself, you can
 $ docker run -it brainlife/cli login 
 ```
 
-If you don't want to keep typing `singularity run docker://brainlife/cli` everytime you run brainlife CLI, you can add this to your `~/.bashrc`
+If you don't want to keep typing `singularity run docker://brainlife/cli` every time you run brainlife CLI, you can add this to your `~/.bashrc`
 
 ```
 function bl {
@@ -118,7 +118,10 @@ function bl {
 
 ### Google Colab 
 
-You can install brainlife CLI on Google Colab by running `!npm install brainlife -g`. However, the `bl login` command will not work as it requires commandling TTY to prompt for the password. For now, please copy and paste the following python snippet to perform the login operation and issue JWT token used by other `bl` CLI.
+You can install brainlife CLI on Google Colab by running `!npm install brainlife -g` with a code block. All brainlife CLI should work, except for the`bl login` command. 
+The login command will not work as it requires TTY to prompt for password and Colab does not support it. 
+For now, please copy and paste the following python snippet to perform the login operation 
+and issue JWT token used by other `bl` CLI.
 
 ```python
 import getpass
@@ -132,17 +135,22 @@ password = getpass.getpass("Enter brainlife password: ")
 #issue jwt
 res = requests.post('https://brainlife.io/api/auth/local/auth', data={'username': username, 'password': password})
 body = json.loads(res.content)
-print(body["message"])
+print(body["message"], res.status_code)
 
 #store jwt
-if res.status_code == "200":
-  if not os.path.exists('.config/brainlife.io'):
-    os.mkdir(".config/brainlife.io")
-  with open(".config/brainlife.io/.jwt", "w") as f:
-    f.write(res["jwt"])
+if res.status_code == 200:
+  if not os.path.exists('/root/.config'):
+    os.mkdir("/root/.config")
+  if not os.path.exists('/root/.config/brainlife.io'):
+    os.mkdir("/root/.config/brainlife.io")
+  with open("/root/.config/brainlife.io/.jwt", "w") as f:
+    f.write(body["jwt"])
+    print("stored jwt")
 ```
 
 !!! note
-    The issued token will be stored on `.config/brainlife.io/.jwt` under the home directory of your colab notebook. This directory is no persisted, so each user will need to run the code above to login, or each time the VM used to host your notebook is initialized.
+    The issued token will be stored on `/root/.config/brainlife.io/.jwt`. This directory is no persisted, 
+    so each user will need to run the code above to login, or each time the VM used to host your notebook 
+    is initialized.
 
 
