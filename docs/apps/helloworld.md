@@ -65,11 +65,8 @@ The first few lines in our `main` instruct PBS or Slurm batch systems to request
 #PBS -l walltime=00:05:00
 ```
 
-!!! note 
-    You will receive all input parameters from Brainlife through a JSON file named `config.json` which is created by Brainlife when your App is executed. As an App developer, you will define what parameters need to be entered by the user and input datasets later when you register your App on Brainlife.
 
-
-The following lines parse the `config.json` using `jq` and the value of `t1` to the main part of the application which we will create later.
+The following lines parse the `config.json` (explained below) using `jq` and the value of `t1` to the main part of the application which we will create later.
 
 ```bash
 #parse config.json for input parameters
@@ -87,7 +84,26 @@ To be able to test your application, let's create a test `config.json`.
 }
 ```
 
-Please update the path to wherever you have your test `anat/t1w` input file. If you don't have any, you can download one from the [Open Diffusion Data Derivatives](https://brainlife.io/pub/5a0f0fad2c214c9ba8624376) publication page. Just click the Datasets tab, and select any `anat/t1w` data to download. Then create a directory in your home directory and move the t1w.nii.gz file in there and unpack it:
+On brainlife.io, all input parameters (configurations and paths to input data) are communicated to your App through `config.json`. This file is created by brainlife.io on the root directory of your App (where the `main` script is) when a user submits your App. To develop and test your App, you will need to create this file manually and design your code to read any configuration parameters or paths to your input data from this file. 
+
+There are several ways to load / parse `config.json`. For bash script, you can install and use a command called [`jq`](https://stedolan.github.io/jq/) as we have shown above. 
+
+For python, you can use `json.load()` method. 
+
+```
+import json
+with open('config.json) as f:
+    config = json.load(f)
+print("my path to t1w is ", config["t1"])
+```
+
+On Matlab, you can use [`jsondecode`](https://www.mathworks.com/help/matlab/ref/jsondecode.html).
+```
+config = jsondecode(fileread('config.json'));
+disp(config.t1)
+```
+
+For our example, please update the path for `t1` to wherever you have your test anatomy input file. If you don't have any, you can download one from the [Open Diffusion Data Derivatives](https://brainlife.io/pub/5a0f0fad2c214c9ba8624376) publication page. Just click the Datasets tab, and select any `anat/t1w` data to download. Then create a directory in your home directory and move the t1w.nii.gz file in there and unpack it:
  
 `cd ~`
 
@@ -99,21 +115,47 @@ Please update the path to wherever you have your test `anat/t1w` input file. If 
 
 At this point, `~/data/` should contain a file named t1w.nii.gz. Next, you should add `config.json` to [.gitignore](https://help.github.com/articles/ignoring-files/) as `config.json` is created at runtime by Brainlife, and we just need this now to test your app. 
 
-
 !!! hint
     A good pattern might be to create a file called `config.json.sample` used to test your App, and create a symlink `ln -s config.json config.json.sample` so that you can run your app using `config.json.sample` without including the actual `config.json` as part of your repo. This allows other users to construct their own `config.json` if they want to run your app via command-line.
 
-!!! note
-    Instead of parsing `config.json` inside `main`, you are free to use other parsing libraries as part of your App itself, such as Python's `json` module, or Matlab's [jsonlab](https://github.com/fangq/jsonlab.git) module.
+#### What files can I expect to find in `config.json`?
 
+The above example assume that we are feeding [`neuro/t1w`](https://brainlife.io/datatype/58c33bcee13a50849b25879a) datatype. But what about other datatypes? 
+
+As a developer of an App, later you will register a list of configuration parameters and input data types to feed to your App. Please look through the [list of datatypes](https://brainlife.io/datatypes) currently registered on brainlife, and for each datatype you can see a list of files / directories available for each datatype. 
+
+For example, [`neuro/meg/ctf`](https://brainlife.io/datatype/6000714baacf9e22a6a691c8) datatypes has a `meg.ds` directory and a few other optional files.
+
+![messages](../img/app.meg.datatype.png)
+
+When you registere your App, you not only specify which datatype to use, but you will also decide what to call each of those files/directories in your `config.json`. 
+
+The registration for your App might look like this..
+
+![messages](../img/app.register.input.png)
+
+The *File Mapping* section determines which files/dirs will be mapped to which *key* within your json file. When a user submit your App, brainlife.io will create `config.json` that looks like the following.
+
+```
+{
+    "ds": "... a path to meg.ds directory",
+    "headshape": "... a path to headshape.pos file",
+    "channels": "... a path to channels.tsv",
+    "coordsystem": "... apath to coordsystem.json"
+}
+```
+
+As you can tell from the datatype registration, the only *required* files in this datatype is the `meg.ds` directory, so other files maybe missing and your App will need to check if they actually exists (the filepath might be invalid or points to a missing file).
+
+If you have 2 input data objects with the same datatype, you might want to name the keys for either input differently so that your App can distinguish them (say "ds1" and "ds2", for example)
+
+#### app.py
 
 Our `main` script runs a python script called `app.py` so let's create it and edit it by copying the content reported below.
 
 `cd ~/git/app-helloworld`
 
 `touch app.py`
-
-#### app.py
 
 ```
 #!/usr/bin/env python
