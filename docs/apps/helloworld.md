@@ -1,7 +1,7 @@
 !!! note "Prerequisites"
     Please read [App Developers / Introduction](/docs/apps/introduction) first. 
     
-    Before you begin, please install a text editor such as [VSCode](https://code.visualstudio.com) and [git client](https://git-scm.com/downloads) on your laptop. You will also need to install [jq](https://stedolan.github.io/jq/download/) which will be explained later.
+    Before you begin, please install a text editor such as [VSCode](https://code.visualstudio.com) and [git client](https://git-scm.com/downloads) on your laptop. You will also need to install [jq](https://stedolan.github.io/jq/download/) and [nibabel](https://nipy.org/nibabel/), which will be explained later.
 
 # HelloWorld
 
@@ -201,7 +201,7 @@ output.txt
 
 ## Testing
 
-Now, you should be able to test run your app locally by executing `main`
+Now, you should be able to test run your app locally by executing `main` ([nibabel](https://nipy.org/nibabel/) should be installed first, e.g. by executing `pip install nibabel`)
 
 ```
 ./main
