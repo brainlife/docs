@@ -186,3 +186,6 @@ If you have access to your own computing resources, you can register personal re
 Once your App is enabled on various resources, you should be able to see them listed under the computing resources section on the App details page.
 
 ![resources](../img/app.resources.png)
+
+!!! note
+    Your App is not ready to be run on Brainlife yet. To do so, you need first to containerize it, as explained in the next step of this tutorial [Containerizing App](https://test.brainlife.io/docs/apps/container/).
