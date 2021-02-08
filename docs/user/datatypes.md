@@ -1,6 +1,6 @@
 # Datatypes
 
-As you learned in [Getting Started](https://brainlife.io/docs/user/started/#brainlifeio-terms-to-know), brainlife.io Apps exchange data through `datatypes`. We are now going to cover datatypes in-depth in this section -- you can check out all of the brainlife.io [datatpyes here](https://brainlife.io/docs/user/datatypes/).
+As you learned in [Getting Started](https://brainlife.io/docs/user/started/#brainlifeio-terms-to-know), brainlife.io Apps exchange data through `datatypes`. We are now going to cover datatypes in-depth in this section -- you can check out all of the brainlife.io [datatpyes here](https://brainlife.io/datatypes/).
 
 The screenshot below shows you a datatype. Each datatype consists of a `name`, `description`, and a list of `files` that define the datatype's structure.
 
