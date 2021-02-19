@@ -45,7 +45,7 @@ nav:
     - Uploading Data: cli/upload.md
     - Running Apps: cli/app.md
     - Downloading Data: cli/download.md
-    - Update Metadata: cli/update.md
+    - Update Data: cli/update.md
     - Group Analysis: cli/group.md
 
   - Developing Apps: 

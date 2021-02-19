@@ -32,7 +32,7 @@ bl dataest update --id <dataid> --desc "Updating things" --add_tag newtag --subj
 Some users might be more familiar with the terminology "sidecar". On BIDS, what we call "metadata" is stored in a separate .json file called "sidecar". In sidecar, you can store any number of key/values pairs associated with the actual data (dwi, fmri/bold, eeg/fif, etc). You can upload the whole sidecar information to brainlife by using `-m <filepath to .json>` option like..
 
 ```bash
-bl data update --it <dataid> -m /path/to/sidecar.json
+bl data update --id <dataid> -m /path/to/sidecar.json
 ```
 
 
