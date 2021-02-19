@@ -1,7 +1,7 @@
 !!! warning
     This is a draft. Comments are welcomed!
 
-# Updating Datasets
+# Updating data objects
 
 Brainlife data-objects are immutable. Although you can not modify the content of the data, you can still update the metadata, tags, and description using `bl data update` CLI.
 
@@ -14,20 +14,27 @@ bl data update --id <dataid> --run run-reset1
 
 ```
 
-To update the data, you will need to know the data ID. Please see the previous tutorials for querying project ID, data ID, etc.
+To find the data object ID, please see the previous tutorials for querying data objects.
 
-You can easly add/remove tags like so.
+You can easily add/remove tags like so.
 
 ```bash
 bl data update --id <dataid> --remove_tag oldtag
 bl data update --id <dataid> --add_tag newtag
 ```
 
-You can combine various parameters.
+You can combine various update requests.
 
 ```bash
 bl dataest update --id <dataid> --desc "Updating things" --add_tag newtag --subject sub-123
 ```
+
+Some users might be more familiar with the terminology "sidecar". On BIDS, what we call "metadata" is stored in a separate .json file called "sidecar". In sidecar, you can store any number of key/values pairs associated with the actual data (dwi, fmri/bold, eeg/fif, etc). You can upload the whole sidecar information to brainlife by using `-m <filepath to .json>` option like..
+
+```bash
+bl data update --it <dataid> -m /path/to/sidecar.json
+```
+
 
 ## Bulk Update Tags
 
