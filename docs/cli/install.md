@@ -10,9 +10,15 @@ With brainlife CLI, you can ..
 
 Brainlife CLI is distributed through [npm](https://www.npmjs.com/) (node package manager) which is a part of nodejs. You will need to have nodejs/npm installed on your machine before you can install brainlife CLI command. Most operation systems support nodejs through their software distribution systems. You can find the nodejs installation document [here](https://nodejs.org/en/download/package-manager/).
 
+On ubuntu/debian machines, you can run the following command to install nodejs 14 (current LTS).
+
 ```
-$ sudo apt install nodejs
+curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
 ```
+
+For other OSs, please see [Installing node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions) page.
+
 
 !!! Info "For Windows Users"
     In order to use brainlife CLI on Windows, you will first need to install [WSL (Windows Subsyste for Linux)](https://docs.microsoft.com/en-us/windows/wsl/install-win10) and run all commands inside the Ubuntu terminal.
