@@ -26,11 +26,11 @@ Before you can register your resource, you should make sure that your resource i
 
 ### ABCD Default Hooks
 
-[ABCD Hooks](https://github.com/brain-life/abcd-spec) are used to start, stop and monitor apps on remote resources. Some app provides its own hooks, but many of them relies on default hooks that are installed on each resource. As a resource provider, you need to provide these default hooks and make them available by setting `$PATH`. If you are not sure how to write these scripts, you can install and use Brainlife's default ABCD hooks by doing following.
+[ABCD Hooks](https://github.com/brainlife/abcd-spec) are used to start, stop and monitor apps on remote resources. Some app provides its own hooks, but many of them relies on default hooks that are installed on each resource. As a resource provider, you need to provide these default hooks and make them available by setting `$PATH`. If you are not sure how to write these scripts, you can install and use Brainlife's default ABCD hooks by doing following.
 
 ```
 cd ~
-git clone https://github.com/brain-life/abcd-spec
+git clone https://github.com/brainlife/abcd-spec
 ```
 
 Then, add one of following to your ~/.bashrc
@@ -85,7 +85,7 @@ export SINGULARITY_CACHEDIR=/N/dc2/scratch/<username>/singularity-cachedir
 
 ### Other ENV parameters
 
-Depending on the app you are trying to run, some app may require additional ENV parameters. For example, brain-life/app-freesurfer requires you to provide your freesurfer license via `FREESURFER_LICENSE`.
+Depending on the app you are trying to run, some app may require additional ENV parameters. For example, brainlife/app-freesurfer requires you to provide your freesurfer license via `FREESURFER_LICENSE`.
 
 ```
 export FREESURFER_LICENSE="hayashis@iu.edu 29511 *xxxxxxxxxxx xxxxxxxxxxx"
@@ -114,7 +114,7 @@ Click OK. Once you are finished with copying ssh key and make sure the workdir e
 
 Once you have registered and tested your resource, you can now enable apps to run on your resource.
 
-Go back to the Brainlife's [resource settings page](https://brainlife.io/amaretti/#!/resources), and click the resource you have created. Under the services section, enter the git org/repo name (such as like `brain-life/app-life`) for the app that you'd like to enable, and the score for each service. The higher the score is, the more likely the resource will be chosen to run your app (if there are multiple resources available). Brainlife gives higher score for resources that you own (not shared ones), you should leave it the default of 10 unless it's competing with other resource that you have access to. Click OK.
+Go back to the Brainlife's [resource settings page](https://brainlife.io/amaretti/#!/resources), and click the resource you have created. Under the services section, enter the git org/repo name (such as like `brainlife/app-life`) for the app that you'd like to enable, and the score for each service. The higher the score is, the more likely the resource will be chosen to run your app (if there are multiple resources available). Brainlife gives higher score for resources that you own (not shared ones), you should leave it the default of 10 unless it's competing with other resource that you have access to. Click OK.
 
 You can see which resource an app is configured to run, and which resource will be chosen when you submit it under App detail / Computing Resources section on Brainlife. [example](https://brainlife.io/app/58c56cf7e13a50849b258800)
 
