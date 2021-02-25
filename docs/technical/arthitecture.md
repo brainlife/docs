@@ -10,7 +10,7 @@ These services are distributed across multiple docker hosts and various VMs on [
 
 ### Amaretti
 
-[Amaretti](https://brain-life.github.io/amaretti/) is another major service group that handles orchestration of tasks(jobs) and workflows on various computing resources. Amaretti is what we call "meta" orchestration service, meaning it sits on top of various local batch scheduling systems such as PBS, CondorHT, and slurm to handle the actual job executions on the remove computing resources. Amaretti simply orchestrates and monitors these heterogenesous computing resources and abstracts various common operations requested by our users.
+[Amaretti](https://brainlife.github.io/amaretti/) is another major service group that handles orchestration of tasks(jobs) and workflows on various computing resources. Amaretti is what we call "meta" orchestration service, meaning it sits on top of various local batch scheduling systems such as PBS, CondorHT, and slurm to handle the actual job executions on the remove computing resources. Amaretti simply orchestrates and monitors these heterogenesous computing resources and abstracts various common operations requested by our users.
 
 ### Authentication
 
@@ -22,7 +22,7 @@ We have developed a simple authentication service which maintains user informati
 
 ### Warehouse 
 
-[Warehouse](https://github.com/brain-life/warehouse) provides a bulk of Brainlife specific functionalities. Brainlife web UI and CLI (command-line-interface) primarily interface with warehouse APIs to fulfill most user requests. Warehouse provides functionalities such as organizing datasets under projects, orchestrating pipeline rules, and requesting Amaretti to submit jobs or move datasets between various computing resources as well as staging and archiving datasets to and from the Warehouse archive. All new datasets are currently archived on XSEDE Wrangler and optionally copied to IU SDA tape archive system as a backup for published datasets.
+[Warehouse](https://github.com/brainlife/warehouse) provides a bulk of Brainlife specific functionalities. Brainlife web UI and CLI (command-line-interface) primarily interface with warehouse APIs to fulfill most user requests. Warehouse provides functionalities such as organizing datasets under projects, orchestrating pipeline rules, and requesting Amaretti to submit jobs or move datasets between various computing resources as well as staging and archiving datasets to and from the Warehouse archive. All new datasets are currently archived on XSEDE Wrangler and optionally copied to IU SDA tape archive system as a backup for published datasets.
 
 Brainlife's web UI is written using [VueJS](https://vuejs.org/); a popular Javascript frontend framework. Standard post-processing tools such as webpack and babel are used to compile our UI code before delivered to the user's browser. A small amount of server-side rendering is performed periodically to provide scheme.org descriptors for our public assets; such as Apps, Publications, Projects. This also promotes discoverability of those assets by various search engines.
 
@@ -54,11 +54,11 @@ The disadvantages are ...
 
 ### CLI
 
-[Brainlife CLI](https://github.com/brain-life/cli) is primarily used to upload/download datasets to/from user's computers. CLI also provides some capabilities available through the Web UI such as submitting/monitoring a task, and querying various assets that user has access to. Brainlife CLI is currently written in nodejs and distributed through npm; a popular cross-platform software packaging library. Unlike the Web UI, user must manually install npm anb brainlife CLI tool, and keep it up-to-date.
+[Brainlife CLI](https://github.com/brainlife/cli) is primarily used to upload/download datasets to/from user's computers. CLI also provides some capabilities available through the Web UI such as submitting/monitoring a task, and querying various assets that user has access to. Brainlife CLI is currently written in nodejs and distributed through npm; a popular cross-platform software packaging library. Unlike the Web UI, user must manually install npm anb brainlife CLI tool, and keep it up-to-date.
 
 ### Visualization
 
-Brainlife provides several ways to visualize stored data-objects. The first way is through web based UI tools such as [BrainBrowsers](https://brainbrowser.cbrain.mcgill.ca/) and [TractView](https://github.com/brain-life/ui-tractview). These UIs will run on user's web browser and download necessary data-objects via Brainlife's web API. Some of these App requires GPUs on user's machines.
+Brainlife provides several ways to visualize stored data-objects. The first way is through web based UI tools such as [BrainBrowsers](https://brainbrowser.cbrain.mcgill.ca/) and [TractView](https://github.com/brainlife/ui-tractview). These UIs will run on user's web browser and download necessary data-objects via Brainlife's web API. Some of these App requires GPUs on user's machines.
 
 Another way is to launch native UIs such as Freeview, fsleyes, and fibernavigator on Brainlife's GPU-enabled visualization VMs and streamed to user's browser using web-based VNC client.  This approach allows our users to entertain familar UIs and visualize their data-objects without having to install these UIs and downloading data-objects to be visualized. The only component required by the user is a web browser. 
 

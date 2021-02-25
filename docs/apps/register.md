@@ -113,7 +113,7 @@ Some Apps behave as a *filter*; they receive an input data and produce another d
 
 Your App may generate output data that is not meant to be used by any other Apps, at least initially. You can use `raw` datatype to output and archive such output data. You should avoid using `raw` datatype as an input datatype, however. If you are trying to use other App's `raw` data as your input data, it is probably a good indication that the upstream App developer and you should discuss and define a new datatype so that both Apps can interoperate through a well-defined datatype.
 
-Please contact the other developer and discuss how the data should be structured, and submit a new issue on [brain-life/datatypes](https://github.com/brain-life/datatypes/issues) and/or a pull request containing the list of files/directories to be registered on Brainlife.
+Please contact #datatype channel on brainlife.slack.com to register new datatype, or consult with other developers who might be interested in your datatypes.
 
 ## Configuration Parameters
 

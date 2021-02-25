@@ -37,7 +37,7 @@ Nice, you now have a brainlife.io account! Before we jump into the rest of the t
 
     ![datatype](../img/datatype.png)
 
-    Developers involved with interoperating input and output data should discuss and agree to the set of files and directory structures and their semantics. You can register a new datatype by submitting an issue on [datatypes github repo](https://github.com/brain-life/datatypes). We will cover datatypes more on the [datatypes page](/docs/user/datatypes).
+    Developers involved with interoperating input and output data should discuss and agree to the set of files and directory structures and their semantics. You can register a new datatype by consulting #datatype channel on brainlife.slack.com. We will cover datatypes more on the [datatypes page](/docs/user/datatypes).
 
 ## Create Project
 

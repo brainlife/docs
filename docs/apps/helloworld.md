@@ -7,7 +7,7 @@
 
 Here, we will create a "HelloWorld" Brainlife App. 
 
-We will show how to create a brand new [github repository](https://help.github.com/articles/creating-a-new-repository/) containing a Brainlife App. Please be sure to make the repo public so that the [brainlife.io](https://brainlife.io/) platform will be able to access it. You can name the repository as you prefer, the Brainlife Team has been naming apps starting with the prefix `app-`, for example, take a look at [these Apps](https://github.com/search?q=org%3Abrain-life+app-).
+We will show how to create a brand new [github repository](https://help.github.com/articles/creating-a-new-repository/) containing a Brainlife App. Please be sure to make the repo public so that the [brainlife.io](https://brainlife.io/) platform will be able to access it. You can name the repository as you prefer, the Brainlife Team has been naming apps starting with the prefix `app-`, for example, take a look at [these Apps](https://github.com/search?q=org%3Abrainlife+app-).
 
 As a start we will create a HelloWorld App, i.e., `app-helloworld`, [here is an example](https://github.com/francopestilli/app-helloworld). [Git clone](https://help.github.com/articles/cloning-a-repository/) your new repository on your local machine - where you will be developing/editing and testing your App.
 

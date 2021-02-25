@@ -14,7 +14,7 @@ Processing data begins with **staging your datset.** You can stage a dataset fro
 
 If you want a step-by-step guide for staging data, follow our [data processing tutorial](https://brainlife.io/docs/user/started/#data-processing).
 
-After you submit a task, brainlife.io will automatically assign your task to the next available computing resource (that you have access to). Our task orchestration service, called [Amaretti](https://github.com/brain-life/amaretti), takes care of data transfer. 
+After you submit a task, brainlife.io will automatically assign your task to the next available computing resource (that you have access to). Our task orchestration service, called [Amaretti](https://github.com/brainlife/amaretti), takes care of data transfer. 
 
 Amaretti also monitors your task status for you. You can see this once you submit a task -- a blue bar pops up and says "Requested" once you submit and then "Running" while the task is processing. The bar turns green and says "Finished" when the task is done. You can see the log content by opening the `Raw Output` section of the task and selecting any log files you want to take a closer look at.
 
