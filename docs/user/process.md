@@ -4,7 +4,7 @@
 
 Now that we are `Projects` experts, we can cover `Processes` in-depth. In any Project you create, you will have a `Processes` tab (like in the image below), where you will perform all of your data analysis. A Process is a logical grouping of data analysis and processing tasks that share input and output datasets.
 
-![new processes](../img/new.processes.png)
+![processes](../img/processes.png)
 
 ## Staging Data 
 

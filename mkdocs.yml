@@ -24,9 +24,12 @@ nav:
     - Getting Started: user/started.md
     - Projects: user/project.md
     - Datatypes: user/datatypes.md
+    - Archive: user/archive.md
     - Processes: user/process.md
     - Pipelines: user/pipeline.md
+    - Group Analysis: user/groupanalysis.md
     - Publications: user/publication.md
+    - Datasets : user/datasets.md
 
   - Tutorials: 
     - Introduction: tutorial/introduction-to-brainlife.md
