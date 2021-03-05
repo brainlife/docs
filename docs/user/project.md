@@ -2,7 +2,7 @@
 
 The [Projects](https://brainlife.io/projects){target=_blank} page is where you can organize your datasets, 
 perform data processing, and share it all with your project members. 
-To learn how to create a project, visit our [Getting Started page](https://brainlife.io/docs/user/started/#create-project).
+To learn how to create a project, visit our [Getting Started page](/docs/user/started/#create-project).
 
 You can assign the group roles `Admin`, `Member`, or `Guest` for each project.
 

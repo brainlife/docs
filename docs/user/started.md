@@ -188,6 +188,6 @@ You have just become familiar with all the basic functionalities of brainlife.io
 
 * Learn how to write and register an App on brainlife.io: [App Developer Guide](/docs/apps/introduction)
 * Learn how to bulk process multiple subjects: [Pipeline documentation](/docs/user/pipeline)
-* Or just keep moving down the documentation pipeline with the next section: [Projects](https://brainlife.io/docs/user/project/)
+* Or just keep moving down the documentation pipeline with the next section: [Projects](/docs/user/project/)
 
 Be sure to [let us know](mailto: brlife@iu.edu) how we can improve this tutorial for you, or send us pull requests with your edits!

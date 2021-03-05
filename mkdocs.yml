@@ -91,5 +91,5 @@ markdown_extensions:
   - toc:
         permalink: True
   - fontawesome_markdown
-
+  - attr_list
 
