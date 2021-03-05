@@ -93,6 +93,14 @@ export FREESURFER_LICENSE="hayashis@iu.edu 29511 *xxxxxxxxxxx xxxxxxxxxxx"
 
 You can request your freesurfer license [here](https://surfer.nmr.mgh.harvard.edu/registration.html) 
 
+Some Apps do dynamic resource allocation. It *requests max number of tasks / memories / walltime based on configuration / input data. For these Apps uses a special ENV parameter `BRAINLIFE_MAXTASKS` to limit the number of
+maximum number of tasks per threads. Please set this ENV if your resource support batch scheduler like SLURM.
+
+```
+#instruct dynamic Apps to limit number of tasks (#SLURM --ntasks-per-node=N)
+export BRAINLIFE_MAXTASKS=24
+```
+
 ## Registering Resources
 
 To register your resource, go to [Brainlife Settings](https://brainlife.io/amaretti/#!/resources) page, and Under "HPC Systems" click "Add New Account". A resource entry form should appear. Please populate the following fields.
