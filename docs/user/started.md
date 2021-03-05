@@ -13,9 +13,9 @@ We will cover some of these topics more in-depth in other sections of the docume
  
 ## Sign Up
 
-To begin using brainlife.io, you need first make sure you are registered on the site ([you can do that here](https://brainlife.io/auth/)). You can choose to sign up through Google, ORCID, Github, or through your institution. 
+To begin using brainlife.io, you need first make sure you are registered on the site ([you can do that here](https://brainlife.io/auth/){target=_blank}). You can choose to sign up through Google, ORCID, Github, or through your institution. 
 
-To register a personal brainlife.io account, [sign up for brainlife.io here](https://brainlife.io/auth/#!/signup). You will be asked to confirm your email address.
+To register a personal brainlife.io account, [sign up for brainlife.io here](https://brainlife.io/auth/#!/signup){target=_blank}. You will be asked to confirm your email address.
 
 You can associate multiple authenticators with your account once you register by going to Settings > Account > Account Settings. Scroll down to Connected Accounts and click `Connect` next to the authenticator you want to connect through. 
 
@@ -43,7 +43,7 @@ Nice, you now have a brainlife.io account! Before we jump into the rest of the t
 
 Let's get to work. To begin using brainlife.io, you will first need to create a new project. 
 
-Projects is where you can organize your datasets, perform data processing, and share work with your team. You will learn more about Projects in the [Projects section](https://brainlife.io/docs/user/project/) of the documentation.
+Projects is where you can organize your datasets, perform data processing, and share work with your team. You will learn more about Projects in the [Projects section](/docs/user/project/) of the documentation.
 
 You should automatically land on the Projects page when you enter brainlife.io. If not, your computer is broken. Okay, just kidding. You can click the `Project` button from the menu that runs along the left side of your screen. Then press the `New Project` button in the right-hand corner of the screen (it will look like a plus sign until you hover your mouse over it).
 
@@ -64,13 +64,13 @@ There are two ways to store data on brainlife.io:
     
 * **Processes**
 
-    You cannot directly run Apps on archived data. Instead, brainlife.io will automatically stage data-objects from our archive and transfer them to compute resources where the Apps can be executed. Data generated in the `Processes` page will be removed within 25 days unless you archive them (see [Archiving](https://brainlife.io/docs/user/started/#archiving)). 
+    You cannot directly run Apps on archived data. Instead, brainlife.io will automatically stage data-objects from our archive and transfer them to compute resources where the Apps can be executed. Data generated in the `Processes` page will be removed within 25 days unless you archive them (see [Archiving](/docs/user/started/#archiving)). 
 
 Got it? Now, go to the same button you clicked to create your project. When you hover over the button this time, it will say `Upload Dataset`. Click it!
 
 ![upload form](../img/upload.form.png)
 
-Once you see this form, select the Datatype you want to upload, attach your file, and provide the subject name. If you do not have any data to upload, you can upload data from other [public projects](https://brainlife.io/projects) or import data from the [datasets page](https://brainlife.io/datasets) (one of the many benefits of brainlife.io!). If you do decide to download data from brainlife.io to add to your project, you will need to change the file type, so make sure you have 7-Zip or similar software on your computer. Once you download the data you want, right-click on the file and hover over `7-Zip` and then click `Extract.` Click `OK.` That will extract the data in a GZ file, which you can then upload into your brainlife.io project!
+Once you see this form, select the Datatype you want to upload, attach your file, and provide the subject name. If you do not have any data to upload, you can upload data from other [public projects](https://brainlife.io/projects){target=_blank} or import data from the [datasets page](https://brainlife.io/datasets){target=_blank} (one of the many benefits of brainlife.io!). If you do decide to download data from brainlife.io to add to your project, you will need to change the file type, so make sure you have 7-Zip or similar software on your computer. Once you download the data you want, right-click on the file and hover over `7-Zip` and then click `Extract.` Click `OK.` That will extract the data in a GZ file, which you can then upload into your brainlife.io project!
     
 If everything looks good on your data upload, click `Archive`.
 
@@ -99,7 +99,7 @@ You can search, select, and bulk-download data using BIDS. In the Archive tab, s
 
 ![download](../img/download.png)
 
-There, you can copy and paste the command for the BIDS download into the terminal on your computer (be sure you have [Bash Shell](https://www.windowscentral.com/install-windows-subsystem-linux-windows-10) downloaded if you use Windows). Then simply type `Terminal` in your search bar and copy and paste the command in the app.
+There, you can copy and paste the command for the BIDS download into the terminal on your computer (be sure you have [Bash Shell](https://www.windowscentral.com/install-windows-subsystem-linux-windows-10){target=_blank} downloaded if you use Windows). Then simply type `Terminal` in your search bar and copy and paste the command in the app.
 
 brainlife.io will stage selected data-objects, organize them into a [BIDS structure](http://bids.neuroimaging.io), and let you download the entire structure as a single tarball. Once it's ready, click `Download`.
 
@@ -154,7 +154,7 @@ Once it is completed, your successful App submission will look like this:
 
 10. And for fun -- click the:fa-eye: button next to the `Output` section of staged data to compare data that has not yet been ACPC-aligned to the data we ran with the `ACPC alignment via ART` App.
 
-11. Check out the before and after images of the original output data vs. the output data with ACPC alignment. The bottom image is clearly better aligned and re-positioned at the ACPC line. That is because `ACPC alignment via ART` is a common alignment tool used to re-orient and re-position the brain image in common orientations better-suited for image analysis. For more info on ACPC alignment [go here](https://github.com/vistalab/vistasoft/wiki/ACPC-alignment).
+11. Check out the before and after images of the original output data vs. the output data with ACPC alignment. The bottom image is clearly better aligned and re-positioned at the ACPC line. That is because `ACPC alignment via ART` is a common alignment tool used to re-orient and re-position the brain image in common orientations better-suited for image analysis. For more info on ACPC alignment [go here](https://github.com/vistalab/vistasoft/wiki/ACPC-alignment){target=_blank}.
 
 ![original orient](../img/acpc.orient.png)
 ![acpc orient](../img/acpc.orient.png)
@@ -162,7 +162,7 @@ Once it is completed, your successful App submission will look like this:
 **Bonus**: Now that you have finished running ACPC alignment, you will find that you can submit a few more Apps than you could before. Go have fun and try them out! 
 
 !!! hint
-    If you are not sure which data to stage, go to the [Apps page](https://brainlife.io/apps) to see which datatype each App requires to run.
+    If you are not sure which data to stage, go to the [Apps page](https://brainlife.io/apps){target=_blank} to see which datatype each App requires to run.
 
 ## Archiving
 

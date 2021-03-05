@@ -8,13 +8,13 @@ Now that we are `Projects` experts, we can cover `Processes` in-depth. In any Pr
 
 ## Staging Data 
 
-Processing data begins with **staging your datset.** You can stage a dataset from any project and subject you have read access to (but remember that it may be helpful to create a separate Process for each subject). To stage data, simply click the `Stage Data` button and fill in the [data-object information](https://test.brainlife.io/docs/user/started/#brainlifeio-terms-to-know). 
+Processing data begins with **staging your datset.** You can stage a dataset from any project and subject you have read access to (but remember that it may be helpful to create a separate Process for each subject). To stage data, simply click the `Stage Data` button and fill in the [data-object information](/docs/user/started/#brainlifeio-terms-to-know). 
 
 ![stage data](../img/stage data.png)
 
-If you want a step-by-step guide for staging data, follow our [data processing tutorial](https://brainlife.io/docs/user/started/#data-processing).
+If you want a step-by-step guide for staging data, follow our [data processing tutorial](/docs/user/started/#data-processing).
 
-After you submit a task, brainlife.io will automatically assign your task to the next available computing resource (that you have access to). Our task orchestration service, called [Amaretti](https://github.com/brainlife/amaretti), takes care of data transfer. 
+After you submit a task, brainlife.io will automatically assign your task to the next available computing resource (that you have access to). Our task orchestration service, called [Amaretti](https://github.com/brainlife/amaretti){target=_blank}, takes care of data transfer. 
 
 Amaretti also monitors your task status for you. You can see this once you submit a task -- a blue bar pops up and says "Requested" once you submit and then "Running" while the task is processing. The bar turns green and says "Finished" when the task is done. You can see the log content by opening the `Raw Output` section of the task and selecting any log files you want to take a closer look at.
 
@@ -31,14 +31,14 @@ The Processing tab is not only where you stage data on brainlife.io but also whe
 
 ![submit app](../img/submit app.png)
 
-brainlife.io selects Apps that you can execute by comparing the datasets staged in your process with the required input datasets for each App. The more datasets you stage or create, the more Apps you can submit. If you do not find the App you are looking for, head over to the [Apps page](https://brainlife.io/apps). When you find the App you want, you can execute it directly from the App page by selecting the `Execute` button. Or you can go back to the Processes page and generate or stage the dataset required to run the App.
+brainlife.io selects Apps that you can execute by comparing the datasets staged in your process with the required input datasets for each App. The more datasets you stage or create, the more Apps you can submit. If you do not find the App you are looking for, head over to the [Apps page](https://brainlife.io/apps){target=_blank}. When you find the App you want, you can execute it directly from the App page by selecting the `Execute` button. Or you can go back to the Processes page and generate or stage the dataset required to run the App.
 
 ![app.execute](../img/app.execute.png)
 
 When you submit an App through the `Execute` button, brainlife.io will create a new process in your selected project, stage all of the input files you selected, and submit your App in a single step.
 
 !!! tip
-    If you are looking for a sample dataset, try the [O3D project](https://doi.org/10.25663/bl.p.3) which contains a lot of common data derivatives.
+    If you are looking for a sample dataset, try the [O3D project](https://doi.org/10.25663/bl.p.3){target=_blank} which contains a lot of common data derivatives.
     
 ## Task Status
 
@@ -54,11 +54,11 @@ Before we finish talking about Processes, let's do a quick breakdown of the task
 
 * Finished
 
-    Success! `Finished` means the task was completed **successfully.** You can now visualize output datasets by clicking :fa-eye: buttons next to each output dataset (Hint: This is covered in the [data processing tutorial](https://brainlife.io/docs/user/started/#data-processing) we keep talking about). If you requested to auto-archive the output datasets, they will be copied to you project's `Archive`.
+    Success! `Finished` means the task was completed **successfully.** You can now visualize output datasets by clicking :fa-eye: buttons next to each output dataset (Hint: This is covered in the [data processing tutorial](https://brainlife.io/docs/user/started/#data-processing){target=_blank} we keep talking about). If you requested to auto-archive the output datasets, they will be copied to you project's `Archive`.
 
 * Failed
 
-    Boo, your task `Failed` -- if this is the case, you will see the task terminate with a non-0 exit code. You can try to examine the output for the cause. If you are really stuck, you can always ask for help in the **#general** channel on [brainlife.io's Slack](https://test.brainlife.io/docs/contact/). You can also contact the App developer or submit a Github issue.
+    Boo, your task `Failed` -- if this is the case, you will see the task terminate with a non-0 exit code. You can try to examine the output for the cause. If you are really stuck, you can always ask for help in the **#general** channel on [brainlife.io's Slack](/docs/contact/). You can also contact the App developer or submit a Github issue.
 
 * Removed
 
