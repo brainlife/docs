@@ -26,7 +26,7 @@ Before you can register your resource, you should make sure that your resource i
 
 ### ABCD Default Hooks
 
-[ABCD Hooks](https://github.com/brainlife/abcd-spec) are used to start, stop and monitor apps on remote resources. Some app provides its own hooks, but many of them relies on default hooks that are installed on each resource. As a resource provider, you need to provide these default hooks and make them available by setting `$PATH`. If you are not sure how to write these scripts, you can install and use Brainlife's default ABCD hooks by doing following.
+[ABCD Hooks](https://github.com/brainlife/abcd-spec){target=_blank} are used to start, stop and monitor apps on remote resources. Some app provides its own hooks, but many of them relies on default hooks that are installed on each resource. As a resource provider, you need to provide these default hooks and make them available by setting `$PATH`. If you are not sure how to write these scripts, you can install and use Brainlife's default ABCD hooks by doing following.
 
 ```
 cd ~
@@ -91,7 +91,7 @@ Depending on the app you are trying to run, some app may require additional ENV 
 export FREESURFER_LICENSE="hayashis@iu.edu 29511 *xxxxxxxxxxx xxxxxxxxxxx"
 ```
 
-You can request your freesurfer license [here](https://surfer.nmr.mgh.harvard.edu/registration.html) 
+You can request your freesurfer license [here](https://surfer.nmr.mgh.harvard.edu/registration.html){target=_blank}
 
 Some Apps do dynamic resource allocation. It *requests max number of tasks / memories / walltime based on configuration / input data. For these Apps uses a special ENV parameter `BRAINLIFE_MAXTASKS` to limit the number of
 maximum number of tasks per threads. Please set this ENV if your resource support batch scheduler like SLURM.
@@ -103,18 +103,18 @@ export BRAINLIFE_MAXTASKS=24
 
 ## Registering Resources
 
-To register your resource, go to [Brainlife Settings](https://brainlife.io/amaretti/#!/resources) page, and Under "HPC Systems" click "Add New Account". A resource entry form should appear. Please populate the following fields.
+To register your resource, go to the [resources](https://brainlife.io/resources){target=_blank} page, and click "Add New Account". A resource entry form should appear. Please populate the following fields.
 
 * *Name* Enter the name of rhe resource
 * *Hostname* The hostname of your compute resource (usually a login/submit host)
 * *Username* Username used to ssh to this resource
 * *Workdir* Directory used to stage and store generated datasets by apps. *You should not share the same directory with other resources*. Please make sure that the specified directory exits (mkdir if not).
-* SSH Public Key: Copy the content of this key to your resource's ~/.ssh/authorized_keys. Please read [authorized_keys](https://www.ssh.com/ssh/authorized_keys/) for more detail.
+* SSH Public Key: Copy the content of this key to your resource's ~/.ssh/authorized_keys. Please read [authorized_keys](https://www.ssh.com/ssh/authorized_keys/){target=_blank} for more detail.
 
 You can leave the rest of the fields empty for now.
 
 !!! warning
-	IU HPC systems requires you to submit [ssh public key agreement form](https://hpceverywhere.iu.edu/agree) so that you can authenticate using your ssh public key.
+	IU HPC systems requires you to submit [ssh public key agreement form](https://hpceverywhere.iu.edu/agree){target=_blank} so that you can authenticate using your ssh public key.
 
 Click OK. Once you are finished with copying ssh key and make sure the workdir exists, click "Test" button to see if Brainlife can access your resource. You should see a green checkbox if everything is good.
 
@@ -122,8 +122,8 @@ Click OK. Once you are finished with copying ssh key and make sure the workdir e
 
 Once you have registered and tested your resource, you can now enable apps to run on your resource.
 
-Go back to the Brainlife's [resource settings page](https://brainlife.io/amaretti/#!/resources), and click the resource you have created. Under the services section, enter the git org/repo name (such as like `brainlife/app-life`) for the app that you'd like to enable, and the score for each service. The higher the score is, the more likely the resource will be chosen to run your app (if there are multiple resources available). Brainlife gives higher score for resources that you own (not shared ones), you should leave it the default of 10 unless it's competing with other resource that you have access to. Click OK.
+Go back to the Brainlife's [resources](https://brainlife.io/resources){target=_blank} page, and click the resource you have created. Under the services section, enter the git org/repo name (such as like `brainlife/app-life`) for the app that you'd like to enable, and the score for each service. The higher the score is, the more likely the resource will be chosen to run your app (if there are multiple resources available). Brainlife gives higher score for resources that you own (not shared ones), you should leave it the default of 10 unless it's competing with other resource that you have access to. Click OK.
 
-You can see which resource an app is configured to run, and which resource will be chosen when you submit it under App detail / Computing Resources section on Brainlife. [example](https://brainlife.io/app/58c56cf7e13a50849b258800)
+You can see which resource an app is configured to run, and which resource will be chosen when you submit it under App detail / Computing Resources section on Brainlife. [example](https://brainlife.io/app/58c56cf7e13a50849b258800){target=_blank}
 
 

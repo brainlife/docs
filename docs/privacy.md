@@ -10,7 +10,7 @@
 
 ## Applicability
 
-This privacy notice applies only to the brainlife.io (https://brainlife.io) and explains our practices concerning the collection, use, and disclosure of visitor information. Visitor information collected by brainlife.io will be used only as outlined in this privacy notice.
+This privacy notice applies only to the brainlife.io and explains our practices concerning the collection, use, and disclosure of visitor information. Visitor information collected by brainlife.io will be used only as outlined in this privacy notice.
 
 Other units at the university may collect and use visitor information in different ways. Therefore, visitors to other university websites should review the privacy notices for the particular sites they visit. brainlife.io is not responsible for the content of other websites or for the privacy practices of websites outside the scope of this notice.
 

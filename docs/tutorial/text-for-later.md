@@ -5,7 +5,7 @@ If you're happy with the results, then you're ready to move onto the next step: 
 
 The next step is segment the multiple regions (i.e. nuclei) of the thalamus, each with it's own distinct functional properties. For more information about the different thalamic nuclei, please see http://freesurfer.net/fswiki/ThalamicNuclei.
 
-The best [brainlife.io](https://brainlife.io) app to perform this task is:
+The best brainlife.io] app to perform this task is:
 
 | ![freesurfer](../img/app.thalamic-nuclei.bl.header.png)|
 |------------------------------------|
@@ -39,7 +39,7 @@ If you're happy with the results, then you're ready to move onto the next step: 
 
 The next step in the anatomical preprocessing (T1w) pipeline is to fit different parcellations to the Freesufer-generated parcellation. This is useful as new parcellations come out relatively frequently, each generated based on different histological or functional properties. We recommend mapping the Glasser-derived 180 node parcellation, as it was derived from both histological and functional properties (Glasser MF, Coalson TS, Robinson EC, et al. A multi-modal parcellation of human cerebral cortex. Nature. 2016;536(7615):171–178. doi:10.1038/nature18933).
 
-The best [brainlife.io](https://brainlife.io) app to perform this task is:
+The best brainlife.io app to perform this task is:
 
 | ![matt](../img/app.matt.bl.header.png)|
 |------------------------------------|
@@ -64,7 +64,7 @@ You are now ready to move onto the final step: tissue-type mask segmentation!
 
 The next step is perform separate the anatomical image into multiple tissue-type (5tt) components. These tissue types include Gray Matter (GM; neuronal somas), White Matter (WM; myelinated axons), and Cerebro-spinal Fluid (CSF). Separating these tissue types is important as it will allow us to perform more anatomically-accurate tractography and allow us to analyze the properties of specific tissues.
 
-The best [brainlife.io](https://brainlife.io) app to perform this task is:
+The best brainlife.io app to perform this task is:
 
 | ![freesurfer](../img/app.5ttgen.bl.header.png)|
 |------------------------------------|

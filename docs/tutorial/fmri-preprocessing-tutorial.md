@@ -3,9 +3,9 @@
 
 ## Functional MRI (fMRI) preprocessing.
 
-This page demonstrates common steps used to preprocess functional magnetic resonance imaging (fMRI) data on brainlife.io The goal of this tutorial is to show you how to process functional data for successive analyses, including **functional region analysis** and **functional connectivity** (you'll learn more about both below). This tutorial will be using [fMRIPrep](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/) for all anatomical and fMRI processing. We'll be looking at [fMRIPrep - Volume Output](https://brainlife.io/app/5c61c69f14027a01b14adcb3).
+This page demonstrates common steps used to preprocess functional magnetic resonance imaging (fMRI) data on brainlife.io The goal of this tutorial is to show you how to process functional data for successive analyses, including **functional region analysis** and **functional connectivity** (you'll learn more about both below). This tutorial will be using [fMRIPrep](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/){target=_blank} for all anatomical and fMRI processing. We'll be looking at [fMRIPrep - Volume Output](https://brainlife.io/app/5c61c69f14027a01b14adcb3){target=_blank}.
 
-This tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/) you recently completed. If you haven't read our introduction to brainlife, or if you're not comfortable staging, processing, archiving, and viewing data on brainlife.io, please go back through that tutorial before beginning this one.
+This tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/){target=_blank} you recently completed. If you haven't read our introduction to brainlife, or if you're not comfortable staging, processing, archiving, and viewing data on brainlife.io, please go back through that tutorial before beginning this one.
 
 ### 1. Anatomical preprocessing.
 
@@ -21,9 +21,9 @@ fMRIPrep can additionally fix the lag in the BOLD signal and the fact that we ne
 
 Finally, images from the fMRI scanner might not be perfectly aligned to images collected before it, such as the anatomical images. To fix this, we need to register the functional volumes to the anatomical image and map the fMRI signal onto the surfaces generated in the anatomical preprocessing step -- fMRIPrep does this registration automatically!
 
-Useful information about fMRIPrep anatomical preprocessing can be found in this [original Nature paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/#S13title).
+Useful information about fMRIPrep anatomical preprocessing can be found in this [original Nature paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/#S13title){target=_blank}.
   
-There are two versions of the [brainlife.io](https://brainlife.io) fMRIPrep app. One generates outputs mapped to the volumes ([fMRIPrep-volume](https://brainlife.io/app/5c61c69f14027a01b14adcb3)) and the other generates outputs mapped to the surfaces ([fMRIPrep-surface](https://brainlife.io/app/5dfceebd32bff0640ce27bbd)).
+There are two versions of the brainlife.io fMRIPrep app. One generates outputs mapped to the volumes ([fMRIPrep-volume](https://brainlife.io/app/5c61c69f14027a01b14adcb3){target=_blank}) and the other generates outputs mapped to the surfaces ([fMRIPrep-surface](https://brainlife.io/app/5dfceebd32bff0640ce27bbd){target=_blank}).
 
 For this tutorial, we will use the volume-based version.
 
@@ -33,7 +33,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 
 ### Copy appropriate data over from a single subject in the InterTVA project
 
-1. Click the following link to go to the project's page for the 'InterTVA' project: https://brainlife.io/project/5c8415aa34225c0031027372
+1. Click the following link to go to the project's page for the [InterTVA project](https://brainlife.io/project/5c8415aa34225c0031027372){target=_blank}
 1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
 1. Select the following datatypes from one subject by clicking the boxes next to the data:
     * func/task rest

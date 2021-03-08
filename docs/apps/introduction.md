@@ -4,14 +4,14 @@
 
 Brainlife Apps are snippets of code comprising a (short) series of processing steps within a larger data analysis workflow. Apps are meant to be reusable by other users and not just by the App developer. Apps usage is a value-added to the work of the App Developer. So, the code in each App should use general tools and clarity in code writing so to make the App understandable by other users.
 
-1. Apps are hosted on public [GitHub.com](https://github.com/search?q=org%3Abrainlife+app-) repositories. Apps can comprise any combination of MatLab, Python, or other types of code.
+1. Apps are hosted on public [GitHub.com](https://github.com/search?q=org%3Abrainlife+app-){target=_blank} repositories. Apps can comprise any combination of MatLab, Python, or other types of code.
 2. Apps must have a single executable file named `main` in the root directory of the git repository. In most common cases, `main` is a UNIX bash script that calls other code in the repository to run the algorithms for data analysis. The code for data analysis can be written in any language, or can be compiled binary code.
-3. Apps must read all input parameters and data files from a `config.json` file. `config.json` is created by brainlife.io at runtime on the current working directory (`./`, [relative path](https://en.wikipedia.org/wiki/Path_(computing))) of the compute resource that your App will run on. But you do not have to think about this actually, just write a [relative path](https://en.wikipedia.org/wiki/Path_(computing)) in your code when loading files from the `config.json` file, no need for [absolute paths](https://en.wikipedia.org/wiki/Path_(computing)).
-4. Write all output files in the current directory (`./`), in a structure defined as a Brainlife [`datatype`](https://brainlife.io/datatypes). More information about [Brainlife datatypes](https://brainlife.io/docs/user/datatypes/) later.
+3. Apps must read all input parameters and data files from a `config.json` file. `config.json` is created by brainlife.io at runtime on the current working directory (`./`, [relative path](https://en.wikipedia.org/wiki/Path_(computing)){target=_blank}) of the compute resource that your App will run on. But you do not have to think about this actually, just write a [relative path](https://en.wikipedia.org/wiki/Path_(computing)){target=_blank} in your code when loading files from the `config.json` file, no need for [absolute paths](https://en.wikipedia.org/wiki/Path_(computing)){target=_blank}.
+4. Write all output files in the current directory (`./`), in a structure defined as a Brainlife [`datatype`](https://brainlife.io/datatypes){target=_blank}. More information about [Brainlife datatypes](https://brainlife.io/docs/user/datatypes/){target=_blank} later.
 
-Ideally, Apps should be packaged into [Docker containers](https://www.docker.com/what-container). But that is not a requirement. App Dockerizing will allow broader App usage, because Apps can run on multiple compute systems and will most likely increase the impact of the code you write, with a higher likelihood of increasing the impact of your work as a Brainlife App developer. More information about [Apps Dockerization can be found here](https://brainlife.io/docs/apps/container/).
+Ideally, Apps should be packaged into [Docker containers](https://www.docker.com/what-container){target=_blank}. But that is not a requirement. App Dockerizing will allow broader App usage, because Apps can run on multiple compute systems and will most likely increase the impact of the code you write, with a higher likelihood of increasing the impact of your work as a Brainlife App developer. More information about [Apps Dockerization can be found here](https://brainlife.io/docs/apps/container/){target=_blank}.
 
-Brainlife Apps follow a technical specification called Application for Big Computational Data analysis or [ABCD](https://github.com/brainlife/abcd-spec)
+Brainlife Apps follow a technical specification called Application for Big Computational Data analysis or [ABCD](https://github.com/brainlife/abcd-spec){target=_blank}
 
 ## Prerequisite
 
@@ -19,13 +19,13 @@ Before you start making an App for brainlife, we should be familar with the foll
 
 1. You should be familar with at least 1 programming language (Matlad, Python, R, etc..)
 
-2. You should be comfortable with bash terminal and some basic bash scripting. Please see [https://docs.microsoft.com/en-us/learn/modules/bash-introduction/](https://docs.microsoft.com/en-us/learn/modules/bash-introduction/)
+2. You should be comfortable with bash terminal and some basic bash scripting. Please see [https://docs.microsoft.com/en-us/learn/modules/bash-introduction/](https://docs.microsoft.com/en-us/learn/modules/bash-introduction/){target=_blank}
 
-3. You should know how to use [git](https://git-scm.com/docs/gittutorial) and [github](https://guides.github.com/) to publish your git repo.
+3. You should know how to use [git](https://git-scm.com/docs/gittutorial){target=_blank} and [github](https://guides.github.com/){target=_blank} to publish your git repo.
 
-4. Although you can develop and test your App on your local computer, brainlife.io will run your App mostly on various HPC resources. Therefore, you should be familar with basic concetps on HPC systems. Please see [Intro to HPC at IU (YouTube)](https://www.youtube.com/watch?v=atHXod7ZsfY)
+4. Although you can develop and test your App on your local computer, brainlife.io will run your App mostly on various HPC resources. Therefore, you should be familar with basic concetps on HPC systems. Please see [Intro to HPC at IU (YouTube)](https://www.youtube.com/watch?v=atHXod7ZsfY){target=_blank}
 
-5. We run our App through a docker container on singularity. You don't have to know how to create containers yourself (as we can help you with that) but it would be helpful for you know what container is and what singularity does. Please see [singularity introductuion](https://singularity-tutorial.github.io/00-introduction/)
+5. We run our App through a docker container on singularity. You don't have to know how to create containers yourself (as we can help you with that) but it would be helpful for you know what container is and what singularity does. Please see [singularity introductuion](https://singularity-tutorial.github.io/00-introduction/){target=_blank}
 
 ## App Development Timeline
 
@@ -40,13 +40,13 @@ You would normally follow these steps to develop and register your App on Brainl
 
 !!! hint
     Creating an App for brainlife.io requires you to be familiar with wide range of techincal knowledges in areas including programming, unix/shell, git, HPC. 
-    Please refer to [learn-neuroimaging.github.io](https://learn-neuroimaging.github.io/tutorials-and-resources/11-programming/) for a community curated list of online tutorials.
+    Please refer to [learn-neuroimaging.github.io](https://learn-neuroimaging.github.io/tutorials-and-resources/11-programming/){target=_blank} for a community curated list of online tutorials.
 
 # Enabling an App on a compute resource
 
 An App needs to be enabled on each compute resource to run. Each user will have a different set of resources that they have access to, but Brainlife provides default **shared** resources for all users. If you want any Brainlife user to be able to run your App, you can [contact the resource administrators](mailto:brlife@iu.edu) to enable your App.
 
-You will need to discuss how to handle any dependencies/libraries that your App might require with resource administrators. To make things easier and reproducible, you should consider Dockerizing your App's **dependencies** (but not the App itself) so that you can run your App through your container using [singularity](https://singularity.lbl.gov/) from your `main`. 
+You will need to discuss how to handle any dependencies/libraries that your App might require with resource administrators. To make things easier and reproducible, you should consider Dockerizing your App's **dependencies** (but not the App itself) so that you can run your App through your container using [singularity](https://singularity.lbl.gov/){target=_blank} from your `main`. 
 
 !!! hint
     Most compute resources now provide singularity which increases the number of resources where you might be able to run your Apps.
@@ -82,14 +82,14 @@ Here are some examples of currently registered datatypes.
 
 Your App should read from one or more of these datatypes and write output data in a format specified by another datatype. By identifying existing datatypes that you can interoperate you can interface with datasets generated by other Apps and your output can be used by other Apps as their input.
 
-To create a new datatype, please visit [#datatype](https://brainlife.slack.com/archives/C946FA6PK) channel on brainlife.io slack.
+To create a new datatype, please visit [#datatype](https://brainlife.slack.com/archives/C946FA6PK){target=_blank} channel on brainlife.io slack.
 
 _Please see [datatype](/docs/user/datatypes/) page for more detail.
 
 !!! quote
     "Write programs that do one thing and do it well. Write programs to work together." - A Quarter Century of Unix by Doug McIlroy
 
-Brainlife app should follow the [Do One Thing and Do It Well](https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well) principle where a complex workflow should be split into several smaller Apps (but no more than necessary nor practical) to promote code-reuse and help parallelize your workflow and run each App on the most appropriate compute resource available.
+Brainlife app should follow the [Do One Thing and Do It Well](https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well){target=_blank} principle where a complex workflow should be split into several smaller Apps (but no more than necessary nor practical) to promote code-reuse and help parallelize your workflow and run each App on the most appropriate compute resource available.
 
 !!! hint
-    Before writing your apps, please browse [currently registered Brainlife Apps](https://brainlife.io/warehouse/#/apps) and datatypes under Brainlife.io to make sure you are not reinventing Apps. If you find an App that is similar to what you need, please contact the developer of the App and discuss if the feature you need can be added to the App.
+    Before writing your apps, please browse [currently registered Brainlife Apps](https://brainlife.io/warehouse/#/apps){target=_blank} and datatypes under Brainlife.io to make sure you are not reinventing Apps. If you find an App that is similar to what you need, please contact the developer of the App and discuss if the feature you need can be added to the App.

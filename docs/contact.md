@@ -8,11 +8,11 @@
 
 ## Slack
 
-[Join brainlife.slack.com](https://brainlife-inviter.herokuapp.com/) ![logo](https://brainlife-inviter.herokuapp.com/badge.svg)
+[Join brainlife.slack.com](https://brainlife-inviter.herokuapp.com/){target=_blank} ![logo](https://brainlife-inviter.herokuapp.com/badge.svg)
 
 ## Bug Report / Feature Request
 
-[Github Issues](https://github.com/brainlife/brainlife/issues)
+[Github Issues](https://github.com/brainlife/brainlife/issues){target=_blank}
 
 !!! note
     For Brainlife App specific issue, please contact individual App developers.

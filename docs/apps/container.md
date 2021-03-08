@@ -16,7 +16,7 @@ You can even share the same Docker container across multiple Apps that you and y
 
 ## Docker Engine
 
-To build a docker container, you need to [install Docker engine on your laptop](https://docs.docker.com/machine/install-machine/) or find a server that has docker engine installed that you can use. (Contact [Soichi](mailto:hayashis@iu.edu) if you need help.)
+To build a docker container, you need to [install Docker engine on your laptop](https://docs.docker.com/machine/install-machine/){target=_blank} or find a server that has docker engine installed that you can use. (Contact [Soichi](mailto:hayashis@iu.edu) if you need help.)
 
 We assume you already have your Brainlife app hosted on Github, and you are making changes inside a cloned git repo on a machine with the Docker engine.
 
@@ -24,7 +24,7 @@ We assume you already have your Brainlife app hosted on Github, and you are maki
 
 > Skip this section if you are not using Matlab
 
-Matlab code requires a matlab license to run. If your App contains any Matlab code, it needs to be compiled to a binary format using [`mcc` command](https://www.mathworks.com/help/compiler/mcc.html) which allows you to execute your code without Matlab license. You will still need to run it against a special Matlab compiled runtime called *MCR* which can be distributed freely and does not require any license.
+Matlab code requires a matlab license to run. If your App contains any Matlab code, it needs to be compiled to a binary format using [`mcc` command](https://www.mathworks.com/help/compiler/mcc.html){target=_blank} which allows you to execute your code without Matlab license. You will still need to run it against a special Matlab compiled runtime called *MCR* which can be distributed freely and does not require any license.
 
 You can create a script that compiles your matlab code.
 
@@ -50,7 +50,7 @@ matlab -nodisplay -nosplash -r build
 This script generates a Matlab script called `build.m` and immediately executes it. `build.m` will load Matlab paths and run Matlab command called `mcc` which compiles your Matlab code into an executable binary that can run without Matlab license. The generated binary still requires a few Matlab proprietary libraries called MCR which can be download from the Matlab website.
 
 !!! note
-        Brainlife team has built a Docker MCR container [brainlife/mcr](https://hub.docker.com/r/brainlife/mcr/tags/) which can be used to execute your compiled Matlab code with singularity.
+        Brainlife team has built a Docker MCR container [brainlife/mcr](https://hub.docker.com/r/brainlife/mcr/tags/){target=_blank} which can be used to execute your compiled Matlab code with singularity.
 
 For the sample build script above, you will need to adjust addpath() to include all of your Matlab dependencies that your Matlab script requires. `myapp` is the name of the matlab entry function that you use to execute your application. mcc command will create a binary with the same name `myapp` inside the ./compiled directory.
 
@@ -77,7 +77,7 @@ This tells the Matlab compiler to include the sptensor class to the compiled bin
 
 ## Creating Docker Container
 
-There are quite a few materials detailing how to write Dockerfile / containers online. If you are looking for a place to start, we recommend [Docker's Getting Started Guide](https://docs.docker.com/get-started/).
+There are quite a few materials detailing how to write Dockerfile / containers online. If you are looking for a place to start, we recommend [Docker's Getting Started Guide](https://docs.docker.com/get-started/){target=_blank}.
 
 As most Brainlife Apps execute Docker containers through singularity, there are a few Brainlife specific items that you might need to be aware so that your App will run properly on Brainlife.
 
@@ -115,11 +115,11 @@ Now, your container should be ready to GO!
 
 ## Example Dockerfile for environment containers
 
-* [brainlife/app-dipy-workflows](https://github.com/brainlife/app-dipy-workflows/blob/master/Dockerfile)
-* [brainlife/docker-mcr](https://github.com/brainlife/docker-mcr)
+* [brainlife/app-dipy-workflows](https://github.com/brainlife/app-dipy-workflows/blob/master/Dockerfile){target=_blank}
+* [brainlife/docker-mcr](https://github.com/brainlife/docker-mcr){target=_blank}
 
 ## Examples Apps using environment containers
 
-* [github brainlife/app-freesurfer](https://github.com/brainlife/app-freesurfer)
-* [github brainlife/app-wmaSeg](https://github.com/brainlife/app-wmaSeg)
+* [github brainlife/app-freesurfer](https://github.com/brainlife/app-freesurfer){target=_blank}
+* [github brainlife/app-wmaSeg](https://github.com/brainlife/app-wmaSeg){target=_blank}
 

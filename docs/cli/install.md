@@ -8,7 +8,7 @@ With brainlife CLI, you can ..
 * Submit Apps, and monitor (you can fully script data processing through brainlife)
 * Query projects, data, datatypes, etc.
 
-Brainlife CLI is distributed through [npm](https://www.npmjs.com/) (node package manager) which is a part of nodejs. You will need to have nodejs/npm installed on your machine before you can install brainlife CLI command. Most operation systems support nodejs through their software distribution systems. You can find the nodejs installation document [here](https://nodejs.org/en/download/package-manager/).
+Brainlife CLI is distributed through [npm](https://www.npmjs.com/){target=_blank} (node package manager) which is a part of nodejs. You will need to have nodejs/npm installed on your machine before you can install brainlife CLI command. Most operation systems support nodejs through their software distribution systems. You can find the nodejs installation document [here](https://nodejs.org/en/download/package-manager/){target=_blank}.
 
 On ubuntu/debian machines, you can run the following command to install nodejs 14 (current LTS).
 
@@ -17,16 +17,16 @@ curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-For other OSs, please see [Installing node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions) page.
+For other OSs, please see [Installing node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions){target=_blank} page.
 
 
 !!! Info "For Windows Users"
-    In order to use brainlife CLI on Windows, you will first need to install [WSL (Windows Subsyste for Linux)](https://docs.microsoft.com/en-us/windows/wsl/install-win10) and run all commands inside the Ubuntu terminal.
+    In order to use brainlife CLI on Windows, you will first need to install [WSL (Windows Subsyste for Linux)](https://docs.microsoft.com/en-us/windows/wsl/install-win10){target=_blank} and run all commands inside the Ubuntu terminal.
 
     Apart from WSL, we recommend the following software packages installed on Windows systems.
 
-    * [7-zip](https://www.7-zip.org/) for uncompressing downloaded data (.tar.gz)
-    * [MRIcron](https://www.nitrc.org/projects/mricron) for visualizing brainimaging data 
+    * [7-zip](https://www.7-zip.org/){target=_blank} for uncompressing downloaded data (.tar.gz)
+    * [MRIcron](https://www.nitrc.org/projects/mricron){target=_blank} for visualizing brainimaging data 
 
 !!! note
     On IU Karst / Carbonate / RED, brainlife CLI is already installed as part of nodejs module. Please run `module load nodejs` and skip this installation step.
@@ -77,7 +77,7 @@ $ sudo npm update -g brainlife
 Before you can start using bl tool, you should login to brainlife by running the following command.
 
 !!! note
-    If you don't have a brainlife account, please [Sign Up](https://brainlife.io/auth/#!/signup) before proceeding.
+    If you don't have a brainlife account, please [Sign Up](https://brainlife.io/auth/#!/signup){target=_blank} before proceeding.
 
 ```
 $ bl login --ttl 7
@@ -99,7 +99,7 @@ The `--ttl 7` will request brainlife to keep you logged in for 7 days. Please ad
 brainlife CLI itself does not provide a capability to sign out natively, but you can remove this file if you wish to sign out before your token expires. 
 
 ### Docker container
-In order to ease the use of the brainlife CLI for those who are experienced with Docker and Singularity, we have created a Docker container of the CLI and it's dependencies that is designed to be used with Singularity (https://hub.docker.com/repository/docker/brainlife/cli). You can use the cli through our Docker container via Singularity by running the following command.
+You can use [brainlife CLI](https://hub.docker.com/repository/docker/brainlife/cli){target=_blank} hosted as a docker container via Singularity by running the following command.
 ```
 $ singularity run docker://brainlife/cli login
 ```

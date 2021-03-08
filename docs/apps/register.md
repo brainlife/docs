@@ -2,7 +2,7 @@
 
 Once your App is published on github, you can now register it on Brainlife and let you and other users discover your App and execute it on Brainlife.
 
-First, go to the [Apps page](https://brainlife.io/apps) on Brainlife, click `Plus Button` at the bottom right corner of the page. App registration form should appear.
+First, go to the [Apps page](https://brainlife.io/apps){target=_blank} on Brainlife, click `Plus Button` at the bottom right corner of the page. App registration form should appear.
 
 Let's go through each section.
 
@@ -159,7 +159,7 @@ Brainlife re-uses information stored in github repo.
 
 * README.md
 
-    Brainlife displays README.md content from your github repo. You can include any images, latex equations, or any other standard [markdown syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+    Brainlife displays README.md content from your github repo. You can include any images, latex equations, or any other standard [markdown syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet){target=_blank}.
     
     You should include information such as.
 
@@ -188,4 +188,4 @@ Once your App is enabled on various resources, you should be able to see them li
 ![resources](../img/app.resources.png)
 
 !!! note
-    Your App is not ready to be run on Brainlife yet. To do so, you need first to containerize it, as explained in the next step of this tutorial [Containerizing App](https://test.brainlife.io/docs/apps/container/).
+    Your App is not ready to be run on Brainlife yet. To do so, you need first to containerize it, as explained in the next step of this tutorial [Containerizing App](https://test.brainlife.io/docs/apps/container/){target=_blank}.

@@ -1,6 +1,6 @@
 Life cycle hooks are the script used to start / stop / monitor your apps by Brainlife. By default, it looks for executable installed on each resource in the PATH with named `start`, `status`, and `stop`. Resource owner needs to make sure these scripts are installed and accessible by your apps. 
 
-> For most PBS, SLURM, and vanilla VM, resource owner can install [ABCD default hooks](https://github.com/brainlife/abcd-spec/tree/master/hooks).
+> For most PBS, SLURM, and vanilla VM, resource owner can install [ABCD default hooks](https://github.com/brainlife/abcd-spec/tree/master/hooks){target=_blank}.
 
 By default, the `start` hook should look for a file named `main` to start your app. Therefore, the only file required to make your app runnable by Brainlife is this `main` executable on the root directory of the app's git repository.
 

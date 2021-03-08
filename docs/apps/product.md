@@ -117,7 +117,7 @@ Like...
 }
 ```
 
-You might have Apps that could produce multi-gigabytes of output datasets. If you need to run aggregation process across many subjects using such outputs, you might end up needing to stage hundreds of gigabytes of output datasets which may or may not be possible, or desirable to do so. Instead, you could produce pre-aggregated data and store it inside `product.json`. You can then query all datasets and download `product.json` contents from each dataset without having to download the actual output datasets. Please take a look at [Brainlife CLI](https://github.com/brainlife/cli) for more information on querying datasets.
+You might have Apps that could produce multi-gigabytes of output datasets. If you need to run aggregation process across many subjects using such outputs, you might end up needing to stage hundreds of gigabytes of output datasets which may or may not be possible, or desirable to do so. Instead, you could produce pre-aggregated data and store it inside `product.json`. You can then query all datasets and download `product.json` contents from each dataset without having to download the actual output datasets. Please take a look at [Brainlife CLI](https://github.com/brainlife/cli){target=_blank} for more information on querying datasets.
 
 <!--
 By storing all pre-aggregated information in `product.json`, you can create a Javascript-based visualizer that can simply query and consume information to visualize. The user can then dynamically update the query and play around with the data.
@@ -162,7 +162,7 @@ Although not recommended, you can also override the datatype tag of the output d
 ```
 
 !!! warning 
-    Brainlife UI relies on each App to have predetermined datatype and datatype tags. Overriding datatype tags could cause your workflow to be inconsistent. You should also make sure that any datatype tags you are using is valid and [registered](https://brainlife.io/datatypes) for your output datatype.
+    Brainlife UI relies on each App to have predetermined datatype and datatype tags. Overriding datatype tags could cause your workflow to be inconsistent. You should also make sure that any datatype tags you are using is valid and [registered](https://brainlife.io/datatypes){target=_blank} for your output datatype.
 
 ## Multiple output datasets
 
