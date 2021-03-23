@@ -16,6 +16,7 @@ theme:
   favicon: '/img/favicon.ico'
   palette:
     primary: 'light blue'
+  custom_dir: overrides
 
 nav:
   - Home: index.md

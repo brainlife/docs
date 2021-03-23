@@ -1,6 +1,6 @@
 # Getting Started with brainlife.io
 
-Now, let’s learn how to use brainlife.io! This “Getting Started” tutorial will give you a quick overview of how to:
+Now, let’s learning how to use brainlife.io! This “Getting Started” tutorial will give you a quick overview of how to:
 
 * Sign up for brainlife.io
 * Create new projects
