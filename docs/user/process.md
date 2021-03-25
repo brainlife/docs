@@ -54,11 +54,13 @@ Before we finish talking about Processes, let's do a quick breakdown of the task
 
 * Finished
 
-    Success! `Finished` means the task was completed **successfully.** You can now visualize output datasets by clicking :fa-eye: buttons next to each output dataset (Hint: This is covered in the [data processing tutorial](https://brainlife.io/docs/user/started/#data-processing){target=_blank} we keep talking about). If you requested to auto-archive the output datasets, they will be copied to you project's `Archive`.
+    Success! `Finished` means the task was completed **successfully.** You can now visualize output datasets by clicking :fa-eye: buttons next to each output dataset (Hint: This is covered in the [data processing tutorial](/docs/user/started/#data-processing){target=_blank} we keep talking about). If you requested to auto-archive the output datasets, they will be copied to you project's `Archive`.
 
 * Failed
 
-    Boo, your task `Failed` -- if this is the case, you will see the task terminate with a non-0 exit code. You can try to examine the output for the cause. If you are really stuck, you can always ask for help in the **#general** channel on [brainlife.io's Slack](/docs/contact/). You can also contact the App developer or submit a Github issue.
+    Job could fail (exit with non-0 return code) in variety of different reasons, so you will need to look at the log file under `Raw Output` and determine why the job failed. Please see [Handling Job Failure](/docs/user/failure/) for more information about troubleshooting.
+    
+    You can always ask for help in the **#general** channel on [brainlife.io's Slack](/docs/contact/). You can also contact the App developer or submit a Github issue. 
 
 * Removed
 

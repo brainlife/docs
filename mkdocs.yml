@@ -31,6 +31,7 @@ nav:
     - Group Analysis: user/groupanalysis.md
     - Publications: user/publication.md
     - Datasets : user/datasets.md
+    - Failure: user/failure.md
 
   - Tutorials: 
     - Introduction: tutorial/introduction-to-brainlife.md
