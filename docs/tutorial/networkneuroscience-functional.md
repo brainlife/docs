@@ -7,13 +7,13 @@ Functional MRI measures the BOLD signal - a measure associated with neuronal act
 
 From these matrices, scientists can then examine properties that describe the inter-relatedness of many regions. These properties can be used to identify **network-level** inter-individual differences in a large cohort.
 
-This page demonstrates how to generate functional connectivity matrices on brainlife.io. The goal of this tutorial is to show you how to generate functional connectivity matrices following fMRI preprocessing. This tutorial will be using [Multi-atlas Transfer Tool (MaTT)](https://brainlife.io/app/5aeb34f2f446980028b15ef0) to map the Glasser 180-node cortical atlas to preprocessed Freesurfer surfaces and [fMRI Connectivity Matrix Generation](https://brainlife.io/app/5c720cf63e2f2c0030a23486) to compute the correlation between each region in the atlas.
+This page demonstrates how to generate functional connectivity matrices on brainlife.io. The goal of this tutorial is to show you how to generate functional connectivity matrices following fMRI preprocessing. This tutorial will be using [Multi-atlas Transfer Tool (MaTT)](https://brainlife.io/app/5aeb34f2f446980028b15ef0){target=_blank} to map the Glasser 180-node cortical atlas to preprocessed Freesurfer surfaces and [fMRI Connectivity Matrix Generation](https://brainlife.io/app/5c720cf63e2f2c0030a23486){target=_blank} to compute the correlation between each region in the atlas.
 
-This tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/) and presumes that you have data processed using [fMRIPrep](https://brainlife.io/app/5c61c69f14027a01b14adcb3). If you haven't read our introduction to brainlife, or if you don't have preprocessed fMRI and Freesurfer outputs on brainlife.io, please go back through that tutorial or the [Functional MRI Preprocessing](https://brainlife.io/docs/tutorial/fmri-preprocessing-tutorial) tutorial before beginning this one.
+This tutorial will use a combination of skills developed in the [Introduction tutorial](/docs/tutorial/introduction-to-brainlife/) and presumes that you have data processed using [fMRIPrep](https://brainlife.io/app/5c61c69f14027a01b14adcb3){target=_blank}. If you haven't read our introduction to brainlife, or if you don't have preprocessed fMRI and Freesurfer outputs on brainlife.io, please go back through that tutorial or the [Functional MRI Preprocessing](/docs/tutorial/fmri-preprocessing-tutorial) tutorial before beginning this one.
 
 ### 1. Functional connectivity matrix generation.
 
-Once the anatomical and fMRI data is preprocessed with fMRIPrep, we can now examine the functional network organization by generating **functional connectivity matrices**! This is done by examing the fMRI BOLD activity in multiple regions across the brain by correlating the regions' BOLD activity throughout the entire acquisition. The reason we do this is because regions that are active in similar ways at similar time points are more likely to be working with each other to perform a specific task. The way we typically represent the correlation coefficients, or weights, of each region (node) with every other region (node) in the brain is with a **network matrix** -- note that **nodes** represent the brain regions here. Each point in the network matrix represents the correlation of BOLD activity between one region and another. We can then use these network matrices to examine properties of the network that describe how interrelated specific regions in the brain are working during the fMRI acquisition in either task-related or resting-state fMRIs. To generate our matrices, we can use the [fMRI Connectivity Matrix Generation](https://brainlife.io/app/5c720cf63e2f2c0030a23486) app.
+Once the anatomical and fMRI data is preprocessed with fMRIPrep, we can now examine the functional network organization by generating **functional connectivity matrices**! This is done by examing the fMRI BOLD activity in multiple regions across the brain by correlating the regions' BOLD activity throughout the entire acquisition. The reason we do this is because regions that are active in similar ways at similar time points are more likely to be working with each other to perform a specific task. The way we typically represent the correlation coefficients, or weights, of each region (node) with every other region (node) in the brain is with a **network matrix** -- note that **nodes** represent the brain regions here. Each point in the network matrix represents the correlation of BOLD activity between one region and another. We can then use these network matrices to examine properties of the network that describe how interrelated specific regions in the brain are working during the fMRI acquisition in either task-related or resting-state fMRIs. To generate our matrices, we can use the [fMRI Connectivity Matrix Generation](https://brainlife.io/app/5c720cf63e2f2c0030a23486){target=_blank} app.
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
 
@@ -111,6 +111,19 @@ Once the app is finished, you're ready to move onto the final step: network matr
         * For 'Dataset Tags,' type and enter 'functional connectivity matrix'
     * Hit 'Submit'
     
+Once complete, you can now convert the conmat datatype to a network dataytpe!
+
+### Convert network matrices (contmat) to network datatype:
+
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Conmat 2 Network'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For input, select the conmat datatype generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'functional connectivity networks'
+    * Hit 'Submit'
+    
 Once complete, you can now visualize the network!
     
 ### Visualize functional  networks.
@@ -119,7 +132,7 @@ Once complete, you can now visualize the network!
     * In the search bar, type 'Network Visualization'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For conmat (preprocessed), select the conmat (functional connectivity matrix) for the functional network generated above by clicking the drop-down menu and finding the appropriate dataset.
+    * For conmat (preprocessed), select the network datatype for the functional network generated above by clicking the drop-down menu and finding the appropriate dataset.
     * Leave all other options as defaults
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'functional visualization'

@@ -1,7 +1,9 @@
+
 site_name: brainlife Documentation
-site_author: 'Soichi Hayashi'
+site_author: 'The people of brainlife.io'
 site_url: https://brainlife.io/docs
 
+#
 # Repository
 repo_name: 'brainlife/docs'
 repo_url: 'https://github.com/brainlife/docs'
@@ -14,6 +16,7 @@ theme:
   favicon: '/img/favicon.ico'
   palette:
     primary: 'light blue'
+  custom_dir: overrides
 
 nav:
   - Home: index.md
@@ -22,9 +25,12 @@ nav:
     - Getting Started: user/started.md
     - Projects: user/project.md
     - Datatypes: user/datatypes.md
+    - Archive: user/archive.md
     - Processes: user/process.md
     - Pipelines: user/pipeline.md
+    - Group Analysis: user/groupanalysis.md
     - Publications: user/publication.md
+    - Datasets : user/datasets.md
 
   - Tutorials: 
     - Introduction: tutorial/introduction-to-brainlife.md
@@ -43,7 +49,7 @@ nav:
     - Uploading Data: cli/upload.md
     - Running Apps: cli/app.md
     - Downloading Data: cli/download.md
-    - Update Metadata: cli/update.md
+    - Update Data: cli/update.md
     - Group Analysis: cli/group.md
 
   - Developing Apps: 
@@ -72,10 +78,13 @@ nav:
 extra:
   disqus: 'brain-life'
   social:
-    - type: 'github'
-      link: 'https://github.com/brainlife'
-    - type: 'twitter'
+    - icon: fontawesome/brands/twitter
       link: 'https://twitter.com/BrainLifeio'
+    - icon: fontawesome/brands/github
+      link: 'https://github.com/brainlife'
+
+extra_css:
+    - css/narrow.css
 
 markdown_extensions:
   - admonition
@@ -83,5 +92,5 @@ markdown_extensions:
   - toc:
         permalink: True
   - fontawesome_markdown
-
+  - attr_list
 

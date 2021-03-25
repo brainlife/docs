@@ -6,7 +6,7 @@
 
 !!! Disclaimer
 
-    brainlife.io is provided by the [Pestilli Lab](https://brainlife.io/plab), with support by the National Science Foundation (NSF) and Indiana University (IU) as a public service with the sole goal to benefit society. All functionalitiy of this platform is expressly provided "AS IS." 
+    brainlife.io is provided by the [Pestilli Lab](https://brainlife.io/plab){target=_blank}, with support by the National Science Foundation (NSF) and Indiana University (IU) as a public service with the sole goal to benefit society. All functionalitiy of this platform is expressly provided "AS IS." 
     
     BRAINLIFE.IO, the PESTILLI LAB, NSF and IU MAKE NO WARRANTY OF ANY KIND, EXPRESSED, IMPLIED, IN FACT OR ARISING BY OPERATION OF LAW, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT AND DATA PRIVACY OR ACCURACY. BRAINLIFE.IO NEITHER REPRESENTS NOR WARRANTS THAT THE OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT ANY DEFECTS WILL BE CORRECTED. BRAINLIFE.IO DOES NOT WARRANT OR MAKE ANY REPRESENTATIONS REGARDING THE USE OF THE SOFTWARE OR THE RESULTS THEREOF, INCLUDING BUT NOT LIMITED TO THE CORRECTNESS, ACCURACY, RELIABILITY, OR USEFULNESS OF THE SOFTWARE.
 
@@ -16,7 +16,7 @@ Use of the brainlife.io platform is subject to this Acceptable Use Policy.
 
 The user agrees not to, and not to allow third parties to, use our platforms
 
-* To violate, or encourage the violation of, the legal rights of others (for example, this may include allowing other users to infringe or misappropriate the intellectual property rights of others in violation of the [Digital Millennium Copyright Act](https://www.copyright.gov/legislation/dmca.pdf));
+* To violate, or encourage the violation of, the legal rights of others (for example, this may include allowing other users to infringe or misappropriate the intellectual property rights of others in violation of the [Digital Millennium Copyright Act](https://www.copyright.gov/legislation/dmca.pdf){target=_blank});
 
 * To disable, interfere with or circumvent any aspect of the platform.
 
