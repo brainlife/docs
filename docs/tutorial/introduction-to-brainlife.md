@@ -31,7 +31,7 @@ Next we will start managing some data on the platform by creating a Project.
 
 1. Go to the [brainlife.io home page](https://brainlife.io){target=_blank} and click 'home.' This will bring you inside the platform.
 1. Click the 'Projects' tab on the left side of the screen (shield icon).
-1. Click the '+' button at the bottom right corner of the screen.
+1. Click the 'New Project' button at the bottom right corner of the screen.
     * Enter the following information on the My Project page:
         * name
         * description
