@@ -89,9 +89,11 @@ extra_css:
 
 markdown_extensions:
   - admonition
-  - codehilite
   - toc:
         permalink: True
   - fontawesome_markdown
   - attr_list
+  - pymdownx.highlight:
+        linenums: true
+  - pymdownx.superfences
 
