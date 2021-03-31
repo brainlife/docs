@@ -28,7 +28,6 @@ nav:
     - Archive: user/archive.md
     - Processes: user/process.md
     - Pipelines: user/pipeline.md
-    - Group Analysis: user/groupanalysis.md
     - Publications: user/publication.md
     - Datasets : user/datasets.md
     - Failure: user/failure.md
