@@ -103,11 +103,10 @@ Brainlife app should follow the [Do One Thing and Do It Well](https://en.wikiped
 
 ## Job Complexiy / Resource Requirement
 
-All App should have clearly defined upper bound (Big-O) interms of resource requirement and computing time. Most `main` script starts with batchscheduler resource directives that looks like this.
+All App should have clearly defined upper bound (aka "Big-O") in terms of resource and computing time requirement. Most `main` script starts with batchscheduler resource directives that looks like this.
 
 ```
 #!/bin/bash
-#SBATCH --job-name=myjob         # create a short name for your job
 #SBATCH --nodes=1                # node count
 #SBATCH --ntasks=1               # total number of tasks across all nodes
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
@@ -115,7 +114,12 @@ All App should have clearly defined upper bound (Big-O) interms of resource requ
 #SBATCH --time=00:01:00          # total run time limit (HH:MM:SS)
 ```
 
-When the job is executed on HPC system, the batch scheduler will allocate requested amount of time / resources for the job and it will consume SUs on those resources based on these parameters. It is important to keep the resource requirement as low as possible so that your job will not consume more SUs than necessary. You should measure the amount of CPU / memory resource typically consumed and set these parameter accordingly. If your job takea a long time to run, you will need to set the walltime requirement high enough to accomdate it, but please note that not only it will consume more SUs, it will also take longer for the job to wait on the queue waiting for the block of requested time to become available.
+This informs the batch scheduler how long / how much of its computing capability is needed to run your App. Your job will be killed if you exceed what you specify in these directives.
+
+When the job is executed on HPC system, the batch scheduler will allocate requested amount of time / resources for the job and it will consume SUs on those resources based on these parameters. It is important to keep the resource requirement as low as possible so that your job will not consume more SUs than necessary. You should measure the amount of CPU / memory resource typically consumed and set these parameter accordingly. If your job takea a long time to run, you will need to set the walltime requirement high enough to accomdate it. Not only the cost of running jobs increases as you increase the resource requirement, it will also increase the queue time of the job waiting for the block of requested resource to become available for your job.
+
+!!! warning
+    Please be conservative with amount of cpus-per-task (or ppn). Most batchscheduler will consume SUs based on number of CPU counts you request times the amount of time. For example, if you request a job to run for 2 hours with 16 cores, it will consume 2x16=32 units. If you only use 4 cores for your job, please set it to 4 so that it will only consume 2x4=8 units instead.
 
 brainlife.io is used to not just reproduce the original results published by app developer, but to process user's own data. Your App should be able to handle variety of input data - not just the data that you have used to develop the App. This is a very difficult challenge and it usually takes time for an App to become robust. Often, user could submit your App with data that is much larger or more complex than they have intended. Sometimes, it is even impossible to finish the computation within specified amount of time. To handle such case, you could implement your App so that you can restart your App and resume processing from where it was terminated previously.
 
