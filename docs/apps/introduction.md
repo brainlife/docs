@@ -30,7 +30,10 @@ Before you start making an App for brainlife, we should be familar with the foll
 
 3. You should know how to use [git](https://git-scm.com/docs/gittutorial){target=_blank} and [github](https://guides.github.com/){target=_blank} to publish your git repo.
 
-4. Although you can develop and test your App on your local computer, brainlife.io will run your App mostly on various HPC resources. Therefore, you should be familar with basic concetps on HPC systems. Please see [Intro to HPC at IU (YouTube)](https://www.youtube.com/watch?v=atHXod7ZsfY){target=_blank}
+4. Although you can develop and test your App on your local computer, brainlife.io will run your App mostly on various HPC resources. Therefore, you should be familar with basic concetps on HPC systems. Please see 
+
+    - [https://researchcomputing.princeton.edu/support/knowledge-base/slurm](https://researchcomputing.princeton.edu/support/knowledge-base/slurm){target=_blank}
+    - [Intro to HPC at IU (YouTube)](https://www.youtube.com/watch?v=atHXod7ZsfY){target=_blank} 
 
 5. We run our App through a docker container on singularity. You don't have to know how to create containers yourself (as we can help you with that) but it would be helpful for you know what container is and what singularity does. Please see [singularity introductuion](https://singularity-tutorial.github.io/00-introduction/){target=_blank}
 
