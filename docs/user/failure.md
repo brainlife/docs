@@ -15,7 +15,7 @@ Your job could fail due to variety of reasons such as
 Unfortunately, it's up to you to figure out which cases applies to your failure, then perform appropriate action. If the failure is caused by your data/configuration, then you will need to correct those issues and resubmit. If the issue is caused by the bug with the App itself, then you will need to contact the App developer. For compute-resource/platform issued, please contact the brainlife.io team. 
 
 !!! note 
-    You are most welcome to contact our [#issues](https://app.slack.com/client/T3X5ND3U1/C6WBY79SB){target=_blank} slack channel to seek assistance. 
+    You are most welcome to contact our [#issues](https://app.slack.com/client/T3X5ND3U1/C6WBY79SB){target=_blank} slack channel to seek assistance. You may also find helpful to search in the slack channel for older messages to see if your issue has already been addressed.
 
 ## Finding the error message
 
