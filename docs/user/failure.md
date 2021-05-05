@@ -18,7 +18,7 @@ Often it's up to the user to figure out which case applies, and take appropriate
 This documentation will guide you through this process.
 
 !!! note 
-    You can always contact our [#issues](https://app.slack.com/client/T3X5ND3U1/C6WBY79SB){target=_blank} slack channel to seek assistance. 
+    You are most welcome to contact our [#issues](https://app.slack.com/client/T3X5ND3U1/C6WBY79SB){target=_blank} slack channel to seek assistance. You may also find helpful to search in the slack channel for older messages to see if your issue has already been addressed.
 
 ## Finding the error message
 
