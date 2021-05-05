@@ -54,6 +54,13 @@ You can treat these processes as you normally do with any processes that you nor
 !!! note
     If you remove a process or task, Brainlife will resubmit another process to handle that subject if the subject has all required input datasets and has not produced the output from the requested app yet. If you don't want them to be resubmitted, please remove or deactivate your rule.
 
+## Turning off pipeline rules
+
+When you turn off the pipeline rule, brainlife will remove all the jobs submitted from the rule. If there are any jobs running that are submitted by the rule, they will be terminated, and any output from the jobs will be removed from the computing resources. 
+
+brainlife.io tries to submit jobs where the input data is already staged to avoid unnecessary data staging / duplication of the input data across different computing resources. When your pipeline rule finishes processing, you should keep the rule turned on until all other rules that uses the rule also finish running.
+
+
 ### Troubleshooting Pipeline Rules
 
 Once you submit your pipeline rule, you can monitor the status of the pipeline under the `Log` section

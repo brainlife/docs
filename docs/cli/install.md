@@ -105,12 +105,7 @@ $ singularity run docker://brainlife/cli login
 ```
 You can then use any of the functionality of the CLI without needing to install all of the dependencies on your local machine!
 
-To run it using docker itself, you can
-```
-$ docker run -it brainlife/cli login 
-```
-
-If you don't want to keep typing `singularity run docker://brainlife/cli` every time you run brainlife CLI, you can add this to your `~/.bashrc`
+If you don't want to type `singularity run docker://brainlife/cli` every time you run brainlife CLI, you could add something like this to your `~/.bashrc`
 
 ```
 function bl {

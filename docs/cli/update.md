@@ -80,6 +80,24 @@ done
 
 ```
 
-If you want to udpate tags on more specific data (datatype, existing tags, etc..) you can update the `bl data query` parameters.
+If you want to update tags on specific objects, you can update the `bl data query` parameters (on datatype, existing tags, etc..) to be more selective of which objects to update.
+
+## Updating sidecar/metadata
+
+You can update specific sidecar/medata fields by doing something like the following.
+
+```
+cat > append.json <<EOF
+{
+    "RepetitionTime": 1.970
+}
+EOF
+bl data update --id 600f50b551942b71ad3d16e7 --meta append.json
+```
+
+`--meta` option will read specified JSON file and update key/value specified in the append.json in this sample. 
+
+!!!note 
+    At the moment, there is no way to *remove* an existing field. You could set it to `null` value, or you will have to edit it via brainlife UI.
 
 

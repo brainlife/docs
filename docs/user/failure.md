@@ -9,13 +9,16 @@ Your job could fail due to variety of reasons such as
 * Something is wrong with the configuration options you chose.
 * Your input data is valid but the App is not designed to ha.
 * The App, data, configurations are all correct, but something is (or was) wrong with the compute-resource (either temporary or permanently) that your job ran on.
+* Temporary glitch. The HPC systems are complex, so there is always a possibility of gremlins causing a temporary problem that goes away if you just rerun your job.
 * A bug with brainlife.io platform itself.
-* etc..
+* Etc..
 
-Unfortunately, it's up to you to figure out which cases applies to your failure, then perform appropriate action. If the failure is caused by your data/configuration, then you will need to correct those issues and resubmit. If the issue is caused by the bug with the App itself, then you will need to contact the App developer. For compute-resource/platform issued, please contact the brainlife.io team. 
+Often it's up to the user to figure out which case applies, and take appropriate course of action. If the failure is caused by your data/configuration, then you will need to correct those issues and resubmit. If the issue is caused by the bug with the App itself, then you will need to contact the App developer. For compute-resource/platform issued, please contact the brainlife.io team. 
+
+This documentation will guide you through this process.
 
 !!! note 
-    You are most welcome to contact our [#issues](https://app.slack.com/client/T3X5ND3U1/C6WBY79SB){target=_blank} slack channel to seek assistance. 
+    You can always contact our [#issues](https://app.slack.com/client/T3X5ND3U1/C6WBY79SB){target=_blank} slack channel to seek assistance. 
 
 ## Finding the error message
 
@@ -48,10 +51,6 @@ I see these maintainer for this App.
 
 You can contact one of these people via email or slack. Most of the maintainers of the brainlife App are on the brainlife slack, so you can directly contact them post your message on #issue or #general channel to start a conversation (you can use "@someone" to ping that person if you think the person might not be monitoring the channel)
 
-Or you can email them.
-
-![slack_issues](../img/slack_issues.png)
-
 If you prefer, you can also file a github issue for the App. You can click the github repo name for the App.
 
 ![githublink](../img/githublink.png)
@@ -82,4 +81,15 @@ You can find out where the job ran by hovering your mouse over the Graph icon.
 ![failresource](../img/failresource.png)
 
 This particular job ran on a resource `hayashis@carbonate` which is my personal compute-resource that I use for testing. 
+
+
+# Common Errors
+
+## "Dependency removed"
+
+This happens when the job that produced the output gets removed before the job finishes. Previous jobs gets removed in variety of reasons including 1) user removes the job manually 2) jobs gets too old and purged by the HPC system, 3) user turns off the pipeline rule that submitted the previous jobs.
+
+brainlife will try to prevent a job from getting prematurely removed if the output from the job is used by another job, but you will need to re-stage the input and re-submit if you see this message.
+
+For pipeline submitted jobs, however, all you need to do is remove that particular job and brainlife should automatically stage the input data (if archived) and resubmit the job itself. 
 
