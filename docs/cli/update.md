@@ -72,7 +72,7 @@ do
     for id in $(cat ids.txt)
     do
         echo "  updating $id"
-        bl data update --id $id --add_tag S500 &
+        bl data update --id $id --add_tag S500
     done
 
     wait
@@ -81,6 +81,37 @@ done
 ```
 
 If you want to update tags on specific objects, you can update the `bl data query` parameters (on datatype, existing tags, etc..) to be more selective of which objects to update.
+
+## Bulk Update subject names
+
+Sometimes, you need to "fix" the subject naming for your project. For example, let's say you have subject names set to something like "sub-123" and you want to update this to just "123" (dropping "sub-"). You could start by querying for object from your project just like we did earlier.
+
+```bash
+#!/bin/bash
+[ ! -f list.json ] && bl dataset query --project 5d64733db29ac960ca2e797f --limit 1000 --json > list.json
+```
+
+Then, you can iterate over each object and use `bl data update --subject` CLI to update the subject name. Since this requires a bit of coding, I will use python.
+
+```python
+import json
+import os
+with open('list.json') as f:
+    objects = json.load(f)
+    for object in objects:
+        id = object["_id"]
+        subject = object["meta"]["subject"]
+        if subject.startswith("sub-"):
+            newname = subject[4:]
+            print("bl data update --id %s --subject %s" % (id, newname))
+            os.system("bl data update --id %s --subject %s" % (id, newname))
+```
+
+```
+$ ./update.py
+bl data update --id 60918d8a8fe49f7f121bfeb3 --subject 86
+bl data update --id 60918d898fe49fa3ea1bfeaf --subject 86
+```
 
 ## Updating sidecar/metadata
 
