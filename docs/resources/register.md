@@ -61,6 +61,25 @@ export PATH=~/abcd-spec/hooks/direct:$PATH
     export PATH=/N/u/brlife/Carbonate/abcd-spec/hooks/slurm:$PATH
     ```
 
+### Work/Scratch directory
+
+In order to process data, you will need scratch / workdir to host your input/output files as well as any temporary files generated. Most HPC system provides access to scratch storage system, but for IU 
+system, you will need to submit a request for [slate](https://kb.iu.edu/d/axms) and configure your brainlife resource to use it. You can then create a directory inside your scratch directory such as
+
+```
+mkdir /N/slate/<username>/brainlife-workdir
+```
+
+!!! note
+    brainlife keeps data on scartch volume up to 3 months. Most likely, you will not be able to keep your data that long without running out of your storage space. Please purge unnsed data periodically 
+    and monitor your storage usage (use `quota` command).
+    
+    You can run a command like this to search and purge unused workdirs (create a script and run this, or setup a cron job to run it automatically)
+
+    ```
+    find /N/slate/<username>/brainlife-workdir -maxdepth 2 -type d -ctime +$days -exec rm -v -rf {} \;
+    ```
+
 ### Common Binaries
 
 Brainlife expects certain binaries to be installed on all resources. Please make sure following commands are installed.
@@ -68,6 +87,7 @@ Brainlife expects certain binaries to be installed on all resources. Please make
 * jq (command line json parser commonly used by Brainlife apps to parse config.json)
 * git (used to clone / update apps installed)
 * singularity (user level container execution engine)
+* node (some app uses node to generate job submission file)
 
 !!! note
     For IU HPC resource, please feel free to use brlife's shared binary directory.
@@ -75,21 +95,25 @@ Brainlife expects certain binaries to be installed on all resources. Please make
     ```
     $ ~/.bashrc
     export PATH=$PATH:/N/u/brlife/Carbonate/bin
+    export PATH=$PATH:/N/u/brlife/Carbonate/app/node-v10.16.3-linux-x64/bin
     ```
 
 For singularity, you can either install it on the system (`apt install singularity-container` with neurodebian, or `yum install epel-release singularity` for yum based systems), or for most HPC systems you can simply add `module load singularity` in your `~/.modules` file.
 
-By default, singularity uses user's home directory to cache docker images (and /tmp to create a merged container image to run). If you have limited amount of home directory space, you should override these directories by adding the following in your .bashrc
+By default, singularity uses user's home directory to cache docker images (and /tmp to create a merged container image to run). If you have limited amount of home directory space, you will need to override it by setting SINGULARITY_CACHEDIR. 
 
 ```
-export SINGULARITY_CACHEDIR=/N/dc2/scratch/<username>/singularity-cachedir
+export SINGULARITY_CACHEDIR=/N/slate/<username>/singularity-cachedir
 ```
 
 * Please replace <username> with your username, and make sure specified directories exists.
 
 !!! note
-    singularity by default does not expose any mounted file systems inside the container. If you are mounting any extra drives, you will most likely need to update `/etc/singularity/singularity.conf` to have the `mount hostfs` option set to "yes" 
-    > mount hostfs = yes
+    singularity by default does not expose any mounted file systems inside the container. For IU HPC systems, for example, you will need to specify your slate work directory in your .bashrc (comma delimited)
+
+    ```
+    export SINGULARITY_BINDPATH=/N/slate/<username>/brainlife-workdir,/N/any/other/paths/you/want/to/mount
+    ```
 
 ### Other ENV parameters
 
