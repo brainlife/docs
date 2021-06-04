@@ -35,13 +35,13 @@ git clone https://github.com/brainlife/abcd-spec
 
 Then, add one of following to your ~/.bashrc
 
-#### For PBS cluster (like.. IU Karst/Carbonate/Bigred2)
+#### For PBS cluster
 
 ```
 export PATH=~/abcd-spec/hooks/pbs:$PATH
 ```
 
-#### For Slurm cluster (like.. PSC Bridges, Brainlife Jetstream Clusters)
+#### For Slurm cluster (for most HPC systems)
 
 ```
 export PATH=~/abcd-spec/hooks/slurm:$PATH
@@ -53,6 +53,14 @@ export PATH=~/abcd-spec/hooks/slurm:$PATH
 export PATH=~/abcd-spec/hooks/direct:$PATH
 ```
 
+!!! note
+    IU HPC resource, you can use brlife's shared installation
+
+    ```
+    $ ~/.bashrc
+    export PATH=/N/u/brlife/Carbonate/abcd-spec/hooks/slurm:$PATH
+    ```
+
 ### Common Binaries
 
 Brainlife expects certain binaries to be installed on all resources. Please make sure following commands are installed.
@@ -61,12 +69,12 @@ Brainlife expects certain binaries to be installed on all resources. Please make
 * git (used to clone / update apps installed)
 * singularity (user level container execution engine)
 
-For IU HPC resource, please feel free to use following ~/bin directory which contains jq
+!!! note
+    For IU HPC resource, please feel free to use brlife's shared binary directory.
 
-
-```
-$ ~/.bashrc
-export PATH=$PATH:/N/u/brlife/Carbonate/bin
+    ```
+    $ ~/.bashrc
+    export PATH=$PATH:/N/u/brlife/Carbonate/bin
 ```
 
 For singularity, you can either install it on the system (`apt install singularity-container` with neurodebian, or `yum install epel-release singularity` for yum based systems), or for most HPC systems you can simply add `module load singularity` in your `~/.modules` file.
