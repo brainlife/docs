@@ -75,7 +75,7 @@ Brainlife expects certain binaries to be installed on all resources. Please make
     ```
     $ ~/.bashrc
     export PATH=$PATH:/N/u/brlife/Carbonate/bin
-```
+    ```
 
 For singularity, you can either install it on the system (`apt install singularity-container` with neurodebian, or `yum install epel-release singularity` for yum based systems), or for most HPC systems you can simply add `module load singularity` in your `~/.modules` file.
 
