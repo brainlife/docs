@@ -60,6 +60,7 @@ nav:
     - Versioning Tips: apps/versioning.md
     - Custom Hooks: apps/customhooks.md
     - product.json: apps/product.md
+    - submodules: apps/submodules.md
 
   - Compute Resources: 
     - Registering Resource: resources/register.md
