@@ -159,7 +159,7 @@ Status: stored
 
 ## Bulk Upload
 
-Say we have all files from seevral subejcts in a single folder (the current folder) with two datafiles, DWI (dffusion-weighted MRI data files) and T1W (t1 weighted MRI, anatomical data files). Say that each subject is either a control (CNTR) or a patient (PTNT).
+Say we have all files from several subejcts in a single folder (the current folder) with two datafiles, DWI (dffusion-weighted MRI data files) and T1W (t1 weighted MRI, anatomical data files). Say that each subject is either a control (CNTR) or a patient (PTNT).
 
 We will first login on brainlife. Then set the current proejct variable (project IDs are the hash-numbers indicated on each project web-address on brainlife.io)
 
