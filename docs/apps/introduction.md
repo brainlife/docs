@@ -6,14 +6,13 @@ Brainlife Apps are snippets of code comprising a (short) series of processing st
 
 The App should not only be able to reproduce the results of the data processing done by the developer, but it should also work on new data provided by other users. The code in each App should use general tools and clarity in code writing so to make the App understandable by other users.
 
-All Apps should ..
+All Apps should:
 
-1. Be hosted on gitHub.com as public repositories. Apps can comprise any combination of MatLab, Python, or other types of code.
+1. Be hosted on github.com as public repositories. Apps can comprise any combination of MatLab, Python, or other types of code.
 2. Have a single executable file named `main` in the root directory of the git repository. It will be executed on selected compute resources, or submitted via sbatch/qsub and other batch scheduling programs.
 3. Read all input parameters from a `config.json` file. `config.json` is created by brainlife.io at runtime on the current working directory. 
 3. Read all input data from paths specified in `config.json` (config.json contains both the input parameters; such as command line arguments as well as paths to data files; like t1.nii.gz)
-4. Write all output files in the current directory (`./`), in a structure defined as a Brainlife [`datatype`](https://brainlife.io/datatypes){target=_blank}. More information about [Brainlife datatypes](/docs/user/datatypes/)
-ter.
+4. Write all output files in the current directory (`./`), in a structure defined as a Brainlife [`datatype`](https://brainlife.io/datatypes){target=_blank}. More information about [Brainlife datatypes](/docs/user/datatypes/).
 
 !!! note
     Brainlife Apps follow a technical specification called Application for Big Computational Data analysis or [ABCD](https://github.com/brainlife/abcd-spec){target=_blank}
@@ -22,7 +21,7 @@ App can run on many different environment / clusters. To normalize the execution
 
 ## Prerequisite
 
-Before you start making an App for brainlife, we should be familar with the following general concepts.
+Before you start making an App for brainlife, you should be familar with the following general concepts:
 
 1. You should be familar with at least 1 programming language (Matlad, Python, R, etc..)
 
@@ -49,7 +48,7 @@ You would normally follow these steps to develop and register your App on Brainl
 8. Contact resource administrators and ask them to enable your App (more below). 
 
 !!! hint
-    Creating an App for brainlife.io requires you to be familiar with wide range of techincal knowledges in areas including programming, unix/shell, git, HPC. 
+    Creating an App for brainlife.io requires you to be familiar with wide range of techincal knowledge in areas including programming, unix/shell, git, HPC. 
     Please refer to [learn-neuroimaging.github.io](https://learn-neuroimaging.github.io/tutorials-and-resources/11-programming/){target=_blank} for a community curated list of online tutorials.
 
 # Enabling an App on a compute resource
@@ -59,7 +58,7 @@ An App needs to be enabled on each compute resource to run. Each user will have 
 You will need to discuss how to handle any dependencies/libraries that your App might require with resource administrators. To make things easier and reproducible, you should consider Dockerizing your App's **dependencies** (but not the App itself) so that you can run your App through your container using [singularity](https://singularity.lbl.gov/){target=_blank} from your `main`. 
 
 !!! hint
-    Most compute resources now provide singularity which increases the number of resources where you might be able to run your Apps.
+    Most compute resources now provide singularity, which increases the number of resources where you might be able to run your Apps.
 
 ## App Launch Sequence
 
