@@ -93,3 +93,37 @@ brainlife will try to prevent a job from getting prematurely removed if the outp
 
 For pipeline submitted jobs, however, all you need to do is remove that particular job and brainlife should automatically stage the input data (if archived) and resubmit the job itself. 
 
+## "failed to cache app .. code:1"
+
+This error occurs when brainlife fails to git clone the App on selected resources. The git clone could fail due to variety of reasons such as.. 
+
+* the git repo no longer exists.
+* the repo includes submodules that no longer exist (or not accessible).
+* the repo includes submodules that uses `git@` format instead of `http:` please see below
+* the branch requested no longer exists.
+
+To troubleshoot, please try git clonining the app/branch locally or contact the app developer.
+
+### failed to cache app with submodules
+
+App developers often uses submodules as part of their git repo, and sometimes they use `git@` formatted URLs like this.
+
+[.git/config]
+```
+[submodule "jsonlab"]
+    url = git@github.com:fangq/jsonlab.git
+```
+
+`git@github.com` forces git cline to use ssh to access github.com. This works as long as the git client has access to public key registered to *any* existing github account. Most brainlife resource, however, does not have their local ssh key registered on github, so this results in error message such as this
+
+```
+fatal: clone of 'git@github.com:fangq/jsonlab.git' into submodule path '/N/project/brainlife/workdir/prod/appcache/app-voxeleronOCT-d30fb565bf36d95a683238db7785827c2004c462.clone/jsonlab' failed
+```
+
+If your app is failing and it uses submodules, and if the submodules is configured to use `git@github.com` url (see .git/config), then you will need to ask the developer to update the URL to use `https://github.com` url instead. For example, above `.git/config` should be updated to this instead.
+
+```
+[submodule "jsonlab"]
+    url = https://github.com/fangq/jsonlab.git
+```
+
