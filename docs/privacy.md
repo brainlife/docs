@@ -3,11 +3,6 @@
 .md-footer { display: none } /*to better embed in signup page*/
 </style>
 
-<!-- 
-    generated using https://protect.iu.edu/online-safety/tools/privacy-notice/
-    and manually modified
--->
-
 ## Applicability
 
 This privacy notice applies only to the brainlife.io and explains our practices concerning the collection, use, and disclosure of visitor information. Visitor information collected by brainlife.io will be used only as outlined in this privacy notice.
@@ -140,10 +135,8 @@ From time to time, we may use visitor information for new, unanticipated uses no
 
 We will post the policy changes to our website to notify you of these changes and provide you with the ability to opt out of these new uses. If you are concerned about how your information is used, you should check back at our website periodically.
 
-Visitors may prevent their information from being used for purposes other than those for which it was originally collected by:
+Visitors may prevent their information from being used for purposes other than those for which it was originally collected by sending us an email at the listed address below.
 
-* sending us an email at the listed address
-* brlife@iu.edu
 
 ## Contact Information
 
@@ -152,13 +145,12 @@ If you have questions or concerns about this policy, please contact us.
 ```
 brainlife.io
 ATTN: Franco Pestilli
-1101 East 10th Street, Department of Psychological and Brain
-Department of Psychological and Brain Sciences
-Bloomington, Indiana 47405
-brlife@iu.edu
-8128569967
+The University of Texas at Austin
+108 E Dean Keeton St, Austin, TX 78712
+Department of Psychology
+pestilli{at_symbol}utexas[dot_symbol]edu
 ```
 
 If you feel as though this site’s privacy practices differ from the information stated, you may contact us at the listed address or phone number.
 
-If you feel that this site is not following its stated policy and communicating with the owner of this site does not resolve the matter, or if you have general questions or concerns about privacy or information technology policy at Indiana University, please contact the chief privacy officer through the University Information Policy Office, 812-855-UIPO, privacy@iu.edu.
+If you feel that this site is not following its stated policy and communicating with the owner of this site does not resolve the matter, or if you have general questions or concerns about privacy or information technology policy at The University of Texas at Austin https://policies.utexas.edu/about-us
