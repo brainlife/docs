@@ -34,9 +34,9 @@ The example below shows the datatype definition for the [neuro/life datatype](ht
 }
 ```
 
-In this example, the [brainlife/app-life](https://brainlife.io/app/5baa44b1d0be8b002776b8f7){target=_blank} App generates a dataset with this datatype. Other Apps that want to use the `neuro/life` output can request to have the files made available to their Apps with the brainlife.io [App registration form](https://brainlife.io/docs/apps/register/).
+In this example, the [brainlife/app-life](https://brainlife.io/app/5baa44b1d0be8b002776b8f7){target=_blank} App generates a data object with this datatype. Other Apps that want to use the `neuro/life` output can request to have the files made available to their Apps with the brainlife.io [App registration form](https://brainlife.io/docs/apps/register/).
 
-It is important to note that it is up to the developers to exchange the dataset to create well-documented file contents, and they should consider that thorough documentation benefits other brainlife.io users. App developers can discuss the structure of the datatype and what each file means in the `#datatype` channel of [brainlife.io's Slack workspace](https://brainlife-inviter.herokuapp.com/){target=_blank}.
+It is important to note that it is up to the App developers to decide which datatype to use to exchange data between 2 Apps. An App developers can discuss the structure of the datatype and what each file means in the `#datatype` channel of [brainlife.io's Slack workspace](https://brainlife-inviter.herokuapp.com/){target=_blank}.
 
 _Quick Note:_ While a datatype might sound similar to a [BIDS specification](https://bids-specification.readthedocs.io/en/stable/){target=_blank}, brainlife.io datatypes differ in that they:
 
@@ -48,15 +48,15 @@ _Quick Note:_ While a datatype might sound similar to a [BIDS specification](htt
 
 ## Datatype Tags
 
-Sometimes you want to be more specific about the type of dataset for a particular datatype. For example, [neuro/anat/t1w](https://brainlife.io/datatype/58c33bcee13a50849b25879a){target=_blank} could be ACPC aligned or not and [neuro/dwi](https://brainlife.io/datatype/58c33c5fe13a50849b25879b){target=_blank} could be single-shell or multi-shell. brainlife.io allows you to specify each datatype with **datatype tags**. 
+Sometimes you want to be more specific about a particular datatype. For example, [neuro/anat/t1w](https://brainlife.io/datatype/58c33bcee13a50849b25879a){target=_blank} could be ACPC aligned or not and [neuro/dwi](https://brainlife.io/datatype/58c33c5fe13a50849b25879b){target=_blank} could be single-shell or multi-shell. brainlife.io allows you to specify each datatype with **datatype tags**. 
 
-You should only use this tag to specify the information on datasets, not generalize it. For example, we don't have "multi-shell" datatype tags because `neuro/dwi` is by default "multi-shell" data. While it is normal to have different b-values in a `dwi.bvals` file, "single-shell" is a special case for the `neuro/dwi` datatype where b-values happens to all be the same number -- so we added the "single-shell" tag to describe it.
+You should only use datatype tag to be add more specificity, not generalize it. For example, we don't have "multi-shell" datatype tags because `neuro/dwi` is by default "multi-shell" data. While it is normal to have different b-values in a `dwi.bvals` file, "single-shell" is a special case for the `neuro/dwi` datatype where b-values happens to all be the same number -- so we added the "single-shell" tag to describe it.
 
-Since datatype tags add specificity, brainlife.io can correctly identify which datasets can be used for which Apps by examining a dataset's datatype tags and an App's input dataset tags. But do not confuse a *datatype* tag with *dataset* tag!
+Since datatype tags add specificity, brainlife.io can correctly identify which data object can be used for which Apps by examining datatype tags and an App's input datatype tags. But do not confuse a *datatype* tag with *data object* tag!
 
-* A *datatype* tag can only be set by the App developer. It is part of the datatype and cannot be modified once the dataset is created. 
+* A *datatype* tag can only be set by the App developer. It is part of the datatype and should not be modified once the object is created (user can still change it via the data object dialog box).
 
-* A *dataset* tag, on the other hand, is a tag that can be freely edited by any user, and it allows for easier searching or bulk processing of datasets. 
+* A *data object* tag, on the other hand, is a tag that can be freely edited by any user, and it allows for easier searching or bulk processing. 
 
 !!! hint
     If you ever have any questions about datatypes, just ask them in the `#datatype` channel in [brainlife.io's Slack](https://brainlife-inviter.herokuapp.com/){target=_blank}!
