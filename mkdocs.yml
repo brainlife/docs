@@ -26,7 +26,7 @@ nav:
     - Projects: user/project.md
     - Datatypes: user/datatypes.md
     - Archive: user/archive.md
-    - Processes: user/process.md
+    - Preprocess: user/process.md
     - Pipelines: user/pipeline.md
     - Publications: user/publication.md
     - Datasets : user/datasets.md
