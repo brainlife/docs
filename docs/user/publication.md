@@ -23,7 +23,7 @@ Each publication page may include the following information.
 
 To create a new publication page, go to a project where you want to publish your data, then open to the `Publication` tab. Click the `Plus` button at the bottom right corner of the screen. You should see a list of datatypes and the total file sizes like below.
 
-![publication.page](../img/publication.select.png){}
+![publication.page](../img/publication.select.png)
 
 Select datatypes that you'd like to include in your publication. Click `Next`.
 
