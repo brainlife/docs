@@ -4,33 +4,33 @@ Now, let’s learning how to use brainlife.io! This “Getting Started” tutori
 
 * Sign up for brainlife.io
 * Create new projects
-* Upload data 
+* Upload data
 * Launch visualizations
 * Run processes on data
-* Archive results 
+* Archive results
 
 We will cover some of these topics more in-depth in other sections of the documentation.
- 
+
 ## Sign Up
 
-To begin using brainlife.io, you need first make sure you are registered on the site ([you can do that here](https://brainlife.io/auth/){target=_blank}). You can choose to sign up through Google, ORCID, Github, or through your institution. 
+To begin using brainlife.io, you need first make sure you are registered on the site ([you can do that here](https://brainlife.io/auth/){target=_blank}). You can choose to sign up through Google, ORCID, Github, or through your institution.
 
 To register a personal brainlife.io account, [sign up for brainlife.io here](https://brainlife.io/auth/#!/signup){target=_blank}. You will be asked to confirm your email address.
 
-You can associate multiple authenticators with your account once you register by going to Settings > Account > Account Settings. Scroll down to Connected Accounts and click `Connect` next to the authenticator you want to connect through. 
+You can associate multiple authenticators with your account once you register by going to Settings > Account > Account Settings. Scroll down to Connected Accounts and click `Connect` next to the authenticator you want to connect through.
 
 !!! warning
     If you register through a third-party authenticator, please use the same authenticator each time you log in, or you will end up creating multiple brainlife.io accounts.
-    
+
 ## brainlife.io terms to know
 Nice, you now have a brainlife.io account! Before we jump into the rest of the tutorial, it will be good to familiarize yourself with a couple of commonly used terms on brainlife.io.
 
 * **Data-Object**
 
-    A **data-object.** is a set of files for a specific subject and modality -- it is the smallest set of data that you can interact with on brainlife.io. For example, the `neuro/dwi` data-object consists of files such as `dwi.nii.gz` (a file containing the actual 4D diffusion brain image data), `dwi.bvecs`, and `dwi.bvals` (which describe how the image was acquired by the MRI scanner). Freesurfer output for a subject is considered to be a single "data-object" containing many directories and files. brainlife.io processes data at each subject level and for each data-object. 
+    A **data-object.** is a set of files for a specific subject and modality -- it is the smallest set of data that you can interact with on brainlife.io. For example, the `neuro/dwi` data-object consists of files such as `dwi.nii.gz` (a file containing the actual 4D diffusion brain image data), `dwi.bvecs`, and `dwi.bvals` (which describe how the image was acquired by the MRI scanner). Freesurfer output for a subject is considered to be a single "data-object" containing many directories and files. brainlife.io processes data at each subject level and for each data-object.
 
     You cannot change the content of a data-object once you create it, but you can modify its metadata.
-    
+
 * **Datatypes**
 
     brainlife.io Apps exchange data through **datatypes**. The App below gives an example of how to determine the input-output of  datatypes. The colored boxes indicate that the App will take a `dwi` input data-object and generate another `dwi` data-object with a datatype tag of `masked`, and output another data-object of a `mask` datatype.
@@ -41,15 +41,15 @@ Nice, you now have a brainlife.io account! Before we jump into the rest of the t
 
 ## Create Project
 
-Let's get to work. To begin using brainlife.io, you will first need to create a new project. 
+Let's get to work. To begin using brainlife.io, you will first need to create a new project.
 
 Projects is where you can organize your datasets, perform data processing, and share work with your team. You will learn more about Projects in the [Projects section](/docs/user/project/) of the documentation.
 
-You should automatically land on the Projects page when you enter brainlife.io. If not, your computer is broken. Okay, just kidding. You can click the `Project` button from the menu that runs along the left side of your screen. Then press the `New Project` button in the right-hand corner of the screen (it will look like a plus sign until you hover your mouse over it).
+You should automatically land on the Projects page when you enter brainlife.io. If not, your computer is broken. Okay, just kidding. You can click the `Project` button from the menu that runs along the left side of your screen. Then press the `New Project` button in the right-hand corner of the screen.
 
-![project new button](../img/project_new_button.png)
+![project new button](../img/new_project_btn.png)
 
-Enter any `Name` and `Description` -- be as creative as you want but be sure to leave everything else as the default option. Then click `Submit`. 
+Enter any `Name` and `Description` -- be as creative as you want but be sure to leave everything else as the default option. Then click `Submit`.
 
 Congratulations! You just created your first private project on brainlife.io. Wow, that was easy!
 
@@ -61,17 +61,17 @@ There are two ways to store data on brainlife.io:
 
 * **Archive**
     The `Archive` tab you are currently on shows all the current content in your data archive. Data-objects under this tab are stored in our archival storage permanently (but not backed-up until you publish them).
-    
+
 * **Processes**
 
-    You cannot directly run Apps on archived data. Instead, brainlife.io will automatically stage data-objects from our archive and transfer them to compute resources where the Apps can be executed. Data generated in the `Processes` page will be removed within 25 days unless you archive them (see [Archiving](/docs/user/started/#archiving)). 
+    You cannot directly run Apps on archived data. Instead, brainlife.io will automatically stage data-objects from our archive and transfer them to compute resources where the Apps can be executed. Data generated in the `Processes` page will be removed within 25 days unless you archive them (see [Archiving](/docs/user/started/#archiving)).
 
-Got it? Now, go to the same button you clicked to create your project. When you hover over the button this time, it will say `Upload Dataset`. Click it!
+Got it? Now, go to the same button you clicked to create your project. When you hover over the button this time, it will say `Upload Data`. Click it!
 
 ![upload form](../img/upload.form.png)
 
 Once you see this form, select the Datatype you want to upload, attach your file, and provide the subject name. If you do not have any data to upload, you can upload data from other [public projects](https://brainlife.io/projects){target=_blank} or import data from the [datasets page](https://brainlife.io/datasets){target=_blank} (one of the many benefits of brainlife.io!). If you do decide to download data from brainlife.io to add to your project, you will need to change the file type, so make sure you have 7-Zip or similar software on your computer. Once you download the data you want, right-click on the file and hover over `7-Zip` and then click `Extract.` Click `OK.` That will extract the data in a GZ file, which you can then upload into your brainlife.io project!
-    
+
 If everything looks good on your data upload, click `Archive`.
 
 Now you can see the details of your data in your Archives tab. The `Archived in` field shows where your data is archived (it may take a large data-object a bit longer to be archived). You can make small edits to this profile, such as adding details about the data and tags or editing the metadata. 
@@ -118,11 +118,11 @@ You can find all of our publicly available brainlife.io `Apps` on the main brain
 
 Now that we understand `Apps`, we can practice some data processing on your project!
 
-1. To start, open the `Processes` tab in your project -- this is where you will always submit Apps, which can share input-output data-objects. 
+1. To start, open the `Processes` tab in your project -- this is where you will always submit Apps, which can share input-output data-objects.
 
-2. Create a new process by clicking the `+` button you have now become so familiar with. This time, you will find it in the panel on the left-hand side of the `Processes` tab. Enter a name for your process and hit "OK." 
+2. Create a new process by clicking the `New Process` button. This time, you will find it in the panel on the left-hand side of the `Processes` tab. Enter a name for your process and hit "OK."
 
-![create process](../img/create process.png)
+![create process](../img/new_process_btn.png)
 
 3. Nice! In order to process the data, you first need to stage data from your `Archive` to your process. Each process can only process data that is either staged or generated by other Apps. You can find the `Stage New Data` button on the bottom of the screen, click it.
 
@@ -159,7 +159,7 @@ Once it is completed, your successful App submission will look like this:
 ![original orient](../img/acpc.orient.png)
 ![acpc orient](../img/acpc.orient.png)
 
-**Bonus**: Now that you have finished running ACPC alignment, you will find that you can submit a few more Apps than you could before. Go have fun and try them out! 
+**Bonus**: Now that you have finished running ACPC alignment, you will find that you can submit a few more Apps than you could before. Go have fun and try them out!
 
 !!! hint
     If you are not sure which data to stage, go to the [Apps page](https://brainlife.io/apps){target=_blank} to see which datatype each App requires to run.
@@ -168,7 +168,7 @@ Once it is completed, your successful App submission will look like this:
 
 So far, you have staged data, submitted an App that generated data derivatives, and visualized them. Nice work!
 
-We should now talk about how to archive these processes. All processes are meant to be temporary, and brainlife.io will remove processes within 25 days of data generation (some resources have a shorter data purging policy). 
+We should now talk about how to archive these processes. All processes are meant to be temporary, and brainlife.io will remove processes within 25 days of data generation (some resources have a shorter data purging policy).
 
 If you want to permanently keep the output data you generated, you will need to `Archive` the output by clicking on the :fa-archive: button in the Output section (it is in the same section as the eyeball). You can edit any metadata and the description, and then archive the data. Double-check that your data is now listed under the `Archive` tab, where you can click on the data-object record to see more details.
 

@@ -1,6 +1,6 @@
 # Processes
 
-> Hey there! If you have not read the [data processing section](/docs/user/tutorial/#data-processing) of the introductory tutorial yet, please do that first.
+> Hey there! If you have not read the [data processing section](/docs/user/started/#data-processing) of the introductory tutorial yet, please do that first.
 
 Now that we are `Projects` experts, we can cover `Processes` in-depth. In any Project you create, you will have a `Processes` tab (like in the image below), where you will perform all of your data analysis. A Process is a logical grouping of data analysis and processing tasks that share input and output datasets.
 
