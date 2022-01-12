@@ -32,11 +32,11 @@ Next we will start managing some data on the platform by creating a Project.
 1. Go to the [brainlife.io home page](https://brainlife.io){target=_blank} and click 'home.' This will bring you inside the platform.
 1. Click the 'Projects' tab on the left side of the screen (shield icon).
 1. Click the 'New Project' button at the bottom right corner of the screen.
-    * Enter the following information on the My Project page:
-        * name
-        * description
-        * Public access policy
-        * In 'administrators', add the following accounts (if you start typing a name, the system will autocomplete for you):
+    * Enter the following information on the New Project page:
+        * Name
+        * Description
+        * Readme
+        * Navigate to Access Control and add the following accounts in Adminstrators (if you start typing a name, the system will autocomplete for you):
             * Brad Caron
             * Soichi Hayashi
             * Franco Pestilli
@@ -52,8 +52,8 @@ The next step will be to copy data into your project. For that, we will use open
 To copy data from an open project follow the steps below.
 
 1. Go to the main page of your project.
-1. Click on the 'Processes' tab.
-1. Once inside the Processes tab, click the '+' button at the bottom-right of the screen. 
+1. Click on the 'Preprocess' tab.
+1. Once inside the Preprocess tab, click the 'New Process' button at the bottom-right of the screen. 
 1. Add a new process and name it 'temp copy data' in the projects description tab.
 ![Processes Page](../img/projects.process.new.png)
 
@@ -85,13 +85,13 @@ The next step is to launch an application (app) in order to process the data. Fo
 
 First we will need to To launch a process using the following steps:
 
-1. On the 'Processes' tab, make sure the process generated in [Part C](/docs/tutorial/introduction-to-brainlife/#c-copy-data-from-another-project) is selected.
+1. On the 'Preprocess' tab, make sure the process generated in [Part C](/docs/tutorial/introduction-to-brainlife/#c-copy-data-from-another-project) is selected.
 1. Click on the 'Submit App' button at the bottom right of the screen. This will launch a page with the many apps that can be used on your staged data. 
 1. In the searchbar, type 'Freesurfer' and click on the app card. This will open a page with options for choosing which project to save the results and specific input parameters that may affect the outputs of the app.
 1. For now, leave all the inputs and parameters as is. We will discuss what these options do in later tutorials.
 1. Hit 'OK.'
 
-Once the app is launched, a card will appear on the 'Processes' tab with a blue header. This means the app is currently running, or waiting to run. 
+Once the app is launched, a card will appear on the 'Preprocess' tab with a blue header. This means the app is currently running, or waiting to run. 
 ![Blue-header](../img/app-freesurfer-running-blue-header.png)
 
 Once this turns green, that means the app is finished and you can view the results!
