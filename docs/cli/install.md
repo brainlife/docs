@@ -17,7 +17,14 @@ curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-For other OSs, please see [Installing node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions){target=_blank} page.
+!!! Installation For "Mac OSX users"
+    The following command can install node.js if you have `homebrew` et up:
+    
+ ```
+ brew install node
+ ```
+ 
+!!! For other OSs, please see [Installing node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions){target=_blank} page.
 
 
 !!! Info "For Windows Users"
