@@ -174,12 +174,12 @@ f.close()
 Again, be sure to make `app.py` also executable.
 
 ```
-chmomd +x app.py
+chmod +x app.py
 ```
 
 Finally, `add` the file to the git repository and `commit` to github.com by running thee following:
 
-  `git add main`
+  `git add app.py`
   
   `git commit -am "Added app.py file"`
   
