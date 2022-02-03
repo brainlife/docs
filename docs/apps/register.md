@@ -1,26 +1,26 @@
 # Registering App
 
-Once your App is published on github, you can now register it on Brainlife and let you and other users discover your App and execute on Brainlife.
+Once your App is published on github, you can now register it on Brainlife and let you and other users discover your App and execute it on Brainlife.
 
-First, go to the [Apps page](https://brainlife.io/apps) on Brainlife, click `Plus Button` at the bottom right corner of the page. App registration form should appear.
+First, go to the [Apps page](https://brainlife.io/apps){target=_blank} on Brainlife, click `Plus Button` at the bottom right corner of the page. App registration form should appear.
 
-Let's go through each sections.
+Let's go through each section.
 
 ## Detail
 
-![dataset](/docs/img/app.detail.png)
+![data](../img/app.detail.png)
 
-Enter any `name` for your App and `Git Repository Name` field which is the the organization / repository name (like `yourname/app-name`) of your github repo. Please do not enter the full github URL.
+Enter any `name` for your App and `Git Repository Name` field which is the organization / repository name (like `yourname/app-name`) of your github repo. Please do not enter the full github URL.
 
-All other fields in this section are optional, but you could populate following fields.
+All other fields in this section are optional, but you could populate the following fields.
 
 ### Avatar 
 
-You can enter `avatar` URL if you have URL for an avatar that you'd like to use for your App. Please choose a square image with `https://` URL (not `http://`). Avatar may sounds superfluous, but please keep in mind that there are many other Apps registered on Brainlife and this might be the only visual queue for users to identify and search for your App. If you don't specify Avatar URL, Brainlife will use a randomly generated (robots) Avatar. 
+You can enter an `avatar` URL if you have an URL for an avatar that you'd like to use for your App. Please choose a square image with `https://` URL (not `http://`). Avatar may sound superfluous, but please keep in mind that there are many other Apps registered on Brainlife and this might be the only visual queue for users to identify and search for your App. If you don't specify the Avatar URL, Brainlife will use a randomly generated (robots) Avatar.
 
 ### Project
 
-By default, all Apps are *public* meaning any user can find your App and execute your App. If you'd like to make your App only available on a specific project (and their group members), you can enter project names under `Project` field and only the member of that project will be able to access your App. This might be useful if you are still developing your App and wants to keep it hidden until you make a formal *release*, or if your App would only function on datasets stored under a specific project.
+By default, all Apps are *public* meaning any user can find your App and execute your App. If you'd like to make your App only available on a specific project (and their group members), you can enter project names under the `Project` field and only the member of that project will be able to access your App. This might be useful if you are still developing your App and wants to keep it hidden until you make a formal *release*, or if your App would only function on data stored under a specific project.
 
 ### Branch
 
@@ -32,18 +32,17 @@ Please see [Versioning Tip](/docs/apps/versioning) for more info!
 
 ## Input Datasets
 
-Here you can define a list of input datasets that your App is expecting.
+Here you can define a list of input data that your App is expecting.
 
-![dataset](/docs/img/input.datatype.form.png)
+![data](../img/input.datatype.form.png)
 
 ### ID
 
-This is just an ID to uniquely identify this input dataset. Please enter any ID you'd like to use. It just has to be unique among all other input datasets.
-
+This is just an ID to uniquely identify this input data. Please enter any ID you'd like to use. You can use this ID within config.json (._inputs) to find information about the input data at runtime.
 
 ### Datatype/Tags
 
-The datatype/tags of this input dataset. Please enter any datatype tags that your App would require under `Datatype Tags` field. Brainlife will only allow users to select dataset that meets specified datatype tags.
+The datatype/tags of this input data. Please enter any datatype tags that your App would require under the `Datatype Tags` field. Brainlife will only allow users to select data that meet specified datatype tags.
 
 !!! hint
     If you don't know which datatype to use, please consult the #datatype slack channel on Brainlife slack team.
@@ -52,11 +51,11 @@ Please read [datatypes](/docs/user/datatypes) for more information.
 
 ### File Mapping
 
-Once you select the datatype/tags for your input dataset, you then need to configure how you want the selected dataset to be represented in the `config.json`. Each datatype consists of various files and directories. Here, you can map the object key in `config.json` to a particular file / directory within the datatype.
+Once you select the datatype/tags for your input data, you then need to configure how you want the selected data to be represented in the `config.json`. Each datatype consists of various files and directories. Here, you can map the object key in `config.json` to a particular file / directory within the datatype.
 
-For example, `neuro/dwi` datatype consists of dwi, bvecs, and bvals files. If your App somehow only uses the dwi file, and if you'd like to receive the path to the dwi as `dwi` inside the `config.json`, you can configure it as following.
+For example, `neuro/dwi` datatype consists of dwi, bvecs, and bvals files. If your App somehow only uses the dwi file, and if you'd like to receive the path to the dwi as `dwi` inside the `config.json`, you can configure it as follows.
 
-![filemapping](/docs/img/filemapping.png)
+![filemapping](../img/filemapping.png)
 
 When a user submits your App, it will generate `config.json` that looks like this
 
@@ -69,15 +68,15 @@ When a user submits your App, it will generate `config.json` that looks like thi
 Your App can parse `config.json` and use the value for `dwi` as the file path pointing to the input dwi image.
 
 !!! note
-    If you want to use all 3 files from `neuro/dwi` datatype, you have to create 3 file mappings for each files; dwi, bvecs, and bvals.
+    If you want to use all 3 files from `neuro/dwi` datatype, you have to create 3 file mappings for each file; dwi, bvecs, and bvals.
 
 ### Optional
 
-Click this to make this input dataset optional. Leave it unchecked if it's a required field. If you make it optional and user doesn't provide the input, Brainlife will generate `config.json` without any keys defined in the File Mapping section.
+Click this to make this input data optional. Leave it unchecked if it's a required field. If you make it optional and the user doesn't provide the input, Brainlife will generate `config.json` without any keys defined in the File Mapping section.
 
 ### Multi
 
-Click this if you'd like to allow users to select multiple input datasets. Selected datasests will be placed inside a json array. If user select only 1 dataset, it will still be placed inside a json array. For example, above `config.json` will be generated as the following.
+Click this if you'd like to allow users to select multiple input data. Selected data will be placed inside a json array. If the user selects only 1 data, it will still be placed inside a json array. For example, above `config.json` will be generated as the following.
 
 ```json
 {
@@ -88,65 +87,52 @@ Click this if you'd like to allow users to select multiple input datasets. Selec
 ```
 
 !!! note
-    The index of the datasets listed in the array will be preserved across all File Mappings if there are more than 1 file mapping for this input.
+    The index of the data listed in the array will be preserved across all File Mappings if there is more than 1 file mapping for this input.
 
-## Output Datasets
+## Output
 
-Similar to the input datasets, you can specify the datatypes of your output datasets here. It's up to developer to decide which datatype to use, and produce output files in the correct file structure / file names according to the specification of the datatype. 
+Similar to the input data, you can specify the datatypes of your output data here. It's up to the developer to decide which datatype to use (please discuss new datatype under #datatype slack channel) and generate output files in the correct file structure / file names according to the specification of the datatype.
 
-![resources](/docs/img/app.output1.png)
+![resources](../img/app.output3.png)
+
+For example, with above configuration, App is expected to create an output directory called `mask` and store a file `mask.nii.gz` inside this directory.
+
+Please be sure to enter as much description as possible so that users of your App know what they can do with the output from you App.
 
 ### Datatype Tags
 
-You can add specificities / context to the selected datatype. For example, above screenshot shows this App outputs `anat/t1w` datatype with a tag `acpc_aligned`. If there is an App that only works with ACPC aligned `anat/t1w` as an input dataset, it can specify the same tag as a required input datatype tag to be more specific about its input dataset. 
+You can add specificities / context to the selected datatype. For example, the above screenshot shows this App outputs `anat/t1w` datatype with a tag `acpc_aligned`. If there is an App that only works with ACPC aligned `anat/t1w` as an input data, it can specify the same tag as a required input datatype tag to be more specific about its input data. 
 
 Please read [datatypes page](/docs/user/datatypes) for more information on datatypes.
 
 ### Tag Passthrough
 
-Some App behaves as a *filter*; it receives an input dataset and produces another dataset with the same datetype. In this circumstance, the App often needs to *add* new datatype tags rather than completely replacing them. To accomplish this, you can set this field to the ID of the input dataset that you'd like to copy all datatype tags from. For example, if the input dataset contains `defaced` datatype tag,  the output dataset will have both `acpc_aligned` and `defaced` as the output datatype tags.
-
-### Datatype File Mapping
-
-By default, Brainlife expects you to generate all output files in a file structure expected by each datatype on the root of the current working directory. However, if you have more than one output datasets with the same datatype, or have multiple datasets with colliding file/directory names as specified by each datatype, you will not be able to output them all under the root of the current directory. 
-
-To solve this issue, you can output each dataset under a different filename or in a sub-directory, and configure the `Datatype File Mapping` field to override which file/dir should corresponds to which file/dir within each datatype.
-
-For example, following example show that the App is producing a file called `output.DT_STREAM.tck` which should treated as a `track.tck` file output for `neuro/track` datatype. ("track" is the file ID for "track.tck" as defined by `neuro/track` datatype).
-
-![resources](/docs/img/app.output.png)
-
-Or, if you'd like to store the entire raw output files in a sub directory called "output", you can specify the directory by..
-
-![resources](/docs/img/app.output2.png)
-
-!!! note
-    The JSON `key` for each file mapping needs to be the file/dir ID defined for each datatype. You will need to find the datatype definition to know which file/dir ID to use. Please consult Brainlife slack team if you need a help.
+Some Apps behave as a *filter*; they receive an input data and produce another data with the same datatype. In this circumstance, the App often needs to *add* new datatype tags rather than completely replacing them. To accomplish this, you can set this field to the ID of the input data that you'd like to copy all datatype tags from. For example, if the input data contains the `defaced` datatype tag,  the output data will have both `acpc_aligned` and `defaced` as the output datatype tags.
 
 ### **raw** datatype
 
-Your App may generate output data that is not meant to be used by any other Apps, at least initially. You can use `raw` datatype to output and archive such output data. You should avoid using `raw` datatype as an input datatype, however. If you are trying to use other App's `raw` data as your input dataset, it is probably a good indication that the upstream App developer and you should discuss and define a new datatype so that both Apps can interoperate through a well defined datatype. 
+Your App may generate output data that is not meant to be used by any other Apps, at least initially. You can use `raw` datatype to output and archive such output data. You should avoid using `raw` datatype as an input datatype, however. If you are trying to use other App's `raw` data as your input data, it is probably a good indication that the upstream App developer and you should discuss and define a new datatype so that both Apps can interoperate through a well-defined datatype.
 
-Please contact the other developer and discuss how the data should be structured, and submit a new issue on [brain-life/datatypes](https://github.com/brain-life/datatypes/issues) and/or a pull request containing the list of files/directories to be registered on Brainlife.
+Please contact #datatype channel on brainlife.slack.com to register new datatype, or consult with other developers who might be interested in your datatypes.
 
 ## Configuration Parameters
 
-Configuration parameters allow users to enter any `number` (integer/float), `boolean`(true/false) or `string` parameters as configuration parameters for your App. You can also define a `enum` parameter which lets users select from multiple options.
+Configuration parameters allow users to enter any `number` (integer/float), `boolean`(true/false) or `string` parameters as configuration parameters for your App. You can also define an `enum` parameter which lets users select from multiple options.
 
-![resources](/docs/img/app.config.png)
+![resources](../img/app.config.png)
 
 * **Placeholder** 
 
-    For each input parameter, you can set a *placeholder* (a string displayed inside the form element if no value is entered yet). For example, you could use placeholder to let user know the format of the values, or some samples.
+    For each input parameter, you can set a *placeholder* (a string displayed inside the form element if no value is entered yet). For example, you could use a placeholder to let the user know the format of the values, or some samples.
 
-* **Description** 
+* **Description**
 
-    Some configuration parameters let you specify a description which will be displayed next to the input parameter to show detailed explanation for the input parameter. Please provide enough details for both novice and experienced users of your App. 
+    Some configuration parameters let you specify a description which will be displayed next to the input parameter to show detailed explanation for the input parameter. Please provide enough details for both novice and experienced users of your App.
 
     !!! note
         ** For Novice Users **
 
-        Brainlife is a platform for both novice and experienced users. For novice user, please add enough details for each configuration parameter and instruction about how to find a correct values to set for each parameters (a link to other webpage, point to README, etcs) 
+        Brainlife is a platform for both novice and experienced users. For novice user, please add enough details for each configuration parameter and instruction about how to find a correct values to set for each parameters (a link to other webpage, point to README, etc.)
  
         Please make as many parameters optional as possible, and auto-detect the optimal values at runtime if user does not provide/override the default option.
 
@@ -162,23 +148,23 @@ Brainlife re-uses information stored in github repo.
 
 * App Description / Topics
 
-    Your Github repo description is used to display Brainlife App description. Please be sure to enter description that shows what the App does, and what user can do with the output. 
+    Your Github repo description is used to display Brainlife App description. Please be sure to enter a description that shows what the App does, and what user can do with the output. 
     
-    Github topics are also used to organize Brainlife's App by placing them under various `categories`. Please look through the existing categories already registered in Brainlife, and reuse one or more of those categories to help users find your App more easily. 
+    Github topics are also used to organize Brainlife's Apps by placing them under various `categories`. Please look through the existing categories already registered in Brainlife, and reuse one or more of those categories to help users find your App more easily.
 
-    ![resources](/docs/img/app.freesurfer.png)
+    ![resources](../img/app.freesurfer.png)
 
     !!! note
         Please avoid using too many `topics`. Also please avoid using `topics` that are not yet used by any other Apps (it will create a category with a single App)
 
 * README.md
 
-    Brainlife displays README.md content from your github repo. You can include any images, katex equations, or any other standard [markdown syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). 
+    Brainlife displays README.md content from your github repo. You can include any images, latex equations, or any other standard [markdown syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet){target=_blank}.
     
-    You should include information such as..
+    You should include information such as.
 
     * What your App does, and how it's implemented (tools, libraries used)
-    * What you App produces and what user can do with it
+    * What your App produces and what users can do with it
     * Any diagrams / sample output images
     * Details on how the algorithm works
     * Computational cost / resources required to run your App (how long does it take to run, minimum required memory / cpu cores, etc..)
@@ -197,8 +183,9 @@ Once you registered your App on Brainlife, you then need to enable your App on r
 
 If you have access to your own computing resources, you can register personal resources and run your App there to test. Please read [registering resource page](/docs/resources/register.md) for more detail. Please keep in mind that, on personal resources, only you can run enabled Apps on those resources. To allow other users to run your App, you will need to enable it on Brainlife's shared resources.
 
-Once your App is enabled on various resources, you should be able to see them listed under computing resources section in the App details page.
+Once your App is enabled on various resources, you should be able to see them listed under the computing resources section on the App details page.
 
-![resources](/docs/img/app.resources.png)
+![resources](../img/app.resources.png)
 
-
+!!! note
+    Your App is not ready to be run on Brainlife yet. To do so, you need first to containerize it, as explained in the next step of this tutorial [Containerizing App](https://test.brainlife.io/docs/apps/container/){target=_blank}.

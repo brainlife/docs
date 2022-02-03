@@ -3,7 +3,7 @@
 
 # Running App
 
-Before submitting an App, you might want to know which Apps are available. The following command shows a list of Apps that takes anat/t1w dataset as an input.
+Before submitting an App, you might want to know which Apps are available. The following command shows a list of Apps that takes anat/t1w data-object as an input.
 
 ```
 $ bl app query --input-datatype neuro/anat/t1w
@@ -20,7 +20,7 @@ Description: This app uses the Automatic Registration Toolbox (ART) to perform A
 (Returned 6 results)
 ```
 
-We can run this app to align our t1 image to the ACPC axial plane. It then outputs a new dataset with datatype `neuro/anat/t1w` and a datatype tag `acpc_aligned`, signifying that the data has been acpc aligned.
+We can run this app to align our t1 image to the ACPC axial plane. It then outputs a new data-object with datatype `neuro/anat/t1w` and a datatype tag `acpc_aligned`, signifying that the data has been acpc aligned.
 
 To run an app, we need the app's id, the ids of the input or inputs we want to supply it with, the id of the project to save it to, and a config JSON string for any additional input parameters required.
 
@@ -53,14 +53,14 @@ You can wait for the app to finish by..
 $ bl app wait --id 5b031dacc1b8f90044ad6c3b
 ```
 
-Then, after the app has finished (and the dataset has been stored), you can download the resulting dataset just by supplying the resulting dataset id. You can get the resulting dataset id by querying the list of datasets (which will be sorted by date) and then running something like this:
+Then, after the app has finished (and the data-object has been stored), you can download the resulting data-object just by supplying the resulting data-object id. You can get the resulting data-object id by querying the list of data-objects (which will be sorted by date) and then running something like this:
 
 ```
-$ bl dataset download --id 5afddb42251f5200274d9ca1
+$ bl data download --id 5afddb42251f5200274d9ca1
 
 ## Bash Script
 
-Here is a sample bash script to run app-pRF by first uploading datasets and submitting the app itself.
+Here is a sample bash script to run app-pRF by first uploading a data object and submitting the app itself.
 
 ```bash
 #!/bin/bash
@@ -75,13 +75,13 @@ bl login --ttl 30
 # /somewhere/stimulus/stim.nii.gz
 # /somewhere/task/bold.nii.gz
 
-bl dataset upload --datatype 5afc7c555858d874a40c6dda --project 5afc2c8de68fc50028e90820 --subject "soichi1" --json /somewhere/stimulus 2>> upload.err | jq -r '._id' > stim.id
-bl dataset upload --datatype 59b685a08e5d38b0b331ddc5 --project 5afc2c8de68fc50028e90820 --subject "soichi1" --datatype_tag "prf" --json /somewhere/task 2>> upload.err | jq -r '._id' > func.id
+bl data upload --datatype 5afc7c555858d874a40c6dda --project 5afc2c8de68fc50028e90820 --subject "soichi1" --json /somewhere/stimulus 2>> upload.err | jq -r '._id' > stim.id
+bl data upload --datatype 59b685a08e5d38b0b331ddc5 --project 5afc2c8de68fc50028e90820 --subject "soichi1" --datatype_tag "prf" --json /somewhere/task 2>> upload.err | jq -r '._id' > func.id
 
 # For -d (datatype) ID, you can query it by `bl datatype query -q stimulus` or `bl datatype query -q func`
 # For -p (project) ID, you can query project by `bl project query -q "project name"`
 
-# If you have func/task sidecard file, you can store them in a json file (like "dataset.json") and load them to your dataset by adding `--meta dataset.json` to the upload command.
+# If you have func/task sidecard file, you can store them in a json file (like "metadata.json") and load them with your data by adding `--meta metadata.json` to the upload command.
 
 # Running the App!
 bl app run --id 5b084f4d9f3e2c0028ab45e4 --project 5afc2c8de68fc50028e90820 --input tractogram_static:$(cat func.id) --input stimimage:$(cat stim.id) --config '{"frameperiod": "1.3"}' --json | jq -r '._id' > task.id
@@ -90,7 +90,7 @@ bl app run --id 5b084f4d9f3e2c0028ab45e4 --project 5afc2c8de68fc50028e90820 --in
 
 # --config is where you pass JSON object containing config for your App. 
 
-# Waiting for the App to finish (and archive output datasets)
+# Waiting for the App to finish (and archive output data)
 bl app wait $(cat task.id)
 if [ ! $? -eq 0 ];
    echo "app failed"
@@ -98,14 +98,14 @@ if [ ! $? -eq 0 ];
 fi
 echo "finished!"
 
-# Download the ouput dataset
-bl dataset download -i  
-for id in $(bl dataset query --taskid $taskid --json | jq -r ".[]._id"); do
-    echo "downloading dataset $id"
-    bl dataset download $id
+# Download the ouput data
+bl data download -i  
+for id in $(bl data query --taskid $taskid --json | jq -r ".[]._id"); do
+    echo "downloading data $id"
+    bl data download $id
 done
 
-# Now you should see directories containing each output dataset with the dataset ID as a directory name.
+# Now you should see directories containing each output data with the data-object ID as a directory name.
 
 ```
 

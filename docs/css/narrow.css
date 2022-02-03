@@ -1,0 +1,9 @@
+@media screen and (max-width: 350px) {
+    html {
+        font-size: 13pt;
+    }
+    header.md-header {
+        height: 50px;
+        padding: 5px 0;
+    }
+}

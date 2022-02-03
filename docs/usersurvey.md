@@ -8,6 +8,6 @@ We are asking users to participate in this survey because understanding our user
 
 This survey will take approximately 5 to 10 minutes to complete and run until July 1. Before you begin, you will read a Study Information Sheet about this study. 
 
-You can take the survey here: [Click here to begin the survey](https://iu.co1.qualtrics.com/jfe/form/SV_0jozJ2vl9OkJSbb)
+You can take the survey here: [Click here to begin the survey](https://iu.co1.qualtrics.com/jfe/form/SV_0jozJ2vl9OkJSbb){target=_blank}
 
 If you have any questions, please email us at <a href="mailto:brlife@iu.edu">brlife@iu.edu</a>.

@@ -3,7 +3,7 @@
 
 Once you are able to generate large amount of data derivatives on brainlife.io, your next step might involve performing data aggregation for group or statistical analysis. You can download all data derivatives to your computer and conduct any post-processing on your own computer, however, downloading all derivatives might take a long time, and consume a lot of disk space. If you are wanting to quickly explore results of your analysis, this might not be ideal.
 
-Brainlife allows Apps to generate condensed (textual) version of output dataset and store them on brailife.io database. Similar to dataset metadata, you can query and/or download this information without having to download the raw data derivatives. This data is called `product.json`. For example, "Tract Profile Analysis" App (https://brainlife.io/app/59ca5c03c27f5b0770add9cf) generates the following `product.json`.
+Brainlife allows Apps to generate condensed (textual) version of output data and store them on brailife.io database. Similar to data-object metadata, you can query and/or download this information without having to download the raw data derivatives. This data is called `product.json`. For example, "Tract Profile Analysis" App (https://brainlife.io/app/59ca5c03c27f5b0770add9cf){target=_blank} generates the following `product.json`.
 
 ```json
 {
@@ -70,7 +70,7 @@ You can download the content of `product.json` with brainlife.io REST API.
 
 ## Matlab Example
 
-The following code downloads dataset records from brainlife so that you can then iterate through each record and examine meta data, or product contents.
+The following code downloads data-object records from brainlife so that you can then iterate through each record and examine meta data, or product contents.
 
 ```matlab
 
@@ -90,8 +90,8 @@ options = weboptions()
 options.HeaderFields = {'Authorization', ['Bearer ', jwt]};
 options.Timeout = 10; %could take a long time to load with a larger product..
 
-%load datasets
-disp('Querying brainlife for dataset product...')
+%load data-objects
+disp('Querying brainlife for data product...')
 disp(find)
 url = 'https://brainlife.io/api/warehouse/dataset';
 
@@ -109,7 +109,7 @@ disp(data)
 
 ## Python Example
 
-Similarly, you can query dataset records using python. 
+Similarly, you can query data-object records using python. 
 
 ```python
 #!/usr/bin/python
@@ -182,5 +182,5 @@ You can run this script and capture the output to generate HTML file. You can th
 ```
 
 
-![group](/docs/img/group.png)
+![group](../img/group.png)
 

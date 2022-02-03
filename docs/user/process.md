@@ -1,76 +1,74 @@
 # Processes
 
-> Please read [Tutorial / Data Processing](/docs/user/tutorial/#data-processing) first.
+> Hey there! If you have not read the [data processing section](/docs/user/started/#data-processing) of the introductory tutorial yet, please do that first.
 
-Under Project page, Processes tab is where you can perform data analysis on Brainlife.
+Now that we are `Projects` experts, we can cover `Processes` in-depth. In any Project you create, you will have a `Processes` tab (like in the image below), where you will perform all of your data analysis. A Process is a logical grouping of data analysis and processing tasks that share input and output datasets.
 
-![processes](/docs/img/processes.png)
+![processes](../img/processes.png)
 
-Each process is a logical grouping of various data analysis/processing tasks that share input and output datasets. Each task you submit will be assigned to various computing resources that you have access to and are currently available. Brainlife's task orchestration engine ([Amaretti](https://github.com/brain-life/amaretti)) takes care of data transfer and monitoring of your tasks.
+## Staging Data 
 
-To begin processing of your data, first you need to stage the initial datasets. You can stage from any project that you have read access to and for any subject. However, it is best to create a separate Process for each subject, as it would make it easier to submit Apps by allowing Brainlife to auto-populate various input datasets.
+Processing data begins with **staging your datset.** You can stage a dataset from any project and subject you have read access to (but remember that it may be helpful to create a separate Process for each subject). To stage data, simply click the `Stage Data` button and fill in the [data-object information](/docs/user/started/#brainlifeio-terms-to-know). 
 
-## Monitoring Tasks
+![stage data](../img/stage data.png)
 
-Brainlife monitors task status on remote resources and relays the most recent log entries back to the UI.
+If you want a step-by-step guide for staging data, follow our [data processing tutorial](/docs/user/started/#data-processing).
 
-![status](/docs/img/task.status.png)
+After you submit a task, brainlife.io will automatically assign your task to the next available computing resource (that you have access to). Our task orchestration service, called [Amaretti](https://github.com/brainlife/amaretti){target=_blank}, takes care of data transfer. 
 
-You can also see the entire content of the log by opening the `Raw Output` section of the task and selecting any log files you'd like to examine.
+Amaretti also monitors your task status for you. You can see this once you submit a task -- a blue bar pops up and says "Requested" once you submit and then "Running" while the task is processing. The bar turns green and says "Finished" when the task is done. You can see the log content by opening the `Raw Output` section of the task and selecting any log files you want to take a closer look at.
 
-![rawoutput](/docs/img/task.rawoutput.png)
+![rawoutput](../img/raw.output.png)
 
 !!! note
-    `Raw Output` section will not be available for tasks that are not yet assigned to any resource.
+    The `Raw Output` section will not be available for tasks that are not yet assigned to a resource.
 
-If you'd like to download files, instead of opening directly via the browser, you can click the download (:fa-download:) button to download individual files, or the entire directories.
-
-## Task Status
-
-Brainlife task can have one of the following task statuses.
-
-* Requested
-
-    When you first submit your task, Brainlife will place them under the Requested state and wait for Brainlife to assign a resource to run on. If there are many other tasks being processed, it might take a while for it to be picked up, but it should not take more than a few minutes. Once the resource is assigned, Brainlife will transfer any dependent input datasets and setup a `work directory` on the resource.
-
-* Running
-
-    Once the task is ready to be executed, Brainlife will make a request to the local resource to start your task. Most resources have their own local batch scheduling systems, and your task will be placed in a queue where it waits for it to be actually executed on the system. Brainlife status might show that it's `running` even though it is actually just waiting in the remote queue.
-
-* Finished
-
-    The task has completed successfully. You can visualize output datasets using Brainlife's built in visualization tool by clicking :fa-eye: buttons next to each output dataset. If you have requested to auto-archive the output datasets (at submit time), those datasets will be copied to the Project's datasets archive. Any dependent task will be placed in Requested status.
-
-* Failed
-
-    If the App terminates with non-0 exit code, the task will be marked as Failed. Please examine the output and determine the cause of the failure. Please help improving the App by contacting the App developer and/or submitting github issues.
-
-* Removed
-
-    Most resources use what is called a **scratch space** to stage the task's work directory. Normally scratch space has a time limit on how long the data files can be left on those systems (typically 30-90 days). When Brainlife detects that the task directory no longer exists on remote systems, it will mark those tasks as `Removed`.
-
-    !!! note
-        Brainlife will try to clean up old task directories in 25 days after the successful completion of the task to provide consistent behavior across various resources. This also reduces the disk space usage on various resources. If you have any output dataset that you'd like to keep, please archive ig or submit your task with the auto-archiving flag checked.
-
-        If you archive your output, you will see a list of datasets archived from this output.
-
-        ![status](/docs/img/task.archived.png)
-
+If you want to download a file, you simply click the (:fa-download:) icon to download individual files and entire directories.
 
 ## Submitting Apps
 
-You can submit Apps in a couple of different ways.
+The Processing tab is not only where you stage data on brainlife.io but also where you submit Apps. To submit an App, simply click the `Submit App` button in your `Processes` tab. 
 
-One way is to use the `Submit New App` button under each process, as you have done already. Brainlife selects Apps that you can currently submit based on available datasets within the process and required input datasets for each App.
+![submit app](../img/submit app.png)
 
-![newapp](/docs/img/task.newapp.png)
+brainlife.io selects Apps that you can execute by comparing the datasets staged in your process with the required input datasets for each App. The more datasets you stage or create, the more Apps you can submit. If you do not find the App you are looking for, head over to the [Apps page](https://brainlife.io/apps){target=_blank}. When you find the App you want, you can execute it directly from the App page by selecting the `Execute` button. Or you can go back to the Processes page and generate or stage the dataset required to run the App.
 
-The more datasets you stage or generate, the more Apps you can submit. If you don't find an App that you are looking for, please head over to the App page and find the app you are trying to submit. You can either go back to the Process page and generate or stage required datasets, or you can execute the App directly from the App page by selecting the `Execute` tab under the App, which is our second way to submit an App.
+![app.execute](../img/app.execute.png)
 
-![app.execute](/docs/img/app.execute.png)
-
-When you submit App via the Execute tab, Brainlife will create a new process under the selected project and stage all input files you have selected and submit your app in a single step. 
+When you submit an App through the `Execute` button, brainlife.io will create a new process in your selected project, stage all of the input files you selected, and submit your App in a single step.
 
 !!! tip
-    If you are looking for just any sample dataset, you can look at the [O3D project](https://doi.org/10.25663/bl.p.3) which contains a lot of common data derivatives.
+    If you are looking for a sample dataset, try the [O3D project](https://doi.org/10.25663/bl.p.3){target=_blank} which contains a lot of common data derivatives.
     
+## Task Status
+
+Before we finish talking about Processes, let's do a quick breakdown of the task statuses you may encounter while processing data:
+
+* Requested
+
+    When you first submit your task, brainlife.io will confirm it has been `Requested` as the task waits to be assigend to a resource. If there are a lot of tasks being processed on the platform at the same time, it may take a few minutes for your task to be picked up.
+
+* Running
+
+    Once brainlife.io finds the right resource, your task will enter a queue for the resource and then start `Running`. Remember that most resources have their own local batch scheduling systems, so brainlife.io's status might show the task is `Running` while it is actually waiting in the remote queue.
+
+* Finished
+
+    Success! `Finished` means the task was completed **successfully.** You can now visualize output datasets by clicking :fa-eye: buttons next to each output dataset (Hint: This is covered in the [data processing tutorial](/docs/user/started/#data-processing){target=_blank} we keep talking about). If you requested to auto-archive the output datasets, they will be copied to you project's `Archive`.
+
+* Failed
+
+    Job could fail (exit with non-0 return code) in variety of different reasons, so you will need to look at the log file under `Raw Output` and determine why the job failed. Please see [Handling Job Failure](/docs/user/failure/) for more information about troubleshooting.
+    
+    You can always ask for help in the **#general** channel on [brainlife.io's Slack](/docs/contact/). You can also contact the App developer or submit a Github issue. 
+
+* Removed
+
+    Most resources use a **scratch space** to stage the task's work directory. Normally, scratch spaces have a time limit on how long the data files remain in the system. When brainlife.io detects the task directory no longer exists, it will let you know with a `Removed` tag.
+
+    !!! note
+        brainlife.io tries to clean up old task directories within 25 days of the successful completion of the task to provide consistent behavior and reduce disk space across resources. If you have an output dataset you would like to keep, please archive it, or submit the task with the auto-archiving box checked.
+
+        If you archive your output, you will see a list of datasets archived from this output.
+
+        ![status](../img/task.archived.png)

@@ -1,11 +1,9 @@
 !!! warning
     This is a draft. Comments are welcomed!
 
-# Uploading Datasets
+# Uploading Data
 
-In order to upload a dataset, brainlife requires that you supply a project and datatype associated with it.
-
-A datatype is used so that brainlife can guarantee that a certain type of dataset will always contain a given set of files. For example, the dataset we will be uploading–a t1 weighted image–must contain a file called 't1.nii.gz' in order to be successfully stored.
+In order to upload a data object, brainlife requires that you supply a project and datatype associated with it. For example, the data we will be uploading–a t1 weighted image–must contain a file called 't1.nii.gz' in order to be successfully stored.
 
 Before following along with this readme, you will need to make your own project on [brainlife.io](https://brainlife.io).
 
@@ -62,7 +60,7 @@ $ bl project query --help
 
 ## Querying Datatype
 
-Now, we need a datatype for our dataset. Since I will be uploading a t1 weighted image, I'll query for the list of datatypes which might match what I want:
+Now, we need a datatype for our data. Since I will be uploading a t1 weighted image, I'll query for the list of datatypes which might match what I want:
 
 ```
 $ bl datatype query --query t1
@@ -74,37 +72,37 @@ Files: [(required) t1: t1.nii.gz]
 (Returned 1 result)
 ```
 
-The single result returned happens to be exactly what we want. This will be the datatype for our uploaded dataset.
+The single result returned happens to be exactly what we want. This will be the datatype for our uploaded data.
 
 ## Uploading Dataset
 
-Now, it's time to actually upload our data. I have a file named `t1.nii.gz` in a directory called `t1/`, and to upload it I need to supply a few things. Let's run `bl dataset upload --help` to figure out what those things are:
+Now, it's time to actually upload our data. I have a file named `t1.nii.gz` in a directory called `t1/`, and to upload it I need to supply a few things. Let's run `bl data upload --help` to figure out what those things are:
 
 ```
-$ bl dataset upload --help
+$ bl data upload --help
 
-  Usage: bl-dataset-upload [options]
+  Usage: bl-data-upload [options]
 
   Options:
 
-    --directory <directory>          directory where your dataset is located
-    --project <projectid>            project id to upload dataset to
-    --datatype <datatype>            datatype of uploaded dataset
-    --datatype_tag <datatype_tags>   datatype_tag of uploaded dataset
-    --desc <description>             description of uploaded dataset
-    --subject <subject>              subject of uploaded dataset
-    --session <session>              session of uploaded dataset
-    --tags <tags>                    tags of uploaded dataset
-    --meta <metadata>                name of file containing metadata (JSON) of uploaded dataset
+    --directory <directory>          directory where your data is located
+    --project <projectid>            project id to upload data to
+    --datatype <datatype>            datatype of uploaded data
+    --datatype_tag <datatype_tags>   datatype_tag of uploaded data
+    --desc <description>             description of uploaded data
+    --subject <subject>              subject of uploaded data
+    --session <session>              session of uploaded data
+    --tags <tags>                    tags of uploaded data
+    --meta <metadata>                name of file containing metadata (JSON) of uploaded data
     -h, --help                       output usage information
 ```
 
-All that is required to upload a dataset is a directory to upload, a project id, and a datatype id. But you can also supply other options to provide additional information about it, such as applicable datatype tags, search tags, and which session and subject the data is from.
+All that is required to upload a data is a directory to upload, a project id, and a datatype id. But you can also supply other options to provide additional information about it, such as applicable datatype tags, search tags, and which session and subject the data is from.
 
-I will upload my dataset by using the following command, given the id of my project and datatype of my dataset:
+I will upload my data by using the following command, given the id of my project and datatype of my data:
 
 ```
-$ bl dataset upload \
+$ bl data upload \
     --project 5afc2c8de68fc50028e90820   \
     --datatype neuro/anat/t1w \
     --desc 'My t1 weighted image' \
@@ -116,9 +114,9 @@ $ bl dataset upload \
     --tag "image"
 ```
 
-Notice that I supplied `--tag` twice to add more than one search tag to my dataset. This works the same way with `datatype_tags`. --meta is optional but you should point to any "sidecar" json if you have one
+Notice that I supplied `--tag` twice to add more than one search tag to my data. This works the same way with `datatype_tags`. --meta is optional but you should point to any "sidecar" json if you have one
 
-You can upload datasets by specifying a single directory containing all of the files for its associated datatype (using `--directory`). However, you can also specify the path for each individual file id, as is done above (`--t1 t1/t1.nii.gz`, where `--t1` is the file id and `t1/t1.nii.gz` is the file to upload).
+You can upload data by specifying a single directory containing all of the files for its associated datatype (using `--directory`). However, you can also specify the path for each individual file id, as is done above (`--t1 t1/t1.nii.gz`, where `--t1` is the file id and `t1/t1.nii.gz` is the file to upload).
 
 ```
 Looking for /path/to/t1/t1.nii.gz
@@ -132,16 +130,16 @@ You can see the process update in real time. When it has finally finished it sho
 
 ```
 Dataset successfully uploaded!
-Now registering dataset...
-Finished dataset registration!
+Now registering data ...
+Finished data-object registration!
 ```
 
 ## Querying Datasets
 
-Now that we've uploaded a dataset, we can view it by querying the list of datasets:
+Now that we've uploaded a data, we can view it by querying the list of data:
 
 ```
-$ bl dataset query --subject 12345
+$ bl data query --subject 12345
 
 Id: 5b031990251f5200274d9cc4
 Project: Test Project
@@ -161,7 +159,7 @@ Status: stored
 
 ## Bulk Upload
 
-Say we have all files from seevral subejcts in a single folder (the current folder) with two datafiles, DWI (dffusion-weighted MRI data files) and T1W (t1 weighted MRI, anatomical data files). Say that each subject is either a control (CNTR) or a patient (PTNT).
+Say we have all files from several subejcts in a single folder (the current folder) with two datafiles, DWI (dffusion-weighted MRI data files) and T1W (t1 weighted MRI, anatomical data files). Say that each subject is either a control (CNTR) or a patient (PTNT).
 
 We will first login on brainlife. Then set the current proejct variable (project IDs are the hash-numbers indicated on each project web-address on brainlife.io)
 
@@ -180,8 +178,8 @@ project=<project id string of numbers>
 for type in CTRL PTNT; do
     for t1 in $(ls $type_*_T1W.nii.gz); do
         subject=${type}_${t1:4:3}
-        bl dataset upload --project $project --datatype neuro/dwi --subject $subject --dwi ${subject}_DWI.nii.gz --bvecs ${subject}.bvec --bvals ${subject}.bval
-        bl dataset upload --project $project --datatype neuro/anat/t1w --subject $subject --t1 $t1
+        bl data upload --project $project --datatype neuro/dwi --subject $subject --dwi ${subject}_DWI.nii.gz --bvecs ${subject}.bvec --bvals ${subject}.bval
+        bl data upload --project $project --datatype neuro/anat/t1w --subject $subject --t1 $t1
     done
 done
 ```
@@ -191,7 +189,7 @@ done
 
 ## BIDS Upload
 
-If you have datasets organized in a BIDS format, you can upload the entire datasets with a single command.
+If you have data organized in a BIDS format, you can upload the entire dataset with a single command.
 
 ```
 bl bids upload --tag test --project 5b031990251f5200274d9cc4 -d my_bids_dir

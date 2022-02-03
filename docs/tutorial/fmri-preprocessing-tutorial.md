@@ -3,9 +3,9 @@
 
 ## Functional MRI (fMRI) preprocessing.
 
-This page demonstrates common steps used to preprocess functional magnetic resonance imaging (fMRI) data on brainlife.io The goal of this tutorial is to show you how to process functional data for successive analyses, including **functional region analysis** and **functional connectivity** (you'll learn more about both below). This tutorial will be using [fMRIPrep](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/) for all anatomical and fMRI processing. We'll be looking at [fMRIPrep - Volume Output](https://brainlife.io/app/5c61c69f14027a01b14adcb3).
+This page demonstrates common steps used to preprocess functional magnetic resonance imaging (fMRI) data on brainlife.io The goal of this tutorial is to show you how to process functional data for successive analyses, including **functional region analysis** and **functional connectivity** (you'll learn more about both below). This tutorial will be using [fMRIPrep](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/){target=_blank} for all anatomical and fMRI processing. We'll be looking at [fMRIPrep - Volume Output](https://brainlife.io/app/5c61c69f14027a01b14adcb3){target=_blank}.
 
-This tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/) you recently completed. If you haven't read our introduction to brainlife, or if you're not comfortable staging, processing, archiving, and viewing data on brainlife.io, please go back through that tutorial before beginning this one.
+This tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/){target=_blank} you recently completed. If you haven't read our introduction to brainlife, or if you're not comfortable staging, processing, archiving, and viewing data on brainlife.io, please go back through that tutorial before beginning this one.
 
 ### 1. Anatomical preprocessing.
 
@@ -21,36 +21,19 @@ fMRIPrep can additionally fix the lag in the BOLD signal and the fact that we ne
 
 Finally, images from the fMRI scanner might not be perfectly aligned to images collected before it, such as the anatomical images. To fix this, we need to register the functional volumes to the anatomical image and map the fMRI signal onto the surfaces generated in the anatomical preprocessing step -- fMRIPrep does this registration automatically!
 
-Useful information about fMRIPrep anatomical preprocessing can be found in this [original Nature paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/#S13title).
+Useful information about fMRIPrep anatomical preprocessing can be found in this [original Nature paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/#S13title){target=_blank}.
   
-There are two versions of the [brainlife.io](https://brainlife.io) fMRIPrep app. One generates outputs mapped to the volumes ([fMRIPrep-volume](https://brainlife.io/app/5c61c69f14027a01b14adcb3)) and the other generates outputs mapped to the surfaces ([fMRIPrep-surface](https://brainlife.io/app/5dfceebd32bff0640ce27bbd)).
+There are two versions of the brainlife.io fMRIPrep app. One generates outputs mapped to the volumes ([fMRIPrep-volume](https://brainlife.io/app/5c61c69f14027a01b14adcb3){target=_blank}) and the other generates outputs mapped to the surfaces ([fMRIPrep-surface](https://brainlife.io/app/5dfceebd32bff0640ce27bbd){target=_blank}).
 
 For this tutorial, we will use the volume-based version.
-
-<!---
-### 3. Functional connectivity network matrices generation.
-
-Once the anatomical and fMRI data is preprocessed with fMRIPrep, we can now examine the functional network organization by generating **functional connectivity matrices**! This is done by examing the fMRI BOLD activity in multiple regions across the brain by correlating the regions' BOLD activity throughout the entire acquisition. The reason we do this is because regions that are active in similar ways at similar time points are more likely to be working with each other to perform a specific task. The way we typically represent the correlation coefficients, or weights, of each region (node) with every other region (node) in the brain is with a **network matrix** -- note that **nodes** represent the brain regions here. Each point in the network matrix represents the correlation of BOLD activity between one region and another. We can then use these network matrices to examine properties of the network that describe how interrelated specific regions in the brain are working during the fMRI acquisition in either task-related or resting-state fMRIs.
-
-There is a [brainlife.io](https://brainlife.io) app for generating these matrices that we will use in this tutorial.
-
-| ![conmat](/docs/img/app-fmri-to-conmat.bl.header.png) |
-|------------------------------------|
-| https://doi.org/10.25663/brainlife.app.167 |
--->
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
 1. generate anatomical surfaces using Freesurfer, 
 2. preprocess the anatomical (T1w & T2w) and fMRI data using fMRIPrep 
 
-<!---
-3. and, map the Glasser 180-node atlas to the anatomical (T1w) image
-4. and generate network matrices from the regions of the Glasser 180-node atlas.
--->
-
 ### Copy appropriate data over from a single subject in the InterTVA project
 
-1. Click the following link to go to the project's page for the 'InterTVA' project: https://brainlife.io/project/5c8415aa34225c0031027372
+1. Click the following link to go to the project's page for the [InterTVA project](https://brainlife.io/project/5c8415aa34225c0031027372){target=_blank}
 1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
 1. Select the following datatypes from one subject by clicking the boxes next to the data:
     * func/task rest
@@ -108,31 +91,3 @@ Once you're happy with the surfaces, you can move onto running fMRIPrep!
 
 **If you're happy with the results, then you have successfully finished preprocessing your fMRI data with fMRIPrep! You're now ready to move onto the next tutorial: functional network connectivity!**
 
-<!---
-### Map the Glasser 180-node atlas:
-
-1. On the 'Process' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'Multi-Atlas Transfer Tool'
-    * Click the app card.
-1. On the 'Submit App' page, select the following:
-    * For input, select the staged Freesurfer output by clicking the drop-down menu and finding the appropriate dataset.
-    * For 'space,' select 'fsaverage6' from the drop-down menu.
-    * Select the box for 'Archive all output datasets' when finished
-        * For 'Dataset Tags,' type and enter 'fmriPrep'
-    * Hit 'Submit'
-
-Once the app is finished, you're ready to move onto the final step: network matrix generation!
-
-### Generate functional connectivity network matrices:
-
-1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
-    * In the search bar, type 'fMRI to Connectivity Matrices'
-    * Click the app card.
-1. On the 'Submit App' page, select the following:
-    * For input, select the generated bold mask, preprocessed functional data, the Glasser parcellation-volume, and the preprocessed regressors by clicking the drop-down menu and finding the appropriate datasets.
-    * Select the box for 'Archive all output datasets when finished'
-        * For 'Dataset Tags,' type and enter 'connectivity_matrix'
-    * Hit 'Submit'
-    
-Nice work! You've completed this tutorial. Now that the app is finished, you're ready to perform group analyses on your connectivity matrices!
--->

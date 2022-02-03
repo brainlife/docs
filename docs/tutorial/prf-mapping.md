@@ -3,21 +3,21 @@
 
 ## Population receptive field mapping.
 
-This page demonstrates common steps used to map population receptive field (pRF) measures to the occipital cortex. This tutorial will walk through ways to [automatically map pRF data based on an atlas](https://brainlife.io/app/5cc4cd3f4ed9df00317f621d) and to [map fMRI pRF data](https://brainlife.io/app/5afc9831322997002773ed1c).
+This page demonstrates common steps used to map population receptive field (pRF) measures to the occipital cortex. This tutorial will walk through ways to [automatically map pRF data based on an atlas](https://brainlife.io/app/5cc4cd3f4ed9df00317f621d){target=_blank} and to [map fMRI pRF data](https://brainlife.io/app/5afc9831322997002773ed1c){target=_blank}.
 
-The tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/) and the [Anatomical Preprocessing tutorial](https://brainlife.io/docs/tutorial/t1w-preprocessing/) you recently completed. If you haven't read our introduction to brainlife, or if you're not comfortable staging, processing, archiving, and viewing data on brainlife.io, please go back through that tutorial before beginning this one.
+The tutorial will use a combination of skills developed in the [Introduction tutorial](https://brainlife.io/docs/tutorial/introduction-to-brainlife/){target=_blank} and the [Anatomical Preprocessing tutorial](https://brainlife.io/docs/tutorial/t1w-preprocessing/){target=_blank} you recently completed. If you haven't read our introduction to brainlife, or if you're not comfortable staging, processing, archiving, and viewing data on brainlife.io, please go back through that tutorial before beginning this one.
 
 ### 1. Anatomical preprocessing.
 
-The first step of pRF mapping often involves processing the anatomical images. In order to automatically map pRF measures using an atlas, or to map functional MRI pRF data, we first need to generate cortical and white matter surfaces and brain region parcellations using [Freesurfer](https://brainlife.io/app/58c56d92e13a50849b258801). These surfaces and parcellations will be used to map pRF data to the occipital lobe surface.
+The first step of pRF mapping often involves processing the anatomical images. In order to automatically map pRF measures using an atlas, or to map functional MRI pRF data, we first need to generate cortical and white matter surfaces and brain region parcellations using [Freesurfer](https://brainlife.io/app/58c56d92e13a50849b258801){target=_blank}. These surfaces and parcellations will be used to map pRF data to the occipital lobe surface.
 
 ### 2. pRF Mapping.
 
 The next step is to map **population receptive field (pRF)** data to the cortical occipital surface. **pRF** is a method that uses fMRI to map visual function in the **occipital lobe**, which is the visual processing center of the brain. Specifically, stimuli designed to cover different properties of the visual field are used to map functional activitation of the occipital lobe. These specific properties include location in space (eccentricity) and orientation of the stimuli (polar angle). This works due to the unique preservation of every location in our visual field onto the retina all the way to the cortex, a property called **retinotopy**.
 
-There are two ways you can map this visual function data to the cortex: the first involves the [fitting of an atlas](https://brainlife.io/app/5cc4cd3f4ed9df00317f621d) to the occipital lobe and the other involves [fitting fMRI pRF data](https://brainlife.io/app/5afc9831322997002773ed1c) to the occipital lobe. On brainlife.io, we developed apps to perform both of these tasks! This tutorial will walk you through the atlas-based method.
+There are two ways you can map this visual function data to the cortex: the first involves the [fitting of an atlas](https://brainlife.io/app/5cc4cd3f4ed9df00317f621d){target=_blank} to the occipital lobe and the other involves [fitting fMRI pRF data](https://brainlife.io/app/5afc9831322997002773ed1c){target=_blank} to the occipital lobe. On brainlife.io, we developed apps to perform both of these tasks! This tutorial will walk you through the atlas-based method.
 
-Useful information about pRF can be found in this [Neuroimage paper](https://pubmed.ncbi.nlm.nih.gov/17977024/). More information about the atlas-based mapping can be found in this [PLOS Computational Biology paper](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003538). 
+Useful information about pRF can be found in this [Neuroimage paper](https://pubmed.ncbi.nlm.nih.gov/17977024/){target=_blank}. More information about the atlas-based mapping can be found in this [PLOS Computational Biology paper](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003538){target=_blank}. 
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
 
@@ -28,7 +28,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 
 ### Copy appropriate data over from a single subject in the HCP 7T / Retinotopy (pRF) project
 
-1. Click the following link to go to the project's page for the 'HCP 7T / Retinotopy (pRF)' project: [https://brainlife.io/project/5afc7d24322997002773ed19/](https://brainlife.io/project/5afc7d24322997002773ed19/)
+1. Click the following link to go to the project's page for the 'HCP 7T / Retinotopy (pRF)' project: [https://brainlife.io/project/5afc7d24322997002773ed19/](https://brainlife.io/project/5afc7d24322997002773ed19/){target=_blank}
 1. Click the 'Archive' tab at the top of the screen to go to the Archive page.
 1. Select the following datatypes from one subject by clicking the boxes next to the data:
     * anat/t1w
