@@ -7,18 +7,18 @@ Your job could fail due to variety of reasons such as
 * There is a bug with the App.
 * Something is wrong with your input data.
 * Something is wrong with the configuration options you chose.
-* Your input data is valid but the App is not designed to ha.
+* Your input data is valid but the App is not designed to run on your data.
 * The App, data, configurations are all correct, but something is (or was) wrong with the compute-resource (either temporary or permanently) that your job ran on.
 * Temporary glitch. The HPC systems are complex, so there is always a possibility of gremlins causing a temporary problem that goes away if you just rerun your job.
 * A bug with brainlife.io platform itself.
-* Etc..
+* and many others..
 
-Often it's up to the user to figure out which case applies, and take appropriate course of action. If the failure is caused by your data/configuration, then you will need to correct those issues and resubmit. If the issue is caused by the bug with the App itself, then you will need to contact the App developer. For compute-resource/platform issued, please contact the brainlife.io team. 
+Unfortunately, it is often up to each user to figure out which of above case applies, and take appropriate course of action. If the failure is caused by your data/configuration, then you will need to correct those issues and resubmit. If the issue is caused by the bug with the App itself, then you will need to contact the App developer. For compute-resource/platform issued, you need to contact the resource administrator, or the brainlife.io team, and so on.
 
-This documentation will guide you through this process.
+This documentation will guide you through determining the cause of the failure.
 
 !!! note 
-    You are most welcome to contact our [#issues](https://app.slack.com/client/T3X5ND3U1/C6WBY79SB){target=_blank} slack channel to seek assistance. You may also find helpful to search in the slack channel for older messages to see if your issue has already been addressed.
+    You are most welcome to contact our [#issues](https://app.slack.com/client/T3X5ND3U1/C6WBY79SB){target=_blank} slack channel to seek assistance. You may also find it helpful to search in the slack channel for older messages to see if your issue has already been addressed.
 
 ## Finding the error message
 
