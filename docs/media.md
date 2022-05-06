@@ -25,6 +25,14 @@ The following are bitmap version of the above logos. Please use SVG versions if 
 
 ### [brainlife.io.png](img/media/brainlife.io.png)
 
+
+### logo1
+
+png 
+![logo1(png)/brainlife.io](img/media/logo1/brainlife.io.png)
 ![brainlife.io](img/media/brainlife.io.png)
 
 
+svg
+
+![logo1(svg)/brainlife.io](img/media/logo1/brainlife.io.svg)
