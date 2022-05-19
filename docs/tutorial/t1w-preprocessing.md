@@ -19,15 +19,9 @@ Useful information about MRI image orientation can be found at:
 
 The next step is to align the anatomical image to the point where two white matter tracts cross hemispheres: the anterior commissure and posterior commissure (ACPC). The anterior commissure connects the two temporal lobes and is located below the anterior portion of the corpus callosum (i.e. fornix), the large white matter tract connecting the two hemispheres. The posterior commissure is located just behind the cerebral aqueduct, an important connection between the third and fourth ventricles. This step will move the image in a way that effectively "centers" the image. Specifically, the image will be moved so that a horizontal line drawn from the front to the back of the brain will pass through both landmarks, and a horizontal line drawn from the temporal lobes and a vertical line from the top of the brain to the bottom bisect at the midpoint of the two landmarks. A majority of the following processing steps require the anatomical image to be aligned to the ACPC plane, including Freesurfer parcellation. This can be done on brainlife.io using the [HCP ACPC Alignment (T1w)](https://brainlife.io/app/5c61c69f14027a01b14adcb3){target=_blank} app.
 
-![ACPC](../img/app-acpcalign.png)
-
-
 ### 3. Freesurfer Brain Parcellation - Generation.
 
 The next step is perform anatomical preprocessing and divide (i.e. parcellate) the brain into different regions and tissue types (i.e. white matter, gray matter) using Freesurfer. These regions represent different gray matter (i.e. cortical) landmarks such as the motor and somatosensory cortices, and are typically derived from histological properties of these regions. Sometimes, they are derived from functional activation (i.e. fMRI) patterns. Freesurfer will divide the anatomical image into different tissue types (i.e. white matter, gray matter), parcellate the gray matter into known anatomical landmarks, and output statistics regarding the volume and thickness of the different tissue types and anatomical landmarks. These regions are then used for a large number of downstream steps, including white matter tract segmentation. Information regarding the volume and thickness of each region can also be used for group analyses. This can be done on brainlife.io using the [Freesurfer](https://brainlife.io/app/58c56d92e13a50849b258801){target=_blank} app.
-
-![Freesurfer Brain Parcellation](../img/app-freesurfer-parcellation.jpg)
-
 
 ### 4. Freesurfer Brain Parcellation - Statistics.
 
@@ -37,8 +31,8 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 
 1. Crop and reorient the anatomical (T1w) image,
 1. ACPC align the anatomical (T1w) image, 
-1. Generate cortical and white matter surfaces and parcellations using Freesurfer,
-1. Obtain common statistics from the Freesurfer parcellation.
+1. generate cortical and white matter surfaces and parcellations using Freesurfer,
+1. obtain common statistics from the Freesurfer parcellation.
 
 ### Copy appropriate data over from a single subject in the HCP 3T Diffusion project
 
@@ -46,57 +40,36 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
 1. Select the following datatypes from one subject by clicking the boxes next to the data:
     * anat/t1w
-
-![Select Datatype and Stage to Process](../img/select-datatype-staging-data.png)
-
 1. Click the 'Stage to process' button on the right side of the screen
     * For 'Project', select your project from the drop-down menu.
     * For 'Process', select 'Create New Process' and title it "anatomical (T1w) Prep Tutorial". Hit 'Submit'.
         * This will take you to the process on your Project's page
-
-![Select Project and Create New Process](../img/stage-to-process-dialog-box.png)
-
 1. Archive the data in your project by clickin the 'Archive' button next to each dataset.
-![Archiving Output](../img/preprocess_datatype_archive.png)
-
-1. Add optional description and click 'OK'.
-![Archive Data-Object](../img/archive-data-object.png)
 
 Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: crop and reorient the T1w image!
 
 ### Crop and reorient anatomical (T1w) image.
 
-1. On the 'Preprocess' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'Crop and Reorient T1'
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'Crop & Reorient T1'
     * Click the app card.
-
-![Crop and Reorient App Card](../img/crop_and_reorient_t1.png)
-
 1. On the 'Submit App' page, select the following:
     * For input, select the staged raw anatomical (T1w) image by clicking the drop-down menu and finding the appropriate dataset.
     * Select the boxes for 'crop' and 'reorient'
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'cropped_reoriented'
     * Hit 'Submit'
-
-![Form Input Values for Crop and Reorient App](../img/form_t1w_app_reorient.png)
-
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
-    * Choose 'FSLeyes' as your viewer
+    * Choose 'fsleyes' as your viewer
 1. You can also generate a QA image of the results by running the 'Generate images of T1' using the cropped and reoriented anatomical image generated above! Archive the results and save with the tag 'qa t1 crop reorient'.
-
-![FSLeyes Viewer Window](../img/FSLeyes_viewer_window.png)
     
 Once you're happy with the alignment, you can move onto ACPC aligning the cropped & reoriented anatomical data!
 
 ### ACPC-align anatomical (T1w) image.
 
-1. On the 'Preprocess' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'FSL Anat (T1)'
+1. On the 'Process' tab, click 'Submit App' to submit a new application.
+    * In the search bar, type 'HCP ACPC Alignment (T1w)'
     * Click the app card.
-
-![FSL Anat (T1) card](../img/FSL_anat_search_app_card.png)
-
 1. On the 'Submit App' page, select the following:
     * For input, select the cropped & reoriented anatomical (T1w) image generated above by clicking the drop-down menu and finding the appropriate dataset.
     * For template, choose 'MNI152_1mm' by clicking the drop-down menu and finding the appropriate file
@@ -104,7 +77,6 @@ Once you're happy with the alignment, you can move onto ACPC aligning the croppe
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'acpc_aligned'
     * Hit 'Submit'
-![FSL Anat Form Values](../img/FSL_anat_dialog_box.png)
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'fsleyes' as your viewer
     * Only have the file titled 'out.nii.gz' selected in the viewer
@@ -118,15 +90,12 @@ Once you're happy with the alignment, you can move onto Freesurfer parcellation 
     * In the search bar, type 'Freesurfer.'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For input, select the ACPC aligned anatomical image generated using FSL Anat (T1) app by clicking the drop-down menu and finding the appropriate datasets.
-    * Select the boxes for 'hires' and 'hippocampal'
+    * For input, select the ACPC aligned anatomical image generated above by clicking the drop-down menu and finding the appropriate datasets.
+    * Select the boxes for 'hippocampal' and 'hires'
     * For 'version,' select '6.0.0' from the drop-down menu.
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'freesurfer'
     * Hit 'Submit'
-
-![Freesurfer Form Values](../img/free_surfer_t1w_form.png)
-
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'freeview' as your viewer
         * This will load the following volumes and surfaces: aseg, brainmask, white matter mask, T1, left/right hemisphere pial (cortical), and white (white matter) surfaces.
@@ -139,9 +108,7 @@ Once you're happy with the alignment, you can move onto Freesurfer parcellation 
             * Choose the appropriate hemisphere aparc.a2009s.annot file (lh.aparc.a2009s.annot)
             * Hit 'OK'
             * The aparc.a2009s parcellation should be overlayed on your inflated surface! Now, repeat the process on the other hemisphere.
-
-![Loading Annotations](../img/lh.aparc.annotation.png)
-
+            
 Once you're happy with the surfaces, you can move computing statistics!
 
 ### Freesurfer Brain Parcellation - Statistics.
@@ -149,9 +116,6 @@ Once you're happy with the surfaces, you can move computing statistics!
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'Freesurfer'.
     * Click the "Freesurfer Statistics" app card.
- 
-![Freesurfer Statistics App Card](../img/freesurfer_statistics_app_card.png)
-
 1. On the 'Submit App' page, select the following:
     * For input, select the Freesurfer output generated in Step 3 by clicking the drop-down menu and finding the appropriate dataset (look for the datatag 'freesurfer'.
     * For parcellation, please choose the parcellation of your choice. For this tutorial, we will use the 'aparc.a2009s'. To choose this, select the 'aparc.a2009s' option from the drop-down menu.
