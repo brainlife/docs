@@ -65,6 +65,32 @@ Since datatype tags add specificity, brainlife.io can correctly identify which d
 
 brainlife provides access to variety of visualization tools that can launched directly from user's web browser. Each tools are registered for specific datatype.
 
+![vis tools](../img/vistools.png)
 
+If you'd like to add a new visualization tool, you can contact the brainlife team to have it added to specific datatype.
+
+We have developed the following custom visualization tools for brainlife.io
+
+### TractView
+
+[demo](https://brainlife.io/ui/tractview/){target=_blank}
+
+![img](//brainlife.io/images/ui-logos/tractview.png)
+
+### 3D Surfaces Viewer
+
+[demo](https://brainlife.io/ui/surfaces/){target=_blank}
+
+![img](https://brainlife.io/images/ui-logos/surfaces.png)
+
+### NetworkNeuro Viewer
+
+[demo](https://brainlife.io/ui/nnview/){target=_blank}
+
+![img](https://brainlife.io/images/ui-logos/nnview.png)
+
+### pRF Viwer
+
+[demo](https://brainlife.io/ui/prfview/){target=_blank}
 
 
