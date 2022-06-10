@@ -118,13 +118,14 @@ Other than sharing your information with other appropriate university personnel 
 
 ## General Security
 
-Due to the rapidly evolving nature of information technologies, no transmission of information over the Internet can be guaranteed to be completely secure. While Indiana University and University of Texas are committed to protecting user privacy, we cannot guarantee the security of all information users transmit to university sites, and users do so at their own risk.
+Due to the rapidly evolving nature of information technologies, no transmission of information over the internet can be guaranteed to be completely secure. While both Indiana University and University of Texas are committed to protecting user privacy, we cannot guarantee the security of all information users transmit to university sites, and users do so at their own risk.
 
-We have appropriate security measures in place in our physical facilities to protect against the loss, misuse, or alteration of information that we have collected from you at our site. For example, the IU data center which houses all of brainlife services are protected by multiple layers of physical access control including smart cards and biometric hand scanner.
+We have appropriate security measures in place in our physical facilities to protect against the loss, misuse, or alteration of information that we have collected from you at our site. For example, the data centers that house the Brainlife services are protected by multiple layers of physical access control including smart cards and/or biometric scanners.
 
-In case of unauthorized access, we monitor all user activities and collect audit logs for up to 90 days and store them on a dedicated monitoring server. The log includes information such as authentication requests, data upload/download requests, job submissions, etc.
+In case of unauthorized access, we monitor all user Logins and activity and collect audit logs for up to 90 days and store them on a dedicated monitoring server. The log includes information such as authentication requests, data upload/download requests, job submissions, etc.
 
 We will comply with all applicable federal, state and local laws regarding the privacy and security of user information.
+
 ## Links to non-university sites
 
 Indiana University is not responsible for the availability, content, or privacy practices of non-university sites. Non-university sites are not bound by this site privacy notice policy and may or may not have their own privacy policies.
