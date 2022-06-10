@@ -60,3 +60,11 @@ Since datatype tags add specificity, brainlife.io can correctly identify which d
 
 !!! hint
     If you ever have any questions about datatypes, just ask them in the `#datatype` channel in [brainlife.io's Slack](https://brainlife-inviter.herokuapp.com/){target=_blank}!
+
+## Visualization Tools
+
+brainlife provides access to variety of visualization tools that can launched directly from user's web browser. Each tools are registered for specific datatype.
+
+
+
+

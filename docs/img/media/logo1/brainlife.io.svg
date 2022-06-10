@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="229.92513mm"
-   height="63.960926mm"
-   viewBox="0 0 229.92512 63.960927"
+   width="174.40315mm"
+   height="49.392166mm"
+   viewBox="0 0 174.40315 49.392167"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
@@ -50,8 +50,8 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="314.49519"
-     inkscape:cy="84.101983"
+     inkscape:cx="236.76026"
+     inkscape:cy="66.526166"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -80,9 +80,9 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(33.656272,-60.008771)">
+     transform="translate(-15.826273,-69.738276)">
     <path
-       style="fill:url(#linearGradient4560);fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.43921569"
+       style="fill:url(#linearGradient4560);fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M -11.929625,77.147802 C 110.34977,76.531519 143.17196,46.748617 171.69859,69.656955 260.0524,140.60958 76.882906,118.89814 7.2641621,122.49123 -42.420735,125.05552 -41.992768,77.299319 -11.929625,77.147802 Z"
        id="rect4550"
        inkscape:connector-curvature="0"
@@ -155,7 +155,7 @@
          inkscape:connector-curvature="0" />
     </g>
     <g
-       transform="matrix(0.29298449,0,0,0.29298449,-20.396863,65.14102)"
+       transform="matrix(0.29298449,0,0,0.29298449,-24.838083,66.463937)"
        id="g847">
       <path
          inkscape:export-ydpi="96"
