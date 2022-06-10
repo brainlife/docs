@@ -1,9 +1,9 @@
 !!! warning
     This is a draft. Comments are welcomed!
 
-# Downloading Datasets
+# Downloading Data-Object
 
-Before downloading a dataset, let's see what datasets are available for you to download.
+Before downloading a data-object, let's see what data-objects are available for you to download.
 
 ### Querying project ID
 
@@ -21,11 +21,11 @@ Description: O3D (Open Diffusion Data and Derivative) is a reference repository 
 
 ```
 
-### Querying Datasets
+### Querying Data-Object
 
 ```
 
-$ bl dataset query -p 5a022fc99c0d250055709e9c
+$ bl data query -p 5a022fc99c0d250055709e9c
 ...
 
 Id: 5bb5713a12512a003f32e9b6
@@ -42,15 +42,15 @@ Storage: wrangler
 Status: stored
 Tags: dt_stream, pre_life, run1
 
-2708 total datasets, showing first 100. To view the next 100, run 'bl dataset query --skip 100'
+2708 total data objects, showing first 100. To view the next 100, run 'bl data query --skip 100'
 ```
 
-### Downloading a single dataset
+### Downloading a single data-object
 
-Finally, now that you know the dataset ID to download, you can ..
+Finally, now that you know the data-object ID to download, you can ..
 
 ```
-$ bl dataset download -i 5a050ad5d76a2a002737e572
+$ bl data download -i 5a050ad5d76a2a002737e572
 Download dataset to 5a050ad5d76a2a002737e572
 100% done
 
@@ -69,12 +69,9 @@ set -e
 project=5b0dad8041711001e958b519
 datatype="neuro/tractprofile"
 
-#cache the list of datasets that we could download
-if [ ! -f all.json ]; then
-    bl dataset query --limit 10000 --project $project --datatype $datatype --json > all.json
-fi
+#only need to run this once
+bl data query --limit 10000 --project $project --datatype $datatype --json | jq . > all.json
 
-#enumerate subjects
 for subject in $(jq -r '.[].meta.subject' all.json | sort -u)
 do
     echo "downloading subject:$subject ---------------"
@@ -86,16 +83,16 @@ do
         tags=$(jq -r '.[] | select(._id=='\"$id\"') | .tags | join(".")' all.json)
         outdir=2019_tractprofile/$subject/$tags
         if [ ! -d $outdir ]; then
-            bl dataset download $id --directory $outdir
+            bl data download $id --directory $outdir
         fi
     done
 done
 
 ```
 
-## Download published datasets
+## Download published data-objects
 
-Brainlife allows users to permanently publish datasets from a project. You can query published datasets by first querying the publication ID.
+Brainlife allows users to permanently publish data-objects from a project. You can query published data-objects by first querying the publication ID.
 
 ```bash
 bl login
@@ -124,17 +121,67 @@ bl pub query -q o3d --json | jq .[0].releases
 
 ```
 
-You can then use the publication release ID to query all datasets that belongs to this release (and filter by subject) and download each datasets.
+You can then use the publication release ID to query all data-objects that belongs to this release (and filter by subject) and download each data-objects.
 
 
 ```bash
 
-for id in $(bl dataset query --limit 200 \
+for id in $(bl data query --limit 200 \
   --pub 5bab993aa918ae0027024192 \
   --subject 0001 \
   --json | jq -r ".[]._id"); do
-	# download the data
-	bl dataset download $id
+	bl data download $id
 done
 ```
+
+## Downloading from existing processes.
+
+So far we have described how you can upload / download data from brainlife.io which is stored in Brainlife's project archive. On brainlife.io, you run
+Apps inside "process" and data generated there can be "archived" to the brainlife.io's project archive. Sometimes, you want to download files generated
+inside a process, which may contain extra files that are not archived in project archive. You might also want to access proceess data as you can specify 
+which files / directory to download - rather than the entire `.tar.gz` content from project archive.
+
+The following python script demonstrates how you can query for existing processes / tasks, and download content stored under each tasks. 
+
+```python
+#!/usr/bin/python3
+
+import requests
+import os
+import json
+
+# load the jwt token (run bl login to create this file)
+jwt_file = open(os.environ['HOME']+'/.config/brainlife.io/.jwt', mode='r')
+jwt = jwt_file.read()
+
+# query datasets records
+find = { 
+    '_group_id': '851', #see project detail page 
+    'service': 'brainlife/app-freesurfer', 
+    #'service_branch': '0.0.5',
+    'status': 'finished' }
+params = { 
+    'limit': 500, 
+    'select': 'config._inputs.meta', # for subject id
+    'find': json.JSONEncoder().encode(find) }
+res = requests.get('https://brainlife.io/api/amaretti/task', params=params, headers={'Authorization': 'Bearer '+jwt})
+
+if res.status_code != 200:
+    raise Exception("failed to download datasets list:"+res.status_code)
+
+# loop over each task and download "output/stats" directories.
+tasks = res.json()["tasks"]
+for task in tasks:
+    taskid=task["_id"]
+    subject=task["config"]["_inputs"][0]["meta"]["subject"]
+    print(taskid, subject)
+    url = 'https://brainlife.io/api/amaretti/task/download/'+taskid+'/freesurfer/output/stats?at='+jwt
+    res = requests.get(url, allow_redirects=True)
+    open(subject+'.tar.gz', 'wb').write(res.content)
+
+```
+
+
+
+
 

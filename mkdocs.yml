@@ -1,12 +1,14 @@
+
 site_name: brainlife Documentation
-site_author: 'Soichi Hayashi'
+site_author: 'The people of brainlife.io'
 site_url: https://brainlife.io/docs
 
+#
 # Repository
 repo_name: 'brainlife/docs'
 repo_url: 'https://github.com/brainlife/docs'
 
-copyright: 'Copyright &copy; 2017 - 2019 brainlife.io'
+copyright: 'Copyright &copy; 2017 - 2022 brainlife.io | Please report issues on <a style="text-decoration: underline;" target="github" href="https://github.com/brainlife/docs/issues">Github Issues</a> or send us your comment at <a style="text-decoration: underline;" target="slack" href="https://brainlife.slack.com/">Slack</a>'
 
 theme:
   name: 'material'
@@ -14,6 +16,7 @@ theme:
   favicon: '/img/favicon.ico'
   palette:
     primary: 'light blue'
+  custom_dir: overrides
 
 nav:
   - Home: index.md
@@ -22,23 +25,32 @@ nav:
     - Getting Started: user/started.md
     - Projects: user/project.md
     - Datatypes: user/datatypes.md
-    - Processes: user/process.md
+    - Archive: user/archive.md
+    - Preprocess: user/process.md
     - Pipelines: user/pipeline.md
     - Publications: user/publication.md
+    - Datasets : user/datasets.md
+    - Failure: user/failure.md
 
   - Tutorials: 
-    - Tractometry: tutorial/diffusion-and-tractography.md
+    - Introduction: tutorial/introduction-to-brainlife.md
     - Anatomy: tutorial/t1w-preprocessing.md
-    - Structural networks: tutorial/networkneuroscience-structural.md
-    - Functional networks: tutorial/networkneuroscience-functional.md
+    - FMRI Preprocessing: tutorial/fmri-preprocessing-tutorial.md
+    - PRF Mapping: tutorial/prf-mapping.md
+    - DWI Preprocessing : tutorial/diffusion-preprocessing.md
+    - DWI Tractometry: tutorial/diffusion-tractography.md
+    - FMRI networks: tutorial/networkneuroscience-functional.md
+    - DMRI networks: tutorial/networkneuroscience-structural.md
+    - Network Neuroscience: tutorial/networkneuroscience.md
+    - Cortex Tissue Mapping: tutorial/cortex-tissue-mapping.md
 
   - Using CLI:
     - Installation: cli/install.md
-    - Uploading Dataset: cli/upload.md
+    - Uploading Data: cli/upload.md
     - Running Apps: cli/app.md
-    - Downloading Datasets: cli/download.md
+    - Downloading Data: cli/download.md
+    - Update Data: cli/update.md
     - Group Analysis: cli/group.md
-    - Update Dataset: cli/update.md
 
   - Developing Apps: 
     - Introduction: apps/introduction.md
@@ -48,6 +60,7 @@ nav:
     - Versioning Tips: apps/versioning.md
     - Custom Hooks: apps/customhooks.md
     - product.json: apps/product.md
+    - submodules: apps/submodules.md
 
   - Compute Resources: 
     - Registering Resource: resources/register.md
@@ -62,21 +75,29 @@ nav:
   - Privacy Policy: privacy.md
   - AUP: aup.md
   - Media / Branding: media.md
-#  - Releases: releases.md
 
 extra:
-  disqus: 'brain-life'
+  #disqus: 'brain-life'
   social:
-    - type: 'github'
-      link: 'https://github.com/brainlife'
-    - type: 'twitter'
+    - icon: fontawesome/brands/twitter
       link: 'https://twitter.com/BrainLifeio'
+    - icon: fontawesome/brands/github
+      link: 'https://github.com/brainlife'
+    - icon: fontawesome/brands/slack
+      link: 'https://brainlife.slack.com'
+    - icon: fontawesome/brands/youtube
+      link: 'https://youtube.com/brainlifeio'
+
+extra_css:
+    - css/narrow.css
 
 markdown_extensions:
   - admonition
-  - codehilite
   - toc:
         permalink: True
   - fontawesome_markdown
-
+  - attr_list
+  - pymdownx.highlight:
+        linenums: true
+  - pymdownx.superfences
 

@@ -1,9 +1,9 @@
 !!! warning
-    This is a draft. Comments are welcomed!
+    This page has been deprecated. The information contained here would not work.
 
 Once you are able to generate large amount of data derivatives on brainlife.io, your next step might involve performing data aggregation for group or statistical analysis. You can download all data derivatives to your computer and conduct any post-processing on your own computer, however, downloading all derivatives might take a long time, and consume a lot of disk space. If you are wanting to quickly explore results of your analysis, this might not be ideal.
 
-Brainlife allows Apps to generate condensed (textual) version of output dataset and store them on brailife.io database. Similar to dataset metadata, you can query and/or download this information without having to download the raw data derivatives. This data is called `product.json`. For example, "Tract Profile Analysis" App (https://brainlife.io/app/59ca5c03c27f5b0770add9cf) generates the following `product.json`.
+Brainlife allows Apps to generate condensed (textual) version of output data and store them on brailife.io database. Similar to data-object metadata, you can query and/or download this information without having to download the raw data derivatives. This data is called `product.json`. For example, "Tract Profile Analysis" App (https://brainlife.io/app/59ca5c03c27f5b0770add9cf){target=_blank} generates the following `product.json`.
 
 ```json
 {
@@ -70,7 +70,7 @@ You can download the content of `product.json` with brainlife.io REST API.
 
 ## Matlab Example
 
-The following code downloads dataset records from brainlife so that you can then iterate through each record and examine meta data, or product contents.
+The following code downloads data-object records from brainlife so that you can then iterate through each record and examine meta data, or product contents.
 
 ```matlab
 
@@ -90,8 +90,8 @@ options = weboptions()
 options.HeaderFields = {'Authorization', ['Bearer ', jwt]};
 options.Timeout = 10; %could take a long time to load with a larger product..
 
-%load datasets
-disp('Querying brainlife for dataset product...')
+%load data-objects
+disp('Querying brainlife for data product...')
 disp(find)
 url = 'https://brainlife.io/api/warehouse/dataset';
 
@@ -109,7 +109,7 @@ disp(data)
 
 ## Python Example
 
-Similarly, you can query dataset records using python. 
+Similarly, you can query data-object records using python. 
 
 ```python
 #!/usr/bin/python
@@ -144,29 +144,34 @@ For example, the following code shows how to convert the QC images from ACPC Ali
 
 ```python
 
-#convert list of product.json into html
+#load product.json for each dataset
 data = res.json()
 for dataset in data["datasets"]:
-	id = dataset["_id"]
-	subject = dataset["meta"]["subject"]
-	print('<div style="float: left; height: 250px; width: 250px;">');
-	print("<b>"+subject+"</b><br>")
+    id = dataset["_id"]
+    subject = dataset["meta"]["subject"]
+    print('<div style="float: left; height: 250px; width: 250px;">');
+    print("<b>"+subject+"</b><br>")
 
-	#output image if it has one
-	base64 = None
-	product = dataset["product"]
-	if "brainlife" in product:
-		brainlife = product["brainlife"]
-		if len(brainlife) == 1:
-			brainlife0 = brainlife[0]
-			if "base64" in brainlife0:
-				#print(json.JSONEncoder().encode(brainlife0["base64"]))
-				base64 = brainlife0["base64"]
-	if base64:
-		print('<img src="data:image/png;base64,'+brainlife0["base64"]+'">\n')
-	else:
-		print('<p>no image</p>\n')
-	print('</div>')
+    res = requests.get('https://brainlife.io/api/warehouse/dataset/product/'+dataset["_id"], headers={'Authorization': 'Bearer '+jwt})
+    if res.status_code != 200:
+        raise Error("failed to download product.json")
+    data = res.json()
+    product = data["product"]
+
+    image64 = None
+
+    #output image if it has one
+    if "brainlife" in product:
+        brainlife = product["brainlife"]
+        if len(brainlife) == 1:
+            brainlife0 = brainlife[0]
+            if "base64" in brainlife0:
+                image64= brainlife0["base64"]
+    if image64:
+        print('<img src="data:image/png;base64,'+image64+'">\n')
+    else:
+        print('<p>no image</p>\n')
+    print('</div>')
 
 ```
 
@@ -177,5 +182,5 @@ You can run this script and capture the output to generate HTML file. You can th
 ```
 
 
-![group](/docs/img/group.png)
+![group](../img/group.png)
 

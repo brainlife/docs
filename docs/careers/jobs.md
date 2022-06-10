@@ -6,13 +6,12 @@ At brainlife.io, you can shape the future of scientific computing and accelerate
 
 ## Location
 
-We are physically located at [Indiana University Bloomington](https://www.indiana.edu/). We prefer local candidates, but we are also open to hiring those who can only work remotely. We accomodate great talents from anywhere!
+brainlife.io team are distributed across multiple institusions including [Indiana University Bloomington](https://www.indiana.edu/){target=_blank}, [University of Texas](https://utexas.edu){target=_blank}. We are open to hiring with those with great talents and who can only work remotely.
 
 ## Openings
 
 * [Research Software Engineer / Application Support Engineer](rse_app.md)
 * [Research Software Engineer / UI Engineer](rse_ui.md)
-* [Community Developer / Outreach Coordinator](devrel.md)
 * [DevOps / Software Engineers](devop.md)
 * [Cloud and Cluster Administrator](sysad.md)
 * [Postdoctoral Research Scientists](postdoc.md)
