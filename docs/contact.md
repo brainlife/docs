@@ -4,7 +4,7 @@
 
 [Brainlife &lt;brlife@iu.edu&gt;](mailto:brlife@iu.edu)
 
-[Franco Pestilli (PI) &lt;frakkopesto@gmail.com&gt;](mailto:frakkopesto@gmail.com)
+[Franco Pestilli (PI) &lt;pestilli@utexas.edu&gt;](mailto:pestilli@utexas.edu)
 
 ## Slack
 

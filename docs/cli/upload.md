@@ -85,7 +85,6 @@ $ bl data upload --help
 
   Options:
 
-    --directory <directory>          directory where your data is located
     --project <projectid>            project id to upload data to
     --datatype <datatype>            datatype of uploaded data
     --datatype_tag <datatype_tags>   datatype_tag of uploaded data
@@ -114,9 +113,9 @@ $ bl data upload \
     --tag "image"
 ```
 
-Notice that I supplied `--tag` twice to add more than one search tag to my data. This works the same way with `datatype_tags`. --meta is optional but you should point to any "sidecar" json if you have one
+Notice that I supplied `--tag` twice to add more than one search tag to my data. This works the same way with `datatype_tags`. --meta is optional but you should point to any "sidecar" json if you have one.
 
-You can upload data by specifying a single directory containing all of the files for its associated datatype (using `--directory`). However, you can also specify the path for each individual file id, as is done above (`--t1 t1/t1.nii.gz`, where `--t1` is the file id and `t1/t1.nii.gz` is the file to upload).
+You must specify paths to each files/directory for the datatype that you are uploading. For example, for `--datatype neuro/anat/t1w`,  you must specify `--t1` with the file path for your .nii.gz file containing the t1w anatomy. Please refer to the README section for various datatypes on brainlife under [datatypes](https://brainlife.io/datatypes).
 
 ```
 Looking for /path/to/t1/t1.nii.gz

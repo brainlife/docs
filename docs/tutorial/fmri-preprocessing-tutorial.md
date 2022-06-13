@@ -13,27 +13,28 @@ The first step of fMRIPrep involves processing the anatomical images. There are 
 
 ### 2. Functional preprocessing.
 
-The second step of fMRIPrep involves processing the functional (fMRI) images. These can include both task-related (a person performing a task in the scanner) or resting-state (a person does no task in the scanner) fMRIs. Like any image directly from the scanner, there are common artifacts and issues with fMRI data. One of the biggest problems is **motion**. Because some scans take a long time, it is nearly impossible for a participant to lie completely motionless. Even the most subtle movements can alter the results in a specific region and make your data less accurate. fMRIPrep will estimate the motion that occurred across all of the fMRI volumes and correct for it. This will align all of the volumes perfectly to ensure motion is not altering the data. 
+The second step of fMRIPrep involves processing the functional (fMRI) images. These can include both task-related (a person performing a task in the scanner) or resting-state (a person does no task in the scanner) fMRIs. Like any image directly from the scanner, there are common artifacts and issues with fMRI data. One of the biggest problems is **motion**. Because some scans take a long time, it is nearly impossible for a participant to lie completely motionless. Even the most subtle movements can alter the results in a specific region and make your data less accurate. fMRIPrep will estimate the motion that occurred across all of the fMRI volumes and correct for it. This will align all of the volumes perfectly to ensure motion is not altering the data.
 
-Another common artifact in fMRI data is **susceptibility distortions**. This is when regions of the brain look "wavy" or fold inward or outward on itself in images. This is due to how the scanner sweeps across the entire brain during acquisition -- fMRIPrep will also automatically correct for this! 
+Another common artifact in fMRI data is **susceptibility distortions**. This is when regions of the brain look "wavy" or fold inward or outward on itself in images. This is due to how the scanner sweeps across the entire brain during acquisition -- fMRIPrep will also automatically correct for this!
 
 fMRIPrep can additionally fix the lag in the BOLD signal and the fact that we need to acquire data in non-contiguous slices. This is referred to as **slice-timing**, or the order in which slices are acquired. Without fMRIPrep, our data would not be ordered properly and we wouldn't have contiguous brain slices.
 
 Finally, images from the fMRI scanner might not be perfectly aligned to images collected before it, such as the anatomical images. To fix this, we need to register the functional volumes to the anatomical image and map the fMRI signal onto the surfaces generated in the anatomical preprocessing step -- fMRIPrep does this registration automatically!
 
 Useful information about fMRIPrep anatomical preprocessing can be found in this [original Nature paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/#S13title){target=_blank}.
-  
+
 There are two versions of the brainlife.io fMRIPrep app. One generates outputs mapped to the volumes ([fMRIPrep-volume](https://brainlife.io/app/5c61c69f14027a01b14adcb3){target=_blank}) and the other generates outputs mapped to the surfaces ([fMRIPrep-surface](https://brainlife.io/app/5dfceebd32bff0640ce27bbd){target=_blank}).
 
 For this tutorial, we will use the volume-based version.
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
-1. generate anatomical surfaces using Freesurfer, 
-2. preprocess the anatomical (T1w & T2w) and fMRI data using fMRIPrep 
+1. preprocess the anatomical (T1w & T2w) data using FSL
+2. generate anatomical surfaces using Freesurfer,
+3. preprocess the fMRI data using fMRIPrep
 
-### Copy appropriate data over from a single subject in the InterTVA project
+### Copy appropriate data over from a single subject in the The Midnight Scan Club (MSC) dataset project
 
-1. Click the following link to go to the project's page for the [InterTVA project](https://brainlife.io/project/5c8415aa34225c0031027372){target=_blank}
+1. Click the following link to go to the project's page for the [The Midnight Scan Club (MSC) dataset project](https://brainlife.io/project/627e8493d0697cf1ead69b37/dataset){target=_blank}
 1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
 1. Select the following datatypes from one subject by clicking the boxes next to the data:
     * func/task rest
@@ -45,19 +46,50 @@ Now, let's get to work! The following steps of this tutorial will show you how t
         * This will take you to the process on your Project's page
 1. Archive the data in your project by clickin the 'Archive' button next to each dataset.
 
-Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: generate Freesurfer surfaces!
+Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: preprocessing the anatomical data!
+
+### Preprocess anatomical (T1w & T2w) data using FSL:
+
+#### T1w data
+1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
+    * In the search bar, type 'FSL Anat (T1w).'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For input, select the staged raw anatomical (T1w) image by clicking the drop-down menu and finding the appropriate datasets.
+    * Select the boxes for 'crop' and 'reorient'. Leave all other defaults the same.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'fsl_anat'
+    * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
+    * Choose 'FSLeyes' as your viewer
+        * This will load the the preprocessed T1w data.
+
+#### T2w data
+1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
+    * In the search bar, type 'FSL Anat (T2w).'
+    * Click the app card.
+1. On the 'Submit App' page, select the following:
+    * For input, select the staged raw anatomical (T2w) image by clicking the drop-down menu and finding the appropriate datasets.
+    * Select the boxes for 'crop' and 'reorient'. Leave all other defaults the same.
+    * Select the box for 'Archive all output datasets when finished'
+        * For 'Dataset Tags,' type and enter 'fsl_anat'
+    * Hit 'Submit'
+1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
+    * Choose 'FSLeyes' as your viewer
+        * This will load the the preprocessed T2w data.
+
+Once you're happy with the surfaces, you can move onto running Freesurfer!
 
 ### Generate surfaces using Freesurfer:
 
 1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
-    * In the search bar, type 'Freesurfer.'
+    * In the search bar, type 'Freesurfer 7.1.1'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For input, select the staged raw anatomical (T1w & T2w) images by clicking the drop-down menu and finding the appropriate datasets.
-    * Select the boxes for 'hippocampal' and 'hires'
-    * For 'version,' select '6.0.0' from the drop-down menu.
+    * For input, select the staged preprocessed, 'acpc_aligned'-tagged anatomical (T1w & T2w) images by clicking the drop-down menu and finding the appropriate datasets.
+    * Select the boxes for 'hippocampal' and 'thalamicnuclei'. Leave all other defaults the same
     * Select the box for 'Archive all output datasets when finished'
-        * For 'Dataset Tags,' type and enter 'freesurfer'
+        * For 'Dataset Tags,' type and enter 'fsl_anat'
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'freeview' as your viewer
@@ -71,7 +103,7 @@ Your data should now be staged for processing and archived in your projects page
             * Choose the appropriate hemisphere aparc.a2009s.annot file (lh.aparc.a2009s.annot)
             * Hit 'OK'
             * The aparc.a2009s parcellation should be overlayed on your inflated surface! Now, repeat the process on the other hemisphere.
-            
+
 Once you're happy with the surfaces, you can move onto running fMRIPrep!
 
 ### Preprocess your data with fMRIPrep:
@@ -80,14 +112,13 @@ Once you're happy with the surfaces, you can move onto running fMRIPrep!
     * In the search bar, type 'fmriPrep - Volume Output'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For input, select the staged raw anatomical (T1w & T2w) images, the freesurfer output, and the functional data by clicking the drop-down menu and finding the appropriate datasets.
-    * For 'space,' select 'MNI152NLin6Asym' from the drop-down menu.
-    * For 'resolution,' select 'original' from the drop-down menu.
+    * For input, select the staged preprocessed, 'acpc_aligned'-tagged anatomical (T1w & T2w) images, the freesurfer output, and the functional data by clicking the drop-down menu and finding the appropriate datasets.
+    * For 'space,' select 'T1w' from the drop-down menu.
+    * Set 'skipbidsvalidation' to True. Leave all other options as default.
     * Select the box for 'Archive all output datasets' when finished
-        * For 'Dataset Tags,' type and enter 'fmriPrep'
+        * For 'Dataset Tags,' type and enter 'fmriprep'
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon next to the 'html' tagged output.
     * Choose the 'html' viewer
 
 **If you're happy with the results, then you have successfully finished preprocessing your fMRI data with fMRIPrep! You're now ready to move onto the next tutorial: functional network connectivity!**
-
