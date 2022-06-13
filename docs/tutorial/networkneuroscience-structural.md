@@ -186,7 +186,7 @@ If you're happy with the results, you're ready to move on to structural connecti
 ### Generate structural connectivity matrix.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'Structural Connectome MRTrix3 (SCMRT) '
+    * In the search bar, type 'Structural Connectome MRTrix3 (SCMRT)'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
     * For parcellation/volume, select the Glasser volume generated above by clicking the drop-down menu and finding the appropriate dataset.
