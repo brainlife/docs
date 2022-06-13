@@ -7,13 +7,13 @@ Functional MRI measures the BOLD signal - a measure associated with neuronal act
 
 From these matrices, scientists can then examine properties that describe the inter-relatedness of many regions. These properties can be used to identify **network-level** inter-individual differences in a large cohort.
 
-This page demonstrates how to generate functional connectivity matrices on brainlife.io. The goal of this tutorial is to show you how to generate functional connectivity matrices following fMRI preprocessing. This tutorial will be using [Multi-atlas Transfer Tool (MaTT)](https://brainlife.io/app/5aeb34f2f446980028b15ef0){target=_blank} to map the Yeo17dil cortical atlas to preprocessed Freesurfer surfaces and [fMRI Connectivity Matrix Generation](https://brainlife.io/app/5c720cf63e2f2c0030a23486){target=_blank} to compute the correlation between each region in the atlas.
+This page demonstrates how to generate functional connectivity matrices on brainlife.io. The goal of this tutorial is to show you how to generate functional connectivity matrices following fMRI preprocessing. This tutorial will be using [Multi-atlas Transfer Tool (MaTT)](https://brainlife.io/app/6016dcdc321a4aafce6decd5) to map the Yeo17dil cortical atlas to preprocessed Freesurfer surfaces and [fMRI Connectivity Matrix Generation](https://brainlife.io/app/5c720cf63e2f2c0030a23486) to compute the correlation between each region in the atlas.
 
-This tutorial will use a combination of skills developed in the [Introduction tutorial](/docs/tutorial/introduction-to-brainlife/) and presumes that you have data processed using [fMRIPrep](https://brainlife.io/app/5c61c69f14027a01b14adcb3){target=_blank}. If you haven't read our introduction to brainlife, or if you don't have preprocessed fMRI and Freesurfer outputs on brainlife.io, please go back through that tutorial or the [Functional MRI Preprocessing](/docs/tutorial/fmri-preprocessing-tutorial) tutorial before beginning this one.
+This tutorial will use a combination of skills developed in the [Introduction tutorial](/docs/tutorial/introduction-to-brainlife/) and presumes that you have data processed using [fMRIPrep](https://brainlife.io/app/5c61c69f14027a01b14adcb3). If you haven't read our introduction to brainlife, or if you don't have preprocessed fMRI and Freesurfer outputs on brainlife.io, please go back through that tutorial or the [Functional MRI Preprocessing](/docs/tutorial/fmri-preprocessing-tutorial) tutorial before beginning this one.
 
 ### 1. Functional connectivity matrix generation.
 
-Once the anatomical and fMRI data is preprocessed with fMRIPrep, we can now examine the functional network organization by generating **functional connectivity matrices**! This is done by examing the fMRI BOLD activity in multiple regions across the brain by correlating the regions' BOLD activity throughout the entire acquisition. The reason we do this is because regions that are active in similar ways at similar time points are more likely to be working with each other to perform a specific task. The way we typically represent the correlation coefficients, or weights, of each region (node) with every other region (node) in the brain is with a **network matrix** -- note that **nodes** represent the brain regions here. Each point in the network matrix represents the correlation of BOLD activity between one region and another. We can then use these network matrices to examine properties of the network that describe how interrelated specific regions in the brain are working during the fMRI acquisition in either task-related or resting-state fMRIs. To generate our matrices, we can use the [fMRI Timeseries Extraction](https://brainlife.io/app/5ed05fe8e3f4538080268585){target=_blank} app to extract the timeseries, and the [Time series to network](https://brainlife.io/app/60b961b10ad40d58e1ca7fe7){target=_blank} app to generate the matrices.
+Once the anatomical and fMRI data is preprocessed with fMRIPrep, we can now examine the functional network organization by generating **functional connectivity matrices**! This is done by examing the fMRI BOLD activity in multiple regions across the brain by correlating the regions' BOLD activity throughout the entire acquisition. The reason we do this is because regions that are active in similar ways at similar time points are more likely to be working with each other to perform a specific task. The way we typically represent the correlation coefficients, or weights, of each region (node) with every other region (node) in the brain is with a **network matrix** -- note that **nodes** represent the brain regions here. Each point in the network matrix represents the correlation of BOLD activity between one region and another. We can then use these network matrices to examine properties of the network that describe how interrelated specific regions in the brain are working during the fMRI acquisition in either task-related or resting-state fMRIs. To generate our matrices, we can use the [fMRI Timeseries Extraction](https://brainlife.io/app/5ed05fe8e3f4538080268585) app to extract the timeseries, and the [Time series to network](https://brainlife.io/app/60b961b10ad40d58e1ca7fe7) app to generate the matrices.
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
 
@@ -23,19 +23,20 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 1. Preprocess fMRI data,
 1. and generate network matrices from the regions of the Yeo17dl atlas.
 
-### Copy appropriate data over from a single subject in the The Midnight Scan Club (MSC) dataset project
+### Copy appropriate data over from a single subject in the Tutorial data project
 
-1. Click the following link to go to the project's page for the [The Midnight Scan Club (MSC) dataset project](https://brainlife.io/project/627e8493d0697cf1ead69b37/dataset){target=_blank}
+1. Click the following link to go to the project's page for the [Tutorial](https://brainlife.io/project/5e7638f6de643b02832a8246/detail)
 1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
-1. Select the following datatypes from one subject by clicking the boxes next to the data:
+1. Select the following datatypes from one subject by clicking the boxes next to the data for subject 'test002':
     * func/task rest
-    * anat/t1w
-    * anat/t2w
+    * anat/t1w (run-01 tagged)
+    * anat/t2w (run-01 tagged)
+    * fmap
 1. Click the 'Stage to process' button on the right side of the screen
     * For 'Project', select your project from the drop-down menu.
     * For 'Process', select 'Create New Process' and title it "fMRI Prep Tutorial". Hit 'Submit'.
         * This will take you to the process on your Project's page
-1. Archive the data in your project by clickin the 'Archive' button next to each dataset.
+1. Archive the data in your project by clicking the 'Archive' button next to each dataset.
 
 Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: preprocessing the anatomical data!
 
@@ -117,7 +118,7 @@ Once the app is finished, you're ready to move onto the next step: preprocess th
     * In the search bar, type 'fmriPrep - Volume Output'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For input, select the staged preprocessed, 'acpc_aligned'-tagged anatomical (T1w & T2w) images, the freesurfer output, and the functional data by clicking the drop-down menu and finding the appropriate datasets.
+    * For input, select the staged preprocessed, 'acpc_aligned'-tagged anatomical (T1w & T2w) images, the freesurfer output, the fmap, and the functional data by clicking the drop-down menu and finding the appropriate datasets.
     * For 'space,' select 'T1w' from the drop-down menu.
     * Set 'skipbidsvalidation' to True. Leave all other options as default.
     * Select the box for 'Archive all output datasets' when finished
