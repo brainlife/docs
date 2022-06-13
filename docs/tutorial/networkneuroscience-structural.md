@@ -69,7 +69,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
         * This will take you to the process on your Projects page
 1. Archive the data in your project by clicking the 'Archive' button next to each dataset.
 
-Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: ACPC alignment of the anatomical (T1w) image!
+Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: preprocessing of the anatomical (T1w & T2w) images!
 
 ### Preprocess anatomical (T1w & T2w) data using FSL
 
@@ -103,7 +103,7 @@ Your data should now be staged for processing and archived in your projects page
 
 Once you're happy with the surfaces, you can move onto running Freesurfer!
 
-### Freesurfer Brain Parcellation - Generation.
+### Freesurfer.
 
 1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
     * In the search bar, type 'Freesurfer 7.1.1'
