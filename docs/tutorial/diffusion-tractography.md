@@ -39,7 +39,7 @@ More information on ensemble tractography can be found in this [PLOS Computation
 
 ### 4. Major white matter tract segmentation.
 
-Once our anatomical brain parcellations and whole-brain tractograms are generated, the next step is to segment the tractogram into known **major white matter tracts**. To do this, we need both information about the terminations of each streamline into the cortex and histologically-derived definitions for each major white matter tract. The histological definitions of major white matter tracts allow us to group the streamlines in our tractograms into major white matter tracts. On brainlife.io, we have developed an automated [white matter segmentation](https://brainlife.io/app/5cc73ef44ed9df00317f6288) app that will segment our whole-brain tractograms into over 70 known major white matter tracts.
+Once our anatomical brain parcellations and whole-brain tractograms are generated, the next step is to segment the tractogram into known **major white matter tracts**. To do this, we need both information about the terminations of each streamline into the cortex and histologically-derived definitions for each major white matter tract. The histological definitions of major white matter tracts allow us to group the streamlines in our tractograms into major white matter tracts. On brainlife.io, we have developed an automated [white matter segmentation](https://brainlife.io/app/5cc73ef44ed9df00317f6288) app that will segment our whole-brain tractograms into 61 known major white matter tracts.
 
 More information on the segmentation algorithm can be found in this [Brain Structure and Function paper](https://www.ncbi.nlm.nih.gov/pubmed/31342157).
 
