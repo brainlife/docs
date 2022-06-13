@@ -34,7 +34,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
     * fmap
 1. Click the 'Stage to process' button on the right side of the screen
     * For 'Project', select your project from the drop-down menu.
-    * For 'Process', select 'Create New Process' and title it "fMRI Prep Tutorial". Hit 'Submit'.
+    * For 'Process', select 'Create New Process' and title it "Network Neuroscience - functional tutorial". Hit 'Submit'.
         * This will take you to the process on your Project's page
 1. Archive the data in your project by clicking the 'Archive' button next to each dataset.
 
@@ -129,7 +129,7 @@ Once the app is finished, you're ready to move onto the next step: preprocess th
 
 Once the app is finished, you're ready to move onto the final step: network matrix generation!
 
-### Generate functional connectivity network matrices:
+### Generate functional timeseries:
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'fMRI Timeseries Extraction'

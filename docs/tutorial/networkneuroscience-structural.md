@@ -27,7 +27,7 @@ Finally, once the dMRI data is preprocessed and cleaned, [MRTrix3 Preprocessing]
 
 Useful information about the preprocessing pipeline that [MRTrix3 Preprocessing](https://brainlife.io/app/5a813e52dc4031003b8b36f9) is designed to run -- Diffusion Parameter EStimation with Gibbs and NoisE Removal (DESIGNER) -- can be found in this [original Neuroimage paper](https://www.ncbi.nlm.nih.gov/pubmed/30077743).
 
-### 3. Diffusion modeling & anatomically-informed ensemble tractography.
+### 3. Diffusion modeling & anatomically-informed tractography.
 
 Once the dMRI data has been cleaned and aligned to the anatomical (T1w) image, the next step is to map the underlying white matter anatomy using diffusion tractography. Diffusion tractography works by modeling how water is moving throughout the brain based on the principle of **anisotropy** -- that water will move unequally in a particular direction given a physical constraint. In the case of diffusion MRI, this constraint comes from the myelin wrapping the many axons arranged into bundles known as **fascicles**. Diffusion tractography generates **streamlines** that act as evidence of underlying white matter organization. We can bundle these streamlines into common white matter tracts digitally, just as we can bundle fascicles into **tracts** using histological methods.
 
@@ -65,7 +65,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
     * anat/t2w
 1. Click the 'Stage to process' button on the right side of the screen
     * For 'Project', select your project from the drop-down menu.
-    * For 'Process,' select 'Create New Process' and title it "dMRI Prep Tutorial." Hit 'Submit.'
+    * For 'Process,' select 'Create New Process' and title it "Network neuroscience - structural tutorial." Hit 'Submit.'
         * This will take you to the process on your Projects page
 1. Archive the data in your project by clicking the 'Archive' button next to each dataset.
 
