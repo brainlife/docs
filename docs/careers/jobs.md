@@ -6,7 +6,7 @@ At brainlife.io, you can shape the future of scientific computing and accelerate
 
 ## Location
 
-brainlife.io team are distributed across multiple institusions including [Indiana University Bloomington](https://www.indiana.edu/){target=_blank}, [University of Texas](https://utexas.edu){target=_blank}. We are open to hiring with those with great talents and who can only work remotely.
+brainlife.io team are distributed across multiple institutions including [Indiana University Bloomington](https://www.indiana.edu/){target=_blank}, [University of Texas](https://utexas.edu){target=_blank}. We are open to hiring with those with great talents and who can only work remotely.
 
 ## Openings
 
