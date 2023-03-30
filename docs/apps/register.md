@@ -81,7 +81,10 @@ Click this if you'd like to allow users to select multiple input data. Selected 
 ```json
 {
     "dwi": [
-	"../path/to/dwi.nii.gz"
+	"../path/to/dwi.nii.gz",
+    "../path/to/dwi.nii.gz"
+    ...,
+    "../path/to/dwi.nii.gz"
     ]
 }
 ```
