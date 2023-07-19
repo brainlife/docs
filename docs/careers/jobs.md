@@ -14,8 +14,8 @@ brainlife.io team are distributed across multiple institutions including [Indian
 * [Research Software Engineer / UI Engineer](rse_ui.md)
 * [DevOps / Software Engineers](devop.md)
 * [Cloud and Cluster Administrator](sysad.md)
-* [Postdoctoral Research Scientists](postdoc.md)
+<!-- * [Postdoctoral Research Scientists](postdoc.md) -->
 
-> Not seeing the position you were hoping for? [Tell us why](mailto:brlife@iu.edu) we would be crazy to not hire you!
+> Not seeing the position you were hoping for? [Tell us why](mailto:pestillilab@gmail.com) we would be crazy to not hire you!
 
 <center><h2>[**Apply Now**](apply.md)</h2></center>
