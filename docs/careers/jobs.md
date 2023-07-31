@@ -10,11 +10,11 @@ brainlife.io team are distributed across multiple institutions including [Indian
 
 ## Openings
 
-* [Research Software Engineer / Application Support Engineer](rse_app.md)
+<!-- * [Research Software Engineer / Application Support Engineer](rse_app.md)
 * [Research Software Engineer / UI Engineer](rse_ui.md)
 * [DevOps / Software Engineers](devop.md)
-* [Cloud and Cluster Administrator](sysad.md)
-<!-- * [Postdoctoral Research Scientists](postdoc.md) -->
+* [Cloud and Cluster Administrator](sysad.md) -->
+* [Postdoctoral Research Scientists](postdoc.md)
 
 > Not seeing the position you were hoping for? [Tell us why](mailto:pestillilab@gmail.com) we would be crazy to not hire you!
 
