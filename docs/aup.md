@@ -34,15 +34,28 @@ The user agrees not to, and not to allow third parties to, use our platforms to:
 
 The user agrees to add the following reference to any publication resulting from using data, data derivatives, analysis code, software, or data processing involving brainlife.io
 
-> @misc{hayashi2023brainlifeio,
-       title={brainlife.io: A decentralized and open source cloud platform to support neuroscience research}, 
-       author={Soichi Hayashi and Bradley Caron and Anibal S. Heinsfeld and Sophia Vinci-Booher and Brent C. McPherson and Daniel N. Bullock and Giulia Berto and J. Guiomar Niso and Sandra Hanekamp and Daniel Levitas and Lindsey Kitchell and Josiah Leong and Filipi N. Silva and Serge Koudoro and Hanna Willis and Jasleen Jolly and Derek Pisner and Taylor Zuidema and Jan Kurzwaski and Koulla Mikellidou and Aurore Bussalb and Christopher Rorden and Conner Victory and Dheeraj Bhatia and D. Baran Aydogan and Frank C. Yeh and Franco Delogu and Javier Guaje and Jelle Veraart and Jeremy Fischer and Joshua Faskowitz and Maximilien Chaumon and Ricardo Fabrega and David Hunt and Shawn McKee and Shaw T. Brown and Stephanie Heyman and Vittorio Iacovella and Amanda Mejia and Daniele Marinazzo and Cameron Craddock and Emanuele Olivetti and Jamie Hanson and Paolo Avesani and Eleftherios Garyfallidis and Daniel Stanzione and James P. Carson and Robert Henschel and David Y. Hancock and Craig A. Stewart and David Schnyer and Damian Eke and Russell A. Poldrack and Nathalie George and Holly Bridge and Ilaria Sani and Winrich Freiwald and Aina Puce and Nicholas Port and Franco Pestilli},
-       year={2023},
-       eprint={2306.02183},
-       archivePrefix={arXiv},
-       primaryClass={cs.DC}
- }
-
+    @misc{hayashi2023brainlifeio,
+           title={brainlife.io: A decentralized and open source cloud platform to support neuroscience research}, 
+           author={Soichi Hayashi and Bradley Caron and Anibal S. Heinsfeld and Sophia Vinci-Booher and 
+                  Brent C. McPherson and Daniel N. Bullock and Giulia Berto and J. Guiomar Niso and 
+                  Sandra Hanekamp and Daniel Levitas and Lindsey Kitchell and Josiah Leong and 
+                  Filipi N. Silva and Serge Koudoro and Hanna Willis and Jasleen Jolly and 
+                  Derek Pisner and Taylor Zuidema and Jan Kurzwaski and Koulla Mikellidou and 
+                  Aurore Bussalb and Christopher Rorden and Conner Victory and Dheeraj Bhatia and 
+                  D. Baran Aydogan and Frank C. Yeh and Franco Delogu and Javier Guaje and 
+                  Jelle Veraart and Jeremy Fischer and Joshua Faskowitz and Maximilien Chaumon and 
+                  Ricardo Fabrega and David Hunt and Shawn McKee and Shaw T. Brown and 
+                  Stephanie Heyman and Vittorio Iacovella and Amanda Mejia and Daniele Marinazzo and 
+                  Cameron Craddock and Emanuele Olivetti and Jamie Hanson and Paolo Avesani and 
+                  Eleftherios Garyfallidis and Daniel Stanzione and James P. Carson and Robert Henschel and 
+                  David Y. Hancock and Craig A. Stewart and David Schnyer and Damian Eke and 
+                  Russell A. Poldrack and Nathalie George and Holly Bridge and Ilaria Sani and 
+                  Winrich Freiwald and Aina Puce and Nicholas Port and Franco Pestilli},
+           year={2023},
+           eprint={2306.02183},
+           archivePrefix={arXiv},
+           primaryClass={cs.DC}
+    }
 #### ACKNOWLEDGE THE FUNDING SOURCE
 
 Papers, book chapters, books, posters, oral presentations, and all other printed and digital presentations of results derived from data, data derivatives, analysis code, software or data processing served via brainlife.io should contain the following wording in the acknowledgments section.
