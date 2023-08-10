@@ -32,7 +32,7 @@ The user agrees not to, and not to allow third parties to, use our platforms to:
 
 #### ACKNOWLEDGE SUPPORT
 
-The user agrees to add the following reference to any publication resulting by using data, data derivatives, analysis code, software or data processing involing brainlife.io
+The user agrees to add the following reference to any publication resulting from using data, data derivatives, analysis code, software, or data processing involving brainlife.io
 
 > @misc{hayashi2023brainlifeio,
        title={brainlife.io: A decentralized and open source cloud platform to support neuroscience research}, 
