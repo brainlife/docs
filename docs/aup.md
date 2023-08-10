@@ -14,20 +14,40 @@
 
 Use of the brainlife.io platform is subject to this Acceptable Use Policy.
 
-The user agrees not to, and not to allow third parties to, use our platforms
+The user agrees not to, and not to allow third parties to, use our platforms to:
 
-* To violate, or encourage the violation of, the legal rights of others (for example, this may include allowing other users to infringe or misappropriate the intellectual property rights of others in violation of the [Digital Millennium Copyright Act](https://www.copyright.gov/legislation/dmca.pdf){target=_blank});
+* violate, or encourage the violation of, the legal rights of others (for example, this may include allowing other users to infringe or misappropriate the intellectual property rights of others in violation of the [Digital Millennium Copyright Act](https://www.copyright.gov/legislation/dmca.pdf){target=_blank});
 
-* To disable, interfere with or circumvent any aspect of the platform.
+* disable, interfere with or circumvent any aspect of the platform.
 
-* To engage in, promote or encourage illegal activity;
+* engage in, promote or encourage illegal activity;
 
-* For any unlawful, invasive, infringing, defamatory or fraudulent purpose (for example, this may include phishing, creating a pyramid scheme or mirroring a website);
+* engage in any unlawful, invasive, infringing, defamatory or fraudulent purpose (for example, this may include phishing, creating a pyramid scheme or mirroring a website);
 
-* To intentionally distribute viruses, worms, Trojan horses, corrupted files, hoaxes, or other items of a destructive or deceptive nature;
+* intentionally distribute viruses, worms, Trojan horses, corrupted files, hoaxes, or other items of a destructive or deceptive nature;
 
-* To interfere with the use of the platform, or the equipment used to provide the platform, by users, authorized resellers, or other authorized users;
+* interfere with the use of the platform, or the equipment used to provide the platform, by users, authorized resellers, or other authorized users;
 
-* To generate, distribute, publish or facilitate unsolicited mass email, promotions, advertisings or other solicitations (“spam”).
+* generate, distribute, publish or facilitate unsolicited mass email, promotions, advertisings or other solicitations (“spam”).
+
+#### ACKNOWLEDGE SUPPORT
+
+The user agrees to add the following reference to any publication resulting by using data, data derivatives, analysis code, software or data processing involing brainlife.io
+
+> @misc{hayashi2023brainlifeio,
+       title={brainlife.io: A decentralized and open source cloud platform to support neuroscience research}, 
+       author={Soichi Hayashi and Bradley Caron and Anibal S. Heinsfeld and Sophia Vinci-Booher and Brent C. McPherson and Daniel N. Bullock and Giulia Berto and J. Guiomar Niso and Sandra Hanekamp and Daniel Levitas and Lindsey Kitchell and Josiah Leong and Filipi N. Silva and Serge Koudoro and Hanna Willis and Jasleen Jolly and Derek Pisner and Taylor Zuidema and Jan Kurzwaski and Koulla Mikellidou and Aurore Bussalb and Christopher Rorden and Conner Victory and Dheeraj Bhatia and D. Baran Aydogan and Frank C. Yeh and Franco Delogu and Javier Guaje and Jelle Veraart and Jeremy Fischer and Joshua Faskowitz and Maximilien Chaumon and Ricardo Fabrega and David Hunt and Shawn McKee and Shaw T. Brown and Stephanie Heyman and Vittorio Iacovella and Amanda Mejia and Daniele Marinazzo and Cameron Craddock and Emanuele Olivetti and Jamie Hanson and Paolo Avesani and Eleftherios Garyfallidis and Daniel Stanzione and James P. Carson and Robert Henschel and David Y. Hancock and Craig A. Stewart and David Schnyer and Damian Eke and Russell A. Poldrack and Nathalie George and Holly Bridge and Ilaria Sani and Winrich Freiwald and Aina Puce and Nicholas Port and Franco Pestilli},
+       year={2023},
+       eprint={2306.02183},
+       archivePrefix={arXiv},
+       primaryClass={cs.DC}
+ }
+
+#### ACKNOWLEDGE THE FUNDING SOURCE
+
+Papers, book chapters, books, posters, oral presentations, and all other printed and digital presentations of results derived from data, data derivatives, analysis code, software or data processing served via brainlife.io should contain the following wording in the acknowledgments section.
+
+> "This publication benefitted at least in part from the use of data or technology provided by brainlife.io (NSF BCS 1734853 to Franco Pestilli)."
+
 
 #### The brainlife.io team
