@@ -36,6 +36,8 @@ ezBIDS prefers that non-anonymized data is uploaded (e.g. with the `-ba y` flag 
 !!! note Non-anonymized Data
     If non-anonymized data is provided, ezBIDS will eventually anonymize the data (i.e., remove identifying metadata) before converting to BIDS.
 
+Users may upload compressed imaging data using formats such as *.tar.xz*, *.tar*, *.tgz*, *.gz*, *.7z*, *.bz2*, *.zip*, and *.rar*.
+
 Once data is uploaded, ezBIDS perform several backend operations to gather and identify as much relevant BIDS information as possible, as well as general information to help users see what data they’re examining (e.g., image screenshots, metadata, etc). All this information is then presented to users on the subsequent pages. Users may then edit or modify BIDS-specific information as they so choose. 
 
 !!! info Upload Speed and Time
