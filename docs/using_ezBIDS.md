@@ -27,9 +27,12 @@ Upon reaching ezBIDS (https://brainlife.io/ezbids), users will see the following
 <br>
 <!-- ![Home Page](./img/ezbids/Levitas_etal_figureS0_homepage.png) -->
 
-For ezBIDS to access users' imaging data, the data must first be uploaded to ezBIDS's secure and encrypted JetStream2 server. There are two accepted upload methods:
+For ezBIDS to access users' imaging data, the data must first be uploaded to ezBIDS's secure and encrypted JetStream2 server (ezBIDS itself runs on a secure VM running on Jetstream cloud; HIPAA aligned cloud computing infrastructure). There are two accepted upload methods:
 1. **Raw DICOM data** from the scanner or imaging device.
 2. **NIfTI/JSON data** converted from DICOMs using [dcm2niix](https://github.com/rordenlab/dcm2niix). If using this option, it is best if the [most recent](https://github.com/rordenlab/dcm2niix/releases) dcm2niix version was used. 
+
+!!! warning
+    Uploaded data can only be accessed through the unique URL with your session ID. Furthermore, uploaded data is purged from the ezBIDS system after 5 days.
 
 ezBIDS prefers that non-anonymized data is uploaded (e.g. with the `-ba y` flag option in dcm2niix), as this makes it easier to discern the subject (and session, if applicable) mapping of the data and doesn’t require organizing the raw data in any specific manner. When non-anonymized, the data contains important metadata information such as the *AcquisitionDateTime*, *PatientName*, and *PatientID*, which help inform ezBIDS of the subject and session mappings. If however anonymized data are uploaded, which do not contain this metadata information, users will need to organize their data such that data from individual subject (and session) scans are in separate folders. To improve performance, these folder names should explicitly specify the subject (and session, if applicable) IDs desired (e.g., `sub-001`, `sub-001_ses-pre`, etc). Users are not required to adhere to this naming convention, however, in such cases ezBIDS will simply use the folder(s) name(s) as a placeholder for the subject (and session) IDs.
 
