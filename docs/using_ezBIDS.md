@@ -189,11 +189,22 @@ If new/different data is uploaded which was not present in the previous upload, 
 !!! note
     Uploading a *finalized.json* file does not mean that ezBIDS runs automatically from start to finish. When converting data to BIDS, user approval is judicious.
 
-### 2. Visualizing Imaging data
+### 2. dcm2niix error alerts
+
+ezBIDS, like most BIDS converters, users [dcm2niix](https://github.com/rordenlab/dcm2niix) to convert DICOM files to NIfTI and JSON (and bval/bvec) formatted files. These files are required by BIDS and used by many MRI processing & analysis tools. If dcm2niix generates an error for a specific or series of DICOMS during this conversion process, ezBIDS will display the message for users.
+
+<table><tr><td>
+    <img src="./img/ezbids/ezBIDS_dcm2niix_error.png"/>
+</td></tr></table>
+<br>
+
+It is recommended that users open an issue on the dcm2niix [issues page](https://github.com/rordenlab/dcm2niix/issues) to resolve any detected dcm2niix errors. However, users may still proceed with ezBIDS, as the error does not pertain to the entire uploaded data but rather a specific DICOM file(s). It should be noted though that the offending file(s) might result in an improper or corrupted NIfTI file that doesn't properly convert to BIDS. 
+
+### 3. Visualizing Imaging data
 
 In addition to providing screenshots of imaging data, ezBIDS comes with the [NiiVue](https://github.com/niivue/niivue) package, a web-based visualization tool for neuroimaging that can run on any operating system and any web device (phone, tablet, computer). On each image screenshot, users may click on the "NiiVue" button to open NiiVue and view their data.
 
-### 3. Installable version of ezBIDS
+### 4. Installable version of ezBIDS
 
 In the coming months, an installable version of ezBIDS will be made available through Docker, negating the need for data upload. With this, data will instead be accessible locally.
 
