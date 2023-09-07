@@ -106,12 +106,11 @@ A critical feature of ezBIDS is the ability to support tasks and event files. If
 
 !!! info ezBIDS assists users in dealing with timing events and units
     BIDS requires that timing files be translated into *events.tsv* format, with several required and optional columns. Required columns include the *onset* and *duration*. ezBIDS has the ability to assist users in cases where uploaded timing files do not have a column that specifically pertains to *onset* and *duration*. For example, rather than a column specifying trial durations, a file might contain a column for trial_onset and another column for trial_offset. Users can specify an arithmetic method (Subtract, Add) and choose the two columns that when subtracted or added create the duration value. It should be noted that this arithmetic approach only applies to event columns involving time-based values. Additionally, users can specify for timed-based columns whether the values are in seconds or milliseconds (BIDS requires that these values be reported in seconds).
-
-<table><tr><td>
-    <img src="./img/ezbids/Levitas_etal_figureS6_events_mapping.png"/>
-</td></tr></table>
-<br>
-<!-- ![Events Mapping](./img/ezbids/Levitas_etal_figureS6_events_mapping.png) -->
+    <table><tr><td>
+        <img src="./img/ezbids/Levitas_etal_figureS6_events_mapping.png"/>
+    </td></tr></table>
+    <br>
+    <!-- ![Events Mapping](./img/ezbids/Levitas_etal_figureS6_events_mapping.png) -->
 
 !!! warning Timing files for different tasks
     Currently, ezBIDS can only handle timing files that have identical column names. In theory, users can upload timing files pertaining to different `func/bold` tasks, but only if all files contain identical column names. 
