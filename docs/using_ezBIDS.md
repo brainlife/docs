@@ -172,24 +172,20 @@ Once a BIDS-compliant dataset is generated, users can click on the blue "Get BID
 
 This page details the ezBIDS developers, funding sources, and where to leave questions, comments, or suggestions. 
 
+---
+
 !!! info ezBIDS Configuration Templates
     ezBIDS creates templates for scanning sessions. Any scanning session processed using ezBIDS can become a template for future sessions. ezBIDS Templates can be reused to automatically load the BIDS mapping configuration a user has identified. Templates are helpful in the common situation where the same scanning protocol is used for multiple sessions. Often, researchers set up a scanning protocol and configure a series of scans to be acquired on multiple subjects across the duration of a research project. When the scans from the first subject are uploaded and processed via ezBIDS the researcher is effectively creating an ezBIDS Template, automatically. ezBIDS Templates are JSON files created every time a dataset is processed via ezBIDS. To use the template all the user has to do is to download the template and upload the template with any new sessions acquired in the future. ezBIDS Templates can be reused for any number of datasets and reduce users' interaction with the ezBIDS graphical interface.
-
-More specifically, after ezBIDS has converted a dataset to BIDS, users have the option to download the file *ezBIDS_template.json*. This file contains all information, to mape the DICOMs to BIDS, including user edits and modifications, from the ezBIDS session. This file can be uploaded with new datasets. When done so, the information in the file is applied to the new ezBIDS session, all the graphical interface fields are loaded with the information initially set by the user, reducing time spent on edits. If a dataset is uploaded with the wrong template, or if the template needs to be modified, the user has the option to overwrite the template uploaded and use ezBIDS as usual via the graphical interface. The configuration also enables many-to-one or one-to-many mapping, meaning that the *ezBIDS_template.json* information can pertain to a single subject but be applied to a current upload with multiple subjects or even sessions. The *ezBIDS_template.json* file can be renamed if desired, however, it needs to end in *ezBIDS_template.json* in order for ezBIDS to know what to look for. 
-
-!!! note
-    Uploading an *ezBIDS_template.json* file does not mean that ezBIDS runs automatically from start to finish. When converting data to BIDS, user review and approval are judicious.
+    More specifically, after ezBIDS has converted a dataset to BIDS, users have the option to download the file *ezBIDS_template.json*. This file contains all information, to mape the DICOMs to BIDS, including user edits and modifications, from the ezBIDS session. This file can be uploaded with new datasets. When done so, the information in the file is applied to the new ezBIDS session, all the graphical interface fields are loaded with the information initially set by the user, reducing time spent on edits. If a dataset is uploaded with the wrong template, or if the template needs to be modified, the user has the option to overwrite the template uploaded and use ezBIDS as usual via the graphical interface. The configuration also enables many-to-one or one-to-many mapping, meaning that the *ezBIDS_template.json* information can pertain to a single subject but be applied to a current upload with multiple subjects or even sessions. The *ezBIDS_template.json* file can be renamed if desired, however, it needs to end in *ezBIDS_template.json* in order for ezBIDS to know what to look for. 
+    Uploading an *ezBIDS_template.json* file will not let ezBIDS run automatically from start to finish, user's review and approval are judicious.
 
 !!! info ezBIDS and dcm2niix
-
-ezBIDS, like most BIDS converters, uses [dcm2niix](https://github.com/rordenlab/dcm2niix) to convert DICOM files to NIfTI, JSON, .bval, and .bvec files. The set of *dcm2niix* output files is required by BIDS. If dcm2niix generates an error for a specific series of DICOMS during the conversion process, ezBIDS will display the message for users.
-
-<table><tr><td>
-    <img src="./img/ezbids/ezBIDS_dcm2niix_error.png"/>
-</td></tr></table>
-<be>
-
-It is recommended that users open an issue on the dcm2niix [issues page](https://github.com/rordenlab/dcm2niix/issues) to resolve any detected dcm2niix-specific errors. However, users may still proceed with ezBIDS, as the error does not pertain to the entire uploaded data but rather a specific DICOM file(s). It should be noted though that the offending file(s) might result in an improper or corrupted NIfTI file that doesn't properly convert to BIDS. 
+    ezBIDS, like most BIDS converters, uses [dcm2niix](https://github.com/rordenlab/dcm2niix) to convert DICOM files to NIfTI, JSON, .bval, and .bvec files. The set of *dcm2niix* output files is required by BIDS. If dcm2niix generates an error for a specific series of DICOMS during the conversion process, ezBIDS will display the message for users.
+    <table><tr><td>
+        <img src="./img/ezbids/ezBIDS_dcm2niix_error.png"/>
+    </td></tr></table>
+    <be>
+    It is recommended that users open an issue on the dcm2niix [issues page](https://github.com/rordenlab/dcm2niix/issues) to resolve any detected dcm2niix-specific errors. However, users may still proceed with ezBIDS, as the error does not pertain to the entire uploaded data but rather a specific DICOM file(s). It should be noted though that the offending file(s) might result in an improper or corrupted NIfTI file that doesn't properly convert to BIDS. 
 
 !!! info ezBIDS and data visualization
     ezBIDS uses [NiiVue](https://github.com/niivue/niivue) to visualize data. *NiiVue* is a web-based visualization tool for neuroimaging that can run on any operating system and any web device (phone, tablet, computer). On each image screenshot, users may click on the "NiiVue" button to open NiiVue and view their data.
