@@ -10,7 +10,7 @@
 
 We use slack for our primary communication mechanism. [https://brainlife.slack.com](https://brainlife.slack.com).
 
-When you register to brainlife.io, we will send you an invite for our slack team. You can also [self invite to brainlife.slack.com](https://brainlife-inviter.herokuapp.com/){target=_blank} 
+When you register to brainlife.io, we will send you an invite for our slack team. You can also [self invite to brainlife.slack.com](https://brainlife.slack.com){target=_blank} 
 
 
 ## Bug Report / Feature Request

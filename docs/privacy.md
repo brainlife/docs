@@ -106,7 +106,7 @@ Visitors can have this information corrected by:
 
 * sending us email at the listed address
 * visiting us at the following URL: brainlife.io
-* brlife@iu.edu
+* brainlife.io@gmail.com
 
 ## Disclosure of Information
 

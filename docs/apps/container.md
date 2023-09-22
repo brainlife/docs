@@ -16,7 +16,7 @@ You can even share the same Docker container across multiple Apps that you and y
 
 ## Docker Engine
 
-To build a docker container, you need to [install Docker engine on your laptop](https://docs.docker.com/machine/install-machine/){target=_blank} or find a server that has docker engine installed that you can use. (Contact [Soichi](mailto:hayashis@iu.edu) if you need help.)
+To build a docker container, you need to [install Docker engine on your laptop](https://docs.docker.com/machine/install-machine/){target=_blank} or find a server that has docker engine installed that you can use. (Contact [Franco](mailto:pestilli@utexas.edu), [Anibal](mailto:anibalsolon@utexas.edu) or [Kim](mailto:kimray@utexas.edu) if you need help.)
 
 We assume you already have your Brainlife app hosted on Github, and you are making changes inside a cloned git repo on a machine with the Docker engine.
 

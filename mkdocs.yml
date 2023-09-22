@@ -21,6 +21,8 @@ theme:
 nav:
   - Home: index.md
 
+  - ezBIDS: using_ezBIDS.md
+
   - Using brainlife:
     - Getting Started: user/started.md
     - Projects: user/project.md

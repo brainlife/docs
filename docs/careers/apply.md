@@ -4,7 +4,7 @@
 
 ## Apply
 
-*Thank you for applying for our positions!*  Please [send us an email](mailto:brlife@iu.edu?subject=Job Application) with as many answers for the following questions as possible.
+*Thank you for applying for our positions!*  Please [send us an email](mailto:pestillilab@gmail.com?subject=Job Application) with as many answers for the following questions as possible.
 
 ## Contact Info
 
