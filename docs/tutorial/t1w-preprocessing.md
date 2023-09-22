@@ -35,7 +35,7 @@ The next step is to align the anatomical image to the point where two white matt
 
 <!-- ### 3. Freesurfer Brain Parcellation - Generation.
  -->
-### 2. Freesurfer Brain Parcellation - Generation.
+### 2. Freesurfer Surface Generation and Parcellation.
 
 The next step is to perform anatomical preprocessing and divide (i.e. parcellate) the brain into different regions and tissue types (i.e. white matter, gray matter) using Freesurfer. These regions represent different gray matter (i.e. cortical) landmarks such as the motor and somatosensory cortices, and are typically derived from histological properties of these regions. Sometimes, they are even derived from functional activation (i.e. fMRI) patterns. Freesurfer will divide the anatomical image into different tissue types (i.e. white matter, gray matter), parcellate the gray matter into known anatomical landmarks, and output statistics regarding the volume and thickness of the different tissue types and anatomical landmarks. These regions are then used for a large number of downstream steps, including white matter tract segmentation. Information regarding the volume and thickness of each region can also be used for group analyses. This can be done on brainlife.io using the [Freesurfer](https://brainlife.io/app/5fe1056057aacd480f2f8e48) app.
 
@@ -56,9 +56,9 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 
 ### Copy appropriate data over from a single subject in the Tutorial project
 
-1. Click the following link to go to the project's page for the [Tutorial](https://brainlife.io/project/5e7638f6de643b02832a8246/detail)
+1. Click the following link to go to the project's page for the [Tutorial](https://brainlife.io/project/650b4cbcb094062da6b38360)
 1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
-1. Select the following datatypes from one subject by clicking the boxes next to the data for subject 'test001':
+1. Select the following datatypes from one subject by clicking the boxes next to the data for subject '10159':
     * anat/t1w
 1. Click the 'Stage to process' button on the right side of the screen
     * For 'Project', select your project from the drop-down menu.
@@ -105,10 +105,10 @@ Once you're happy with the alignment, you can move onto Freesurfer!
 
 Once you're happy with the alignment, you can move onto Freesurfer parcellation generation! -->
 
-### Freesurfer Brain Parcellation - Generation.
+### Freesurfer Surface Generation and Parcellation.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'Freesurfer 7.1.1'
+    * In the search bar, type 'Freesurfer 7.3.2'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
     * For input, select the ACPC aligned anatomical image generated above by clicking the drop-down menu and finding the appropriate datasets.
