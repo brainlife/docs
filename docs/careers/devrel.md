@@ -4,7 +4,7 @@
 
 ## Community Developer / Outreach Coordinator
 
-Do you like helping other people? Or do you enjoy meeting new people? If yes, then you will enjoy this role buidling a stronger community around brainlife.io, and making sure we have an effective online presence (website, documentation, social media, etc..). 
+Do you like helping other people? Or do you enjoy meeting new people? If yes, then you will enjoy this role building a stronger community around brainlife.io, and making sure we have an effective online presence (website, documentation, social media, etc..). 
 
 ### You are a solid fit for this position if...
 
@@ -21,7 +21,7 @@ Do you like helping other people? Or do you enjoy meeting new people? If yes, th
 * Has experience working with document template frameworks like mkdocs / jekyll
 * Has experience editing videos, and making screencast tutorials.
 * Can adopt to an existing design / documentation style standards
-* Familar with progressive, accessbility web standards and handling cross-browser compatibility issues
+* Familiar with progressive, accessibility web standards and handling cross-browser compatibility issues
 * Has excellent eyes for detail, consistency and accuracy
 * Proficient understanding of git, and has strong presence on github.
 * Experience with CRM tools.

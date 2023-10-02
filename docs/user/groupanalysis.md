@@ -1,5 +1,5 @@
 # Group Analysis
-Brainlife.io's "Group Analysis" functionality allows for seemless project-level analysis directly on brainlife. You'll no longer have to download data to your local machine to perform your statistical analyses!
+Brainlife.io's "Group Analysis" functionality allows for seamless project-level analysis directly on brainlife. You'll no longer have to download data to your local machine to perform your statistical analyses!
 
 This tutorial will walk you through a short example of generating group-average tract profiles from the neuro/tractmeasures datatype. This is a simple walk-through, designed to be used in conjunction with this tutorial: . 
 
@@ -34,7 +34,7 @@ from scipy import stats
 ```
 
 # Defining useful functions
-Like with anyother Jupyter notebook, defining functions on brainlife is the exact same process. Explaining the process of defining a script is beyond the scope of this tutorial, however if you'd like more information on functions in python, here's a useful tutorial:
+Like with any other Jupyter notebook, defining functions on brainlife is the exact same process. Explaining the process of defining a script is beyond the scope of this tutorial, however if you'd like more information on functions in python, here's a useful tutorial:
 
 In the following cells, we've defined some useful functions that will be used later for figure generation and data manipulation. There's small documentation on each function describing what the function does and the inputs. Like with installing modules, to define these functions in the kernel, hit 'Shift'+'Enter' in the following cells.
 

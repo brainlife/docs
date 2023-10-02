@@ -38,7 +38,7 @@ bl data update --id <dataid> -m /path/to/sidecar.json
 
 ## Bulk Update Tags
 
-By combining with other CLIs and a bit of bash scripting, you can bulk update tags on multiple datas. 
+By combining with other CLIs and a bit of bash scripting, you can bulk update tags on multiple data. 
 
 Let's say you have a file with a list of subject names to update.
 
@@ -58,7 +58,7 @@ Let's say you have a file with a list of subject names to update.
 ..
 ```
 
-The following script will then iterate through this list and set "S500" tag on all datas with matching subjects.
+The following script will then iterate through this list and set "S500" tag on all data with matching subjects.
 
 ```bash
 #!/bin/bash
@@ -68,7 +68,7 @@ do
     bl data query --project 59a09bbab47c0c0027ad7046 --subject $subject --json > list.json
     jq -r ".[]._id" list.json > ids.txt
 
-    #iterate each datas for this subject and add some tags
+    #iterate each data for this subject and add some tags
     for id in $(cat ids.txt)
     do
         echo "  updating $id"

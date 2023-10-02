@@ -8,7 +8,7 @@ Now that we are `Projects` experts, we can cover `Processes` in-depth. In any Pr
 
 ## Staging Data 
 
-Processing data begins with **staging your datset.** You can stage a dataset from any project and subject you have read access to (but remember that it may be helpful to create a separate Process for each subject). To stage data, simply click the `Stage Data` button and fill in the [data-object information](/docs/user/started/#brainlifeio-terms-to-know). 
+Processing data begins with **staging your dataset.** You can stage a dataset from any project and subject you have read access to (but remember that it may be helpful to create a separate Process for each subject). To stage data, simply click the `Stage Data` button and fill in the [data-object information](/docs/user/started/#brainlifeio-terms-to-know). 
 
 ![stage data](../img/stage data.png)
 
@@ -46,7 +46,7 @@ Before we finish talking about Processes, let's do a quick breakdown of the task
 
 * Requested
 
-    When you first submit your task, brainlife.io will confirm it has been `Requested` as the task waits to be assigend to a resource. If there are a lot of tasks being processed on the platform at the same time, it may take a few minutes for your task to be picked up.
+    When you first submit your task, brainlife.io will confirm it has been `Requested` as the task waits to be assigned to a resource. If there are a lot of tasks being processed on the platform at the same time, it may take a few minutes for your task to be picked up.
 
 * Running
 

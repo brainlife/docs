@@ -21,15 +21,15 @@ App can run on many different environment / clusters. To normalize the execution
 
 ## Prerequisite
 
-Before you start making an App for brainlife, you should be familar with the following general concepts:
+Before you start making an App for brainlife, you should be familiar with the following general concepts:
 
-1. You should be familar with at least 1 programming language (Matlad, Python, R, etc..)
+1. You should be familiar with at least 1 programming language (Matlad, Python, R, etc..)
 
 2. You should be comfortable with bash terminal and some basic bash scripting. Please see [https://docs.microsoft.com/en-us/learn/modules/bash-introduction/](https://docs.microsoft.com/en-us/learn/modules/bash-introduction/){target=_blank}
 
 3. You should know how to use [git](https://git-scm.com/docs/gittutorial){target=_blank} and [github](https://guides.github.com/){target=_blank} to publish your git repo.
 
-4. Although you can develop and test your App on your local computer, brainlife.io will run your App mostly on various HPC resources. Therefore, you should be familar with basic concetps on HPC systems. Please see 
+4. Although you can develop and test your App on your local computer, brainlife.io will run your App mostly on various HPC resources. Therefore, you should be familiar with basic concetps on HPC systems. Please see 
 
     - [https://researchcomputing.princeton.edu/support/knowledge-base/slurm](https://researchcomputing.princeton.edu/support/knowledge-base/slurm){target=_blank}
     - [Intro to HPC at IU (YouTube)](https://www.youtube.com/watch?v=atHXod7ZsfY){target=_blank} 
@@ -48,7 +48,7 @@ You would normally follow these steps to develop and register your App on Brainl
 8. Contact resource administrators and ask them to enable your App (more below). 
 
 !!! hint
-    Creating an App for brainlife.io requires you to be familiar with wide range of techincal knowledge in areas including programming, unix/shell, git, HPC. 
+    Creating an App for brainlife.io requires you to be familiar with wide range of technical knowledge in areas including programming, unix/shell, git, HPC. 
     Please refer to [learn-neuroimaging.github.io](https://learn-neuroimaging.github.io/tutorials-and-resources/11-programming/){target=_blank} for a community curated list of online tutorials.
 
 # Enabling an App on a compute resource
@@ -118,7 +118,7 @@ All App should have clearly defined upper bound (aka "Big-O") in terms of resour
 
 This informs the batch scheduler how long / how much of its computing capability is needed to run your App. Your job will be killed if you exceed what you specify in these directives.
 
-When the job is executed on HPC system, the batch scheduler will allocate requested amount of time / resources for the job and it will consume SUs on those resources based on these parameters. It is important to keep the resource requirement as low as possible so that your job will not consume more SUs than necessary. You should measure the amount of CPU / memory resource typically consumed and set these parameter accordingly. If your job takea a long time to run, you will need to set the walltime requirement high enough to accomdate it. Not only the cost of running jobs increases as you increase the resource requirement, it will also increase the queue time of the job waiting for the block of requested resource to become available for your job.
+When the job is executed on HPC system, the batch scheduler will allocate requested amount of time / resources for the job and it will consume SUs on those resources based on these parameters. It is important to keep the resource requirement as low as possible so that your job will not consume more SUs than necessary. You should measure the amount of CPU / memory resource typically consumed and set these parameter accordingly. If your job takea a long time to run, you will need to set the walltime requirement high enough to accommodate it. Not only the cost of running jobs increases as you increase the resource requirement, it will also increase the queue time of the job waiting for the block of requested resource to become available for your job.
 
 !!! warning
     Please be conservative with amount of cpus-per-task (or ppn). Most batchscheduler will consume SUs based on number of CPU counts you request times the amount of time. For example, if you request a job to run for 2 hours with 16 cores, it will consume 2x16=32 units. If you only use 4 cores for your job, please set it to 4 so that it will only consume 2x4=8 units instead.

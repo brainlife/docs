@@ -36,7 +36,7 @@ Next we will start managing some data on the platform by creating a Project.
         * Name
         * Description
         * Readme
-        * Navigate to Access Control and add the following accounts in Adminstrators (if you start typing a name, the system will autocomplete for you):
+        * Navigate to Access Control and add the following accounts in Administrators (if you start typing a name, the system will autocomplete for you):
             * Brad Caron
             * Soichi Hayashi
             * Franco Pestilli

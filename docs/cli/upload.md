@@ -160,11 +160,11 @@ Status: stored
 
 Say we have all files from several subejcts in a single folder (the current folder) with two datafiles, DWI (dffusion-weighted MRI data files) and T1W (t1 weighted MRI, anatomical data files). Say that each subject is either a control (CNTR) or a patient (PTNT).
 
-We will first login on brainlife. Then set the current proejct variable (project IDs are the hash-numbers indicated on each project web-address on brainlife.io)
+We will first login on brainlife. Then set the current project variable (project IDs are the hash-numbers indicated on each project web-address on brainlife.io)
 
 We will match the DWI files to the correspondign brainlife.io datatype, which is neuro/dwi. We will also match the T1W files to the corresponding brainlife.io datatype which is neuro/anat/t1w.
 
-We will automatically find the total number of subejcts and for each subject we will push on the brainlife.io platform the T1W and the DWI and match them with the corresponding datatype. The CLI command will run the brainlife.io datatype validator and upload the file, whch will magically populate the project online.
+We will automatically find the total number of subejcts and for each subject we will push on the brainlife.io platform the T1W and the DWI and match them with the corresponding datatype. The CLI command will run the brainlife.io datatype validator and upload the file, which will magically populate the project online.
 
 A bash script would would look like the following:
 

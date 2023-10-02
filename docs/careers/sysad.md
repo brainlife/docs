@@ -4,7 +4,7 @@
 
 ## Cloud and Cluster Administrator
 
-brainlife.io runs Apps on varaiety of HPC clusters and public and private cloud computing platforms. You will be reponsible for maintaining these clusters and optimize our auto-scaling clusters that can meet the current demand from our users in a most efficient manner.
+brainlife.io runs Apps on varaiety of HPC clusters and public and private cloud computing platforms. You will be responsible for maintaining these clusters and optimize our auto-scaling clusters that can meet the current demand from our users in a most efficient manner.
 
 ### You are a solid fit for this position if...
 
@@ -23,7 +23,7 @@ brainlife.io runs Apps on varaiety of HPC clusters and public and private cloud 
 * Demonstrable ability to write clean, concise, and maintainable code.
 * Python, and bash. Familiarity with nodejs, npm and Javascript ecosystems.
 * Familiarity with common OWASP vulnerabilities.
-* Great feedbacks from your past work coleagues and other research / software engineers.
+* Great feedbacks from your past work colleagues and other research / software engineers.
 * git, ansible, experience using monitoring systems (sensu, munin, etc..)
 * Experience with 24x7 operations.
 * You can work without a lot of supervisions, but can keep the team member informed of your progress.

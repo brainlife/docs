@@ -31,7 +31,7 @@ Once the dMRI data has been cleaned and aligned to the anatomical (T1w) image, t
 
 The first step is to fit models of diffusion at each location in the dMRI image that can be used as a guide for the tractography algorithms. The most popular model for this is known as **constrained spherical deconvolution**, or **CSD**. CSD allows for the possibility of multiple fascicles entering a single location that may have different trajectories, which is a major advantage of this model over other models of diffusion. The CSD model at each location can tell the tracking algorithm _how strongly_ and in _what direction_ water is diffusing in the brain, and thus where organized and myelinated white matter is likely to be.
 
-Once we know the direction of water movement using the CSD model, we can then perform **diffusion tractography** to map the underlying organized white matter. Diffusion tractography *sews* together regions with common directions of water movement into streamlines that provide evidence for organized, myelinated white matter. These operations can be done millions of times across the entire brain to form **tractograms**. There are many algorithms for doing this that fall into two main categories: **deterministic** and **probabilistic**. **Determinstic** algorithms work by strictly following the directions of water movement, while **probabilistic** algorithms infer a probability of different directions of water movement at any given location. Deterministic tractography tends to be an overly conservative representation of the white matter, as modeling is never perfectly accurate. Probabilistic tractography tends to provide *hairy* streamline representations, as the model allows for a probability of different directions of water movement at any given location. Recently, it was discovered that combining both algorithms, or **ensembling** them, provides the most anatomically-accurate tractograms.
+Once we know the direction of water movement using the CSD model, we can then perform **diffusion tractography** to map the underlying organized white matter. Diffusion tractography *sews* together regions with common directions of water movement into streamlines that provide evidence for organized, myelinated white matter. These operations can be done millions of times across the entire brain to form **tractograms**. There are many algorithms for doing this that fall into two main categories: **deterministic** and **probabilistic**. **Deterministic** algorithms work by strictly following the directions of water movement, while **probabilistic** algorithms infer a probability of different directions of water movement at any given location. Deterministic tractography tends to be an overly conservative representation of the white matter, as modeling is never perfectly accurate. Probabilistic tractography tends to provide *hairy* streamline representations, as the model allows for a probability of different directions of water movement at any given location. Recently, it was discovered that combining both algorithms, or **ensembling** them, provides the most anatomically-accurate tractograms.
 
 On brainlife.io, we have many options for performing tractography! For this tutorial, we will focus on anatomically-constrained tractography, using the [mrtrix3 - WMC Anatomically Constrained Tractography (ACT) ](https://brainlife.io/app/5e9dced9f1745d6994f692c0) app, which restricts streamline representations to those that are biologically-plausible (i.e. not crossing CSF or gray matter)! Within this app, both the CSD and DTI models will be fit to the diffusion data and returned as outputs!
 
@@ -118,7 +118,7 @@ Once you're happy with the alignment, you can move onto running Freesurfer!
         * Click the drop-down menu next to 'Annotation' and choose 'Load from file'
             * Choose the appropriate hemisphere aparc.a2009s.annot file (lh.aparc.a2009s.annot)
             * Hit 'OK'
-            * The aparc.a2009s parcellation should be overlayed on your inflated surface! Now, repeat the process on the other hemisphere.
+            * The aparc.a2009s parcellation should be overlaid on your inflated surface! Now, repeat the process on the other hemisphere.
 
 Once you're happy with the surfaces, you can move onto preprocessing the diffusion data!
 
@@ -208,7 +208,7 @@ If you're happy with the results, you're ready to move onto mapping microstructu
     * Click the app card.
 1. On the 'Submit App' page, select the following:
     * For tensor, select the tensor output generated in Step 4 by clicking the drop-down menu and finding the appropriate dataset.
-    * For wmc, select the cleaned major white matter semgentation output generated in Step 6 by clicking the drop-down menu and finding the appropriate dataset.
+    * For wmc, select the cleaned major white matter segmentation output generated in Step 6 by clicking the drop-down menu and finding the appropriate dataset.
     * For track/tck, select the whole brain tractogram generated in Step 4 by clicking the drop-down menu and finding the appropriate dataset.
     * Leave all other options as defaults
     * Select the box for 'Archive all output datasets when finished'
@@ -223,7 +223,7 @@ If you're happy with the results, you're ready to move onto mapping microstructu
     * In the search bar, type 'Tractography Quality Check'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
-    * For wmc, select the cleaned major white matter semgentation output generated in Step 6 by clicking the drop-down menu and finding the appropriate dataset.
+    * For wmc, select the cleaned major white matter segmentation output generated in Step 6 by clicking the drop-down menu and finding the appropriate dataset.
     * For track/tck, select the whole brain tractogram generated in Step 4 by clicking the drop-down menu and finding the appropriate dataset.
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'macrostructural_statistics'

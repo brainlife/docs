@@ -1,5 +1,5 @@
 !!! note
-    You will need a resource owner priviledge in order to register you own resource. Please contact brlife@iu.edu.
+    You will need a resource owner privilege in order to register you own resource. Please contact brlife@iu.edu.
 
 ## Background
 
