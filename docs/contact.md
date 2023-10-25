@@ -2,7 +2,7 @@
 
 ## Email
 
-[Brainlife &lt;brlife@iu.edu&gt;](mailto:brlife@iu.edu)
+[Brainlife &lt;brainlife.io@gmail.com&gt;](mailto:brainlife.io@gmail.com)
 
 [Franco Pestilli (PI) &lt;pestilli@utexas.edu&gt;](mailto:pestilli@utexas.edu)
 
