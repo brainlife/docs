@@ -4,7 +4,7 @@
 
 ## Scientific UI / Visualization Engineer
 
-brainlife.io users rely on variety of visualization tools made avaialble on the platform. These are meant to enable quick quality control for App outputs and data quality. The visualization engineer will be reponsible for developing and maintaining various visualization tools that are easy to understand, that can inform meaningful information to assist our users' decision making process. As an UI Engineer, you will also be tasked to conduct various UI / UX testings on the entire brainlife.io platform.
+brainlife.io users rely on variety of visualization tools made available on the platform. These are meant to enable quick quality control for App outputs and data quality. The visualization engineer will be responsible for developing and maintaining various visualization tools that are easy to understand, that can inform meaningful information to assist our users' decision making process. As an UI Engineer, you will also be tasked to conduct various UI / UX testings on the entire brainlife.io platform.
 
 ### You are a solid fit for this position if...
 

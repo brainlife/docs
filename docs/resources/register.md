@@ -1,5 +1,5 @@
 !!! note
-    You will need a resource owner priviledge in order to register you own resource. Please contact mailto:brainlife.io@gmail.com.
+You need to be a resource owner in order to register you own resource. Please contact mailto:brainlife.io@gmail.com.
 
 ## Background
 
