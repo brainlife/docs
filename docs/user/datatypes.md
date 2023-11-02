@@ -89,7 +89,7 @@ We have developed the following custom visualization tools for brainlife.io
 
 ![img](https://brainlife.io/images/ui-logos/nnview.png)
 
-### pRF Viwer
+### pRF Viewer
 
 [demo](https://brainlife.io/ui/prfview/){target=_blank}
 

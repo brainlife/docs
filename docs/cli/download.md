@@ -138,7 +138,7 @@ done
 
 So far we have described how you can upload / download data from brainlife.io which is stored in Brainlife's project archive. On brainlife.io, you run
 Apps inside "process" and data generated there can be "archived" to the brainlife.io's project archive. Sometimes, you want to download files generated
-inside a process, which may contain extra files that are not archived in project archive. You might also want to access proceess data as you can specify 
+inside a process, which may contain extra files that are not archived in project archive. You might also want to access process data as you can specify 
 which files / directory to download - rather than the entire `.tar.gz` content from project archive.
 
 The following python script demonstrates how you can query for existing processes / tasks, and download content stored under each tasks. 

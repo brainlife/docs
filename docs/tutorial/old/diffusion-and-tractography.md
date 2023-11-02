@@ -45,7 +45,7 @@ The above pipeline assumes that your data are compliant with VISTASOFT or the Hu
 [https://doi.org/10.25663/bl.app.17](https://doi.org/10.25663/bl.app.17){target=_blank}
 
 ### Ensemble tractography Multishell Diffusion Processing using DESIGNER
-Today, some of the most common dMRI data are acquired with multiple shells. This allows fitting models to the diffusion signal with additional paramters to better capture the complexity of the signal in areas of fiber crossing. The pipeline described below will exploit this modern dMRI data type and performs tractometry.  
+Today, some of the most common dMRI data are acquired with multiple shells. This allows fitting models to the diffusion signal with additional parameters to better capture the complexity of the signal in areas of fiber crossing. The pipeline described below will exploit this modern dMRI data type and performs tractometry.  
 
 ##### 1. Brain Parcellation (FreeSurfer).
 The first step is to launch FreeSurfer, this will perform anatomical preprocessing and parcellate the brain into different regions: [https://doi.org/10.25663/bl.app.0](https://doi.org/10.25663/bl.app.0){target=_blank}
@@ -74,7 +74,7 @@ The Neurite Orientation Dispersion Diffusion model (NODDI) was originally propos
 [https://doi.org/10.25663/brainlife.app.117](https://doi.org/10.25663/brainlife.app.117){target=_blank}
 
 ###### 5.2 Advanced: Generate DKI model parameters.
-The Diffusion Kurtosis Imaging (DKI; [Jensen et al., MRM 2005](https://doi.org/10.1002/mrm.20508){target=_blank}) model provides additional (high-order) parameters that describe components of the dMRI signal that cannot be accounted for by the single-gaussian (simpler) DTI model. By running the two apps below in the following sequence it is possible to generated DKI paramters to be used for generating advanced tract profiles.
+The Diffusion Kurtosis Imaging (DKI; [Jensen et al., MRM 2005](https://doi.org/10.1002/mrm.20508){target=_blank}) model provides additional (high-order) parameters that describe components of the dMRI signal that cannot be accounted for by the single-gaussian (simpler) DTI model. By running the two apps below in the following sequence it is possible to generated DKI parameters to be used for generating advanced tract profiles.
 [https://doi.org/10.25663/bl.app.9](https://doi.org/10.25663/bl.app.9){target=_blank}
 [https://doi.org/10.25663/bl.app.70](https://doi.org/10.25663/bl.app.70){target=_blank}
 

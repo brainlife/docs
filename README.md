@@ -28,7 +28,7 @@ We kindly ask that you cite the following articles when publishing papers and co
 
 #### MIT Copyright (c) 2020 brainlife.io The University of Texas at Austin and Indiana University
 
-# Installation intructions
+# Installation instructions
 
 ```
 sudo apt install pip

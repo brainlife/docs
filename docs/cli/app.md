@@ -98,7 +98,7 @@ if [ ! $? -eq 0 ];
 fi
 echo "finished!"
 
-# Download the ouput data
+# Download the output data
 bl data download -i  
 for id in $(bl data query --taskid $taskid --json | jq -r ".[]._id"); do
     echo "downloading data $id"

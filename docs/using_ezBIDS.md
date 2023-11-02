@@ -3,48 +3,46 @@
 
 [ezBIDS](https://brainlife.io/ezbids) is a web-based BIDS conversion tool that requires neither installation, programming proficiency, nor knowledge of the Unix terminal and BIDS specification. The term BIDS is an acronym that stands for the [Brain Imaging Data Structure](https://bids-specification.readthedocs.io/en/stable/). More specifically, BIDS is a format for describing and organizing (primarily neuroimaging) data, greatly enhancing data sharing within the scientific community, as well as enabling access to a suite of processing and analysis tools that can be automatically executed on BIDS data, known as [BIDS apps](https://bids-apps.neuroimaging.io/). This tutorial describes how to use ezBIDS to easily convert imaging data to BIDS.
 
-## A Quick Primer
+## A Primer to ezBIDS
 
-The process of converting raw imaging data to BIDS is often time-consuming. Fortunately, there exist many open source tools to aid researchers in this process. For a thorough list of BIDS conversion tools, see [here](https://github.com/rordenlab/dcm2niix#links) and [here](https://bids.neuroimaging.io/benefits.html#mri-and-pet-converters). ezBIDS contains four unique features that differentiate it from these other currently available tools:
-1. No installation or programming required
-2. Semi-automated inference and guidance for BIDS adherence
-3. Conversion of task event/timing files associated with functional BOLD (`func/bold`) sequences
+The process of converting raw imaging data to BIDS is often time-consuming and can require substantial technical expertise. Fortunately, there exist many open-source tools to aid researchers in this process. For a thorough list of BIDS conversion tools, see [official BIDS standard website](https://github.com/rordenlab/dcm2niix#links) and [this is another helpful page](https://bids.neuroimaging.io/benefits.html#mri-and-pet-converters). 
+
+ezBIDS provides unique features that differentiate the tool from others:
+1. No installation or programming required. It works in your web browser.
+2. Semi-automated inference and guidance for BIDS adherence. It makes educated guesses about how your data should be mapped into BIDS and proposes both initial BIDS mapping of your data and warnings on the things that might need your attention.
+3. Conversion of task event/timing files associated with functional BOLD (`func/bold`) sequences. If you have collected data using a task ezBIDS will help you map your tasks events into BIDS.
 4. Multiple data management options:
-    1. Download converted BIDS data to local computer or server
-    2. Upload converted BIDS data to open-science platforms such as [OpenNeuro](https://openneuro.org/) and [brainlife.io](https://brainlife.io/about/)
+    1. Download BIDS-converted data to a local computer or server.
+    2. Push BIDS-converted data to open-science archives and platforms, such as [OpenNeuro](https://openneuro.org/) and [brainlife.io](https://brainlife.io/about/).
 
-ezBIDS attempts to do the heavy lifting for users, discerning the necessary descriptions of uploaded data as required by BIDS, and how the data is to be organized. Importantly however, users have the ability to make edits/modifications on the ezBIDS web pages to ensure that the provided information is appropriate. Upon reaching the ezBIDS homepage, users are guided through several steps (i.e. web pages) to ensure that data is accurately described, organized, and ultimately, converted. These steps are described below.
+Think about [ezBIDS](https://brainlife.io/ezbids) as a small, smart, decision support system. ezBIDS attempts to do the heavy lifting for users, interpreting the necessary descriptions of the data uploaded and mapping these descriptions to the corresponding BIDS descriptions. Critically, however, users have the ability to edit (or modify) the BIDS dataset created by ezBIDS. Using the ezBIDS graphical interface users can make sure that the BIDS dataset created is appropriate and looks like the user wants it. 
 
 ## ezBIDS Walkthrough
 
 ### 1. Upload Imaging Data
 
-Upon reaching ezBIDS (https://brainlife.io/ezbids), users will see the following:
+Upon reaching the [ezBIDS](https://brainlife.io/ezbids) homepage, users are guided through several steps (i.e., web pages) to ensure that data are accurately described, organized, pseudonymized, and, ultimately, converted. These steps are described below:
 
-<table><tr><td>
-    <img src="./img/ezbids/Levitas_etal_figureS0_homepage.png"/>
-</td></tr></table>
-<br>
-<!-- ![Home Page](./img/ezbids/Levitas_etal_figureS0_homepage.png) -->
+![Home Page](./img/ezbids/Levitas_etal_figureS0_homepage.png)
 
-For ezBIDS to access users' imaging data, the data must first be uploaded to ezBIDS's secure and encrypted JetStream2 server (ezBIDS itself runs on a secure VM running on Jetstream cloud; HIPAA aligned cloud computing infrastructure). There are two accepted upload methods:
+For ezBIDS to access users' imaging data, the data must first be uploaded to ezBIDS's secure and encrypted server (ezBIDS runs on a secure VM running on the HIPAA-aligned National Science Foundation's [Jetstream-Cloud](https://jetstream-cloud.org/)). There are two accepted upload methods:
 1. **Raw DICOM data** from the scanner or imaging device.
 2. **NIfTI/JSON data** converted from DICOMs using [dcm2niix](https://github.com/rordenlab/dcm2niix). If using this option, it is best if the [most recent](https://github.com/rordenlab/dcm2niix/releases) dcm2niix version was used. 
 
 !!! warning
-    Uploaded data can only be accessed through the unique URL with your session ID. Furthermore, uploaded data is purged from the ezBIDS system after 5 days.
+    Uploaded data can only be accessed through the unique URL with your session ID. Also, uploaded data are purged from the ezBIDS system after 5 days.
 
-ezBIDS prefers that non-anonymized data is uploaded (e.g. with the `-ba y` flag option in dcm2niix), as this makes it easier to discern the subject (and session, if applicable) mapping of the data and doesn’t require organizing the raw data in any specific manner. When non-anonymized, the data contains important metadata information such as the *AcquisitionDateTime*, *PatientName*, and *PatientID*, which help inform ezBIDS of the subject and session mappings. If however anonymized data are uploaded, which do not contain this metadata information, users will need to organize their data such that data from individual subject (and session) scans are in separate folders. To improve performance, these folder names should explicitly specify the subject (and session, if applicable) IDs desired (e.g., `sub-001`, `sub-001_ses-pre`, etc). Users are not required to adhere to this naming convention, however, in such cases ezBIDS will simply use the folder(s) name(s) as a placeholder for the subject (and session) IDs.
+ezBIDS prefers that non-anonymized data are uploaded (e.g. with the `-ba y` flag option in dcm2niix), as this makes it easier to discern the subject (and session, if applicable) mapping of the data and doesn’t require organizing the raw data in any specific manner. When non-anonymized, the data contains important metadata information such as the *AcquisitionDateTime*, *PatientName*, and *PatientID*, which help inform ezBIDS of the subject and session mappings. If however anonymized data are uploaded, which do not contain this metadata information, users will need to organize their data such that data from individual subject (and session) scans are in separate folders. To improve performance, these folder names should explicitly specify the subject (and session, if applicable) IDs desired (e.g., `sub-001`, `sub-001_ses-pre`, etc.). Users are not required to adhere to this naming convention, however, in such cases, ezBIDS will simply use the folder(s) name(s) as a placeholder for the subject (and session) IDs.
 
 !!! note Non-anonymized Data
-    If non-anonymized data is provided, ezBIDS will eventually anonymize the data (i.e., remove identifying metadata) before converting to BIDS.
+    If non-anonymized data are provided, ezBIDS will eventually anonymize the data (i.e., remove identifying metadata) before converting to BIDS.
 
 Users may upload compressed imaging data using formats such as *.tar.xz*, *.tar*, *.tgz*, *.gz*, *.7z*, *.bz2*, *.zip*, and *.rar*.
 
-Once data is uploaded, ezBIDS perform several backend operations to gather and identify as much relevant BIDS information as possible, as well as general information to help users see what data they’re examining (e.g., image screenshots, metadata, etc). All this information is then presented to users on the subsequent pages. Users may then edit or modify BIDS-specific information as they so choose. 
+Once data are uploaded, ezBIDS performs several backend operations to gather and identify as much relevant BIDS information as possible, as well as general information to help users see what data they’re examining (e.g., image screenshots, metadata, etc.). All this information is then presented to users on the subsequent pages. Users may then edit or modify BIDS-specific information as they so choose. 
 
 !!! info Upload Speed and Time
-    The amount of time to upload data is dependent on the size of data being uploaded and internet connection strength. 
+    The amount of time to upload data will depend on the size of the data being uploaded and the speed of the internet connection. 
     
 ezBIDS has been primarily tested on the Chrome and Firefox browsers; it is preferable that one of these browsers be used. 
 
@@ -52,129 +50,84 @@ ezBIDS has been primarily tested on the Chrome and Firefox browsers; it is prefe
 
 This page allows users to provide general information regarding their dataset, such as authors, funding sources, etc. 
 
-<table><tr><td>
-    <img src="./img/ezbids/Levitas_etal_figureS2_dataset_description.png"/>
-</td></tr></table>
-<br>
-<!-- ![Dataset Description](./img/ezbids/Levitas_etal_figureS2_dataset_description.png) -->
+![Dataset Description](./img/ezbids/Levitas_etal_figureS2_dataset_description.png)
 
 Users only need to provide information here the first time using ezBIDS with data from a new dataset. When using ezBIDS with newly acquired data from the same dataset as before, this information is already provided and is therefore redundant to specify again.
 
 !!! warning Progress checks
-    For this and subsequent ezBIDS web pages, certain information is required by BIDS, indicated on each page with a red asterisk or circle. These fields must be entered, otherwise users will be unable to progress to the next page. This provides users with real-time assistance on what information is required in order to have BIDS compliant data, rather than going through the entire process only to learn afterwards that there is an issue to resolve. 
+    For this and subsequent ezBIDS web pages, certain information is required by BIDS, indicated on each page with a red asterisk or circle. These fields must be entered, otherwise, users will be unable to progress to the next page. This provides users with real-time assistance on what information is required in order to have BIDS-compliant data, rather than going through the entire process only to learn afterward that there is an issue to resolve. 
 
-### 3. Subjects/Sessions
+### 3. Subjects and Sessions
 
-On this page, ezBIDS provides the subject (and session, if applicable) IDs of the uploaded data. Users may edit or modify these fields as they see fit. This can either be done manually, or by selecting an option within the "Reset Subject Mapping" button.
+On this page, ezBIDS provides the subject (and session, if applicable) IDs of the uploaded data. Users may edit or modify these fields as they see fit. This can either be done manually or by selecting an option within the "Reset Subject Mapping" button.
 
-<table><tr><td>
-    <img src="./img/ezbids/Levitas_etal_figureS3_subjects_sessions.png"/>
-</td></tr></table>
-<!-- ![Subjects/Sessions](./img/ezbids/Levitas_etal_figureS3_subjects_sessions.png) -->
+![Subjects/Sessions](./img/ezbids/Levitas_etal_figureS3_subjects_sessions.png)
 
-### 4. Series Mapping
+### 4. Grouping data 
 
-Here, ezBIDS organizes all uploaded data into specific series/group IDs. Imaging sequences are grouped into the same series ID if they contain identical information in the following metadata fields: *SeriesDescription*, *ImageType*, *EchoTime*, and *RepetitionTime*. ezBIDS assumes that data with the same series ID will contain the same [entities](https://bids-specification.readthedocs.io/en/stable/appendices/entities.html) that go into the converted file names.
+ezBIDS organizes all uploaded data into specific series and group IDs. This is an intermediate step, that ezBIDS uses to facilitate editing entire series (or groups) of data files. Say, you want to change all the files from a single subject so that all the files start with a specific subject ID, or say you want to change all the data that are anatomical to start with the prefix *anat*, ezBIDS allows you to that by grouping data for you by subjects, series, etc. 
 
-<table><tr><td>
-    <img src="./img/ezbids/Levitas_etal_figureS4_series_mapping_all.png"/>
-</td></tr></table>
-<br>
-<!-- ![Series Mapping](./img/ezbids/Levitas_etal_figureS4_series_mapping.png) -->
+![Series Mapping](./img/ezbids/Levitas_etal_figureS4_series_mapping_all.png)
 
- This grouping procedure is meant to save users time rather than having to make edits/modifications for each specific uploaded data file. For example, suppose a user uploads data from 10 subjects, each containing an anatomical T1w sequence. Assuming each was collected with identical scan parameters, all 10 anatomical T1w sequences would be given the same series ID. Then, if a user wishes to specify that these images are MPRAGE acquisitions, they can add this to the acquisition (acq) entity provided on the page (i.e. `acq-mprage`). This edit is then applied to all images in the group, since ezBIDS assumes that these images will have the same entity labels (with the possible exceptions of subject and session). Once the data is converted to BIDS, these entity labels will appear in the corresponding file names. 
-
-When examining these series IDs (left side of page), users will notice that ezBIDS has attempted to identify the datatype/suffix pairing of each series group. A message (in yellow) towards the top of the page will explain how ezBIDS identified the datatype/suffix pairing of the data in the group. If this is incorrect and needs fixing, users can click on it and then select the correct datatype/suffix pair under the drop-down "Datatype/Suffix" menu on the right side of the screen. If ezBIDS cannot identify the data from the group, it will set its datatype/suffix pairing to `exclude`, indicating that it will not be converted to BIDS. Users may adjust this if necessary, or set this “exclude” tag on data that they do not wish to convert anyway (e.g., localizer sequences). 
-	
-!!! note Viewing all series ID sequences
-    Once a series ID is clicked, users can scroll down on the right side of the page to see all sequences that are associated with that specific series ID. ezBIDS specifies the numbers of sequences associated with a specific series ID with the `objs` label. For example, `2 objs` specifies that there are two sequences in the uploaded data with the specific series ID. 
+!!! info ezBIDS makes educated guesses about your data using information saved in the DICOM files
+    ezBIDS uses the DICOM fields *Series Description*, *Image Type*, *Echo Time*, and *Repetition Time* to group data together. This means that ezBIDS assumes that data with the matching values in these fields are part of the same series of data. ezBIDS then matches the Series to the corresponding [BIDS entities](https://bids-specification.readthedocs.io/en/stable/appendices/entities.html).
     
-In addition to identifying the datatype/suffix pairing, ezBIDS also attempts to discern any required entity label(s) for specific datatype/suffix pairings; these too can be edited/modified. If a specific entity label is required but not specified, ezBIDS will alert users to this error (red circle and asterisk) and require addressing before proceeding to the next page. 
-
-On subsequent pages, users will be able to view all imaging sequences and edit individual ones if necessary, however, the bulk of edits/modifications should occur on this page. 
-
-!!! note The run entity label
-    ezBIDS will later specify the run entity label if needed, and therefore does not need to be specified on this page. 
-
-If users collected and uploaded fieldmap (fmap) data, ezBIDS will provide a warning (yellow circle) saying that it is recommended that users specify which data the fieldmaps are meant to be applied to, known as the "IntendedFor" field. On the right side of the screen, users can click this IntendedFor drop-down menu and select the series IDs that the fieldmaps are meant for. Alternatively, users may specify a B0FieldIdentifier & B0FieldSource mapping, but this should only be done if users know what they’re doing, as it is an advanced BIDS feature. 
+This grouping procedure saves users' time by serving files that might need to undergo similar changes in groups. ezBIDS provides warning messages (yellow circle and asterisk) to explain how the data were grouped. If this is incorrect and needs fixing, users can modify the groups using the graphical interface. If ezBIDS fails to group some of the data files, it will default to exclude the files, indicating that the files will not be converted to BIDS. Users may adjust this if necessary (or even mark data files not excluded by exBIDS as 'to be excluded', e.g., localizer sequences). 
+    
+If a BIDS entity label is required but ezBIDS is not able to guess it for the user, the tool alerts the users with an error (red circle and asterisk). Whereas warnings do not need to be addressed errors must be addressed before being able to move to the next page. 
 
 ### 5. Events
 
-If users collected functional BOLD (`func/bold`) data and have the corresponding timing files, these timing files can be uploaded here, otherwise this page can be skipped. ezBIDS accepts several timing file formats, including `.csv`, `.tsv`, `.txt`, `.out`, and `.xlsx`. Additionally, ezBIDS can parse E-Prime timing files, though this is a beta-feature.
+A critical feature of ezBIDS is the ability to support tasks and event files. If users collected functional BOLD (`func/bold`) data and have the corresponding timing files. The following are timing files formats compatible with ezBIDS:  `.csv`, `.tsv`, `.txt`, `.out`, and `.xlsx`. A graphical interface guides the user in matching the files to BIDS structures. Importantly, ezBIDS comes with a beta feature and built-in compatibility with E-Prime files.
 
-<table><tr><td>
-    <img src="./img/ezbids/Levitas_etal_figureS5_events.png"/>
-</td></tr></table>
-<br>
-<!-- ![Events](./img/ezbids/Levitas_etal_figureS5_events.png) -->
+![Events](./img/ezbids/Levitas_etal_figureS5_events.png)
 
 !!! warning 
-    When uploading timing files, it is **crucial** that the following entity labels be explicitly specified: *subject*, (*session*, if applicable), *task*, and *run*. These must match the corresponding `func/bold` sequences. This information can either be provided in the file path or as columns in the timing data themselves. Failure to do so will result in ezBIDS creating a placeholder value for any mismatched entity labels that will later require manual intervention.
+    When uploading timing files, it is **crucial** that the following entity labels be explicitly specified: *subject*, (*session*, if applicable), *task*, and *run*. These must match the corresponding `func/bold` sequences. This information can either be provided in the file path or as columns in the timing data themselves. Failure to do so will result in ezBIDS creating a placeholder value for any mismatched entity labels that will later require manual intervention. 
 
-Once uploaded, ezBIDS parses the timing files for specific columns and their row values. BIDS requires that timing files be translated into *events.tsv* format, with several required and optional columns. Required columns include the *onset* and *duration*. ezBIDS has the ability to assist users in cases where uploaded timing files do not have a column that specifically pertains to *onset* and *duration*. For example, rather than a column specifying trial durations, a file might contain a column for trial_onset and another column for trial_offset. Users can specify an arithmetic method (Subtract, Add) and choose the two columns that when subtracted or added create the duration value. It should be noted that this arithmetic approach only applies to event columns involving time-based values. Additionally, users can specify for timed-based columns whether the values are in seconds or milliseconds (BIDS requires that these values be reported in seconds). 
+!!! info ezBIDS assists users in dealing with timing events and units
+    BIDS requires that timing files be translated into *events.tsv* format, with several required and optional columns. Required columns include the *onset* and *duration*. ezBIDS has the ability to assist users in cases where uploaded timing files do not have a column that specifically pertains to *onset* and *duration*. For example, rather than a column specifying trial durations, a file might contain a column for trial_onset and another column for trial_offset. Users can specify an arithmetic method (Subtract, Add) and choose the two columns that when subtracted or added create the duration value. It should be noted that this arithmetic approach only applies to event columns involving time-based values. Additionally, users can specify for timed-based columns whether the values are in seconds or milliseconds (BIDS requires that these values be reported in seconds).
 
-<table><tr><td>
-    <img src="./img/ezbids/Levitas_etal_figureS6_events_mapping.png"/>
-</td></tr></table>
-<br>
-<!-- ![Events Mapping](./img/ezbids/Levitas_etal_figureS6_events_mapping.png) -->
+![Events Mapping](./img/ezbids/Levitas_etal_figureS6_events_mapping.png)
 
 !!! warning Timing files for different tasks
     Currently, ezBIDS can only handle timing files that have identical column names. In theory, users can upload timing files pertaining to different `func/bold` tasks, but only if all files contain identical column names. 
 
 ### 6. Dataset Review
 
-Upon reaching this page, all individual imaging sequences are provided in the order they were collected for each subject’s (and session’s) scan. Here, users can make edits/modifications to individual files (e.g., set a sequence to `exclude` due to known participant motion, etc) that was otherwise not possible back on the Series Mapping page.
+Upon reaching this page, all individual imaging sequences are provided in the order they were collected for each subject’s (and session’s) scan. Here, users can make edits/modifications to individual files (e.g., set a sequence to `exclude` due to known participant motion, etc.) that were otherwise not possible when Grouping data.
 
-<table><tr><td>
-    <img src="./img/ezbids/Levitas_etal_figureS7_dataset_review.png"/>
-</td></tr></table>
-<br>
-<!-- ![Dataset Review](./img/ezbids/Levitas_etal_figureS7_dataset_review.png) -->
+![Dataset Review](./img/ezbids/Levitas_etal_figureS7_dataset_review.png)
 
-All edits/modifications made on the Series Mapping and Events pages are applied and show for each indivudal imaging sequence. ezBIDS applies a run entity label to sequences if there were multiple occurrences during the scan. Additionally, ezBIDS applies a volume threshold on 4D data (e.g., `func/bold`) to check for sequences that might have had to be restarted during the scan. The threshold is calculated based on the expected numbers of volumes collected during a 60-sec period, given the TR (`60/TR`). If a 4D sequence does not meet this threshold, ezBIDS sets the datatype/suffix pair to “exclude”, unless modified by the user.
+All modifications made on the Series Mapping and Events pages are applied. ezBIDS applies a run entity label to sequences if there were multiple occurrences during the scan. 
 
-If timing files were uploaded and properly matched, their datatype/suffix pair is set to `func/events` and placed underneath the corresponding `func/bold` sequence. If however, ezBIDS could not determine the match, these timing events files are placed at the bottom of the list with entity placeholder values (`XX1`, `XX2`, etc). Once manually corrected, they are automatically placed underneath their corresponding `func/bold`.
+!!! warning Functional data exclusion
+    ezBIDS applies a volume threshold on 4D data (e.g., `func`/`bold`) to check for sequences that might have had to be restarted during the scan. The threshold is calculated based on the expected number of volumes collected during a 60-sec period, given the TR (`60/TR`). If a 4D sequence does not meet this threshold, ezBIDS sets the datatype/suffix pair to `exclude`, unless modified by the user.
 
 ### 7. Deface
 
-Users have the option (recommended) to deface all anatomical images in order to further anonymize the data. ezBIDS provides two defacing procedures: [Quickshear](https://github.com/nipy/quickshear) and [pyDeface](https://github.com/poldracklab/pydeface). Depending on the number of anatomical files in the uploaded data, this process may take several minutes, though ezBIDS can parallelize this process with six concurrent defacing processes at a given time. If the defacing is suboptiomal (i.e. defacing cuts into the brain itself), users may try again with the other defacing option or simply specify that they do not wish to deface the anatomical data.
+Users have the option (recommended) to deface all anatomical images in order to further anonymize the data. ezBIDS provides two defacing procedures: [Quickshear](https://github.com/nipy/quickshear) and [pyDeface](https://github.com/poldracklab/pydeface). Depending on the number of anatomical files in the uploaded data, this process may take several minutes, though ezBIDS can parallelize this process with six concurrent defacing processes at a given time. If the defacing is suboptimal (i.e. defacing cuts into the brain itself), users may try again with the other defacing option or simply specify that they do not wish to deface the anatomical data.
 
-<table><tr><td>
-    <img src="./img/ezbids/Levitas_etal_figureS8_defacing.png"/>
-</td></tr></table>
-<br>
-<!-- ![Defacing](./img/ezbids/Levitas_etal_figureS8_defacing.png) -->
+![Defacing](./img/ezbids/Levitas_etal_figureS8_defacing.png)
 
 ### 8. Participants Info
 
-<table><tr><td>
-    <img src="./img/ezbids/Levitas_etal_figureS9_participant_info.png"/>
-</td></tr></table>
-<br>
-<!-- ![Participant Info](./img/ezbids/Levitas_etal_figureS9_participant_info.png) -->
+![Participant Info](./img/ezbids/Levitas_etal_figureS9_participant_info.png)
 
-For each subject ID specified, users may specify phenotypical information pertaining to each participant. By default, ezBIDS attempts to provide the *sex* and *age* of participants if this information is present in the metadata (typically only specified if non-anonymized data is uploaded). Users may add additional columns (e.g., *handedness*) or delete existing columns.
+For each subject ID specified, users may specify phenotypical information pertaining to each participant. By default, ezBIDS attempts to provide the *sex* and *age* of participants if this information is present in the metadata (typically only specified if non-anonymized data are uploaded). Users may add additional columns (e.g., *handedness*) or delete existing columns.
 
 ### 9. Get BIDS
 
 At this stage, users can click on the green "Finalize" button for ezBIDS to apply all user edits/modifications to create a BIDS-compliant dataset. Users may elect to keep any data that was set to “exclude” if they so choose.
 
-<table><tr><td>
-    <img src="./img/ezbids/Levitas_etal_figureS10_get_bids.png"/>
-</td></tr></table>
-<br>
-<!-- ![Get BIDS](./img/ezbids/Levitas_etal_figureS10_get_bids.png) -->
+![Get BIDS](./img/ezbids/Levitas_etal_figureS10_get_bids.png)
 
- Once complete, two screens are presented. On the left is a Linux tree structure showing the BIDS dataset organization and file names. On the right is a screen output of the [bids-validator](https://bids-standard.github.io/bids-validator/), which provides a final check to ensure that the data is BIDS compliant. Any validator warnings appear in yellow and can be ignored (but are good to resolve later), and errors appear in red, indicating that the dataset is not BIDS-compliant for some specified reason and requires correction. If users need or wish to return to previous pages for additional edits/modifications they may do so. Then, upon returning to this page, users must click the green "Rerun Finalize Step" to apply all new changes. Once a BIDS-compliant dataset is generated, users can click on the blue "Get BIDS" button to download their zipped data to their local computer/server, and/or send their BIDS data to [OpenNeuro](https://openneuro.org/) or [brainlife.io](https://brainlife.io/about/). Users may also download a Subject Mapping JSON file detailing the mapping between the original subject names and their new BIDS subject IDs. Additionally, users may download a configuration/template JSON file that details all information and changes made during the ezBIDS session. This file can be uploaded with subsequent uploads to reduce time spent on edits/modifications.
+Once complete, two screens are presented. On the left is a Linux tree structure showing the BIDS dataset organization and file names. On the right is a screen output of the [bids-validator](https://bids-standard.github.io/bids-validator/), which provides a final check to ensure that the data are BIDS compliant. Any validator warnings appear in yellow and can be ignored (but are good to resolve later), and errors appear in red, indicating that the dataset is not BIDS-compliant for some specified reason and requires correction. If users need or wish to return to previous pages for additional edits/modifications they may do so. Then, upon returning to this page, users must click the green "Rerun Finalize Step" to apply all new changes. 
 
-### 10. Feedback
+Once a BIDS-compliant dataset is generated, users can click on the blue "Get BIDS" button to download their zipped data to their local computer/server, and/or send their BIDS data to [OpenNeuro](https://openneuro.org/) or [brainlife.io](https://brainlife.io/about/). 
 
-This page details the ezBIDS developers, funding sources, and where to leave questions, comments, or suggestions. 
-
-## Additional ezBIDS features
-
-### 1. Configuration template
+!!! info Using ezBIDS Templates for repeated sessions for a single study (across subjects)
+    After completing a BIDS mapping, ezBIDS automatically creates a Template (JSON) file that details all information and changes made during the ezBIDS session. This template can be uploaded with subsequent subjects in a study, or sessions of the same subjects and study. Using templates reduces the time spent editing the BIDS structure on subsequent uploads of DICOMs from the same scan session types. See below for more information.
 
 Once ezBIDS has converted uploaded data to BIDS, users have the option to download a configuration/template file (*finalized.json*), which contains all information, including user edits/modifications, from the ezBIDS session. When this file is uploaded with subsequent data (of the same dataset), the information in the configuration file is applied to the current ezBIDS session, reducing future time spent on future edits/modifications. The information from the configuration file is applied on the following pages:
 
@@ -227,18 +180,16 @@ It is recommended that users open an issue on the dcm2niix [issues page](https:/
 
 ### 4. Visualizing Imaging data
 
-In addition to providing screenshots of imaging data, ezBIDS comes with the [NiiVue](https://github.com/niivue/niivue) package, a web-based visualization tool for neuroimaging that can run on any operating system and any web device (phone, tablet, computer). On each image screenshot, users may click on the "NiiVue" button to open NiiVue and view their data.
-
 ### 5. Installable versions of ezBIDS
 
 In the coming months, an installable version of ezBIDS will be made available through Singularity, further negating the need for data upload. With this, data will instead be accessible locally. This is currently possible on a Docker-enabled machine with docker-compose installed; however, most university and institution HPCs only allow Singularity but not Docker, due to root access issues. Given that many researchers store their large neuroimaging data on an HPC, ezBIDS will soon provide a Singularity installable version to compliment currently available Docker installable. 
 
-## Conclusions
+!!! info ezBIDS Configuration Templates
+    ezBIDS creates templates for scanning sessions. Any scanning session processed using ezBIDS can become a template for future sessions. ezBIDS Templates can be reused to automatically load the BIDS mapping configuration a user has identified. Templates are helpful in the common situation where the same scanning protocol is used for multiple sessions. Often, researchers set up a scanning protocol and configure a series of scans to be acquired on multiple subjects across the duration of a research project. When the scans from the first subject are uploaded and processed via ezBIDS the researcher is effectively creating an ezBIDS Template, automatically. ezBIDS Templates are JSON files created every time a dataset is processed via ezBIDS. To use the template all the user has to do is download the template and upload the template with any new sessions acquired in the future. ezBIDS Templates can be reused for any number of datasets and reduce users' interaction with the ezBIDS graphical interface. More specifically, after ezBIDS has converted a dataset to BIDS, users have the option to download the file `ezBIDS_template.json`. This file contains all information, to map the DICOMs to BIDS, including user edits and modifications, from the ezBIDS session. This file can be uploaded with new datasets. When done so, the information in the file is applied to the new ezBIDS session, all the graphical interface fields are loaded with the information initially set by the user, reducing time spent on edits. If a dataset is uploaded with the wrong template, or if the template needs to be modified, the user has the option to overwrite the template uploaded and use ezBIDS as usual via the graphical interface. The configuration also enables many-to-one or one-to-many mapping, meaning that the `ezBIDS_template.json` information can pertain to a single subject but be applied to a current upload with multiple subjects or even sessions. The `ezBIDS_template.json` file can be renamed if desired, however, it needs to end in `ezBIDS_template.json` in order for ezBIDS to know what to look for. Uploading an `ezBIDS_template.json` file will not let ezBIDS run automatically from start to finish, the user's review and approval are judicious.
 
-Any ezBIDS-related questions can be posted/asked at the following places:
-1. As an issue on the ezBIDS [GitHub repository](https://github.com/brainlife/ezbids)
-2. The brainlife.io slack channel
-3. [NeuroStars](https://neurostars.org/)
-4. Direct email (dlevitas@iu.edu)
+    ![dcm2niix error](./img/ezbids/ezBIDS_dcm2niix_error.png)
 
-If you've reached this point, you're all set to begin converting your imaging data with ezBIDS!
+    It is recommended that users open an issue on the dcm2niix [issues page](https://github.com/rordenlab/dcm2niix/issues) to resolve any detected dcm2niix-specific errors. However, users may still proceed with ezBIDS, as the error does not pertain to the entire uploaded data but rather a specific DICOM file(s). It should be noted though that the offending file(s) might result in an improper or corrupted NIfTI file that doesn't properly convert to BIDS. 
+
+!!! info ezBIDS and data visualization
+    ezBIDS uses [NiiVue](https://github.com/niivue/niivue) to visualize data. *NiiVue* is a web-based visualization tool for neuroimaging that can run on any operating system and any web device (phone, tablet, computer). On each image screenshot, users may click on the "NiiVue" button to open NiiVue and view their data.

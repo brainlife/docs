@@ -1,5 +1,5 @@
 !!! note
-    You will need a resource owner priviledge in order to register you own resource. Please contact brlife@iu.edu.
+You need to be a resource owner in order to register you own resource. Please contact mailto:brainlife.io@gmail.com.
 
 ## Background
 
@@ -11,10 +11,10 @@ As Brainlife's default resources are available by all users, often users must wa
 2. You are an app developer and you'd like to use your own resource to troubleshoot your apps on your own resource, for easier debugging.
 3. You are an app developer and your app can only run on specialized resources (like Hadoop, Spark, etc..) that Brainlife's shared resources do not provide.
 
-Currently, only Brainlife admin can share personal resources with other members. If you wish to share your resources, please contact [Brainlife Admin](mailto:brlife@iu.edu)
+Currently, only Brainlife admin can share personal resources with other members. If you wish to share your resources, please contact [Brainlife Admin](mailto:brainlife.io@gmail.com)
 
 !!! note
-	Resource owner decides which apps are allowed to run on their resource. If you register a resource and enable apps on it, only you can run those apps on that resource. If you are publishing your app, and you want all users to be able to execute your app, please contact [Brainlife Admin](mailto:brlife@iu.edu) to enable your app on Brainlife default resources.
+	Resource owner decides which apps are allowed to run on their resource. If you register a resource and enable apps on it, only you can run those apps on that resource. If you are publishing your app, and you want all users to be able to execute your app, please contact [Brainlife Admin](mailto:brainlife.io@gmail.com) to enable your app on Brainlife default resources.
 
 !!! warning
 	Although we do our best to limit access to your dataset on shared resources, we recommend registering your own resource for added security

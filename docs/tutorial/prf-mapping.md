@@ -96,7 +96,7 @@ Once you're happy with the surfaces, you can move onto running Freesurfer!
         * Click the drop-down menu next to 'Annotation' and choose 'Load from file'
             * Choose the appropriate hemisphere aparc.a2009s.annot file (lh.aparc.a2009s.annot)
             * Hit 'OK'
-            * The aparc.a2009s parcellation should be overlayed on your inflated surface! Now, repeat the process on the other hemisphere.
+            * The aparc.a2009s parcellation should be overlaid on your inflated surface! Now, repeat the process on the other hemisphere.
 
 Once you're happy with the surfaces, you can move onto running the atlas-based pRF mapping!
 
