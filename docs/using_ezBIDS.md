@@ -129,17 +129,63 @@ Once a BIDS-compliant dataset is generated, users can click on the blue "Get BID
 !!! info Using ezBIDS Templates for repeated sessions for a single study (across subjects)
     After completing a BIDS mapping, ezBIDS automatically creates a Template (JSON) file that details all information and changes made during the ezBIDS session. This template can be uploaded with subsequent subjects in a study, or sessions of the same subjects and study. Using templates reduces the time spent editing the BIDS structure on subsequent uploads of DICOMs from the same scan session types. See below for more information.
 
-### 10. Feedback
+Once ezBIDS has converted uploaded data to BIDS, users have the option to download a configuration/template file (*finalized.json*), which contains all information, including user edits/modifications, from the ezBIDS session. When this file is uploaded with subsequent data (of the same dataset), the information in the configuration file is applied to the current ezBIDS session, reducing future time spent on future edits/modifications. The information from the configuration file is applied on the following pages:
 
-This page details the ezBIDS developers, funding sources, and where to leave questions, comments, or suggestions. 
+1. **Dataset Description** - Any information here is automatically generated.
+2. **Subjects/Sessions** - ezBIDS will attempt to determine the new subject ID(s) and session ID(s), though this depends on how easily ezBIDS could determine this information, and may still require edit(s).
+3. **Series Mapping** - All edits made during the first use are applied here.
+4. **Events** - If timing files associated with `func/bold` sequences were uploaded in previous and current ezBIDS sessions, the *events.tsv* column mappings are applied to the current timing file(s) data.
+5. **Participants Info** - Any newly specified columns (e.g., *handedness*) are applied here as well. 
 
----
+If new/different data is uploaded which was not present in the previous upload, ezBIDS will proceed as usual. The configuration also enables many-to-one or one-to-many mapping, meaning that the *finalized.json* information can pertain to a single subject but be applied to a current upload with multiple subejcts/sessions. The *finalized.json* file can be renamed if desired, however it needs to end in "finalized.json" in order for ezBIDS to know what to look for. 
+
+!!! note
+    Uploading a *finalized.json* file does not mean that ezBIDS runs automatically from start to finish. When converting data to BIDS, user approval is judicious.
+
+### 2. Specify and save metadata into BIDS sidecar (JSON) file(s)
+As the BIDS specification expands to include additional imaging modalities, specific metadata are required for BIDS compliance but not extracted by the [dcm2niix](https://github.com/rordenlab/dcm2niix) package, a tool commonly used by BIDS converters to extract relevant metadata. ezBIDS thus provides users the ability to specify missing metadata fields, which are then injected into the JSON sidecar(s). 
+
+!!! note
+    This functionality is currently in the beta stage and is only accessible for Arterial Spin Labeling (ASL) data. In the coming months, this functionality will be expanded to include non-MRI modality data, such as Positron Emission Tomography (PET).
+
+This functionality is currently found on the Series Mapping page.
+
+<table><tr><td>
+    <img src="./img/ezbids/ezBIDS_metadata_edit_button.png"/>
+</td></tr></table>
+<br>
+
+For any ASL sequence (e.g, `perf/asl`, `perf/m0scan`), on the right side of the page there is a "Relevant Metadata" section with an "Edit Metadata" button. Upon clicking this button, a list of relevant metadata is provided.
+
+<table><tr><td>
+    <img src="./img/ezbids/ezBIDS_metadata_fields.png"/>
+</td></tr></table>
+<br>
+
+The relevant metadata are organized into Required, Recommended, and Optional columns, denoting their presence requirement level, per the BIDS-specification. Users are alerted to all Required metadata fields, needed for a BIDS-compliant dataset that generates no [bids-validator](https://github.com/bids-standard/bids-validator) errors. For certain metadata fields (e.g., `RepetitionTimePreparation`), multiple value types are allowable (e.g., number, array). Users should specify this before entering the metadata value. ezBIDS performs an internal quality assurance to ensure that the value entered correctly matches the type. For example, if a user specifies a string value for a numeric value metadata field, ezBIDS will generate a error to alert the user. ezBIDS also handles conditional situations, where the requirement level of specific metadata fields changes based on the presence or specific value of a separate metadata field. For example, if `BolusCutOffFlag` is set to `True` then ezBIDS will alert you that the metadata fields `BolusCutOffDelayTime` and `BolusCutOffTechnique` are now Required. Once all edits are made, users scroll to the bottom and click the "Submit" button. This will then inject the metadata fields & values into the corresponding sidecar(s).
+
+Although ezBIDS alerts users to any and all metadata fields that are Required, users may still click the "Submit" button even if all Required fields are not specified. This will inevitably lead to errors when the bids-validator is executed; however, this prevents forcing users to enter all information,particularily if certain metadata field values are unknown at that moment. Any fields specified are still injected into the sidecar(s), and missing Required metadata fields can be specified manually by the user at a later time.
+
+
+### 3. dcm2niix error alerts
+
+ezBIDS, like most BIDS converters, users [dcm2niix](https://github.com/rordenlab/dcm2niix) to convert DICOM files to NIfTI and JSON (and bval/bvec) formatted files. These files are required by BIDS and used by many MRI processing & analysis tools. If dcm2niix generates an error for a specific or series of DICOMS during this conversion process, ezBIDS will display the message for users.
+
+<table><tr><td>
+    <img src="./img/ezbids/ezBIDS_dcm2niix_error.png"/>
+</td></tr></table>
+<br>
+
+It is recommended that users open an issue on the dcm2niix [issues page](https://github.com/rordenlab/dcm2niix/issues) to resolve any detected dcm2niix errors. However, users may still proceed with ezBIDS, as the error does not pertain to the entire uploaded data but rather a specific DICOM file(s). It should be noted though that the offending file(s) might result in an improper or corrupted NIfTI file that doesn't properly convert to BIDS. 
+
+### 4. Visualizing Imaging data
+
+### 5. Installable versions of ezBIDS
+
+In the coming months, an installable version of ezBIDS will be made available through Singularity, further negating the need for data upload. With this, data will instead be accessible locally. This is currently possible on a Docker-enabled machine with docker-compose installed; however, most university and institution HPCs only allow Singularity but not Docker, due to root access issues. Given that many researchers store their large neuroimaging data on an HPC, ezBIDS will soon provide a Singularity installable version to compliment currently available Docker installable. 
 
 !!! info ezBIDS Configuration Templates
     ezBIDS creates templates for scanning sessions. Any scanning session processed using ezBIDS can become a template for future sessions. ezBIDS Templates can be reused to automatically load the BIDS mapping configuration a user has identified. Templates are helpful in the common situation where the same scanning protocol is used for multiple sessions. Often, researchers set up a scanning protocol and configure a series of scans to be acquired on multiple subjects across the duration of a research project. When the scans from the first subject are uploaded and processed via ezBIDS the researcher is effectively creating an ezBIDS Template, automatically. ezBIDS Templates are JSON files created every time a dataset is processed via ezBIDS. To use the template all the user has to do is download the template and upload the template with any new sessions acquired in the future. ezBIDS Templates can be reused for any number of datasets and reduce users' interaction with the ezBIDS graphical interface. More specifically, after ezBIDS has converted a dataset to BIDS, users have the option to download the file `ezBIDS_template.json`. This file contains all information, to map the DICOMs to BIDS, including user edits and modifications, from the ezBIDS session. This file can be uploaded with new datasets. When done so, the information in the file is applied to the new ezBIDS session, all the graphical interface fields are loaded with the information initially set by the user, reducing time spent on edits. If a dataset is uploaded with the wrong template, or if the template needs to be modified, the user has the option to overwrite the template uploaded and use ezBIDS as usual via the graphical interface. The configuration also enables many-to-one or one-to-many mapping, meaning that the `ezBIDS_template.json` information can pertain to a single subject but be applied to a current upload with multiple subjects or even sessions. The `ezBIDS_template.json` file can be renamed if desired, however, it needs to end in `ezBIDS_template.json` in order for ezBIDS to know what to look for. Uploading an `ezBIDS_template.json` file will not let ezBIDS run automatically from start to finish, the user's review and approval are judicious.
-
-!!! info ezBIDS and dcm2niix
-    ezBIDS, like most BIDS converters, uses [dcm2niix](https://github.com/rordenlab/dcm2niix) to convert DICOM files to NIfTI, JSON, .bval, and .bvec files. The set of *dcm2niix* output files is required by BIDS. If dcm2niix generates an error for a specific series of DICOMS during the conversion process, ezBIDS will display the message for users.
 
     ![dcm2niix error](./img/ezbids/ezBIDS_dcm2niix_error.png)
 
