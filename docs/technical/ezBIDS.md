@@ -4,7 +4,7 @@ This document is meant for reseachers (or users) who wish to contribute to the e
 
 ## The ezBIDS Core
 
-The following block code provides information pertaing to the contents of the `ezBIDS_core.json` file. Necessary keys are not intented and their data type and description are provided and indented on the following lines. If the key is a dictionary, a _fields_ key will be provided with how the dictionary key value should be specified. 
+The following block code provides information pertaing to the contents of the `ezBIDS_core.json` file. Necessary keys are not intended and their data type and description are provided and indented on the following lines. If the key is a dictionary, a _fields_ key will be provided with how the dictionary key value should be specified. 
 
 ```yaml
 # See https://bids-specification.readthedocs.io/en/stable/glossary.html#readme-files
