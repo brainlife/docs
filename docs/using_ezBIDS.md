@@ -134,7 +134,8 @@ Once complete, two screens are presented. On the left is a Linux tree structure 
 Once a BIDS-compliant dataset is generated, users can click on the blue "Download BIDS" button to download their zipped data to their local computer/server, and/or send their BIDS data to [OpenNeuro.org](https://openneuro.org/) or [brainlife.io](https://brainlife.io/about/). 
 
 !!! info Downloading non-BIDS compliant data
-    Users may still download their BIDS dataset (or upload it elsewhere) even if the bids-validator returns error(s); however, users should know that their dataset is not fully BIDS-compliant and will need to be corrected at some point. 
+    Users may still download their BIDS dataset (or upload it elsewhere) even if the bids-validator returns error(s); however, users should know that their dataset     is not fully BIDS-compliant and will need to be corrected at some point.
+    
 ---
 
 !!! info ezBIDS configuration templates
