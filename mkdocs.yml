@@ -70,6 +70,7 @@ nav:
   - Technical:
     - Architecture: technical/arthitecture.md
     - APIs: technical/api.md
+    - ezBIDS: technical/ezBIDS.md
 
   - Careers: careers/jobs.md
 
