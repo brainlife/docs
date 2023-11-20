@@ -135,11 +135,6 @@ Once a BIDS-compliant dataset is generated, users can click on the blue "Downloa
 
 !!! info Downloading non-BIDS compliant data
     Users may still download their BIDS dataset (or upload it elsewhere) even if the bids-validator returns error(s); however, users should know that their dataset is not fully BIDS-compliant and will need to be corrected at some point. 
-
-### 10. Feedback
-
-This page details the ezBIDS developers, funding sources, and where to leave questions, comments, or suggestions. 
-
 ---
 
 !!! info ezBIDS configuration templates
