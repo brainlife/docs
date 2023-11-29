@@ -37,7 +37,7 @@ The previous step (Freesurfer) will automatically map three different cortical p
 
 ### 4. Freesurfer Brain Parcellation - Statistics.
 
-The final step is to take the parcellation generated from Freesurfer and the other parcellations we mapped and collate the important statistics into a .csv file for easy viewing and implementation of group analyses. Within each region of the parcellation (i.e. ROI), Freesurfer computes simple statistics regarding the number of vertices, surface area, volume, cortical thickness, mean and gaussian curvatures, and the fold and curvature indices. These statistics can be used to perform group-level analyses, including group differences within ROIs and correlation analyses with behavioral data. This can be done on brainlife.io using the [Compute Anatomical Stats](https://brainlife.io/app/64a32d3a3a63cf17374f6e75) app.
+The final step is to take the parcellation generated from Freesurfer and the other parcellations we mapped and collate the important statistics into a .csv file for easy viewing and implementation of group analyses. Within each region of the parcellation (i.e. ROI), Freesurfer computes simple statistics regarding the number of vertices, surface area, volume, cortical thickness, mean and gaussian curvatures, and the fold and curvature indices. These statistics can be used to perform group-level analyses, including group differences within ROIs and correlation analyses with behavioral data. This can be done on brainlife.io using the [Compute Anatomical Statistics](https://brainlife.io/app/64a32d3a3a63cf17374f6e75) app.
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
 
@@ -143,8 +143,8 @@ Once the app is finished, you're ready to move onto the next step: Computing ana
 ### Freesurfer Brain Parcellation - Statistics.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'Compute Anatomical Stats'.
-    * Click the "Compute Anatomical Stats" app card.
+    * In the search bar, type 'Compute Anatomical Statistics'.
+    * Click the "Compute Anatomical Statistics" app card.
 ![Search Compute anatomical ](../img/anat_t1_tutorial_search_compute_anatomical.png)
 
 1. On the 'Submit App' page, select the following:
