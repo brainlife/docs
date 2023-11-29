@@ -52,11 +52,16 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 1. Click the 'Archive' tab at the top of the screen to go to the archive's page.
 1. Select the following datatypes from one subject by clicking the boxes next to the data for subject '10217':
     * anat/t1w
+
+![Select datatype to preprocess](../img/anat_t1_tutorial_archive_select_subject_preprocess.png)
+
 1. Click the 'Stage to process' button on the right side of the screen
     * For 'Project', select your project from the drop-down menu.
     * For 'Process', select 'Create New Process' and title it "Anatomical (T1w) Prep Tutorial". Hit 'Submit'.
         * This will take you to the process on your Project's page
 1. Archive the data in your project by clicking the 'Archive' button next to each dataset.
+
+![Create a new process](../img/anat_t1_tutorial_new_process.png)
 
 Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: crop and reorient the T1w image!
 
@@ -65,6 +70,7 @@ Your data should now be staged for processing and archived in your projects page
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'FSL Anat (T1)'
     * Click the app card.
+![Search FSL Anat ](../img/anat_t1_tutorial_search_fsl_anat_t1.png)
 1. On the 'Submit App' page, select the following:
     * For input, select the staged raw anatomical (T1w) image by clicking the drop-down menu and finding the appropriate dataset.
     * Select the boxes for 'crop', 'reorient' and 'bias'
@@ -72,6 +78,9 @@ Your data should now be staged for processing and archived in your projects page
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'fsl_anat'
     * Hit 'Submit'
+![Submit FSL Anat - 1](../img/anat_t1_tutorial_submit_fsl_anat_1.png)
+
+![Submit FSL Anat - 2](../img/anat_t1_tutorial_submit_fsl_anat_2.png)
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'fsleyes' as your viewer
 1. You can also generate a QA image of the results by running the 'Generate images of T1' using the cropped and reoriented anatomical image generated above! Archive the results and save with the tag 'qa' and "fsl_anat".
@@ -83,12 +92,20 @@ Once you're happy with the alignment, you can move onto Freesurfer!
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'Freesurfer 7.3.2'
     * Click the app card.
+![Search Freesurfer 7.3.2 ](../img/anat_t1_tutorial_search_freesurfer.png)
 1. On the 'Submit App' page, select the following:
     * For input, select the ACPC aligned anatomical image generated above by clicking the drop-down menu and finding the appropriate datasets.
     * Select the boxes for 'hippocampal' and 'thalamicnuclei'
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'freesurfer'
     * Hit 'Submit'
+
+![Submit Freesurfer - 1](../img/anat_t1_tutorial_freesurfer_submit_1.png)
+
+![Submit Freesurfer - 2](../img/anat_t1_tutorial_freesurfer_submit_2.png)
+
+![Submit Freesurfer - 3](../img/anat_t1_tutorial_freesurfer_submit_3.png)
+
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'freeview' as your viewer
         * This will load the following volumes and surfaces: aseg, brainmask, white matter mask, T1, left/right hemisphere pial (cortical), and white (white matter) surfaces.
@@ -109,12 +126,17 @@ Once you're happy with the surfaces, you can move computing statistics!
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'Multi-Atlas Transfer Tool'
     * Click the app card.
+![Search Multi Atlas ](../img/anat_t1_tutorial_search_multi-atlas.png)
 1. On the 'Submit App' page, select the following:
     * For input, select the staged Freesurfer output generated above by clicking the drop-down menu and finding the appropriate dataset.
     * For 'atlas,' select 'hcp-mmp-b' from the drop-down menu.
     * Select the box for 'Archive all output datasets' when finished
         * For 'Dataset Tags,' type and enter 'hcp-mmp-b'
     * Hit 'Submit'
+![Submit Multi Atlas - 1](../img/anat_t1_tutorial_multi-atlas_submit.png)
+
+![Submit Multi Atlas - 2](../img/anat_t1_tutorial_multi-atlas_submit-2.png)
+
 
 Once the app is finished, you're ready to move onto the next step: Computing anatomical statistics!
 
@@ -122,7 +144,9 @@ Once the app is finished, you're ready to move onto the next step: Computing ana
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'Compute Anatomical Stats'.
-    * Click the "Freesurfer Statistics" app card.
+    * Click the "Compute Anatomical Stats" app card.
+![Search Compute anatomical ](../img/anat_t1_tutorial_search_compute_anatomical.png)
+
 1. On the 'Submit App' page, select the following:
     * For 'parc_surface', select the surface/data output generated in Step 4 by clicking the drop-down menu and finding the appropriate dataset (look for the dataset tag 'hcp-mmp-b').
     * For 'parc_surf_vertices', select the surface/vertices output generated in Step 4 by clicking the drop-down menu and finding the appropriate dataset (look for the dataset tag 'hcp-mmp-b').
