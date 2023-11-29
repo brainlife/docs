@@ -119,7 +119,7 @@ Once you're happy with the alignment, you can move onto Freesurfer!
             * Hit 'OK'
             * The aparc.a2009s parcellation should be overlaid on your inflated surface! Now, repeat the process on the other hemisphere.
 
-Once you're happy with the surfaces, you can move computing statistics!
+Once you're happy with the surfaces, you can move on to computing statistics!
 
 ### Map the hcp-mmp-b atlas:
 
