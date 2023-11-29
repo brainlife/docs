@@ -21,7 +21,7 @@ The next step following this is to align the anatomical image to the point where
 
 <!-- need image of planes and alignment -->
 
-On brainlife.io, all of these steps can be performed with just a single app! Specifically, this can all be done using the [FSL Anat (T1w)](https://brainlife.io/app/5e3c87ae9362b7166cf9c7f4) app. This app was designed around the FSL function [fsl_anat](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/fsl_anat). Depending on certain aspects of the anatomical T1w image, specifically the image resolution, this app may take anywhere from 1 to 3 hours. If running for longer than 3 hours, something may be wrong...
+On brainlife.io, all of these steps can be performed with just a single app! Specifically, this can all be done using the [FSL Anat (T1)](https://brainlife.io/app/5e3c87ae9362b7166cf9c7f4) app. This app was designed around the FSL function [fsl_anat](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/fsl_anat). Depending on certain aspects of the anatomical T1w image, specifically the image resolution, this app may take anywhere from 1 to 3 hours. If running for longer than 3 hours, something may be wrong...
 
 ### 2. Freesurfer Surface Generation and Parcellation.
 
