@@ -74,7 +74,7 @@ Your data should now be staged for processing and archived in your projects page
 1. On the 'Submit App' page, select the following:
     * For input, select the staged raw anatomical (T1w) image by clicking the drop-down menu and finding the appropriate dataset.
     * Select the boxes for 'crop', 'reorient' and 'bias'
-    * For template, choose the 'MNI152_1MM' option from the drop-down menu.
+    * For template, choose the 'MNI152_1mm' option from the drop-down menu.
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'fsl_anat'
     * Hit 'Submit'
