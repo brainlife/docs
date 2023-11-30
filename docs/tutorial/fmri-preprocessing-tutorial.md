@@ -128,6 +128,7 @@ Once you're happy with the surfaces, you can move onto running fMRIPrep!
 1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
     * In the search bar, type 'fmriPrep - Volume Output'
     * Click the app card.
+    ![Fmri Prep - Volume Output](../img/fmri_prep_volume_output.png)
 1. On the 'Submit App' page, select the following:
     * For input, select the staged preprocessed, 'acpc_aligned'-tagged anatomical (T1w & T2w) images, the freesurfer output, the fmap, and the functional data by clicking the drop-down menu and finding the appropriate datasets.
     * For 'space,' select 'T1w' from the drop-down menu.
@@ -135,6 +136,8 @@ Once you're happy with the surfaces, you can move onto running fMRIPrep!
     * Select the box for 'Archive all output datasets' when finished
         * For 'Dataset Tags,' type and enter 'fmriprep'
     * Hit 'Submit'
+    ![Fmri Prep - Volume Output Options](../img/fmri_prep_volume_output_options.png)
+    ![Fmri Prep - Volume Output Tags](../img/fmri_prep_volume_output_tags.png)
 1. Once the app is finished running, view the results by clicking the 'eye' icon next to the 'html' tagged output.
     * Choose the 'html' viewer
 
