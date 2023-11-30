@@ -3,7 +3,7 @@
 
 ## Anatomical (T1w) preprocessing.
 
-This page demonstrate common steps used to preprocess anatomical magnetic resonance imaging data (T1-weighted or T1w) on brainlife.io. The goal of this tutorial is to show how to process anatomical data for successive analyses – volumetric analyses from T1w meausres, and/or a combination of T1w and diffusion-weighted MRI (dMRI) or functional neuroimaging data (fMRI) pipelines.
+This page demonstrate common steps used to preprocess anatomical magnetic resonance imaging data (T1-weighted or T1w) on brainlife.io. The goal of this tutorial is to show how to process anatomical data for successive analyses – volumetric analyses from T1w measures, and/or a combination of T1w and diffusion-weighted MRI (dMRI) or functional neuroimaging data (fMRI) pipelines.
 
 This tutorial will use a combination of skills developed in the [introduction-to-brainlife tutorial](/docs/tutorial/introduction-to-brainlife/). If you have not read this, or you are not comfortable staging, processing, archiving and viewing data on brainlife.io, please go back and follow that tutorial before beginning this one.
 
@@ -21,7 +21,7 @@ The next step following this is to align the anatomical image to the point where
 
 <!-- need image of planes and alignment -->
 
-On brainlife.io, all of these steps can be performed with just a single app! Specifically, this can all be done using the [FSL Anat (T1w)](https://brainlife.io/app/5e3c87ae9362b7166cf9c7f4) app. This app was designed around the FSL function [fsl_anat](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/fsl_anat). Depending on certain aspects of the anatomical T1w image, specifically the image resolution, this app may take anywhere from 1 to 3 hours. If running for longer than 3 hours, something may be wrong...
+On brainlife.io, all of these steps can be performed with just a single app! Specifically, this can all be done using the [FSL Anat (T1)](https://brainlife.io/app/5e3c87ae9362b7166cf9c7f4) app. This app was designed around the FSL function [fsl_anat](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/fsl_anat). Depending on certain aspects of the anatomical T1w image, specifically the image resolution, this app may take anywhere from 1 to 3 hours. If running for longer than 3 hours, something may be wrong...
 
 ### 2. Freesurfer Surface Generation and Parcellation.
 
@@ -37,7 +37,7 @@ The previous step (Freesurfer) will automatically map three different cortical p
 
 ### 4. Freesurfer Brain Parcellation - Statistics.
 
-The final step is to take the parcellation generated from Freesurfer and the other parcellations we mapped and collate the important statistics into a .csv file for easy viewing and implementation of group analyses. Within each region of the parcellation (i.e. ROI), Freesurfer computes simple statistics regarding the number of vertices, surface area, volume, cortical thickness, mean and gaussian curvatures, and the fold and curvature indices. These statistics can be used to perform group-level analyses, including group differences within ROIs and correlation analyses with behavioral data. This can be done on brainlife.io using the [Compute Anatomical Stats](https://brainlife.io/app/64a32d3a3a63cf17374f6e75) app.
+The final step is to take the parcellation generated from Freesurfer and the other parcellations we mapped and collate the important statistics into a .csv file for easy viewing and implementation of group analyses. Within each region of the parcellation (i.e. ROI), Freesurfer computes simple statistics regarding the number of vertices, surface area, volume, cortical thickness, mean and gaussian curvatures, and the fold and curvature indices. These statistics can be used to perform group-level analyses, including group differences within ROIs and correlation analyses with behavioral data. This can be done on brainlife.io using the [Compute Anatomical Statistics](https://brainlife.io/app/64a32d3a3a63cf17374f6e75) app.
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
 
@@ -74,7 +74,7 @@ Your data should now be staged for processing and archived in your projects page
 1. On the 'Submit App' page, select the following:
     * For input, select the staged raw anatomical (T1w) image by clicking the drop-down menu and finding the appropriate dataset.
     * Select the boxes for 'crop', 'reorient' and 'bias'
-    * For template, choose the 'MNI152_1MM' option from the drop-down menu.
+    * For template, choose the 'MNI152_1mm' option from the drop-down menu.
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'fsl_anat'
     * Hit 'Submit'
@@ -119,7 +119,7 @@ Once you're happy with the alignment, you can move onto Freesurfer!
             * Hit 'OK'
             * The aparc.a2009s parcellation should be overlaid on your inflated surface! Now, repeat the process on the other hemisphere.
 
-Once you're happy with the surfaces, you can move computing statistics!
+Once you're happy with the surfaces, you can move on to computing statistics!
 
 ### Map the hcp-mmp-b atlas:
 
@@ -143,8 +143,8 @@ Once the app is finished, you're ready to move onto the next step: Computing ana
 ### Freesurfer Brain Parcellation - Statistics.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'Compute Anatomical Stats'.
-    * Click the "Compute Anatomical Stats" app card.
+    * In the search bar, type 'Compute Anatomical Statistics'.
+    * Click the "Compute Anatomical Statistics" app card.
 ![Search Compute anatomical ](../img/anat_t1_tutorial_search_compute_anatomical.png)
 
 1. On the 'Submit App' page, select the following:
