@@ -42,11 +42,14 @@ Now, let's get to work! The following steps of this tutorial will show you how t
     * anat/t1w (run-01 tagged)
     * anat/t2w (run-01 tagged)
     * fmap
+    ![FMRI Stage to Process](../img/fmri_prep_tutorial_Stage_to_Process.png)
 1. Click the 'Stage to process' button on the right side of the screen
     * For 'Project', select your project from the drop-down menu.
     * For 'Process', select 'Create New Process' and title it "fMRI Prep Tutorial". Hit 'Submit'.
         * This will take you to the process on your Project's page
+    ![Fmri Set Process Name](../img/fmri_prep_tutorial_set_process_name.png)
 1. Archive the data in your project by clicking the 'Archive' button next to each dataset.
+    ![Fmri Archive Each](../img/fmri_prep_tutorial_set_archive_each.png)
 
 Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: preprocessing the anatomical data!
 
@@ -56,9 +59,13 @@ Your data should now be staged for processing and archived in your projects page
 1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
     * In the search bar, type 'FSL Anat (T1w).'
     * Click the app card.
+
+![Fmri Search FSL Anat T1w](../img/anat_t1_tutorial_search_fsl_anat_t1.png)
+
 1. On the 'Submit App' page, select the following:
     * For input, select the staged raw anatomical (T1w) image by clicking the drop-down menu and finding the appropriate datasets.
     * Select the boxes for 'crop' and 'reorient'. Leave all other defaults the same.
+    ![Fmri Crop Reorient](../img/fmri_prep_tutorial_set_fsl_anat_t1_options.png)
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'fsl_anat'
     * Hit 'Submit'
@@ -70,10 +77,12 @@ Your data should now be staged for processing and archived in your projects page
 1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
     * In the search bar, type 'FSL Anat (T2w).'
     * Click the app card.
+    ![Fmri Search FSL Anat T2w](../img/fmri_prep_tutorial_search_fsl_anat_t2.png)
 1. On the 'Submit App' page, select the following:
     * For input, select the staged raw anatomical (T2w) image by clicking the drop-down menu and finding the appropriate datasets.
     * Select the boxes for 'crop' and 'reorient'. Leave all other defaults the same.
     * Select the box for 'Archive all output datasets when finished'
+    ![Fmri Set T2 Options](../img/fmri_prep_tutorial_set_fsl_anat_t2_options.png)
         * For 'Dataset Tags,' type and enter 'fsl_anat'
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
@@ -87,9 +96,15 @@ Once you're happy with the surfaces, you can move onto running Freesurfer!
 1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
     * In the search bar, type 'Freesurfer 7.1.1'
     * Click the app card.
+    ![Fmri Search FreeSurfer](../img/fmri_prep_tutorial_search_free_surfer.png)
 1. On the 'Submit App' page, select the following:
     * For input, select the staged preprocessed, 'acpc_aligned'-tagged anatomical (T1w & T2w) images by clicking the drop-down menu and finding the appropriate datasets.
     * Select the boxes for 'hippocampal' and 'thalamicnuclei'. Leave all other defaults the same
+    ![Free Surfer Options](../img/fmri_prep_tutorial_free_surfer_options.png)
+
+    ![Free Surfer Options 1](../img/fmri_prep_tutorial_free_surfer_options_1.png)
+
+    ![Free Surfer Options 2](../img/fmri_prep_tutorial_free_surfer_options_2.png)
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'fsl_anat'
     * Hit 'Submit'
