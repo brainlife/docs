@@ -78,7 +78,7 @@ Now, let's get to work! The following steps of this tutorial will show you how t
 
 Your data should now be staged for processing and archived in your projects page! You're now ready to move onto the first step: preprocessing of the anatomical (T1w) image!
 
-### ### Preprocess anatomical (T1w) data using FSL.
+### Preprocess anatomical (T1w) data using FSL.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'FSL Anat (T1)'
