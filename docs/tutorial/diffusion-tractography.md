@@ -84,7 +84,7 @@ Your data should now be staged for processing and archived in your projects page
 1. On the 'Submit App' page, select the following:
     * For input, select the staged raw anatomical (T1w) image by clicking the drop-down menu and finding the appropriate dataset.
     * Select the boxes for 'crop' and 'reorient'
-    * For template, choose the 'MNI152_1MM' option from the drop-down menu.
+    * For template, choose the 'MNI152_1mm' option from the drop-down menu.
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'fsl_anat'
     * Hit 'Submit'
@@ -120,7 +120,7 @@ Once you're happy with the alignment, you can move onto running Freesurfer!
 
 Once you're happy with the surfaces, you can move onto preprocessing the diffusion data!
 
-### Preprocess diffusion MRI data with MRTrix3 preproc.
+### Preprocess diffusion MRI data with QSIPrep.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'QSIPrep'
@@ -218,7 +218,7 @@ If you're happy with the results, you're ready to move onto mapping microstructu
 ### Compute macrostructural statistics of tracts.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
-    * In the search bar, type 'Tractography Quality Check'
+    * In the search bar, type 'Tractography quality check'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
     * For wmc, select the cleaned major white matter segmentation output generated in Step 6 by clicking the drop-down menu and finding the appropriate dataset.
