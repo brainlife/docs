@@ -24,11 +24,10 @@ Finally, images from the fMRI scanner might not be perfectly aligned to images c
 
 Useful information about fMRIPrep anatomical preprocessing can be found in this [original Nature paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/#S13title).
 
-There are two versions of the brainlife.io fMRIPrep app. One generates outputs mapped to the volumes ([fMRIPrep-volume](https://brainlife.io/app/5c61c69f14027a01b14adcb3)) and the other generates outputs mapped to the surfaces ([fMRIPrep-surface](https://brainlife.io/app/5dfceebd32bff0640ce27bbd)).
-
-For this tutorial, we will use the volume-based version.
+There are two versions of the brainlife.io fMRIPrep app. One generates outputs mapped to the volumes ([fMRIPrep-volume](https://brainlife.io/app/5c61c69f14027a01b14adcb3)) and the other generates outputs mapped to the surfaces ([fMRIPrep-surface](https://brainlife.io/app/5dfceebd32bff0640ce27bbd)). For this tutorial, we will use the volume-based version.
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
+
 1. preprocess the anatomical (T1w & T2w) data using FSL
 2. generate anatomical surfaces using Freesurfer,
 3. preprocess the fMRI data using fMRIPrep
@@ -101,9 +100,7 @@ Once you're happy with the surfaces, you can move onto running Freesurfer!
     * For input, select the staged preprocessed, 'acpc_aligned'-tagged anatomical (T1w & T2w) images by clicking the drop-down menu and finding the appropriate datasets.
     * Select the boxes for 'hippocampal' and 'thalamicnuclei'. Leave all other defaults the same
     ![Free Surfer Options](../img/fmri_prep_tutorial_free_surfer_options.png)
-
     ![Free Surfer Options 1](../img/fmri_prep_tutorial_free_surfer_options_1.png)
-
     ![Free Surfer Options 2](../img/fmri_prep_tutorial_free_surfer_options_2.png)
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'fsl_anat'
