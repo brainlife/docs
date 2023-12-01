@@ -120,7 +120,7 @@ Once you're happy with the alignment, you can move onto running Freesurfer!
 
 Once you're happy with the surfaces, you can move onto preprocessing the diffusion data!
 
-### Preprocess diffusion MRI data with QSIPrep preproc.
+### Preprocess diffusion MRI data with QSIPrep.
 
 1. On the 'Process' tab, click 'Submit App' to submit a new application.
     * In the search bar, type 'QSIPrep'
