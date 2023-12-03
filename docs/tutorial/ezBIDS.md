@@ -102,7 +102,7 @@ Click the "Choose Files" button and select the `data` folder to upload the imagi
 !!! note
     The tutorial should be in your Downloads folder, titled "ezBIDS_tutorial_data".
 
-This upload process may take a couple minutes, depending on the strength of your internet connection. Once uploaded, you will see some text generated on the screen, indicating that ezBIDS is performing several automated, behind-the-scences processes to extract as much relevant BIDS information about your dataset as possible. This is meant to save you time later on. Once complete, you will see text reading "Analysis complete!", along with a list of your uploaded imaging data. From here, ezBIDS will guide you through several steps for you to verify and make any corrections or modifcations to ensure that the data is specified to your liking. Importantly, ezBIDS will alert you to any details that need to be addressed in order to ensure BIDS compliance. 
+This upload process may take a couple minutes, depending on the strength of your internet connection. Once uploaded, you will see some text generated on the screen, indicating that ezBIDS is performing several automated, behind-the-scences processes to extract as much relevant BIDS information about your dataset as possible. This is meant to save you time later on. Once complete, you will see text reading "Analysis complete!", along with a list of your uploaded imaging data. From here, ezBIDS will guide you through several steps for you to verify and make any corrections or modifications to ensure that the data is specified to your liking. Importantly, ezBIDS will alert you to any details that need to be addressed in order to ensure BIDS compliance. 
 
 ### 3. Dataset Description
 
@@ -110,7 +110,7 @@ This page allows you to specify information about the entire dataset. Notice how
 
 ### 4. Subjects and Sessions
 
-This page allows you to verify or modify the **subject** (and **session**) IDs for your data. ezBIDS provided the correct subject IDs (`01`, `02`) but you may modify them if you like. For the puposes of this tutorial though, let's leave them as they are. Note that the **session** fields for each subject are left blank. A session ID is meant to denote that an individual subject was scanned multiple times. This field should thus remain empty unless the individual subject was scanned more than once during separate visits. In the case of our data, each subject was scanned only once and thus no session ID should be specified. Since ezBIDS specified the correct subject IDs, we can click the "Next" button to proceed.
+This page allows you to verify or modify the **subject** (and **session**) IDs for your data. ezBIDS provided the correct subject IDs (`01`, `02`) but you may modify them if you like. For the purpose of this tutorial though, let's leave them as they are. Note that the **session** fields for each subject are left blank. A session ID is meant to denote that an individual subject was scanned multiple times. This field should thus remain empty unless the individual subject was scanned more than once during separate visits. In the case of our data, each subject was scanned only once and thus no session ID should be specified. Since ezBIDS specified the correct subject IDs, we can click the "Next" button to proceed.
 
 ### 5. Series Mapping
 
@@ -127,10 +127,10 @@ If you need (or wish) to make changes to the identity and label(s) of the groups
 
  You can also specify entity labels for each group if desired, which we will now do. Click on the `anat/T1w` group on the left side of the page, and then add the term *mprage* to the **acquisition-** label over on the right. What we are doing is specifying that the anatomical T1w (`anat/T1w`) sequences in this group can be more thoroughly described as [Magnetization Prepared - RApid Gradient Echo (MPRAGE)](https://mriquestions.com/mp-rage-v-mr2rage.html) acquisitions, and applying the `acquisition-mprage` entity label to both sequences in the group. This has the important benefit of saving you time compared to typing *mprage* for each individual sequence in the group (image if there were 100!). 
 
- Lastly, you probably noticed the gold color oval next to the spin-echo field map groups (`fmap/epi`), signifiying a warning that you should examine. When you click on one of these groups, a warning message in gold will alert you that you should specify the **IntendedFor** information for this group. Doing so specifies which data these field maps will apply susceptibility distortion correction (SDC) to. To resolve this warning, go to the **IntendedFor** drop-down menu and select the `func/bold` groups (`#5`, `#7`). Doing so for each `fmap/epi` group will cause the warnings to disappear. 
+ Lastly, you probably noticed the gold color oval next to the spin-echo field map groups (`fmap/epi`), signifying a warning that you should examine. When you click on one of these groups, a warning message in gold will alert you that you should specify the **IntendedFor** information for this group. Doing so specifies which data these field maps will apply susceptibility distortion correction (SDC) to. To resolve this warning, go to the **IntendedFor** drop-down menu and select the `func/bold` groups (`#5`, `#7`). Doing so for each `fmap/epi` group will cause the warnings to disappear. 
 
  !!! note
-    Warnings *should* be addressed, but you can ignore them if feel that they won't impact the quality of your data. Erorrs however, which appear as red ovals, indicate that there is incorrect or missing information that *must* be addressed, otherwise you will not have a BIDS-compliant dataset. The presence of errors means that you will not be able to proceed until resolved. ezBIDS will guide you on how to resolve any such errors.
+    Warnings *should* be addressed, but you can ignore them if feel that they won't impact the quality of your data. Errors however, which appear as red ovals, indicate that there is incorrect or missing information that *must* be addressed, otherwise you will not have a BIDS-compliant dataset. The presence of errors means that you will not be able to proceed until resolved. ezBIDS will guide you on how to resolve any such errors.
 
 Once all warnings (and errors) are resolved, you can proceed to the next page.
 
@@ -163,7 +163,7 @@ If any red text is present in the **bids-validator output**, this means that you
 
 If any gold text is present, this means that there is a warning and *should* be corrected, but you do not necessarily have to. You still have a BIDS-compliant dataset!
 
-Once you have a BIDS-compliant dataset, you'll need to decide what to do with your data. If you'd like to download it to your local machine or server, select the blue **Download BIDS** button. If you'd like to upload your data to brainlife.io into a new or current project, click the **Send to Brainlife.io** button and choose the *Send to brainlife* option. A popup window you appear, asking whether you want this data in a new project or a project that you've already started. The latter case would occur if you're adding additional data to an already existing dataset that you have on brainlife.io. Alternatively, in lieu of uploading your data to brainlife.io, you can upload your data to OpenNeuro.org by clicking on the **Send to OpenNeuro** button. For the puposes of this tutorial, simply download the BIDS data back to your computer or server.
+Once you have a BIDS-compliant dataset, you'll need to decide what to do with your data. If you'd like to download it to your local machine or server, select the blue **Download BIDS** button. If you'd like to upload your data to brainlife.io into a new or current project, click the **Send to Brainlife.io** button and choose the *Send to brainlife* option. A popup window you appear, asking whether you want this data in a new project or a project that you've already started. The latter case would occur if you're adding additional data to an already existing dataset that you have on brainlife.io. Alternatively, in lieu of uploading your data to brainlife.io, you can upload your data to OpenNeuro.org by clicking on the **Send to OpenNeuro** button. For the purpose of this tutorial, simply download the BIDS data back to your computer or server.
 
 The last item of business is to click on the **Download configuration/template** button. Doing so will download an `ezBIDS_template.json` file containing information pertaining to your current ezBIDS session, mainly all the edits and modifications that were made. The next time you use ezBIDS, assuming you're converting data from the same study, you can include this json file with your MRI data (doesn't matter where you store it, so long as it gets included in the upload). This will then apply the changes you made before to your new data. For example, in this tutorial session we included the `acquisition-mprage` entity label for our `anat/T1w` sequences. The next time you use ezBIDS and provide the `ezBIDS_template.json`, ezBIDS will recognize this and automatically apply this information, thus saving you time without the need to build your own configuration file. 
 
@@ -172,7 +172,7 @@ The last item of business is to click on the **Download configuration/template**
 
 ## Feedback
 
-Congratulations, you've successully used ezBIDS to create a BIDS-compliant dataset! For questions and feedback you can reach us the following ways:
+Congratulations, you've successfully used ezBIDS to create a BIDS-compliant dataset! For questions and feedback you can reach us the following ways:
 1. Brainlife.io slack (general channel)
 2. Email (djlevitas208@gmail.com)
 3. Github issues (https://github.com/brainlife/ezbids/issues)
