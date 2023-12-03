@@ -114,7 +114,7 @@ This page allows you to verify or modify the **subject** (and **session**) IDs f
 
 ### 5. Series Mapping
 
-This page allows you to verify and modify the identify of the imaging data, as well as provide additional information that will better describe the dataset. 
+This page allows you to verify and modify the identity of the imaging data, as well as provide additional information that will better describe the dataset. 
 
 You will notice on the left side of the page that the data has been labeled and grouped into a list of "like-minded" groups, specified by a group ID value (e.g. `#1`). The purpose of this grouping is to organize data that are the same but collected across separate subjects (or sessions). For example, each subject has an antomical T1w sequence collected, containing the same scan parameters, so ezBIDS groups these two sequences together for now. The number of sequences in each group is also provided (e.g. `2 objs`). When you make a modification to a group, it will be applied to all files in the group. thereby saving you time having to modify each sequence individually, though that is an option later on.
 
@@ -144,7 +144,7 @@ On this page, you will see all your data labeled and organized by subject ID and
 
 ### 8. Deface
 
-This page allows you to deface (i.e. remove) the facial features from every anatomical (`anat`) sequence in the uploaded data, by selecting an option in the **Defacing Method** drop-down menu. The recommended option is to use the `quickshear` package because it is relatively quick and effective; however, you may elect for the `pydeface` package instead. Once a defacing procedure is selected, a screenshot of the original (un-defaced) data is shown on the left. Once defacing 9is complete, a screenshot of the defaced image is provided on the right, allowing you to see the quality of the resulting defacing. If the defacing is bad (i.e. part of the brain has been cut) you can either select the other defacing option or simply forgo defacing for that specific anatomical sequence. If you choose the latter in this situation, select the "Use Original" button above the original screenshot. 
+This page allows you to deface (i.e. remove) the facial features from every anatomical (`anat`) sequence in the uploaded data, by selecting an option in the **Defacing Method** drop-down menu. The recommended option is to use the `quickshear` package because it is relatively quick and effective; however, you may elect for the `pydeface` package instead. Once a defacing procedure is selected, a screenshot of the original (un-defaced) data is shown on the left. Once defacing is complete, a screenshot of the defaced image is provided on the right, allowing you to see the quality of the resulting defacing. If the defacing is bad (i.e. part of the brain has been cut) you can either select the other defacing option or simply forgo defacing for that specific anatomical sequence. If you choose the latter in this situation, select the "Use Original" button above the original screenshot. 
 
 !!! note
     Defacing is an optional procedure, so you can skip this step if you so choose. However, it is hightly recommended that you perform defacing to remove identifying information. This form of anonymization is particularly important if you plan on sharing data with colleagues or the broader imaging community.  
@@ -172,7 +172,7 @@ The last item of business is to click on the **Download configuration/template**
 
 ## Feedback
 
-Congratulations, you've successfully used ezBIDS to create a BIDS-compliant dataset! For questions and feedback you can reach us the following ways:
+Congratulations, you've successfully used ezBIDS to create a BIDS-compliant dataset! If you have questions aor wish to provide feedback you can reach us the following ways:
 1. Brainlife.io slack (general channel)
 2. Email (djlevitas208@gmail.com)
 3. Github issues (https://github.com/brainlife/ezbids/issues)
