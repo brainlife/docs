@@ -1,6 +1,6 @@
 # **ezBIDS Tutorial**
 
-The page provides a simple tutorial for using [ezBIDS](https://brainlife.io/ezbids). The goal of this tutorial is to demonstrate how to use ezBIDS in order to convert raw imaging data to BIDS. For more in-depth information regarding the functionality and feature of ezBIDS, please refer to the [user documentation](https://brainlife.io/docs/using_ezBIDS/).
+The page provides a simple tutorial for using [ezBIDS](https://brainlife.io/ezbids). The goal of this tutorial is to demonstrate how to use ezBIDS in order to convert raw imaging data to BIDS. For more in-depth information regarding the functionality and features of ezBIDS, please refer to the [user documentation](https://brainlife.io/docs/using_ezBIDS/).
 
 Before we begin, we'll need some test data, which can be found [here](https://drive.google.com/drive/folders/18Y0SuSAevh2pu7Wuv3BFnbrLZNlVMeJr?usp=sharing). After a few minutes, the data will be downloaded to your Downloads folder, titled "ezBIDS_tutorial_data".
 
@@ -88,6 +88,8 @@ As you can see, we have a standard collection of MRI data and corresponding timi
 
 Now, we are ready to use ezBIDS. All you need is a web browser (Chrome or Firefox preferred) and an internet connection. Copy and paste the ezBIDS URL (https://brainlife.io/ezbids) into your web browser.
 
+For a companion video that follows this documentation, see our [ezBIDS tutorial video](https://youtu.be/L8rWA8qgnpo).
+
 ### 1. Homepage
 
 Upon reaching the ezBIDS homepage, click "LOG IN/REGISTER" in the upper right part of the web page to sign into your brainlife.io account. If you do not have a brainlife.io account, you will be guided through a quick setup. This process is simple and meant for authentication purposes.
@@ -97,7 +99,7 @@ Upon reaching the ezBIDS homepage, click "LOG IN/REGISTER" in the upper right pa
 
 ### 2. Upload Imaging Data
 
-Click the "Choose Files" button and select the `data` folder to upload the imaging data. We will upload the `logs` folder later.
+Click the "Choose Files" (or "Browse") button and select the `data` folder to upload the imaging data. We will upload the `logs` folder later.
 
 !!! note
     The tutorial should be in your Downloads folder, titled "ezBIDS_tutorial_data".
@@ -106,7 +108,7 @@ This upload process may take a couple of minutes, depending on the strength of y
 
 ### 3. Dataset Description
 
-This page allows you to specify information about the entire dataset. Notice how ezBIDS will autofill several fields for you. Required fields have been marked with a red asterisk, indicating that this information is absolutely needed to have a BIDS-compliant dataset. However, the information that ezBIDS provides may not always be appropriate, necessitating changes if you so choose. For example, the **Dataset Name** is specified as *Untitled*, which isn't very informative. Let's change that field instead to *myData*. Additionally, the **Authors** field is currently blank since ezBIDS couldn't determine that information, and it's not a required field for BIDS compliance. Let's click the **Authors field type our name (e.g. *John Doe*), and press the Return (or Enter) button on your keyboard. You are more than welcome to provide additional information on this page, but for this tutorial, we will move on by clicking the "Next" button at the bottom right side of the web page.
+This page allows you to specify information about the entire dataset. Notice how ezBIDS will autofill several fields for you. Required fields have been marked with a red asterisk, indicating that this information is absolutely needed to have a BIDS-compliant dataset. However, the information that ezBIDS provides may not always be appropriate, necessitating changes if you so choose. For example, the **Dataset Name** is specified as *Untitled*, which isn't very informative. Let's change that field instead to *myDataset*. Additionally, the **Authors** field is currently blank since ezBIDS couldn't determine that information, and it's not a required field for BIDS compliance. Let's click the **Authors field type our name (e.g. *John Doe*), and press the Return (or Enter) button on your keyboard. You are more than welcome to provide additional information on this page, but for this tutorial, we will move on by clicking the "Next" button at the bottom right side of the web page.
 
 ### 4. Subjects and Sessions
 
@@ -136,7 +138,7 @@ Once all warnings (and errors) are resolved, you can proceed to the next page.
 
 ### 6. Events
 
-We will now upload the timing files in the `logs` directory of our tutorial data. Simply click the "Select File" button and specify the `logs` directory (you will upload all contents in there) in your "ezBIDS_tutorial_data" folder. You will then see a list of header fields on the left (`Onset`, `Duration`, etc) with a corresponding drop-down menu. This is ezBIDS's way of asking you to specify which columns in the timing files correspond to the header fields on the left. For `Onset`, choose *tstart*, and for `Duration` choose *dur*. These two headers are the only required fields to proceed; the rest are optional and can be left empty for this tutorial. 
+We will now upload the timing files in the `logs` directory of our tutorial data. Simply click the "Select File(s)" (or "Browse") button and specify the `logs` directory (you will upload all contents in there) in your "ezBIDS_tutorial_data" folder. You will then see a list of header fields on the left (`Onset`, `Duration`, etc) with a corresponding drop-down menu. This is ezBIDS's way of asking you to specify which columns in the timing files correspond to the header fields on the left. For `Onset`, choose *tstart*, and for `Duration` choose *dur*. These two headers are the only required fields to proceed; the rest are optional and can be left empty for this tutorial. 
 
 ### 7. Dataset Review
 

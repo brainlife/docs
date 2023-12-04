@@ -1,7 +1,9 @@
 
 # **ezBIDS User Documentation**
 
-[ezBIDS](https://brainlife.io/ezbids) is a web-based BIDS conversion tool that requires neither installation, programming proficiency, nor knowledge of the Unix terminal and BIDS specification. The term BIDS is an acronym that stands for the [Brain Imaging Data Structure](https://bids-specification.readthedocs.io/en/stable/). More specifically, BIDS is a format for describing and organizing (primarily neuroimaging) data, greatly enhancing data sharing within the scientific community, as well as enabling access to a suite of processing and analysis tools that can be automatically executed on BIDS data, known as [BIDS apps](https://bids-apps.neuroimaging.io/). This tutorial describes how to use ezBIDS to easily convert imaging data to BIDS.
+[ezBIDS](https://brainlife.io/ezbids) is a web-based BIDS conversion tool that requires neither installation, programming proficiency, nor knowledge of the Unix terminal and BIDS specification. The term BIDS is an acronym that stands for the [Brain Imaging Data Structure](https://bids-specification.readthedocs.io/en/stable/). More specifically, BIDS is a format for describing and organizing (primarily neuroimaging) data, greatly enhancing data sharing within the scientific community, as well as enabling access to a suite of processing and analysis tools that can be automatically executed on BIDS data, known as [BIDS apps](https://bids-apps.neuroimaging.io/). This documentation provides an in-depth description of ezBIDS's functionality for converting data to BIDS.
+
+If you are new to ezBIDS and would like to see a simple use case of ezBIDS, please refer to the [ezBIDS tutorial](https://brainlife.io/docs/tutorial/ezBIDS).
 
 ## A Primer to ezBIDS
 
@@ -72,9 +74,9 @@ On this page, ezBIDS provides the subject (and session, if applicable) IDs of th
 
 ![Subjects/Sessions](./img/ezbids/Levitas_etal_figureS4_subjects_sessions.png)
 
-### 5. Grouping data 
+### 5. Series Mapping 
 
-ezBIDS organizes all uploaded data into specific series and group IDs. This is an intermediate step, that ezBIDS uses to facilitate editing entire series (or groups) of data files. Say, you want to change all the files from a single subject so that all the files start with a specific subject ID, or say you want to change all the data that are anatomical to start with the prefix *anat*, ezBIDS allows you to do that by grouping data for you by subjects, series, etc. 
+ezBIDS organizes all uploaded data into specific series and group IDs (grouping data). This is an intermediate step, that ezBIDS uses to facilitate editing entire series (or groups) of data files. Say, you want to change all the files from a single subject so that all the files start with a specific subject ID, or say you want to change all the data that are anatomical to start with the prefix *anat*, ezBIDS allows you to do that by grouping data for you by subjects, series, etc. 
 
 ![Series Mapping](./img/ezbids/Levitas_etal_figureS5_series_mapping_all.png)
 
