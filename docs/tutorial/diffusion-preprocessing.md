@@ -1,6 +1,3 @@
-!!! warning
-    This is a draft
-
 ## Diffusion-weighted MRI preprocessing.
 
 This page demonstrates common steps used to preprocess diffusion magnetic resonance imaging (dMRI) data on brainlife.io. The goal of this tutorial is to show you how to process diffusion data for successive analyses, including **microstructural region analysis**, **diffusion tractography**, and **structural connectivity**. This tutorial will be mostly be using [MRTrix3 Preproc](https://brainlife.io/app/5a813e52dc4031003b8b36f9) for diffusion preprocessing and [FSL DTIFit](https://brainlife.io/app/5c1d67383e9c170177733d3f) for microstructral modelling.

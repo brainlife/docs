@@ -1,6 +1,3 @@
-!!! warning
-    This is a draft
-
 ## Anatomical (T1w) preprocessing.
 
 This page demonstrate common steps used to preprocess anatomical magnetic resonance imaging data (T1-weighted or T1w) on brainlife.io. The goal of this tutorial is to show how to process anatomical data for successive analyses – volumetric analyses from T1w measures, and/or a combination of T1w and diffusion-weighted MRI (dMRI) or functional neuroimaging data (fMRI) pipelines.

@@ -1,6 +1,3 @@
-!!! warning
-    This is a draft
-
 ## Mapping diffusion measures (DTI, NODDI) to gray- and white-matter boundary surface.
 
 This page demonstrates a recommended pipeline for mapping diffusion measures (DTI, NODDI) to the gray- and white-matter boundary following methodologies introduced by [Fukutomi et al (2018)](https://pubmed.ncbi.nlm.nih.gov/29448073/) on brainlife.io. The goal of this tutorial is to show you how to process anatomical and diffusion data to generate **anatomical warp fields**, **map microstructural measures** to both the dMRI volume and the gray- and white-matter boundary surface. This tutorial will use a variety of brainlife.io applications to [preprocess anatomical images and generate warp fields to a common template](https://brainlife.io/app/5e3c87ae9362b7166cf9c7f4), [preprocess dMRI data](https://brainlife.io/app/5a813e52dc4031003b8b36f9), [map microstructural measures to the dMRI data](https://brainlife.io/app/5e7f90e9dd840e81aae91906), and [map these measures to the gray- and white-matter boundary surface](https://brainlife.io/app/5eea8548d39ceb4a30a090eb).

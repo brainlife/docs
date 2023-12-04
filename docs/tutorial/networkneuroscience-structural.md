@@ -1,6 +1,3 @@
-!!! warning
-    This is a draft
-
 ## Structural connectivity.
 
 Let's start by learning a little bit about **structural connectivity.** Diffusion MRI measures how **anisotropic** the movement of water is, with the basic principle that myelinated tissue will create more anisotropic water movement. **Structural connectivity** is one type of analysis that describes the structural organization of the white matter using diffusion MRI data. This type of analysis characterizes how connected different regions are by computing the number of **diffusion tractography streamlines** that terminate into a particular region. The rationale is that regions that have greater density of streamline terminations have greater connectivity with the regions where those streamlines also terminate. These density values are stored in what is known as a connectivity matrix. Each position in the matrix represents the connectivity between two particular regions.
