@@ -1,6 +1,6 @@
 # **ezBIDS Tutorial**
 
-The page provides a simple tutorial for using [ezBIDS](https://brainlife.io/ezbids). The goal of this tutorial is to demonstrate how to use ezBIDS in order to convert raw imaging data to BIDS. For more in-depth information regarding the functionality and feature of ezBIDS, please refer to the [user documentation](https://brainlife.io/docs/using_ezBIDS/).
+The page provides a simple tutorial for using [ezBIDS](https://brainlife.io/ezbids). The goal of this tutorial is to demonstrate how to use ezBIDS in order to convert raw imaging data to BIDS. For more in-depth information regarding the functionality and features of ezBIDS, please refer to the [user documentation](https://brainlife.io/docs/using_ezBIDS/).
 
 Before we begin, we'll need some test data, which can be found [here](https://drive.google.com/drive/folders/18Y0SuSAevh2pu7Wuv3BFnbrLZNlVMeJr?usp=sharing). After a few minutes, the data will be downloaded to your Downloads folder, titled "ezBIDS_tutorial_data".
 
