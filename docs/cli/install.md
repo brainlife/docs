@@ -26,13 +26,14 @@ sudo npm install -g npm@10.2.4
 ```
 
 !!! Installation For "Mac OSX users"
-    The following command can install node.js if you have `homebrew` et up:
+    The following command can install node.js if you have `homebrew` set up:
     
- ```
- brew install node
- ```
+     ```
+     brew install node
+     ```
  
-!!! For other OSs, please see [Installing node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions){target=_blank} page.
+!!! For other OSs
+    Please see [Installing node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions){target=_blank} page.
 
 
 !!! Info "For Windows Users"

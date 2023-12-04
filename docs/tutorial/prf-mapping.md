@@ -42,7 +42,7 @@ Your data should now be staged for processing and archived in your projects page
 
 #### T1w data
 1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
-    * In the search bar, type 'FSL Anat (T1w).'
+    * In the search bar, type 'FSL Anat (T1).'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
     * For input, select the staged raw anatomical (T1w) image by clicking the drop-down menu and finding the appropriate datasets.
@@ -56,7 +56,7 @@ Your data should now be staged for processing and archived in your projects page
 
 #### T2w data
 1. On the 'Process' tab of your project, click 'Submit App' to submit a new application.
-    * In the search bar, type 'FSL Anat (T2w).'
+    * In the search bar, type 'FSL Anat (T2).'
     * Click the app card.
 1. On the 'Submit App' page, select the following:
     * For input, select the staged raw anatomical (T2w) image by clicking the drop-down menu and finding the appropriate datasets.
