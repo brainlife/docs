@@ -1,23 +1,23 @@
 ## Introduction to Pipelines on Brainlife.io
 
-Welcome to a specialized tutorial where we transition from manual task submission to the efficient and automated use of pipelines in the Anatomical (T1-weighted or T1w) preprocessing on brainlife.io. This tutorial is tailored for those looking to streamline their neuroimaging workflows, emphasizing the power and convenience of pipeline automation.
+Welcome to a specialized tutorial in which we transition from manual task submission to automated tasks from pipelines in the Anatomical (T1-weighted or T1w) preprocessing on brainlife.io. This tutorial is tailored for those looking to streamline their neuroimaging workflows, emphasizing the power and convenience of pipeline automation.
 
 By leveraging pipelines, you can automate repetitive tasks, ensure uniformity across your data processing, and save valuable time. This tutorial will guide you through converting the traditional, manual steps of T1w preprocessing into a set of pipeline rules that work seamlessly in the background.
 
 This tutorial assumes familiarity with brainlife.io and basic neuroimaging concepts. If you're new to brainlife.io, consider completing the introduction-to-brainlife tutorial before proceeding.
 
-In today's example we will recreate pieces of Anatomical (T1w) preprocessing but as a pipeline automating the processing of 33 data items. 
+In today's example, we will recreate pieces of Anatomical (T1w) preprocessing as a pipeline, automating the preprocessing of several datasets at once. 
 
 ## Role of Tags in Pipelines
 Tags play a crucial role in Brainlife Pipelines as they provide a way to organize, categorize, and track data throughout the pipeline workflow. They serve several important purposes:
 
-- Pipeline Flow Control: Tags are used to specify input and output data requirements for each rule in the pipeline. They ensure that the right data is used as input for a specific task and that the resulting output is properly tagged for future steps.
+- Pipeline Flow Control: Tags are used to specify input and output data requirements for each rule in the pipeline. They ensure that the correct data is used as input for a specific task and that the resulting output is properly tagged for future steps.
 
-- Data Organization: Tags help categorize and label datasets, making it easier to manage and locate specific data objects within your project. This is especially valuable when dealing with large datasets and complex workflows.
+- Data Organization: Tags help categorize and label datasets, making managing and locating specific data objects within your project easier. This is especially valuable when dealing with large datasets and complex workflows.
 
 - Data Versioning: Tags help maintain data versioning and lineage. By tracking which rule produced which output with specific tags, you can trace the history of your data and ensure data consistency.
 
-- Customization and Flexibility: Tags allow you to customize and tailor your pipeline rules to your project's specific needs. You can use tags to filter and select data for processing, ensuring that each rule operates on the correct data subset.
+- Customization and Flexibility: Tags allow you to customize and tailor your pipeline rules to your project's specific needs. You can use tags to filter and select data for processing, ensuring each rule operates on the correct data subset.
 
 ## Step 1: Importing the Dataset
 
@@ -80,7 +80,7 @@ Tags play a crucial role in Brainlife Pipelines as they provide a way to organiz
 
 ![Multi-Atlas Transfer Tool](../img/tutorial_pipeline_anat_t1_w_select_app_multi_atlas.png)
 
-Once this is ready make all rules active!
+Once this is ready, make all rules active!
 
 Check the progress by refreshing and by clicking the details icon. 
 
@@ -92,7 +92,5 @@ Check the progress by refreshing and by clicking the details icon.
 
 ## Exercises
 
-### Question - Why did we not use input tags for Multi-Atlas Transfer Tool ? 
-
-
-### Exercise : Complete the Pipeline with Freesurfer Brain Parcellation - Statistics in a new project 
+1. Question: Why did we not use input tags for `Multi-Atlas Transfer Tool`? 
+2. Practice: Complete the Pipeline with `Freesurfer Brain Parcellation - Statistics` in a new project 
