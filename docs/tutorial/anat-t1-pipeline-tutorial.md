@@ -6,7 +6,7 @@ By leveraging pipelines, you can automate repetitive tasks, ensure uniformity ac
 
 This tutorial assumes familiarity with brainlife.io and basic neuroimaging concepts. If you're new to brainlife.io, consider completing the introduction-to-brainlife tutorial before proceeding.
 
-In today's example we will recreate peices of Anatomical (T1w) preprocessing but as a pipeline automating the processing of 33 data items. 
+In today's example we will recreate pieces of Anatomical (T1w) preprocessing but as a pipeline automating the processing of 33 data items. 
 
 ## Role of Tags in Pipelines
 Tags play a crucial role in Brainlife Pipelines as they provide a way to organize, categorize, and track data throughout the pipeline workflow. They serve several important purposes:
