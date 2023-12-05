@@ -99,9 +99,9 @@ Once you're happy with the surfaces, you can move onto running Freesurfer!
 1. On the 'Submit App' page, select the following:
     * For input, select the staged preprocessed, 'acpc_aligned'-tagged anatomical (T1w & T2w) images by clicking the drop-down menu and finding the appropriate datasets.
     * Select the boxes for 'hippocampal' and 'thalamicnuclei'. Leave all other defaults the same
-    ![Free Surfer Options](../img/fmri_prep_tutorial_free_surfer_options.png)
-    ![Free Surfer Options 1](../img/fmri_prep_tutorial_free_surfer_options_1.png)
-    ![Free Surfer Options 2](../img/fmri_prep_tutorial_free_surfer_options_2.png)
+    ![Freesurfer Options](../img/fmri_prep_tutorial_free_surfer_options.png)
+    ![Freesurfer Options 1](../img/fmri_prep_tutorial_free_surfer_options_1.png)
+    ![Freesurfer Options 2](../img/fmri_prep_tutorial_free_surfer_options_2.png)
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'fsl_anat'
     * Hit 'Submit'
