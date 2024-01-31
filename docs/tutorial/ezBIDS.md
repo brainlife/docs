@@ -1,6 +1,6 @@
 # **ezBIDS Tutorial**
 
-The page provides a simple tutorial for using [ezBIDS](https://brainlife.io/ezbids). The goal of this tutorial is to demonstrate how to use ezBIDS in order to convert raw imaging data to BIDS. For more in-depth information regarding the functionality and features of ezBIDS, please refer to the [user documentation](https://brainlife.io/docs/using_ezBIDS/).
+This page provides a simple tutorial for using [ezBIDS](https://brainlife.io/ezbids). The goal of this tutorial is to demonstrate how to use ezBIDS in order to convert imaging data to BIDS. For more in-depth information regarding the functionality and features of ezBIDS, please refer to the [user documentation](https://brainlife.io/docs/using_ezBIDS/).
 
 Before we begin, we'll need some test data, which can be found [here](https://drive.google.com/drive/folders/18Y0SuSAevh2pu7Wuv3BFnbrLZNlVMeJr?usp=sharing). After a few minutes, the data will be downloaded to your Downloads folder, titled "ezBIDS_tutorial_data".
 
@@ -174,7 +174,7 @@ The last item of business is to click on the **Download configuration/template**
 
 ## Feedback
 
-Congratulations, you've successfully used ezBIDS to create a BIDS-compliant dataset! If you have questions or wish to provide feedback you can reach us at the following channels:
-1. [Brainlife.io Slack](https://brainlife.io/slack)
-2. [E-mail: ezbids@brainlife.io](mailto:ezbids@brainlife.io)
-3. [Github Issues](https://github.com/brainlife/ezbids/issues)
+Congratulations, you've successfully used ezBIDS to create a BIDS-compliant dataset! If you have questions or wish to provide feedback you can reach us the following ways:
+
+1. Post on our brainlife.io [Slack channel](https://brainlife.io/slack)
+2. Submit a [GitHub Issue](https://github.com/brainlife/ezbids/issues)
