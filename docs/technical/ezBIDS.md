@@ -341,3 +341,42 @@ The following block code provides information pertaing to the contents of the `e
                "type": int
                "description": Which section the individual data is in, starts at 1 and progresses up when new localizers are detected
 ```
+
+## Backend Workflow
+
+### 1. Uploading Data
+When a user begins uploading data, ezBIDS will create a new session using (post)/session API. A session organizes each ezBIDS upload/conversion process. For each session, a new DB/session collection is created with the mongo ID as session ID, and creates a unique working directory using the session ID on the backend server where all uploaded data is stored. Once all files are successfully uploaded, the client makes a (patch)/session/uploaded/:session_id API call and sets the session state to "uploaded" to let the ezBIDS handler knows that the session is ready to being preprocessing.
+
+### 2. Preprocessing Data
+The backend server polls for uploaded sessions, and when it finds "uploaded" session, it launches the preprocessing script, setting the session state to "preprocessing". This consists of several steps, including un-compressing all compressed folders/files, running *dcm2niix*, and creating a list file containing all the NIfTI and sidecar json files. The *ezBIDS_core.py* uses this to analyze the files and at the end create *ezBIDS_core.json*. When the preprocessing is complete, the session state will be set to "analyzed". The preprocessing step then loads *ezBIDS_core.json* json and copies the contents to DB/ezBIDS collection (not session collection) under an original key.
+
+### 3. User interact with the session via web UI.
+The web user interface (UI) detects the preprocessing completed by polling for session state, and loads the contents of ezBIDS_core.json via (get)/download/:session_id/ezBIDS_core.json API. User then view / correct the content of *ezBIDS_core.json*.
+
+### 4. User request for defacing (optional)
+Before the user finalizes editing the information, they are given chance to deface anatomical images. When requested, the UI will make a (post)/session/:sessino_id/deface API call with a list of images to deface. The backend stores this information as *deface.json* in the workding directory (workdir) and sets the session state to "deface". The backend defacing handler looks for the "deface" state session and sets it to "defacing" and launches the *deface.sh* script. Once defacing is completed, it will set the session state to "defaced".
+
+*deface.sh* creates the following files under the workdir:
+
+1. *deface.finished* (list the anatomical files successfully defaced)
+2. *deface.failed* (list the anatomical files that failed defacing)
+
+The UI polls these files to determine which files are successfully defaced (or not). The user can then choose whether they want to use the defaced anatomical file file or not (each object will have a field named defaceSelection set to either "original" or "defaced" to indicate which image to use).
+
+### 5. Finalize
+When the user clicks the "Finalize" button, the UI makes an API call for (post)/session/:session_id/finalize API. The UI passes the following content from the memory ($root).
+```
+{
+    datasetDescription: this.datasetDescription,
+    readme: this.readme,
+    participantsColumn: this.participantsColumn,
+    subjects: this.subjects, //for phenotype
+    objects: this.objects,
+    entityMappings,
+}
+```
+
+The API then store this information as *finalized.json* in workdir, and copies the content to DB/ezBIDS collection under an updated key (to contrast with original key). The session status will be set to "finalized". This kicks off the finalized handler on the server side, and the handler resets the status to "bidsing" and runs the *bids.sh* script to generate the BIDS structure according to the information stored at the object level. Once finished, the session status will be set to "finished".
+
+### 6. Access BIDS
+Once session status becomes "finished", the user will be then allowed to download the final BIDS directory via the download API, or send to other cloud resources

@@ -196,16 +196,49 @@ ezBIDS provides BIDS conversion support for the following data modalities:
 ---
 ## Installing ezBIDS locally
 
-Although ezBIDS is a web-based service that does not require installation, some users may wish to install it on their local machine or server. The main advantage here is that data is not uploaded to the ezBIDS server (i.e. data remains on-site). Instead, data is copied within one of the ezBIDS containers (handler) at */tmp/ezbids-workdir*. However, with this approach users cannot upload their finalized BIDS-compliant data to brainlife.io via ezBIDS, as this requires authentication that isn't available with a local installation. With that said, installing ezBIDS locally consists of a few simple steps in the terminal/CLI:
+Although ezBIDS is a web-based service that does not require installation, it is possible to install it on your local machine or server. The main advantage here is that data is not uploaded to the ezBIDS server (i.e. data remains on-site). Instead, data is copied to one of the ezBIDS containers (brainlife_ezbids-handler) at */tmp/ezbids-workdir*. However, with this approach users cannot upload their finalized BIDS-compliant data to brainlife.io via ezBIDS, as this requires authentication that isn't available with a local installation. Furthermore, setting up ezBIDS locally may require some technical know-how. The following steps should enable you to successfully install ezBIDS.
 
-1. *git clone https://github.com/brainlife/ezbids*
+#### Step 1: Software prerequisites
+
+Make sure the following software packages are installed on your computer:
+1. [Docker](https://www.docker.com/)
+2. [Docker Compose](https://docs.docker.com/compose/)
+3. [Node(.js) & npm](https://nodejs.org/en/download/)
+
+!!! warning Node and npm installation
+    Download the LTS version (20.11.0), as ezBIDS does not work well with newer Node versions. If working on Mac OS, avoid downloading from homebrew, as homebrew provides the most recent version or puts an older version in an atypical directory (e.g. *node@20*).
+
+To check that they are in your $PATH, type "<software> --version" (e.g. *docker --version*) into your terminal. If successfully installed, a version ID will be displayed.
+
+#### Step 2: Setup
+
+Type the following commands into your terminal:
+1. *git clone https://github.com/brainlife/ezbids.git*
 2. *cd ezbids && ./dev.sh -d*
-
-!!! warning Software requirements
-    Users must have both [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) on their machine.
 
 !!! note ezBIDS on HPCs
     Users wishing to install ezBIDS on their institution's HPC will not have access to Docker or Docker Compose. ezBIDS is currently unsupported by Singularity, and thus users should reach out to system administrators to see if installation of ezBIDS can be supported.
+
+The second command runs *docker-compose up*, which builds and starts the 4 contains that make up ezBIDS. This will take several minutes to complete, at which point logging information will appear in the terminal. To ensure that the containers are up and running, open a new terminal and type *docker ps*, which should output something like:
+```
+CONTAINER ID   IMAGE            COMMAND                  CREATED        STATUS                  PORTS                                           NAMES
+f5ecdfa84704   ezbids_handler   "pm2 start handler.j…"   18 hours ago   Up 18 hours                                                             brainlife_ezbids-handler
+bae50478c784   ezbids_api       "docker-entrypoint.s…"   18 hours ago   Up 18 hours (healthy)   0.0.0.0:8082->8082/tcp, :::8082->8082/tcp       brainlife_ezbids-api
+374590c576b9   ezbids_ui        "docker-entrypoint.s…"   18 hours ago   Up 18 hours (healthy)   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp       brainlife_ezbids-ui
+7a45d0f24b31   mongo:4.4.15     "docker-entrypoint.s…"   18 hours ago   Up 18 hours (healthy)   0.0.0.0:27417->27017/tcp, :::27417->27017/tcp   brainlife_ezbids-mongodb
+```
+
+!!! warning Port communication
+    ezBIDS needs access to port:3000, ensure that no other software is using that port.
+
+#### Step 3: Accessing ezBIDS
+Once the containers are up and running, open a web-browser (ideally Chrome or Firefox) and type *localhost:3000* into the URL. After several seconds, the ezBIDS homepage should appear, and you are set to go.
+
+#### Step 4. Sutting down ezBIDS
+Once finished with ezBIDS, you will need to type *docker-compose down* into the terminal in order to bring the containers down. To restart, simply re-run *./dev.sh -d*
+
+!!! note
+    These commands must be executed from within the ezbids directory.
 
 ---
 ## FAQ
