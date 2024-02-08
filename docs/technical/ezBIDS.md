@@ -380,3 +380,37 @@ The API then store this information as *finalized.json* in workdir, and copies t
 
 ### 6. Access BIDS
 Once session status becomes "finished", the user will be then allowed to download the final BIDS directory via the download API, or send to other cloud resources
+
+
+## This repo was bootstrapped by
+
+```
+npm init vite@latest ui2 -- --template vue-ts
+```
+
+## Code Styling/Formatting Guide
+
+This repo has a few guardrails in it to ensure that only clean, standardized, and uniform code is committed into the ezBIDS repository. It is suggested that VSCode be used when contributing to ezBIDS to make use of the Prettier VSCode extension for convenience.
+
+There are a few safeguards active:
+
+1. We use husky to run a git precommit hook and lint staged files using esLint
+2. We use husky to run a git precommit hook and run a prettier style check on staged files
+3. A `.vscode/settings.json` file is attached to this repository, which configures VSCode to allow formatting of files on save and on paste.
+
+Make sure that you run npm install to install husky if you have not already.
+You must run *npm run prepare-husky* the first time you touch the project in order to initialize git hooks.
+
+You can run `npm run lint-staged` at any time in order to run a style check on the staged files.
+`lint-staged` makes a call to prettier and eslint to check if there are any files that do not adhere to the code standard.
+It does NOT overwrite any files.
+
+NOTE: If you want to skip the hook for whatever reason, you can run `git commit --no-verify ...` 
+
+VS Code Recommendations:
+
+1. Install the Prettier VS Code extension `esbenp.prettier-vscode`. This will allow you to format files based on prettier rules.
+2. Install the eslint VS Code extension `dbaeumer.vscode-eslint`. This will allow you to see lint errors as you're writing code.
+3. Install the Volar extension `vue.volar`. This provides Vue language features.
+
+NOTE: The recommended extensions to install for this project should appear as a notification in the bottom right corner of the VSCode screen the very first time you open the project. You can also open the command palette and go to "Show Recommended Extensions." Alternatively, you can directly navigate to `.vscode/extensions.json` and install the listed extensions.
