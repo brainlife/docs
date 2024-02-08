@@ -236,7 +236,7 @@ bae50478c784   ezbids_api       "docker-entrypoint.s…"   18 hours ago   Up 18 
 #### Step 3: Accessing ezBIDS
 Once the containers are up and running, open a web-browser (ideally Chrome or Firefox) and type *localhost:3000* into the URL. After several seconds, the ezBIDS homepage should appear, and you are set to go.
 
-#### Step 4. Sutting down ezBIDS
+#### Step 4. Closing ezBIDS
 Once finished with ezBIDS, you will need to type *docker-compose down* into the terminal in order to bring the containers down. To restart, simply re-run *./dev.sh -d*
 
 !!! note
