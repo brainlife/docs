@@ -181,14 +181,14 @@ ezBIDS uses [NiiVue](https://github.com/niivue/niivue) to visualize data. *NiiVu
 ---
 ## Types of data supported
 
-ezBIDS provides BIDS conversion support for the following data modalities:
-1. **MRI**
-   * *Including arterial spin labeling (ASL)*
-   * *Including functional bold task events*
-2. **DWI**
-3. **PET**
-   * *Including blood recording data*
-4. **MEG**
+ezBIDS provides BIDS conversion support for the following data modalities:  
+1. **MRI**  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- *Including arterial spin labeling (ASL)*  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- *Including functional bold task events*  
+2. **DWI**  
+3. **PET**  
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- *Including blood recording data*  
+4. **MEG**  
 
 !!! warning PET and MEG
     Support for these modalities are relatively new and in the beta stage. Improvements will continue as users submit issues pertaining to to bugs and other related requests.
@@ -200,21 +200,23 @@ Although ezBIDS is a web-based service that does not require installation, it is
 
 #### Step 1: Software prerequisites
 
-Make sure the following software packages are installed on your computer:
-1. [Docker](https://www.docker.com/)
-2. [Docker Compose](https://docs.docker.com/compose/)
-3. [Node(.js) & npm](https://nodejs.org/en/download/)
+Make sure the following software packages are installed on your computer:  
+1. [Docker](https://www.docker.com/)  
+2. [Docker Compose](https://docs.docker.com/compose/)  
+3. [Node(.js) & npm](https://nodejs.org/en/download/)  
 
 !!! warning Node and npm installation
     Download the LTS version (20.11.0), as ezBIDS does not work well with newer Node versions. If working on Mac OS, avoid downloading from homebrew, as homebrew provides the most recent version or puts an older version in an atypical directory (e.g. *node@20*).
 
-To check that they are in your $PATH, type "<software> --version" (e.g. *docker --version*) into your terminal. If successfully installed, a version ID will be displayed.
+To check that they are in your $PATH, enter "software --version" (e.g. *docker --version*) into your terminal. If successfully installed, a version ID will be displayed.
 
 #### Step 2: Setup
 
-Type the following commands into your terminal:
-1. *git clone https://github.com/brainlife/ezbids.git*
-2. *cd ezbids && ./dev.sh -d*
+Type the following commands into your terminal:  
+```
+git clone https://github.com/brainlife/ezbids.git
+cd ezbids && ./dev.sh -d
+```
 
 !!! note ezBIDS on HPCs
     Users wishing to install ezBIDS on their institution's HPC will not have access to Docker or Docker Compose. ezBIDS is currently unsupported by Singularity, and thus users should reach out to system administrators to see if installation of ezBIDS can be supported.
