@@ -146,7 +146,7 @@ To register your resource, go to the [resources](https://brainlife.io/resources)
 You can leave the rest of the fields empty for now.
 
 !!! warning
-	IU HPC systems requires you to submit [ssh public key agreement form](https://hpceverywhere.iu.edu/agree){target=_blank} so that you can authenticate using your ssh public key.
+	IU HPC systems requires you to submit [ssh public key agreement form](https://uitsradl-fireform.eas.iu.edu/online/form/authen/sshkeyagreement){target=_blank} so that you can authenticate using your ssh public key.
 
 Click OK. Once you are finished with copying ssh key and make sure the workdir exists, click "Test" button to see if Brainlife can access your resource. You should see a green checkbox if everything is good.
 
