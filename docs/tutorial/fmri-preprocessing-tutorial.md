@@ -6,7 +6,7 @@ This tutorial will use a combination of skills developed in the [Introduction tu
 
 ### 1. Anatomical preprocessing.
 
-The first step of diffusion preprocessing often involves processing the anatomical images. In order to guarantee that any generalizations regarding location made from the preprocessed diffusion data is anatomically-informed, we must have both of our anatomical (T1w or T2w) images and our diffusion MRI images **aligned**. One way we can make this easier for [fMRIPrep](https://brainlife.io/app/5c61c69f14027a01b14adcb3) is by aligning the anatomical images in such a way that the center of the brain is centered in the image. We refer to this as **ACPC-aligned**, as we are aligning the data to the **anterior commissure-posterior comissure plane**. This is the first step in fMRI preprocessing, and it is typically done with the [FSL Anat (T1w)](https://brainlife.io/app/5e3c87ae9362b7166cf9c7f4) app. Once we've centered our anatomical image, we can move onto functional MRI preprocessing.
+The first step of diffusion preprocessing often involves processing the anatomical images. In order to guarantee that any generalizations regarding location made from the preprocessed diffusion data is anatomically-informed, we must have both of our anatomical (T1w or T2w) images and our diffusion MRI images **aligned**. One way we can make this easier for [fMRIPrep](https://brainlife.io/app/5c61c69f14027a01b14adcb3) is by aligning the anatomical images in such a way that the center of the brain is centered in the image. We refer to this as **ACPC-aligned**, as we are aligning the data to the **anterior commissure-posterior comissure plane**. This is the first step in fMRI preprocessing, and it is typically done with the [FSL Anat (T1)](https://brainlife.io/app/5e3c87ae9362b7166cf9c7f4) app. Once we've centered our anatomical image, we can move onto functional MRI preprocessing.
 
 
 ### 2. Functional preprocessing.
@@ -21,11 +21,10 @@ Finally, images from the fMRI scanner might not be perfectly aligned to images c
 
 Useful information about fMRIPrep anatomical preprocessing can be found in this [original Nature paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319393/#S13title).
 
-There are two versions of the brainlife.io fMRIPrep app. One generates outputs mapped to the volumes ([fMRIPrep-volume](https://brainlife.io/app/5c61c69f14027a01b14adcb3)) and the other generates outputs mapped to the surfaces ([fMRIPrep-surface](https://brainlife.io/app/5dfceebd32bff0640ce27bbd)).
-
-For this tutorial, we will use the volume-based version.
+There are two versions of the brainlife.io fMRIPrep app. One generates outputs mapped to the volumes ([fMRIPrep-volume](https://brainlife.io/app/5c61c69f14027a01b14adcb3)) and the other generates outputs mapped to the surfaces ([fMRIPrep-surface](https://brainlife.io/app/5dfceebd32bff0640ce27bbd)). For this tutorial, we will use the volume-based version.
 
 Now, let's get to work! The following steps of this tutorial will show you how to:
+
 1. preprocess the anatomical (T1w & T2w) data using FSL
 2. generate anatomical surfaces using Freesurfer,
 3. preprocess the fMRI data using fMRIPrep
@@ -97,11 +96,9 @@ Once you're happy with the surfaces, you can move onto running Freesurfer!
 1. On the 'Submit App' page, select the following:
     * For input, select the staged preprocessed, 'acpc_aligned'-tagged anatomical (T1w & T2w) images by clicking the drop-down menu and finding the appropriate datasets.
     * Select the boxes for 'hippocampal' and 'thalamicnuclei'. Leave all other defaults the same
-    ![Free Surfer Options](../img/fmri_prep_tutorial_free_surfer_options.png)
-
-    ![Free Surfer Options 1](../img/fmri_prep_tutorial_free_surfer_options_1.png)
-
-    ![Free Surfer Options 2](../img/fmri_prep_tutorial_free_surfer_options_2.png)
+    ![Freesurfer Options](../img/fmri_prep_tutorial_free_surfer_options.png)
+    ![Freesurfer Options 1](../img/fmri_prep_tutorial_free_surfer_options_1.png)
+    ![Freesurfer Options 2](../img/fmri_prep_tutorial_free_surfer_options_2.png)
     * Select the box for 'Archive all output datasets when finished'
         * For 'Dataset Tags,' type and enter 'fsl_anat'
     * Hit 'Submit'
