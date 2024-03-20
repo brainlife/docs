@@ -4,7 +4,7 @@
 
 brainlife.io is composed of a collection of [microservices](https://microservices.io/){target=_blank}; Two major groups of microservices exist; the Warehouse, and Amaretti. 
 
-![diagram](https://docs.google.com/drawings/d/e/2PACX-1vSbxpvxhckYT5rUJReexZdbaL4xZpMDiebDP-yQAxrcy1VwKCAHYQQTWE8mMQ4lBgQg9qpcZcZmaEr1/pub?w=960&amp;h=551)
+![diagram](https://github.com/brainlife/docs/assets/2119795/52d2df4e-500d-401c-81ae-098fe3aab796)
 
 These services are distributed across multiple docker hosts and various VMs on [Jetstream-Cloud](https://jetstream-cloud.org/){target=_blank}. They mainly communicate through REST APIs and/or AMQP message bus. All external web traffic is proxied through our API proxy (nginx). Our infrastructure also includes monitoring and operational services (not included in the diagram).
 
