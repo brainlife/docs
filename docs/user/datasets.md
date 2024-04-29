@@ -1,7 +1,7 @@
 # Datasets
 
-Brainlife uses Datalad to provide seamless access to dataset published on OpenNeuro.org as well as on other open datasets.
-Datasets mapped by Datalad can searched and imported directly from within the Brainlife interface.
+Brainlife uses DataLad to provide seamless access to dataset published on OpenNeuro.org as well as on other open datasets.
+Datasets mapped by DataLad can searched and imported directly from within the Brainlife interface.
 
 Head over to the [Datasets Page](https://brainlife.io/datasets) or click on the Datasets Tab.
 ![Dataset Tab](../img/dataset-tab.png)
