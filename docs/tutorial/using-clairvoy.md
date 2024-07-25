@@ -33,19 +33,18 @@ A narrated video of how to use Clairvoy is available at [this link](https://yout
 ### Step 3.  Run the Clairvoy App
 After pipeline completion:
 1. Choose the `Archive` Tab in your project,
-2. Select `tractmeasures`, and
-3. Choose `Stage to process`.  Give the process the name “Clairvoy” and click `Submit`.
-4. In the `Preprocess` Tab, choose `Clairvoy` and click `Submit App`.
-5. Choose the `Clairvoy App` from the list of Apps suggested by [brainlife.io](https://brainlife.io) and click submit. This should only take a minute or so to complete.
-6. When finished, the `Clairvoy App` output will state either: **This injury is at high risk of developing PPCS** in red letters, or **This injury is predicted to recover in under 28 days** in green letters.
+2. Select `tractmeasures`.
+3. Choose `Stage to process`.
+4. Give the process the name `Clairvoy` and click `Submit`.
+5. In the `Preprocess` Tab, choose `Clairvoy` and click `Submit App`.
+6. Choose the `Clairvoy App` from the list of Apps suggested by [brainlife.io](https://brainlife.io) and click submit. This should only take a minute or so to complete.
+7. When finished, the `Clairvoy App` output will state either: **This injury is at high risk of developing PPCS** in red letters, or **This injury is predicted to recover in under 28 days** in green letters.
 
 **[Here is a narrated YouTube video about how to run Clairvoy](https://youtu.be/TvVmsXITP_0)**
 
 [^1]: For security reasons, it will require that you create a user account on [brainlife.io](https://brainlife.io).
-
-[^2]: It is best practice to save the download `configuration/template` to your computer, which can be reused later for other similar datasets. 
-
-[^3]: Time to completion depends on the currently available computing resources on [brainlife.io](https://brainlife.io). 
-If you have access to a (super-)computer, time to completion may be reduced to less than an hour. 
+[^2]: It is best practice to save the download `configuration/template` to your computer, which can be reused later for other similar datasets.
+[^3]: Time to completion depends on the currently available computing resources on [brainlife.io](https://brainlife.io).
+If you have access to a (super-)computer, time to completion may be reduced to less than an hour.
 If you use a free, public [brainlife.io](https://brainlife.io) supercomputer, the pipeline may take over 24 hours to complete.
 
