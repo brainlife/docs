@@ -18,7 +18,7 @@ Clairvoy uses the web-based ezBIDS tool (built into Brainlife) to import Dicom f
 A narrated video of how to use Clairvoy is available at [this link](https://youtu.be/TvVmsXITP_0).
 
 ### Step 1.  Upload files into a BIDS project
-1. Login into ezBIDS with your free Brainlife account.[^1] The homepage will now open to the `Upload Imaging Data` on the left side Tab. 
+1. Login into ezBIDS with your free [brainlife.io](https://brainlife.io) account.[^1] The homepage will now open to the `Upload Imaging Data` on the left side Tab. 
 2. Drag and drop, or browse, for the files you wish to upload. Zip’ing the files may increase upload speed. Fill in the relevant details of the `Dataset Description`: `Dataset Name` (e.g., “DWI_workflow”, Authors (eg. your name).  Some elements will be extracted from the DICOM, e.g., `Subject` and `Session`. If the data is not deidentified, you may wish to change the subject name to a private subject ID number. In `BIDS Datatype`, choose `IntendedFor` to `dwi/dwi`. 
 5. It is best practice to deface the subjects. To do so, choose `QuickShear` method and run defacing (this will remove any recognizable face and ear features). When finished, visually confirm the brain is still in the image and select `Use Defaced`. In `Participants Info`, you may want to choose the sex and age of the subject (this is not HIPAA-protected information).
 6. Select `Finalize` to convert to BIDS.[^2]
@@ -42,7 +42,7 @@ After pipeline completion:
 
 **[Here is a narrated YouTube video about how to run Clairvoy](https://youtu.be/TvVmsXITP_0)**
 
-[^1]: For security reasons, it will require that you create a user account on [brainlife.io](https://brainlife.io).
+[^1]: For security reasons, it will require creating a user account on [brainlife.io](https://brainlife.io), see instructions [here](https://brainlife.io/docs/user/started/).
 [^2]: It is best practice to save the download `configuration/template` to your computer, which can be reused later for other similar datasets.
 [^3]: Time to completion depends on the currently available computing resources on [brainlife.io](https://brainlife.io).
 If you have access to a (super-)computer, time to completion may be reduced to less than an hour.
