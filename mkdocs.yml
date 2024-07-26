@@ -47,6 +47,7 @@ nav:
     - Network Neuroscience: tutorial/networkneuroscience.md
     - Cortex Tissue Mapping: tutorial/cortex-tissue-mapping.md
     - Pipeline Tutorial: tutorial/anat-t1-pipeline-tutorial.md
+    - Clairvoy: tutorial/using-clairvoy.md
 
   - Using CLI:
     - Installation: cli/install.md
