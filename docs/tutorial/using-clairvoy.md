@@ -40,7 +40,9 @@ After pipeline completion:
 6. Choose the `Clairvoy App` from the list of Apps suggested by [brainlife.io](https://brainlife.io) and click submit. This should only take a minute or so to complete.
 7. When finished, the `Clairvoy App` output will state either: **This injury is at high risk of developing PPCS** in red letters, or **This injury is predicted to recover in under 28 days** in green letters.
 
+<div style="display: flex; align-items: center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TvVmsXITP_0?si=HBNc2dlK7mipZJY-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 [^1]: For security reasons, it will require creating a user account on [brainlife.io](https://brainlife.io), see instructions [here](https://brainlife.io/docs/user/started/).
 [^2]: It is best practice to save the download `configuration/template` to your computer, which can be reused later for other similar datasets.
