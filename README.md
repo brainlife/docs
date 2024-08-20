@@ -25,7 +25,7 @@ brainlife.io is publicly funded and for the sustainability of the project it is 
 ### Citations
 We kindly ask that you cite the following articles when publishing papers and code using this code. 
 
-1.Hayashi, S., Caron, B.A., Heinsfeld, A.S. et al. brainlife.io: a decentralized and open-source cloud platform to support neuroscience research. Nat Methods (2024). [https://doi.org/10.1038/s41592-024-02237-2](https://doi.org/10.1038/s41592-024-02237-2)
+1. Hayashi, S., Caron, B.A., Heinsfeld, A.S. et al. brainlife.io: a decentralized and open-source cloud platform to support neuroscience research. Nat Methods (2024). [https://doi.org/10.1038/s41592-024-02237-2](https://doi.org/10.1038/s41592-024-02237-2)
 
 2. Levitas, Daniel, et al. "ezBIDS: Guided standardization of neuroimaging data interoperable with major data archives and platforms." [Article](https://www.nature.com/articles/s41597-024-02959-0).
 
