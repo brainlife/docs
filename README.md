@@ -8,6 +8,7 @@ This repository contains the content of [Brainlife Doc](https://brainlife.io/doc
 - Bradley Caron <bacaron@iu.edu>
 - Franco Pestilli <franpest@indiana.edu>
 - Sophia Vinci-Booher <svincibo@iu.edu>
+- Dan Levitas <dlevitas@iu.edu>
 
 ### Project Director
 - [Franco Pestilli](frakkopesto@gmail.com)
@@ -26,7 +27,9 @@ We kindly ask that you cite the following articles when publishing papers and co
 
 1.Hayashi, S., Caron, B.A., Heinsfeld, A.S. et al. brainlife.io: a decentralized and open-source cloud platform to support neuroscience research. Nat Methods (2024). [https://doi.org/10.1038/s41592-024-02237-2](https://doi.org/10.1038/s41592-024-02237-2)
 
-2. Avesani, P., McPherson, B., Hayashi, S. et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6, 69 (2019). [https://doi.org/10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
+2. Levitas, Daniel, et al. "ezBIDS: Guided standardization of neuroimaging data interoperable with major data archives and platforms." [Article](https://www.nature.com/articles/s41597-024-02959-0).
+
+3. Avesani, P., McPherson, B., Hayashi, S. et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6, 69 (2019). [https://doi.org/10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
 
 #### MIT Copyright (c) 2020 brainlife.io The University of Texas at Austin and Indiana University
 
