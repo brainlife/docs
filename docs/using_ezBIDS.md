@@ -231,7 +231,37 @@ bae50478c784   ezbids_api       "docker-entrypoint.s…"   18 hours ago   Up 18 
 ```
 
 !!! warning Port communication
-    ezBIDS needs access to port:3000, ensure that no other software is using that port.
+    ezBIDS needs access to port:3000, so ensure that no other software are using this port.
+
+Once you have successfully installed ezBIDS locally, you can download a file called `ezbids-upload.sh` found [here](https://drive.google.com/file/d/1o2_gHBKXquuAJ3sgc97jZ-jf_tz9iKhQ/view?usp=drive_link), which enables you to more quickly upload data to the ezBIDS UI. Once the file is downloaded, type the following in your terminal, line by line:
+```
+chmod +x ezbids-upload.sh
+./ezbids-upload.sh /path/to/your/data/to/upload
+```
+
+You should see something similar to the following in your terminal:
+```
+Session ID: 66c495d60dcf43a41a8cee00
+
+Uploading /home/ubuntu/dlevitas/test_data/quick_nifti_test
+Uploading time-20190409102441-sn-3-name-T1w_acq-0p8mm_rec-cool.json
+ok
+Uploading time-20190409102441-sn-3-name-T1w_acq-0p8mm_rec-cool.nii.gz
+ok
+Uploading time-20200122142947-sn-2-name-anat-T1w.json
+ok
+Uploading time-20200122142947-sn-2-name-anat-T1w.nii.gz
+ok
+Uploading time-20220803104851-sn-2_acq-mprage.json
+ok
+Uploading time-20220803104851-sn-2_acq-mprage.nii.gz
+ok
+Marking as done
+ok
+http://localhost:3000/ezbids/convert/#66c495d60dcf43a41a8cee00
+```
+
+Simply copy the session url (e.g. `http://localhost:3000/ezbids/convert/#66c495d60dcf43a41a8cee00`) into your web browser, and you will observe that the data has been uploaded and ezBIDS has began working on your uploaded data.
 
 #### Step 3: Accessing ezBIDS
 Once the containers are up and running, open a web-browser (ideally Chrome or Firefox) and type *localhost:3000* into the URL. After several seconds, the ezBIDS homepage should appear, and you are set to go.
