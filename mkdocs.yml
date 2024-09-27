@@ -8,7 +8,7 @@ site_url: https://brainlife.io/docs
 repo_name: 'brainlife/docs'
 repo_url: 'https://github.com/brainlife/docs'
 
-copyright: 'Copyright &copy; 2017 - 2022 brainlife.io | Please report issues on <a style="text-decoration: underline;" target="github" href="https://github.com/brainlife/docs/issues">Github Issues</a> or send us your comment at <a style="text-decoration: underline;" target="slack" href="https://brainlife.slack.com/">Slack</a>'
+copyright: 'Copyright &copy; 2017 - 2024 brainlife.io | Please report issues on <a style="text-decoration: underline;" target="github" href="https://github.com/brainlife/docs/issues">Github Issues</a> or send us your comment at <a style="text-decoration: underline;" target="slack" href="https://brainlife.slack.com/">Slack</a>'
 
 theme:
   name: 'material'
