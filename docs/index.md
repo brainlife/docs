@@ -26,7 +26,7 @@ Once a Project is mature, the data is analyzed and all the derivatives generated
 
 Think of brainlife Datatypes as the way brainlife Apps communicate. A Datatype defines the expected list of filenames or the directory structure that an App can use as input or generate as output. Typically, multiple Apps use the same Datatype to communicate through their input and output datasets and reuse data to generate more data derivatives. Datatypes help join Apps together to form a pipeline or workflows.
 
-brainlife Datatypes are maintained by individual developers and are updated at [https://github.com/brainlife/datatypes](https://github.com/brainlife/datatypes){target=_blank}.
+brainlife Datatypes are maintained by individual developers and are updated at [https://brainlife.io/datatypes](brainlife.io){target=_blank}.
 
 # Datasets
 
