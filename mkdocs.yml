@@ -42,9 +42,8 @@ nav:
     - PRF Mapping: tutorial/prf-mapping.md
     - DWI Preprocessing : tutorial/diffusion-preprocessing.md
     - DWI Tractometry: tutorial/diffusion-tractography.md
-    - FMRI networks: tutorial/networkneuroscience-functional.md
-    - DMRI networks: tutorial/networkneuroscience-structural.md
-    - Network Neuroscience: tutorial/networkneuroscience.md
+    - Network Neuroscience - Structural: tutorial/networkneuroscience-structural.md
+    - Network Neuroscience - Functional: tutorial/networkneuroscience-functional.md
     - Cortex Tissue Mapping: tutorial/cortex-tissue-mapping.md
     - Pipeline Tutorial: tutorial/anat-t1-pipeline-tutorial.md
     - Clairvoy: tutorial/using-clairvoy.md
