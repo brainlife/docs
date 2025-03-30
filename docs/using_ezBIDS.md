@@ -204,6 +204,8 @@ Make sure the following software packages are installed on your computer:
 1. [Docker](https://www.docker.com/)  
 2. [Docker Compose](https://docs.docker.com/compose/)  
 3. [Node(.js) & npm](https://nodejs.org/en/download/)  
+4. [OpenSSL 1.1](https://github.com/openssl/openssl)
+5. [ICU v71](https://icu.unicode.org/)
 
 !!! warning Node and npm installation
     Download the LTS version (20.11.0), as ezBIDS does not work well with newer Node versions. If working on Mac OS, avoid downloading from homebrew, as homebrew provides the most recent version or puts an older version in an atypical directory (e.g. *node@20*).
