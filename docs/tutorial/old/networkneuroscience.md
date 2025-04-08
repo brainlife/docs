@@ -239,7 +239,7 @@ Once you're happy with the results, you can move onto fitting the CSD, DTI, and 
     * Hit 'Submit'
 1. Once the app is finished running, view the results by clicking the 'eye' icon to the right of the dataset
     * Choose 'mrview' as your viewer
-        * This will overlay the tractogram on the generated fractional anistropy (FA) image
+        * This will overlay the tractogram on the generated fractional anisotropy (FA) image
 1. You can also generate a QA image of the whole-brain tractograms by running the 'Generate figures of whole-brain tractogram (tck)' using the whole-brain tractogram (tck) generated above! Archive the results and save with the tag 'qa whole brain tractogram'.
 
 If you're happy with the results, you're ready to move on to structural connectivity generation!
