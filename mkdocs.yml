@@ -38,6 +38,7 @@ nav:
     - Introduction: tutorial/introduction-to-brainlife.md
     - ezBIDS: tutorial/ezBIDS.md
     - Anatomy: tutorial/t1w-preprocessing.md
+    - AWS: tutorial/aws-brainlife.md
     - FMRI Preprocessing: tutorial/fmri-preprocessing-tutorial.md
     - PRF Mapping: tutorial/prf-mapping.md
     - DWI Preprocessing : tutorial/diffusion-preprocessing.md
