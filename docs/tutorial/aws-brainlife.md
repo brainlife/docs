@@ -1,7 +1,3 @@
----
-title: "Using Brainlife with Amazon Web Services"
----
-
 # Using Brainlife with Amazon Web Services
 
 ## Introduction
