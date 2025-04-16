@@ -144,7 +144,7 @@ Finally, click `Submit`. Visit the Apps page to make sure everything looks OK.
 
 ## README / Description / Topics
 
-Brainlife re-uses information stored in github repo.
+Brainlife reuses information stored in github repo.
 
 * App Description / Topics
 
