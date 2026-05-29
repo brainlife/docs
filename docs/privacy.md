@@ -25,7 +25,9 @@ brainlife.io allows administrators to access uploaded and generated data-objects
 
 ### Data Security
 
-The archive data is stored on trusted and secure third party cloud platforms including [OSiRIS](https://www.osris.org/) and [AWS (Amazon Web Services)](https://registry.opendata.aws/apex/) ("AWS"). Only the brainlife administrator(s) is/are authorized to access these storage systems; however, administrators of these storage systems may have access to the data.
+We may use trusted third-party cloud and infrastructure providers to host, process, secure, and maintain data. These providers may change over time to support operational, security, or technical requirements.
+
+The archive data is currently stored on third party cloud platforms including [OSiRIS](https://www.osris.org/) and [AWS (Amazon Web Services)](https://registry.opendata.aws/apex/) ("AWS"). Only the brainlife administrator(s) is/are authorized to access these storage systems; however, administrators of these storage systems may have access to the data.
 
 brainlife.io provides their users several _shared_ computing resources including brainlife.io's own slurm clusters running on Jetstream, various [ACCESS](https://access-ci.org/) resources, AWS resources, and other trusted compute resource providers. These shared resources are enabled to all users by default, and when you submit jobs on brainlife, the data must be transferred to these remote computing resources. The data transfer between resources is encrypted by ssh/sha2 protocol with ssh keys encrypted by PBKDF2/sha512 algorithm.
 
