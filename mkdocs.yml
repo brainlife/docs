@@ -102,7 +102,7 @@ markdown_extensions:
   - footnotes
   - toc:
         permalink: True
-  - fontawesome_markdown
+  - fontawesome_in_markdown
   - attr_list
   - pymdownx.highlight:
         linenums: true
