@@ -1,20 +1,20 @@
 {
-  "name": "docs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "scripts": {
-    "install": "pip3 install -r requirements.txt",
-    "deploy": "echo test.brainlife.io github hook service automatically updates it (test.brainlife.io:/home/hayashis/git/docs - launched by @reboot cron)",
-    "deploy-prod": "mkdocs build && rsync -av site/ hayashis@brainlife.io:/usr/local/static/docs",
-    "dev": "mkdocs serve"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "github-webhook-handler": "^1.0.0"
-  }
+    "name": "docs",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "install": "sudo pip3 install mkdocs mkdocs-material fontawesome_markdown",
+        "deploy": "echo test.brainlife.io github hook service automatically updates it (test.brainlife.io:/home/hayashis/git/docs - launched by @reboot cron)",
+        "deploy-prod": "mkdocs build && rsync -av site/ hayashis@brainlife.io:/usr/local/static/docs",
+        "dev": "mkdocs serve"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "github-webhook-handler": "^1.0.0"
+    }
 }

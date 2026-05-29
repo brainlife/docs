@@ -1,110 +1,108 @@
-
 site_name: brainlife Documentation
-site_author: 'The people of brainlife.io'
+site_author: "The people of brainlife.io"
 site_url: https://brainlife.io/docs
 
 #
 # Repository
-repo_name: 'brainlife/docs'
-repo_url: 'https://github.com/brainlife/docs'
+repo_name: "brainlife/docs"
+repo_url: "https://github.com/brainlife/docs"
 
 copyright: 'Copyright &copy; 2017 - 2022 brainlife.io | Please report issues on <a style="text-decoration: underline;" target="github" href="https://github.com/brainlife/docs/issues">Github Issues</a> or send us your comment at <a style="text-decoration: underline;" target="slack" href="https://brainlife.slack.com/">Slack</a>'
 
 theme:
-  name: 'material'
-  language: 'en'
-  favicon: '/img/favicon.ico'
-  palette:
-    primary: 'light blue'
-  custom_dir: overrides
+    name: "material"
+    language: "en"
+    favicon: "/img/favicon.ico"
+    palette:
+        primary: "light blue"
+    custom_dir: overrides
 
 nav:
-  - Home: index.md
+    - Home: index.md
 
-  - ezBIDS: using_ezBIDS.md
+    - ezBIDS: using_ezBIDS.md
 
-  - Using brainlife:
-    - Getting Started: user/started.md
-    - Projects: user/project.md
-    - Datatypes: user/datatypes.md
-    - Archive: user/archive.md
-    - Preprocess: user/process.md
-    - Pipelines: user/pipeline.md
-    - Publications: user/publication.md
-    - Datasets : user/datasets.md
-    - Failure: user/failure.md
+    - Using brainlife:
+          - Getting Started: user/started.md
+          - Projects: user/project.md
+          - Datatypes: user/datatypes.md
+          - Archive: user/archive.md
+          - Preprocess: user/process.md
+          - Pipelines: user/pipeline.md
+          - Publications: user/publication.md
+          - Datasets: user/datasets.md
+          - Failure: user/failure.md
 
-  - Tutorials: 
-    - Introduction: tutorial/introduction-to-brainlife.md
-    - ezBIDS: tutorial/ezBIDS.md
-    - Anatomy: tutorial/t1w-preprocessing.md
-    - AWS: tutorial/aws-brainlife.md
-    - FMRI Preprocessing: tutorial/fmri-preprocessing-tutorial.md
-    - PRF Mapping: tutorial/prf-mapping.md
-    - DWI Preprocessing : tutorial/diffusion-preprocessing.md
-    - DWI Tractometry: tutorial/diffusion-tractography.md
-    - Network Neuroscience - Structural: tutorial/networkneuroscience-structural.md
-    - Network Neuroscience - Functional: tutorial/networkneuroscience-functional.md
-    - Cortex Tissue Mapping: tutorial/cortex-tissue-mapping.md
-    - Pipeline Tutorial: tutorial/anat-t1-pipeline-tutorial.md
-    - Clairvoy: tutorial/using-clairvoy.md
+    - Tutorials:
+          - Introduction: tutorial/introduction-to-brainlife.md
+          - ezBIDS: tutorial/ezBIDS.md
+          - Anatomy: tutorial/t1w-preprocessing.md
+          - AWS: tutorial/aws-brainlife.md
+          - FMRI Preprocessing: tutorial/fmri-preprocessing-tutorial.md
+          - PRF Mapping: tutorial/prf-mapping.md
+          - DWI Preprocessing: tutorial/diffusion-preprocessing.md
+          - DWI Tractometry: tutorial/diffusion-tractography.md
+          - Network Neuroscience - Structural: tutorial/networkneuroscience-structural.md
+          - Network Neuroscience - Functional: tutorial/networkneuroscience-functional.md
+          - Cortex Tissue Mapping: tutorial/cortex-tissue-mapping.md
+          - Pipeline Tutorial: tutorial/anat-t1-pipeline-tutorial.md
+          - Clairvoy: tutorial/using-clairvoy.md
 
-  - Using CLI:
-    - Installation: cli/install.md
-    - Uploading Data: cli/upload.md
-    - Running Apps: cli/app.md
-    - Downloading Data: cli/download.md
-    - Update Data: cli/update.md
-    - Group Analysis: cli/group.md
+    - Using CLI:
+          - Installation: cli/install.md
+          - Uploading Data: cli/upload.md
+          - Running Apps: cli/app.md
+          - Downloading Data: cli/download.md
+          - Update Data: cli/update.md
+          - Group Analysis: cli/group.md
 
-  - Developing Apps: 
-    - Introduction: apps/introduction.md
-    - HelloWorld: apps/helloworld.md
-    - Registering App: apps/register.md
-    - Containerizing App: apps/container.md
-    - Versioning Tips: apps/versioning.md
-    - Custom Hooks: apps/customhooks.md
-    - product.json: apps/product.md
-    - submodules: apps/submodules.md
+    - Developing Apps:
+          - Introduction: apps/introduction.md
+          - HelloWorld: apps/helloworld.md
+          - Registering App: apps/register.md
+          - Containerizing App: apps/container.md
+          - Versioning Tips: apps/versioning.md
+          - Custom Hooks: apps/customhooks.md
+          - product.json: apps/product.md
+          - submodules: apps/submodules.md
 
-  - Compute Resources: 
-    - Registering Resource: resources/register.md
+    - Compute Resources:
+          - Registering Resource: resources/register.md
 
-  - Technical:
-    - Architecture: technical/arthitecture.md
-    - APIs: technical/api.md
-    - ezBIDS: technical/ezBIDS.md
+    - Technical:
+          - Architecture: technical/arthitecture.md
+          - APIs: technical/api.md
+          - ezBIDS: technical/ezBIDS.md
 
-  - Careers: careers/jobs.md
+    - Careers: careers/jobs.md
 
-  - Contact: contact.md
-  - Privacy Policy: privacy.md
-  - AUP: aup.md
-  - Media / Branding: media.md
+    - Contact: contact.md
+    - Privacy Policy: privacy.md
+    - AUP: aup.md
+    - Media / Branding: media.md
 
 extra:
-  #disqus: 'brain-life'
-  social:
-    - icon: fontawesome/brands/twitter
-      link: 'https://twitter.com/BrainLifeio'
-    - icon: fontawesome/brands/github
-      link: 'https://github.com/brainlife'
-    - icon: fontawesome/brands/slack
-      link: 'https://brainlife.slack.com'
-    - icon: fontawesome/brands/youtube
-      link: 'https://youtube.com/brainlifeio'
+    #disqus: 'brain-life'
+    social:
+        - icon: fontawesome/brands/twitter
+          link: "https://twitter.com/BrainLifeio"
+        - icon: fontawesome/brands/github
+          link: "https://github.com/brainlife"
+        - icon: fontawesome/brands/slack
+          link: "https://brainlife.slack.com"
+        - icon: fontawesome/brands/youtube
+          link: "https://youtube.com/brainlifeio"
 
 extra_css:
     - css/narrow.css
 
 markdown_extensions:
-  - admonition
-  - footnotes
-  - toc:
-        permalink: True
-  - fontawesome_in_markdown
-  - attr_list
-  - pymdownx.highlight:
-        linenums: true
-  - pymdownx.superfences
-
+    - admonition
+    - footnotes
+    - toc:
+          permalink: True
+    - fontawesome_markdown
+    - attr_list
+    - pymdownx.highlight:
+          linenums: true
+    - pymdownx.superfences
