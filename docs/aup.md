@@ -61,6 +61,3 @@ The user agrees to add the following reference to any publication resulting from
 Papers, book chapters, books, posters, oral presentations, and all other printed and digital presentations of results derived from data, data derivatives, analysis code, software or data processing served via brainlife.io should contain the following wording in the acknowledgments section.
 
 > "This publication benefitted at least in part from the use of data or technology provided by brainlife.io (NSF BCS 1734853 to Franco Pestilli)."
-
-
-#### The brainlife.io team
