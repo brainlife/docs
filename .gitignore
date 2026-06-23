@@ -2,3 +2,4 @@
 site
 npm-debug.log
 webhook.js
+.DS_Store

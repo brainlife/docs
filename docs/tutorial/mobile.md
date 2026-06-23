@@ -85,7 +85,7 @@ For standard analyses, you can initiate a process execution directly using the s
 
 5. Select the desired application, configure the app settings according to your research parameters, and tap the run action button.
 
-![Run App](../img/mobile/run%20app.png){: style="max-width: 200px; width: 100%;"}
+![Run App](../img/mobile/run_app.png){: style="max-width: 200px; width: 100%;"}
 
 ---
 
@@ -96,7 +96,7 @@ For custom execution workflows, you can submit apps directly from the project's 
 1. Navigate to the **Overview** tab of your project detail screen.
 2. Scroll to the **Quick Actions** section and tap **View Processes**.
 
-![View Process](../img/mobile/View_process.png){: style="max-width: 200px; width: 100%;"}
+![View Process](../img/mobile/view_process.png){: style="max-width: 200px; width: 100%;"}
 
 3. Tap the floating **Submit App** action button in the bottom-right corner.
 
