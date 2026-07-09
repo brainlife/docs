@@ -35,6 +35,7 @@ nav:
 
     - Tutorials:
           - Introduction: tutorial/introduction-to-brainlife.md
+          - Mobile: tutorial/mobile.md
           - ezBIDS: tutorial/ezBIDS.md
           - Anatomy: tutorial/t1w-preprocessing.md
           - AWS: tutorial/aws-brainlife.md
