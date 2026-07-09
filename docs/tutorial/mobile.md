@@ -1,8 +1,8 @@
 ## Brainlife Mobile App Tutorial
 
-The **Brainlife Mobile** app is the official app for the brainlife.io platform. It allows you to monitor and manage your projects, datasets, apps, and publications on the go, bringing brainlife.io's neuroimaging analysis directly to your mobile device.
+The **Brainlife** app is the official app for the brainlife.io platform. It allows you to monitor and manage your projects, datasets, apps, and publications on the go, bringing brainlife.io's neuroimaging analysis directly to your mobile device.
 
-This page highlights the step-by-step instructions on how to perform key operations in the Brainlife Mobile app, including authenticating your account, creating a project, subscribing to notification alerts, importing datasets, running processes via Quick Run, submitting custom apps, setting up automation pipelines, executing quality control validation, and monitoring playgrounds.
+This page highlights the step-by-step instructions on how to perform key operations in the Brainlife app, including authenticating your account, creating a project, subscribing to notification alerts, importing datasets, running processes via Quick Run, submitting custom apps, setting up automation pipelines, executing quality control validation, and monitoring playgrounds.
 
 ---
 
@@ -12,15 +12,14 @@ Before managing and processing your neuroimaging data on the go, you must sign i
 
 1. Open the **Brainlife Mobile** app on your device.
 2. Choose your preferred authentication method:
-    * **Username and Password**: Enter your Brainlife credentials directly in the login form and tap **Sign In**. The app securely authenticates with the Brainlife API to retrieve your JSON Web Token (JWT).
-    * **Third-Party Providers**: Tap **Google**, **GitHub**, **ORCID**, or **Apple**. The app will launch a secure system browser session via `expo-web-browser` to complete the provider's OAuth flow.
-3. Once authenticated (either natively or via the browser redirect callback), the app stores your JWT securely using on-device encrypted storage (`Expo SecureStore`). You will remain signed in across app restarts.
+    * **Username and Password**: Enter your Brainlife credentials directly in the login form and tap **Sign In**. The app securely authenticates with the Brainlife servers.
+    * **Third-Party Providers**: Tap **Google**, **GitHub**, **ORCID**, or **Apple**. The app will launch a secure system browser session to complete the authentication.
 
 ---
 
 ### B. Create a Project
 
-To begin managing and processing datasets in the app, you need to create a project space.
+To begin managing and processing datasets in the app, you need to create a project.
 
 1. Open the sidebar navigation menu in the top-left corner.
 2. Select **Projects** to navigate to the project browser.
