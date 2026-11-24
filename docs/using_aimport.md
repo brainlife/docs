@@ -6,7 +6,26 @@
 aimport builds on [ezBIDS](using_ezBIDS.md): it reuses ezBIDS's mapping heuristics and conversion and defacing tools. The difference is where the work happens. ezBIDS runs on a server, so raw DICOM files (which carry names, IDs and dates in their headers) are uploaded before anything is removed. aimport runs everything on your computer, so raw data never leaves it.
 
 !!! note "Status"
-    The aimport **engine** is available now in the [ezBIDS repository](https://github.com/brainlife/ezbids/tree/master/aimport) as a Docker image with a small HTTP API on your own computer. The command-line front end `bl aimport` and the brainlife.io/aimport web page, which drive the engine and upload the result, are upcoming. Until then you can run the engine and drive its API directly; see the [engine README](https://github.com/brainlife/ezbids/blob/master/aimport/README.md).
+    The aimport **engine** is available now in the [ezBIDS repository](https://github.com/brainlife/ezbids/tree/master/aimport) as a Docker image with a small HTTP API on your own computer. The command-line front end `bl aimport`, which drives the engine and uploads the result, is available (pending release of the `bl` command-line tool). The brainlife.io/aimport web page is upcoming. You can also run the engine and drive its API directly; see the [engine README](https://github.com/brainlife/ezbids/blob/master/aimport/README.md).
+
+## Running it
+
+With Docker installed and `bl` logged in:
+
+```
+bl aimport <folder> --project <project id>
+```
+
+`bl aimport` starts the engine on your computer, prints the plan as a table and asks you to approve it, then writes, defaces and validates the BIDS dataset. Only a validated, de-identified result is uploaded to the project. Useful flags:
+
+- `--target bids|datatypes`: also show the brainlife datatype of each object in the plan.
+- `--deface pydeface|quickshear`: the defacing method (default `pydeface`).
+- `--work <dir>` and `--keys <dir>`: the work folder and the folder for the pseudonym key. Keep the keys folder safe; it is never uploaded.
+- `--tag <tag>`: add a tag to every uploaded object (repeatable).
+- `--yes`: approve without asking (for scripts). `--no-upload`: stop after validation.
+- `--image <ref>`: the engine image.
+
+To use an AI model, set `AIMPORT_MODEL` and your provider's key in your environment first (see [AI models](#ai-models)). The full list of flags and an example session are in the [bl README](https://github.com/brainlife/cli#bl-aimport).
 
 ---
 ## What aimport does
@@ -15,7 +34,7 @@ aimport builds on [ezBIDS](using_ezBIDS.md): it reuses ezBIDS's mapping heuristi
 2. **Ask an AI agent.** An AI model reviews every series alongside ezBIDS's guess, confirms or disputes it, fills in labels such as the task name, resolves what the heuristics could not, and drafts a dataset name and README. The model only ever sees a de-identified summary (see below). Without a model configured, aimport uses the heuristics alone.
 3. **Plan and review.** Everything becomes a plan that a person reviews: the BIDS name of each series, subject and session IDs, which images are defaced, which metadata files are kept, and the README. Nothing is written until the plan is approved, and any edit sets it back to not approved.
 4. **Write, deface and validate.** aimport writes the BIDS dataset, defaces anatomical images, and checks the result with the BIDS validator (BIDS v1.11.2). Only a dataset that passes is ready to upload.
-5. **Upload.** The validated, de-identified folder is uploaded to your brainlife.io project (by `bl aimport` or the web page, upcoming).
+5. **Upload.** The validated, de-identified folder is uploaded to your brainlife.io project (by `bl aimport`, or the web page, upcoming).
 
 ## How your data is protected
 
