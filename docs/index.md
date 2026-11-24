@@ -8,6 +8,10 @@ Below, you will learn about the main panel of tools you will encounter as soon a
 
 If you have any questions, do not forget to reach out to us on the [brainlife.io slack channel](/docs/contact/)!
 
+# Getting data in: ezBIDS and aimport
+
+brainlife.io takes neuroscience data (neurophysiology, neuroimaging and microscopy) organised in [BIDS](https://bids-specification.readthedocs.io/en/v1.11.2/). [ezBIDS](using_ezBIDS.md) converts MRI, PET and MEG in your browser. [aimport](using_aimport.md) runs on your own computer, adds EEG, iEEG, NIRS, EMG and microscopy (including OME-Zarr read in place), and removes identifying information before anything is uploaded.
+
 # Apps
 
 brainlife.io uses Apps to analyze data. Apps are small programs that can process data individually or be made part of a larger series of steps in a full data analysis workflow.

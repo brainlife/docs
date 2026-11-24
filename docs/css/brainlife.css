@@ -1,0 +1,140 @@
+/* brainlife.io look (brainlife-lite): primary #3d6a92, status colours, DM Sans, 6px radius */
+
+:root {
+    --bl-primary: #3d6a92;
+    --bl-success: #5fa86b;
+    --bl-info: #3b9fd0;
+    --bl-error: #d0494f;
+    --bl-warning: #c9a94f;
+    --bl-radius: 6px;
+}
+
+[data-md-color-primary="custom"] {
+    --md-primary-fg-color: #3d6a92;
+    --md-primary-fg-color--light: #5a86ad;
+    --md-primary-fg-color--dark: #2e5272;
+    --md-primary-bg-color: #ffffff;
+    --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
+}
+
+[data-md-color-accent="custom"] {
+    --md-accent-fg-color: #3b9fd0;
+    --md-accent-fg-color--transparent: rgba(59, 159, 208, 0.1);
+    --md-accent-bg-color: #ffffff;
+}
+
+[data-md-color-scheme="default"] {
+    --md-default-fg-color: rgba(45, 55, 72, 0.87);
+    --md-typeset-color: #2d3748;
+    --md-typeset-a-color: #3d6a92;
+}
+
+/* dark: brainlife-lite dark surfaces and light-blue links */
+[data-md-color-scheme="slate"] {
+    --md-default-bg-color: #151a21;
+    --md-default-fg-color: rgba(232, 237, 242, 0.87);
+    --md-default-fg-color--light: rgba(232, 237, 242, 0.6);
+    --md-typeset-color: #e8edf2;
+    --md-typeset-a-color: #96c4f5;
+    --md-code-bg-color: #1e252e;
+    --md-footer-bg-color: #1e252e;
+    --md-footer-bg-color--dark: #151a21;
+}
+[data-md-color-scheme="slate"][data-md-color-primary="custom"] {
+    --md-primary-fg-color: #2a3140;
+    --md-primary-fg-color--dark: #1e252e;
+}
+[data-md-color-scheme="slate"][data-md-color-accent="custom"] {
+    --md-accent-fg-color: #96c4f5;
+}
+
+/* header logo: the tree reads on the primary bar */
+.md-header__button.md-logo img,
+.md-nav__button.md-logo img {
+    height: 1.9rem;
+    width: auto;
+}
+
+/* 6px radius */
+.md-typeset .admonition,
+.md-typeset details,
+.md-typeset pre > code,
+.md-typeset code,
+.md-typeset table:not([class]),
+.md-search__form,
+.md-typeset img {
+    border-radius: var(--bl-radius);
+}
+.md-typeset img {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+[data-md-color-scheme="slate"] .md-typeset img {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* admonitions in the status colours */
+.md-typeset .admonition.note, .md-typeset details.note,
+.md-typeset .admonition.info, .md-typeset details.info,
+.md-typeset .admonition.abstract, .md-typeset details.abstract {
+    border-color: var(--bl-info);
+}
+.md-typeset .note > .admonition-title, .md-typeset .note > summary,
+.md-typeset .info > .admonition-title, .md-typeset .info > summary,
+.md-typeset .abstract > .admonition-title, .md-typeset .abstract > summary {
+    background-color: rgba(59, 159, 208, 0.1);
+}
+.md-typeset .note > .admonition-title::before, .md-typeset .note > summary::before,
+.md-typeset .info > .admonition-title::before, .md-typeset .info > summary::before,
+.md-typeset .abstract > .admonition-title::before, .md-typeset .abstract > summary::before {
+    background-color: var(--bl-info);
+}
+
+.md-typeset .admonition.tip, .md-typeset details.tip,
+.md-typeset .admonition.success, .md-typeset details.success {
+    border-color: var(--bl-success);
+}
+.md-typeset .tip > .admonition-title, .md-typeset .tip > summary,
+.md-typeset .success > .admonition-title, .md-typeset .success > summary {
+    background-color: rgba(95, 168, 107, 0.1);
+}
+.md-typeset .tip > .admonition-title::before, .md-typeset .tip > summary::before,
+.md-typeset .success > .admonition-title::before, .md-typeset .success > summary::before {
+    background-color: var(--bl-success);
+}
+
+.md-typeset .admonition.warning, .md-typeset details.warning,
+.md-typeset .admonition.caution, .md-typeset details.caution {
+    border-color: var(--bl-warning);
+}
+.md-typeset .warning > .admonition-title, .md-typeset .warning > summary,
+.md-typeset .caution > .admonition-title, .md-typeset .caution > summary {
+    background-color: rgba(201, 169, 79, 0.12);
+}
+.md-typeset .warning > .admonition-title::before, .md-typeset .warning > summary::before,
+.md-typeset .caution > .admonition-title::before, .md-typeset .caution > summary::before {
+    background-color: var(--bl-warning);
+}
+
+.md-typeset .admonition.danger, .md-typeset details.danger,
+.md-typeset .admonition.failure, .md-typeset details.failure,
+.md-typeset .admonition.bug, .md-typeset details.bug {
+    border-color: var(--bl-error);
+}
+.md-typeset .danger > .admonition-title, .md-typeset .danger > summary,
+.md-typeset .failure > .admonition-title, .md-typeset .failure > summary,
+.md-typeset .bug > .admonition-title, .md-typeset .bug > summary {
+    background-color: rgba(208, 73, 79, 0.1);
+}
+.md-typeset .danger > .admonition-title::before, .md-typeset .danger > summary::before,
+.md-typeset .failure > .admonition-title::before, .md-typeset .failure > summary::before,
+.md-typeset .bug > .admonition-title::before, .md-typeset .bug > summary::before {
+    background-color: var(--bl-error);
+}
+
+/* tables: compact, scannable */
+.md-typeset table:not([class]) {
+    font-size: 0.72rem;
+}
+.md-typeset table:not([class]) th {
+    background-color: rgba(61, 106, 146, 0.08);
+}

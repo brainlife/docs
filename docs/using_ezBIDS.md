@@ -3,6 +3,8 @@
 
 [ezBIDS](https://brainlife.io/ezbids) is a web-based BIDS conversion tool that requires neither installation, programming proficiency, nor knowledge of the Unix terminal and BIDS specification. The term BIDS is an acronym that stands for the [Brain Imaging Data Structure](https://bids-specification.readthedocs.io/en/stable/). More specifically, BIDS is a format for describing and organizing (primarily neuroimaging) data, greatly enhancing data sharing within the scientific community, as well as enabling access to a suite of processing and analysis tools that can be automatically executed on BIDS data, known as [BIDS apps](https://bids-apps.neuroimaging.io/). This documentation provides an in-depth description of ezBIDS's functionality for converting data to BIDS.
 
+ezBIDS covers neuroscience data: neurophysiology, neuroimaging and microscopy. On the web it converts MRI, PET and MEG; its local importer, [aimport](using_aimport.md), adds EEG, iEEG, NIRS, EMG and microscopy and removes identifying information on your own computer. See [Types of data supported](#types-of-data-supported).
+
 If you are new to ezBIDS and would like to see a simple use case of ezBIDS, please refer to the [ezBIDS tutorial](https://brainlife.io/docs/tutorial/ezBIDS).
 
 ## A Primer to ezBIDS
@@ -27,13 +29,13 @@ Think about ezBIDS as a small, smart, decision support system. ezBIDS attempts t
 
 Upon reaching the [ezBIDS homepage](https://brainlife.io/ezbids), users can click on the "Get Started" button to begin converting their data.
 
-![Home Page](./img/ezbids/Levitas_etal_figureS0_homepage.png)
+![Home Page](./img/ezbids/ezbids-landing.png)
 
 ### 2. Upload Imaging Data
 
 Users are then routed to the ezBIDS upload page, where imaging data will be uploaded to a secure server. Additional information regarding this upload process as it pertains to data access and control can be found [here](#faq). Once uploaded, users are guided through several steps (i.e., web pages) to ensure that data are accurately described, organized, pseudonymized, and, ultimately, converted. These steps are described below:
 
-![Upload Page](./img/ezbids/Levitas_etal_figureS1_upload.png)
+![Upload page, after the analysis](./img/ezbids/convert-upload.png)
 
 For ezBIDS to access users' imaging data, the data must first be uploaded to ezBIDS's secure and encrypted server (ezBIDS runs on a secure VM running on the HIPAA-aligned National Science Foundation's [Jetstream-Cloud](https://jetstream-cloud.org/)). There are two accepted upload methods:
 
@@ -61,7 +63,7 @@ ezBIDS has been primarily tested on the Chrome and Firefox browsers; it is prefe
 
 This page allows users to provide general information regarding their dataset, such as authors, funding sources, etc. 
 
-![Dataset Description](./img/ezbids/Levitas_etal_figureS3_dataset_description.png)
+![Dataset Description](./img/ezbids/convert-description.png)
 
 Users only need to provide information here the first time using ezBIDS with data from a new dataset. When using ezBIDS with newly acquired data from the same dataset as before, this information is already provided and is therefore redundant to specify again.
 
@@ -78,7 +80,7 @@ On this page, ezBIDS provides the subject (and session, if applicable) IDs of th
 
 ezBIDS organizes all uploaded data into specific series and group IDs (grouping data). This is an intermediate step, that ezBIDS uses to facilitate editing entire series (or groups) of data files. Say, you want to change all the files from a single subject so that all the files start with a specific subject ID, or say you want to change all the data that are anatomical to start with the prefix *anat*, ezBIDS allows you to do that by grouping data for you by subjects, series, etc. 
 
-![Series Mapping](./img/ezbids/Levitas_etal_figureS5_series_mapping_all.png)
+![Series Mapping](./img/ezbids/convert-seriespage.png)
 
 !!! info Grouping procedure
     ezBIDS makes educated guesses about your data using information saved in the DICOM files.
@@ -92,7 +94,7 @@ If a BIDS entity label is required but ezBIDS is not able to guess it for the us
 
 A critical feature of ezBIDS is the ability to support tasks and event files. If users collected functional BOLD (`func/bold`) data and have the corresponding timing files. The following are timing files formats compatible with ezBIDS:  `.csv`, `.tsv`, `.txt`, `.out`, and `.xlsx`. A graphical interface guides the user in matching the files to BIDS structures. Importantly, ezBIDS comes with a beta feature and built-in compatibility with E-Prime files.
 
-![Events](./img/ezbids/Levitas_etal_figureS6_events.png)
+![Events](./img/ezbids/convert-event.png)
 
 !!! warning 
     When uploading timing files, it is **crucial** that the following entity labels be explicitly specified: *subject*, (*session*, if applicable), *task*, and *run*. These must match the corresponding `func/bold` sequences. This information can either be provided in the file path or as columns in the timing data themselves. Failure to do so will result in ezBIDS creating a placeholder value for any mismatched entity labels that will later require manual intervention. 
@@ -132,7 +134,7 @@ For each subject ID specified, users may specify phenotypical information pertai
 
 At this stage, users can click on the green "Finalize" button for ezBIDS to apply all user edits/modifications to create a BIDS-compliant dataset. Users may elect to keep any data that was set to “exclude” if they so choose.
 
-![Access BIDS data](./img/ezbids/Levitas_etal_figureS11_access_bids.png)
+![Access BIDS data](./img/ezbids/convert-finalize.png)
 
 Once complete, two screens are presented. On the left is a Linux tree structure showing the BIDS dataset organization and file names. On the right is a screen output of the [bids-validator](https://bids-standard.github.io/bids-validator/), which provides a final check to ensure that the data are BIDS compliant. Any validator warnings appear in yellow and can be ignored (but it's good practice to resolve these at some point), and errors appear in red, indicating that the dataset is not BIDS-compliant for some specified reason and requires correction. If users need or wish to return to previous pages for additional edits/modifications they may do so. Then, upon returning to this page, users must click the green "Rerun Finalize Step" to apply all new changes. 
 
@@ -181,17 +183,18 @@ ezBIDS uses [NiiVue](https://github.com/niivue/niivue) to visualize data. *NiiVu
 ---
 ## Types of data supported
 
-ezBIDS provides BIDS conversion support for the following data modalities:  
-1. **MRI**  
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- *Including arterial spin labeling (ASL)*  
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- *Including functional bold task events*  
-2. **DWI**  
-3. **PET**  
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- *Including blood recording data*  
-4. **MEG**  
+ezBIDS converts **neuroscience data (neurophysiology, neuroimaging and microscopy)** to BIDS:
 
-!!! warning PET and MEG
-    Support for these modalities are relatively new and in the beta stage. Improvements will continue as users submit issues pertaining to to bugs and other related requests.
+| | ezBIDS on the web | [aimport](using_aimport.md), on your computer |
+|---|---|---|
+| Neuroimaging | MRI (incl. ASL, task events), DWI, PET (incl. blood data) | MRI, PET |
+| Neurophysiology | MEG | EEG, MEG, iEEG, NIRS, EMG |
+| Microscopy | | OME-TIFF, CZI, ND2, LIF, SVS, PS-OCT, light-sheet (VISoR); OME-Zarr read in place |
+
+aimport is ezBIDS's local importer: an AI agent proposes the BIDS mapping, you review it, and identifying information is removed on your own computer before anything is uploaded. See [aimport](using_aimport.md).
+
+!!! warning "PET and MEG"
+    Support for these modalities on the web is relatively new. Please report issues on [GitHub](https://github.com/brainlife/ezbids/issues).
 
 ---
 ## Installing ezBIDS locally
