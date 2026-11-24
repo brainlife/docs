@@ -13,8 +13,25 @@ theme:
     name: "material"
     language: "en"
     favicon: "/img/favicon.ico"
+    logo: img/brainlife-logo.svg
+    font:
+        text: DM Sans
+        code: Roboto Mono
     palette:
-        primary: "light blue"
+        - media: "(prefers-color-scheme: light)"
+          scheme: default
+          primary: custom
+          accent: custom
+          toggle:
+              icon: material/weather-night
+              name: Switch to dark mode
+        - media: "(prefers-color-scheme: dark)"
+          scheme: slate
+          primary: custom
+          accent: custom
+          toggle:
+              icon: material/weather-sunny
+              name: Switch to light mode
     custom_dir: overrides
 
 nav:
@@ -98,6 +115,7 @@ extra:
 
 extra_css:
     - css/narrow.css
+    - css/brainlife.css
 
 markdown_extensions:
     - admonition

@@ -1,69 +1,129 @@
 
 # **aimport User Documentation**
 
-**brainlife.io/aimport** is a local, agentic data importer for brainlife.io. You point it at a folder of neuroimaging data on your own computer; it works out what each scan is, converts the data to [BIDS](https://bids-specification.readthedocs.io/en/v1.11.2/), removes identifying information, defaces the anatomical images, validates the result, and only then is anything uploaded to brainlife.io.
+**brainlife.io/aimport** brings neuroscience data (neurophysiology, neuroimaging and microscopy) into brainlife.io from your own computer. It works out what each series, image or recording is, converts it to [BIDS](https://bids-specification.readthedocs.io/en/v1.11.2/), removes identifying information, validates the result and lets you look at it. Only then is anything uploaded.
 
-aimport builds on [ezBIDS](using_ezBIDS.md): it reuses ezBIDS's mapping heuristics and conversion and defacing tools. The difference is where the work happens. ezBIDS runs on a server, so raw DICOM files (which carry names, IDs and dates in their headers) are uploaded before anything is removed. aimport runs everything on your computer, so raw data never leaves it.
+aimport is part of [ezBIDS](using_ezBIDS.md) and reuses its mapping, conversion and defacing tools. ezBIDS on the web runs on a server; aimport runs on your computer, so raw data never leaves it.
+
+| | ezBIDS on the web | aimport (on your computer) |
+|---|---|---|
+| Neuroimaging | MRI, PET | MRI, PET |
+| Neurophysiology | MEG | EEG, MEG, iEEG, NIRS, EMG |
+| Microscopy | | OME-TIFF, CZI, ND2, LIF, SVS, PS-OCT, light-sheet (VISoR), OME-Zarr |
 
 !!! note "Status"
-    The aimport **engine** is available now in the [ezBIDS repository](https://github.com/brainlife/ezbids/tree/master/aimport) as a Docker image with a small HTTP API on your own computer. The command-line front end `bl aimport`, which drives the engine and uploads the result, is available (pending release of the `bl` command-line tool). The brainlife.io/aimport web page is upcoming. You can also run the engine and drive its API directly; see the [engine README](https://github.com/brainlife/ezbids/blob/master/aimport/README.md).
+    `bl aimport` is in the [brainlife command-line tool](https://github.com/brainlife/cli#bl-aimport) on its `master` branch; it is not in a published `bl` release yet. It runs the aimport engine, a Docker image you build from the [ezBIDS repository](https://github.com/brainlife/ezbids/tree/master/aimport). **ezBIDS desktop** with AI import (beta) is coming, Mac first.
 
 ## Running it
 
-With Docker installed and `bl` logged in:
+With Docker installed, the engine image built and `bl login` done:
 
 ```
-bl aimport <folder> --project <project id>
+bl aimport ~/data/my-study --project PROJECT_ID --qa
 ```
 
-`bl aimport` starts the engine on your computer, prints the plan as a table and asks you to approve it, then writes, defaces and validates the BIDS dataset. Only a validated, de-identified result is uploaded to the project. Useful flags:
+- `--qa`: after validation, open the output in the local QA viewer and ask before uploading.
+- `--remote <url>`: add a remote microscopy source (`https://` or `s3://` OME-Zarr, NIfTI or TIFF), read by range requests, never downloaded whole. Repeatable.
+- `--deface pydeface|quickshear`, `--work <dir>`, `--keys <dir>`, `--no-upload`, `--yes`: see the [bl README](https://github.com/brainlife/cli#bl-aimport).
 
-- `--target bids|datatypes`: also show the brainlife datatype of each object in the plan.
-- `--deface pydeface|quickshear`: the defacing method (default `pydeface`).
-- `--work <dir>` and `--keys <dir>`: the work folder and the folder for the pseudonym key. Keep the keys folder safe; it is never uploaded.
-- `--tag <tag>`: add a tag to every uploaded object (repeatable).
-- `--yes`: approve without asking (for scripts). `--no-upload`: stop after validation.
-- `--image <ref>`: the engine image.
+To let an AI model help name the series, set `AIMPORT_MODEL` and your provider's key (Claude, OpenAI, or Qwen through Ollama, which keeps everything local). Without a model, built-in heuristics do the work.
 
-To use an AI model, set `AIMPORT_MODEL` and your provider's key in your environment first (see [AI models](#ai-models)). The full list of flags and an example session are in the [bl README](https://github.com/brainlife/cli#bl-aimport).
+## The flow
 
----
-## What aimport does
+1. **Scan** the folder: what each series, image or recording is.
+2. **Review the plan**: BIDS names, subject and session IDs, defacing, event names, metadata files. Every field can be edited.
+3. **Approve**. Nothing is written before this; any later edit un-approves the plan.
+4. **Convert and de-identify**: write BIDS, deface MRI, strip identifiers.
+5. **Validate** with the BIDS validator (BIDS v1.11.2). Output with errors is never uploaded.
+6. **Look** at the output in the QA viewer.
+7. **Upload** to your brainlife.io project.
 
-1. **Scan.** It finds the imaging series in your folder (DICOM or NIfTI), converts them with dcm2niix and makes a first guess of each series' BIDS datatype, suffix and labels using ezBIDS's heuristics.
-2. **Ask an AI agent.** An AI model reviews every series alongside ezBIDS's guess, confirms or disputes it, fills in labels such as the task name, resolves what the heuristics could not, and drafts a dataset name and README. The model only ever sees a de-identified summary (see below). Without a model configured, aimport uses the heuristics alone.
-3. **Plan and review.** Everything becomes a plan that a person reviews: the BIDS name of each series, subject and session IDs, which images are defaced, which metadata files are kept, and the README. Nothing is written until the plan is approved, and any edit sets it back to not approved.
-4. **Write, deface and validate.** aimport writes the BIDS dataset, defaces anatomical images, and checks the result with the BIDS validator (BIDS v1.11.2). Only a dataset that passes is ready to upload.
-5. **Upload.** The validated, de-identified folder is uploaded to your brainlife.io project (by `bl aimport`, or the web page, upcoming).
+![Plan review in ezBIDS desktop (AI import, beta)](img/aimport/desktop-plan-review.png)
 
-## How your data is protected
+## What never leaves your computer
 
-- **Never leaves your computer:** the input folder (read only), the original DICOM headers and file paths, the images before defacing, and the *pseudonym key* that links real identities to the new subject IDs.
-- **What the AI model sees:** only a summary of each series with acquisition parameters and descriptions, where every identifying value aimport knows about is replaced by `[x]`. Never images, raw headers or original paths. You can also use a local model (through Ollama) so nothing leaves the machine at all.
-- **What is removed or changed:** identifying DICOM fields are dropped; names, IDs, birth dates and institutions are redacted wherever they also appear in descriptions, folder names, tables or README text; subjects get pseudonyms; dates are shifted by a fixed per-subject offset (intervals are kept); NIfTI header text is cleared; ages above 89 are written as 89; screenshot-style series are excluded by default because names can be burned into the pixels.
-- **Defacing** is lossless outside the face: only the face voxels change.
-- **The pseudonym key** is one file per project in a folder you choose. Keep it safe and backed up: it is the only way back to the real identities, it lets a later import of the same person reuse their ID, and it is never uploaded.
+- The input folder (read only), original headers and file paths, the images before defacing.
+- The **pseudonym key** that links real identities to the new subject IDs. Keep it backed up; it lets a later import of the same person reuse their ID.
+- A remote or local OME-Zarr's chunk map.
 
-### Known limitations
+An AI model, if you set one, sees only a de-identified summary of each series, with every known identifier replaced by `[x]`. Never pixels, raw headers or paths.
 
-- A name that appears **only in free text** (a README, a note) and nowhere in the headers or tables aimport reads cannot be detected automatically. Read free text during review.
-- If a reviewer explicitly keeps a column that aimport drops by default (for example a notes or name column), only known identifiers are redacted in it.
-- Phase 1 covers MRI and PET (anat, func, dwi, fmap, perf, pet). ASL (perf) is excluded by default unless an `aslcontext.tsv` is supplied. Microscopy (including OME-Zarr and PS-OCT), EEG, MEG and the other BIDS modalities follow in later phases.
+## Per modality
 
-## Metadata files
+### MRI and PET
 
-aimport also handles the non-imaging files BIDS defines: `participants.tsv`/`.json`, `phenotype/`, `sessions`, `scans` and `samples` tables, `dataset_description.json`, `README`, `CHANGES`, `LICENSE`, `CITATION.cff`, inherited sidecars and events files. Tables are de-identified rather than copied (IDs rewritten, rows of people not in the import dropped, identifying columns dropped by default, dates shifted, text redacted), and every file can be kept, edited or dropped in review. `sourcedata/` is never uploaded.
+DICOM or NIfTI. Identifying DICOM fields are dropped, names and IDs are redacted wherever they appear (descriptions, folder names, tables, README), dates are shifted by a fixed offset per subject (intervals kept), NIfTI header text is cleared, ages above 89 are written as 89. Anatomical images are defaced; only face voxels change. Screenshot and report series are excluded by default. ASL is excluded unless an `aslcontext.tsv` is supplied.
 
-## brainlife.io datatypes
+### EEG, MEG, iEEG, NIRS, EMG
 
-Besides a BIDS dataset, aimport can upload each series as a brainlife.io datatype object (for example `neuro/anat/t1w`, `neuro/dwi`, `neuro/func/task`, `neuro/fmap`). The mapping from BIDS to brainlife datatypes is kept in one file, [`bids_brainlife_map.yaml`](https://github.com/brainlife/ezbids/blob/master/aimport/src/aimport/data/bids_brainlife_map.yaml). Where brainlife has no datatype yet for a BIDS type, aimport keeps a draft datatype shaped like BIDS, to be registered later.
+| Datatype | Accepted input | Written as |
+|---|---|---|
+| eeg | EDF/EDF+, BDF, GDF, BrainVision, EEGLAB, Neuroscan `.cnt`, Nihon Kohden, Persyst, FIF | BrainVision, EDF, BDF |
+| ieeg | the EEG formats, NWB | BrainVision, EDF (NWB input: NWB) |
+| emg | the EEG formats with EMG channels | EDF, BDF |
+| meg | FIF, CTF `.ds`, KIT, BTi/4D | FIF |
+| nirs | SNIRF, NIRx, Hitachi | SNIRF |
 
-## AI models
+Every recording is converted, never copied. **Removed**: patient and recording header fields, experimenter, device IDs; dates are shifted to before 1925 (`scans.tsv` keeps the per-subject shifted date); free-text annotations become event codes (`E001`, ...) that you name in review; channel names holding an identifier are renamed (`eeg_007`); head-shape points are dropped unless you keep them (fiducials and HPI coils stay). A final check re-reads every written file.
 
-One setting, `AIMPORT_MODEL`, picks the model: Claude (default), OpenAI models, or Qwen through Ollama (local) or DashScope. You provide your own API key. See the [engine README](https://github.com/brainlife/ezbids/blob/master/aimport/README.md#ai-model-settings) for the details.
+**Not converted** (planned `unsupported`, with the reason): Artinis `.oxy3/4/5` ("export to SNIRF first"), MEF3 ("export to EDF first"), EGI `.mff`, Blackrock, EEGLAB `.set` above 512 MB with embedded data, epoched or averaged FIF.
+
+### Microscopy
+
+**Read**: OME-Zarr (NGFF 0.4 and 0.5), OME-TIFF, TIFF/BigTIFF (VISoR light-sheet stacks included), Aperio SVS, CZI, ND2, LIF, PS-OCT NIfTI and MATLAB `.mat`. Written as OME-Zarr.
+
+**Not read** (the plan says why): `.vsi`, `.oib`, `.oif`, `.ims`, `.lsm`, `.scn`, `.mrxs` ("export to OME-TIFF or OME-Zarr first"); raw PS-OCT `.dat` tiles ("reconstruct first"); unstitched tile mosaics ("stitch first"); PNG/JPEG; BIDS `photo` files.
+
+- **Metadata rebuilt** from an allowlist of image facts; the source's OME-XML, TIFF tags, slide labels and file names are never written.
+- **Pixel size is never invented**: it comes from the source; if it or its unit is missing, the plan waits for you to set it.
+- **Labels and donors are pseudonymised**: subject IDs come from the pseudonym key; sample and chunk labels are kept only when safe, else renumbered.
+- **Reference datasets**: an OME-Zarr input, local or remote, is read in place. aimport writes only new metadata; the chunks stay where they are and are streamed into brainlife.io on upload, one at a time.
+
+## Look before you upload: the QA viewer
+
+Everything is served from your own computer (`127.0.0.1`), from the output only.
+
+- **MRI**: Neuroglancer, with each defaced image next to its original. The original shows the face: never screenshot or share it.
+- **Microscopy**: OME-Zarr in Neuroglancer; PS-OCT contrasts (reflectivity, retardance, optic axis) open as separate panels, never blended.
+- **EEG, MEG, iEEG, NIRS, EMG**: snapshots plus an interactive trace viewer (pan, zoom, event markers; NIRS as HbO/HbR).
+
+![QA viewer index: the written images](img/aimport/qa-viewer-index.png)
+
+![A defaced T1w with its original as a hidden layer](img/aimport/qa-viewer-t1w.png)
+
+![A synthetic microscopy run; OME-Zarr read from source is marked](img/aimport/qa-viewer-index-micr.png)
+
+![The trace viewer on synthetic EDF and SNIRF test recordings](img/aimport/qa-viewer-traces.png)
+
+**Bad channels.** In the trace viewer, tick a channel bad, add a reason (flat, noisy, bridged, disconnected) and **Save**. aimport writes `status` and `status_description` into the recording's `channels.tsv` and validates again.
+
+![Two channels marked bad](img/aimport/qa-viewer-bad-channels.png)
+
+## On brainlife.io
+
+| BIDS | brainlife.io |
+|---|---|
+| MRI, PET | `neuro/anat/t1w`, `neuro/dwi`, `neuro/func/task`, `neuro/fmap`, ... |
+| microscopy | `neuro/ome-zarr`, one object per image, tagged with the technique (for example `OCT`) |
+| EEG, MEG | `neuro/eeg/*`, `neuro/meg/*`; `channels.tsv` (with bad channels) kept as the `channels` file |
+| iEEG, NIRS, EMG | project files with the BIDS tree (brainlife datatypes are drafts for now) |
+
+The mapping is one file, [`bids_brainlife_map.yaml`](https://github.com/brainlife/ezbids/blob/master/aimport/src/aimport/data/bids_brainlife_map.yaml).
+
+## ezBIDS desktop (coming)
+
+ezBIDS desktop adds **AI import (beta)**: the same engine with no Docker, Mac first. Pick a folder, review the plan, convert, and check the result in the QA viewer, which opens inside the app window. No model key is set, so nothing leaves the machine. Uploading to brainlife.io from the app comes in a later version.
+
+![ezBIDS desktop dashboard with AI import (beta)](img/aimport/desktop-dashboard.png)
+
+## Known limitations
+
+- A name that appears **only in free text** (a README, a note), and in no header or table aimport reads, cannot be detected. Read free text in review.
+- A column you keep against the default drop is redacted only for known identifiers.
+- Continuous recordings only; bad time segments are not marked.
 
 ## Learn more
 
-- Engine README (installation, running the API, workflow, settings): [aimport/README.md](https://github.com/brainlife/ezbids/blob/master/aimport/README.md)
-- Design document: [docs/superpowers/specs/2026-11-23-aimport-design.md](https://github.com/brainlife/ezbids/blob/master/docs/superpowers/specs/2026-11-23-aimport-design.md)
-- Test datasets used to validate aimport: [aimport/tests/DATASETS.md](https://github.com/brainlife/ezbids/blob/master/aimport/tests/DATASETS.md)
+- Engine README: [aimport/README.md](https://github.com/brainlife/ezbids/blob/master/aimport/README.md)
+- `bl aimport`: [cli README](https://github.com/brainlife/cli#bl-aimport)
+- Test datasets: [aimport/tests/DATASETS.md](https://github.com/brainlife/ezbids/blob/master/aimport/tests/DATASETS.md)

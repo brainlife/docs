@@ -1,6 +1,10 @@
 # ezBIDS technical documentation
 
-This document is meant for reseachers (or users) who wish to contribute to the ezBIDS project. A key feature of ezBIDS is its ability to parse incoming imaging data for BIDS relevant information, and organize information into a file that can be ready by the ezBIDS frontend for display on the web pages. This information file is known as the `ezBIDS_core.json`. Researchers interested in contributing to ezBIDS (e.g. adding coverage for M/EEG data) will need to understand the contents of the `ezBIDS_core.json` so that they can generate an identical file that is passed to the ezBIDS frontend.
+This document is meant for reseachers (or users) who wish to contribute to the ezBIDS project. A key feature of ezBIDS is its ability to parse incoming imaging data for BIDS relevant information, and organize information into a file that can be ready by the ezBIDS frontend for display on the web pages. This information file is known as the `ezBIDS_core.json`. Researchers interested in contributing to ezBIDS (e.g. adding coverage for a new MRI or PET sequence) will need to understand the contents of the `ezBIDS_core.json` so that they can generate an identical file that is passed to the ezBIDS frontend.
+
+## ezBIDS and aimport
+
+ezBIDS covers neuroscience data: neurophysiology, neuroimaging and microscopy. The web app converts MRI, PET and MEG through `ezBIDS_core.json` (below). EEG, iEEG, NIRS, EMG and microscopy are handled by **aimport**, a local engine in the same repository ([`aimport/`](https://github.com/brainlife/ezbids/tree/master/aimport)) that reuses ezBIDS's mapping, conversion and defacing, adds an AI agent and a plan a person approves, de-identifies on the user's computer and validates against BIDS v1.11.2. It is driven by `bl aimport` (the brainlife CLI) or, coming, ezBIDS desktop. User guide: [aimport](../using_aimport.md); engine API and internals: [aimport/README.md](https://github.com/brainlife/ezbids/blob/master/aimport/README.md).
 
 ## The ezBIDS Core
 
