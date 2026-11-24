@@ -22,6 +22,8 @@ nav:
 
     - ezBIDS: using_ezBIDS.md
 
+    - aimport: using_aimport.md
+
     - Using brainlife:
           - Getting Started: user/started.md
           - Projects: user/project.md
