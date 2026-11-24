@@ -122,7 +122,7 @@ Other than sharing your information with other appropriate university personnel 
 
 ## General Security
 
-Due to the rapidly evolving nature of information technologies, no transmission of information over the internet can be guaranteed to be completely secure. While both Indiana University and University of Texas are committed to protecting user privacy, we cannot guarantee the security of all information users transmit to university sites, and users do so at their own risk.
+Due to the rapidly evolving nature of information technologies, no transmission of information over the internet can be guaranteed to be completely secure. While both Indiana University and The University of Texas at Austin are committed to protecting user privacy, we cannot guarantee the security of all information users transmit to university sites, and users do so at their own risk.
 
 We have appropriate security measures in place in our physical facilities to protect against the loss, misuse, or alteration of information that we have collected from you at our site. For example, the data centers that house the Brainlife services are protected by multiple layers of physical access control including smart cards and/or biometric scanners.
 
