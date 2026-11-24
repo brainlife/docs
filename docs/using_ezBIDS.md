@@ -306,7 +306,7 @@ ezBIDS and aimport are developed by the Pestilli Lab at The University of Texas 
 | PET | [PET-BIDS](https://doi.org/10.1038/s41597-022-01164-1) (Norgaard et al., 2022); [PET2BIDS](https://github.com/openneuropet/PET2BIDS); dcm2niix for DICOM PET |
 | MEG | [MEG-BIDS](https://doi.org/10.1038/sdata.2018.110) (Niso et al., 2018); [MNE-Python](https://doi.org/10.3389/fnins.2013.00267) (Gramfort et al., 2013); [MNE-BIDS](https://doi.org/10.21105/joss.01896) (Appelhoff et al., 2019) |
 
-The full list of tools, with what each one does, its licence and its citation, is in the ezBIDS README: [Built on and how to cite](https://github.com/brainlife/ezbids#built-on-and-how-to-cite) (machine-readable: [CITATION.cff](https://github.com/brainlife/ezbids/blob/master/CITATION.cff)).
+The full list of tools, with what each one does, its licence and its citation, is in [CREDITS.md](https://github.com/brainlife/ezbids/blob/master/CREDITS.md) in the ezBIDS repository (machine-readable: [CITATION.cff](https://github.com/brainlife/ezbids/blob/master/CITATION.cff)).
 
 ---
 ## Contributing to ezBIDS

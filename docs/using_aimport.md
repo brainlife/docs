@@ -147,7 +147,7 @@ ezBIDS and aimport are developed by the Pestilli Lab at The University of Texas 
 
 If you let the optional AI agent propose the mapping, say so in your methods and name the model (Claude through the Anthropic API, or an OpenAI or Qwen model through [AutoBIDSify](https://github.com/NeuroJSON/autobidsify)).
 
-The full list of tools, with what each one does, its licence and its citation, is in the ezBIDS README: [Built on and how to cite](https://github.com/brainlife/ezbids#built-on-and-how-to-cite) (machine-readable: [CITATION.cff](https://github.com/brainlife/ezbids/blob/master/CITATION.cff)).
+The full list of tools, with what each one does, its licence and its citation, is in [CREDITS.md](https://github.com/brainlife/ezbids/blob/master/CREDITS.md) in the ezBIDS repository (machine-readable: [CITATION.cff](https://github.com/brainlife/ezbids/blob/master/CITATION.cff)).
 
 ## Learn more
 
