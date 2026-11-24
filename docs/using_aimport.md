@@ -93,6 +93,8 @@ Everything is served from your own computer (`127.0.0.1`), from the output only.
 
 ![A synthetic microscopy run; OME-Zarr read from source is marked](img/aimport/qa-viewer-index-micr.png)
 
+![A converted microscopy image (synthetic test OME-TIFF) in Neuroglancer](img/aimport/qa-viewer-micr.png)
+
 ![The trace viewer on synthetic EDF and SNIRF test recordings](img/aimport/qa-viewer-traces.png)
 
 **Bad channels.** In the trace viewer, tick a channel bad, add a reason (flat, noisy, bridged, disconnected) and **Save**. aimport writes `status` and `status_description` into the recording's `channels.tsv` and validates again.
@@ -115,6 +117,8 @@ The mapping is one file, [`bids_brainlife_map.yaml`](https://github.com/brainlif
 ezBIDS desktop adds **AI import (beta)**: the same engine with no Docker, Mac first. Pick a folder, review the plan, convert, and check the result in the QA viewer, which opens inside the app window. No model key is set, so nothing leaves the machine. Uploading to brainlife.io from the app comes in a later version.
 
 ![ezBIDS desktop dashboard with AI import (beta)](img/aimport/desktop-dashboard.png)
+
+![The QA viewer inside the ezBIDS desktop window](img/aimport/desktop-qa-index.png)
 
 ## Known limitations
 
