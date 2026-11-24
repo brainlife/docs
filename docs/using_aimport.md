@@ -126,6 +126,29 @@ ezBIDS desktop adds **AI import (beta)**: the same engine with no Docker, Mac fi
 - A column you keep against the default drop is redacted only for known identifiers.
 - Continuous recordings only; bad time segments are not marked.
 
+## Credits and citations
+
+ezBIDS and aimport are developed by the Pestilli Lab at The University of Texas at Austin. When you publish data converted with aimport, please cite:
+
+1. **ezBIDS:** Levitas, D. et al. (2024). ezBIDS: Guided standardization of neuroimaging data interoperable with major data archives and platforms. *Scientific Data*, 11, 179. [doi:10.1038/s41597-024-02959-0](https://doi.org/10.1038/s41597-024-02959-0)
+2. **BIDS:** Gorgolewski, K.J. et al. (2016). *Scientific Data*, 3, 160044. [doi:10.1038/sdata.2016.44](https://doi.org/10.1038/sdata.2016.44)
+3. **The BIDS extension and the tools for your data type:**
+
+| Data | Also cite |
+|---|---|
+| MRI | [dcm2niix](https://doi.org/10.1016/j.jneumeth.2016.03.001) (Li et al., 2016); ASL: [ASL-BIDS](https://doi.org/10.1038/s41597-022-01615-9) (Clement et al., 2022); if you defaced: [pydeface](https://doi.org/10.5281/zenodo.3524400) with [FSL](https://doi.org/10.1016/j.neuroimage.2011.09.015) (Jenkinson et al., 2012), or [quickshear](https://github.com/nipy/quickshear) (Schimke & Hale, 2011) with [ROBEX](https://doi.org/10.1109/TMI.2011.2138152) (Iglesias et al., 2011) |
+| PET | [PET-BIDS](https://doi.org/10.1038/s41597-022-01164-1) (Norgaard et al., 2022); [PET2BIDS](https://github.com/openneuropet/PET2BIDS); dcm2niix for DICOM PET |
+| MEG | [MEG-BIDS](https://doi.org/10.1038/sdata.2018.110) (Niso et al., 2018); [MNE-Python](https://doi.org/10.3389/fnins.2013.00267) (Gramfort et al., 2013); [MNE-BIDS](https://doi.org/10.21105/joss.01896) (Appelhoff et al., 2019) |
+| EEG, iEEG | [EEG-BIDS](https://doi.org/10.1038/s41597-019-0104-8) (Pernet et al., 2019) or [iEEG-BIDS](https://doi.org/10.1038/s41597-019-0105-7) (Holdgraf et al., 2019); MNE-Python; MNE-BIDS |
+| NIRS | [NIRS-BIDS](https://doi.org/10.1038/s41597-024-04136-9) (Luke et al., 2025); MNE-Python; MNE-BIDS |
+| EMG | The [BIDS specification v1.11.2](https://doi.org/10.5281/zenodo.10175845) (the EMG paper is forthcoming); MNE-Python; MNE-BIDS |
+| NWB input | [NWB](https://doi.org/10.7554/eLife.78362) (Rübel et al., 2022) |
+| Microscopy | [Microscopy-BIDS](https://doi.org/10.3389/fnins.2022.871228) (Bourget et al., 2022); for OME-Zarr: [OME-NGFF](https://doi.org/10.1038/s41592-021-01326-w) (Moore et al., 2021) and [OME-Zarr](https://doi.org/10.1007/s00418-023-02209-1) (Moore et al., 2023); [BioIO](https://doi.org/10.5281/zenodo.22755965), [tifffile](https://doi.org/10.5281/zenodo.6795860), [ngff-zarr](https://doi.org/10.25080/gewj5574) (McCormick et al., 2026) |
+
+If you let the optional AI agent propose the mapping, say so in your methods and name the model (Claude through the Anthropic API, or an OpenAI or Qwen model through [AutoBIDSify](https://github.com/NeuroJSON/autobidsify)).
+
+The full list of tools, with what each one does, its licence and its citation, is in the ezBIDS README: [Built on and how to cite](https://github.com/brainlife/ezbids#built-on-and-how-to-cite) (machine-readable: [CITATION.cff](https://github.com/brainlife/ezbids/blob/master/CITATION.cff)).
+
 ## Learn more
 
 - Engine README: [aimport/README.md](https://github.com/brainlife/ezbids/blob/master/aimport/README.md)

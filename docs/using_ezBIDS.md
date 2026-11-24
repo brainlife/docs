@@ -282,7 +282,7 @@ Dozens of users at multiple institutions have used ezBIDS for research and educa
 
 | Question | Answer |
 | :--------: | :------: |
-| _Where will my data be stored while ezBIDS is doing the BIDS conversion?_ | As of Fall 2023, data to be converted to BIDS will be stored on a dedicated ceph Jetstream2 volume located in the United States and maintained by Indiana University and the University of Texas at Austin. ezBIDS makes use of Jetstream2’s private subnet such that data being processed on ezBIDS can only be accessed by the services required for BIDS conversion. All backend services are executed on a private Virtual Machines responsible for the receiving, handling, processing, and downloading of imaging data. |
+| _Where will my data be stored while ezBIDS is doing the BIDS conversion?_ | As of Fall 2023, data to be converted to BIDS will be stored on a dedicated ceph Jetstream2 volume located in the United States and maintained by Indiana University and The University of Texas at Austin. ezBIDS makes use of Jetstream2’s private subnet such that data being processed on ezBIDS can only be accessed by the services required for BIDS conversion. All backend services are executed on a private Virtual Machines responsible for the receiving, handling, processing, and downloading of imaging data. |
 | _For how long will my data be stored there before being deleted?_ | Data are stored for no longer than 5 days and can be deleted sooner, upon user request. Data in this temporary storage are retained solely for the purposes of user support. |
 | _While my data are being stored on the server, who will be able to access the data?_ | The developers of ezBIDS will have access to the server that houses the data and would be able to access the data, upon user’s request and only prior to the end of the 5 days data storage policy. |
 | _Will they be able to access the entire data set, or will they be restricted in some way?_ | ezBIDS developers can have full access to the entire uploaded data, but do not access any of the data files unless a user requests support. Data access requests and permissions must be provided in writing to the project director and sufficient documentation may be requested to ascertain whether data access can be officially granted. |
@@ -290,6 +290,23 @@ Dozens of users at multiple institutions have used ezBIDS for research and educa
 | _Are there any differences in how ezBIDS stores users data for example when downloading the BIDS data or pushing the data to OpenNeuro.org, brainlife.io?_ | No, all data sets are treated the same, software services process the data without human intervention and regardless of user selections. |
 | _If users’ data were collected under an IRB that states that the data will only be stored on university servers; will I be non-compliant if I use ezBIDS on these data?_ | The answer is “possibly, yes,” and it is such only if the IRB does not specify what it is meant by the phrase “to store data,” i.e., long term preservation. ezBIDS is not a long-term preservation system nor a data archive. ezBIDS stores users data, in most cases, outside of the users’ University servers for up to 5 days for the sole purpose to provide a service to the user and without human intervention or actions on the data. |
 | _Will my IRB consider this to be data sharing, given that the data are temporarily being stored on non-university servers?_ | Generally data sharing is between two humans or human groups. ezBIDS is a software service and no human receives, accesses or operates on the data, so technically the data is never shared. Yet, different IRBs make different decisions on this issue, and it will be important for the user to discuss this with their IRB prior to using ezBIDS, if the user believes concerns might arise from using the service. The ezBIDS team provides boilerplate text to assist the user in these discussions. 
+
+---
+## Credits and citations
+
+ezBIDS and aimport are developed by the Pestilli Lab at The University of Texas at Austin. When you publish data converted with ezBIDS, please cite:
+
+1. **ezBIDS:** Levitas, D. et al. (2024). ezBIDS: Guided standardization of neuroimaging data interoperable with major data archives and platforms. *Scientific Data*, 11, 179. [doi:10.1038/s41597-024-02959-0](https://doi.org/10.1038/s41597-024-02959-0)
+2. **BIDS:** Gorgolewski, K.J. et al. (2016). *Scientific Data*, 3, 160044. [doi:10.1038/sdata.2016.44](https://doi.org/10.1038/sdata.2016.44)
+3. **The BIDS extension and the tools for your data type:**
+
+| Data | Also cite |
+|---|---|
+| MRI | [dcm2niix](https://doi.org/10.1016/j.jneumeth.2016.03.001) (Li et al., 2016); ASL: [ASL-BIDS](https://doi.org/10.1038/s41597-022-01615-9) (Clement et al., 2022); if you defaced: [pydeface](https://doi.org/10.5281/zenodo.3524400) with [FSL](https://doi.org/10.1016/j.neuroimage.2011.09.015) (Jenkinson et al., 2012), or [quickshear](https://github.com/nipy/quickshear) (Schimke & Hale, 2011) with [ROBEX](https://doi.org/10.1109/TMI.2011.2138152) (Iglesias et al., 2011) |
+| PET | [PET-BIDS](https://doi.org/10.1038/s41597-022-01164-1) (Norgaard et al., 2022); [PET2BIDS](https://github.com/openneuropet/PET2BIDS); dcm2niix for DICOM PET |
+| MEG | [MEG-BIDS](https://doi.org/10.1038/sdata.2018.110) (Niso et al., 2018); [MNE-Python](https://doi.org/10.3389/fnins.2013.00267) (Gramfort et al., 2013); [MNE-BIDS](https://doi.org/10.21105/joss.01896) (Appelhoff et al., 2019) |
+
+The full list of tools, with what each one does, its licence and its citation, is in the ezBIDS README: [Built on and how to cite](https://github.com/brainlife/ezbids#built-on-and-how-to-cite) (machine-readable: [CITATION.cff](https://github.com/brainlife/ezbids/blob/master/CITATION.cff)).
 
 ---
 ## Contributing to ezBIDS
