@@ -52,8 +52,8 @@ mkdocs serve                  # http://127.0.0.1:8000, live reload
 | `docs/apps/` | Writing and registering Apps |
 | `docs/cli/` | Command-line access |
 | `docs/tutorial/` | Step-by-step tutorials |
-| `docs/technical/` | Architecture and operations notes |
-| `docs/resources/` | Compute resources |
+| `docs/technical/` | Architecture, API and ezBIDS technical notes |
+| `docs/resources/` | Registering your own compute resources |
 
 ## 🔗 Related repositories
 
