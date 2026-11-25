@@ -12,11 +12,26 @@ aimport is part of [ezBIDS](using_ezBIDS.md) and reuses its mapping, conversion 
 | Microscopy | | OME-TIFF, CZI, ND2, LIF, SVS, PS-OCT, light-sheet (VISoR), OME-Zarr |
 
 !!! note "Status"
-    `bl aimport` is in the [brainlife command-line tool](https://github.com/brainlife/cli#bl-aimport) on its `master` branch; it is not in a published `bl` release yet. It runs the aimport engine, a Docker image you build from the [ezBIDS repository](https://github.com/brainlife/ezbids/tree/master/aimport). **ezBIDS desktop** with AI import (beta) is coming, Mac first.
+    `bl aimport` is in the brainlife Python command-line tool, [pybrainlife](https://github.com/brainlife/pybrainlife/tree/enh/cli#bl-aimport) (branch `enh/cli`); it is not in a published release yet. It runs the aimport engine, a Docker image (`brainlife/aimport:dev`) that is not published yet: build it from the [ezBIDS repository](https://github.com/brainlife/ezbids/tree/master/aimport#build-the-image). **ezBIDS desktop** with AI import (beta) is coming, Mac first.
 
 ## Running it
 
-With Docker installed, the engine image built and `bl login` done:
+Install `bl` (Python 3.8 or newer) and log in:
+
+```
+pip install "git+https://github.com/brainlife/pybrainlife@enh/cli"
+bl login
+```
+
+Build the engine image from a clone of ezBIDS (Docker needed):
+
+```
+git clone --recursive https://github.com/brainlife/ezbids && cd ezbids
+docker build --platform linux/amd64 -t ezbids-handler:local handler/
+docker build --platform linux/amd64 -t brainlife/aimport:dev -f aimport/Dockerfile .
+```
+
+Then import a folder into an existing project (`--project` is required):
 
 ```
 bl aimport ~/data/my-study --project PROJECT_ID --qa
@@ -24,7 +39,10 @@ bl aimport ~/data/my-study --project PROJECT_ID --qa
 
 - `--qa`: after validation, open the output in the local QA viewer and ask before uploading.
 - `--remote <url>`: add a remote microscopy source (`https://` or `s3://` OME-Zarr, NIfTI or TIFF), read by range requests, never downloaded whole. Repeatable.
-- `--deface pydeface|quickshear`, `--work <dir>`, `--keys <dir>`, `--no-upload`, `--yes`: see the [bl README](https://github.com/brainlife/cli#bl-aimport).
+- `--no-upload`: stop after validation; nothing is sent.
+- `--deface pydeface|quickshear`, `--target bids|datatypes`, `--work <dir>`, `--keys <dir>`, `--image <ref>`, `--tag <tag>`, `--yes`: see the [pybrainlife README](https://github.com/brainlife/pybrainlife/tree/enh/cli#bl-aimport) or `bl aimport --help`.
+
+To try it first on public sample data, follow the [aimport examples](https://github.com/brainlife/ezbids/blob/master/aimport/EXAMPLES.md); they upload nothing.
 
 To let an AI model help name the series, set `AIMPORT_MODEL` and your provider's key (Claude, OpenAI, or Qwen through Ollama, which keeps everything local). Without a model, built-in heuristics do the work.
 
@@ -152,5 +170,5 @@ The full list of tools, with what each one does, its licence and its citation, i
 ## Learn more
 
 - Engine README: [aimport/README.md](https://github.com/brainlife/ezbids/blob/master/aimport/README.md)
-- `bl aimport`: [cli README](https://github.com/brainlife/cli#bl-aimport)
+- `bl aimport`: [pybrainlife README](https://github.com/brainlife/pybrainlife/tree/enh/cli#bl-aimport)
 - Test datasets: [aimport/tests/DATASETS.md](https://github.com/brainlife/ezbids/blob/master/aimport/tests/DATASETS.md)

@@ -4,7 +4,7 @@ This document is meant for reseachers (or users) who wish to contribute to the e
 
 ## ezBIDS and aimport
 
-ezBIDS covers neuroscience data: neurophysiology, neuroimaging and microscopy. The web app converts MRI, PET and MEG through `ezBIDS_core.json` (below). EEG, iEEG, NIRS, EMG and microscopy are handled by **aimport**, a local engine in the same repository ([`aimport/`](https://github.com/brainlife/ezbids/tree/master/aimport)) that reuses ezBIDS's mapping, conversion and defacing, adds an AI agent and a plan a person approves, de-identifies on the user's computer and validates against BIDS v1.11.2. It is driven by `bl aimport` (the brainlife CLI) or, coming, ezBIDS desktop. User guide: [aimport](../using_aimport.md); engine API and internals: [aimport/README.md](https://github.com/brainlife/ezbids/blob/master/aimport/README.md).
+ezBIDS covers neuroscience data: neurophysiology, neuroimaging and microscopy. The web app converts MRI, PET and MEG through `ezBIDS_core.json` (below). EEG, iEEG, NIRS, EMG and microscopy are handled by **aimport**, a local engine in the same repository ([`aimport/`](https://github.com/brainlife/ezbids/tree/master/aimport)) that reuses ezBIDS's mapping, conversion and defacing, adds an AI agent and a plan a person approves, de-identifies on the user's computer and validates against BIDS v1.11.2. It is driven by `bl aimport` (the brainlife Python CLI, [pybrainlife](https://github.com/brainlife/pybrainlife/tree/enh/cli#bl-aimport)) or, coming, ezBIDS desktop. User guide: [aimport](../using_aimport.md); engine API and internals: [aimport/README.md](https://github.com/brainlife/ezbids/blob/master/aimport/README.md).
 
 ## The ezBIDS Core
 
