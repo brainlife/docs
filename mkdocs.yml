@@ -50,6 +50,7 @@ nav:
           - Pipelines: user/pipeline.md
           - Publications: user/publication.md
           - Datasets: user/datasets.md
+          - Tables: user/tables.md
           - Failure: user/failure.md
 
     - Tutorials:
